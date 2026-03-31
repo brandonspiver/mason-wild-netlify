@@ -23,7 +23,6 @@ export function JournalNewsletter({ inputId }: { inputId: string }) {
           </div>
           <form
             className="flex border border-stone-200 min-w-0 sm:min-w-[380px]"
-            onSubmit={(e) => e.preventDefault()}
             aria-label="Newsletter subscription"
           >
             <label htmlFor={inputId} className="sr-only">
@@ -39,7 +38,7 @@ export function JournalNewsletter({ inputId }: { inputId: string }) {
               className="flex-1 min-w-0 bg-transparent border-none outline-none px-[18px] py-[13px] font-serif italic text-base font-light text-stone-900 placeholder:text-stone-300 focus:placeholder:text-stone-200 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-forest focus-visible:ring-inset"
             />
             <button
-              type="submit"
+              type="button"
               className="bg-stone-900 hover:bg-stone-800 text-white px-5 py-[13px] text-2xs tracking-wide uppercase transition-colors duration whitespace-nowrap shrink-0"
             >
               Subscribe

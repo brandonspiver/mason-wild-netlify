@@ -469,7 +469,6 @@ export default function HomePage() {
             </p>
             <form
               className="flex border border-white/12"
-              onSubmit={(e) => e.preventDefault()}
               aria-label="Newsletter subscription"
             >
               <label htmlFor="nl-email" className="sr-only">
@@ -485,7 +484,7 @@ export default function HomePage() {
                 className="flex-1 bg-transparent border-none outline-none px-[18px] py-[15px] font-serif italic text-base font-light text-white placeholder:text-white/26 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-white/40 focus-visible:ring-inset"
               />
               <button
-                type="submit"
+                type="button"
                 className="bg-forest hover:bg-forest-light text-white px-6 py-[15px] text-2xs tracking-wide uppercase transition-colors duration whitespace-nowrap"
               >
                 Subscribe

@@ -1,13 +1,13 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { createElement, type ElementType, type ReactNode, useEffect, useRef } from "react";
 import { clsx } from "clsx";
 
 interface RevealProps {
-  children:  React.ReactNode;
+  children: ReactNode;
   className?: string;
-  delay?:    0 | 1 | 2 | 3 | 4;
-  as?:       keyof JSX.IntrinsicElements;
+  delay?: 0 | 1 | 2 | 3 | 4;
+  as?: ElementType;
 }
 
 const delayClass: Record<number, string> = {
@@ -24,7 +24,7 @@ export function Reveal({
   delay = 0,
   as: Tag = "div",
 }: RevealProps) {
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const el = ref.current;
@@ -43,13 +43,9 @@ export function Reveal({
     return () => io.disconnect();
   }, []);
 
-  return (
-    // @ts-expect-error — dynamic tag
-    <Tag
-      ref={ref}
-      className={clsx("reveal", delayClass[delay], className)}
-    >
-      {children}
-    </Tag>
-  );
+  return createElement(Tag, {
+    ref,
+    className: clsx("reveal", delayClass[delay], className),
+    children,
+  });
 }
