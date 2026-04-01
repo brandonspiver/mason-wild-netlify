@@ -22,7 +22,7 @@ export default function HomePage() {
       {/* ─── Hero ──────────────────────────────────────────────────────── */}
       <section
         className="relative min-h-svh flex flex-col justify-end pb-[clamp(56px,10vh,112px)] overflow-hidden"
-        aria-label="Mason &amp; Wild — private African journeys"
+        aria-label="Mason &amp; Wild  -  private African journeys"
       >
         <div
           className="absolute inset-0 bg-cover bg-center animate-[heroZoom_20s_cubic-bezier(0.16,1,0.3,1)_forwards]"
@@ -159,7 +159,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ─── Feature — conservancy ─────────────────────────────────────── */}
+      {/* ─── Feature  -  conservancy ─────────────────────────────────────── */}
       <section className="pb-[var(--section-gap)]" aria-labelledby="feature-conservancy">
         <div className="container-site">
           <Reveal>
@@ -167,7 +167,7 @@ export default function HomePage() {
               <div className="overflow-hidden">
                 <Image
                   src="/home/exclusivity-details.jpg"
-                  alt="Elephant moving through a private conservancy at dusk — no other travellers present"
+                  alt="Elephant moving through a private conservancy at dusk  -  no other travellers present"
                   width={800}
                   height={1000}
                   className="w-full aspect-[4/5] object-cover object-center transition-transform duration-[900ms] ease-out hover:scale-[1.025]"
@@ -230,17 +230,17 @@ export default function HomePage() {
                     className="w-full aspect-[3/4] object-cover object-center transition-transform duration-[850ms] ease-out group-hover:scale-[1.04] group-hover:opacity-[0.87]"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[rgba(14,12,8,0.88)] via-[rgba(14,12,8,0.32)] to-transparent flex flex-col justify-end p-7">
-                    <p className="label-tag text-white/40 mb-2">{j.outcome}</p>
-                    <h3 className="font-serif font-light text-display-sm text-white leading-[1.1] tracking-[-0.01em] mb-5">
+                  <div className="absolute inset-0 bg-gradient-to-t from-[rgba(14,12,8,0.98)] via-[rgba(14,12,8,0.72)] via-55% to-[rgba(14,12,8,0.18)] flex flex-col justify-end p-7">
+                    <p className="label-tag text-[#e8ddd0] mb-2 [text-shadow:0_1px_8px_rgba(0,0,0,0.85)]">{j.outcome}</p>
+                    <h3 className="font-serif font-light text-display-sm text-[#fffaf2] leading-[1.1] tracking-[-0.01em] mb-5 [text-shadow:0_2px_14px_rgba(0,0,0,0.9)]">
                       The <em>{j.name.replace("The ", "")}</em>
                     </h3>
-                    <p className="text-sm font-light text-white/58 leading-relaxed mb-5 max-w-[22ch]">
+                    <p className="text-sm font-light text-[#f4ede3] leading-relaxed mb-5 max-w-[22ch] [text-shadow:0_2px_12px_rgba(0,0,0,0.88)]">
                       {j.tagline}
                     </p>
                     <Link
                       href={`${NAV_HREFS.journeys}/${j.slug}`}
-                      className="self-start text-2xs tracking-wide uppercase text-white/0 border-b border-white/0 pb-px transition-all duration group-hover:text-white/65 group-hover:border-white/30"
+                      className="self-start text-2xs tracking-wide uppercase text-[#fff4e2] border-b border-[#fff4e2]/50 pb-px transition-all duration [text-shadow:0_2px_10px_rgba(0,0,0,0.88)] group-hover:text-white group-hover:border-white"
                     >
                       Explore →
                     </Link>
@@ -260,7 +260,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ─── Differentiators — editorial list ──────────────────────────── */}
+      {/* ─── Differentiators  -  editorial list ──────────────────────────── */}
       <section
         className="section border-t border-b border-stone-200"
         aria-labelledby="diff-heading"
@@ -279,7 +279,7 @@ export default function HomePage() {
                   <em>are not in tension.</em>
                 </h2>
                 <p className="text-base font-light text-stone-500 leading-relaxed mb-9">
-                  We hold both as operational standards — not aspirations.
+                  We hold both as operational standards  -  not aspirations.
                   This is what every element of our network is built to deliver.
                 </p>
                 <Button href={NAV_HREFS.experience} variant="ghost">
@@ -319,11 +319,11 @@ export default function HomePage() {
         <Reveal>
           <div
             className="w-full aspect-[3/4] md:aspect-auto md:h-full min-h-[480px] relative overflow-hidden"
-            aria-label="Founder portrait — Zannon James"
+            aria-label="Founder portrait  -  Zannon James"
           >
             <Image
               src="/home/zannon.png"
-              alt="Founder portrait — Zannon James"
+              alt="Founder portrait  -  Zannon James"
               fill
               sizes="(max-width: 768px) 100vw, 42vw"
               className="object-cover object-center"
@@ -347,13 +347,16 @@ export default function HomePage() {
               that choice entirely.
             </p>
             <p className="text-base font-light text-stone-500 leading-[1.85] max-w-[480px] mb-10">
-              Zannon has worked in Africa&apos;s private travel sector for many
-              years — first as a field guide, then as a specialist in bespoke
-              itinerary design for high-value clients across sensitive
-              territories. Every journey Mason &amp; Wild accepts passes through
-              him directly. He approves the lodge, the guide, the routing,
-              and the brief. There is no operations team between you and
-              that decision.
+              Zannon has built his career across Africa&apos;s luxury travel world,
+              with experience spanning hotel concierge, travel consulting,
+              safari planning, lodge-side commerce, and on-the-ground product.
+              He has spent years designing and shaping journeys for high-net-worth
+              individuals and discerning travellers who value substance,
+              discretion, and exceptional execution. That depth gives Mason &amp; Wild
+              a level of expertise grounded in real operating knowledge, not just
+              sales language. Every journey is curated under his direct oversight,
+              with each property, routing, and local handler selected to meet the
+              brand&apos;s standard for trust, discretion, and high-touch luxury.
             </p>
             <Button href={NAV_HREFS.about} variant="ghost">
               {CTA.ourPhilosophy}
@@ -362,7 +365,7 @@ export default function HomePage() {
         </Reveal>
       </section>
 
-      {/* ─── Feature — The Romantic ─────────────────────────────────────── */}
+      {/* ─── Feature  -  The Romantic ─────────────────────────────────────── */}
       <section
         className="section"
         aria-labelledby="feature-romantic-heading"
@@ -372,8 +375,8 @@ export default function HomePage() {
             <div className="grid grid-cols-1 md:grid-cols-[4fr_5fr] items-center">
               <div className="overflow-hidden md:order-2">
                 <Image
-                  src="/home/romantic-feature.png"
-                  alt="Private tent at dusk — lantern light and the savanna beyond"
+                  src="/home/romantic-boat.png"
+                  alt="Private tent at dusk  -  lantern light and the savanna beyond"
                   width={750}
                   height={938}
                   className="w-full aspect-[4/5] object-cover object-center transition-transform duration-[900ms] ease-out hover:scale-[1.025]"
@@ -413,7 +416,7 @@ export default function HomePage() {
           </h2>
           <p className="text-base font-light text-white/50 leading-relaxed max-w-[420px] mx-auto mb-12">
             We take on a limited number of journeys each month.
-            Our process is personal and unhurried — beginning
+            Our process is personal and unhurried  -  beginning
             with a single conversation.
           </p>
           <div className="flex items-center justify-center gap-8 flex-wrap">

@@ -31,7 +31,7 @@ const ARTICLES: ArticleSummary[] = [
     publishedAt: "2024-10-15",
     img: {
       src: "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=1200&q=82&auto=format&fit=crop",
-      alt: "Private conservancy at golden hour — no other travellers",
+      alt: "Private conservancy at golden hour  -  no other travellers",
     },
   },
   {
@@ -44,7 +44,7 @@ const ARTICLES: ArticleSummary[] = [
     publishedAt: "2024-09-28",
     img: {
       src: "https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=900&q=82&auto=format&fit=crop",
-      alt: "Okavango Delta — still water and open sky at low season",
+      alt: "Okavango Delta  -  still water and open sky at low season",
     },
   },
   {
@@ -57,7 +57,7 @@ const ARTICLES: ArticleSummary[] = [
     publishedAt: "2024-09-10",
     img: {
       src: "https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?w=900&q=82&auto=format&fit=crop",
-      alt: "Namibian desert at first light — infinite scale and quiet",
+      alt: "Namibian desert at first light  -  infinite scale and quiet",
     },
   },
   {
@@ -65,7 +65,7 @@ const ARTICLES: ArticleSummary[] = [
     title:       "Private Conservancies and the Question of Access",
     category:    "safari-guides",
     excerpt:
-      "Not all exclusivity is equal. Understanding how private conservancies differ from national parks — and from each other — is the first decision in building a serious African journey.",
+      "Not all exclusivity is equal. Understanding how private conservancies differ from national parks  -  and from each other  -  is the first decision in building a serious African journey.",
     readingTime: 6,
     publishedAt: "2024-08-22",
   },

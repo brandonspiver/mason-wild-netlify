@@ -41,10 +41,10 @@ export type JourneyData = {
   readonly outcome:      string;
   readonly territory:    string;
   readonly name:         string;
-  readonly identity:     string; // tagline — one sentence, psychological
+  readonly identity:     string; // tagline  -  one sentence, psychological
   readonly lead:         string; // opening serif line in the narrative rail
   readonly body:         readonly string[]; // 2–4 paragraphs
-  readonly vettedNote:   string; // ≤ 2 sentences — appears twice per page
+  readonly vettedNote:   string; // ≤ 2 sentences  -  appears twice per page
   readonly heroImg:      JourneyImage;
   readonly galleryImgs:  readonly JourneyImage[];
   readonly pillars:      readonly JourneyPillar[];

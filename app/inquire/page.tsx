@@ -48,7 +48,7 @@ export default function InquirePage() {
         <div className="container-site">
           <div className="grid grid-cols-1 lg:grid-cols-[5fr_7fr] gap-[clamp(56px,8vw,112px)] items-start">
 
-            {/* ── Left rail — static context, server-rendered ─────────── */}
+            {/* ── Left rail  -  static context, server-rendered ─────────── */}
             <div className="lg:sticky lg:top-[100px] lg:self-start">
               <Reveal>
                 <div className="flex flex-col gap-0">
@@ -64,7 +64,7 @@ export default function InquirePage() {
                     <p className="label-tag mb-5">What Helps</p>
                     <div className="flex flex-col gap-0">
                       {[
-                        "The kind of landscape or feeling you are drawn to — not a destination list.",
+                        "The kind of landscape or feeling you are drawn to  -  not a destination list.",
                         "Whether you are traveling alone, with a partner, or in a small private party.",
                         "A rough sense of when you have in mind, and how long.",
                         "Anything particular you would like us to know.",
@@ -98,7 +98,7 @@ export default function InquirePage() {
               </Reveal>
             </div>
 
-            {/* ── Right — client island for form interaction ───────────── */}
+            {/* ── Right  -  client island for form interaction ───────────── */}
             <Reveal delay={1}>
               <InquiryForm />
             </Reveal>

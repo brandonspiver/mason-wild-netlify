@@ -22,7 +22,7 @@
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
   --section-gap:    clamp(96px, 13vw, 160px);
   --section-gap-sm: clamp(56px, 8vw,  96px);
-  /* Interior page header top padding — nav height + breathing room */
+  /* Interior page header top padding  -  nav height + breathing room */
   --page-header-pt: calc(68px + clamp(56px, 8vw, 96px));
 }
 
@@ -63,7 +63,7 @@
     cursor: pointer;
   }
 
-  /* Remove default focus outline — replaced per-component */
+  /* Remove default focus outline  -  replaced per-component */
   :focus-visible {
     outline: 1.5px solid #2B4739;
     outline-offset: 3px;
@@ -94,7 +94,7 @@
   .reveal-d3 { transition-delay: 0.21s; }
   .reveal-d4 { transition-delay: 0.28s; }
 
-  /* Section spacing helpers — used across all pages */
+  /* Section spacing helpers  -  used across all pages */
   .section {
     padding-top:    var(--section-gap);
     padding-bottom: var(--section-gap);
@@ -121,7 +121,7 @@
     padding-right: var(--px);
   }
 
-  /* Label / eyebrow typography — reused everywhere */
+  /* Label / eyebrow typography  -  reused everywhere */
   .label-tag {
     font-family: var(--font-sans), system-ui, sans-serif;
     font-size: 0.6875rem;

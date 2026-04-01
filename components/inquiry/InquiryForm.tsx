@@ -62,7 +62,7 @@ export function InquiryForm() {
     }
   }
 
-  // ── Success state — rendered in-place, page structure intact ────────────
+  // ── Success state  -  rendered in-place, page structure intact ────────────
   if (submitState === "success") {
     return (
       <div className="flex flex-col gap-6 py-2">
@@ -135,7 +135,7 @@ export function InquiryForm() {
         />
       </div>
 
-      {/* Duration — segmented toggle */}
+      {/* Duration  -  segmented toggle */}
       <div className="flex flex-col gap-4">
         <p className="label-tag" id="duration-label">
           {INQUIRY_COPY.durationLabel}

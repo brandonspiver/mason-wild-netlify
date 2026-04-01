@@ -16,19 +16,19 @@ const PROCESS_STEPS = [
     n:     "01",
     title: "Private Inquiry",
     body:
-      "You submit a brief through our private onboarding form. We ask about landscape, feeling, and duration — not dates and budgets. A member of our team responds within 48–72 hours.",
+      "You submit a brief through our private onboarding form. We ask about landscape, feeling, and duration  -  not dates and budgets. A member of our team responds within 48–72 hours.",
   },
   {
     n:     "02",
     title: "Specialist Consultation",
     body:
-      "Zannon or a senior specialist reviews your brief personally. We schedule a call to understand what you are looking for at depth — and what the journey should feel like from the first morning.",
+      "Zannon or a senior specialist reviews your brief personally. We schedule a call to understand what you are looking for at depth  -  and what the journey should feel like from the first morning.",
   },
   {
     n:     "03",
     title: "Journey Design",
     body:
-      "We build the itinerary from the ground up. Territory selection, lodge placement, guide assignment, routing, and daily rhythm — every element reviewed against our safety and vetting standards before anything is proposed.",
+      "We build the itinerary from the ground up. Territory selection, lodge placement, guide assignment, routing, and daily rhythm  -  every element reviewed against our safety and vetting standards before anything is proposed.",
   },
   {
     n:     "04",
@@ -43,7 +43,7 @@ const INCLUSIVE_ITEMS = [
     key:   "safety",
     title: "LGBTQ+ Safety Intelligence",
     body:
-      "We navigate the political and social landscape of each territory with precision — assessing every destination for safety, legal standing, and suitability before it enters our collection.",
+      "We navigate the political and social landscape of each territory with precision  -  assessing every destination for safety, legal standing, and suitability before it enters our collection.",
   },
   {
     key:   "liaison",
@@ -61,23 +61,23 @@ const INCLUSIVE_ITEMS = [
     key:   "vetted",
     title: "Vetted Ecosystem",
     body:
-      "Every lodge, pilot, and guide in our network is personally vetted. Standards are reviewed annually. There is no accreditation system — there is our own.",
+      "Every lodge, pilot, and guide in our network is personally vetted. Standards are reviewed annually. There is no accreditation system  -  there is our own.",
   },
   {
     key:   "comfort",
     title: "Adaptive Comfort",
     body:
-      "Arrangements that anticipate your specific needs — from room configurations to daily privacy. Your comfort is designed in, not improvised on arrival.",
+      "Arrangements that anticipate your specific needs  -  from room configurations to daily privacy. Your comfort is designed in, not improvised on arrival.",
   },
   {
     key:   "design",
     title: "Private by Design",
     body:
-      "We do not work from templates. Each journey is a unique response to your brief — built from a direct conversation about what you are looking for, and what you would prefer to leave behind.",
+      "We do not work from templates. Each journey is a unique response to your brief  -  built from a direct conversation about what you are looking for, and what you would prefer to leave behind.",
   },
 ] as const;
 
-// Four individual archetypes — The Social is referenced separately
+// Four individual archetypes  -  The Social is referenced separately
 const ARCHETYPES = [
   {
     outcome: "Solitude",
@@ -156,7 +156,7 @@ export default function TheExperiencePage() {
                   <p className="label-tag mb-2">Volume</p>
                   <p className="text-base font-light text-stone-600 leading-relaxed">
                     We limit the number of journeys we accept each month.
-                    This is not a capacity constraint — it is a quality one.
+                    This is not a capacity constraint  -  it is a quality one.
                   </p>
                 </div>
               </div>
@@ -170,7 +170,7 @@ export default function TheExperiencePage() {
       <div className="relative w-full overflow-hidden">
         <Image
           src="/experience/private-conservancy-botswana.jpg"
-          alt="Private conservancy at golden hour — Botswana"
+          alt="Private conservancy at golden hour  -  Botswana"
           width={2400}
           height={1080}
           className="w-full aspect-[21/9] object-cover object-center"
@@ -178,7 +178,7 @@ export default function TheExperiencePage() {
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-black/20" />
         <div className="absolute bottom-5 left-[var(--px)] right-[var(--px)] flex justify-between">
-          <span className="label-tag text-white/40">Private Conservancy — Botswana</span>
+          <span className="label-tag text-white/40">Private Conservancy  -  Botswana</span>
           <span className="label-tag text-white/40 hidden sm:block">
             The Silent Observer Collection
           </span>
@@ -211,7 +211,7 @@ export default function TheExperiencePage() {
                 before you <em>arrive.</em>
               </h2>
               <p className="text-base font-light text-stone-500 leading-relaxed mb-6">
-                It starts with a conversation — about the textures, sounds,
+                It starts with a conversation  -  about the textures, sounds,
                 and rhythms you want to be in. Not the lodges you want to
                 stay in, or the animals you want to see. Those are outcomes,
                 not intentions.
@@ -282,7 +282,7 @@ export default function TheExperiencePage() {
           </Reveal>
 
           {/*
-            Uniform grid — no singled-out card, no hierarchy within the set.
+            Uniform grid  -  no singled-out card, no hierarchy within the set.
             Each item carries equal weight; the grid reads as a considered list,
             not a designed feature matrix.
           */}
@@ -324,7 +324,7 @@ export default function TheExperiencePage() {
           </Reveal>
         </div>
 
-        {/* Four archetype cards — horizontal scroll on mobile */}
+        {/* Four archetype cards  -  horizontal scroll on mobile */}
         <Reveal>
           <div className="overflow-x-auto border-t border-stone-200">
             <div className="flex min-w-max md:min-w-0 md:grid md:grid-cols-4 divide-x divide-stone-200">
@@ -350,7 +350,7 @@ export default function TheExperiencePage() {
         </Reveal>
 
         {/*
-          The Social — distinct from the four individual journey archetypes.
+          The Social  -  distinct from the four individual journey archetypes.
           No outcome label, no equal card treatment. Positioned as a different
           kind of offering: invitation-led, membership-based, quieter register.
         */}
@@ -360,7 +360,7 @@ export default function TheExperiencePage() {
               <div className="max-w-xs">
                 <p className="label-tag mb-3">By Invitation Only</p>
                 <p className="font-serif font-light text-display-sm text-stone-900 leading-[1.2] tracking-[-0.01em]">
-                  The Social —<br />
+                  The Social  - <br />
                   <em>A Curated Circle</em>
                 </p>
               </div>

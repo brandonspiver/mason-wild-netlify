@@ -20,17 +20,17 @@ const JOURNEYS: Record<string, JourneyData> = {
     name:      "The Intimate",
     identity:  "Designed for those who need to disappear.",
     lead:
-      "The Okavango in the early morning holds a particular kind of silence. This journey is built to give you access to it — without interruption, without audience, without schedule.",
+      "The Okavango in the early morning holds a particular kind of silence. This journey is built to give you access to it  -  without interruption, without audience, without schedule.",
     body: [
       "The Intimate places you inside a private concession where the only footprint in the sand is yours. No shared game drives. No communal dining unless you want it. No other travelers by design.",
-      "We access territories that do not allow general tourism. The camps are occupied by one party at a time. Your guide works exclusively with you. Your daily rhythm is determined by you and the land — in that order.",
+      "We access territories that do not allow general tourism. The camps are occupied by one party at a time. Your guide works exclusively with you. Your daily rhythm is determined by you and the land  -  in that order.",
       "Some people come here after a period of sustained pressure. Others come because quiet is simply what they prefer. Either way, the journey does not ask you to explain yourself.",
     ],
     vettedNote:
       "Every property and guide in this journey has been assessed by Zannon directly for LGBTQ+ safety and operational privacy, reviewed before each season.",
     heroImg: {
       src: "/journeys/the-intimate.jpg",
-      alt: "Okavango Delta at dawn — still water and open sky",
+      alt: "Okavango Delta at dawn  -  still water and open sky",
     },
     galleryImgs: [
       {
@@ -39,11 +39,11 @@ const JOURNEYS: Record<string, JourneyData> = {
       },
       {
         src: "/journeys/the-intimate.jpg",
-        alt: "Open savanna at golden hour — no vehicles, no structures",
+        alt: "Open savanna at golden hour  -  no vehicles, no structures",
       },
       {
         src: "/journeys/the-intimate.jpg",
-        alt: "Private camp interior at dusk — lantern light and canvas",
+        alt: "Private camp interior at dusk  -  lantern light and canvas",
       },
     ],
     pillars: [
@@ -60,7 +60,7 @@ const JOURNEYS: Record<string, JourneyData> = {
       {
         key:   "transfers",
         title: "Private Transfers",
-        body:  "All movement is private — charter aircraft, private ground vehicles, discreet arrivals. You do not share a shuttle. You do not wait in a public terminal.",
+        body:  "All movement is private  -  charter aircraft, private ground vehicles, discreet arrivals. You do not share a shuttle. You do not wait in a public terminal.",
       },
       {
         key:   "rhythm",
@@ -70,7 +70,7 @@ const JOURNEYS: Record<string, JourneyData> = {
       {
         key:   "fly-camp",
         title: "Fly-Camp Access",
-        body:  "Subject to season and conditions, we arrange nights in open fly-camps — sleeping in the landscape itself, in a location your guide selects.",
+        body:  "Subject to season and conditions, we arrange nights in open fly-camps  -  sleeping in the landscape itself, in a location your guide selects.",
       },
       {
         key:   "support",
@@ -82,7 +82,7 @@ const JOURNEYS: Record<string, JourneyData> = {
       {
         period: "Days 1–2",
         title:  "Arrival",
-        body:   "Private charter from your gateway city. Afternoon arrival, an orientation walk with your guide. No programme for the first two days — they are for settling in.",
+        body:   "Private charter from your gateway city. Afternoon arrival, an orientation walk with your guide. No programme for the first two days  -  they are for settling in.",
       },
       {
         period: "Days 3–5",
@@ -92,7 +92,7 @@ const JOURNEYS: Record<string, JourneyData> = {
       {
         period: "Days 6–7",
         title:  "Deep In",
-        body:   "If the season permits, a fly-camp night in open country — under canvas or stars, in a location your guide has chosen. No other structure within range.",
+        body:   "If the season permits, a fly-camp night in open country  -  under canvas or stars, in a location your guide has chosen. No other structure within range.",
       },
       {
         period: "Final Day",
@@ -291,7 +291,7 @@ export default function JourneyDetailPage({
               </div>
               <p className="text-base font-light text-stone-500 leading-relaxed max-w-[560px] self-end">
                 This is not a list of inclusions. It is a description of what
-                your time will feel like — and what will not be present.
+                your time will feel like  -  and what will not be present.
               </p>
             </div>
           </Reveal>

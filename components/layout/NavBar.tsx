@@ -62,7 +62,7 @@ export function NavBar() {
             "font-serif text-[1.1rem] font-normal tracking-[0.05em] transition-colors duration-[300ms]",
             scrolled ? "text-stone-900" : "text-white",
           ].join(" ")}
-          aria-label="Mason & Wild — home"
+          aria-label="Mason & Wild  -  home"
         >
           Mason <em>&amp;</em> Wild
         </Link>

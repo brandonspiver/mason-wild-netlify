@@ -8,7 +8,7 @@ import { CTA, NAV_HREFS } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "Journeys",
   description:
-    "Five ways of experiencing Africa — each built around a distinct intention. Private journeys designed for discerning LGBTQ+ travelers.",
+    "Five ways of experiencing Africa  -  each built around a distinct intention. Private journeys designed for discerning LGBTQ+ travelers.",
 };
 
 const ARCHETYPES = [
@@ -22,7 +22,7 @@ const ARCHETYPES = [
       "Absolute quiet. No shared game drives, no communal dining, no other travelers unless you choose it. The Intimate places you inside a private concession where the only footprint in the sand is yours. The daily rhythm is determined by you and the land, in that order.",
     img: {
       src: "/journeys/the-intimate.jpg",
-      alt: "Okavango Delta at dawn — still water and open sky, no other travellers",
+      alt: "Okavango Delta at dawn  -  still water and open sky, no other travellers",
     },
     reversed: false,
   },
@@ -33,7 +33,7 @@ const ARCHETYPES = [
     territory: "Kenya · Tanzania",
     tagline:   "Elemental Africa, experienced at its own pace.",
     body:
-      "Walking safaris, tracker-led navigation through dense riverine forest, and the specific aliveness that comes from moving through Africa on foot. This journey is not about comfort. It is about the knowledge that you are a guest in a system far older than any itinerary — and the willingness to feel that.",
+      "Walking safaris, tracker-led navigation through dense riverine forest, and the specific aliveness that comes from moving through Africa on foot. This journey is not about comfort. It is about the knowledge that you are a guest in a system far older than any itinerary  -  and the willingness to feel that.",
     img: {
       src: "/journeys/the-untamed.jpg",
       alt: "Elephant moving through open grassland at last light",
@@ -47,10 +47,10 @@ const ARCHETYPES = [
     territory: "Namibia · Zambia",
     tagline:   "Cinematic moments designed for two.",
     body:
-      "Star beds under the Namibian sky. Private sundowners at the edge of the Victoria Falls. The luxury of unhurried time in which two people can be entirely absorbed in each other — and in the landscape. Every element assumes that you want to be left alone.",
+      "Star beds under the Namibian sky. Private sundowners at the edge of the Victoria Falls. The luxury of unhurried time in which two people can be entirely absorbed in each other  -  and in the landscape. Every element assumes that you want to be left alone.",
     img: {
-      src: "/journeys/the-romantic.jpg",
-      alt: "Private tent interior at dusk — lantern light and the open savanna beyond",
+      src: "/journeys/journeys-hero-bath.jpg",
+      alt: "Private tent interior at dusk  -  lantern light and the open savanna beyond",
     },
     reversed: false,
   },
@@ -61,7 +61,7 @@ const ARCHETYPES = [
     territory: "Multi-country",
     tagline:   "The full breadth of the continent, without compromise.",
     body:
-      "Multiple ecosystems. Multiple territories. Multiple wildlife encounters — without sacrificing the privacy and control that make them meaningful. Private aircraft, exclusive-use properties throughout, and a single specialist from first inquiry to final departure.",
+      "Multiple ecosystems. Multiple territories. Multiple wildlife encounters  -  without sacrificing the privacy and control that make them meaningful. Private aircraft, exclusive-use properties throughout, and a single specialist from first inquiry to final departure.",
     img: {
       src: "/journeys/the-private-circuit.jpg",
       alt: "Aerial view of remote African landscape at first light",
@@ -86,7 +86,7 @@ export default function JourneysPage() {
               </Reveal>
               <Reveal delay={1}>
                 <h1
-                  className="font-serif font-light text-display-2xl text-stone-900"
+                  className="font-serif font-light text-stone-900 text-[clamp(2.125rem,4.8vw,4.75rem)] leading-[1.08] tracking-[-0.015em]"
                   id="journeys-heading"
                 >
                   These are not<br />
@@ -97,7 +97,7 @@ export default function JourneysPage() {
             </div>
             <Reveal delay={2}>
               <p className="text-base font-light text-stone-500 leading-relaxed max-w-[480px]">
-                Each archetype is built around a distinct emotional intention —
+                Each archetype is built around a distinct emotional intention  - 
                 not a destination, a duration, or a list of included activities.
                 You choose the one that reflects what you are looking for.
                 We build the rest from there.
@@ -147,7 +147,7 @@ export default function JourneysPage() {
             >
               <Reveal delay={1}>
                 {/*
-                  Outcome + territory only — duration removed.
+                  Outcome + territory only  -  duration removed.
                   Keeps the page psychological rather than product-structured.
                 */}
                 <div className="flex items-center gap-5 mb-8">
@@ -180,9 +180,9 @@ export default function JourneysPage() {
         ))}
       </div>
 
-      {/* ─── The Social — distinct register ─────────────────────────────── */}
+      {/* ─── The Social  -  distinct register ─────────────────────────────── */}
       {/*
-        No interlude section before this — the page moves directly from
+        No interlude section before this  -  the page moves directly from
         the four archetypes into The Social. The tonal shift in background
         and register is sufficient separation.
 
@@ -205,7 +205,7 @@ export default function JourneysPage() {
                   className="font-serif font-light text-display-xl text-white mb-6 tracking-[-0.018em]"
                   id="the-social-heading"
                 >
-                  The Social —<br />
+                  The Social  - <br />
                   <em>A Curated Circle</em>
                 </h2>
                 <p className="font-serif font-light italic text-lg text-white/55 leading-relaxed mb-8">
@@ -268,10 +268,10 @@ export default function JourneysPage() {
           </h2>
           <p className="text-base font-light text-white/50 leading-relaxed max-w-[400px] mx-auto mb-12">
             Every journey begins with a conversation. Tell us what you are
-            looking for — and what you would prefer to leave behind.
+            looking for  -  and what you would prefer to leave behind.
           </p>
           {/*
-            Secondary CTA moves forward — to Inquire — not backward
+            Secondary CTA moves forward  -  to Inquire  -  not backward
             to The Experience. Both options progress the user.
           */}
           <div className="flex items-center justify-center gap-8 flex-wrap">

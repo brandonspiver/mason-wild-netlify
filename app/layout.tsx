@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     process.env.NEXT_PUBLIC_SITE_URL ?? "https://masonwild.com"
   ),
   title: {
-    template: `%s — ${BRAND_NAME}`,
+    template: `%s  -  ${BRAND_NAME}`,
     default:  `${BRAND_NAME} | Private African Journeys for LGBTQ+ Travelers`,
   },
   description: PRIMARY_POSITIONING_LINE,

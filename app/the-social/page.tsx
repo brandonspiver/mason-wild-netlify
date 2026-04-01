@@ -4,7 +4,7 @@ import { Reveal } from "@/components/ui/Reveal";
 import { NAV_HREFS, INQUIRY_COPY, CTA } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "The Social — A Curated Circle",
+  title: "The Social  -  A Curated Circle",
   description:
     "A small group of aligned travelers. One shared season. Membership is by introduction only.",
 };
@@ -42,7 +42,7 @@ const STATUS_COLOR: Record<SeasonStatus, string> = {
 export default function TheSocialPage() {
   return (
     <>
-      {/* ─── Hero — dark, full-viewport, no image ───────────────────────── */}
+      {/* ─── Hero  -  dark, full-viewport, no image ───────────────────────── */}
       <section
         className="min-h-svh bg-stone-900 flex flex-col justify-end px-[var(--px)] pb-[clamp(64px,10vh,112px)] pt-[var(--page-header-pt)]"
         aria-labelledby="social-heading"
@@ -55,11 +55,11 @@ export default function TheSocialPage() {
             className="font-serif font-light text-display-3xl text-white mb-8 tracking-[-0.022em] opacity-0 translate-y-4 animate-[fadeRise_0.9s_cubic-bezier(0.16,1,0.3,1)_0.48s_forwards]"
             id="social-heading"
           >
-            The Social —<br />
+            The Social  - <br />
             <em>A Curated<br />Circle</em>
           </h1>
           {/*
-            Hero subline: more specific — names what "aligned" means.
+            Hero subline: more specific  -  names what "aligned" means.
             Still restrained; does not oversell.
           */}
           <p className="font-serif font-light italic text-xl text-white/55 max-w-[520px] leading-relaxed opacity-0 translate-y-4 animate-[fadeRise_0.9s_cubic-bezier(0.16,1,0.3,1)_0.64s_forwards]">
@@ -84,7 +84,7 @@ export default function TheSocialPage() {
                 </p>
                 {/*
                   Replaced "a private circle that happens to include people
-                  you haven't met yet" — more composed, less clever.
+                  you haven't met yet"  -  more composed, less clever.
                 */}
                 <p className="font-serif font-light text-display-sm text-white/80 leading-[1.45] tracking-[-0.01em]">
                   The Social is not a group tour. It is a private journey
@@ -96,7 +96,7 @@ export default function TheSocialPage() {
             <div className="flex flex-col gap-7">
               <Reveal delay={1}>
                 <p className="text-base font-light text-white/50 leading-relaxed">
-                  Group travel is built around shared logistics — the same
+                  Group travel is built around shared logistics  -  the same
                   vehicle, the same lodge, the same schedule. The Social is
                   built around shared intention: a small number of travelers
                   choosing Africa for the same reasons, at the same level of
@@ -107,7 +107,7 @@ export default function TheSocialPage() {
               <Reveal delay={2}>
                 <p className="text-base font-light text-white/50 leading-relaxed">
                   We do not assemble the circle from a waitlist. We build it
-                  from conversations — understanding who each person is, what
+                  from conversations  -  understanding who each person is, what
                   they are looking for, and whether the dynamic of a given
                   circle will produce something worth having. This takes time.
                   It is why membership is by introduction.
@@ -118,7 +118,7 @@ export default function TheSocialPage() {
         </div>
       </section>
 
-      {/* ─── The circle — editorial, not a product grid ─────────────────── */}
+      {/* ─── The circle  -  editorial, not a product grid ─────────────────── */}
       {/*
         Three ideas presented as a single prose-like sequence rather
         than a feature grid. No ghost numerals, no tile background.
@@ -139,7 +139,7 @@ export default function TheSocialPage() {
             {[
               {
                 label: "Size",
-                body:  "The circle never exceeds eight. Eight is the number at which genuine conversation remains possible across a full table — and at which the group can move through private territory without becoming a party.",
+                body:  "The circle never exceeds eight. Eight is the number at which genuine conversation remains possible across a full table  -  and at which the group can move through private territory without becoming a party.",
               },
               {
                 label: "Selection",
@@ -147,7 +147,7 @@ export default function TheSocialPage() {
               },
               {
                 label: "Access",
-                body:  "The circle moves through exclusive-use properties and restricted conservancies — places with no general public access. The shared nature of the journey is a premise, not a compromise.",
+                body:  "The circle moves through exclusive-use properties and restricted conservancies  -  places with no general public access. The shared nature of the journey is a premise, not a compromise.",
               },
             ].map(({ label, body }, i) => (
               <Reveal key={label} delay={(i % 3) as 0 | 1 | 2}>
@@ -164,7 +164,7 @@ export default function TheSocialPage() {
 
       {/* ─── Seasons ────────────────────────────────────────────────────── */}
       {/*
-        Language is provisional by design — "Details to follow" and
+        Language is provisional by design  -  "Details to follow" and
         "Assembling now" are open-ended enough to age gracefully.
         SEASONS array is typed for easy replacement with a CMS or API feed.
       */}
@@ -261,7 +261,7 @@ export default function TheSocialPage() {
                   <div className="flex flex-col gap-0">
                     {[
                       "How you came to find us, and why The Social in particular.",
-                      "What you are looking for — in the company, in the landscape, in the season.",
+                      "What you are looking for  -  in the company, in the landscape, in the season.",
                       "Any seasons you have in mind.",
                     ].map((line, i) => (
                       <div key={i} className="border-t border-white/[0.07] py-5">
@@ -294,7 +294,7 @@ export default function TheSocialPage() {
         </div>
       </section>
 
-      {/* ─── Exit — individual journeys ─────────────────────────────────── */}
+      {/* ─── Exit  -  individual journeys ─────────────────────────────────── */}
       <section
         className="bg-stone-900 border-t border-white/[0.07] px-[var(--px)] py-[clamp(48px,6vw,80px)]"
         aria-label="Individual journey option"
@@ -304,7 +304,7 @@ export default function TheSocialPage() {
             <p className="label-tag text-white/25 mb-3">Looking for a private journey?</p>
             <p className="text-base font-light text-white/40 leading-relaxed max-w-[400px]">
               The Social is one of five ways of experiencing Africa with
-              Mason &amp; Wild. The others are entirely private — designed
+              Mason &amp; Wild. The others are entirely private  -  designed
               for individuals, couples, or small parties on their own terms.
             </p>
           </div>

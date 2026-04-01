@@ -3,13 +3,13 @@ import { NextRequest, NextResponse } from "next/server";
 // ─── Types ────────────────────────────────────────────────────────────────────
 
 // Matches the FormState in components/inquiry/InquiryForm.tsx exactly.
-// duration is optional — the toggle is not required on the form.
+// duration is optional  -  the toggle is not required on the form.
 type InquiryPayload = {
   name:      string;
   email:     string;
   duration?: string;
   narrative: string;
-  // Honeypot — rendered as a hidden field in the form, never filled by humans.
+  // Honeypot  -  rendered as a hidden field in the form, never filled by humans.
   // Any submission with a non-empty value is silently discarded.
   website?:  string;
 };
@@ -42,7 +42,7 @@ const MAX_NARRATIVE_LENGTH = 4000;
 // ─── Validation ───────────────────────────────────────────────────────────────
 
 function isValidEmail(value: string): boolean {
-  // RFC 5322 simplified — rejects obviously malformed addresses
+  // RFC 5322 simplified  -  rejects obviously malformed addresses
   // without being overly restrictive for international addresses.
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 }
@@ -84,7 +84,7 @@ function validatePayload(body: unknown): {
       ? (rawDuration as ValidDuration)
       : undefined;
 
-  // Reject unrecognised values that are not empty — indicates tampered payload
+  // Reject unrecognised values that are not empty  -  indicates tampered payload
   if (rawDuration && !duration) {
     errors.push({ field: "duration", message: "Unrecognised duration value." });
   }
@@ -101,7 +101,7 @@ function validatePayload(body: unknown): {
   }
 
   // ── honeypot ──
-  // Not validated as an error — checked separately before this call.
+  // Not validated as an error  -  checked separately before this call.
   const website = typeof raw.website === "string" ? raw.website : "";
 
   if (errors.length > 0) {
@@ -122,7 +122,7 @@ function validatePayload(body: unknown): {
 async function handleSubmission(inquiry: InquiryPayload): Promise<void> {
   const submittedAt = new Date().toISOString();
 
-  // Structured log — easy to grep, easy to pipe into a log aggregator.
+  // Structured log  -  easy to grep, easy to pipe into a log aggregator.
   console.log(
     JSON.stringify({
       event:       "inquiry.received",
@@ -131,7 +131,7 @@ async function handleSubmission(inquiry: InquiryPayload): Promise<void> {
       email:       inquiry.email,
       duration:    inquiry.duration ?? null,
       narrativeLength: inquiry.narrative.length,
-      // Do not log the full narrative — it may contain personal information.
+      // Do not log the full narrative  -  it may contain personal information.
       // Log enough to confirm receipt and triage without storing sensitive data.
     })
   );
@@ -167,7 +167,7 @@ export async function POST(request: NextRequest): Promise<NextResponse<SuccessRe
   }
 
   // ── Honeypot check ──
-  // Bots filling all fields are silently accepted — a 200 with no side-effects.
+  // Bots filling all fields are silently accepted  -  a 200 with no side-effects.
   // This avoids giving bots confirmation that the honeypot was triggered.
   const honeypot =
     typeof body === "object" && body !== null && "website" in body
@@ -175,7 +175,7 @@ export async function POST(request: NextRequest): Promise<NextResponse<SuccessRe
       : undefined;
 
   if (typeof honeypot === "string" && honeypot.trim().length > 0) {
-    // Silent success — bot sees a normal response, learns nothing useful.
+    // Silent success  -  bot sees a normal response, learns nothing useful.
     return NextResponse.json<SuccessResponse>(
       { ok: true, message: "Inquiry received." },
       { status: 200 }

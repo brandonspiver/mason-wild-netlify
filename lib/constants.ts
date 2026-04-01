@@ -78,7 +78,7 @@ export const DIFFERENTIATORS = [
   {
     key: "privateByDesign",
     label: "Private by Design",
-    body:  "We do not work from templates. Each journey is built from a direct conversation about what you are looking for — and what you would prefer to leave behind.",
+    body:  "We do not work from templates. Each journey is built from a direct conversation about what you are looking for  -  and what you would prefer to leave behind.",
   },
 ] as const;
 
@@ -91,7 +91,7 @@ export const EMOTIONAL_OUTCOMES = {
   sovereignty: "Sovereignty",
 } as const;
 
-// ─── Journey Cards — Homepage ─────────────────────────────────────────────────
+// ─── Journey Cards  -  Homepage ─────────────────────────────────────────────────
 
 export const FEATURED_JOURNEYS = [
   {
@@ -101,7 +101,7 @@ export const FEATURED_JOURNEYS = [
     tagline: "For those who need to disappear. Seclusion within private conservancies.",
     img: {
       src: "/home/the-intimate.jpg",
-      alt: "Okavango Delta at dawn — still water and open sky",
+      alt: "Okavango Delta at dawn  -  still water and open sky",
     },
   },
   {
@@ -168,7 +168,7 @@ export const INQUIRY_COPY = {
   pageSubhead:
     "We take on a limited number of journeys each month to ensure each one receives the attention it deserves. Our process is personal and unhurried.",
   processBody:
-    "Each journey begins with a conversation. We do not offer packages — we design itineraries around a specific brief. Once we receive your inquiry, a member of our team will review it carefully before responding.",
+    "Each journey begins with a conversation. We do not offer packages  -  we design itineraries around a specific brief. Once we receive your inquiry, a member of our team will review it carefully before responding.",
   fullNameLabel:       "Full Name",
   fullNamePlaceholder: "As it appears on your travel document",
   emailLabel:          "Email",

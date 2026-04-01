@@ -19,7 +19,7 @@ import type {
 // ─── Article data ─────────────────────────────────────────────────────────────
 // In production: replace with getArticleBySlug(slug) from lib/journal.ts,
 // which reads from contentlayer's allArticles and calls notFound() when
-// no matching slug is found. The FullArticle type is the migration target —
+// no matching slug is found. The FullArticle type is the migration target  - 
 // nothing in the render logic changes when the data source is swapped.
 
 const ARTICLES: Record<string, FullArticle> = {
@@ -34,17 +34,17 @@ const ARTICLES: Record<string, FullArticle> = {
     publishedAt: "2024-10-15",
     img: {
       src:     "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=2400&q=82&auto=format&fit=crop",
-      alt:     "Private conservancy at golden hour — Botswana",
+      alt:     "Private conservancy at golden hour  -  Botswana",
       caption: "Botswana",
     },
     body: [
       {
         type: "p-lead",
-        text: "There is a particular experience available in certain remote African landscapes that has nothing to do with wildlife, guides, or the quality of the lodge. It is the experience of being entirely unremarkable — of existing in a space where no one is watching, no one is assessing, and the only judgment being exercised is your own.",
+        text: "There is a particular experience available in certain remote African landscapes that has nothing to do with wildlife, guides, or the quality of the lodge. It is the experience of being entirely unremarkable  -  of existing in a space where no one is watching, no one is assessing, and the only judgment being exercised is your own.",
       },
       {
         type: "p",
-        text: "For travelers who have spent years managing their visibility in public spaces — calibrating how much of themselves to bring, reading rooms before entering them, carrying a background layer of social calculation that most travelers simply do not have — this experience is not a small thing. It is, in fact, the only kind of luxury that costs nothing to maintain once you have it.",
+        text: "For travelers who have spent years managing their visibility in public spaces  -  calibrating how much of themselves to bring, reading rooms before entering them, carrying a background layer of social calculation that most travelers simply do not have  -  this experience is not a small thing. It is, in fact, the only kind of luxury that costs nothing to maintain once you have it.",
       },
       {
         type: "h2",
@@ -52,11 +52,11 @@ const ARTICLES: Record<string, FullArticle> = {
       },
       {
         type: "p",
-        text: "The question worth asking is why Africa produces this experience more reliably than other luxury travel destinations. The answer is not that Africa is more welcoming in any general sense — the continent is not a monolith, and the legal and social landscape for LGBTQ+ travelers varies enormously by country, by region, and by the specific properties and people involved in any given journey.",
+        text: "The question worth asking is why Africa produces this experience more reliably than other luxury travel destinations. The answer is not that Africa is more welcoming in any general sense  -  the continent is not a monolith, and the legal and social landscape for LGBTQ+ travelers varies enormously by country, by region, and by the specific properties and people involved in any given journey.",
       },
       {
         type: "p",
-        text: "The answer is scale and distance. The private conservancies of Botswana, the remote rangelands of Namibia, the isolated lodges of the Zambian bush — these are places where the social fabric that produces visibility pressure simply does not exist. There is no public. There is no street. There are no restaurants full of strangers, no hotel lobbies with ambient social awareness. There is the landscape, the wildlife, the guide, and you.",
+        text: "The answer is scale and distance. The private conservancies of Botswana, the remote rangelands of Namibia, the isolated lodges of the Zambian bush  -  these are places where the social fabric that produces visibility pressure simply does not exist. There is no public. There is no street. There are no restaurants full of strangers, no hotel lobbies with ambient social awareness. There is the landscape, the wildlife, the guide, and you.",
       },
       {
         type: "blockquote",
@@ -68,11 +68,11 @@ const ARTICLES: Record<string, FullArticle> = {
       },
       {
         type: "p",
-        text: "What is less discussed is the specific operational work required to ensure that this experience extends beyond the landscape itself — into the lodge, into the relationship with the guide, into the practical texture of each day. The physical remoteness of a destination does not automatically produce a welcoming environment. It produces an isolated one, which is not the same thing.",
+        text: "What is less discussed is the specific operational work required to ensure that this experience extends beyond the landscape itself  -  into the lodge, into the relationship with the guide, into the practical texture of each day. The physical remoteness of a destination does not automatically produce a welcoming environment. It produces an isolated one, which is not the same thing.",
       },
       {
         type: "p",
-        text: "The staff of a private camp, the assigned guide, the culture of a given property — these are the variables that determine whether a physically remote location becomes a genuinely private one. Assessing those variables requires direct relationships, recent knowledge, and the willingness to remove a property from consideration when the assessment changes.",
+        text: "The staff of a private camp, the assigned guide, the culture of a given property  -  these are the variables that determine whether a physically remote location becomes a genuinely private one. Assessing those variables requires direct relationships, recent knowledge, and the willingness to remove a property from consideration when the assessment changes.",
       },
       {
         type: "h2",
@@ -80,7 +80,7 @@ const ARTICLES: Record<string, FullArticle> = {
       },
       {
         type: "p",
-        text: "Choosing Africa with intention means not relying on general reputation or industry accreditation to answer these questions. It means building a journey from a starting point of verified knowledge — territory by territory, property by property — rather than selecting from a catalogue and hoping the details hold.",
+        text: "Choosing Africa with intention means not relying on general reputation or industry accreditation to answer these questions. It means building a journey from a starting point of verified knowledge  -  territory by territory, property by property  -  rather than selecting from a catalogue and hoping the details hold.",
       },
       {
         type: "p",
@@ -231,7 +231,7 @@ export default function ArticlePage({
 
       {/* ─── Hero image ───────────────────────────────────────────────── */}
       {/*
-        Caption uses article.img.caption if provided — a short editorial
+        Caption uses article.img.caption if provided  -  a short editorial
         location or territory note, not the full alt text.
         If no caption is set, the caption area is omitted entirely.
         alt text remains on the img element for accessibility.
@@ -305,7 +305,7 @@ export default function ArticlePage({
                 case "blockquote":
                   /*
                     Restrained blockquote: no left border, no increased size.
-                    Indented with generous vertical space and italic text —
+                    Indented with generous vertical space and italic text  - 
                     reads as a breath in the prose rather than a pulled
                     highlight. The distinction from body text is tonal,
                     not structural.
