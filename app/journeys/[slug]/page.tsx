@@ -29,20 +29,20 @@ const JOURNEYS: Record<string, JourneyData> = {
     vettedNote:
       "Every property and guide in this journey has been assessed by Zannon directly for LGBTQ+ safety and operational privacy, reviewed before each season.",
     heroImg: {
-      src: "https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=2400&q=82&auto=format&fit=crop",
+      src: "/journeys/the-intimate.jpg",
       alt: "Okavango Delta at dawn — still water and open sky",
     },
     galleryImgs: [
       {
-        src: "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=1200&q=82&auto=format&fit=crop",
+        src: "/journeys/the-intimate.jpg",
         alt: "Elephant moving through a private waterhole at dusk",
       },
       {
-        src: "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=1200&q=82&auto=format&fit=crop",
+        src: "/journeys/the-intimate.jpg",
         alt: "Open savanna at golden hour — no vehicles, no structures",
       },
       {
-        src: "https://images.unsplash.com/photo-1504432842672-1a79f78e4084?w=1200&q=82&auto=format&fit=crop",
+        src: "/journeys/the-intimate.jpg",
         alt: "Private camp interior at dusk — lantern light and canvas",
       },
     ],
@@ -105,7 +105,7 @@ const JOURNEYS: Record<string, JourneyData> = {
       name:    "The Untamed",
       outcome: "Connection",
       img: {
-        src: "https://images.unsplash.com/photo-1612213864856-e67c42e17f1d?w=800&q=82&auto=format&fit=crop",
+        src: "/journeys/the-untamed.jpg",
         alt: "Dense riverine forest at dawn",
       },
     },

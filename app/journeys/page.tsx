@@ -21,7 +21,7 @@ const ARCHETYPES = [
     body:
       "Absolute quiet. No shared game drives, no communal dining, no other travelers unless you choose it. The Intimate places you inside a private concession where the only footprint in the sand is yours. The daily rhythm is determined by you and the land, in that order.",
     img: {
-      src: "https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=1400&q=82&auto=format&fit=crop",
+      src: "/journeys/the-intimate.jpg",
       alt: "Okavango Delta at dawn — still water and open sky, no other travellers",
     },
     reversed: false,
@@ -35,7 +35,7 @@ const ARCHETYPES = [
     body:
       "Walking safaris, tracker-led navigation through dense riverine forest, and the specific aliveness that comes from moving through Africa on foot. This journey is not about comfort. It is about the knowledge that you are a guest in a system far older than any itinerary — and the willingness to feel that.",
     img: {
-      src: "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=1400&q=82&auto=format&fit=crop",
+      src: "/journeys/the-untamed.jpg",
       alt: "Elephant moving through open grassland at last light",
     },
     reversed: true,
@@ -49,7 +49,7 @@ const ARCHETYPES = [
     body:
       "Star beds under the Namibian sky. Private sundowners at the edge of the Victoria Falls. The luxury of unhurried time in which two people can be entirely absorbed in each other — and in the landscape. Every element assumes that you want to be left alone.",
     img: {
-      src: "https://images.unsplash.com/photo-1504432842672-1a79f78e4084?w=1400&q=82&auto=format&fit=crop",
+      src: "/journeys/the-romantic.jpg",
       alt: "Private tent interior at dusk — lantern light and the open savanna beyond",
     },
     reversed: false,
@@ -63,7 +63,7 @@ const ARCHETYPES = [
     body:
       "Multiple ecosystems. Multiple territories. Multiple wildlife encounters — without sacrificing the privacy and control that make them meaningful. Private aircraft, exclusive-use properties throughout, and a single specialist from first inquiry to final departure.",
     img: {
-      src: "https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?w=1400&q=82&auto=format&fit=crop",
+      src: "/journeys/the-private-circuit.jpg",
       alt: "Aerial view of remote African landscape at first light",
     },
     reversed: true,

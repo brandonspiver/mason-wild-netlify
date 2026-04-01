@@ -169,7 +169,7 @@ export default function TheExperiencePage() {
       {/* ─── Full-bleed image ───────────────────────────────────────────── */}
       <div className="relative w-full overflow-hidden">
         <Image
-          src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=2400&q=82&auto=format&fit=crop"
+          src="/experience/private-conservancy-botswana.jpg"
           alt="Private conservancy at golden hour — Botswana"
           width={2400}
           height={1080}
@@ -191,7 +191,7 @@ export default function TheExperiencePage() {
           <Reveal>
             <div className="overflow-hidden">
               <Image
-                src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=1000&q=82&auto=format&fit=crop"
+                src="/experience/how-we-work.jpg"
                 alt="Elephant at the edge of a private waterhole at dusk"
                 width={800}
                 height={960}
