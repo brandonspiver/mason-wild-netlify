@@ -29,7 +29,7 @@ export default function HomePage() {
           style={{
             backgroundImage: [
               "linear-gradient(to bottom, rgba(14,12,8,0.10) 0%, rgba(14,12,8,0.00) 22%, rgba(14,12,8,0.40) 65%, rgba(14,12,8,0.80) 100%)",
-              "url('https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=2400&q=82&auto=format&fit=crop')",
+              "url('/home/home-hero.jpg')",
             ].join(", "),
             backgroundPosition: "center 38%",
           }}
@@ -166,7 +166,7 @@ export default function HomePage() {
             <div className="grid grid-cols-1 md:grid-cols-[5fr_4fr] items-center">
               <div className="overflow-hidden">
                 <Image
-                  src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=1200&q=82&auto=format&fit=crop"
+                  src="/home/exclusivity-details.jpg"
                   alt="Elephant moving through a private conservancy at dusk — no other travellers present"
                   width={800}
                   height={1000}
@@ -312,11 +312,6 @@ export default function HomePage() {
       </section>
 
       {/* ─── Founder ────────────────────────────────────────────────────── */}
-      {/*
-        Portrait column: tonal gradient placeholder pending real photography.
-        Replace the gradient divs with an <Image> component when
-        founder photography is available.
-      */}
       <section
         className="grid grid-cols-1 md:grid-cols-[5fr_7fr] bg-page-canvas"
         aria-labelledby="founder-heading"
@@ -326,25 +321,13 @@ export default function HomePage() {
             className="w-full aspect-[3/4] md:aspect-auto md:h-full min-h-[480px] relative overflow-hidden"
             aria-label="Founder portrait — Zannon James"
           >
-            <div
-              className="absolute inset-0"
-              style={{
-                background: [
-                  "linear-gradient(168deg,",
-                  "#E8E2D8 0%,",
-                  "#D4CCBE 28%,",
-                  "#B8AE9C 52%,",
-                  "#8C8070 72%,",
-                  "#5C5248 88%,",
-                  "#3A3028 100%)",
-                ].join(" "),
-              }}
-            />
-            <div
-              className="absolute inset-0"
-              style={{
-                background: "linear-gradient(160deg, transparent 40%, rgba(43,71,57,0.14) 100%)",
-              }}
+            <Image
+              src="/home/zannon.png"
+              alt="Founder portrait — Zannon James"
+              fill
+              sizes="(max-width: 768px) 100vw, 42vw"
+              className="object-cover object-center"
+              loading="lazy"
             />
           </div>
         </Reveal>
@@ -389,7 +372,7 @@ export default function HomePage() {
             <div className="grid grid-cols-1 md:grid-cols-[4fr_5fr] items-center">
               <div className="overflow-hidden md:order-2">
                 <Image
-                  src="https://images.unsplash.com/photo-1504432842672-1a79f78e4084?w=1000&q=82&auto=format&fit=crop"
+                  src="/home/romantic-feature.png"
                   alt="Private tent at dusk — lantern light and the savanna beyond"
                   width={750}
                   height={938}

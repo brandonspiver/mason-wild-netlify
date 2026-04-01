@@ -100,7 +100,7 @@ export const FEATURED_JOURNEYS = [
     outcome: "Solitude",
     tagline: "For those who need to disappear. Seclusion within private conservancies.",
     img: {
-      src: "https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=800&q=82&auto=format&fit=crop",
+      src: "/home/the-intimate.jpg",
       alt: "Okavango Delta at dawn — still water and open sky",
     },
   },
@@ -110,7 +110,7 @@ export const FEATURED_JOURNEYS = [
     outcome: "Sovereignty",
     tagline: "Multi-territory. Private air access. Every arrival exclusively yours.",
     img: {
-      src: "https://images.unsplash.com/photo-1612213864856-e67c42e17f1d?w=800&q=82&auto=format&fit=crop",
+      src: "/home/private-circuit.jpg",
       alt: "Remote wilderness and dramatic sky",
     },
   },
@@ -120,7 +120,7 @@ export const FEATURED_JOURNEYS = [
     outcome: "Wonder",
     tagline: "Cinematic moments designed for two. Intimacy before itineraries.",
     img: {
-      src: "https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?w=800&q=82&auto=format&fit=crop",
+      src: "/home/the-romantic-card.png",
       alt: "Namibian desert dunes at first light",
     },
   },
