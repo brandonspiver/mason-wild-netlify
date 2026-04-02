@@ -119,13 +119,12 @@ export default function TheExperiencePage() {
             <div>
               <Reveal>
                 <h1
-                  className="font-serif font-light text-display-2xl text-stone-900"
+                  className="font-serif font-light text-stone-900 text-[clamp(2.125rem,4.8vw,4.75rem)] leading-[1.08] tracking-[-0.015em]"
                   id="experience-heading"
                 >
-                  Privately designed<br />
-                  African journeys<br />
-                  for discerning<br />
-                  <em>LGBTQ+ travelers.</em>
+                  Curated African<br />
+                  journeys for<br />
+                  discerning <em>LGBTQ+<br />travellers.</em>
                 </h1>
               </Reveal>
             </div>
@@ -366,7 +365,7 @@ export default function TheExperiencePage() {
               </div>
               <div className="sm:max-w-[400px]">
                 <p className="text-base font-light text-stone-500 leading-relaxed mb-6">
-                  A small group of aligned travelers. One shared season.
+                  A small group of aligned travellers. One shared season.
                   Membership is by introduction only.
                 </p>
                 <Button href={NAV_HREFS.social} variant="ghost">

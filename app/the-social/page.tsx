@@ -6,7 +6,7 @@ import { NAV_HREFS, INQUIRY_COPY, CTA } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "The Social  -  A Curated Circle",
   description:
-    "A small group of aligned travelers. One shared season. Membership is by introduction only.",
+    "A small group of aligned travellers. One shared season. Membership is by introduction only.",
 };
 
 // Season data is typed for easy replacement with a dynamic source.
@@ -63,7 +63,7 @@ export default function TheSocialPage() {
             Still restrained; does not oversell.
           */}
           <p className="font-serif font-light italic text-xl text-white/55 max-w-[520px] leading-relaxed opacity-0 translate-y-4 animate-[fadeRise_0.9s_cubic-bezier(0.16,1,0.3,1)_0.64s_forwards]">
-            Eight travelers. One shared season.
+            Eight travellers. One shared season.
             Chosen for what they have in common,
             not despite what they don't.
           </p>
@@ -98,7 +98,7 @@ export default function TheSocialPage() {
                 <p className="text-base font-light text-white/50 leading-relaxed">
                   Group travel is built around shared logistics  -  the same
                   vehicle, the same lodge, the same schedule. The Social is
-                  built around shared intention: a small number of travelers
+                  built around shared intention: a small number of travellers
                   choosing Africa for the same reasons, at the same level of
                   seriousness, prepared to spend time in each other's company
                   with genuine interest.
@@ -143,7 +143,7 @@ export default function TheSocialPage() {
               },
               {
                 label: "Selection",
-                body:  "Participants are chosen for alignment in travel philosophy, temperament, and disposition toward both solitude and company. The process is personal and takes as long as it takes.",
+                body:  "Participants are chosen for alignment in travel philosophy, temperament, and disposition towards both solitude and company. The process is personal and takes as long as it takes.",
               },
               {
                 label: "Access",

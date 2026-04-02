@@ -15,7 +15,7 @@ import type { ArticleSummary } from "@/types/journal";
 export const metadata: Metadata = {
   title: "The Journal",
   description:
-    "Field notes, territory intelligence, and perspectives on private African travel for discerning LGBTQ+ travelers. Published by Mason & Wild.",
+    "Field notes, territory intelligence, and perspectives on private African travel for discerning LGBTQ+ travellers. Published by Mason & Wild.",
 };
 
 // In production: replace with getArticles() from lib/journal.ts,
@@ -26,7 +26,7 @@ const ARTICLES: ArticleSummary[] = [
     title:       "What It Means to Disappear Well: Choosing Africa with Intention",
     category:    "lgbtq-travel-intelligence",
     excerpt:
-      "For travelers who have spent years managing their visibility, the experience of being entirely unremarkable in a landscape is not a small thing. It is the only kind of luxury that costs nothing to maintain.",
+      "For travellers who have spent years managing their visibility, the experience of being entirely unremarkable in a landscape is not a small thing. It is the only kind of luxury that costs nothing to maintain.",
     readingTime: 7,
     publishedAt: "2024-10-15",
     img: {
@@ -39,7 +39,7 @@ const ARTICLES: ArticleSummary[] = [
     title:       "The Okavango in Dry Season: Why Fewer Means More",
     category:    "safari-guides",
     excerpt:
-      "When the water recedes, the delta concentrates. Wildlife converges on permanent water. The silence deepens. This is the Okavango that most travelers never see.",
+      "When the water recedes, the delta concentrates. Wildlife converges on permanent water. The silence deepens. This is the Okavango that most travellers never see.",
     readingTime: 5,
     publishedAt: "2024-09-28",
     img: {
@@ -74,7 +74,7 @@ const ARTICLES: ArticleSummary[] = [
     title:       "LGBTQ+ Travel in Southern Africa: A Practical Assessment",
     category:    "lgbtq-travel-intelligence",
     excerpt:
-      "A country-by-country review of legal standing, enforcement reality, and practical safety for LGBTQ+ travelers planning private journeys across the southern African region.",
+      "A country-by-country review of legal standing, enforcement reality, and practical safety for LGBTQ+ travellers planning private journeys across the southern African region.",
     readingTime: 9,
     publishedAt: "2024-08-05",
   },
@@ -246,7 +246,7 @@ export default function JournalPage() {
         <div className="border-t border-b border-stone-200 bg-page-canvas px-[var(--px)] py-12">
           <div className="container-site flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
             <p className="font-serif font-light italic text-display-sm text-stone-700 leading-[1.45] tracking-[-0.01em] max-w-[520px]">
-              Ready to move from reading to traveling?
+              Ready to move from reading to travelling?
             </p>
             <Button href={NAV_HREFS.journeys} variant="ghost">{CTA.viewAllJourneys}</Button>
           </div>

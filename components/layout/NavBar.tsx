@@ -5,6 +5,7 @@ import Link from "next/link";
 import { NAV_LABELS, NAV_HREFS, CTA } from "@/lib/constants";
 
 const NAV_ITEMS = [
+  { label: NAV_LABELS.home,       href: NAV_HREFS.home },
   { label: NAV_LABELS.experience, href: NAV_HREFS.experience },
   { label: NAV_LABELS.journeys,   href: NAV_HREFS.journeys },
   { label: NAV_LABELS.journal,    href: NAV_HREFS.journal },
@@ -12,6 +13,7 @@ const NAV_ITEMS = [
 ] as const;
 
 const OVERLAY_ITEMS = [
+  { label: NAV_LABELS.home,       href: NAV_HREFS.home },
   { label: NAV_LABELS.experience, href: NAV_HREFS.experience },
   { label: NAV_LABELS.journeys,   href: NAV_HREFS.journeys },
   { label: "The Social",          href: NAV_HREFS.social },

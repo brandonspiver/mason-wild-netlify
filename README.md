@@ -1,6 +1,6 @@
 # Mason & Wild
 
-Private African journeys for discerning LGBTQ+ travelers.
+Private African journeys for discerning LGBTQ+ travellers.
 
 ## Stack
 

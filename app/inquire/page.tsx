@@ -65,7 +65,7 @@ export default function InquirePage() {
                     <div className="flex flex-col gap-0">
                       {[
                         "The kind of landscape or feeling you are drawn to  -  not a destination list.",
-                        "Whether you are traveling alone, with a partner, or in a small private party.",
+                        "Whether you are travelling alone, with a partner, or in a small private party.",
                         "A rough sense of when you have in mind, and how long.",
                         "Anything particular you would like us to know.",
                       ].map((line, i) => (

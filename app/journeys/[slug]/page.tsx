@@ -22,7 +22,7 @@ const JOURNEYS: Record<string, JourneyData> = {
     lead:
       "The Okavango in the early morning holds a particular kind of silence. This journey is built to give you access to it  -  without interruption, without audience, without schedule.",
     body: [
-      "The Intimate places you inside a private concession where the only footprint in the sand is yours. No shared game drives. No communal dining unless you want it. No other travelers by design.",
+      "The Intimate places you inside a private concession where the only footprint in the sand is yours. No shared game drives. No communal dining unless you want it. No other travellers by design.",
       "We access territories that do not allow general tourism. The camps are occupied by one party at a time. Your guide works exclusively with you. Your daily rhythm is determined by you and the land  -  in that order.",
       "Some people come here after a period of sustained pressure. Others come because quiet is simply what they prefer. Either way, the journey does not ask you to explain yourself.",
     ],
@@ -129,7 +129,7 @@ export async function generateMetadata({
   if (!journey) return { title: "Journey Not Found" };
   return {
     title:       journey.name,
-    description: `${journey.identity} A private African journey through ${journey.territory}, designed for discerning LGBTQ+ travelers.`,
+    description: `${journey.identity} A private African journey through ${journey.territory}, designed for discerning LGBTQ+ travellers.`,
   };
 }
 

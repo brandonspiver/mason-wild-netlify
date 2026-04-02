@@ -29,7 +29,7 @@ const ARTICLES: Record<string, FullArticle> = {
     subtitle:    "On the specific luxury of being unremarkable in a landscape.",
     category:    "lgbtq-travel-intelligence",
     excerpt:
-      "For travelers who have spent years managing their visibility, the experience of being entirely unremarkable in a landscape is not a small thing.",
+      "For travellers who have spent years managing their visibility, the experience of being entirely unremarkable in a landscape is not a small thing.",
     readingTime: 7,
     publishedAt: "2024-10-15",
     img: {
@@ -44,7 +44,7 @@ const ARTICLES: Record<string, FullArticle> = {
       },
       {
         type: "p",
-        text: "For travelers who have spent years managing their visibility in public spaces  -  calibrating how much of themselves to bring, reading rooms before entering them, carrying a background layer of social calculation that most travelers simply do not have  -  this experience is not a small thing. It is, in fact, the only kind of luxury that costs nothing to maintain once you have it.",
+        text: "For travellers who have spent years managing their visibility in public spaces  -  calibrating how much of themselves to bring, reading rooms before entering them, carrying a background layer of social calculation that most travellers simply do not have  -  this experience is not a small thing. It is, in fact, the only kind of luxury that costs nothing to maintain once you have it.",
       },
       {
         type: "h2",
@@ -52,7 +52,7 @@ const ARTICLES: Record<string, FullArticle> = {
       },
       {
         type: "p",
-        text: "The question worth asking is why Africa produces this experience more reliably than other luxury travel destinations. The answer is not that Africa is more welcoming in any general sense  -  the continent is not a monolith, and the legal and social landscape for LGBTQ+ travelers varies enormously by country, by region, and by the specific properties and people involved in any given journey.",
+        text: "The question worth asking is why Africa produces this experience more reliably than other luxury travel destinations. The answer is not that Africa is more welcoming in any general sense  -  the continent is not a monolith, and the legal and social landscape for LGBTQ+ travellers varies enormously by country, by region, and by the specific properties and people involved in any given journey.",
       },
       {
         type: "p",
@@ -60,7 +60,7 @@ const ARTICLES: Record<string, FullArticle> = {
       },
       {
         type: "blockquote",
-        text: "The removal of the social stage is not incidental to the experience. For many travelers, it is the experience.",
+        text: "The removal of the social stage is not incidental to the experience. For many travellers, it is the experience.",
       },
       {
         type: "h2",
@@ -84,7 +84,7 @@ const ARTICLES: Record<string, FullArticle> = {
       },
       {
         type: "p",
-        text: "For most travelers, this is not work they should have to do themselves. Finding and maintaining that knowledge is the specific value of a travel specialist who has built their practice around it. The luxury is not only in the landscape. It is in arriving knowing that the work has already been done.",
+        text: "For most travellers, this is not work they should have to do themselves. Finding and maintaining that knowledge is the specific value of a travel specialist who has built their practice around it. The luxury is not only in the landscape. It is in arriving knowing that the work has already been done.",
       },
     ],
     relatedJourneys: [
@@ -103,7 +103,7 @@ const ARTICLES: Record<string, FullArticle> = {
         slug:        "lgbtq-safety-southern-africa",
         title:       "LGBTQ+ Travel in Southern Africa: A Practical Assessment",
         category:    "lgbtq-travel-intelligence",
-        excerpt:     "A country-by-country review of legal standing, enforcement reality, and practical safety for LGBTQ+ travelers.",
+        excerpt:     "A country-by-country review of legal standing, enforcement reality, and practical safety for LGBTQ+ travellers.",
         readingTime: 9,
         publishedAt: "2024-08-05",
       },
@@ -341,7 +341,7 @@ export default function ArticlePage({
                 id="related-journeys-heading"
               >
                 The journey this article<br />
-                is <em>written toward.</em>
+                is <em>written towards.</em>
               </h2>
             </Reveal>
 

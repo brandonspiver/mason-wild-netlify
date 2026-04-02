@@ -7,7 +7,7 @@ import { NAV_HREFS, CTA } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Zannon James - founder and chief specialist at Mason & Wild. Private African journeys personally curated, vetted, and overseen for discerning LGBTQ+ travelers.",
+    "Zannon James - founder and chief specialist at Mason & Wild. Private African journeys personally curated, vetted, and overseen for discerning LGBTQ+ travellers.",
 };
 
 export default function AboutPage() {
@@ -34,10 +34,10 @@ export default function AboutPage() {
             </div>
 
             <Reveal delay={2}>
-              <p className="text-base font-light text-stone-500 leading-relaxed max-w-[480px]">
+              <p className="text-base font-light text-stone-500 leading-relaxed">
                 Zannon designs and personally oversees every journey Mason &amp; Wild
                 accepts - private African travel built specifically for discerning LGBTQ+
-                travelers, where discretion and genuine welcome are the standard, not
+                travellers, where discretion and genuine welcome are the standard, not
                 the aspiration.
               </p>
             </Reveal>
@@ -70,9 +70,9 @@ export default function AboutPage() {
               self. I built Mason &amp; Wild to remove that choice entirely.
             </p>
             <p className="text-base font-light text-stone-500 leading-relaxed mb-6">
-              High-value LGBTQ+ travelers can afford any safari on earth. What they
+              High-value LGBTQ+ travellers can afford any safari on earth. What they
               cannot always find is one designed with full awareness of what they
-              carry - the background layer of social calculation that other travelers
+              carry - the background layer of social calculation that other travellers
               simply do not have.
             </p>
             <p className="text-base font-light text-stone-500 leading-relaxed">
@@ -246,7 +246,7 @@ export default function AboutPage() {
                   Luxury in the conventional sense - lodges, service, cuisine,
                   access - is a baseline, not a differentiator. The best private
                   camps in Africa already deliver it. What they do not all deliver
-                  is the specific condition of traveling without any residual
+                  is the specific condition of travelling without any residual
                   awareness of how you are being perceived.
                 </p>
               </Reveal>
@@ -318,14 +318,14 @@ export default function AboutPage() {
                   significantly by country and by region within countries. Some
                   destinations are genuinely safe and welcoming. Others require
                   careful routing. A small number are not appropriate for LGBTQ+
-                  travelers at all, regardless of the property's own standards.
+                  travellers at all, regardless of the property's own standards.
                 </p>
               </Reveal>
               <Reveal delay={2}>
                 <p className="text-base font-light text-white/55 leading-relaxed">
                   We assess every territory we work in against current legal
                   standing, enforcement practice, and the real-world experience of
-                  LGBTQ+ travelers who have been there recently. This is not a
+                  LGBTQ+ travellers who have been there recently. This is not a
                   static process. Countries change. Regions change. Our assessments
                   are reviewed before each season and updated when circumstances
                   require it.

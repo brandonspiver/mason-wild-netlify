@@ -8,7 +8,7 @@ import { CTA, NAV_HREFS } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "Journeys",
   description:
-    "Five ways of experiencing Africa  -  each built around a distinct intention. Private journeys designed for discerning LGBTQ+ travelers.",
+    "Five ways of experiencing Africa  -  each built around a distinct intention. Private journeys designed for discerning LGBTQ+ travellers.",
 };
 
 const ARCHETYPES = [
@@ -19,7 +19,7 @@ const ARCHETYPES = [
     territory: "Botswana · Zambia",
     tagline:   "Designed for those who need to disappear.",
     body:
-      "Absolute quiet. No shared game drives, no communal dining, no other travelers unless you choose it. The Intimate places you inside a private concession where the only footprint in the sand is yours. The daily rhythm is determined by you and the land, in that order.",
+      "Absolute quiet. No shared game drives, no communal dining, no other travellers unless you choose it. The Intimate places you inside a private concession where the only footprint in the sand is yours. The daily rhythm is determined by you and the land, in that order.",
     img: {
       src: "/journeys/the-intimate.jpg",
       alt: "Okavango Delta at dawn  -  still water and open sky, no other travellers",
@@ -209,11 +209,11 @@ export default function JourneysPage() {
                   <em>A Curated Circle</em>
                 </h2>
                 <p className="font-serif font-light italic text-lg text-white/55 leading-relaxed mb-8">
-                  A small group of aligned travelers. One shared season.
+                  A small group of aligned travellers. One shared season.
                 </p>
                 <p className="text-base font-light text-white/50 leading-relaxed max-w-[440px]">
                   Designed for those who find the right company as rare as
-                  the right landscape. Eight travelers, selected through
+                  the right landscape. Eight travellers, selected through
                   direct conversation. Shared access to private territories
                   throughout. The circle for 2025 is currently being assembled.
                 </p>
@@ -226,7 +226,7 @@ export default function JourneysPage() {
                   {[
                     {
                       label: "Size",
-                      value: "Eight travelers, maximum.",
+                      value: "Eight travellers, maximum.",
                     },
                     {
                       label: "Access",

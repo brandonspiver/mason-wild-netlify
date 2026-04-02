@@ -7,16 +7,17 @@
 export const BRAND_NAME = "Mason & Wild" as const;
 
 export const PRIMARY_POSITIONING_LINE =
-  "Privately designed African journeys for discerning LGBTQ+ travelers." as const;
+  "Privately designed African journeys for discerning LGBTQ+ travellers." as const;
 
 export const BRAND_DESCRIPTOR = "The Silent Observer" as const;
 
 // ─── Navigation ──────────────────────────────────────────────────────────────
 
 export const NAV_LABELS = {
-  experience: "The Experience",
+  home:       "Home",
+  experience: "Experience",
   journeys:   "Journeys",
-  journal:    "The Journal",
+  journal:    "Journal",
   about:      "About",
   inquire:    "Inquire",
 } as const;
@@ -157,7 +158,7 @@ export type DurationOption = typeof DURATION_OPTIONS[number]["value"];
 
 export const SOCIAL_COPY = {
   sectionLabel:      "By Invitation Only",
-  statement:         "A small group of aligned travelers. One shared season. Designed for those who find the right company as rare as the right landscape.",
+  statement:         "A small group of aligned travellers. One shared season. Designed for those who find the right company as rare as the right landscape.",
   foundingNote:      "The circle for 2025 is currently being assembled.",
   applicationPrompt: "Membership is by introduction only.",
 } as const;

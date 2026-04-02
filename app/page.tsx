@@ -12,7 +12,7 @@ import {
 } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title:       "Private African Journeys for LGBTQ+ Travelers",
+  title:       "Private African Journeys for LGBTQ+ Travellers",
   description: PRIMARY_POSITIONING_LINE,
 };
 
@@ -51,7 +51,7 @@ export default function HomePage() {
             Privately designed African journeys{" "}
             <br className="hidden sm:block" />
             for discerning{" "}
-            <em>LGBTQ+ travelers.</em>
+            <em>LGBTQ+ travellers.</em>
           </h1>
 
           <p
@@ -129,7 +129,7 @@ export default function HomePage() {
               </Reveal>
               <Reveal delay={2}>
                 <p className="text-base font-light text-stone-500 leading-relaxed max-w-[440px] mb-9">
-                  We design private African journeys for travelers who want
+                  We design private African journeys for travellers who want
                   to move through the world on their own terms. Our journeys
                   are built from a single brief: yours.
                 </p>
@@ -235,7 +235,7 @@ export default function HomePage() {
                     <h3 className="font-serif font-light text-display-sm text-[#fffaf2] leading-[1.1] tracking-[-0.01em] mb-5 [text-shadow:0_2px_14px_rgba(0,0,0,0.9)]">
                       The <em>{j.name.replace("The ", "")}</em>
                     </h3>
-                    <p className="text-sm font-light text-[#f4ede3] leading-relaxed mb-5 max-w-[22ch] [text-shadow:0_2px_12px_rgba(0,0,0,0.88)]">
+                    <p className="text-sm font-light text-[#e8ddd0] leading-relaxed mb-5 max-w-[22ch] [text-shadow:0_2px_12px_rgba(0,0,0,0.88)]">
                       {j.tagline}
                     </p>
                     <Link
@@ -346,7 +346,7 @@ export default function HomePage() {
               and your authentic self. I built Mason &amp; Wild to remove
               that choice entirely.
             </p>
-            <p className="text-base font-light text-stone-500 leading-[1.85] max-w-[480px] mb-10">
+            <p className="text-base font-light text-stone-500 leading-[1.85] mb-10">
               Zannon has built his career across Africa&apos;s luxury travel world,
               with experience spanning hotel concierge, travel consulting,
               safari planning, lodge-side commerce, and on-the-ground product.
