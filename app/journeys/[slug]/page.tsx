@@ -49,6 +49,7 @@ type JourneyData = {
   readonly slug: string;
   readonly outcome: string;
   readonly territory: string;
+  readonly price: string;
   readonly name: string;
   readonly identity: string;
   readonly metadataItems: readonly JourneyMetadataItem[];
@@ -75,6 +76,7 @@ const JOURNEYS: Record<string, JourneyData> = {
     slug: "the-intimate",
     outcome: "INTIMACY",
     territory: "BOTSWANA & VICTORIA FALLS",
+    price: "8 NIGHTS FROM $18,000 PER PERSON",
     name: "The Intimate",
     identity: "Designed for those who want privacy without performance.",
     metadataItems: [
@@ -127,9 +129,9 @@ const JOURNEYS: Record<string, JourneyData> = {
         position: "center 52%",
       },
       {
-        src: "/journeys/the-intimate/dukes-east-lechwe.jpg",
-        alt: "Okavango Delta wildlife at golden hour",
-        position: "center 50%",
+        src: "/journeys/the-intimate/updates/delta-flamingos.jpg",
+        alt: "Birdlife over Delta water",
+        position: "center 48%",
       },
       {
         src: "/journeys/the-intimate/victoria-falls-river-deck.jpg",
@@ -230,9 +232,9 @@ const JOURNEYS: Record<string, JourneyData> = {
           "Duke's East changes the emotional register of the journey. After the openness of the salt pans, the Delta feels richer, closer, and more enveloping. For this client archetype, that contrast matters. The camp offers depth rather than spectacle, with water, reeds, wildlife, and slower movement creating a more intimate rhythm. It is the point where the journey becomes immersive and tactile, and where privacy feels less like distance and more like complete absorption in place.",
         images: [
           {
-            src: "/journeys/the-intimate/dukes-east-delta-boat.jpg",
+            src: "/journeys/the-intimate/updates/delta-treehouse-suite.jpg",
             alt: "Okavango Delta scene at Duke's East",
-            position: "center 60%",
+            position: "center 45%",
           },
           {
             src: "/journeys/the-intimate/dukes-east-suite-interior.jpg",
@@ -328,6 +330,81 @@ export default function JourneyDetailPage({
       alt: "Meerkat encounter in the Makgadikgadi",
       position: "center 50%",
     },
+    {
+      src: "/journeys/the-intimate/updates/makgadikgadi-dining.jpg",
+      alt: "Jack's Private Camp dining tent",
+      position: "center 50%",
+    },
+    {
+      src: "/journeys/the-intimate/updates/makgadikgadi-bushman-walk.jpg",
+      alt: "Bushman walk in the Makgadikgadi",
+      position: "center 52%",
+    },
+    {
+      src: "/journeys/the-intimate/updates/delta-wild-dogs.jpg",
+      alt: "Wild dogs in the Okavango Delta",
+      position: "center 45%",
+    },
+    {
+      src: "/journeys/the-intimate/updates/delta-leopard.jpg",
+      alt: "Leopard in the Okavango Delta",
+      position: "center 45%",
+    },
+    {
+      src: "/journeys/the-intimate/updates/delta-treehouse-suite.jpg",
+      alt: "Raised suite at Duke's East",
+      position: "center 45%",
+    },
+    {
+      src: "/journeys/the-intimate/updates/delta-lilies-camp.jpg",
+      alt: "Delta channels near camp",
+      position: "center 55%",
+    },
+    {
+      src: "/journeys/the-intimate/updates/delta-private-suite.jpg",
+      alt: "Private suite in the Delta",
+      position: "center 50%",
+    },
+    {
+      src: "/journeys/the-intimate/updates/delta-flamingos.jpg",
+      alt: "Birdlife over Delta water",
+      position: "center 48%",
+    },
+    {
+      src: "/journeys/the-intimate/updates/delta-wild-dogs-resting.jpg",
+      alt: "Wild dogs resting in the Delta grass",
+      position: "center 42%",
+    },
+    {
+      src: "/journeys/the-intimate/updates/delta-plunge-pool.jpg",
+      alt: "Delta plunge pool at dusk",
+      position: "center 55%",
+    },
+    {
+      src: "/journeys/the-intimate/updates/delta-camp-exterior.jpg",
+      alt: "Camp exterior in the Delta",
+      position: "center 48%",
+    },
+    {
+      src: "/journeys/the-intimate/updates/delta-river-deck-evening.jpg",
+      alt: "Delta river deck at evening",
+      position: "center 54%",
+    },
+    {
+      src: "/journeys/the-intimate/updates/delta-elephant-tree.jpg",
+      alt: "Elephant framed by Delta trees",
+      position: "center 40%",
+    },
+    {
+      src: "/journeys/the-intimate/updates/victoria-falls-pool.jpg",
+      alt: "Pool view at Victoria Falls Island Lodge",
+      position: "center 58%",
+    },
+    {
+      src: "/journeys/the-intimate/updates/victoria-falls-walking-sunset.jpg",
+      alt: "Sunset walk near Victoria Falls Island Lodge",
+      position: "center 56%",
+    },
   ].filter(
     (image, index, images) => index === images.findIndex((entry) => entry.src === image.src),
   );
@@ -375,6 +452,8 @@ export default function JourneyDetailPage({
               <span className="label-tag text-white/50">{journey.outcome}</span>
               <span className="w-px h-3 bg-white/25" aria-hidden="true" />
               <span className="label-tag text-white/50">{journey.territory}</span>
+              <span className="w-px h-3 bg-white/25" aria-hidden="true" />
+              <span className="label-tag text-white/50">{journey.price}</span>
             </div>
           </div>
 
