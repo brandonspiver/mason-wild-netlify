@@ -20,8 +20,13 @@
 
   --px: clamp(20px, 5vw, 80px);
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-luxury: cubic-bezier(0.19, 1, 0.22, 1);
   --section-gap:    clamp(96px, 13vw, 160px);
   --section-gap-sm: clamp(56px, 8vw,  96px);
+  --motion-fast: 220ms;
+  --motion-base: 720ms;
+  --motion-slow: 1100ms;
+  --motion-hero: 18000ms;
   /* Interior page header top padding  -  nav height + breathing room */
   --page-header-pt: calc(68px + clamp(56px, 8vw, 96px));
 }
@@ -78,21 +83,25 @@
 @layer utilities {
   .reveal {
     opacity: 0;
-    transform: translateY(24px);
+    transform: translate3d(0, 28px, 0) scale(0.985);
+    filter: blur(6px);
+    will-change: opacity, transform, filter;
     transition:
-      opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
-      transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+      opacity var(--motion-base) var(--ease-luxury),
+      transform var(--motion-slow) var(--ease-luxury),
+      filter var(--motion-base) var(--ease-luxury);
   }
 
   .reveal.in {
     opacity: 1;
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0) scale(1);
+    filter: blur(0);
   }
 
-  .reveal-d1 { transition-delay: 0.07s; }
-  .reveal-d2 { transition-delay: 0.14s; }
-  .reveal-d3 { transition-delay: 0.21s; }
-  .reveal-d4 { transition-delay: 0.28s; }
+  .reveal-d1 { transition-delay: 0.08s; }
+  .reveal-d2 { transition-delay: 0.16s; }
+  .reveal-d3 { transition-delay: 0.24s; }
+  .reveal-d4 { transition-delay: 0.32s; }
 
   /* Section spacing helpers  -  used across all pages */
   .section {
@@ -129,5 +138,24 @@
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: #968F84;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    filter: none;
   }
 }

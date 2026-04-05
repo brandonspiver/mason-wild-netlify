@@ -1502,6 +1502,11 @@ export default function JourneyDetailPage({
     (image, index, images) => index === images.findIndex((entry) => entry.src === image.src),
   );
 
+  const flowGridClass =
+    journey.flow.length <= 4
+      ? "grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4"
+      : "grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3";
+
   return (
     <>
       <section
@@ -1669,7 +1674,7 @@ export default function JourneyDetailPage({
       >
         <div className="container-site">
           <Reveal>
-            <div className="grid grid-cols-1 lg:grid-cols-[1fr_4fr] gap-[clamp(40px,6vw,80px)] items-start mb-14">
+            <div className="grid grid-cols-1 lg:grid-cols-[0.95fr_1.05fr] gap-[clamp(48px,7vw,112px)] items-start mb-16">
               <div>
                 <p className="label-tag mb-4">What This Journey Includes</p>
                 <h2
@@ -1684,18 +1689,26 @@ export default function JourneyDetailPage({
                   <em>measure.</em>
                 </p>
               </div>
-              <p className="text-base font-light text-stone-500 leading-relaxed max-w-[560px] self-end">
-                {journey.pillarsIntro}
-              </p>
+              <div className="lg:pt-14">
+                <p className="text-base font-light text-stone-500 leading-relaxed max-w-[620px]">
+                  {journey.pillarsIntro}
+                </p>
+              </div>
             </div>
           </Reveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-stone-200">
+          <div className="grid grid-cols-1 border-t border-stone-200 md:grid-cols-2">
             {journey.pillars.map((pillar, index) => (
               <Reveal key={pillar.key} delay={(index % 3) as 0 | 1 | 2 | 3 | 4}>
-                <div className="bg-page hover:bg-page-subtle transition-colors duration p-10">
-                  <p className="label-tag mb-4">{pillar.title}</p>
-                  <p className="text-base font-light text-stone-500 leading-relaxed">
+                <div
+                  className={[
+                    "bg-page px-8 py-10 md:px-10 md:py-12",
+                    "border-b border-stone-200",
+                    index % 2 === 1 ? "md:border-l md:border-stone-200" : "",
+                  ].join(" ")}
+                >
+                  <p className="label-tag mb-5">{pillar.title}</p>
+                  <p className="max-w-[30rem] text-base font-light text-stone-500 leading-relaxed">
                     {pillar.body}
                   </p>
                 </div>
@@ -1725,7 +1738,7 @@ export default function JourneyDetailPage({
             </p>
           </Reveal>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-white/[0.07]">
+          <div className={`${flowGridClass} gap-px bg-white/[0.07]`}>
             {journey.flow.map((phase, index) => (
               <Reveal key={phase.number} delay={(index % 4) as 0 | 1 | 2 | 3 | 4}>
                 <div className="bg-stone-900 p-10 h-full">

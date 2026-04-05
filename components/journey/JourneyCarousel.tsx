@@ -48,7 +48,7 @@ export function JourneyCarousel({
       aria-label="Journey gallery carousel"
     >
       <div
-        className="flex h-full w-full will-change-transform transition-transform duration-700 ease-out"
+        className="flex h-full w-full will-change-transform transition-transform duration-[1100ms] ease-[cubic-bezier(0.19,1,0.22,1)]"
         style={{ transform: `translateX(-${activeIndex * 100}%)` }}
       >
         {images.map((image, index) => (
@@ -118,9 +118,14 @@ export function JourneyCarousel({
                   className={[
                     "absolute left-0 top-0 h-full bg-white transition-all",
                     index === activeIndex
-                      ? "w-full duration-[5000ms] ease-linear"
+                      ? "w-full ease-linear"
                       : "w-0 duration-200",
                   ].join(" ")}
+                  style={
+                    index === activeIndex
+                      ? { transitionDuration: `${intervalMs}ms` }
+                      : undefined
+                  }
                 />
               </button>
             ))}

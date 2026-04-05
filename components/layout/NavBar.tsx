@@ -123,8 +123,10 @@ export function NavBar() {
         id="nav-overlay"
         className={[
           "fixed inset-0 z-[199] bg-page flex flex-col items-center justify-center gap-10",
-          "transition-opacity duration-slow",
-          open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none",
+          "transition-all duration-slow",
+          open
+            ? "opacity-100 translate-y-0 scale-100 pointer-events-auto"
+            : "opacity-0 translate-y-2 scale-[0.99] pointer-events-none",
         ].join(" ")}
         role="dialog"
         aria-modal="true"
@@ -145,7 +147,7 @@ export function NavBar() {
               <li key={href}>
                 <Link
                   href={href}
-                  className="font-serif text-display-lg font-light text-stone-900 hover:italic hover:text-forest transition-all duration"
+                  className="font-serif text-display-lg font-light text-stone-900 hover:italic hover:text-forest transition-all duration-slow"
                   onClick={() => setOpen(false)}
                 >
                   {label}
