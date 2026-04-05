@@ -254,9 +254,9 @@ const JOURNEYS: Record<string, JourneyData> = {
           "Victoria Falls Island Lodge is the soft landing. After the emotional depth of the Delta, it introduces a more polished and celebratory kind of privacy without losing the intimacy established earlier in the journey. For this client, it works as a proper closing chapter: river-facing, atmospheric, and quietly indulgent. The pace relaxes, the setting becomes more refined, and the experience ends with a sense of ease rather than exhaustion.",
         images: [
           {
-            src: "/journeys/the-intimate/victoria-falls-river-deck.jpg",
+            src: "/journeys/the-intimate/victoria-falls-forest-path.jpg",
             alt: "River view at Victoria Falls Island Lodge",
-            position: "center 55%",
+            position: "center 50%",
           },
           {
             src: "/journeys/the-intimate/victoria-falls-suite.jpg",
@@ -264,9 +264,9 @@ const JOURNEYS: Record<string, JourneyData> = {
             position: "center 50%",
           },
           {
-            src: "/journeys/the-intimate/victoria-falls-lodge-exterior.jpg",
+            src: "/journeys/the-intimate/victoria-falls-boat-sunset.jpg",
             alt: "Zambezi river scene at sunset",
-            position: "center 48%",
+            position: "center 52%",
           },
         ],
       },
