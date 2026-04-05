@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Reveal } from "@/components/ui/Reveal";
@@ -8,7 +8,7 @@ import { CTA, NAV_HREFS } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "Journeys",
   description:
-    "Five ways of experiencing Africa  -  each built around a distinct intention. Private journeys designed for discerning LGBTQ+ travellers.",
+    "Six ways of experiencing Africa  -  each built around a distinct intention. Private journeys designed for discerning LGBTQ+ travellers.",
 };
 
 const ARCHETYPES = [
@@ -16,13 +16,13 @@ const ARCHETYPES = [
     slug:      "the-intimate",
     outcome:   "Solitude",
     name:      "The Intimate",
-    territory: "Botswana · Zambia",
+    territory: "Botswana · Victoria Falls",
     tagline:   "Designed for those who need to disappear.",
     body:
       "Absolute quiet. No shared game drives, no communal dining, no other travellers unless you choose it. The Intimate places you inside a private concession where the only footprint in the sand is yours. The daily rhythm is determined by you and the land, in that order.",
     img: {
-      src: "/journeys/the-intimate.jpg",
-      alt: "Okavango Delta at dawn  -  still water and open sky, no other travellers",
+      src: "/journeys/the-intimate-card.png",
+      alt: "Sunset riverside retreat with friends",
     },
     reversed: false,
   },
@@ -30,13 +30,13 @@ const ARCHETYPES = [
     slug:      "the-untamed",
     outcome:   "Connection",
     name:      "The Untamed",
-    territory: "Kenya · Tanzania",
+    territory: "Zambia",
     tagline:   "Elemental Africa, experienced at its own pace.",
     body:
       "Walking safaris, tracker-led navigation through dense riverine forest, and the specific aliveness that comes from moving through Africa on foot. This journey is not about comfort. It is about the knowledge that you are a guest in a system far older than any itinerary  -  and the willingness to feel that.",
     img: {
-      src: "/journeys/the-untamed.jpg",
-      alt: "Elephant moving through open grassland at last light",
+      src: "/journeys/the-untamed-card.png",
+      alt: "River crossing with distant elephant",
     },
     reversed: true,
   },
@@ -44,24 +44,38 @@ const ARCHETYPES = [
     slug:      "the-romantic",
     outcome:   "Wonder",
     name:      "The Romantic",
-    territory: "Namibia · Zambia",
+    territory: "South Africa",
     tagline:   "Cinematic moments designed for two.",
     body:
       "Star beds under the Namibian sky. Private sundowners at the edge of the Victoria Falls. The luxury of unhurried time in which two people can be entirely absorbed in each other  -  and in the landscape. Every element assumes that you want to be left alone.",
     img: {
-      src: "/journeys/journeys-hero-bath.jpg",
-      alt: "Private tent interior at dusk  -  lantern light and the open savanna beyond",
+      src: "/journeys/the-romantic-card.png",
+      alt: "Twilight dinner by the river",
     },
     reversed: false,
+  },
+  {
+    slug:      "the-adventure",
+    outcome:   "Adventure",
+    name:      "The Adventure",
+    territory: "Cape Town · Namibia",
+    tagline:   "Bold landscapes, private guiding, and the road as part of the pleasure.",
+    body:
+      "An energetic Cape Town opening built around mountain, ocean, and adrenaline, followed by a privately guided Namibia expedition in a fully equipped 4x4. This is overland travel with polish: dramatic, seamless, and design-conscious from beginning to end.",
+    img: {
+      src: "/journeys/the-adventure/Camissa House.jpg",
+      alt: "Camissa House beneath Table Mountain in Cape Town",
+    },
+    reversed: true,
   },
   {
     slug:      "the-private-circuit",
     outcome:   "Sovereignty",
     name:      "The Private Circuit",
-    territory: "Multi-country",
+    territory: "Tanzania · Zanzibar",
     tagline:   "The full breadth of the continent, without compromise.",
     body:
-      "Multiple ecosystems. Multiple territories. Multiple wildlife encounters  -  without sacrificing the privacy and control that make them meaningful. Private aircraft, exclusive-use properties throughout, and a single specialist from first inquiry to final departure.",
+      "Multiple ecosystems. Multiple territories. Multiple wildlife encounters  -  without sacrificing the privacy and control that make them meaningful. Private aircraft, exclusive-use properties throughout, and a single specialist from first enquiry to final departure.",
     img: {
       src: "/journeys/the-private-circuit.jpg",
       alt: "Aerial view of remote African landscape at first light",
@@ -73,7 +87,7 @@ const ARCHETYPES = [
 export default function JourneysPage() {
   return (
     <>
-      {/* ─── Page header ────────────────────────────────────────────────── */}
+      {/* â”€â”€â”€ Page header â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section
         className="pt-[var(--page-header-pt)] pb-[clamp(48px,6vw,80px)] border-b border-stone-200"
         aria-labelledby="journeys-heading"
@@ -82,7 +96,7 @@ export default function JourneysPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-[clamp(40px,6vw,80px)] items-end">
             <div>
               <Reveal>
-                <p className="label-tag mb-6">Five Archetypes</p>
+                <p className="label-tag mb-6">Six Archetypes</p>
               </Reveal>
               <Reveal delay={1}>
                 <h1
@@ -107,7 +121,7 @@ export default function JourneysPage() {
         </div>
       </section>
 
-      {/* ─── Archetype sections ─────────────────────────────────────────── */}
+      {/* â”€â”€â”€ Archetype sections â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <div>
         {ARCHETYPES.map((journey, index) => (
           <section
@@ -180,7 +194,7 @@ export default function JourneysPage() {
         ))}
       </div>
 
-      {/* ─── The Social  -  distinct register ─────────────────────────────── */}
+      {/* â”€â”€â”€ The Social  -  distinct register â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       {/*
         No interlude section before this  -  the page moves directly from
         the four archetypes into The Social. The tonal shift in background
@@ -250,7 +264,7 @@ export default function JourneysPage() {
                   className="inline-flex items-center gap-3 text-2xs font-normal tracking-wide uppercase text-white/60 border-b border-white/25 hover:text-white hover:border-white/55 pb-[2px] transition-colors duration"
                 >
                   Learn about The Social
-                  <span aria-hidden="true">→</span>
+                  <span aria-hidden="true">â†’</span>
                 </Link>
               </div>
             </Reveal>
@@ -259,7 +273,7 @@ export default function JourneysPage() {
         </div>
       </section>
 
-      {/* ─── CTA band ───────────────────────────────────────────────────── */}
+      {/* â”€â”€â”€ CTA band â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="bg-forest px-[var(--px)] py-[clamp(72px,10vw,120px)] text-center">
         <Reveal>
           <p className="label-tag text-white/36 mb-5">Private Onboarding</p>
@@ -287,3 +301,5 @@ export default function JourneysPage() {
     </>
   );
 }
+
+

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 const PROCESS_STEPS = [
   {
     n:     "01",
-    title: "Private Inquiry",
+    title: "Private Enquiry",
     body:
       "You submit a brief through our private onboarding form. We ask about landscape, feeling, and duration  -  not dates and budgets. A member of our team responds within 48–72 hours.",
   },

@@ -14,8 +14,8 @@
   --color-stone-500:   #6E6760;
   --color-stone-600:   #4C4740;
   --color-stone-900:   #161310;
-  --color-forest:      #2B4739;
-  --color-forest-light:#365A49;
+  --color-forest:      #4B8059;
+  --color-forest-light:#5B9469;
   --color-white:       #FDFCFA;
 
   --px: clamp(20px, 5vw, 80px);
@@ -65,7 +65,7 @@
 
   /* Remove default focus outline  -  replaced per-component */
   :focus-visible {
-    outline: 1.5px solid #2B4739;
+    outline: 1.5px solid #4B8059;
     outline-offset: 3px;
   }
 

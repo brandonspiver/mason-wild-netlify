@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   ),
   title: {
     template: `%s  -  ${BRAND_NAME}`,
-    default:  `${BRAND_NAME} | Private African Journeys for LGBTQ+ Travelers`,
+    default:  `${BRAND_NAME} | Private African Journeys for LGBTQ+ Travellers`,
   },
   description: PRIMARY_POSITIONING_LINE,
   openGraph: {

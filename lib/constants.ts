@@ -19,7 +19,7 @@ export const NAV_LABELS = {
   journeys:   "Journeys",
   journal:    "Journal",
   about:      "About",
-  inquire:    "Inquire",
+  inquire:    "Enquire",
 } as const;
 
 export const NAV_HREFS = {
@@ -36,7 +36,7 @@ export const NAV_HREFS = {
 
 export const CTA = {
   // Primary conversion
-  inquirePrivately:    "Inquire Privately",
+  inquirePrivately:    "Enquire Privately",
   requestAccess:       "Request Access",
   requestPrivateAccess:"Request Private Access",
   beginJourney:        "Begin Your Journey",
@@ -169,7 +169,7 @@ export const INQUIRY_COPY = {
   pageSubhead:
     "We take on a limited number of journeys each month to ensure each one receives the attention it deserves. Our process is personal and unhurried.",
   processBody:
-    "Each journey begins with a conversation. We do not offer packages  -  we design itineraries around a specific brief. Once we receive your inquiry, a member of our team will review it carefully before responding.",
+    "Each journey begins with a conversation. We do not offer packages  -  we design itineraries around a specific brief. Once we receive your enquiry, a member of our team will review it carefully before responding.",
   fullNameLabel:       "Full Name",
   fullNamePlaceholder: "As it appears on your travel document",
   emailLabel:          "Email",
@@ -186,6 +186,6 @@ export const INQUIRY_COPY = {
 export const FOOTER_NAV = [
   { label: "About",   href: "/about" },
   { label: "Journal", href: "/journal" },
-  { label: "Inquire", href: "/inquire" },
+  { label: "Enquire", href: "/inquire" },
   { label: "Privacy", href: "/privacy" },
 ] as const;

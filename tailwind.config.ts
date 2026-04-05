@@ -29,9 +29,9 @@ const config: Config = {
         900: "#161310",
       },
       forest: {
-        DEFAULT: "#2B4739",
-        light:   "#365A49",
-        dark:    "#1D3027",
+        DEFAULT: "#4B8059",
+        light:   "#5B9469",
+        dark:    "#3F6D4B",
       },
     },
 
