@@ -124,9 +124,9 @@ const JOURNEYS: Record<string, JourneyData> = {
     },
     galleryImgs: [
       {
-        src: "/journeys/the-intimate/makgadikgadi-dusk.jpg",
-        alt: "Jack's Private Camp in the Makgadikgadi at dusk",
-        position: "center 52%",
+        src: "/journeys/the-intimate/updates/delta-camp-exterior.jpg",
+        alt: "Camp exterior in the Delta",
+        position: "center 48%",
       },
       {
         src: "/journeys/the-intimate/updates/delta-flamingos.jpg",
@@ -210,9 +210,9 @@ const JOURNEYS: Record<string, JourneyData> = {
           "Jack's Private Camp is the opening gesture of the journey: dramatic, isolated, and emotionally spacious. For this client, it works because privacy here does not feel hidden. It feels expansive. The Makgadikgadi brings a rare kind of stillness, and the camp's private format allows the first days to unfold without performance, noise, or social demand. This is where the trip steps away from ordinary life and into something far more cinematic, sensual, and self-contained.",
         images: [
           {
-            src: "/journeys/the-intimate/makgadikgadi-dusk.jpg",
+            src: "/journeys/the-intimate/updates/delta-private-suite.jpg",
             alt: "Jack's Private Camp in the Makgadikgadi at dusk",
-            position: "center 52%",
+            position: "center 50%",
           },
           {
             src: "/journeys/the-intimate/jacks-camp-exterior.jpg",
