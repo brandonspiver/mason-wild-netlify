@@ -84,17 +84,17 @@ const accommodations: readonly Accommodation[] = [
       "The opening chapter is intentionally quiet. Satyagraha House brings a more thoughtful and culturally grounded beginning to the journey, allowing everyone to arrive properly before the trip deepens. Its atmosphere suits the role perfectly: intimate, design-led, and quietly reflective rather than overtly performative. This is not Johannesburg at full volume. It is Johannesburg as introduction, context, and emotional grounding.",
     images: [
       {
-        src: "/journeys/the-romantic/AS 4.png",
+        src: "/journeys/the-social-shift/SH (1).jpeg",
         alt: "Satyagraha House in Johannesburg",
         position: "center 50%",
       },
       {
-        src: "/journeys/the-adventure/Camissa House Cape Town.jpg",
+        src: "/journeys/the-social-shift/SH (2).JPG",
         alt: "Interior at Satyagraha House",
         position: "center 52%",
       },
       {
-        src: "/journeys/the-adventure/Camissa House Cape Town_4.jpg",
+        src: "/journeys/the-social-shift/SH (3).jpeg",
         alt: "Garden detail at Satyagraha House",
         position: "center 50%",
       },
@@ -106,17 +106,17 @@ const accommodations: readonly Accommodation[] = [
       "Few & Far Luvhondo is the dramatic heart of the journey. This is where the landscape expands, the outside world falls away, and the group settles into a more immersive private safari rhythm. The property has been chosen not just for wilderness and privacy, but for the way it holds shared experience: expansive enough to feel wild, but considered enough to keep the journey elegant. It is the chapter that gives the itinerary its depth and scale.",
     images: [
       {
-        src: "/journeys/the-adventure/Little Ongava (14).jpg",
+        src: "/journeys/the-social-shift/FF (4).jpg",
         alt: "Few & Far Luvhondo in South Africa",
         position: "center 52%",
       },
       {
-        src: "/journeys/the-adventure/Little Ongava (18).jpg",
+        src: "/journeys/the-social-shift/FF (1).jpg",
         alt: "Cliff suite view at Few & Far Luvhondo",
         position: "center 50%",
       },
       {
-        src: "/journeys/the-adventure/Little Ongava (10).jpg",
+        src: "/journeys/the-social-shift/FF (6).jpg",
         alt: "Landscape at Few & Far Luvhondo",
         position: "center 50%",
       },
@@ -128,17 +128,17 @@ const accommodations: readonly Accommodation[] = [
       "After safari, the rhythm changes deliberately. Sterrekopje introduces a softer, more sensorial chapter shaped by beauty, design, stillness, and a slower shared pace. It is not included as a stopover, but as a meaningful pause in the middle-to-late journey, allowing what has already been experienced to settle properly. This is where the trip exhales.",
     images: [
       {
-        src: "/journeys/the-romantic/AS 4.png",
+        src: "/journeys/the-social-shift/SK (6).avif",
         alt: "Sterrekopje in Franschhoek",
         position: "center 50%",
       },
       {
-        src: "/journeys/the-romantic/AS 1.png",
+        src: "/journeys/the-social-shift/SK (3).avif",
         alt: "Garden and house setting at Sterrekopje",
         position: "center 50%",
       },
       {
-        src: "/journeys/the-romantic/AS 10.png",
+        src: "/journeys/the-social-shift/SK (10).avif",
         alt: "Interior detail at Sterrekopje",
         position: "center 50%",
       },
@@ -150,17 +150,17 @@ const accommodations: readonly Accommodation[] = [
       "The final chapter unfolds at The Aven in Cape Town, where the journey becomes lighter, more social, and more outward-facing again. Private-villa living changes the texture of the final days completely. There is more room, more ease, and more freedom to move between shared time and privacy without friction. As an ending, it feels generous, hosted, and beautifully relaxed.",
     images: [
       {
-        src: "/journeys/the-social.jpg",
+        src: "/journeys/the-social-shift/TA (6).png",
         alt: "Private villa terrace at The Aven in Cape Town",
         position: "center 48%",
       },
       {
-        src: "/journeys/the-adventure/Camissa House.jpg",
+        src: "/journeys/the-social-shift/TA (8).png",
         alt: "Pool and living space at The Aven",
         position: "center 52%",
       },
       {
-        src: "/journeys/the-adventure/Camissa House Cape Town_7.jpg",
+        src: "/journeys/the-social-shift/TA (1).png",
         alt: "Ocean-facing setting at The Aven",
         position: "center 50%",
       },
@@ -261,7 +261,7 @@ export default function SocialShiftPage() {
           style={{
             backgroundImage: [
               "linear-gradient(to bottom, rgba(14,12,8,0.12) 0%, rgba(14,12,8,0.08) 18%, rgba(14,12,8,0.46) 62%, rgba(14,12,8,0.88) 100%)",
-              "url('/journeys/the-social.jpg')",
+              "url('/journeys/the-social-shift/FF (4).jpg')",
             ].join(", "),
             backgroundPosition: "center 42%",
           }}

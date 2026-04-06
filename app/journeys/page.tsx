@@ -80,7 +80,7 @@ const ARCHETYPES = [
       src: "/journeys/the-private-circuit.jpg",
       alt: "Aerial view of remote African landscape at first light",
     },
-    reversed: true,
+    reversed: false,
   },
 ] as const;
 

@@ -77,7 +77,7 @@ const JOURNEYS: Record<string, JourneyData> = {
     outcome: "INTIMACY",
     territory: "BOTSWANA & VICTORIA FALLS",
     price: "8 NIGHTS FROM $18,000 PER PERSON",
-    name: "The Intimate",
+    name: "The Romantic",
     identity: "Designed for those who want privacy without performance.",
     metadataItems: [
       {
@@ -332,9 +332,9 @@ const JOURNEYS: Record<string, JourneyData> = {
       "For LGBTQ+ travellers in particular, that confidence matters. Every partner included here has been selected for discretion, operational ease, and the practical reassurance that allows the journey to feel unguarded.",
     ],
     heroImg: {
-      src: "/journeys/the-untamed.jpg",
-      alt: "The Untamed landscape at dawn",
-      position: "center 48%",
+      src: "/journeys/the-untamed/2.jpg",
+      alt: "Safari tent at dusk in Zambia",
+      position: "center 50%",
     },
     galleryImgs: [
       {
@@ -541,20 +541,20 @@ const JOURNEYS: Record<string, JourneyData> = {
       "Personally designed by Zannon James, with each property selected for privacy, atmosphere, operational excellence, and the ability to deliver a luxury experience that feels deeply personal rather than performative.",
     body: [
       "It begins in Cape Town, where the mood is social, elegant, and quietly cinematic. From there, it softens into Franschhoek, where the pace slows and the focus shifts to atmosphere, food, wine, and the luxury of not needing to do too much. Greater Kruger then changes the register completely, drawing the journey into something deeper, wilder, and more immersive. It ends on Benguerra Island, where everything loosens again into light, salt air, privacy, and release.",
-      "The Intimate is a privately guided South Africa and Mozambique journey for guests who want contrast, sensuality, and a style of travel that feels fully held from beginning to end.",
+      "The Romantic is a privately guided South Africa and Mozambique journey for guests who want contrast, sensuality, and a style of travel that feels fully held from beginning to end.",
       "It opens at Mount Nelson, where Cape Town begins with elegance, perspective, and a level of familiarity that goes beyond standard luxury product knowledge. From there, Franschhoek shifts the mood into something softer and more inward at Akademie Street, where village atmosphere, food, wine, and design bring a quieter kind of pleasure. At Monwana, the journey deepens into the richer rhythm of Greater Kruger, where safari becomes immersive, instinctive, and properly absorbing. Benguerra Island then releases everything into sea air, marine beauty, and a final stretch of privacy that feels both restorative and complete.",
       "This is not a trip built around volume. It is built around progression, and around the confidence that comes from knowing not only what photographs well, but what actually works emotionally and operationally in sequence.",
       "These properties were not chosen as isolated highlights. They were chosen because they speak to one another, creating a journey that feels intimate, contrast-led, and personally composed.",
       "For LGBTQ+ travellers in particular, that confidence matters. Every property and partner included here has been selected for how well it delivers privacy, ease, and reassurance in practice, not just on paper.",
     ],
     heroImg: {
-      src: "/journeys/the-romantic/MN 6.jpg",
+      src: "/journeys/the-romantic/MN 2 .png",
       alt: "Mount Nelson Hotel in Cape Town",
       position: "center 50%",
     },
     galleryImgs: [
       {
-        src: "/journeys/the-romantic/MN 6.jpg",
+        src: "/journeys/the-romantic/MN 2 .png",
         alt: "Mount Nelson Hotel in Cape Town",
         position: "center 50%",
       },
@@ -656,7 +656,7 @@ const JOURNEYS: Record<string, JourneyData> = {
           "Mount Nelson is the opening note of the journey: polished, social, and deeply assured. For this client, it works because it offers privacy without removing them from the energy of Cape Town. There is history here, but also ease, beauty, and a kind of confidence that makes arrival feel immediate rather than transitional. It allows the trip to begin with style and perspective, giving the city space to unfold in a way that feels elevated, relaxed, and personally held.",
         images: [
         {
-          src: "/journeys/the-romantic/MN 6.jpg",
+          src: "/journeys/the-romantic/MN 7.jpg",
           alt: "Mount Nelson Hotel in Cape Town",
           position: "center 50%",
         },
@@ -739,7 +739,7 @@ const JOURNEYS: Record<string, JourneyData> = {
       ],
       },
     ],
-    inquiryHeading: "Start planning The Intimate.",
+    inquiryHeading: "Start planning The Romantic.",
     inquiryBody:
       "Share a few details and a Mason & Wild specialist will come back to you personally with next steps, availability guidance, and the refinements needed to shape the journey around you.",
     proofLabel: "Privately Designed",
@@ -1138,8 +1138,8 @@ const JOURNEYS: Record<string, JourneyData> = {
       "For LGBTQ+ travellers in particular, that confidence matters. Every property and partner included here has been selected for how well it delivers privacy, ease, and reassurance in practice, not just on paper.",
     ],
     heroImg: {
-      src: "/journeys/the-private-circuit/SV (14).jpg",
-      alt: "Private villa atmosphere at Siringit in Arusha",
+      src: "/journeys/the-private-circuit/SM (19).jpg",
+      alt: "Hot air balloon over the Serengeti at golden hour",
       position: "center 52%",
     },
     galleryImgs: [

@@ -467,7 +467,7 @@ export default function HomePage() {
                 placeholder="For private correspondence"
                 required
                 autoComplete="email"
-                className="flex-1 bg-transparent border-none outline-none px-[18px] py-[15px] font-serif italic text-base font-light text-white placeholder:text-white/26 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-white/40 focus-visible:ring-inset"
+                className="flex-1 bg-transparent border-none outline-none px-[18px] py-[15px] font-serif italic text-base font-light text-white placeholder:text-white/26 ring-1 ring-inset ring-white/20 transition-[box-shadow] duration focus-visible:outline-none focus-visible:ring-white/40"
               />
               <button
                 type="button"
