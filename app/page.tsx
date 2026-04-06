@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <>
-      {/* ─── Hero ──────────────────────────────────────────────────────── */}
+      {/* Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ Hero Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */}
       <section
         className="relative min-h-svh flex flex-col justify-end pb-[clamp(56px,10vh,112px)] overflow-hidden"
         aria-label="Mason &amp; Wild  -  private African journeys"
@@ -57,6 +57,7 @@ export default function HomePage() {
           <p
             className={[
               "text-sm font-light text-white/65 max-w-[400px] leading-relaxed mb-11",
+              "sm:mb-14",
               "opacity-0 translate-y-4",
               "animate-[fadeRise_0.9s_cubic-bezier(0.16,1,0.3,1)_0.52s_forwards]",
             ].join(" ")}
@@ -76,7 +77,12 @@ export default function HomePage() {
             <Button href={NAV_HREFS.experience} variant="primary">
               {CTA.beginJourney}
             </Button>
-            <Button href={NAV_HREFS.journeys} variant="ghost-light" arrow={false}>
+            <Button
+              href={NAV_HREFS.journeys}
+              variant="ghost-light"
+              arrow={false}
+              className="hover:text-[#4b8059] hover:border-[#4b8059]"
+            >
               {CTA.viewCollection}
             </Button>
           </div>
@@ -97,19 +103,19 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ─── Strip ─────────────────────────────────────────────────────── */}
+      {/* Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ Strip Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */}
       <div
         className="flex items-center gap-5 border-b border-stone-200 px-[var(--px)] py-4"
         aria-hidden="true"
       >
-        <span className="label-tag whitespace-nowrap">Mason &amp; Wild · Est. 2024</span>
+        <span className="label-tag whitespace-nowrap">Mason &amp; Wild Ã‚Â· Est. 2026</span>
         <div className="hidden sm:block flex-1 h-px bg-stone-200" />
         <span className="hidden sm:block label-tag whitespace-nowrap">
           Private journeys. Discreet by design.
         </span>
       </div>
 
-      {/* ─── Intro ─────────────────────────────────────────────────────── */}
+      {/* Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ Intro Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */}
       <section className="section" aria-labelledby="intro-heading">
         <div className="container-site">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-[clamp(48px,7vw,96px)] items-start">
@@ -135,7 +141,11 @@ export default function HomePage() {
                 </p>
               </Reveal>
               <Reveal delay={3}>
-                <Button href={NAV_HREFS.experience} variant="ghost">
+                <Button
+                  href={NAV_HREFS.experience}
+                  variant="ghost"
+                  className="hover:text-[#4b8059] hover:border-[#4b8059]"
+                >
                   {CTA.theExperience}
                 </Button>
               </Reveal>
@@ -159,7 +169,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ─── Feature  -  conservancy ─────────────────────────────────────── */}
+      {/* Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ Feature  -  conservancy Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */}
       <section className="pb-[var(--section-gap)]" aria-labelledby="feature-conservancy">
         <div className="container-site">
           <Reveal>
@@ -189,7 +199,11 @@ export default function HomePage() {
                   the visual noise of traditional tourism. Your journey is
                   defined by the rhythm of the wild, not the schedule of others.
                 </p>
-                <Button href={NAV_HREFS.journeys} variant="ghost">
+                <Button
+                  href={NAV_HREFS.journeys}
+                  variant="ghost"
+                  className="hover:text-[#4b8059] hover:border-[#4b8059]"
+                >
                   Explore Our Territories
                 </Button>
               </div>
@@ -198,13 +212,13 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ─── Journey cards ──────────────────────────────────────────────── */}
+      {/* Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ Journey cards Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */}
       <section className="pb-[var(--section-gap)]" aria-labelledby="journeys-heading">
         <div className="container-site">
           <Reveal>
             <div className="flex items-end justify-between gap-6 mb-12 flex-wrap">
               <div>
-                <p className="label-tag mb-4">Five Archetypes</p>
+                <p className="label-tag mb-4">Six Archetypes</p>
                 <h2
                   className="font-serif font-light text-display-lg text-stone-900"
                   id="journeys-heading"
@@ -252,7 +266,11 @@ export default function HomePage() {
 
           <Reveal>
             <div className="mt-10 text-center">
-              <Button href={NAV_HREFS.journeys} variant="ghost">
+              <Button
+                href={NAV_HREFS.journeys}
+                variant="ghost"
+                className="hover:text-[#4b8059] hover:border-[#4b8059]"
+              >
                 {CTA.viewAllFive}
               </Button>
             </div>
@@ -260,7 +278,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ─── Differentiators  -  editorial list ──────────────────────────── */}
+      {/* Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ Differentiators  -  editorial list Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */}
       <section
         className="section border-t border-b border-stone-200"
         aria-labelledby="diff-heading"
@@ -282,7 +300,11 @@ export default function HomePage() {
                   We hold both as operational standards  -  not aspirations.
                   This is what every element of our network is built to deliver.
                 </p>
-                <Button href={NAV_HREFS.experience} variant="ghost">
+                <Button
+                  href={NAV_HREFS.experience}
+                  variant="ghost"
+                  className="hover:text-[#4b8059] hover:border-[#4b8059]"
+                >
                   Our Approach
                 </Button>
               </div>
@@ -311,7 +333,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ─── Founder ────────────────────────────────────────────────────── */}
+      {/* Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ Founder Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */}
       <section
         className="grid grid-cols-1 md:grid-cols-[5fr_7fr] bg-page-canvas"
         aria-labelledby="founder-heading"
@@ -329,6 +351,20 @@ export default function HomePage() {
               className="object-cover object-center"
               loading="lazy"
             />
+            <div className="absolute top-6 left-6 right-6 z-10">
+              <div className="flex items-center gap-5 flex-wrap">
+                <span className="label-tag text-white/60 [text-shadow:0_2px_14px_rgba(0,0,0,0.45)]">
+                  FOUNDER
+                </span>
+                <span
+                  className="w-px h-3 bg-white/25"
+                  aria-hidden="true"
+                />
+                <span className="label-tag text-white/60 [text-shadow:0_2px_14px_rgba(0,0,0,0.45)]">
+                  VICTORIA FALLS RIVER LODGE, ZIMBABWE
+                </span>
+              </div>
+            </div>
           </div>
         </Reveal>
 
@@ -358,14 +394,18 @@ export default function HomePage() {
               with each property, routing, and local handler selected to meet the
               brand&apos;s standard for trust, discretion, and high-touch luxury.
             </p>
-            <Button href={NAV_HREFS.about} variant="ghost">
+            <Button
+              href={NAV_HREFS.about}
+              variant="ghost"
+              className="hover:text-[#4b8059] hover:border-[#4b8059]"
+            >
               {CTA.ourPhilosophy}
             </Button>
           </div>
         </Reveal>
       </section>
 
-      {/* ─── Feature  -  The Romantic ─────────────────────────────────────── */}
+      {/* Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ Feature  -  The Romantic Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */}
       <section
         className="section"
         aria-labelledby="feature-romantic-heading"
@@ -398,7 +438,11 @@ export default function HomePage() {
                   of unhurried time together. Designed around intimacy,
                   not itineraries.
                 </p>
-                <Button href={`${NAV_HREFS.journeys}/the-romantic`} variant="ghost">
+                <Button
+                  href={`${NAV_HREFS.journeys}/the-romantic`}
+                  variant="ghost"
+                  className="hover:text-[#4b8059] hover:border-[#4b8059]"
+                >
                   View the Journey
                 </Button>
               </div>
@@ -407,7 +451,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ─── CTA band ───────────────────────────────────────────────────── */}
+      {/* Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ CTA band Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */}
       <section className="bg-forest px-[var(--px)] py-[clamp(72px,10vw,120px)] text-center">
         <Reveal>
           <p className="label-tag text-white/36 mb-5">Private Onboarding</p>
@@ -423,14 +467,19 @@ export default function HomePage() {
             <Button href={NAV_HREFS.inquire} variant="outline-light">
               {CTA.requestPrivateAccess}
             </Button>
-            <Button href={NAV_HREFS.journeys} variant="ghost-light" arrow={false}>
+            <Button
+              href={NAV_HREFS.journeys}
+              variant="ghost-light"
+              arrow={false}
+              className="hover:text-white hover:border-white"
+            >
               {CTA.viewAllJourneys}
             </Button>
           </div>
         </Reveal>
       </section>
 
-      {/* ─── Newsletter ──────────────────────────────────────────────────── */}
+      {/* Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ Newsletter Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */}
       {/*
         Intentionally distinct from JournalNewsletter:
         dark background, centered layout, heading + description, forest

@@ -44,7 +44,7 @@ export const CTA = {
   // Exploratory
   viewCollection:      "View the Collection",
   viewAllJourneys:     "View All Journeys",
-  viewAllFive:         "View All Five Archetypes",
+  viewAllFive:         "View All Six Archetypes",
   viewItinerary:       "View Itinerary",
   theExperience:       "The Experience",
   ourPhilosophy:       "Our Philosophy",

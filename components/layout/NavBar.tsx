@@ -23,14 +23,7 @@ const OVERLAY_ITEMS = [
 ] as const;
 
 export function NavBar() {
-  const [scrolled, setScrolled] = useState(false);
   const [open, setOpen]         = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 56);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   // Lock body scroll when overlay is open
   useEffect(() => {
@@ -51,9 +44,7 @@ export function NavBar() {
         className={[
           "fixed top-0 left-0 right-0 z-[200] h-[68px] flex items-center justify-between",
           "px-[var(--px)] border-b transition-all duration-slow",
-          scrolled
-            ? "bg-white/[0.95] border-stone-200 backdrop-blur-md"
-            : "bg-transparent border-transparent",
+          "bg-white/[0.95] border-stone-200 backdrop-blur-md",
         ].join(" ")}
         role="banner"
       >
@@ -62,7 +53,7 @@ export function NavBar() {
           href={NAV_HREFS.home}
           className={[
             "font-serif text-[1.1rem] font-normal tracking-[0.05em] transition-colors duration-[300ms]",
-            scrolled ? "text-stone-900" : "text-white",
+            "text-stone-900",
           ].join(" ")}
           aria-label="Mason & Wild  -  home"
         >
@@ -78,9 +69,7 @@ export function NavBar() {
                   href={href}
                   className={[
                     "text-2xs font-normal tracking-wide uppercase transition-colors duration-[200ms]",
-                    scrolled
-                      ? "text-stone-500 hover:text-stone-900"
-                      : "text-white/[0.62] hover:text-white",
+                    "text-stone-500 hover:text-stone-900",
                   ].join(" ")}
                 >
                   {label}
@@ -111,7 +100,7 @@ export function NavBar() {
               key={i}
               className={[
                 "block w-[22px] h-px transition-colors duration-[300ms]",
-                scrolled ? "bg-stone-800" : "bg-white/80",
+                "bg-stone-800",
               ].join(" ")}
             />
           ))}

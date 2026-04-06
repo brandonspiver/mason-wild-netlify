@@ -265,13 +265,13 @@ export default function TheExperiencePage() {
       </section>
 
       {/* ─── Inclusive intelligence ─────────────────────────────────────── */}
-      <section className="section" aria-labelledby="inclusive-heading">
+      <section className="section bg-forest" aria-labelledby="inclusive-heading">
         <div className="container-site">
           <Reveal>
             <div className="mb-14">
-              <p className="label-tag mb-4">Inclusive Intelligence</p>
+              <p className="label-tag text-white/36 mb-4">Inclusive Intelligence</p>
               <h2
-                className="font-serif font-light text-display-lg text-stone-900 max-w-[560px]"
+                className="font-serif font-light text-display-lg text-white max-w-[560px]"
                 id="inclusive-heading"
               >
                 Discretion and belonging<br />
@@ -285,12 +285,12 @@ export default function TheExperiencePage() {
             Each item carries equal weight; the grid reads as a considered list,
             not a designed feature matrix.
           */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-stone-200">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/[0.12]">
             {INCLUSIVE_ITEMS.map((item, i) => (
               <Reveal key={item.key} delay={(i % 3) as 0 | 1 | 2 | 3 | 4}>
-                <div className="bg-page hover:bg-page-subtle transition-colors duration p-10 h-full">
-                  <p className="label-tag mb-4">{item.title}</p>
-                  <p className="text-base font-light text-stone-500 leading-relaxed">
+                <div className="bg-forest hover:bg-[#446f50] transition-colors duration p-10 h-full">
+                  <p className="label-tag text-white/36 mb-4">{item.title}</p>
+                  <p className="text-base font-light text-white/72 leading-relaxed">
                     {item.body}
                   </p>
                 </div>
@@ -313,7 +313,7 @@ export default function TheExperiencePage() {
                   className="font-serif font-light text-display-lg text-stone-900"
                   id="archetypes-heading"
                 >
-                  Four ways to experience <em>Africa.</em>
+                  Six ways to experience <em>Africa.</em>
                 </h2>
               </div>
               <Button href={NAV_HREFS.journeys} variant="ghost">
@@ -393,7 +393,12 @@ export default function TheExperiencePage() {
             <Button href={NAV_HREFS.inquire} variant="outline-light">
               {CTA.requestPrivateAccess}
             </Button>
-            <Button href={NAV_HREFS.journeys} variant="ghost-light" arrow={false}>
+            <Button
+              href={NAV_HREFS.journeys}
+              variant="ghost-light"
+              arrow={false}
+              className="hover:text-white hover:border-white"
+            >
               {CTA.viewAllJourneys}
             </Button>
           </div>

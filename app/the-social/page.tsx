@@ -289,7 +289,13 @@ export default function SocialShiftPage() {
 
         <div className="relative z-10 container-site">
           <div className="opacity-0 translate-y-4 animate-[fadeRise_0.9s_cubic-bezier(0.16,1,0.3,1)_0.3s_forwards]">
-            <p className="label-tag text-white/35 mb-7">GROUP JOURNEY | SOUTH AFRICA</p>
+            <div className="flex items-center gap-5 mb-7 flex-wrap">
+              <span className="label-tag text-white/35">GROUP JOURNEY</span>
+              <span className="w-px h-3 bg-white/25" aria-hidden="true" />
+              <span className="label-tag text-white/35">SOUTH AFRICA</span>
+              <span className="w-px h-3 bg-white/25" aria-hidden="true" />
+              <span className="label-tag text-white/35">12 NIGHTS FROM $15,000 PER PERSON</span>
+            </div>
           </div>
 
           <h1

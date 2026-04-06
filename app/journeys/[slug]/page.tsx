@@ -55,6 +55,8 @@ type JourneyData = {
   readonly metadataItems: readonly JourneyMetadataItem[];
   readonly lead: string;
   readonly vettedNote: string;
+  readonly vettedLocation?: string;
+  readonly vettedImg?: JourneyImage;
   readonly body: readonly string[];
   readonly heroImg: JourneyImage;
   readonly galleryImgs: readonly JourneyImage[];
@@ -77,7 +79,7 @@ const JOURNEYS: Record<string, JourneyData> = {
     outcome: "INTIMACY",
     territory: "BOTSWANA & VICTORIA FALLS",
     price: "8 NIGHTS FROM $18,000 PER PERSON",
-    name: "The Romantic",
+    name: "The Intimate",
     identity: "Designed for those who want privacy without performance.",
     metadataItems: [
       {
@@ -291,7 +293,7 @@ const JOURNEYS: Record<string, JourneyData> = {
     slug: "the-untamed",
     outcome: "CONNECTION",
     territory: "ZAMBIA",
-    price: "TAILORED PRICING ON REQUEST",
+    price: "9 NIGHTS FROM $17,000 PER PERSON",
     name: "The Untamed",
     identity: "Designed for those who want to feel the landscape, not perform it.",
     metadataItems: [
@@ -323,7 +325,13 @@ const JOURNEYS: Record<string, JourneyData> = {
     ],
     lead: "There is a particular stillness to Zambia when it is done well.",
     vettedNote:
-      "Personally designed by Zannon James after time spent on the ground in Zambia, with each camp chosen for guiding quality, operational confidence, and emotional fit within the overall sequence.",
+      "Personally selected by Zannon James through firsthand experience. The South Luangwa Camps are chosen from deep personal knowledge of South Luangwa, shaped by more than a month spent in the bush here. That firsthand time in the region created a strong understanding of its wildlife, its rhythm, and the dramatic beauty of its changing landscapes, from waterways and riverbanks to open plains and woodland. Combined with outstanding game viewing and a deep sense of immersion, it is this layered, ever-shifting setting that makes South Luangwa one of the most compelling safari experiences in Africa.",
+    vettedLocation: "South Luangwa National Park, Zambia",
+    vettedImg: {
+      src: "/journeys/the-untamed/vetted-south-luangwa.png",
+      alt: "South Luangwa National Park in Zambia",
+      position: "center 50%",
+    },
     body: [
       "The Untamed is a privately guided Zambia journey for guests who want privacy, immersion, and a more elemental experience of safari without sacrificing comfort or coherence.",
       "It begins with a polished arrival in Lusaka, softens into the restorative pace of KuKaya, then deepens into South Luangwa through Zungulila and Chindeni, where the days become quieter, wilder, and more tactile.",
@@ -332,8 +340,8 @@ const JOURNEYS: Record<string, JourneyData> = {
       "For LGBTQ+ travellers in particular, that confidence matters. Every partner included here has been selected for discretion, operational ease, and the practical reassurance that allows the journey to feel unguarded.",
     ],
     heroImg: {
-      src: "/journeys/the-untamed/2.jpg",
-      alt: "Safari tent at dusk in Zambia",
+      src: "/journeys/the-untamed/12.jpg",
+      alt: "Zambian safari landscape at dusk",
       position: "center 50%",
     },
     galleryImgs: [
@@ -424,17 +432,17 @@ const JOURNEYS: Record<string, JourneyData> = {
           "Latitude 15 creates the first exhale. It brings composure, design, and a sense of arrival that allows the trip to begin beautifully rather than abruptly.",
         images: [
           {
-            src: "/journeys/journeys-hero-bath.jpg",
+            src: "/journeys/the-untamed/Latitude 15 (7).png",
             alt: "Suite atmosphere at Latitude 15",
             position: "center 50%",
           },
           {
-            src: "/about/zannon-about.jpg",
+            src: "/journeys/the-untamed/Latitude 15 (3).png",
             alt: "Editorial interior detail at Latitude 15",
-            position: "center 35%",
+            position: "center 50%",
           },
           {
-            src: "/experience/how-we-work.jpg",
+            src: "/journeys/the-untamed/Latitude 15 (1).png",
             alt: "Arrival atmosphere in Lusaka",
             position: "center 50%",
           },
@@ -446,19 +454,19 @@ const JOURNEYS: Record<string, JourneyData> = {
           "KuKaya changes the pace. It introduces softness, privacy, and restoration before the deeper bush chapters, allowing the journey to settle into itself.",
         images: [
           {
-            src: "/journeys/the-untamed.jpg",
+            src: "/journeys/the-untamed/KuKaya (12).jpg",
             alt: "Quiet natural setting at KuKaya",
             position: "center 50%",
           },
           {
-            src: "/journeys/journeys-hero-bath.jpg",
+            src: "/journeys/the-untamed/KuKaya (1).jpg",
             alt: "Private suite atmosphere at KuKaya",
             position: "center 50%",
           },
           {
-            src: "/experience/private-conservancy-botswana.jpg",
+            src: "/journeys/the-untamed/KuKaya (4).jpg",
             alt: "Outdoor landscape at KuKaya",
-            position: "center 55%",
+            position: "center 50%",
           },
         ],
       },
@@ -468,17 +476,17 @@ const JOURNEYS: Record<string, JourneyData> = {
           "These camps form the emotional centre of the journey. The guiding deepens, the landscape grows quieter, and the experience becomes more tactile, instinctive, and absorbing.",
         images: [
           {
-            src: "/journeys/the-untamed.jpg",
+            src: "/journeys/the-untamed/Chindeni (5).jpg",
             alt: "Bush landscape at Zungulila and Chindeni",
             position: "center 50%",
           },
           {
-            src: "/experience/how-we-work.jpg",
+            src: "/journeys/the-untamed/Chindeni (6).jpg",
             alt: "Quiet safari camp atmosphere",
             position: "center 48%",
           },
           {
-            src: "/experience/private-conservancy-botswana.jpg",
+            src: "/journeys/the-untamed/Zungulila (18).jpg",
             alt: "Immersive wilderness setting",
             position: "center 52%",
           },
@@ -506,7 +514,7 @@ const JOURNEYS: Record<string, JourneyData> = {
     outcome: "INTIMACY",
     territory: "SOUTH AFRICA & MOZAMBIQUE",
     price: "14 NIGHTS FROM $20,000 PER PERSON",
-    name: "The Intimate",
+    name: "The Romantic",
     identity:
       "Designed for those who want contrast, privacy, and a journey that moves with quiet confidence.",
     metadataItems: [
@@ -538,7 +546,13 @@ const JOURNEYS: Record<string, JourneyData> = {
     ],
     lead: "Some journeys are built around seeing as much as possible. This one is built around knowing where each place should sit.",
     vettedNote:
-      "Personally designed by Zannon James, with each property selected for privacy, atmosphere, operational excellence, and the ability to deliver a luxury experience that feels deeply personal rather than performative.",
+      "Personally selected by Zannon James through firsthand experience. Victoria Falls River Lodge remains an immediate go to at the Falls after an exceptional personal stay there, chosen for its setting, service, and polished sense of retreat. Extensive travel through the Okavango Delta and other key game reserves gives full confidence in the wildlife experience offered here, from predator sightings to exceptional birdlife and everything in between. The mokoro experience is one of the most special elements of the Delta, offering a quieter, more intimate way to encounter wildlife from the water.",
+    vettedLocation: "Victoria Falls River Lodge, Zimbabwe",
+    vettedImg: {
+      src: "/journeys/the-romantic/vetted-victoria-falls.png",
+      alt: "Victoria Falls River Lodge in Zimbabwe",
+      position: "center 50%",
+    },
     body: [
       "It begins in Cape Town, where the mood is social, elegant, and quietly cinematic. From there, it softens into Franschhoek, where the pace slows and the focus shifts to atmosphere, food, wine, and the luxury of not needing to do too much. Greater Kruger then changes the register completely, drawing the journey into something deeper, wilder, and more immersive. It ends on Benguerra Island, where everything loosens again into light, salt air, privacy, and release.",
       "The Romantic is a privately guided South Africa and Mozambique journey for guests who want contrast, sensuality, and a style of travel that feels fully held from beginning to end.",
@@ -656,7 +670,7 @@ const JOURNEYS: Record<string, JourneyData> = {
           "Mount Nelson is the opening note of the journey: polished, social, and deeply assured. For this client, it works because it offers privacy without removing them from the energy of Cape Town. There is history here, but also ease, beauty, and a kind of confidence that makes arrival feel immediate rather than transitional. It allows the trip to begin with style and perspective, giving the city space to unfold in a way that feels elevated, relaxed, and personally held.",
         images: [
         {
-          src: "/journeys/the-romantic/MN 7.jpg",
+          src: "/journeys/the-romantic/MN 6.jpg",
           alt: "Mount Nelson Hotel in Cape Town",
           position: "center 50%",
         },
@@ -803,8 +817,8 @@ const JOURNEYS: Record<string, JourneyData> = {
       "The result is a journey with real movement in it, but also real control: adventurous, elevated, and quietly exacting from the first lift above Cape Town to the final safari mornings in the Etosha region.",
     ],
     heroImg: {
-      src: "/journeys/the-adventure/Camissa House.jpg",
-      alt: "Camissa House beneath Table Mountain in Cape Town",
+      src: "/journeys/the-adventure/ZS (5).jpg",
+      alt: "Sonop in the Namib Desert",
       position: "center 52%",
     },
     galleryImgs: [
@@ -1058,12 +1072,12 @@ const JOURNEYS: Record<string, JourneyData> = {
           "Little Ongava is the final safari payoff. After the movement of the road journey and the deeper austerity of Damaraland, it introduces a more intimate and exclusive kind of ease. For this client, it works because it does not dilute the adventure that came before it. Instead, it rewards it with privacy, strong safari access, and a sense of final arrival that feels both generous and entirely deserved.",
         images: [
           {
-            src: "/journeys/the-adventure/Little Ongava (14).jpg",
+            src: "/journeys/the-adventure/Little Ongava (7).jpg",
             alt: "Safari lodge at Little Ongava",
             position: "center 50%",
           },
           {
-            src: "/journeys/the-adventure/Little Ongava (18).jpg",
+            src: "/journeys/the-adventure/Little Ongava (3).jpg",
             alt: "Suite interior at Little Ongava",
             position: "center 50%",
           },
@@ -1502,10 +1516,10 @@ export default function JourneyDetailPage({
     (image, index, images) => index === images.findIndex((entry) => entry.src === image.src),
   );
 
-  const flowGridClass =
+  const flowItemClass =
     journey.flow.length <= 4
-      ? "grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4"
-      : "grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3";
+      ? "w-full sm:w-1/2 xl:w-1/4"
+      : "w-full sm:w-1/2 xl:w-1/3";
 
   return (
     <>
@@ -1602,6 +1616,22 @@ export default function JourneyDetailPage({
                 </p>
                 <div className="border-t border-stone-200 pt-8">
                   <p className="label-tag text-forest mb-3">Vetted &amp; Verified</p>
+                  {journey.vettedImg && (
+                    <div className="mb-4 max-w-[220px] overflow-hidden">
+                      <Image
+                        src={journey.vettedImg.src}
+                        alt={journey.vettedImg.alt}
+                        width={440}
+                        height={300}
+                        className="w-full aspect-[11/8] object-cover object-center"
+                        style={{ objectPosition: journey.vettedImg.position ?? "center" }}
+                        loading="lazy"
+                      />
+                    </div>
+                  )}
+                  {journey.vettedLocation && (
+                    <p className="label-tag mb-3">{journey.vettedLocation}</p>
+                  )}
                   <p className="text-sm font-light text-stone-500 leading-relaxed">
                     {journey.vettedNote}
                   </p>
@@ -1738,22 +1768,27 @@ export default function JourneyDetailPage({
             </p>
           </Reveal>
 
-          <div className={`${flowGridClass} gap-px bg-white/[0.07]`}>
+          <div className="flex flex-wrap items-stretch justify-center border-t border-white/[0.08]">
             {journey.flow.map((phase, index) => (
-              <Reveal key={phase.number} delay={(index % 4) as 0 | 1 | 2 | 3 | 4}>
-                <div className="bg-stone-900 p-10 h-full">
-                  <p className="font-serif font-light text-[2rem] text-white/[0.07] leading-none mb-6">
-                    {phase.number}
-                  </p>
-                  <p className="label-tag text-white/35 mb-2">{phase.period}</p>
-                  <p className="font-serif font-light italic text-base text-white/70 mb-4 leading-snug">
-                    {phase.title}
-                  </p>
-                  <p className="text-sm font-light text-white/45 leading-relaxed">
-                    {phase.body}
-                  </p>
-                </div>
-              </Reveal>
+              <div key={phase.number} className={flowItemClass}>
+                <Reveal
+                  className="h-full border-b border-white/[0.08] border-l border-white/[0.08]"
+                  delay={(index % 4) as 0 | 1 | 2 | 3 | 4}
+                >
+                  <div className="flex h-full flex-col px-8 pb-12 pt-10 md:px-10 md:pb-14 md:pt-12">
+                    <p className="font-serif font-light text-[2rem] text-white/[0.09] leading-none mb-8">
+                      {phase.number}
+                    </p>
+                    <p className="label-tag text-white/35 mb-3">{phase.period}</p>
+                    <p className="font-serif font-light italic text-lg text-white/70 mb-5 leading-snug">
+                      {phase.title}
+                    </p>
+                    <p className="max-w-[24rem] text-[15px] font-light text-white/45 leading-[1.9]">
+                      {phase.body}
+                    </p>
+                  </div>
+                </Reveal>
+              </div>
             ))}
           </div>
         </div>
