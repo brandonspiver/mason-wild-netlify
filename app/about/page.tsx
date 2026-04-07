@@ -14,18 +14,18 @@ export default function AboutPage() {
   return (
     <>
       <section
-        className="pt-[var(--page-header-pt)] pb-[clamp(56px,8vw,96px)] border-b border-stone-200"
+        className="pt-[var(--page-header-pt)] pb-[clamp(56px,8vw,96px)] border-b border-forest/70 bg-forest"
         aria-labelledby="about-heading"
       >
         <div className="container-site">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-[clamp(48px,7vw,96px)] items-end">
             <div>
               <Reveal>
-                <p className="label-tag mb-7">Founder &amp; Chief Specialist</p>
+                <p className="label-tag text-white/38 mb-7">Founder &amp; Chief Specialist</p>
               </Reveal>
               <Reveal delay={1}>
                 <h1
-                  className="font-serif font-light text-display-2xl text-stone-900"
+                  className="font-serif font-light text-display-2xl text-white"
                   id="about-heading"
                 >
                   Zannon <em>James</em>
@@ -34,7 +34,7 @@ export default function AboutPage() {
             </div>
 
             <Reveal delay={2}>
-              <p className="text-base font-light text-stone-500 leading-relaxed">
+              <p className="text-base font-light text-white/72 leading-relaxed">
                 Zannon designs and personally oversees every journey Mason &amp; Wild
                 accepts - private African travel built specifically for discerning LGBTQ+
                 travellers, where discretion and genuine welcome are the standard, not
@@ -142,15 +142,15 @@ export default function AboutPage() {
       </section>
 
       <section
-        className="section bg-page-subtle border-b border-stone-200"
+        className="section bg-forest border-b border-forest/70"
         aria-labelledby="oversight-heading"
       >
         <div className="container-site">
           <Reveal>
             <div className="mb-14">
-              <p className="label-tag mb-4">Personal Oversight</p>
+              <p className="label-tag text-white/52 mb-4">Personal Oversight</p>
               <h2
-                className="font-serif font-light text-display-lg text-stone-900 max-w-[560px]"
+                className="font-serif font-light text-display-lg text-white max-w-[560px]"
                 id="oversight-heading"
               >
                 Every journey passes
@@ -163,7 +163,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-[clamp(48px,7vw,96px)] items-start">
             <div className="flex flex-col gap-6">
               <Reveal>
-                <p className="text-base font-light text-stone-500 leading-relaxed">
+                <p className="text-base font-light text-white leading-relaxed">
                   There is no operations team between the client and the decision.
                   When a journey is accepted by Mason &amp; Wild, Zannon reviews the
                   brief, selects the territory, assigns the guide, and approves every
@@ -172,7 +172,7 @@ export default function AboutPage() {
                 </p>
               </Reveal>
               <Reveal delay={1}>
-                <p className="text-base font-light text-stone-500 leading-relaxed">
+                <p className="text-base font-light text-white leading-relaxed">
                   It also means the number of journeys we accept each month is
                   deliberately limited. Quality of attention is the constraint - not
                   capacity.
@@ -202,10 +202,10 @@ export default function AboutPage() {
                 ].map(({ label, body }) => (
                   <div
                     key={label}
-                    className="border-t border-stone-200 py-6 last:border-b last:border-stone-200"
+                    className="border-t border-white/18 py-6 last:border-b last:border-white/18"
                   >
-                    <p className="label-tag mb-2">{label}</p>
-                    <p className="text-sm font-light text-stone-500 leading-relaxed">
+                    <p className="label-tag text-white/52 mb-2">{label}</p>
+                    <p className="text-sm font-light text-white leading-relaxed">
                       {body}
                     </p>
                   </div>
@@ -290,14 +290,14 @@ export default function AboutPage() {
       </Reveal>
 
       <section
-        className="section bg-stone-900"
+        className="section bg-forest"
         aria-labelledby="safety-heading"
       >
         <div className="container-site">
           <div className="grid grid-cols-1 lg:grid-cols-[2fr_3fr] gap-[clamp(48px,7vw,96px)]">
             <Reveal>
               <div>
-                <p className="label-tag text-white/30 mb-6">LGBTQ+ Safety Intelligence</p>
+                <p className="label-tag text-white/38 mb-6">LGBTQ+ Safety Intelligence</p>
                 <h2
                   className="font-serif font-light text-display-md text-white leading-[1.07] tracking-[-0.012em]"
                   id="safety-heading"
@@ -313,7 +313,7 @@ export default function AboutPage() {
 
             <div className="flex flex-col gap-6">
               <Reveal delay={1}>
-                <p className="text-base font-light text-white/55 leading-relaxed">
+                <p className="text-base font-light text-white/72 leading-relaxed">
                   The political and legal landscape across Africa varies
                   significantly by country and by region within countries. Some
                   destinations are genuinely safe and welcoming. Others require
@@ -322,7 +322,7 @@ export default function AboutPage() {
                 </p>
               </Reveal>
               <Reveal delay={2}>
-                <p className="text-base font-light text-white/55 leading-relaxed">
+                <p className="text-base font-light text-white/72 leading-relaxed">
                   We assess every territory we work in against current legal
                   standing, enforcement practice, and the real-world experience of
                   LGBTQ+ travellers who have been there recently. This is not a
@@ -332,7 +332,7 @@ export default function AboutPage() {
                 </p>
               </Reveal>
               <Reveal delay={3}>
-                <p className="text-base font-light text-white/55 leading-relaxed">
+                <p className="text-base font-light text-white/72 leading-relaxed">
                   We do not list territories we are not confident in. We do not
                   work with camps or guides whose alignment we cannot verify. This
                   is the operational foundation of Mason &amp; Wild - not a brand

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { SocialJourneyPanel } from "@/components/journey/SocialJourneyPanel";
 import { Reveal } from "@/components/ui/Reveal";
 import { Button } from "@/components/ui/Button";
 import { CTA, NAV_HREFS } from "@/lib/constants";
@@ -32,6 +33,11 @@ type ShapeCard = {
   readonly days: string;
   readonly title: string;
   readonly copy: string;
+  readonly image?: {
+    readonly src: string;
+    readonly alt: string;
+    readonly position?: string;
+  };
 };
 
 type Inclusion = {
@@ -175,6 +181,11 @@ const shapeCards: readonly ShapeCard[] = [
     title: "Grounding in Johannesburg",
     copy:
       "Begin with two nights at Satyagraha House, where the journey opens with a quieter cultural rhythm. A private Soweto day and lunch at Proud Mary give the opening chapter depth without overloading it, while dinner at the house on the first night and Marble on the second create a measured sense of arrival.",
+    image: {
+      src: "/journeys/the-social-shift/SH (4).jpg",
+      alt: "Satyagraha House setting in Johannesburg",
+      position: "center 50%",
+    },
   },
   {
     number: "02",
@@ -182,6 +193,11 @@ const shapeCards: readonly ShapeCard[] = [
     title: "Into the Wild",
     copy:
       "Continue to Few & Far Luvhondo for four nights of private safari. This is the deepest and most dramatic chapter of the journey, where landscape, privacy, and shared experience create the emotional core of the trip.",
+    image: {
+      src: "/journeys/the-social-shift/FF (5).jpg",
+      alt: "Few & Far Luvhondo landscape in South Africa",
+      position: "center 52%",
+    },
   },
   {
     number: "03",
@@ -189,6 +205,11 @@ const shapeCards: readonly ShapeCard[] = [
     title: "A Softer Interlude",
     copy:
       "Sterrekopje brings a slower, more sensorial pause after safari. Beauty, design, and a more reflective shared pace create a chapter that restores without turning the journey into retreat language or performance.",
+    image: {
+      src: "/journeys/the-social-shift/SK (11).avif",
+      alt: "Sterrekopje house and garden setting in Franschhoek",
+      position: "center 50%",
+    },
   },
   {
     number: "04",
@@ -196,6 +217,11 @@ const shapeCards: readonly ShapeCard[] = [
     title: "Cape Town, Socially",
     copy:
       "The final chapter unfolds at The Aven, where Cape Town brings the journey back into movement, style, and shared living. Arrival begins with dinner at Café Manhattan, then continues through private city and Table Mountain guiding, Kloof Street House, The Athletic Club & Social, Boulders Beach, Chapman's Peak, Mantra Café, a 5:00 PM helicopter flight from the V&A Waterfront, a private champagne sunset yacht cruise, Sevruga, a Constantia afternoon beginning at Groot Constantia and ending at La Colombe, and a slow final villa day with a hosted farewell dinner.",
+    image: {
+      src: "/journeys/the-social-shift/TA (10).png",
+      alt: "The Aven in Cape Town",
+      position: "center 50%",
+    },
   },
   {
     number: "05",
@@ -203,6 +229,11 @@ const shapeCards: readonly ShapeCard[] = [
     title: "Leave Lighter",
     copy:
       "A final morning at your own pace before onward departure. By this stage, the journey should feel fully held, emotionally complete, and far removed from the mechanics of ordinary travel.",
+    image: {
+      src: "/journeys/the-social-shift/TA (3).png",
+      alt: "Coastal setting in Cape Town",
+      position: "center 50%",
+    },
   },
 ] as const;
 
@@ -477,94 +508,12 @@ export default function SocialShiftPage() {
         </section>
       ))}
 
-      <section
-        className="bg-stone-900 px-[var(--px)] py-[var(--section-gap)]"
-        aria-labelledby="shape-heading"
-      >
-        <div className="container-site">
-          <Reveal>
-            <p className="label-tag text-white/35 mb-5">A Sense of Shape</p>
-            <h2
-              className="font-serif font-light text-display-lg text-white max-w-[480px] mb-6"
-              id="shape-heading"
-            >
-              How the journey
-              <br />
-              <em>unfolds.</em>
-            </h2>
-            <p className="text-base font-light text-white/40 leading-relaxed max-w-[560px] mb-16">
-              The route and sequencing are intentional. Within that structure, each
-              chapter still has room to breathe, with the pace and emphasis shaped
-              around your group, your guide, and the mood of the journey itself.
-            </p>
-          </Reveal>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-px bg-white/[0.07]">
-            {shapeCards.map((card, index) => (
-              <Reveal key={card.number} delay={(index % 4) as 0 | 1 | 2 | 3 | 4}>
-                <div className="bg-stone-900 p-10 h-full">
-                  <p className="font-serif font-light text-[2rem] text-white/[0.07] leading-none mb-6">
-                    {card.number}
-                  </p>
-                  <p className="label-tag text-white/35 mb-2">{card.days}</p>
-                  <p className="font-serif font-light italic text-base text-white/70 mb-4 leading-snug">
-                    {card.title}
-                  </p>
-                  <p className="text-sm font-light text-white/45 leading-relaxed">
-                    {card.copy}
-                  </p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section
-        className="section border-t border-b border-stone-200"
-        aria-labelledby="includes-heading"
-      >
-        <div className="container-site">
-          <Reveal>
-            <div className="grid grid-cols-1 lg:grid-cols-[1fr_4fr] gap-[clamp(40px,6vw,80px)] items-start mb-14">
-              <div>
-                <p className="label-tag mb-4">What This Journey Includes</p>
-                <h2
-                  className="font-serif font-light text-display-md text-stone-900"
-                  id="includes-heading"
-                >
-                  What This Journey Includes
-                </h2>
-                <p className="font-serif font-light italic text-display-sm text-stone-900 mt-3">
-                  Privately shaped.
-                  <br />
-                  <em>Beautifully held.</em>
-                </p>
-              </div>
-
-              <p className="text-base font-light text-stone-500 leading-relaxed max-w-[620px] self-end">
-                Everything included here has been chosen to protect the feeling of
-                the journey: grounding in Johannesburg, depth on safari, restoration
-                in the Winelands, and a more social and beautifully hosted finish in
-                Cape Town.
-              </p>
-            </div>
-          </Reveal>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-stone-200">
-            {inclusions.map((item, index) => (
-              <Reveal key={item.title} className="h-full" delay={(index % 3) as 0 | 1 | 2 | 3 | 4}>
-                <div className="h-full bg-page p-10">
-                  <p className="label-tag mb-4">{item.title}</p>
-                  <p className="text-base font-light text-stone-500 leading-relaxed">
-                    {item.copy}
-                  </p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
+      <SocialJourneyPanel
+        intro="The route and sequencing are intentional. Within that structure, each chapter still has room to breathe, with the pace and emphasis shaped around your group, your guide, and the mood of the journey itself."
+        shapeCards={shapeCards}
+        includesIntro="Everything included here has been chosen to protect the feeling of the journey: grounding in Johannesburg, depth on safari, restoration in the Winelands, and a more social and beautifully hosted finish in Cape Town."
+        inclusions={inclusions}
+      />
 
       <section className="section border-b border-stone-200" aria-labelledby="proof-heading">
         <div className="container-site">

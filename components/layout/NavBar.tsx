@@ -18,6 +18,7 @@ const JOURNEY_MENU_ITEMS = [
   { label: "The Romantic", href: `${NAV_HREFS.journeys}/the-romantic` },
   { label: "The Adventure", href: `${NAV_HREFS.journeys}/the-adventure` },
   { label: "The Private Circuit", href: `${NAV_HREFS.journeys}/the-private-circuit` },
+  { label: "The Social Shift", href: NAV_HREFS.social },
 ] as const;
 
 const OVERLAY_ITEMS = [
@@ -32,6 +33,7 @@ const OVERLAY_ITEMS = [
 
 export function NavBar() {
   const [open, setOpen]         = useState(false);
+  const [journeysOpen, setJourneysOpen] = useState(false);
 
   // Lock body scroll when overlay is open
   useEffect(() => {
@@ -74,10 +76,13 @@ export function NavBar() {
             {NAV_ITEMS.map(({ label, href }) => (
               <li
                 key={href}
-                className={href === NAV_HREFS.journeys ? "relative group" : undefined}
+                className={href === NAV_HREFS.journeys ? "relative" : undefined}
+                onMouseEnter={href === NAV_HREFS.journeys ? () => setJourneysOpen(true) : undefined}
+                onMouseLeave={href === NAV_HREFS.journeys ? () => setJourneysOpen(false) : undefined}
               >
                 <Link
                   href={href}
+                  onFocus={href === NAV_HREFS.journeys ? () => setJourneysOpen(true) : undefined}
                   className={[
                     "text-2xs font-normal tracking-wide uppercase transition-colors duration-[200ms]",
                     "text-stone-500 hover:text-stone-900",
@@ -87,14 +92,23 @@ export function NavBar() {
                 </Link>
 
                 {href === NAV_HREFS.journeys && (
-                  <div className="pointer-events-none absolute left-1/2 top-full z-[220] w-[240px] -translate-x-1/2 pt-5 opacity-0 transition-all duration-[260ms] group-hover:pointer-events-auto group-hover:opacity-100 group-hover:translate-y-0 group-focus-within:pointer-events-auto group-focus-within:opacity-100">
-                    <div className="border border-stone-200 bg-white/95 p-3 shadow-[0_18px_40px_rgba(20,16,10,0.08)] backdrop-blur-md">
-                      <div className="flex flex-col">
+                  <div
+                    className={[
+                      "absolute left-1/2 top-full z-[220] w-[232px] -translate-x-1/2 pt-3 transition-all duration-[220ms]",
+                      journeysOpen
+                        ? "pointer-events-auto translate-y-0 opacity-100"
+                        : "pointer-events-none -translate-y-1 opacity-0",
+                    ].join(" ")}
+                  >
+                    <div className="border border-stone-200 bg-white shadow-[0_18px_40px_rgba(20,16,10,0.08)]">
+                      <div className="flex flex-col p-2">
                         {JOURNEY_MENU_ITEMS.map((item) => (
                           <Link
                             key={item.href}
                             href={item.href}
-                            className="px-4 py-3 font-serif text-[1.05rem] font-light text-stone-800 transition-colors duration-[200ms] hover:text-forest"
+                            onClick={() => setJourneysOpen(false)}
+                            onBlur={() => setJourneysOpen(false)}
+                            className="px-4 py-[12px] font-serif text-[1.03rem] font-light leading-none text-stone-800 transition-colors duration-[220ms] hover:bg-forest hover:text-white focus:bg-forest focus:text-white"
                           >
                             <em>{item.label}</em>
                           </Link>

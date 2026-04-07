@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { Reveal } from "@/components/ui/Reveal";
 import { Button } from "@/components/ui/Button";
 import { JourneyCarousel } from "@/components/journey/JourneyCarousel";
+import { JourneySummaryPanel } from "@/components/journey/JourneySummaryPanel";
 import { NAV_HREFS, CTA } from "@/lib/constants";
 
 type JourneyImage = {
@@ -111,10 +112,10 @@ const JOURNEYS: Record<string, JourneyData> = {
     lead: "Some journeys are built around spectacle. This one is built around privacy.",
     vettedNote:
       "Personally selected by Zannon James through firsthand experience. Victoria Falls River Lodge remains an immediate go to at the Falls after an exceptional personal stay there, chosen for its setting, service, and polished sense of retreat. Extensive travel through the Okavango Delta and other key game reserves gives full confidence in the wildlife experience offered here, from predator sightings to exceptional birdlife and everything in between. The mokoro experience is one of the most special elements of the Delta, offering a quieter, more intimate way to encounter wildlife from the water.",
-    vettedLocation: "Victoria Falls River Lodge, Zimbabwe",
+    vettedLocation: "MOWANA, SOUTH AFRICA",
     vettedImg: {
-      src: "/journeys/the-romantic/vetted-monwana.png",
-      alt: "Monwana safari setting in Greater Kruger",
+      src: "/journeys/the-romantic/vetted-victoria-falls.png",
+      alt: "Victoria Falls River Lodge in Zimbabwe",
       position: "center 50%",
     },
     body: [
@@ -553,10 +554,10 @@ const JOURNEYS: Record<string, JourneyData> = {
     lead: "Some journeys are built around seeing as much as possible. This one is built around knowing where each place should sit.",
     vettedNote:
       "Personally selected by Zannon James through firsthand experience. Monwana was recently experienced on safari and left a lasting impression for all the right reasons, from hospitality, food, suite design and everything else. The guiding was the strongest I have ever experienced, marked by rare instinct, deep knowledge, and an effortless ability to make every sighting feel meaningful. It is chosen not only for the quality of the wildlife experience, but for the way it balances intimacy, polish, and a true sense of place in the bush.",
-    vettedLocation: "Victoria Falls River Lodge, Zimbabwe",
+    vettedLocation: "MOWANA, SOUTH AFRICA",
     vettedImg: {
-      src: "/journeys/the-romantic/vetted-victoria-falls.png",
-      alt: "Victoria Falls River Lodge in Zimbabwe",
+      src: "/journeys/the-romantic/vetted-monwana.png",
+      alt: "Monwana safari setting in Greater Kruger",
       position: "center 50%",
     },
     body: [
@@ -574,7 +575,7 @@ const JOURNEYS: Record<string, JourneyData> = {
     },
     galleryImgs: [
       {
-        src: "/journeys/the-romantic/MN 2 .png",
+        src: "/journeys/the-romantic/MN 3.jpg",
         alt: "Mount Nelson Hotel in Cape Town",
         position: "center 50%",
       },
@@ -779,7 +780,7 @@ const JOURNEYS: Record<string, JourneyData> = {
     slug: "the-adventure",
     outcome: "ADVENTURE",
     territory: "CAPE TOWN & NAMIBIA",
-    price: "13 NIGHTS, PRIVATELY PRICED",
+    price: "13 NIGHTS FROM $16 500 PER PERSON",
     name: "The Adventure",
     identity:
       "Designed for those who want bold landscapes, private guiding, and the feeling of moving properly through a place.",
@@ -813,7 +814,13 @@ const JOURNEYS: Record<string, JourneyData> = {
     lead:
       "Some journeys are built around arriving somewhere extraordinary. This one is built around what happens when the movement itself becomes part of the pleasure.",
     vettedNote:
-      "Personally designed by Zannon James, with the route shaped around properties and experiences that can sustain a stronger sense of movement without losing polish, privacy, or operational fluency. Every partner included has been chosen for how well it handles adventurous travel in practice, not just in principle.",
+      "Personally selected by Zannon James through lived local knowledge. Born and raised in Cape Town and proud to call it home, Zannon knows the city beyond the obvious, from its iconic highlights to its best addresses, dining spots, and insider experiences. Paired with the striking beauty of Namibia, chosen for its sense of space, safety, and extraordinary landscapes, every element of this journey has been selected with confidence, care, and genuine firsthand insight.",
+    vettedLocation: "CAPE TOWN, SOUTH AFRICA",
+    vettedImg: {
+      src: "/journeys/the-adventure/vetted-cape-town.jpg",
+      alt: "Cape Town setting in South Africa",
+      position: "center 50%",
+    },
     body: [
       "It begins in Cape Town, but not in a passive way. The first chapter is built around mountain, coastline, air, and momentum, with the city experienced through a more active and design-conscious lens. From there, the journey shifts into Namibia, where the tone changes completely. Guests fly into Windhoek, meet their private adventure guide on arrival, and continue across the country in a fully equipped 4x4 that stays with them throughout.",
       "The Adventure is a luxury Cape Town and Namibia journey for travellers who want private guiding, cinematic landscapes, and the kind of overland continuity that makes the country feel properly traversed rather than simply sampled.",
@@ -1148,7 +1155,13 @@ const JOURNEYS: Record<string, JourneyData> = {
     ],
     lead: "Some safaris are built around ticking off landscapes. This one is built around continuity.",
     vettedNote:
-      "Personally designed by Zannon James, drawing on a level of first-hand familiarity that goes well beyond standard travel planning, including direct experience of properties such as Siringit Villa, Siringit Migration, and Siringit Serengeti through a close personal relationship with the owner. Every partner included has been selected for privacy, atmosphere, operational excellence, and the ability to deliver a journey that feels deeply personal rather than performative.",
+      "Personally selected by Zannon James through direct safari experience, trusted industry relationships, and careful on the ground vetting, this Tanzania journey has been curated to reflect the very best of the country with substance, style, and operational confidence. Extensive time spent across East and Southern Africa, combined with a strong network of respected guides, camp owners, and safari operators, gives full confidence in the standard of experience offered here. Siringit holds particular meaning within this journey, not only for its positioning and design, but also through a trusted personal relationship with its ownership. That closeness brings an added layer of confidence in the quality, care, and consistency of the experience on the ground.",
+    vettedLocation: "SERENGETI, TANZANIA",
+    vettedImg: {
+      src: "/journeys/the-private-circuit/vetted-serengeti.png",
+      alt: "Serengeti safari scene in Tanzania",
+      position: "center 50%",
+    },
     body: [
       "It begins at Siringit Villa, where there is space to settle properly before the bush begins. From there, it moves into Tarangire, where elephants, baobabs, and a denser, earthier landscape create a strong opening sense of place. The journey then continues into the Serengeti in two distinct chapters: first at Siringit Migration Camp, where scale, movement, and the hot air balloon experience bring a more expansive energy, then at Siringit Serengeti Camp, where the final safari nights feel steadier, more immersive, and fully absorbed into the rhythm of the wild. It ends at Xanadu in Zanzibar, where the mood shifts again into sea air, privacy, and a softer final chapter by the Indian Ocean.",
       "The Private Circuit is a privately guided Tanzania and Zanzibar journey for guests who want the classic East African safari arc without the feeling of being pushed through it.",
@@ -1522,16 +1535,6 @@ export default function JourneyDetailPage({
     (image, index, images) => index === images.findIndex((entry) => entry.src === image.src),
   );
 
-  const flowItemClass =
-    journey.flow.length <= 4
-      ? "w-full sm:w-1/2 xl:w-1/4"
-      : "w-full sm:w-1/2 xl:w-1/3";
-
-  const flowContainerClass =
-    journey.flow.length <= 4
-      ? "grid grid-cols-1 border-l border-t border-white/[0.08] sm:grid-cols-2 xl:grid-cols-4"
-      : "flex flex-wrap justify-center border-l border-t border-white/[0.08]";
-
   return (
     <>
       <section
@@ -1720,102 +1723,12 @@ export default function JourneyDetailPage({
         </Reveal>
       </section>
 
-      <section
-        className="section border-t border-b border-stone-200"
-        aria-labelledby="pillars-heading"
-      >
-        <div className="container-site">
-          <Reveal>
-            <div className="grid grid-cols-1 lg:grid-cols-[0.95fr_1.05fr] gap-[clamp(48px,7vw,112px)] items-start mb-16">
-              <div>
-                <p className="label-tag mb-4">What This Journey Includes</p>
-                <h2
-                  className="font-serif font-light text-display-md text-stone-900"
-                  id="pillars-heading"
-                >
-                  What This Journey Includes
-                </h2>
-                <p className="font-serif font-light italic text-display-sm text-stone-900 mt-3">
-                  Private by every
-                  <br />
-                  <em>measure.</em>
-                </p>
-              </div>
-              <div className="lg:pt-14">
-                <p className="text-base font-light text-stone-500 leading-relaxed max-w-[620px]">
-                  {journey.pillarsIntro}
-                </p>
-              </div>
-            </div>
-          </Reveal>
-
-          <div className="grid grid-cols-1 border-t border-stone-200 md:grid-cols-2">
-            {journey.pillars.map((pillar, index) => (
-              <Reveal
-                key={pillar.key}
-                className={[
-                  "h-full border-b border-stone-200",
-                  index % 2 === 1 ? "md:border-l md:border-stone-200" : "",
-                ].join(" ")}
-                delay={(index % 3) as 0 | 1 | 2 | 3 | 4}
-              >
-                <div className="h-full bg-page px-8 py-10 md:px-10 md:py-12">
-                  <p className="label-tag mb-5">{pillar.title}</p>
-                  <p className="max-w-[30rem] text-base font-light text-stone-500 leading-relaxed">
-                    {pillar.body}
-                  </p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section
-        className="bg-stone-900 px-[var(--px)] py-[var(--section-gap)]"
-        aria-labelledby="flow-heading"
-      >
-        <div className="container-site">
-          <Reveal>
-            <p className="label-tag text-white/35 mb-5">A Sense of Shape</p>
-            <h2
-              className="font-serif font-light text-display-lg text-white max-w-[480px] mb-6"
-              id="flow-heading"
-            >
-              How the journey
-              <br />
-              <em>unfolds.</em>
-            </h2>
-            <p className="text-base font-light text-white/40 leading-relaxed max-w-[520px] mb-16">
-              {journey.flowIntro}
-            </p>
-          </Reveal>
-
-          <div className={flowContainerClass}>
-            {journey.flow.map((phase, index) => (
-              <div key={phase.number} className={flowItemClass}>
-                <Reveal
-                  className="h-full border-r border-b border-white/[0.08]"
-                  delay={(index % 4) as 0 | 1 | 2 | 3 | 4}
-                >
-                  <div className="flex h-full flex-col px-8 pb-12 pt-10 md:px-10 md:pb-14 md:pt-12">
-                    <p className="font-serif font-light text-[2rem] text-white/[0.09] leading-none mb-8">
-                      {phase.number}
-                    </p>
-                    <p className="label-tag text-white/35 mb-3">{phase.period}</p>
-                    <p className="font-serif font-light italic text-lg text-white/70 mb-5 leading-snug">
-                      {phase.title}
-                    </p>
-                    <p className="max-w-[24rem] text-[15px] font-light text-white/45 leading-[1.9]">
-                      {phase.body}
-                    </p>
-                  </div>
-                </Reveal>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <JourneySummaryPanel
+        flowIntro={journey.flowIntro}
+        flow={journey.flow}
+        pillarsIntro={journey.pillarsIntro}
+        pillars={journey.pillars}
+      />
 
       <section className="section border-b border-stone-200" aria-labelledby="accommodation-heading">
         <div className="container-site">
