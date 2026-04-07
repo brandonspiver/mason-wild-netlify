@@ -63,8 +63,8 @@ const ARCHETYPES = [
     body:
       "An energetic Cape Town opening built around mountain, ocean, and adrenaline, followed by a privately guided Namibia expedition in a fully equipped 4x4. This is overland travel with polish: dramatic, seamless, and design-conscious from beginning to end.",
     img: {
-      src: "/journeys/the-adventure/Camissa House.jpg",
-      alt: "Camissa House beneath Table Mountain in Cape Town",
+      src: "/journeys/the-adventure/ZS (5).jpg",
+      alt: "Zannier Sonop in the Namib Desert",
     },
     reversed: true,
   },
@@ -77,8 +77,8 @@ const ARCHETYPES = [
     body:
       "Multiple ecosystems. Multiple territories. Multiple wildlife encounters  -  without sacrificing the privacy and control that make them meaningful. Private aircraft, exclusive-use properties throughout, and a single specialist from first enquiry to final departure.",
     img: {
-      src: "/journeys/the-private-circuit.jpg",
-      alt: "Aerial view of remote African landscape at first light",
+      src: "/journeys/the-private-circuit-card.png",
+      alt: "Sailing at sunset on calm waters",
     },
     reversed: false,
   },
@@ -219,8 +219,7 @@ export default function JourneysPage() {
                   className="font-serif font-light text-display-xl text-white mb-6 tracking-[-0.018em]"
                   id="the-social-heading"
                 >
-                  The Social  - <br />
-                  <em>A Curated Circle</em>
+                  <em>The Social Shift</em>
                 </h2>
                 <p className="font-serif font-light italic text-lg text-white/55 leading-relaxed mb-8">
                   A small group of aligned travellers. One shared season.
@@ -264,7 +263,7 @@ export default function JourneysPage() {
                   className="inline-flex items-center gap-3 text-2xs font-normal tracking-wide uppercase text-white/60 border-b border-white/25 hover:text-white hover:border-white/55 pb-[2px] transition-colors duration"
                 >
                   Learn about The Social
-                  <span aria-hidden="true">â†’</span>
+                  <span aria-hidden="true">→</span>
                 </Link>
               </div>
             </Reveal>

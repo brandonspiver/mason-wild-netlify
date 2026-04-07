@@ -361,7 +361,7 @@ export default function SocialShiftPage() {
         <div className="container-site">
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-7 gap-px bg-stone-200">
             {metadataItems.map((item, index) => (
-              <Reveal key={item.label} delay={(index % 3) as 0 | 1 | 2 | 3 | 4}>
+              <Reveal key={item.label} className="h-full" delay={(index % 3) as 0 | 1 | 2 | 3 | 4}>
                 <div className="bg-page px-8 py-10 h-full">
                   <p className="label-tag mb-4">{item.label}</p>
                   <p className="font-serif font-light italic text-base text-stone-800 leading-snug mb-4">
@@ -553,8 +553,8 @@ export default function SocialShiftPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-stone-200">
             {inclusions.map((item, index) => (
-              <Reveal key={item.title} delay={(index % 3) as 0 | 1 | 2 | 3 | 4}>
-                <div className="bg-page p-10">
+              <Reveal key={item.title} className="h-full" delay={(index % 3) as 0 | 1 | 2 | 3 | 4}>
+                <div className="h-full bg-page p-10">
                   <p className="label-tag mb-4">{item.title}</p>
                   <p className="text-base font-light text-stone-500 leading-relaxed">
                     {item.copy}

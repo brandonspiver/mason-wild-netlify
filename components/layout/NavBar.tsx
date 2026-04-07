@@ -12,6 +12,14 @@ const NAV_ITEMS = [
   { label: NAV_LABELS.about,      href: NAV_HREFS.about },
 ] as const;
 
+const JOURNEY_MENU_ITEMS = [
+  { label: "The Intimate", href: `${NAV_HREFS.journeys}/the-intimate` },
+  { label: "The Untamed", href: `${NAV_HREFS.journeys}/the-untamed` },
+  { label: "The Romantic", href: `${NAV_HREFS.journeys}/the-romantic` },
+  { label: "The Adventure", href: `${NAV_HREFS.journeys}/the-adventure` },
+  { label: "The Private Circuit", href: `${NAV_HREFS.journeys}/the-private-circuit` },
+] as const;
+
 const OVERLAY_ITEMS = [
   { label: NAV_LABELS.home,       href: NAV_HREFS.home },
   { label: NAV_LABELS.experience, href: NAV_HREFS.experience },
@@ -64,7 +72,10 @@ export function NavBar() {
         <nav aria-label="Primary navigation">
           <ul className="hidden md:flex items-center gap-10" role="list">
             {NAV_ITEMS.map(({ label, href }) => (
-              <li key={href}>
+              <li
+                key={href}
+                className={href === NAV_HREFS.journeys ? "relative group" : undefined}
+              >
                 <Link
                   href={href}
                   className={[
@@ -74,6 +85,24 @@ export function NavBar() {
                 >
                   {label}
                 </Link>
+
+                {href === NAV_HREFS.journeys && (
+                  <div className="pointer-events-none absolute left-1/2 top-full z-[220] w-[240px] -translate-x-1/2 pt-5 opacity-0 transition-all duration-[260ms] group-hover:pointer-events-auto group-hover:opacity-100 group-hover:translate-y-0 group-focus-within:pointer-events-auto group-focus-within:opacity-100">
+                    <div className="border border-stone-200 bg-white/95 p-3 shadow-[0_18px_40px_rgba(20,16,10,0.08)] backdrop-blur-md">
+                      <div className="flex flex-col">
+                        {JOURNEY_MENU_ITEMS.map((item) => (
+                          <Link
+                            key={item.href}
+                            href={item.href}
+                            className="px-4 py-3 font-serif text-[1.05rem] font-light text-stone-800 transition-colors duration-[200ms] hover:text-forest"
+                          >
+                            <em>{item.label}</em>
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                )}
               </li>
             ))}
           </ul>

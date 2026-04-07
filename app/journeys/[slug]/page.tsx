@@ -110,7 +110,13 @@ const JOURNEYS: Record<string, JourneyData> = {
     ],
     lead: "Some journeys are built around spectacle. This one is built around privacy.",
     vettedNote:
-      "Personally designed by Zannon James, with each property selected for privacy, atmosphere, operational excellence, and the ability to deliver a luxury experience that feels deeply personal rather than performative.",
+      "Personally selected by Zannon James through firsthand experience. Victoria Falls River Lodge remains an immediate go to at the Falls after an exceptional personal stay there, chosen for its setting, service, and polished sense of retreat. Extensive travel through the Okavango Delta and other key game reserves gives full confidence in the wildlife experience offered here, from predator sightings to exceptional birdlife and everything in between. The mokoro experience is one of the most special elements of the Delta, offering a quieter, more intimate way to encounter wildlife from the water.",
+    vettedLocation: "Victoria Falls River Lodge, Zimbabwe",
+    vettedImg: {
+      src: "/journeys/the-romantic/vetted-monwana.png",
+      alt: "Monwana safari setting in Greater Kruger",
+      position: "center 50%",
+    },
     body: [
       "It begins in the stark beauty of the Makgadikgadi, where the space feels almost lunar and the silence has weight. From there, it moves into the Okavango Delta, where water, reeds, and wildlife create a softer, more immersive rhythm. It ends above the Zambezi at Victoria Falls, where the pace slows again and the journey gives way to celebration, stillness, and release.",
       "The Intimate is a privately guided Botswana and Victoria Falls journey for guests who want solitude, sensuality, and the kind of wilderness that feels entirely their own.",
@@ -346,18 +352,18 @@ const JOURNEYS: Record<string, JourneyData> = {
     },
     galleryImgs: [
       {
-        src: "/journeys/the-untamed.jpg",
-        alt: "Tracker-led safari landscape in Zambia",
+        src: "/journeys/the-untamed/KuKaya (2).jpg",
+        alt: "KuKaya setting in South Luangwa",
         position: "center 50%",
       },
       {
-        src: "/journeys/journeys-hero-bath.jpg",
-        alt: "Restorative suite atmosphere in Zambia",
+        src: "/journeys/the-untamed/Chindeni (12).jpg",
+        alt: "Chindeni riverside suite scene in Zambia",
         position: "center 50%",
       },
       {
-        src: "/experience/how-we-work.jpg",
-        alt: "Quiet bush setting in Zambia",
+        src: "/journeys/the-untamed/Zungulila (17).jpg",
+        alt: "Zungulila atmosphere in South Luangwa",
         position: "center 50%",
       },
     ],
@@ -546,7 +552,7 @@ const JOURNEYS: Record<string, JourneyData> = {
     ],
     lead: "Some journeys are built around seeing as much as possible. This one is built around knowing where each place should sit.",
     vettedNote:
-      "Personally selected by Zannon James through firsthand experience. Victoria Falls River Lodge remains an immediate go to at the Falls after an exceptional personal stay there, chosen for its setting, service, and polished sense of retreat. Extensive travel through the Okavango Delta and other key game reserves gives full confidence in the wildlife experience offered here, from predator sightings to exceptional birdlife and everything in between. The mokoro experience is one of the most special elements of the Delta, offering a quieter, more intimate way to encounter wildlife from the water.",
+      "Personally selected by Zannon James through firsthand experience. Monwana was recently experienced on safari and left a lasting impression for all the right reasons, from hospitality, food, suite design and everything else. The guiding was the strongest I have ever experienced, marked by rare instinct, deep knowledge, and an effortless ability to make every sighting feel meaningful. It is chosen not only for the quality of the wildlife experience, but for the way it balances intimacy, polish, and a true sense of place in the bush.",
     vettedLocation: "Victoria Falls River Lodge, Zimbabwe",
     vettedImg: {
       src: "/journeys/the-romantic/vetted-victoria-falls.png",
@@ -562,8 +568,8 @@ const JOURNEYS: Record<string, JourneyData> = {
       "For LGBTQ+ travellers in particular, that confidence matters. Every property and partner included here has been selected for how well it delivers privacy, ease, and reassurance in practice, not just on paper.",
     ],
     heroImg: {
-      src: "/journeys/the-romantic/MN 2 .png",
-      alt: "Mount Nelson Hotel in Cape Town",
+      src: "/journeys/the-romantic/BBL (12).jpg",
+      alt: "Benguerra Island setting in Mozambique",
       position: "center 50%",
     },
     galleryImgs: [
@@ -1521,6 +1527,11 @@ export default function JourneyDetailPage({
       ? "w-full sm:w-1/2 xl:w-1/4"
       : "w-full sm:w-1/2 xl:w-1/3";
 
+  const flowContainerClass =
+    journey.flow.length <= 4
+      ? "grid grid-cols-1 border-l border-t border-white/[0.08] sm:grid-cols-2 xl:grid-cols-4"
+      : "flex flex-wrap justify-center border-l border-t border-white/[0.08]";
+
   return (
     <>
       <section
@@ -1616,25 +1627,36 @@ export default function JourneyDetailPage({
                 </p>
                 <div className="border-t border-stone-200 pt-8">
                   <p className="label-tag text-forest mb-3">Vetted &amp; Verified</p>
-                  {journey.vettedImg && (
-                    <div className="mb-4 max-w-[220px] overflow-hidden">
-                      <Image
-                        src={journey.vettedImg.src}
-                        alt={journey.vettedImg.alt}
-                        width={440}
-                        height={300}
-                        className="w-full aspect-[11/8] object-cover object-center"
-                        style={{ objectPosition: journey.vettedImg.position ?? "center" }}
-                        loading="lazy"
-                      />
+                  {journey.vettedImg ? (
+                    <div className="max-w-[640px]">
+                      <div className="mb-4 overflow-hidden">
+                        <Image
+                          src={journey.vettedImg.src}
+                          alt={journey.vettedImg.alt}
+                          width={900}
+                          height={720}
+                          className="w-full aspect-[6/5] object-cover object-center"
+                          style={{ objectPosition: journey.vettedImg.position ?? "center" }}
+                          loading="lazy"
+                        />
+                      </div>
+                      {journey.vettedLocation && (
+                        <p className="label-tag mb-4">{journey.vettedLocation}</p>
+                      )}
+                      <p className="text-sm font-light text-stone-500 leading-relaxed">
+                        {journey.vettedNote}
+                      </p>
                     </div>
+                  ) : (
+                    <>
+                      {journey.vettedLocation && (
+                        <p className="label-tag mb-3">{journey.vettedLocation}</p>
+                      )}
+                      <p className="text-sm font-light text-stone-500 leading-relaxed">
+                        {journey.vettedNote}
+                      </p>
+                    </>
                   )}
-                  {journey.vettedLocation && (
-                    <p className="label-tag mb-3">{journey.vettedLocation}</p>
-                  )}
-                  <p className="text-sm font-light text-stone-500 leading-relaxed">
-                    {journey.vettedNote}
-                  </p>
                 </div>
               </Reveal>
             </div>
@@ -1729,14 +1751,15 @@ export default function JourneyDetailPage({
 
           <div className="grid grid-cols-1 border-t border-stone-200 md:grid-cols-2">
             {journey.pillars.map((pillar, index) => (
-              <Reveal key={pillar.key} delay={(index % 3) as 0 | 1 | 2 | 3 | 4}>
-                <div
-                  className={[
-                    "bg-page px-8 py-10 md:px-10 md:py-12",
-                    "border-b border-stone-200",
-                    index % 2 === 1 ? "md:border-l md:border-stone-200" : "",
-                  ].join(" ")}
-                >
+              <Reveal
+                key={pillar.key}
+                className={[
+                  "h-full border-b border-stone-200",
+                  index % 2 === 1 ? "md:border-l md:border-stone-200" : "",
+                ].join(" ")}
+                delay={(index % 3) as 0 | 1 | 2 | 3 | 4}
+              >
+                <div className="h-full bg-page px-8 py-10 md:px-10 md:py-12">
                   <p className="label-tag mb-5">{pillar.title}</p>
                   <p className="max-w-[30rem] text-base font-light text-stone-500 leading-relaxed">
                     {pillar.body}
@@ -1768,11 +1791,11 @@ export default function JourneyDetailPage({
             </p>
           </Reveal>
 
-          <div className="flex flex-wrap items-stretch justify-center border-t border-white/[0.08]">
+          <div className={flowContainerClass}>
             {journey.flow.map((phase, index) => (
               <div key={phase.number} className={flowItemClass}>
                 <Reveal
-                  className="h-full border-b border-white/[0.08] border-l border-white/[0.08]"
+                  className="h-full border-r border-b border-white/[0.08]"
                   delay={(index % 4) as 0 | 1 | 2 | 3 | 4}
                 >
                   <div className="flex h-full flex-col px-8 pb-12 pt-10 md:px-10 md:pb-14 md:pt-12">
@@ -1840,19 +1863,19 @@ export default function JourneyDetailPage({
                 </Reveal>
 
                 <Reveal delay={((index + 1) % 3) as 0 | 1 | 2 | 3 | 4}>
-                  <div className="grid min-h-0 grid-cols-1 gap-[10px] md:min-h-[460px] md:grid-cols-[1.15fr_0.85fr]">
+                  <div className="grid min-h-0 grid-cols-1 gap-[10px] md:min-h-[520px] md:grid-cols-[minmax(0,1fr)_292px]">
                     <div className="overflow-hidden md:h-full">
                       <Image
                         src={accommodation.images[0].src}
                         alt={accommodation.images[0].alt}
                         width={900}
                         height={1125}
-                        className="h-[320px] w-full object-cover object-center transition-transform duration-[900ms] ease-out hover:scale-[1.03] md:h-full"
+                        className="h-[360px] w-full object-cover object-center transition-transform duration-[900ms] ease-out hover:scale-[1.03] md:h-full"
                         style={{ objectPosition: accommodation.images[0].position ?? "center" }}
                         loading="lazy"
                       />
                     </div>
-                    <div className="grid h-[200px] grid-cols-2 gap-[10px] md:h-full md:grid-cols-1 md:grid-rows-2">
+                    <div className="grid h-[220px] grid-cols-2 gap-[10px] md:h-full md:grid-cols-1 md:grid-rows-2">
                       {accommodation.images.slice(1).map((image) => (
                         <div key={image.alt} className="overflow-hidden">
                           <Image

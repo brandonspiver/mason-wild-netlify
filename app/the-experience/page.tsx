@@ -269,7 +269,7 @@ export default function TheExperiencePage() {
         <div className="container-site">
           <Reveal>
             <div className="mb-14">
-              <p className="label-tag text-white/36 mb-4">Inclusive Intelligence</p>
+              <p className="label-tag text-white mb-4">Inclusive Intelligence</p>
               <h2
                 className="font-serif font-light text-display-lg text-white max-w-[560px]"
                 id="inclusive-heading"
@@ -289,8 +289,8 @@ export default function TheExperiencePage() {
             {INCLUSIVE_ITEMS.map((item, i) => (
               <Reveal key={item.key} delay={(i % 3) as 0 | 1 | 2 | 3 | 4}>
                 <div className="bg-forest hover:bg-[#446f50] transition-colors duration p-10 h-full">
-                  <p className="label-tag text-white/36 mb-4">{item.title}</p>
-                  <p className="text-base font-light text-white/72 leading-relaxed">
+                  <p className="label-tag text-white mb-4">{item.title}</p>
+                  <p className="text-base font-light text-white leading-relaxed">
                     {item.body}
                   </p>
                 </div>
@@ -359,8 +359,7 @@ export default function TheExperiencePage() {
               <div className="max-w-xs">
                 <p className="label-tag mb-3">By Invitation Only</p>
                 <p className="font-serif font-light text-display-sm text-stone-900 leading-[1.2] tracking-[-0.01em]">
-                  The Social  - <br />
-                  <em>A Curated Circle</em>
+                  <em>The Social Shift</em>
                 </p>
               </div>
               <div className="sm:max-w-[400px]">
