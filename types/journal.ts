@@ -13,7 +13,14 @@ export type ArticleImage = {
   readonly src:     string;
   readonly alt:     string;
   readonly caption?: string; // Optional short editorial caption, separate from alt
+  readonly position?: string;
 };
+
+export type ArticleInline =
+  | { readonly type: "text"; readonly text: string }
+  | { readonly type: "link"; readonly text: string; readonly href: string; readonly external?: boolean }
+  | { readonly type: "em"; readonly text: string }
+  | { readonly type: "strong"; readonly text: string };
 
 // ─── Article summary ─────────────────────────────────────────────────────────
 // Used on the Journal index and wherever articles appear in lists.
@@ -35,11 +42,25 @@ export type ArticleSummary = {
 // prose styles used in the article body renderer.
 
 export type ArticleBodyBlock =
-  | { type: "p-lead";     text: string }
-  | { type: "p";          text: string }
+  | { type: "p-lead";     text?: string; content?: readonly ArticleInline[] }
+  | { type: "p";          text?: string; content?: readonly ArticleInline[] }
   | { type: "h2";         text: string }
   | { type: "h3";         text: string }
-  | { type: "blockquote"; text: string };
+  | { type: "blockquote"; text?: string; content?: readonly ArticleInline[] }
+  | {
+      type: "image";
+      image: ArticleImage;
+      description?: string;
+      aspect?: string;
+    }
+  | {
+      type: "table";
+      caption?: string;
+      columns: readonly string[];
+      rows: readonly {
+        readonly cells: readonly string[];
+      }[];
+    };
 
 // ─── Related journey reference ────────────────────────────────────────────────
 // Lightweight reference  -  only what the article body renderer needs.
@@ -58,6 +79,9 @@ export type RelatedJourneyRef = {
 
 export type FullArticle = ArticleSummary & {
   readonly subtitle?:        string;
+  readonly seoTitle?:        string;
+  readonly metaTitle?:       string;
+  readonly metaDescription?: string;
   readonly body:             readonly ArticleBodyBlock[];
   readonly relatedJourneys?: readonly RelatedJourneyRef[];
   readonly relatedArticles?: readonly ArticleSummary[];

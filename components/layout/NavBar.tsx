@@ -16,6 +16,7 @@ const JOURNEY_MENU_ITEMS = [
   { label: "The Intimate", href: `${NAV_HREFS.journeys}/the-intimate` },
   { label: "The Untamed", href: `${NAV_HREFS.journeys}/the-untamed` },
   { label: "The Romantic", href: `${NAV_HREFS.journeys}/the-romantic` },
+  { label: "The Classic", href: `${NAV_HREFS.journeys}/the-classic` },
   { label: "The Adventure", href: `${NAV_HREFS.journeys}/the-adventure` },
   { label: "The Private Circuit", href: `${NAV_HREFS.journeys}/the-private-circuit` },
   { label: "The Social Shift", href: NAV_HREFS.social },
@@ -94,7 +95,7 @@ export function NavBar() {
                 {href === NAV_HREFS.journeys && (
                   <div
                     className={[
-                      "absolute left-1/2 top-full z-[220] w-[232px] -translate-x-1/2 pt-3 transition-all duration-[220ms]",
+                      "absolute left-1/2 top-full z-[220] w-max min-w-[214px] -translate-x-1/2 pt-3 transition-all duration-[220ms]",
                       journeysOpen
                         ? "pointer-events-auto translate-y-0 opacity-100"
                         : "pointer-events-none -translate-y-1 opacity-0",
@@ -108,7 +109,7 @@ export function NavBar() {
                             href={item.href}
                             onClick={() => setJourneysOpen(false)}
                             onBlur={() => setJourneysOpen(false)}
-                            className="px-4 py-[12px] font-serif text-[1.03rem] font-light leading-none text-stone-800 transition-colors duration-[220ms] hover:bg-forest hover:text-white focus:bg-forest focus:text-white"
+                            className="px-3.5 py-[12px] font-serif text-[1.03rem] font-light leading-none text-stone-800 transition-colors duration-[220ms] hover:bg-forest hover:text-white focus:bg-forest focus:text-white"
                           >
                             <em>{item.label}</em>
                           </Link>

@@ -26,6 +26,12 @@ type JourneyPillar = {
   readonly body: string;
 };
 
+type JourneyIncludeItem = {
+  readonly key: string;
+  readonly title: string;
+  readonly body: string;
+};
+
 type JourneyFlowPhase = {
   readonly number: string;
   readonly period: string;
@@ -34,9 +40,17 @@ type JourneyFlowPhase = {
 };
 
 type JourneyAccommodation = {
+  readonly location?: string;
   readonly name: string;
+  readonly stay?: string;
   readonly description: string;
   readonly images: readonly [JourneyImage, JourneyImage, JourneyImage];
+};
+
+type JourneyListSection = {
+  readonly label: string;
+  readonly title: string;
+  readonly items: readonly string[];
 };
 
 type NextJourneyRef = {
@@ -55,18 +69,34 @@ type JourneyData = {
   readonly identity: string;
   readonly metadataItems: readonly JourneyMetadataItem[];
   readonly lead: string;
+  readonly narrativeLabel?: string;
   readonly vettedNote: string;
   readonly vettedLocation?: string;
   readonly vettedImg?: JourneyImage;
   readonly body: readonly string[];
   readonly heroImg: JourneyImage;
   readonly galleryImgs: readonly JourneyImage[];
+  readonly summaryTabLabel?: string;
+  readonly summaryEyebrow?: string;
+  readonly summaryHeading?: string;
+  readonly summaryEmphasis?: string;
   readonly pillarsIntro: string;
   readonly pillars: readonly JourneyPillar[];
+  readonly pillarsTabLabel?: string;
+  readonly pillarsEyebrow?: string;
+  readonly pillarsHeading?: string;
+  readonly pillarsEmphasis?: string;
+  readonly includesIntro: string;
+  readonly includesItems: readonly JourneyIncludeItem[];
   readonly flowIntro: string;
   readonly flow: readonly JourneyFlowPhase[];
   readonly accommodationsIntro: string;
   readonly accommodations: readonly JourneyAccommodation[];
+  readonly inclusions?: JourneyListSection;
+  readonly enhancements?: JourneyListSection;
+  readonly ctaLabel?: string;
+  readonly ctaHeading?: string;
+  readonly ctaEmphasis?: string;
   readonly inquiryHeading: string;
   readonly inquiryBody: string;
   readonly proofLabel: string;
@@ -149,7 +179,7 @@ const JOURNEYS: Record<string, JourneyData> = {
       },
     ],
     pillarsIntro:
-      "Everything included here has been chosen to protect the feeling of the journey: privacy in the desert, intimacy in the Delta, and a softer, more celebratory rhythm at the river's edge.",
+      "The Intimate is defined by privacy, contrast, and the way the journey becomes softer and more immersive as it moves from desert silence to Delta depth to a polished river finish.",
     pillars: [
       {
         key: "guiding",
@@ -180,6 +210,40 @@ const JOURNEYS: Record<string, JourneyData> = {
         key: "support",
         title: "Direct Mason & Wild Support",
         body: "A dedicated Mason & Wild specialist available discreetly throughout, with preferences, adjustments, and finer requests managed personally rather than passed around.",
+      },
+    ],
+    includesIntro:
+      "The Intimate is privately arranged from beginning to end, with accommodation, guiding, signature experiences, and transitions chosen to protect the quiet, held feeling of the journey.",
+    includesItems: [
+      {
+        key: "private-guiding",
+        title: "Private Guiding Across the Journey",
+        body: "A privately guided rhythm throughout, so the pace, game viewing, and daily texture are shaped around you rather than a shared programme.",
+      },
+      {
+        key: "jacks-stay",
+        title: "Jack's Private Camp Opening Chapter",
+        body: "A fully held start in the Makgadikgadi, with the camp's private format creating space, privacy, and a strong sense of arrival from the outset.",
+      },
+      {
+        key: "delta-stay",
+        title: "Duke's East Delta Chapter",
+        body: "A deeper Okavango stay designed around immersion, with time in the Delta long enough for the landscape to feel lived in rather than sampled.",
+      },
+      {
+        key: "desert-delta-experiences",
+        title: "Signature Desert and Delta Experiences",
+        body: "Experiences such as meerkat encounters, Bushman walks, seasonal quad biking, mokoro excursions, boating, fishing, and fly-camping are arranged within the route.",
+      },
+      {
+        key: "falls-finish",
+        title: "Victoria Falls Island Lodge Finish",
+        body: "A softer final stay above the Zambezi, with the privacy and polish needed to let the journey close gently rather than abruptly.",
+      },
+      {
+        key: "support-handling",
+        title: "Seamless Handling and Support",
+        body: "Transfers, handoffs, and on-journey refinements are managed discreetly by Mason & Wild, so the experience remains clean and uninterrupted.",
       },
     ],
     flowIntro:
@@ -369,7 +433,7 @@ const JOURNEYS: Record<string, JourneyData> = {
       },
     ],
     pillarsIntro:
-      "Everything included here has been chosen to protect the feeling of the journey: a polished arrival, restorative pause, and then a more instinctive rhythm in the bush.",
+      "The Untamed is defined by its pacing: a measured arrival, a restorative middle chapter, and then a deeper, more instinctive immersion into Zambia's bush country.",
     pillars: [
       {
         key: "guiding",
@@ -400,6 +464,40 @@ const JOURNEYS: Record<string, JourneyData> = {
         key: "support",
         title: "Direct Mason & Wild Support",
         body: "A dedicated Mason & Wild specialist remains available throughout, handling refinements, timing shifts, and requests personally rather than passing them into a system.",
+      },
+    ],
+    includesIntro:
+      "The Untamed is arranged as a complete Zambia progression, with each stay, transfer, and safari chapter selected to make the route feel calm on arrival and deeper as it unfolds.",
+    includesItems: [
+      {
+        key: "lusaka-arrival",
+        title: "A Polished Lusaka Arrival",
+        body: "The journey opens with a composed overnight in Lusaka, creating a cleaner transition into the route before the safari chapters begin.",
+      },
+      {
+        key: "kukaya-stay",
+        title: "KuKaya Restorative Chapter",
+        body: "A softer middle stay designed to reset the rhythm properly before the bush deepens, rather than rushing straight into safari movement.",
+      },
+      {
+        key: "south-luangwa-stays",
+        title: "Two South Luangwa Camp Chapters",
+        body: "Zungulila and Chindeni form the core of the journey, giving South Luangwa enough space to feel immersive, textured, and properly absorbed.",
+      },
+      {
+        key: "guided-safari-rhythm",
+        title: "Privately Guided Safari Rhythm",
+        body: "Game viewing and day-to-day pacing are privately handled, allowing the bush chapter to move according to conditions and appetite rather than standard camp timing.",
+      },
+      {
+        key: "inter-camp-handling",
+        title: "Managed Transitions Throughout",
+        body: "Inter-camp logistics and handoffs are arranged to feel smooth and unobtrusive, so the route holds together as one continuous journey.",
+      },
+      {
+        key: "mw-support",
+        title: "Direct Mason & Wild Support",
+        body: "A Mason & Wild specialist remains discreetly available throughout for refinements, timing shifts, and requests that need personal handling.",
       },
     ],
     flowIntro:
@@ -596,7 +694,7 @@ const JOURNEYS: Record<string, JourneyData> = {
       },
     ],
     pillarsIntro:
-      "Everything included here has been chosen to protect the feeling of the journey: style and ease in Cape Town, softness in Franschhoek, depth on safari, and a beautifully relaxed finish in Mozambique.",
+      "The Romantic is defined by contrast handled properly: city energy, vineyard softness, safari depth, and a final island release that allows the whole journey to exhale.",
     pillars: [
       {
         key: "guiding",
@@ -632,6 +730,40 @@ const JOURNEYS: Record<string, JourneyData> = {
         key: "support",
         title: "Direct Mason & Wild Support",
         body: "A dedicated Mason & Wild specialist available discreetly throughout, with preferences, adjustments, and finer requests managed personally rather than passed around.",
+      },
+    ],
+    includesIntro:
+      "The Romantic is privately arranged as a complete South Africa and Mozambique progression, with each chapter carrying a different mood while the handling remains seamless from start to finish.",
+    includesItems: [
+      {
+        key: "mount-nelson",
+        title: "Mount Nelson Hotel in Cape Town",
+        body: "A four-night city opening that gives Cape Town proper room for style, touring, dining, and a more elegant sense of arrival.",
+      },
+      {
+        key: "akademie-street",
+        title: "Akademie Street in Franschhoek",
+        body: "A quieter Winelands interlude that shifts the pace inward through village atmosphere, food, wine, and a more intimate kind of privacy.",
+      },
+      {
+        key: "monwana-stay",
+        title: "Monwana Safari Chapter",
+        body: "A four-night Greater Kruger stay that allows safari to deepen properly rather than functioning as a short wildlife stop.",
+      },
+      {
+        key: "benguerra-stay",
+        title: "Benguerra Island Finish",
+        body: "A final barefoot chapter in Mozambique, chosen to let the journey soften into sea air, privacy, and release.",
+      },
+      {
+        key: "cape-town-signature",
+        title: "Cape Town Signature Experiences",
+        body: "Private touring, standout dining, a helicopter flight, and a private champagne sunset yacht cruise are folded into the opening chapter.",
+      },
+      {
+        key: "support-handling",
+        title: "Private Handling Throughout",
+        body: "Routing, transfers, timing, and on-journey refinements are managed as one continuous private journey rather than a series of disconnected bookings.",
       },
     ],
     flowIntro:
@@ -776,6 +908,360 @@ const JOURNEYS: Record<string, JourneyData> = {
       },
     },
   },
+  "the-classic": {
+    slug: "the-classic",
+    outcome: "FOUNDATION",
+    territory: "CAPE TOWN, GREATER KRUGER & VICTORIA FALLS",
+    price: "9 NIGHTS FROM $6,000 PER PERSON",
+    name: "The Classic",
+    identity: "A refined first journey through Southern Africa.",
+    metadataItems: [
+      {
+        label: "Length",
+        title: "9 nights",
+        body: "Three nights in Cape Town, four nights in Greater Kruger, and two nights at Victoria Falls.",
+      },
+      {
+        label: "Designed For",
+        title: "First-time Southern Africa travellers",
+        body: "Guests who want the region's defining highlights handled with clarity, privacy, and a pace that never feels overworked.",
+      },
+      {
+        label: "Style",
+        title: "Privately arranged",
+        body: "A clean, privately coordinated route with guiding, transfers, and signature experiences placed where they add shape rather than noise.",
+      },
+      {
+        label: "Where",
+        title: "Cape Town, Greater Kruger, Victoria Falls",
+        body: "A clean Southern Africa progression from city and coast to safari depth, ending at the Falls.",
+      },
+      {
+        label: "From",
+        title: "$6,000 per person sharing",
+        body: "A starting point for the journey as outlined, privately arranged and refined around your dates and preferences.",
+      },
+    ],
+    lead:
+      "This journey is built for travellers who want to experience Southern Africa's defining highlights without overcomplication.",
+    narrativeLabel: "Why This Journey",
+    vettedNote:
+      "Personally selected by Zannon James through firsthand experience across each stage of this journey. The Pineapple House stands out as a characterful and well-located Cape Town base, offering a relaxed, design-led stay that feels both personal and effortlessly connected to the city. In Greater Kruger, time spent at Simbavati Waterside confirmed the strength of both guiding and wildlife density, with consistently rewarding game drives and a setting that allows guests to properly settle into the rhythm of the bush. At Mbano Manor, the experience is notably quieter and more refined than many properties in the area, with its forest setting creating a sense of privacy while remaining close to the Falls. Each property has been chosen not just for quality, but for how naturally it fits into a seamless, well-paced journey.",
+    vettedLocation: "Victoria Falls, Zimbabwe",
+    vettedImg: {
+      src: "/journeys/the-classic/vetted-victoria-falls.jpg",
+      alt: "Zannon James at Mbano Manor in Victoria Falls",
+      position: "center 72%",
+    },
+    body: [
+      "Designed as the perfect introduction to Africa, The Classic brings together three of the continent's most iconic experiences. From the coastal energy of Cape Town to the wildlife-rich landscapes of Greater Kruger, ending at the spectacle of Victoria Falls, this journey delivers everything a first-time traveller hopes for, executed with clarity, ease, and considered detail.",
+      "Each destination plays a clear role: Cape Town introduces the region through design, food, and landscape; Greater Kruger delivers a proper Big Five safari with time to settle into the rhythm of the bush; Victoria Falls provides a dramatic and memorable finale.",
+      "The structure is intentional. Three nights in Cape Town offer enough time to explore without rushing. Four nights on safari allow for meaningful wildlife encounters and a slower pace. Two nights at Victoria Falls ensure the experience feels complete, without becoming repetitive.",
+      "The Classic is accessible, but never diluted. It is the foundation of what Mason & Wild represents.",
+    ],
+    heroImg: {
+      src: "/journeys/the-classic/hero-elephant-sunset.jpg",
+      alt: "Elephant standing beside water at sunset",
+      position: "center 48%",
+    },
+    galleryImgs: [
+      {
+        src: "/journeys/the-classic/collage-simbavati-lodge-dusk.jpeg",
+        alt: "Simbavati Waterside lodge at dusk beside the water",
+        position: "center 52%",
+      },
+      {
+        src: "/journeys/the-classic/collage-mbano-river-boat.jpeg",
+        alt: "River boat scene near Victoria Falls",
+        position: "center 72%",
+      },
+      {
+        src: "/journeys/the-classic/collage-mbano-pool-night.jpg",
+        alt: "Mbano Manor pool lit at night in the forest",
+        position: "center 50%",
+      },
+      {
+        src: "/journeys/the-classic/PineApple House  (1).png",
+        alt: "Bedroom at The Pineapple House",
+        position: "center 50%",
+      },
+      {
+        src: "/journeys/the-classic/PineApple House  (2).png",
+        alt: "Bathroom at The Pineapple House",
+        position: "center 50%",
+      },
+      {
+        src: "/journeys/the-classic/PineApple House  (3).png",
+        alt: "Suite interior at The Pineapple House",
+        position: "center 50%",
+      },
+      {
+        src: "/journeys/the-classic/PineApple House  (4).png",
+        alt: "Lounge interior at The Pineapple House",
+        position: "center 50%",
+      },
+      {
+        src: "/journeys/the-classic/PineApple House  (5).png",
+        alt: "Exterior at The Pineapple House",
+        position: "center 52%",
+      },
+      {
+        src: "/journeys/the-classic/PineApple House  (6).png",
+        alt: "Library detail at The Pineapple House",
+        position: "center 50%",
+      },
+      {
+        src: "/journeys/the-classic/PineApple House  (7).png",
+        alt: "Pool courtyard at The Pineapple House",
+        position: "center 52%",
+      },
+    ],
+    summaryTabLabel: "Journey Flow",
+    summaryEyebrow: "Journey Flow",
+    summaryHeading: "Journey Flow",
+    pillarsTabLabel: "What Defines This Journey",
+    pillarsEyebrow: "Experience Highlights",
+    pillarsHeading: "What Defines This Journey",
+    pillarsIntro:
+      "The Classic is defined less by novelty than by how cleanly the route holds together. Each chapter is iconic, but the sequencing keeps the journey measured, private, and easy to move through.",
+    pillars: [
+      {
+        key: "southern-africa-route",
+        title: "A Complete First-Time Southern Africa Route",
+        body: "Cape Town, Greater Kruger, and Victoria Falls together create a first journey that feels broad enough to be memorable, but disciplined enough to remain coherent.",
+      },
+      {
+        key: "cape-town-touring",
+        title: "Private Cape Town Touring with Curated Dining",
+        body: "The city chapter is handled privately, with the right amount of structure and well-placed dining rather than an overfilled sightseeing schedule.",
+      },
+      {
+        key: "greater-kruger-stay",
+        title: "Four Nights in a Private Greater Kruger Reserve",
+        body: "The safari chapter is given enough time to settle properly, allowing the bush to feel lived in rather than simply sampled.",
+      },
+      {
+        key: "big-five-guiding",
+        title: "Big Five Safari with Expert Guiding",
+        body: "Greater Kruger delivers the classic safari experience at the right pace, with consistent wildlife viewing and guiding that gives the sightings depth.",
+      },
+      {
+        key: "falls-helicopter",
+        title: "Helicopter Flight over Victoria Falls",
+        body: "The aerial perspective adds a cinematic high point to the final chapter without making the experience feel overworked.",
+      },
+      {
+        key: "zambezi-cruise",
+        title: "Sunset Cruise on the Zambezi",
+        body: "A quieter, more atmospheric counterpoint to the scale of the Falls, giving the closing chapter a softer sense of release.",
+      },
+      {
+        key: "private-logistics",
+        title: "Seamless, Privately Coordinated Logistics",
+        body: "Flights, transfers, timing, and handoffs are arranged to feel clean and unobtrusive, so the journey moves with ease from start to finish.",
+      },
+    ],
+    includesIntro:
+      "The Classic includes the core elements needed to make a first Southern Africa journey feel complete, clear, and privately coordinated from arrival to departure.",
+    includesItems: [
+      {
+        key: "accommodation",
+        title: "All Accommodation",
+        body: "The full route includes your Cape Town stay, four nights on safari in Greater Kruger, and a final two-night chapter at Victoria Falls.",
+      },
+      {
+        key: "meals",
+        title: "Breakfast in Cape Town and Full Board on Safari",
+        body: "Breakfast is included during the Cape Town chapter, while the safari stay is fully boarded to keep the bush experience easy and uninterrupted.",
+      },
+      {
+        key: "private-transfers",
+        title: "Private Transfers Throughout",
+        body: "Airport handling and on-the-ground transfers are arranged privately, keeping the route smooth from one chapter to the next.",
+      },
+      {
+        key: "cape-town-touring",
+        title: "Cape Town Full-Day Private Touring",
+        body: "A privately guided full-day Cape Peninsula experience is built into the city chapter, giving Cape Town proper shape without overfilling it.",
+      },
+      {
+        key: "safari-activities",
+        title: "Safari Activities at Simbavati Waterside",
+        body: "Game drives and the full safari rhythm at the lodge are included, allowing the Greater Kruger chapter to unfold without unnecessary complexity.",
+      },
+      {
+        key: "falls-tour",
+        title: "Victoria Falls Guided Tour",
+        body: "A private guided visit to the Falls is included as part of the final chapter, giving the experience proper context on the ground.",
+      },
+      {
+        key: "falls-helicopter",
+        title: "Helicopter Flight over Victoria Falls",
+        body: "The aerial flight is included as a defining high point of the Victoria Falls stay, adding scale without making the chapter feel overworked.",
+      },
+      {
+        key: "zambezi-cruise",
+        title: "Zambezi Sunset Cruise",
+        body: "A sunset cruise on the Zambezi is included to soften the final chapter and bring a quieter counterpoint to the spectacle of the Falls.",
+      },
+    ],
+    flowIntro:
+      "The route is straightforward by design. Cape Town opens with context and energy, Greater Kruger holds the deeper safari chapter, and Victoria Falls closes the journey with spectacle and release.",
+    flow: [
+      {
+        number: "01",
+        period: "Day 1",
+        title: "Arrival in Cape Town",
+        body: "Private transfer to The Pineapple House and time to settle in properly before dinner at Asoka sets the tone for the city chapter.",
+      },
+      {
+        number: "02",
+        period: "Day 2",
+        title: "Cape Peninsula",
+        body: "A private full-day experience through Table Mountain, Chapman's Peak Drive, Cape Point, and Boulders Beach, with lunch at Kloof Street House and the evening left open.",
+      },
+      {
+        number: "03",
+        period: "Day 3",
+        title: "City & Coast",
+        body: "A more flexible Cape Town day, left open for independent exploring or additional time with your guide, with lunch at The Roundhouse and dinner and drinks at Cafe Manhattan.",
+      },
+      {
+        number: "04",
+        period: "Day 4",
+        title: "Cape Town to Kruger",
+        body: "Private transfer and flight into Greater Kruger, arriving at Simbavati Waterside in time for the first afternoon game drive.",
+      },
+      {
+        number: "05",
+        period: "Days 5-7",
+        title: "Safari Experience",
+        body: "Twice-daily game drives shape the days, while the time between them is left deliberately open for rest, photography, and settling fully into the slower rhythm of the bush.",
+      },
+      {
+        number: "06",
+        period: "Day 8",
+        title: "Kruger to Victoria Falls",
+        body: "Fly to Victoria Falls, check in at Mbano Manor, and shift into a softer final chapter with a sunset cruise on the Zambezi.",
+      },
+      {
+        number: "07",
+        period: "Day 9",
+        title: "Victoria Falls",
+        body: "A private guided tour of the Falls, followed by a helicopter flight over the gorge and a free afternoon to hold the scale of the experience without further pressure.",
+      },
+      {
+        number: "08",
+        period: "Day 10",
+        title: "Departure",
+        body: "Private transfer to the airport for onward departure, with the route closing cleanly and without complication.",
+      },
+    ],
+    accommodationsIntro:
+      "Each property has been chosen to support a distinct chapter of the route: a design-forward Cape Town base, a proper safari stay in Greater Kruger, and a quieter, more intimate finish at Victoria Falls.",
+    accommodations: [
+      {
+        location: "Cape Town",
+        name: "The Pineapple House",
+        stay: "3 Nights",
+        description:
+          "A characterful boutique hotel in Sea Point, The Pineapple House offers a relaxed yet design-forward base for exploring Cape Town. Its location allows for easy access to the Atlantic Seaboard, Table Mountain, and the city's restaurants, while maintaining a sense of privacy away from busier tourist zones.",
+        images: [
+          {
+            src: "/journeys/the-classic/PineApple House  (2).png",
+            alt: "Bathroom at The Pineapple House",
+            position: "center 50%",
+          },
+          {
+            src: "/journeys/the-classic/PineApple House  (1).png",
+            alt: "Bedroom at The Pineapple House",
+            position: "center 50%",
+          },
+          {
+            src: "/journeys/the-classic/PineApple House  (7).png",
+            alt: "Pool courtyard at The Pineapple House",
+            position: "center 52%",
+          },
+        ],
+      },
+      {
+        location: "Greater Kruger",
+        name: "Simbavati Waterside",
+        stay: "4 Nights",
+        description:
+          "Set within Klaserie Private Nature Reserve, part of the Greater Kruger ecosystem, Simbavati Waterside delivers a classic safari experience with a strong sense of place. Positioned around a natural water source, the lodge offers consistent wildlife viewing, well-paced game drives, and a calm, considered environment to fully immerse in the bush.",
+        images: [
+          {
+            src: "/journeys/the-classic/simbavati-waterside-large-suite.jpeg",
+            alt: "Suite at Simbavati Waterside",
+            position: "center 50%",
+          },
+          {
+            src: "/journeys/the-classic/simbavati-waterside-small-boma.jpg",
+            alt: "Simbavati Waterside waterside firepit setting",
+            position: "center 50%",
+          },
+          {
+            src: "/journeys/the-classic/simbavati-waterside-small-boma.jpeg",
+            alt: "Simbavati Waterside waterside firepit setting",
+            position: "center 50%",
+          },
+        ],
+      },
+      {
+        location: "Victoria Falls",
+        name: "Mbano Manor",
+        stay: "2 Nights",
+        description:
+          "Mbano Manor offers a more intimate alternative to traditional Victoria Falls hotels. Set within a teak forest, the property combines privacy with proximity to the Falls, creating a stay that feels refined, quiet, and well removed from the crowds.",
+        images: [
+          {
+            src: "/journeys/the-classic/mbano-manor-exterior.jpg",
+            alt: "Mbano Manor exterior in the forest",
+            position: "center 50%",
+          },
+          {
+            src: "/journeys/the-classic/mbano-manor-suite.jpg",
+            alt: "Suite interior at Mbano Manor",
+            position: "center 50%",
+          },
+          {
+            src: "/journeys/the-classic/mbano-manor-bath-detail.jpg",
+            alt: "Bathroom detail at Mbano Manor",
+            position: "center 50%",
+          },
+        ],
+      },
+    ],
+    enhancements: {
+      label: "Tailor Further",
+      title: "Optional Enhancements",
+      items: [
+        "Cape Winelands private experience",
+        "Private chef dining in a Cape Town villa setting",
+        "Spa treatments on safari",
+        "Photographic safari specialist guide",
+        "Extended nights in Cape Town or Victoria Falls",
+      ],
+    },
+    ctaLabel: "Begin Here",
+    ctaHeading: "Begin Your Journey",
+    inquiryHeading: "Start planning The Classic.",
+    inquiryBody:
+      "The Classic is designed as a seamless introduction to Southern Africa, balancing iconic experiences with thoughtful pacing and refined detail. Each journey is privately arranged and tailored to your travel style.",
+    proofLabel: "Privately Coordinated",
+    proofNote:
+      "A clean first journey depends less on novelty than on judgment. The routing, pacing, and partner selection here are designed to give first-time Southern Africa travellers the right breadth without friction, dilution, or unnecessary complication.",
+    nextJourney: {
+      slug: "the-romantic",
+      name: "The Romantic",
+      outcome: "Wonder",
+      img: {
+        src: "/journeys/the-romantic-card.png",
+        alt: "Twilight dinner by the river",
+      },
+    },
+  },
   "the-adventure": {
     slug: "the-adventure",
     outcome: "ADVENTURE",
@@ -857,7 +1343,7 @@ const JOURNEYS: Record<string, JourneyData> = {
       },
     ],
     pillarsIntro:
-      "Everything included here has been chosen to protect the shape of the journey: energy and edge in Cape Town, complete continuity in Namibia, and a route that becomes more expansive, remote, and rewarding as it unfolds.",
+      "The Adventure is defined by movement with continuity: an energetic Cape Town opening, a privately guided Namibia chapter, and a route that grows more expansive, remote, and rewarding as it unfolds.",
     pillars: [
       {
         key: "cape-town-guiding",
@@ -898,6 +1384,40 @@ const JOURNEYS: Record<string, JourneyData> = {
         key: "addons",
         title: "Optional Add-Ons, Considered Properly",
         body: "For guests who want to sharpen the adventure further, options such as a Table Mountain abseil in Cape Town or additional desert experiences in Namibia can be folded into the journey without disturbing its overall rhythm.",
+      },
+    ],
+    includesIntro:
+      "The Adventure is arranged as one continuous privately guided route, with Cape Town experiences, Namibia overland handling, and each lodge chapter built into the journey from start to finish.",
+    includesItems: [
+      {
+        key: "camissa-opening",
+        title: "Camissa House Opening in Cape Town",
+        body: "A three-night city chapter that anchors the route with mountain-facing calm before the journey becomes more adventurous.",
+      },
+      {
+        key: "cape-town-adventure-included",
+        title: "Cape Town Adventure Experiences",
+        body: "The opening chapter is designed around active, privately handled experiences such as paragliding, hiking, and shark cage diving, balanced by strong dining.",
+      },
+      {
+        key: "private-guide-4x4",
+        title: "Private Namibia Guide and 4x4",
+        body: "From arrival in Windhoek onward, the Namibia chapter is held by one private adventure guide and a fully equipped vehicle that stay with you throughout.",
+      },
+      {
+        key: "omaanda-sonop",
+        title: "Omaanda and Sonop Desert Chapters",
+        body: "A softer highlands threshold at Omaanda leads into Sonop, where ballooning, horse riding or quad biking, and desert exploration are built into the route.",
+      },
+      {
+        key: "rhino-camp-chapter",
+        title: "Desert Rhino Camp Immersion",
+        body: "The Damaraland chapter includes conservation-led tracking and a more remote wilderness experience that gives the journey real depth.",
+      },
+      {
+        key: "little-ongava-finish",
+        title: "Little Ongava Safari Finish",
+        body: "The route closes with a final Etosha-region safari stay that brings privacy, exclusivity, and a more settled final wildlife chapter.",
       },
     ],
     flowIntro:
@@ -1193,7 +1713,7 @@ const JOURNEYS: Record<string, JourneyData> = {
       },
     ],
     pillarsIntro:
-      "Everything included here has been chosen to protect the rhythm of the journey: calm on arrival, depth in Tarangire, scale in the Serengeti, and a softer, more private release in Zanzibar.",
+      "The Private Circuit is defined by continuity, private handling, and the way the route moves cleanly from arrival and grounding into safari depth before softening into Zanzibar.",
     pillars: [
       {
         key: "private-safari",
@@ -1227,13 +1747,47 @@ const JOURNEYS: Record<string, JourneyData> = {
       },
       {
         key: "ease",
-        title: "All-Included Ease",
-        body: "All transfers, four domestic flights, all meals and drinks at the Siringit camps, park entrance and camping fees for Serengeti and Tarangire, WiFi, and the hot air balloon experience are all included, allowing the journey to feel properly held from beginning to end.",
+        title: "Seamless Private Handling",
+        body: "Flights, transfers, camp transitions, park logistics, and the balloon experience are arranged as one continuous private circuit, allowing the journey to feel light, coherent, and properly held from beginning to end.",
       },
       {
         key: "support",
         title: "Direct Mason & Wild Support",
         body: "A dedicated Mason & Wild specialist available discreetly throughout, with preferences, adjustments, and finer requests managed personally rather than passed around.",
+      },
+    ],
+    includesIntro:
+      "The Private Circuit includes the operational pieces that make a multi-chapter East Africa journey feel light and coherent: private safari handling, domestic flights, and a route that stays beautifully controlled throughout.",
+    includesItems: [
+      {
+        key: "private-safari-guiding",
+        title: "Private Safari Handling Throughout",
+        body: "The safari chapters are arranged privately from the outset, so the pace of game viewing and camp transitions is shaped around you rather than a shared circuit.",
+      },
+      {
+        key: "domestic-flights",
+        title: "Flights Between Chapters",
+        body: "Domestic flights are built into the route to keep Tanzania moving cleanly from villa arrival to safari depth to island finish.",
+      },
+      {
+        key: "villa-and-tarangire",
+        title: "Siringit Villa and Tarangire Opening",
+        body: "A softer beginning at Siringit Villa leads into Tarangire with private game drives and a more grounded first safari rhythm.",
+      },
+      {
+        key: "serengeti-arc",
+        title: "Two-Part Serengeti Chapter",
+        body: "The route includes nights across Siringit Migration Camp and Siringit Serengeti Camp, allowing the Serengeti to feel expansive first, then more settled.",
+      },
+      {
+        key: "balloon-and-park-fees",
+        title: "Ballooning and Park Logistics Included",
+        body: "The hot air balloon experience, park entrance and camping fees, and the practical safari logistics are all built into the journey.",
+      },
+      {
+        key: "xanadu-finish",
+        title: "Xanadu Zanzibar Finish",
+        body: "The final island chapter includes villa privacy, a softer barefoot rhythm, and a private sunset dhow experience to close the route properly.",
       },
     ],
     flowIntro:
@@ -1534,6 +2088,11 @@ export default function JourneyDetailPage({
   ].filter(
     (image, index, images) => index === images.findIndex((entry) => entry.src === image.src),
   );
+  let ctaHeading = journey.inquiryHeading.replace(` ${journey.name}.`, "");
+
+  if (journey.ctaHeading) {
+    ctaHeading = journey.ctaHeading;
+  }
 
   return (
     <>
@@ -1621,7 +2180,7 @@ export default function JourneyDetailPage({
           <div className="grid grid-cols-1 lg:grid-cols-[2fr_3fr] gap-[clamp(48px,7vw,96px)]">
             <div className="lg:sticky lg:top-[100px] lg:self-start">
               <Reveal>
-                <p className="label-tag mb-6">Journey Identity</p>
+                <p className="label-tag mb-6">{journey.narrativeLabel ?? "Journey Identity"}</p>
                 <p
                   className="font-serif font-light text-display-sm text-stone-800 leading-[1.45] tracking-[-0.01em] mb-10"
                   id="narrative-heading"
@@ -1726,8 +2285,18 @@ export default function JourneyDetailPage({
       <JourneySummaryPanel
         flowIntro={journey.flowIntro}
         flow={journey.flow}
-        pillarsIntro={journey.pillarsIntro}
-        pillars={journey.pillars}
+        definesIntro={journey.pillarsIntro}
+        defines={journey.pillars}
+        includesIntro={journey.includesIntro}
+        includesItems={journey.includesItems}
+        summaryTabLabel={journey.summaryTabLabel}
+        definesTabLabel={journey.pillarsTabLabel}
+        summaryEyebrow={journey.summaryEyebrow}
+        summaryHeading={journey.summaryHeading}
+        summaryEmphasis={journey.summaryEmphasis}
+        definesEyebrow={journey.pillarsEyebrow}
+        definesHeading={journey.pillarsHeading}
+        definesEmphasis={journey.pillarsEmphasis}
       />
 
       <section className="section border-b border-stone-200" aria-labelledby="accommodation-heading">
@@ -1765,10 +2334,13 @@ export default function JourneyDetailPage({
               >
                 <Reveal delay={(index % 3) as 0 | 1 | 2 | 3 | 4}>
                   <div className="lg:pr-8">
-                    <p className="label-tag mb-4">Accommodation</p>
+                    <p className="label-tag mb-4">{accommodation.location ?? "Accommodation"}</p>
                     <h3 className="font-serif font-light text-display-sm text-stone-900 mb-6 tracking-[-0.012em]">
                       <em>{accommodation.name}</em>
                     </h3>
+                    {accommodation.stay && (
+                      <p className="label-tag text-stone-400 mb-5">{accommodation.stay}</p>
+                    )}
                     <p className="text-base font-light text-stone-500 leading-relaxed">
                       {accommodation.description}
                     </p>
@@ -1811,6 +2383,79 @@ export default function JourneyDetailPage({
         </div>
       </section>
 
+      {journey.inclusions && (
+        <section className="section border-b border-stone-200" aria-labelledby="inclusions-heading">
+          <div className="container-site">
+            <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-[clamp(40px,6vw,80px)] items-start">
+              <Reveal>
+                <div>
+                  <p className="label-tag mb-4">{journey.inclusions.label}</p>
+                  <h2
+                    className="font-serif font-light text-display-md text-stone-900"
+                    id="inclusions-heading"
+                  >
+                    {journey.inclusions.title}
+                  </h2>
+                </div>
+              </Reveal>
+
+              <div className="border-t border-stone-200">
+                {journey.inclusions.items.map((item, index) => (
+                  <Reveal key={item} delay={(index % 3) as 0 | 1 | 2 | 3 | 4}>
+                    <div className="grid grid-cols-[20px_1fr] gap-4 border-b border-stone-200 py-5">
+                      <span className="text-stone-300" aria-hidden="true">
+                        +
+                      </span>
+                      <p className="text-base font-light text-stone-500 leading-relaxed">
+                        {item}
+                      </p>
+                    </div>
+                  </Reveal>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {journey.enhancements && (
+        <section
+          className="section border-b border-stone-200"
+          aria-labelledby="enhancements-heading"
+        >
+          <div className="container-site">
+            <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-[clamp(40px,6vw,80px)] items-start">
+              <Reveal>
+                <div>
+                  <p className="label-tag mb-4">{journey.enhancements.label}</p>
+                  <h2
+                    className="font-serif font-light text-display-md text-stone-900"
+                    id="enhancements-heading"
+                  >
+                    {journey.enhancements.title}
+                  </h2>
+                </div>
+              </Reveal>
+
+              <div className="border-t border-stone-200">
+                {journey.enhancements.items.map((item, index) => (
+                  <Reveal key={item} delay={(index % 3) as 0 | 1 | 2 | 3 | 4}>
+                    <div className="grid grid-cols-[20px_1fr] gap-4 border-b border-stone-200 py-5">
+                      <span className="text-stone-300" aria-hidden="true">
+                        +
+                      </span>
+                      <p className="text-base font-light text-stone-500 leading-relaxed">
+                        {item}
+                      </p>
+                    </div>
+                  </Reveal>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
       <section
         className="section border-b border-stone-200"
         aria-labelledby="journey-cta-heading"
@@ -1819,14 +2464,24 @@ export default function JourneyDetailPage({
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-[clamp(48px,7vw,96px)] items-center">
             <Reveal>
               <div>
-                <p className="label-tag mb-6">Begin This Journey</p>
+                <p className="label-tag mb-6">{journey.ctaLabel ?? "Begin This Journey"}</p>
                 <h2
                   className="font-serif font-light text-display-xl text-stone-900 mb-6 tracking-[-0.018em]"
                   id="journey-cta-heading"
                 >
-                  {journey.inquiryHeading.replace(` ${journey.name}.`, "")}
-                  <br />
-                  <em>{journey.name}.</em>
+                  {ctaHeading}
+                  {!journey.ctaHeading && !journey.ctaEmphasis ? (
+                    <>
+                      <br />
+                      <em>{journey.name}.</em>
+                    </>
+                  ) : null}
+                  {journey.ctaEmphasis ? (
+                    <>
+                      <br />
+                      <em>{journey.ctaEmphasis}</em>
+                    </>
+                  ) : null}
                 </h2>
                 <p className="text-base font-light text-stone-500 leading-relaxed max-w-[440px]">
                   {journey.inquiryBody}

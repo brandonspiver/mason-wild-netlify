@@ -237,7 +237,7 @@ const shapeCards: readonly ShapeCard[] = [
   },
 ] as const;
 
-const inclusions: readonly Inclusion[] = [
+const definesItems: readonly Inclusion[] = [
   {
     title: "Private Guiding Throughout",
     copy:
@@ -277,6 +277,44 @@ const inclusions: readonly Inclusion[] = [
     title: "Direct Mason & Wild Support",
     copy:
       "A dedicated Mason & Wild specialist available discreetly throughout, with preferences, adjustments, and finer requests managed personally rather than passed around.",
+  },
+] as const;
+
+const includesItems: readonly Inclusion[] = [
+  {
+    title: "Satyagraha House in Johannesburg",
+    copy:
+      "A two-night opening stay that gives the journey a calmer, more reflective beginning before the group moves deeper into the route.",
+  },
+  {
+    title: "Private Soweto Culture Day",
+    copy:
+      "The Johannesburg chapter includes a privately guided Soweto experience that gives the opening days texture and context rather than treating the city as transit.",
+  },
+  {
+    title: "Few & Far Luvhondo Safari Stay",
+    copy:
+      "A four-night private safari chapter forms the emotional core of the journey, with enough time for landscape, privacy, and group rhythm to settle properly.",
+  },
+  {
+    title: "Sterrekopje Winelands Pause",
+    copy:
+      "Two nights in Franschhoek bring a slower interlude of design, restoration, and beauty after safari and before the final coastal chapter.",
+  },
+  {
+    title: "The Aven Private Villa in Cape Town",
+    copy:
+      "A four-night hosted villa finish in Camps Bay gives the group shared space, privacy, and a more social final rhythm without losing elegance.",
+  },
+  {
+    title: "Signature Cape Town Experiences",
+    copy:
+      "Private city and peninsula guiding, a helicopter flight, a private champagne sunset yacht cruise, and a Constantia afternoon are built into the closing chapter.",
+  },
+  {
+    title: "Hosted Dining and Ongoing Support",
+    copy:
+      "Private chef breakfasts, well-placed dining, a hosted farewell dinner, and direct Mason & Wild support help the journey feel fully held from start to finish.",
   },
 ] as const;
 
@@ -510,9 +548,11 @@ export default function SocialShiftPage() {
 
       <SocialJourneyPanel
         intro="The route and sequencing are intentional. Within that structure, each chapter still has room to breathe, with the pace and emphasis shaped around your group, your guide, and the mood of the journey itself."
+        definesIntro="The Social Shift is defined by progression: grounding in Johannesburg, depth on safari, restoration in the Winelands, and a more social, beautifully hosted finish in Cape Town."
+        definesItems={definesItems}
         shapeCards={shapeCards}
-        includesIntro="Everything included here has been chosen to protect the feeling of the journey: grounding in Johannesburg, depth on safari, restoration in the Winelands, and a more social and beautifully hosted finish in Cape Town."
-        inclusions={inclusions}
+        includesIntro="What is included here is built around hosting the group properly: private stays, key guiding and social experiences, and enough structure to keep the journey easy without making it feel managed."
+        includesItems={includesItems}
       />
 
       <section className="section border-b border-stone-200" aria-labelledby="proof-heading">

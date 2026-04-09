@@ -34,7 +34,7 @@ export default function AboutPage() {
             </div>
 
             <Reveal delay={2}>
-              <p className="text-base font-light text-white/72 leading-relaxed">
+              <p className="text-base font-light text-white leading-relaxed">
                 Zannon designs and personally oversees every journey Mason &amp; Wild
                 accepts - private African travel built specifically for discerning LGBTQ+
                 travellers, where discretion and genuine welcome are the standard, not
@@ -202,7 +202,7 @@ export default function AboutPage() {
                 ].map(({ label, body }) => (
                   <div
                     key={label}
-                    className="border-t border-white/18 py-6 last:border-b last:border-white/18"
+                    className="border-t border-white py-6 last:border-b last:border-white"
                   >
                     <p className="label-tag text-white/52 mb-2">{label}</p>
                     <p className="text-sm font-light text-white leading-relaxed">

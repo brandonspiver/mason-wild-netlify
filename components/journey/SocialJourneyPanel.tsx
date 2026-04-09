@@ -24,17 +24,21 @@ type Inclusion = {
 type SocialJourneyPanelProps = {
   readonly intro: string;
   readonly shapeCards: readonly ShapeCard[];
+  readonly definesIntro: string;
+  readonly definesItems: readonly Inclusion[];
   readonly includesIntro: string;
-  readonly inclusions: readonly Inclusion[];
+  readonly includesItems: readonly Inclusion[];
 };
 
 export function SocialJourneyPanel({
   intro,
   shapeCards,
+  definesIntro,
+  definesItems,
   includesIntro,
-  inclusions,
+  includesItems,
 }: SocialJourneyPanelProps) {
-  const [activeTab, setActiveTab] = useState<"summary" | "includes">("summary");
+  const [activeTab, setActiveTab] = useState<"summary" | "defines" | "includes">("summary");
 
   return (
     <section
@@ -57,7 +61,19 @@ export function SocialJourneyPanel({
                       : "border-stone-200 text-stone-500 hover:text-stone-900",
                   ].join(" ")}
                 >
-                  Trip Summary
+                  Journey Flow
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setActiveTab("defines")}
+                  className={[
+                    "w-full border-b pb-3 text-left text-sm font-normal tracking-wide uppercase transition-colors duration-[220ms]",
+                    activeTab === "defines"
+                      ? "border-forest text-forest"
+                      : "border-stone-200 text-stone-500 hover:text-stone-900",
+                  ].join(" ")}
+                >
+                  What Defines This Journey
                 </button>
                 <button
                   type="button"
@@ -80,14 +96,12 @@ export function SocialJourneyPanel({
               <div className="animate-[fadeRise_0.55s_cubic-bezier(0.16,1,0.3,1)_forwards]">
                 <Reveal>
                   <div className="mb-[clamp(44px,7vw,72px)]">
-                    <p className="label-tag mb-4">A Sense of Shape</p>
+                    <p className="label-tag mb-4">Journey Flow</p>
                     <h2
                       className="font-serif font-light text-display-md text-stone-900"
                       id="social-summary-heading"
                     >
-                      How the journey
-                      <br />
-                      <em>unfolds.</em>
+                      Journey Flow
                     </h2>
                     <p className="mt-6 max-w-[760px] text-base font-light text-stone-500 leading-relaxed">
                       {intro}
@@ -137,22 +151,47 @@ export function SocialJourneyPanel({
                   ))}
                 </div>
               </div>
-            ) : (
+            ) : activeTab === "defines" ? (
               <div className="animate-[fadeRise_0.55s_cubic-bezier(0.16,1,0.3,1)_forwards]">
                 <Reveal>
                   <div className="mb-10">
-                    <p className="label-tag mb-4">What This Journey Includes</p>
+                    <p className="label-tag mb-4">Experience Highlights</p>
                     <h2
                       className="font-serif font-light text-display-md text-stone-900"
                       id="social-summary-heading"
                     >
-                      What This Journey Includes
+                      What Defines This Journey
                     </h2>
-                    <p className="font-serif font-light italic text-display-sm text-stone-900 mt-3">
-                      Privately shaped.
-                      <br />
-                      <em>Beautifully held.</em>
+                    <p className="mt-6 max-w-[760px] text-base font-light text-stone-500 leading-relaxed">
+                      {definesIntro}
                     </p>
+                  </div>
+                </Reveal>
+
+                <div className="grid grid-cols-1 gap-x-12 md:grid-cols-2">
+                  {definesItems.map((item, index) => (
+                    <Reveal key={item.title} delay={(index % 3) as 0 | 1 | 2 | 3 | 4}>
+                      <div className="border-t border-stone-200 py-7 md:py-8">
+                        <p className="label-tag mb-4">{item.title}</p>
+                        <p className="max-w-[34rem] text-base font-light text-stone-500 leading-relaxed">
+                          {item.copy}
+                        </p>
+                      </div>
+                    </Reveal>
+                  ))}
+                </div>
+              </div>
+            ) : (
+              <div className="animate-[fadeRise_0.55s_cubic-bezier(0.16,1,0.3,1)_forwards]">
+                <Reveal>
+                  <div className="mb-10">
+                    <p className="label-tag mb-4">What&apos;s Included</p>
+                    <h2
+                      className="font-serif font-light text-display-md text-stone-900"
+                      id="social-summary-heading"
+                    >
+                      What&apos;s Included
+                    </h2>
                     <p className="mt-6 max-w-[760px] text-base font-light text-stone-500 leading-relaxed">
                       {includesIntro}
                     </p>
@@ -160,7 +199,7 @@ export function SocialJourneyPanel({
                 </Reveal>
 
                 <div className="grid grid-cols-1 gap-x-12 md:grid-cols-2">
-                  {inclusions.map((item, index) => (
+                  {includesItems.map((item, index) => (
                     <Reveal key={item.title} delay={(index % 3) as 0 | 1 | 2 | 3 | 4}>
                       <div className="border-t border-stone-200 py-7 md:py-8">
                         <p className="label-tag mb-4">{item.title}</p>

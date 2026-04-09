@@ -1,0 +1,23 @@
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bw-bg" x1="218" y1="92" x2="1380" y2="953" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E7DDD1"/>
+      <stop offset="0.55" stop-color="#AE997A"/>
+      <stop offset="1" stop-color="#425446"/>
+    </linearGradient>
+    <linearGradient id="bw-water" x1="800" y1="558" x2="800" y2="920" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#AFC0B8" stop-opacity="0.75"/>
+      <stop offset="1" stop-color="#496055" stop-opacity="0.95"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#bw-bg)"/>
+  <rect y="580" width="1600" height="420" fill="url(#bw-water)"/>
+  <rect x="220" y="492" width="520" height="178" rx="20" fill="#EBDCC5" fill-opacity="0.72"/>
+  <rect x="984" y="462" width="212" height="124" rx="18" fill="#F5EBDD" fill-opacity="0.82"/>
+  <path d="M206 570C402 521 612 510 812 540C1027 573 1224 636 1435 720" stroke="#F5E6D3" stroke-opacity="0.34" stroke-width="2"/>
+  <path d="M858 560L890 542L938 560L973 587L1004 611" stroke="#0F1612" stroke-opacity="0.3" stroke-width="2"/>
+  <path d="M889 547L886 620" stroke="#0F1612" stroke-opacity="0.3" stroke-width="2"/>
+  <text x="126" y="148" fill="#F5ECDD" font-family="Arial, Helvetica, sans-serif" font-size="24" letter-spacing="6">IMAGE PLACEHOLDER 3</text>
+  <text x="126" y="842" fill="#F9F0E4" font-family="Georgia, 'Times New Roman', serif" font-size="82" font-style="italic">Botswana</text>
+  <text x="126" y="898" fill="#F7EDDF" font-family="Arial, Helvetica, sans-serif" font-size="28" letter-spacing="2">Quiet, intimate safari mood with privacy and atmosphere at the center.</text>
+</svg>

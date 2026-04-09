@@ -1,0 +1,27 @@
+<svg width="2400" height="1200" viewBox="0 0 2400 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="214" y1="88" x2="2146" y2="1129" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E7DDD0"/>
+      <stop offset="0.52" stop-color="#CDB79E"/>
+      <stop offset="1" stop-color="#546E57"/>
+    </linearGradient>
+    <radialGradient id="sun" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1458 360) rotate(90) scale(384 612)">
+      <stop stop-color="#FFF2DA" stop-opacity="0.92"/>
+      <stop offset="1" stop-color="#FFF2DA" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ground" x1="1200" y1="742" x2="1200" y2="1200" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7C725C" stop-opacity="0"/>
+      <stop offset="1" stop-color="#3E4B3E"/>
+    </linearGradient>
+  </defs>
+  <rect width="2400" height="1200" fill="url(#bg)"/>
+  <rect width="2400" height="1200" fill="url(#sun)"/>
+  <path d="M0 780C216 722 421 731 622 766C811 799 953 860 1144 874C1369 892 1517 801 1742 786C1941 773 2154 820 2400 900V1200H0V780Z" fill="url(#ground)"/>
+  <path d="M0 866C178 812 324 802 491 828C639 851 757 904 912 918C1113 936 1287 872 1493 849C1717 824 1928 861 2400 956V1200H0V866Z" fill="#2E392F" fill-opacity="0.22"/>
+  <circle cx="1598" cy="366" r="104" fill="#FFF7EA" fill-opacity="0.44"/>
+  <path d="M335 855C520 823 620 836 770 871C955 915 1032 985 1206 1000C1385 1016 1550 933 1762 922C1947 912 2095 955 2261 1019" stroke="#F2E3CF" stroke-opacity="0.32" stroke-width="2"/>
+  <path d="M250 936C404 900 559 896 728 931C882 963 1001 1010 1132 1020C1307 1035 1415 987 1571 969C1742 949 1909 972 2142 1049" stroke="#F2E3CF" stroke-opacity="0.18" stroke-width="2"/>
+  <text x="168" y="148" fill="#F6EBDD" font-family="Arial, Helvetica, sans-serif" font-size="30" letter-spacing="7">IMAGE PLACEHOLDER 1</text>
+  <text x="168" y="978" fill="#FFF7EC" font-family="Georgia, 'Times New Roman', serif" font-size="110" font-style="italic">Southern Africa Hero</text>
+  <text x="176" y="1044" fill="#F8EDE0" font-family="Arial, Helvetica, sans-serif" font-size="32" letter-spacing="3">Refined dawn or dusk landscape with privacy, stillness, and elegance.</text>
+</svg>

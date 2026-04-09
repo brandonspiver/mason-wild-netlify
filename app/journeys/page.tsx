@@ -55,6 +55,20 @@ const ARCHETYPES = [
     reversed: false,
   },
   {
+    slug:      "the-classic",
+    outcome:   "Foundation",
+    name:      "The Classic",
+    territory: "Cape Town · Greater Kruger · Victoria Falls",
+    tagline:   "A refined first journey through Southern Africa.",
+    body:
+      "A clean introduction to Southern Africa's defining highlights: Cape Town for style and landscape, Greater Kruger for a proper Big Five safari, and Victoria Falls for a final chapter with scale and atmosphere. Broad enough to feel memorable, disciplined enough to stay elegant.",
+    img: {
+      src: "/journeys/the-adventure/vetted-cape-town.jpg",
+      alt: "Cape Town coastline at golden hour",
+    },
+    reversed: true,
+  },
+  {
     slug:      "the-adventure",
     outcome:   "Adventure",
     name:      "The Adventure",
@@ -66,7 +80,7 @@ const ARCHETYPES = [
       src: "/journeys/the-adventure/ZS (5).jpg",
       alt: "Zannier Sonop in the Namib Desert",
     },
-    reversed: true,
+    reversed: false,
   },
   {
     slug:      "the-private-circuit",

@@ -1,0 +1,17 @@
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="na-bg" x1="246" y1="54" x2="1370" y2="951" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F0E5D6"/>
+      <stop offset="0.46" stop-color="#D8B994"/>
+      <stop offset="1" stop-color="#7B624D"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#na-bg)"/>
+  <path d="M0 725C246 668 385 642 567 650C752 658 906 693 1124 674C1299 660 1424 620 1600 592V1000H0V725Z" fill="#B58F67" fill-opacity="0.88"/>
+  <path d="M0 830C248 776 462 778 671 807C847 831 991 876 1171 878C1370 881 1470 845 1600 792V1000H0V830Z" fill="#8A664C" fill-opacity="0.94"/>
+  <path d="M1012 546L1100 490L1188 546L1276 602" stroke="#F9E4C4" stroke-opacity="0.34" stroke-width="3"/>
+  <path d="M1099 492L1099 654" stroke="#F9E4C4" stroke-opacity="0.34" stroke-width="3"/>
+  <text x="128" y="148" fill="#F8EFE1" font-family="Arial, Helvetica, sans-serif" font-size="24" letter-spacing="6">IMAGE PLACEHOLDER 4</text>
+  <text x="128" y="842" fill="#FFF6EA" font-family="Georgia, 'Times New Roman', serif" font-size="82" font-style="italic">Namibia</text>
+  <text x="128" y="898" fill="#FFF0E0" font-family="Arial, Helvetica, sans-serif" font-size="28" letter-spacing="2">Cinematic dune or desert landscape with remote scale and luxury restraint.</text>
+</svg>

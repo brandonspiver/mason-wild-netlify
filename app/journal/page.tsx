@@ -70,11 +70,11 @@ const ARTICLES: ArticleSummary[] = [
     publishedAt: "2024-08-22",
   },
   {
-    slug:        "lgbtq-safety-southern-africa",
-    title:       "LGBTQ+ Travel in Southern Africa: A Practical Assessment",
+    slug:        "lgbtq-travel-southern-africa",
+    title:       "LGBTQ+ Travel in Southern Africa: Where It Works, Where It Doesn't, and Why",
     category:    "lgbtq-travel-intelligence",
     excerpt:
-      "A country-by-country review of legal standing, enforcement reality, and practical safety for LGBTQ+ travellers planning private journeys across the southern African region.",
+      "A practical luxury guide to LGBTQ+ travel in Southern Africa, covering South Africa, Botswana, Namibia, Mozambique, Zambia, and Zimbabwe through the lens of privacy, hosting culture, and real-world trip design.",
     readingTime: 9,
     publishedAt: "2024-08-05",
   },
@@ -112,6 +112,9 @@ const CATEGORY_ORDER: JournalCategory[] = [
   "destination-notes",
 ];
 
+const JOURNAL_SHELL =
+  "mx-auto w-full max-w-[1720px] px-[clamp(18px,3vw,54px)]";
+
 export default function JournalPage() {
   const [featured, ...rest] = ARTICLES;
 
@@ -130,18 +133,18 @@ export default function JournalPage() {
         className="pt-[var(--page-header-pt)] pb-[clamp(48px,6vw,80px)] border-b border-stone-200"
         aria-labelledby="journal-heading"
       >
-        <div className="container-site">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-[clamp(40px,6vw,80px)] items-end">
+        <div className={JOURNAL_SHELL}>
+          <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1.2fr)_420px] xl:grid-cols-[minmax(0,1.35fr)_460px] gap-[clamp(40px,6vw,88px)] items-end">
             <div>
               <Reveal><p className="label-tag mb-6">Mason &amp; Wild</p></Reveal>
               <Reveal delay={1}>
-                <h1 className="font-serif font-light text-display-2xl text-stone-900" id="journal-heading">
+                <h1 className="font-serif font-light text-stone-900 text-[clamp(3rem,6vw,6.4rem)] leading-[1.02] tracking-[-0.025em]" id="journal-heading">
                   The <em>Journal</em>
                 </h1>
               </Reveal>
             </div>
             <Reveal delay={2}>
-              <p className="text-base font-light text-stone-500 leading-relaxed max-w-[480px]">
+              <p className="text-[clamp(1rem,1.1vw,1.08rem)] font-light text-stone-500 leading-[1.9] max-w-[460px]">
                 Field notes, territory intelligence, and perspectives on private African travel.
                 Written for those who read carefully before they travel.
               </p>
@@ -151,7 +154,7 @@ export default function JournalPage() {
       </section>
 
       <div className="border-b border-stone-200 overflow-x-auto" aria-label="Journal categories">
-        <div className="flex min-w-max px-[var(--px)]">
+        <div className={`flex min-w-max ${JOURNAL_SHELL}`}>
           <Link href="/journal" aria-current="page" className="py-4 pr-8 text-2xs font-normal tracking-wide uppercase text-stone-900 border-b-[1.5px] border-stone-900 whitespace-nowrap">
             All
           </Link>
@@ -165,44 +168,46 @@ export default function JournalPage() {
 
       {featured && (
         <section className="border-b border-stone-200" aria-labelledby="featured-heading">
-          <Reveal>
-            <Link href={`/journal/${featured.slug}`} className="group grid grid-cols-1 md:grid-cols-[3fr_2fr] items-stretch">
+          <div className={`${JOURNAL_SHELL} py-[clamp(24px,3vw,40px)]`}>
+            <Reveal>
+              <Link href={`/journal/${featured.slug}`} className="group grid grid-cols-1 xl:grid-cols-[minmax(0,1.18fr)_minmax(360px,460px)] items-stretch border border-stone-200 bg-page-subtle">
               {featured.img && (
                 <div className="overflow-hidden bg-stone-100">
                   <Image src={featured.img.src} alt={featured.img.alt} width={1200} height={800}
-                    className="w-full aspect-[3/2] md:aspect-auto md:h-full object-cover object-center transition-transform duration-[900ms] ease-out group-hover:scale-[1.025]"
+                    className="w-full aspect-[16/11] xl:aspect-auto xl:h-full object-cover object-center transition-transform duration-[900ms] ease-out group-hover:scale-[1.025]"
                     priority
                   />
                 </div>
               )}
-              <div className="flex flex-col justify-end px-[clamp(32px,5vw,64px)] py-[clamp(40px,5vw,64px)] bg-page-subtle group-hover:bg-stone-100 transition-colors duration">
-                <div className="flex items-center gap-4 mb-6">
+              <div className="flex flex-col justify-end px-[clamp(28px,4vw,56px)] py-[clamp(32px,4vw,56px)] bg-page-subtle group-hover:bg-stone-100 transition-colors duration">
+                <div className="flex items-center gap-4 mb-8 flex-wrap">
                   <span className="label-tag text-forest">Most Recent</span>
                   <span className="w-px h-3 bg-stone-300" aria-hidden="true" />
                   <span className="label-tag">{JOURNAL_CATEGORY_LABELS[featured.category]}</span>
                   <span className="w-px h-3 bg-stone-300" aria-hidden="true" />
                   <span className="label-tag">{featured.readingTime} min</span>
                 </div>
-                <h2 className="font-serif font-light text-display-md text-stone-900 leading-[1.08] tracking-[-0.012em] mb-5 group-hover:text-forest transition-colors duration" id="featured-heading">
+                <h2 className="font-serif font-light text-[clamp(2rem,3vw,3.35rem)] text-stone-900 leading-[1.05] tracking-[-0.018em] mb-6 group-hover:text-forest transition-colors duration" id="featured-heading">
                   {featured.title}
                 </h2>
-                <p className="text-base font-light text-stone-500 leading-relaxed mb-8">
+                <p className="text-[clamp(1rem,1.08vw,1.06rem)] font-light text-stone-500 leading-[1.9] mb-10">
                   {featured.excerpt}
                 </p>
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-between gap-6">
                   <time dateTime={featured.publishedAt} className="label-tag">{formatDate(featured.publishedAt)}</time>
                   <span className="text-2xs font-normal tracking-wide uppercase text-stone-400 border-b border-stone-300 group-hover:text-stone-900 group-hover:border-stone-900 pb-[2px] transition-colors duration">
-                    Read →
+                    Read More
                   </span>
                 </div>
               </div>
-            </Link>
-          </Reveal>
+              </Link>
+            </Reveal>
+          </div>
         </section>
       )}
 
       <section className="section" aria-label="Journal articles">
-        <div className="container-site">
+        <div className={JOURNAL_SHELL}>
           {CATEGORY_ORDER.map((cat) => {
             const articles = byCategory[cat];
             if (!articles?.length) return null;
@@ -221,14 +226,14 @@ export default function JournalPage() {
                 <div className="flex flex-col gap-0">
                   {articles.map((article, i) => (
                     <Reveal key={article.slug} delay={(i % 3) as 0 | 1 | 2}>
-                      <Link href={`/journal/${article.slug}`} className="group grid grid-cols-1 md:grid-cols-[1fr_auto] gap-6 md:gap-16 items-start border-t border-stone-200 py-8 last:border-b last:border-stone-200 hover:bg-page-subtle transition-colors duration -mx-4 px-4 md:-mx-8 md:px-8">
+                      <Link href={`/journal/${article.slug}`} className="group grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_auto] gap-6 md:gap-14 items-start border-t border-stone-200 py-9 last:border-b last:border-stone-200 hover:bg-page-subtle transition-colors duration -mx-3 px-3 md:-mx-5 md:px-5">
                         <div>
-                          <h3 className="font-serif font-light text-display-sm text-stone-900 leading-[1.15] tracking-[-0.01em] mb-3 group-hover:text-forest transition-colors duration">
+                          <h3 className="font-serif font-light text-[clamp(1.7rem,2.25vw,2.5rem)] text-stone-900 leading-[1.08] tracking-[-0.014em] mb-3 group-hover:text-forest transition-colors duration">
                             {article.title}
                           </h3>
-                          <p className="text-base font-light text-stone-500 leading-relaxed">{article.excerpt}</p>
+                          <p className="text-[clamp(1rem,1.04vw,1.05rem)] font-light text-stone-500 leading-[1.85] max-w-[980px]">{article.excerpt}</p>
                         </div>
-                        <div className="flex flex-row md:flex-col items-center md:items-end gap-4 md:gap-3 md:pt-[3px] shrink-0">
+                        <div className="flex flex-row md:flex-col items-center md:items-end gap-4 md:gap-3 md:pt-[4px] shrink-0">
                           <time dateTime={article.publishedAt} className="label-tag whitespace-nowrap">{formatDate(article.publishedAt)}</time>
                           <span className="label-tag text-stone-300 whitespace-nowrap">{article.readingTime} min</span>
                         </div>
@@ -244,7 +249,7 @@ export default function JournalPage() {
 
       <Reveal>
         <div className="border-t border-b border-stone-200 bg-page-canvas px-[var(--px)] py-12">
-          <div className="container-site flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
+          <div className={`${JOURNAL_SHELL} flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6`}>
             <p className="font-serif font-light italic text-display-sm text-stone-700 leading-[1.45] tracking-[-0.01em] max-w-[520px]">
               Ready to move from reading to travelling?
             </p>
