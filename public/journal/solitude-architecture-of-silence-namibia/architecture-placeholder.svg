@@ -1,0 +1,27 @@
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="110" y1="86" x2="1452" y2="938" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F0E7DA"/>
+      <stop offset="0.44" stop-color="#C5B09A"/>
+      <stop offset="1" stop-color="#705B4B"/>
+    </linearGradient>
+    <linearGradient id="ground" x1="800" y1="584" x2="800" y2="1000" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#9A876D" stop-opacity="0"/>
+      <stop offset="1" stop-color="#40372F"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+  <path d="M0 670C167 630 312 614 474 626C636 638 768 676 910 682C1031 687 1134 670 1248 661C1363 652 1486 664 1600 698V1000H0V670Z" fill="url(#ground)"/>
+  <rect x="960" y="436" width="320" height="230" fill="#DDD2C5"/>
+  <rect x="1003" y="473" width="234" height="156" fill="#7B6555"/>
+  <rect x="1052" y="409" width="136" height="25" fill="#CABCAE"/>
+  <path d="M848 694H1390" stroke="#EEDFCF" stroke-opacity="0.45" stroke-width="4"/>
+  <path d="M1038 693V820" stroke="#EADCCD" stroke-opacity="0.35" stroke-width="3"/>
+  <path d="M1102 693V820" stroke="#EADCCD" stroke-opacity="0.35" stroke-width="3"/>
+  <path d="M1166 693V820" stroke="#EADCCD" stroke-opacity="0.35" stroke-width="3"/>
+  <path d="M1230 693V820" stroke="#EADCCD" stroke-opacity="0.35" stroke-width="3"/>
+  <path d="M428 804C553 766 671 752 794 764C908 775 1003 802 1105 807C1203 812 1292 800 1409 801" stroke="#F7E8D8" stroke-opacity="0.24" stroke-width="3"/>
+  <text x="116" y="136" fill="#F6ECDD" font-family="Arial, Helvetica, sans-serif" font-size="24" letter-spacing="6">IMAGE PLACEHOLDER 2</text>
+  <text x="114" y="848" fill="#FFF8EF" font-family="Georgia, 'Times New Roman', serif" font-size="82" font-style="italic">Architecture and Silence</text>
+  <text x="120" y="905" fill="#F8ECDD" font-family="Arial, Helvetica, sans-serif" font-size="26" letter-spacing="2.5">A restrained terrace or suite framing the desert rather than competing with it.</text>
+</svg>

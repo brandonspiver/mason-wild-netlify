@@ -51,17 +51,17 @@ export default function InquirePage() {
             {/* ── Left rail  -  static context, server-rendered ─────────── */}
             <div className="lg:sticky lg:top-[100px] lg:self-start">
               <Reveal>
-                <div className="flex flex-col gap-0">
+                <div className="flex flex-col gap-0 bg-forest px-[clamp(28px,4vw,42px)] py-[clamp(32px,4.5vw,46px)]">
 
                   <div className="pb-8">
-                    <p className="label-tag mb-5">The Process</p>
-                    <p className="text-base font-light text-stone-500 leading-relaxed">
+                    <p className="label-tag text-white/45 mb-5">The Process</p>
+                    <p className="text-base font-light text-white leading-relaxed">
                       {INQUIRY_COPY.processBody}
                     </p>
                   </div>
 
-                  <div className="border-t border-stone-200 py-8">
-                    <p className="label-tag mb-5">What Helps</p>
+                  <div className="border-t border-white/20 py-8">
+                    <p className="label-tag text-white/45 mb-5">What Helps</p>
                     <div className="flex flex-col gap-0">
                       {[
                         "The kind of landscape or feeling you are drawn to  -  not a destination list.",
@@ -71,9 +71,9 @@ export default function InquirePage() {
                       ].map((line, i) => (
                         <div
                           key={i}
-                          className="border-t border-stone-200 py-4 first:border-t-0 first:pt-0"
+                          className="border-t border-white/18 py-4 first:border-t-0 first:pt-0"
                         >
-                          <p className="text-sm font-light text-stone-500 leading-relaxed">
+                          <p className="text-sm font-light text-white leading-relaxed">
                             {line}
                           </p>
                         </div>
@@ -81,15 +81,15 @@ export default function InquirePage() {
                     </div>
                   </div>
 
-                  <div className="border-t border-stone-200 pt-8">
-                    <p className="label-tag mb-4">Direct Contact</p>
+                  <div className="border-t border-white/20 pt-8">
+                    <p className="label-tag text-white/45 mb-4">Direct Contact</p>
                     <a
                       href={`mailto:${INQUIRY_COPY.contactLine}`}
-                      className="text-base font-light text-stone-600 hover:text-stone-900 transition-colors duration"
+                      className="text-base font-light text-white hover:text-white/75 transition-colors duration"
                     >
                       {INQUIRY_COPY.contactLine}
                     </a>
-                    <p className="text-sm font-light text-stone-400 leading-relaxed mt-3">
+                    <p className="text-sm font-light text-white/62 leading-relaxed mt-3">
                       {CTA.formResponseNote}
                     </p>
                   </div>

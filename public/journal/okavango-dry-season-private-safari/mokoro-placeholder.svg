@@ -1,0 +1,28 @@
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="111" y1="90" x2="1453" y2="940" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#EFE5D7"/>
+      <stop offset="0.52" stop-color="#BFD3C8"/>
+      <stop offset="1" stop-color="#537166"/>
+    </linearGradient>
+    <linearGradient id="water" x1="0" y1="585" x2="1600" y2="585" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#DCE9E2"/>
+      <stop offset="1" stop-color="#93BBB3"/>
+    </linearGradient>
+    <linearGradient id="reed" x1="800" y1="607" x2="800" y2="1000" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#768458" stop-opacity="0"/>
+      <stop offset="1" stop-color="#3A463C"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+  <path d="M58 628C215 592 334 577 470 588C612 599 714 637 855 638C1009 640 1137 595 1300 594C1406 594 1507 610 1600 640V1000H0V650C18 643 37 635 58 628Z" fill="url(#water)"/>
+  <path d="M0 748C152 694 274 680 410 692C557 704 690 746 830 756C1014 769 1153 728 1300 716C1419 706 1521 718 1600 742V1000H0V748Z" fill="url(#reed)"/>
+  <path d="M918 600C980 600 1048 606 1118 620" stroke="#FBF4E9" stroke-opacity="0.85" stroke-width="8" stroke-linecap="round"/>
+  <path d="M1033 586C1038 630 1042 674 1048 719" stroke="#FBF4E9" stroke-opacity="0.82" stroke-width="6" stroke-linecap="round"/>
+  <path d="M896 626C931 611 968 604 1007 604C1024 604 1040 605 1056 608" stroke="#2F3B33" stroke-width="14" stroke-linecap="round"/>
+  <circle cx="882" cy="619" r="11" fill="#2F3B33"/>
+  <path d="M242 670C309 627 383 611 462 619C547 627 620 664 702 678C820 698 915 671 1022 661C1132 651 1240 669 1364 726" stroke="#F6EFE1" stroke-opacity="0.34" stroke-width="3"/>
+  <text x="116" y="136" fill="#F6ECDD" font-family="Arial, Helvetica, sans-serif" font-size="24" letter-spacing="6">IMAGE PLACEHOLDER 2</text>
+  <text x="114" y="848" fill="#FFF8ED" font-family="Georgia, 'Times New Roman', serif" font-size="82" font-style="italic">Mokoro in Dry Season</text>
+  <text x="120" y="905" fill="#F7F0E4" font-family="Arial, Helvetica, sans-serif" font-size="26" letter-spacing="2.5">Quiet water-level movement, reeds, stillness, and elegant composition.</text>
+</svg>

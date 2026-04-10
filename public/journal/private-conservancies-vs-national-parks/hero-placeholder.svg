@@ -1,0 +1,29 @@
+<svg width="2400" height="1200" viewBox="0 0 2400 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="204" y1="92" x2="2145" y2="1126" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ECE2D4"/>
+      <stop offset="0.47" stop-color="#BDA98E"/>
+      <stop offset="1" stop-color="#566955"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1510 322) rotate(90) scale(360 616)">
+      <stop stop-color="#FFF1DA" stop-opacity="0.88"/>
+      <stop offset="1" stop-color="#FFF1DA" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ground" x1="1200" y1="686" x2="1200" y2="1200" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#847C5D" stop-opacity="0"/>
+      <stop offset="1" stop-color="#39463C"/>
+    </linearGradient>
+  </defs>
+  <rect width="2400" height="1200" fill="url(#bg)"/>
+  <rect width="2400" height="1200" fill="url(#glow)"/>
+  <path d="M0 806C209 756 386 738 596 756C776 772 900 824 1077 832C1273 840 1426 786 1622 775C1828 764 2044 807 2400 894V1200H0V806Z" fill="url(#ground)"/>
+  <path d="M1614 685C1659 668 1705 661 1752 663C1804 665 1853 678 1901 702C1947 725 1974 752 1984 782C1915 787 1844 794 1768 796C1697 798 1621 792 1546 780C1549 744 1573 713 1614 685Z" fill="#262E27"/>
+  <path d="M1662 690C1694 680 1723 677 1749 679C1777 681 1809 691 1846 711" stroke="#FCF3E6" stroke-opacity="0.45" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="1602" cy="733" r="24" fill="#262E27"/>
+  <circle cx="1928" cy="768" r="33" fill="#262E27"/>
+  <path d="M1544 780C1500 783 1453 785 1401 783C1326 780 1269 771 1211 749" stroke="#F4E7D7" stroke-opacity="0.28" stroke-width="2"/>
+  <path d="M262 888C429 848 593 843 766 872C931 900 1066 949 1237 958C1437 968 1587 925 1782 914C1958 904 2118 926 2290 976" stroke="#F6E9D8" stroke-opacity="0.2" stroke-width="3"/>
+  <text x="170" y="150" fill="#F6ECDD" font-family="Arial, Helvetica, sans-serif" font-size="30" letter-spacing="7">IMAGE PLACEHOLDER 1</text>
+  <text x="170" y="974" fill="#FFF8ED" font-family="Georgia, 'Times New Roman', serif" font-size="104" font-style="italic">Safari Access Hero</text>
+  <text x="176" y="1042" fill="#F8EDE0" font-family="Arial, Helvetica, sans-serif" font-size="31" letter-spacing="3">Wide safari scene with one discreet vehicle and a calm, composed sense of space.</text>
+</svg>

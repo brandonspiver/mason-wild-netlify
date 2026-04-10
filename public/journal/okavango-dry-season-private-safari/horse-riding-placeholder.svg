@@ -1,0 +1,31 @@
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="101" y1="93" x2="1487" y2="934" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F0E6D8"/>
+      <stop offset="0.48" stop-color="#CBB89D"/>
+      <stop offset="1" stop-color="#586954"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1128 258) rotate(90) scale(304 492)">
+      <stop stop-color="#FFF3DE" stop-opacity="0.92"/>
+      <stop offset="1" stop-color="#FFF3DE" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ground" x1="800" y1="620" x2="800" y2="1000" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8A8B60" stop-opacity="0"/>
+      <stop offset="1" stop-color="#39433A"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+  <rect width="1600" height="1000" fill="url(#glow)"/>
+  <path d="M0 720C149 676 290 660 435 670C603 682 730 741 888 747C1029 752 1140 717 1271 709C1389 701 1498 716 1600 751V1000H0V720Z" fill="url(#ground)"/>
+  <path d="M814 636C840 620 867 612 895 612C921 612 946 619 973 633" stroke="#2E3A32" stroke-width="14" stroke-linecap="round"/>
+  <path d="M967 634C996 614 1022 604 1045 605C1067 606 1086 614 1102 628" stroke="#2E3A32" stroke-width="12" stroke-linecap="round"/>
+  <path d="M910 636C891 682 881 724 876 762" stroke="#2E3A32" stroke-width="10" stroke-linecap="round"/>
+  <path d="M971 638C959 688 952 729 950 772" stroke="#2E3A32" stroke-width="10" stroke-linecap="round"/>
+  <path d="M1064 633C1061 682 1058 719 1051 763" stroke="#2E3A32" stroke-width="10" stroke-linecap="round"/>
+  <path d="M1029 612C1039 591 1054 579 1073 577C1087 576 1098 582 1106 593" stroke="#2E3A32" stroke-width="9" stroke-linecap="round"/>
+  <circle cx="1067" cy="575" r="6" fill="#2E3A32"/>
+  <path d="M0 790C170 746 297 737 448 750C602 763 735 802 878 812C1017 821 1143 798 1290 794C1404 790 1505 800 1600 822" stroke="#F6EBDC" stroke-opacity="0.28" stroke-width="3"/>
+  <text x="116" y="136" fill="#F6ECDD" font-family="Arial, Helvetica, sans-serif" font-size="24" letter-spacing="6">IMAGE PLACEHOLDER 3</text>
+  <text x="114" y="848" fill="#FFF8ED" font-family="Georgia, 'Times New Roman', serif" font-size="82" font-style="italic">Horse Riding in the Delta</text>
+  <text x="120" y="905" fill="#F7F0E4" font-family="Arial, Helvetica, sans-serif" font-size="26" letter-spacing="2.5">Immersive movement through dry-season terrain with privacy and restraint.</text>
+</svg>

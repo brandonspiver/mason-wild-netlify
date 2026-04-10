@@ -39,6 +39,12 @@ type JourneyFlowPhase = {
   readonly body: string;
 };
 
+type JourneyNarrativePoint = {
+  readonly key: string;
+  readonly title: string;
+  readonly body: string;
+};
+
 type JourneyAccommodation = {
   readonly location?: string;
   readonly name: string;
@@ -74,6 +80,8 @@ type JourneyData = {
   readonly vettedLocation?: string;
   readonly vettedImg?: JourneyImage;
   readonly body: readonly string[];
+  readonly narrativePointsLabel?: string;
+  readonly narrativePoints?: readonly JourneyNarrativePoint[];
   readonly heroImg: JourneyImage;
   readonly galleryImgs: readonly JourneyImage[];
   readonly summaryTabLabel?: string;
@@ -142,7 +150,7 @@ const JOURNEYS: Record<string, JourneyData> = {
     lead: "Some journeys are built around spectacle. This one is built around privacy.",
     vettedNote:
       "Personally selected by Zannon James through firsthand experience. Victoria Falls River Lodge remains an immediate go to at the Falls after an exceptional personal stay there, chosen for its setting, service, and polished sense of retreat. Extensive travel through the Okavango Delta and other key game reserves gives full confidence in the wildlife experience offered here, from predator sightings to exceptional birdlife and everything in between. The mokoro experience is one of the most special elements of the Delta, offering a quieter, more intimate way to encounter wildlife from the water.",
-    vettedLocation: "MOWANA, SOUTH AFRICA",
+    vettedLocation: "VICTORIA FALLS, ZIMBABWE",
     vettedImg: {
       src: "/journeys/the-romantic/vetted-victoria-falls.png",
       alt: "Victoria Falls River Lodge in Zimbabwe",
@@ -959,6 +967,33 @@ const JOURNEYS: Record<string, JourneyData> = {
       "The structure is intentional. Three nights in Cape Town offer enough time to explore without rushing. Four nights on safari allow for meaningful wildlife encounters and a slower pace. Two nights at Victoria Falls ensure the experience feels complete, without becoming repetitive.",
       "The Classic is accessible, but never diluted. It is the foundation of what Mason & Wild represents.",
     ],
+    narrativePointsLabel: "What This Journey Holds",
+    narrativePoints: [
+      {
+        key: "cape-town",
+        title: "Cape Town opens the region properly",
+        body:
+          "The journey begins with confidence rather than confusion. Cape Town gives first-time travellers design, landscape, food, and a clear sense of place before the trip moves into deeper safari territory.",
+      },
+      {
+        key: "greater-kruger",
+        title: "Greater Kruger gives safari real depth",
+        body:
+          "Four nights in the bush changes the experience completely. There is enough time for the safari to become immersive instead of performative, with space for both strong sightings and a proper sense of rhythm.",
+      },
+      {
+        key: "victoria-falls",
+        title: "Victoria Falls works as a finale, not a detour",
+        body:
+          "Handled at the end rather than squeezed into the middle, the Falls become a release point. The mood lifts, the scenery shifts, and the journey finishes with a sense of scale that feels memorable rather than rushed.",
+      },
+      {
+        key: "pacing",
+        title: "The pacing stays clean from start to finish",
+        body:
+          "What makes The Classic persuasive is not only the names on the route, but the way they are sequenced. It gives enough of each chapter to feel complete without asking the traveller to keep resetting their energy.",
+      },
+    ],
     heroImg: {
       src: "/journeys/the-classic/hero-elephant-sunset.jpg",
       alt: "Elephant standing beside water at sunset",
@@ -976,8 +1011,8 @@ const JOURNEYS: Record<string, JourneyData> = {
         position: "center 72%",
       },
       {
-        src: "/journeys/the-classic/collage-mbano-pool-night.jpg",
-        alt: "Mbano Manor pool lit at night in the forest",
+        src: "/journeys/the-classic/collage-mbano-helicopter-falls.jpg",
+        alt: "Helicopter flying above Victoria Falls",
         position: "center 50%",
       },
       {
@@ -1305,7 +1340,7 @@ const JOURNEYS: Record<string, JourneyData> = {
     vettedImg: {
       src: "/journeys/the-adventure/vetted-cape-town.jpg",
       alt: "Cape Town setting in South Africa",
-      position: "center 50%",
+      position: "center 74%",
     },
     body: [
       "It begins in Cape Town, but not in a passive way. The first chapter is built around mountain, coastline, air, and momentum, with the city experienced through a more active and design-conscious lens. From there, the journey shifts into Namibia, where the tone changes completely. Guests fly into Windhoek, meet their private adventure guide on arrival, and continue across the country in a fully equipped 4x4 that stays with them throughout.",
@@ -1680,7 +1715,7 @@ const JOURNEYS: Record<string, JourneyData> = {
     vettedImg: {
       src: "/journeys/the-private-circuit/vetted-serengeti.png",
       alt: "Serengeti safari scene in Tanzania",
-      position: "center 50%",
+      position: "center 74%",
     },
     body: [
       "It begins at Siringit Villa, where there is space to settle properly before the bush begins. From there, it moves into Tarangire, where elephants, baobabs, and a denser, earthier landscape create a strong opening sense of place. The journey then continues into the Serengeti in two distinct chapters: first at Siringit Migration Camp, where scale, movement, and the hot air balloon experience bring a more expansive energy, then at Siringit Serengeti Camp, where the final safari nights feel steadier, more immersive, and fully absorbed into the rhythm of the wild. It ends at Xanadu in Zanzibar, where the mood shifts again into sea air, privacy, and a softer final chapter by the Indian Ocean.",
@@ -2237,6 +2272,28 @@ export default function JourneyDetailPage({
                   </p>
                 </Reveal>
               ))}
+
+              {journey.narrativePoints?.length ? (
+                <Reveal delay={1}>
+                  <div className="mt-6 border-t border-stone-200 pt-8">
+                    <p className="label-tag mb-6">
+                      {journey.narrativePointsLabel ?? "Further Notes"}
+                    </p>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-8">
+                      {journey.narrativePoints.map((point) => (
+                        <div key={point.key}>
+                          <h3 className="font-serif font-light text-[clamp(1.15rem,1.45vw,1.45rem)] text-stone-900 leading-[1.35] tracking-[-0.012em] mb-3">
+                            {point.title}
+                          </h3>
+                          <p className="text-sm font-light text-stone-500 leading-relaxed">
+                            {point.body}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </Reveal>
+              ) : null}
             </div>
           </div>
         </div>

@@ -1,0 +1,23 @@
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="100" y1="88" x2="1477" y2="940" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F3E8DB"/>
+      <stop offset="0.48" stop-color="#D39F6E"/>
+      <stop offset="1" stop-color="#6E4B3D"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1132 258) rotate(90) scale(284 468)">
+      <stop stop-color="#FFF1DD" stop-opacity="0.88"/>
+      <stop offset="1" stop-color="#FFF1DD" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+  <rect width="1600" height="1000" fill="url(#glow)"/>
+  <path d="M0 780C133 750 256 736 389 737C538 738 668 753 794 737C919 721 1026 683 1144 673C1284 661 1425 683 1600 736V1000H0V780Z" fill="#925C3E"/>
+  <path d="M0 854C153 820 285 804 421 804C560 803 683 815 804 804C922 793 1028 760 1147 752C1287 742 1429 761 1600 809V1000H0V854Z" fill="#4E3027" fill-opacity="0.42"/>
+  <ellipse cx="936" cy="426" rx="68" ry="92" fill="#F5E8D8" fill-opacity="0.88"/>
+  <path d="M936 334C936 277 934 247 930 216" stroke="#8A4A33" stroke-width="5" stroke-linecap="round"/>
+  <path d="M879 408C916 390 952 385 987 394C1020 404 1047 426 1068 460" stroke="#E7D0BA" stroke-opacity="0.75" stroke-width="3"/>
+  <text x="116" y="136" fill="#F7EBDD" font-family="Arial, Helvetica, sans-serif" font-size="24" letter-spacing="6">IMAGE PLACEHOLDER 4</text>
+  <text x="114" y="848" fill="#FFF8EF" font-family="Georgia, 'Times New Roman', serif" font-size="82" font-style="italic">Balloon Over the Desert</text>
+  <text x="120" y="905" fill="#F8ECDD" font-family="Arial, Helvetica, sans-serif" font-size="26" letter-spacing="2.5">A second experience image expanding the sense of scale while keeping the mood calm.</text>
+</svg>

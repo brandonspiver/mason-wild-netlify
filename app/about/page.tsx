@@ -313,7 +313,7 @@ export default function AboutPage() {
 
             <div className="flex flex-col gap-6">
               <Reveal delay={1}>
-                <p className="text-base font-light text-white/72 leading-relaxed">
+                <p className="text-base font-light text-white leading-relaxed">
                   The political and legal landscape across Africa varies
                   significantly by country and by region within countries. Some
                   destinations are genuinely safe and welcoming. Others require
@@ -322,7 +322,7 @@ export default function AboutPage() {
                 </p>
               </Reveal>
               <Reveal delay={2}>
-                <p className="text-base font-light text-white/72 leading-relaxed">
+                <p className="text-base font-light text-white leading-relaxed">
                   We assess every territory we work in against current legal
                   standing, enforcement practice, and the real-world experience of
                   LGBTQ+ travellers who have been there recently. This is not a
@@ -332,7 +332,7 @@ export default function AboutPage() {
                 </p>
               </Reveal>
               <Reveal delay={3}>
-                <p className="text-base font-light text-white/72 leading-relaxed">
+                <p className="text-base font-light text-white leading-relaxed">
                   We do not list territories we are not confident in. We do not
                   work with camps or guides whose alignment we cannot verify. This
                   is the operational foundation of Mason &amp; Wild - not a brand

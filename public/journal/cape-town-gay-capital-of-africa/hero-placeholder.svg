@@ -1,0 +1,24 @@
+<svg width="1800" height="1080" viewBox="0 0 1800 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1800" height="1080" fill="#F7F2EA"/>
+  <rect width="1800" height="1080" fill="url(#sky)"/>
+  <path d="M0 705C183 652 402 625 602 650C809 676 975 740 1152 760C1353 783 1584 758 1800 704V1080H0V705Z" fill="#9FB2B9"/>
+  <path d="M0 790C168 761 369 761 565 793C740 822 895 877 1058 899C1244 924 1502 914 1800 861V1080H0V790Z" fill="#D6B79A"/>
+  <path d="M0 890C249 874 471 891 676 936C864 977 1034 1006 1207 1014C1423 1025 1616 1005 1800 963V1080H0V890Z" fill="#4E6357"/>
+  <path d="M155 781L309 640L451 761L603 609L771 759L955 555L1136 760L1314 598L1478 741L1608 632L1740 747V930H155V781Z" fill="#2F3D3C"/>
+  <rect x="991" y="486" width="181" height="323" fill="#EED6BA"/>
+  <rect x="1032" y="531" width="99" height="144" fill="#C06A57"/>
+  <rect x="1213" y="550" width="154" height="259" fill="#E7C39F"/>
+  <rect x="1247" y="586" width="86" height="112" fill="#85B5C4"/>
+  <rect x="1407" y="514" width="177" height="295" fill="#F0DDD0"/>
+  <rect x="1450" y="564" width="91" height="102" fill="#D18A5D"/>
+  <path d="M909 732C973 650 1055 585 1158 544C1225 518 1294 507 1365 510C1465 513 1552 548 1635 617C1691 664 1742 727 1790 809H909V732Z" fill="#6E7D78"/>
+  <circle cx="1380" cy="258" r="104" fill="#F3D394" fill-opacity="0.72"/>
+  <rect x="62" y="64" width="1676" height="952" rx="24" stroke="#CBB89D" stroke-width="2" stroke-opacity="0.74"/>
+  <defs>
+    <linearGradient id="sky" x1="900" y1="0" x2="900" y2="700" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F9F4EC"/>
+      <stop offset="0.55" stop-color="#F3E0C7"/>
+      <stop offset="1" stop-color="#E7D0B2"/>
+    </linearGradient>
+  </defs>
+</svg>

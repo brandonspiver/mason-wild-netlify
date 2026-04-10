@@ -1,0 +1,26 @@
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="111" y1="89" x2="1472" y2="936" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#EEE4D7"/>
+      <stop offset="0.5" stop-color="#C8B498"/>
+      <stop offset="1" stop-color="#5B6E59"/>
+    </linearGradient>
+    <linearGradient id="ground" x1="800" y1="604" x2="800" y2="1000" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8C8663" stop-opacity="0"/>
+      <stop offset="1" stop-color="#37443A"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+  <path d="M0 706C133 663 269 649 420 661C590 675 730 728 888 742C1017 753 1128 736 1249 726C1367 717 1488 726 1600 754V1000H0V706Z" fill="url(#ground)"/>
+  <path d="M894 612C928 590 961 578 992 578C1025 578 1055 590 1084 616" stroke="#2C372F" stroke-width="14" stroke-linecap="round"/>
+  <path d="M998 576C1010 553 1028 536 1053 527C1072 520 1089 521 1104 530" stroke="#2C372F" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="1053" cy="523" r="8" fill="#2C372F"/>
+  <path d="M933 615C919 656 909 698 904 742" stroke="#2C372F" stroke-width="9" stroke-linecap="round"/>
+  <path d="M1004 614C1000 656 998 695 997 742" stroke="#2C372F" stroke-width="9" stroke-linecap="round"/>
+  <path d="M1075 616C1080 657 1087 698 1093 742" stroke="#2C372F" stroke-width="9" stroke-linecap="round"/>
+  <path d="M1104 654C1156 644 1207 640 1258 643C1318 647 1373 658 1424 680" stroke="#F8F0E2" stroke-opacity="0.48" stroke-width="4" stroke-linecap="round"/>
+  <path d="M278 836C436 797 569 791 711 809C850 827 978 863 1118 872C1262 882 1388 865 1544 868" stroke="#F5E9D8" stroke-opacity="0.24" stroke-width="3"/>
+  <text x="116" y="136" fill="#F6ECDD" font-family="Arial, Helvetica, sans-serif" font-size="24" letter-spacing="6">IMAGE PLACEHOLDER 2</text>
+  <text x="114" y="848" fill="#FFF8ED" font-family="Georgia, 'Times New Roman', serif" font-size="82" font-style="italic">Private Guiding Detail</text>
+  <text x="120" y="905" fill="#F7F0E4" font-family="Arial, Helvetica, sans-serif" font-size="26" letter-spacing="2.5">A refined conservancy setting with guide-led access and very little visual clutter.</text>
+</svg>

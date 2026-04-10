@@ -1,0 +1,20 @@
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="102" y1="86" x2="1472" y2="939" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F1E7DB"/>
+      <stop offset="0.48" stop-color="#D29C67"/>
+      <stop offset="1" stop-color="#744737"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+  <path d="M0 776C121 748 239 728 364 719C502 709 621 718 742 699C857 680 964 632 1079 617C1221 598 1363 621 1600 694V1000H0V776Z" fill="#8C573A"/>
+  <path d="M0 845C152 808 293 789 442 785C599 781 731 796 851 782C965 769 1066 730 1180 721C1316 709 1452 731 1600 781V1000H0V845Z" fill="#4F2F27" fill-opacity="0.45"/>
+  <path d="M772 794C799 735 828 689 861 656C898 620 936 594 979 579" stroke="#F7E5D0" stroke-opacity="0.6" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="763" cy="810" r="11" fill="#2F1B18"/>
+  <path d="M760 821C757 846 754 868 752 888" stroke="#2F1B18" stroke-width="4" stroke-linecap="round"/>
+  <path d="M752 846C743 859 735 872 728 887" stroke="#2F1B18" stroke-width="4" stroke-linecap="round"/>
+  <path d="M757 851C766 864 774 877 783 892" stroke="#2F1B18" stroke-width="4" stroke-linecap="round"/>
+  <text x="116" y="136" fill="#F7EBDD" font-family="Arial, Helvetica, sans-serif" font-size="24" letter-spacing="6">IMAGE PLACEHOLDER 3</text>
+  <text x="114" y="848" fill="#FFF8EF" font-family="Georgia, 'Times New Roman', serif" font-size="82" font-style="italic">Movement Through the Dunes</text>
+  <text x="120" y="905" fill="#F8ECDD" font-family="Arial, Helvetica, sans-serif" font-size="26" letter-spacing="2.5">A single figure in the dunes, with negative space doing most of the work.</text>
+</svg>

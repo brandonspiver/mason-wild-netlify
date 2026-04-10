@@ -63,8 +63,8 @@ const ARCHETYPES = [
     body:
       "A clean introduction to Southern Africa's defining highlights: Cape Town for style and landscape, Greater Kruger for a proper Big Five safari, and Victoria Falls for a final chapter with scale and atmosphere. Broad enough to feel memorable, disciplined enough to stay elegant.",
     img: {
-      src: "/journeys/the-adventure/vetted-cape-town.jpg",
-      alt: "Cape Town coastline at golden hour",
+      src: "/journeys/the-classic/mbano-manor-card.jpg",
+      alt: "Mbano Manor Hotel in Victoria Falls",
     },
     reversed: true,
   },
@@ -110,7 +110,7 @@ export default function JourneysPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-[clamp(40px,6vw,80px)] items-end">
             <div>
               <Reveal>
-                <p className="label-tag mb-6">Six Archetypes</p>
+                <p className="label-tag mb-6">Seven Archetypes</p>
               </Reveal>
               <Reveal delay={1}>
                 <h1

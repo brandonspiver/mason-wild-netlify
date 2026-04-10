@@ -1,0 +1,24 @@
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="1000" fill="#F5F1E8"/>
+  <rect width="1600" height="1000" fill="url(#sky)"/>
+  <path d="M0 606C171 585 336 582 499 594C683 607 846 643 1005 651C1210 662 1404 635 1600 587V1000H0V606Z" fill="#D7E2E1"/>
+  <path d="M0 719C177 710 350 724 515 760C702 801 875 847 1046 862C1238 878 1427 860 1600 825V1000H0V719Z" fill="#8FB7BF"/>
+  <path d="M0 822C177 820 351 835 517 869C697 906 872 940 1047 949C1238 959 1426 944 1600 916V1000H0V822Z" fill="#5E8D95"/>
+  <path d="M0 903C170 904 336 918 494 948C671 982 837 1005 1007 1010C1193 1015 1390 1000 1600 970V1000H0V903Z" fill="#3C5E63"/>
+  <rect x="961" y="618" width="240" height="118" rx="14" fill="#EFE0CE"/>
+  <rect x="997" y="654" width="80" height="54" fill="#C7D3D2"/>
+  <rect x="1086" y="654" width="80" height="54" fill="#D9B17A"/>
+  <path d="M944 619L1081 541L1218 619H944Z" fill="#A37A57"/>
+  <path d="M297 658C365 626 429 610 491 610C583 610 664 642 756 704V742H297V658Z" fill="#46595B"/>
+  <path d="M519 576L563 724H475L519 576Z" fill="#EEE4D6"/>
+  <path d="M521 576C570 603 605 628 645 670H521V576Z" fill="#E8D2AF"/>
+  <circle cx="1262" cy="220" r="98" fill="#E8C78F" fill-opacity="0.72"/>
+  <rect x="58" y="58" width="1484" height="884" rx="22" stroke="#CCBA9F" stroke-width="2" stroke-opacity="0.78"/>
+  <defs>
+    <linearGradient id="sky" x1="800" y1="0" x2="800" y2="598" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FBF7F0"/>
+      <stop offset="0.58" stop-color="#E5DED2"/>
+      <stop offset="1" stop-color="#D8D1C6"/>
+    </linearGradient>
+  </defs>
+</svg>

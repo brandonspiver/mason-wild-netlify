@@ -1,0 +1,30 @@
+<svg width="2400" height="1200" viewBox="0 0 2400 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="185" y1="94" x2="2174" y2="1111" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E7DEC8"/>
+      <stop offset="0.48" stop-color="#9DB39A"/>
+      <stop offset="1" stop-color="#46645A"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1562 304) rotate(90) scale(376 672)">
+      <stop stop-color="#FFF3DB" stop-opacity="0.88"/>
+      <stop offset="1" stop-color="#FFF3DB" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="water" x1="0" y1="710" x2="2400" y2="710" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8DB8B2"/>
+      <stop offset="1" stop-color="#C7E2DB"/>
+    </linearGradient>
+    <linearGradient id="land" x1="1200" y1="684" x2="1200" y2="1200" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6D7455" stop-opacity="0"/>
+      <stop offset="1" stop-color="#39483E"/>
+    </linearGradient>
+  </defs>
+  <rect width="2400" height="1200" fill="url(#bg)"/>
+  <rect width="2400" height="1200" fill="url(#glow)"/>
+  <path d="M0 822C189 758 362 740 551 761C724 780 842 836 987 848C1184 865 1328 784 1519 769C1719 753 1929 796 2400 929V1200H0V822Z" fill="url(#land)"/>
+  <path d="M96 720C285 694 405 694 534 714C677 737 801 777 920 783C1068 791 1181 739 1327 731C1495 722 1636 761 1812 802C1968 839 2123 862 2310 863" stroke="url(#water)" stroke-width="48" stroke-linecap="round"/>
+  <path d="M245 812C430 759 551 759 685 789C832 822 957 875 1090 886C1248 900 1370 856 1516 837C1693 815 1873 846 2166 915" stroke="#DCEBDF" stroke-opacity="0.32" stroke-width="2"/>
+  <path d="M1790 584C1838 556 1884 553 1929 575C1984 602 2034 597 2072 570" stroke="#F7F0E4" stroke-opacity="0.34" stroke-width="5" stroke-linecap="round"/>
+  <text x="170" y="150" fill="#F5ECDD" font-family="Arial, Helvetica, sans-serif" font-size="30" letter-spacing="7">IMAGE PLACEHOLDER 1</text>
+  <text x="170" y="974" fill="#FFF7EC" font-family="Georgia, 'Times New Roman', serif" font-size="108" font-style="italic">Okavango Dry Season Hero</text>
+  <text x="176" y="1042" fill="#F7F0E4" font-family="Arial, Helvetica, sans-serif" font-size="31" letter-spacing="3">Wide Delta view with water channels cutting through a dry landscape.</text>
+</svg>

@@ -1,0 +1,22 @@
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="1000" fill="#F7F2EB"/>
+  <rect width="1600" height="1000" fill="url(#g1)"/>
+  <path d="M0 706C170 671 353 662 526 679C721 698 890 764 1070 781C1266 800 1441 782 1600 743V1000H0V706Z" fill="#E3CDB6"/>
+  <path d="M0 812C224 796 423 809 612 852C798 895 980 952 1162 970C1328 987 1469 979 1600 951V1000H0V812Z" fill="#516359"/>
+  <rect x="226" y="427" width="252" height="343" fill="#E6C7B1"/>
+  <rect x="266" y="475" width="171" height="137" fill="#84B2BF"/>
+  <rect x="522" y="383" width="250" height="387" fill="#E8DDD1"/>
+  <rect x="567" y="431" width="161" height="151" fill="#D57A65"/>
+  <rect x="816" y="448" width="251" height="322" fill="#E0B266"/>
+  <rect x="860" y="496" width="163" height="124" fill="#F7E4C9"/>
+  <rect x="1112" y="402" width="260" height="368" fill="#7FB1A7"/>
+  <rect x="1158" y="447" width="167" height="143" fill="#F3D8BE"/>
+  <path d="M0 627C127 588 241 554 354 533C463 513 575 503 690 504C810 505 932 517 1054 544C1208 579 1360 642 1600 773V838H0V627Z" fill="#40514B"/>
+  <rect x="58" y="58" width="1484" height="884" rx="22" stroke="#CBB89D" stroke-width="2" stroke-opacity="0.74"/>
+  <defs>
+    <linearGradient id="g1" x1="800" y1="0" x2="800" y2="680" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FBF6EF"/>
+      <stop offset="1" stop-color="#F0DDC8"/>
+    </linearGradient>
+  </defs>
+</svg>

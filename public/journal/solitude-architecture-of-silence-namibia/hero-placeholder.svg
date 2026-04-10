@@ -1,0 +1,23 @@
+<svg width="2400" height="1200" viewBox="0 0 2400 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="214" y1="86" x2="2146" y2="1126" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F1E6D8"/>
+      <stop offset="0.46" stop-color="#D2A36A"/>
+      <stop offset="1" stop-color="#6E4632"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1546 324) rotate(90) scale(358 628)">
+      <stop stop-color="#FFF2DE" stop-opacity="0.88"/>
+      <stop offset="1" stop-color="#FFF2DE" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="2400" height="1200" fill="url(#bg)"/>
+  <rect width="2400" height="1200" fill="url(#glow)"/>
+  <path d="M0 858C182 816 364 790 553 787C768 784 940 814 1127 797C1306 781 1468 721 1647 705C1860 686 2084 728 2400 830V1200H0V858Z" fill="#7C523A"/>
+  <path d="M0 925C194 873 382 841 587 839C806 837 981 866 1170 850C1350 835 1507 780 1685 767C1895 751 2123 790 2400 881V1200H0V925Z" fill="#4B2E25" fill-opacity="0.48"/>
+  <path d="M920 803C1031 690 1139 620 1246 596C1348 573 1456 585 1578 660C1505 768 1438 845 1377 891C1294 954 1190 997 1066 1018C987 949 938 878 920 803Z" fill="#D5672E"/>
+  <path d="M1098 830C1175 743 1247 692 1314 677C1381 662 1454 678 1533 724" stroke="#FBE8D1" stroke-opacity="0.3" stroke-width="3"/>
+  <path d="M1244 586C1277 567 1304 559 1328 560C1355 560 1382 568 1410 584" stroke="#F6E0C8" stroke-opacity="0.5" stroke-width="3"/>
+  <text x="170" y="150" fill="#F8ECDD" font-family="Arial, Helvetica, sans-serif" font-size="30" letter-spacing="7">IMAGE PLACEHOLDER 1</text>
+  <text x="170" y="972" fill="#FFF8EF" font-family="Georgia, 'Times New Roman', serif" font-size="104" font-style="italic">Sossusvlei Hero</text>
+  <text x="176" y="1040" fill="#F8ECDD" font-family="Arial, Helvetica, sans-serif" font-size="31" letter-spacing="3">Broad dune landscape with very little visual clutter and a quiet emotional register.</text>
+</svg>
