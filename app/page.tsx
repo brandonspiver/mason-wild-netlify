@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Reveal } from "@/components/ui/Reveal";
 import { Button } from "@/components/ui/Button";
+import { HomeNewsletterForm } from "@/components/journal/HomeNewsletterForm";
 import { JsonLd } from "@/lib/jsonld";
 import {
   BRAND_NAME,
@@ -534,29 +535,7 @@ export default function HomePage() {
               Field notes, territory intelligence, and perspectives
               on the art of disappearing well.
             </p>
-            <form
-              className="flex border border-white/12"
-              aria-label="Newsletter subscription"
-            >
-              <label htmlFor="nl-email" className="sr-only">
-                Email address for newsletter
-              </label>
-              <input
-                id="nl-email"
-                type="email"
-                name="email"
-                placeholder="For private correspondence"
-                required
-                autoComplete="email"
-                className="flex-1 bg-transparent border-none outline-none px-[18px] py-[15px] font-serif italic text-base font-light text-white placeholder:text-white/26 ring-1 ring-inset ring-white/20 transition-[box-shadow] duration focus-visible:outline-none focus-visible:ring-white/40"
-              />
-              <button
-                type="button"
-                className="bg-forest hover:bg-forest-light text-white px-6 py-[15px] text-2xs tracking-wide uppercase transition-colors duration whitespace-nowrap"
-              >
-                Subscribe
-              </button>
-            </form>
+            <HomeNewsletterForm inputId="nl-email" />
             <p className="mt-[14px] text-2xs tracking-[0.1em] text-white/18">
               Quarterly. No noise. Unsubscribe at any time.
             </p>

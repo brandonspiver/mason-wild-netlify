@@ -103,21 +103,15 @@ mason-wild/
 
 1. **Replace Unsplash images** with real photography. Images are referenced by URL in page files — search for `images.unsplash.com` to find them all.
 
-2. **Wire the inquiry form.** In `components/inquiry/InquiryForm.tsx`, uncomment the fetch call and remove the fake timeout:
-   ```tsx
-   // Before:
-   await new Promise((r) => setTimeout(r, 800));
+2. **Configure form delivery email.** Set these environment variables in Netlify:
+   - `RESEND_API_KEY`
+   - `RESEND_FROM` (example: `Mason & Wild <hello@masonandwild.com>`)
+   - Optional `FORM_SUBMISSIONS_TO` (defaults to `hello@masonandwild.com`)
 
-   // After:
-   const res = await fetch("/api/inquire", {
-     method: "POST",
-     headers: { "Content-Type": "application/json" },
-     body: JSON.stringify(form),
-   });
-   if (!res.ok) throw new Error("Submission failed");
-   ```
-
-3. **Add email/CRM integration** in `app/api/inquire/route.ts`. The `handleSubmission()` function has clearly marked plug-in points for Resend, Airtable, Slack, etc.
+3. **All forms are now wired.**
+   - Inquiry form posts to `app/api/inquire/route.ts`
+   - Newsletter forms post to `app/api/newsletter/route.ts`
+   - Both routes send to `hello@masonandwild.com` by default
 
 4. **Replace founder photography.** The About page and homepage founder section use a tonal gradient placeholder. Search for `aria-label="Founder portrait"` to find the two locations.
 

@@ -10,6 +10,7 @@ type FormState = {
   email:     string;
   duration:  string;
   narrative: string;
+  website:   string;
 };
 
 type SubmitState = "idle" | "submitting" | "success" | "error";
@@ -32,6 +33,7 @@ export function InquiryForm() {
     email:     "",
     duration:  "",
     narrative: "",
+    website:   "",
   });
 
   const [submitState, setSubmitState] = useState<SubmitState>("idle");
@@ -53,9 +55,16 @@ export function InquiryForm() {
     e.preventDefault();
     setSubmitState("submitting");
     try {
-      // API route to be wired in Phase 8
-      // await fetch("/api/inquire", { method: "POST", body: JSON.stringify(form) })
-      await new Promise((r) => setTimeout(r, 800));
+      const response = await fetch("/api/inquire", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      if (!response.ok) {
+        throw new Error("Inquiry submission failed.");
+      }
+
       setSubmitState("success");
     } catch {
       setSubmitState("error");
@@ -134,6 +143,17 @@ export function InquiryForm() {
           className={inputClass}
         />
       </div>
+
+      <input
+        type="text"
+        name="website"
+        value={form.website}
+        onChange={handleChange}
+        tabIndex={-1}
+        autoComplete="off"
+        className="hidden"
+        aria-hidden="true"
+      />
 
       {/* Duration  -  segmented toggle */}
       <div className="flex flex-col gap-4">
