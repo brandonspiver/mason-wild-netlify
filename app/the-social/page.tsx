@@ -5,12 +5,14 @@ import { SocialJourneyPanel } from "@/components/journey/SocialJourneyPanel";
 import { Reveal } from "@/components/ui/Reveal";
 import { Button } from "@/components/ui/Button";
 import { CTA, NAV_HREFS } from "@/lib/constants";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "The Social Shift",
   description:
     "A 12-night South Africa journey for six guests, designed around connection, private guiding, and a more considered social rhythm.",
-};
+  path: "/the-social",
+});
 
 type MetadataItem = {
   readonly label: string;

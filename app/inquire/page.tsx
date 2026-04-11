@@ -2,12 +2,14 @@ import type { Metadata } from "next";
 import { Reveal } from "@/components/ui/Reveal";
 import { InquiryForm } from "@/components/inquiry/InquiryForm";
 import { INQUIRY_COPY, CTA } from "@/lib/constants";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Enquire",
+export const metadata: Metadata = buildPageMetadata({
+  title: "Inquire",
   description:
-    "Begin a private journey with Mason & Wild. Every enquiry is reviewed personally. Our process is personal and unhurried.",
-};
+    "Begin a private journey with Mason & Wild. Every inquiry is reviewed personally. Our process is personal and unhurried.",
+  path: "/inquire",
+});
 
 export default function InquirePage() {
   return (
@@ -44,7 +46,7 @@ export default function InquirePage() {
       </section>
 
       {/* ─── Main content ───────────────────────────────────────────────── */}
-      <section className="section" aria-label="Enquiry form and process information">
+      <section className="section" aria-label="Inquiry form and process information">
         <div className="container-site">
           <div className="grid grid-cols-1 lg:grid-cols-[5fr_7fr] gap-[clamp(56px,8vw,112px)] items-start">
 

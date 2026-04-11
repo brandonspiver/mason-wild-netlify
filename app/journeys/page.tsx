@@ -3,13 +3,16 @@ import Image from "next/image";
 import Link from "next/link";
 import { Reveal } from "@/components/ui/Reveal";
 import { Button } from "@/components/ui/Button";
+import { JsonLd } from "@/lib/jsonld";
 import { CTA, NAV_HREFS } from "@/lib/constants";
+import { absoluteUrl, buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "Journeys",
   description:
-    "Six ways of experiencing Africa  -  each built around a distinct intention. Private journeys designed for discerning LGBTQ+ travellers.",
-};
+    "Seven ways of experiencing Africa  -  each built around a distinct intention. Private journeys designed for discerning LGBTQ+ travellers.",
+  path: "/journeys",
+});
 
 const ARCHETYPES = [
   {
@@ -89,7 +92,7 @@ const ARCHETYPES = [
     territory: "Tanzania · Zanzibar",
     tagline:   "The full breadth of the continent, without compromise.",
     body:
-      "Multiple ecosystems. Multiple territories. Multiple wildlife encounters  -  without sacrificing the privacy and control that make them meaningful. Private aircraft, exclusive-use properties throughout, and a single specialist from first enquiry to final departure. Every transition is intentionally paced, so each chapter feels distinct while the overall journey remains seamless, calm, and unmistakably yours.",
+      "Multiple ecosystems. Multiple territories. Multiple wildlife encounters  -  without sacrificing the privacy and control that make them meaningful. Private aircraft, exclusive-use properties throughout, and a single specialist from first inquiry to final departure. Every transition is intentionally paced, so each chapter feels distinct while the overall journey remains seamless, calm, and unmistakably yours.",
     img: {
       src: "/journeys/the-private-circuit-card.png",
       alt: "Sailing at sunset on calm waters",
@@ -99,8 +102,23 @@ const ARCHETYPES = [
 ] as const;
 
 export default function JourneysPage() {
+  const journeysListSchema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: "Journey Archetypes",
+    url: absoluteUrl("/journeys"),
+    hasPart: ARCHETYPES.map((journey, index) => ({
+      "@type": "Trip",
+      name: journey.name,
+      position: index + 1,
+      url: absoluteUrl(`/journeys/${journey.slug}`),
+      description: journey.tagline,
+    })),
+  };
+
   return (
     <>
+      <JsonLd data={journeysListSchema} />
       {/* â”€â”€â”€ Page header â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section
         className="pt-[var(--page-header-pt)] pb-[clamp(48px,6vw,80px)] border-b border-stone-200"
@@ -211,7 +229,7 @@ export default function JourneysPage() {
       {/* â”€â”€â”€ The Social  -  distinct register â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       {/*
         No interlude section before this  -  the page moves directly from
-        the four archetypes into The Social. The tonal shift in background
+        the seven archetypes into The Social. The tonal shift in background
         and register is sufficient separation.
 
         The Social does not sit inside the archetype flow. It is rendered
@@ -242,7 +260,7 @@ export default function JourneysPage() {
                   Designed for those who find the right company as rare as
                   the right landscape. Eight travellers, selected through
                   direct conversation. Shared access to private territories
-                  throughout. The circle for 2025 is currently being assembled.
+                  throughout. The 2027 circle is being assembled.
                 </p>
               </div>
             </Reveal>
@@ -261,7 +279,7 @@ export default function JourneysPage() {
                     },
                     {
                       label: "Status",
-                      value: "The 2025 circle is currently being assembled.",
+                      value: "The 2027 circle is being assembled.",
                     },
                   ].map(({ label, value }) => (
                     <div key={label} className="border-t border-white/10 py-6">

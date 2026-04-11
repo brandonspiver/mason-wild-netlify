@@ -3,12 +3,14 @@ import Image from "next/image";
 import { Reveal } from "@/components/ui/Reveal";
 import { Button } from "@/components/ui/Button";
 import { NAV_HREFS, CTA } from "@/lib/constants";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "About",
   description:
     "Zannon James - founder and chief specialist at Mason & Wild. Private African journeys personally curated, vetted, and overseen for discerning LGBTQ+ travellers.",
-};
+  path: "/about",
+});
 
 export default function AboutPage() {
   return (

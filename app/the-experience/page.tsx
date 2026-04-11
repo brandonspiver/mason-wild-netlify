@@ -4,17 +4,19 @@ import Link from "next/link";
 import { Reveal } from "@/components/ui/Reveal";
 import { Button } from "@/components/ui/Button";
 import { CTA, NAV_HREFS } from "@/lib/constants";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "The Experience",
   description:
     "Privately designed African journeys built around philosophy, discretion, and inclusive intelligence. Every journey begins with a single conversation.",
-};
+  path: "/the-experience",
+});
 
 const PROCESS_STEPS = [
   {
     n:     "01",
-    title: "Private Enquiry",
+    title: "Private Inquiry",
     body:
       "You submit a brief through our private onboarding form. We ask about landscape, feeling, and duration  -  not dates and budgets. A member of our team responds within 48–72 hours.",
   },
@@ -77,7 +79,7 @@ const INCLUSIVE_ITEMS = [
   },
 ] as const;
 
-// Four individual archetypes  -  The Social is referenced separately
+// Seven individual archetypes  -  The Social is referenced separately
 const ARCHETYPES = [
   {
     outcome: "Solitude",
@@ -313,7 +315,7 @@ export default function TheExperiencePage() {
                   className="font-serif font-light text-display-lg text-stone-900"
                   id="archetypes-heading"
                 >
-                  Six ways to experience <em>Africa.</em>
+                  Seven ways to experience <em>Africa.</em>
                 </h2>
               </div>
               <Button href={NAV_HREFS.journeys} variant="ghost">
@@ -323,7 +325,7 @@ export default function TheExperiencePage() {
           </Reveal>
         </div>
 
-        {/* Four archetype cards  -  horizontal scroll on mobile */}
+        {/* Seven archetype cards  -  horizontal scroll on mobile */}
         <Reveal>
           <div className="overflow-x-auto border-t border-stone-200">
             <div className="flex min-w-max md:min-w-0 md:grid md:grid-cols-4 divide-x divide-stone-200">
@@ -349,7 +351,7 @@ export default function TheExperiencePage() {
         </Reveal>
 
         {/*
-          The Social  -  distinct from the four individual journey archetypes.
+          The Social  -  distinct from the seven individual journey archetypes.
           No outcome label, no equal card treatment. Positioned as a different
           kind of offering: invitation-led, membership-based, quieter register.
         */}

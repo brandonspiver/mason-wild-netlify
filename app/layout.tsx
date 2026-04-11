@@ -4,6 +4,8 @@ import "../styles/globals.css";
 import { NavBar } from "@/components/layout/NavBar";
 import { Footer } from "@/components/layout/Footer";
 import { PRIMARY_POSITIONING_LINE, BRAND_NAME } from "@/lib/constants";
+import { JsonLd } from "@/lib/jsonld";
+import { getOrganizationSchema, getSiteUrl, getWebsiteSchema } from "@/lib/seo";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -23,17 +25,18 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ?? "https://masonwild.com"
-  ),
+  metadataBase: new URL(getSiteUrl()),
   title: {
     template: `%s  -  ${BRAND_NAME}`,
     default:  `${BRAND_NAME} | Private African Journeys for LGBTQ+ Travellers`,
   },
   description: PRIMARY_POSITIONING_LINE,
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     siteName:  BRAND_NAME,
-    locale:    "en_GB",
+    locale:    "en_US",
     type:      "website",
     images: [{
       url:    "/home/home-hero.jpg",
@@ -41,6 +44,12 @@ export const metadata: Metadata = {
       height: 630,
       alt:    BRAND_NAME,
     }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${BRAND_NAME} | Private African Journeys for LGBTQ+ Travellers`,
+    description: PRIMARY_POSITIONING_LINE,
+    images: ["/home/home-hero.jpg"],
   },
   robots: {
     index:  true,
@@ -59,6 +68,7 @@ export default function RootLayout({
       className={`${cormorant.variable} ${dmSans.variable}`}
     >
       <body>
+        <JsonLd data={[getOrganizationSchema(), getWebsiteSchema()]} />
         <NavBar />
         <main>{children}</main>
         <Footer />

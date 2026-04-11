@@ -3,22 +3,53 @@ import Image from "next/image";
 import Link from "next/link";
 import { Reveal } from "@/components/ui/Reveal";
 import { Button } from "@/components/ui/Button";
+import { JsonLd } from "@/lib/jsonld";
 import {
+  BRAND_NAME,
   PRIMARY_POSITIONING_LINE,
   DIFFERENTIATORS,
   FEATURED_JOURNEYS,
   CTA,
   NAV_HREFS,
 } from "@/lib/constants";
+import { absoluteUrl, buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title:       "Private African Journeys for LGBTQ+ Travellers",
+export const metadata: Metadata = buildPageMetadata({
+  title: "Private African Journeys for LGBTQ+ Travellers",
   description: PRIMARY_POSITIONING_LINE,
-};
+  path: "/",
+});
 
 export default function HomePage() {
+  const homepageSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "Private African Journeys for LGBTQ+ Travellers",
+    description: PRIMARY_POSITIONING_LINE,
+    url: absoluteUrl("/"),
+    isPartOf: {
+      "@type": "WebSite",
+      name: BRAND_NAME,
+      url: absoluteUrl("/"),
+    },
+  };
+
+  const featuredJourneysSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Featured Journey Archetypes",
+    itemListElement: FEATURED_JOURNEYS.map((journey, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: journey.name,
+      url: absoluteUrl(`${NAV_HREFS.journeys}/${journey.slug}`),
+    })),
+  };
+
   return (
     <>
+      <JsonLd data={[homepageSchema, featuredJourneysSchema]} />
+
       {/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Hero ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */}
       <section
         className="relative min-h-svh flex flex-col justify-end pb-[clamp(56px,10vh,112px)] overflow-hidden"
@@ -108,7 +139,7 @@ export default function HomePage() {
         className="flex items-center gap-5 border-b border-stone-200 px-[var(--px)] py-4"
         aria-hidden="true"
       >
-        <span className="label-tag whitespace-nowrap">Mason &amp; Wild · Est. 2027</span>
+        <span className="label-tag whitespace-nowrap">Mason &amp; Wild · Est. February 2026</span>
         <div className="hidden sm:block flex-1 h-px bg-stone-200" />
         <span className="hidden sm:block label-tag whitespace-nowrap">
           Private journeys. Discreet by design.
@@ -256,7 +287,7 @@ export default function HomePage() {
                       href={`${NAV_HREFS.journeys}/${j.slug}`}
                       className="self-start text-2xs tracking-wide uppercase text-[#fff4e2] border-b border-[#fff4e2]/50 pb-px transition-all duration [text-shadow:0_2px_10px_rgba(0,0,0,0.88)] group-hover:text-white group-hover:border-white"
                     >
-                      Explore â†’
+                      Explore ->
                     </Link>
                   </div>
                 </article>
@@ -535,4 +566,10 @@ export default function HomePage() {
     </>
   );
 }
+
+
+
+
+
+
 

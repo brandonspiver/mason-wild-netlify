@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Fragment } from "react";
@@ -6,11 +6,14 @@ import { notFound } from "next/navigation";
 import { Reveal } from "@/components/ui/Reveal";
 import { Button } from "@/components/ui/Button";
 import { JournalNewsletter } from "@/components/journal/JournalNewsletter";
+import { JsonLd } from "@/lib/jsonld";
 import {
+  BRAND_NAME,
   JOURNAL_CATEGORY_LABELS,
   NAV_HREFS,
   CTA,
 } from "@/lib/constants";
+import { absoluteUrl } from "@/lib/seo";
 import type {
   ArticleSummary,
   ArticleBodyBlock,
@@ -27,7 +30,7 @@ function getCategoryHref(category: keyof typeof JOURNAL_CATEGORY_LABELS): string
   return `/journal#${category}`;
 }
 
-// ─── Article data ─────────────────────────────────────────────────────────────
+// â”€â”€â”€ Article data â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // In production: replace with getArticleBySlug(slug) from lib/journal.ts,
 // which reads from contentlayer's allArticles and calls notFound() when
 // no matching slug is found. The FullArticle type is the migration target  - 
@@ -46,7 +49,7 @@ const ARTICLES: Record<string, FullArticle> = {
     excerpt:
       "A luxury perspective on privacy, remoteness, and why certain African journeys feel different for LGBTQ+ travellers. A calm, experience-led view from Mason & Wild.",
     readingTime: 6,
-    publishedAt: "2024-10-15",
+    publishedAt: "2026-04-15",
     img: {
       src:     "/journal/choosing-africa-with-intention/hero.jpg",
       alt:     "Private conservancy landscape in Botswana at golden hour",
@@ -196,7 +199,7 @@ const ARTICLES: Record<string, FullArticle> = {
         excerpt:
           "A practical luxury guide to LGBTQ+ travel in Southern Africa, covering South Africa, Botswana, Namibia, Mozambique, Zambia, and Zimbabwe through the lens of privacy, hosting culture, and real-world trip design.",
         readingTime: 9,
-        publishedAt: "2024-08-05",
+        publishedAt: "2026-03-12",
       },
     ],
   },
@@ -213,7 +216,7 @@ const ARTICLES: Record<string, FullArticle> = {
     excerpt:
       "A considered look at why Cape Town remains the strongest queer city on the continent, from legal confidence and public ease to nightlife, design, hospitality, and the simple luxury of being out in the world.",
     readingTime: 7,
-    publishedAt: "2024-09-18",
+    publishedAt: "2026-04-05",
     img: {
       src:     "/journal/cape-town-gay-capital-of-africa/hero.jpg",
       alt:     "Stylish Cape Town city scene for LGBTQ plus luxury travel",
@@ -259,7 +262,7 @@ const ARTICLES: Record<string, FullArticle> = {
       },
       {
         type: "p",
-        text: "Cafe Manhattan belongs in that story. It is not simply another venue. It represents one of the city's longstanding queer institutions, the kind of place that gives a neighbourhood memory as well as energy. It works because it feels woven into the life of the area rather than staged for visitors.",
+        text: "CafÃ© Manhattan belongs in that story. It is not simply another venue. It represents one of the city's longstanding queer institutions, the kind of place that gives a neighbourhood memory as well as energy. It works because it feels woven into the life of the area rather than staged for visitors.",
       },
       {
         type: "image",
@@ -290,7 +293,7 @@ const ARTICLES: Record<string, FullArticle> = {
       },
       {
         type: "p",
-        text: "Cape Town Pride remains one of the city's clearest annual queer markers, while seasonal fixtures such as the Pink Party and MCQP give the summer calendar real continuity. On the ground, Cafe Manhattan still anchors De Waterkant, and venues such as Zer021 bring a more nightlife-led energy when travellers want it. What matters, though, is not any single address. It is the fact that Cape Town has an ecosystem rather than a token scene.",
+        text: "Cape Town Pride remains one of the city's clearest annual queer markers, while seasonal fixtures such as the Pink Party and MCQP give the summer calendar real continuity. On the ground, CafÃ© Manhattan still anchors De Waterkant, and venues such as Zer021 bring a more nightlife-led energy when travellers want it. What matters, though, is not any single address. It is the fact that Cape Town has an ecosystem rather than a token scene.",
       },
       {
         type: "p",
@@ -301,7 +304,7 @@ const ARTICLES: Record<string, FullArticle> = {
         image: {
           src: "/journal/cape-town-gay-capital-of-africa/nightlife.png",
           alt: "Upscale queer-friendly nightlife or dining scene in Cape Town",
-          caption: "Cafe Manhattan, De Waterkant",
+          caption: "CafÃ© Manhattan, De Waterkant",
           position: "center 52%",
         },
         description: "Cape Town's social life works best when it feels polished, relaxed, and folded into a wider rhythm of living well.",
@@ -401,7 +404,7 @@ const ARTICLES: Record<string, FullArticle> = {
         excerpt:
           "Firsthand observations on the regions that make South Africa so complete, from Cape Town and the Winelands to private safari, coastline, and cultural depth.",
         readingTime: 7,
-        publishedAt: "2024-06-24",
+        publishedAt: "2026-02-18",
       },
       {
         slug:        "lgbtq-travel-southern-africa",
@@ -410,7 +413,7 @@ const ARTICLES: Record<string, FullArticle> = {
         excerpt:
           "A practical luxury guide to LGBTQ+ travel in Southern Africa, covering South Africa, Botswana, Namibia, Mozambique, Zambia, and Zimbabwe through the lens of privacy, hosting culture, and real-world trip design.",
         readingTime: 9,
-        publishedAt: "2024-08-05",
+        publishedAt: "2026-03-12",
       },
     ],
   },
@@ -427,7 +430,7 @@ const ARTICLES: Record<string, FullArticle> = {
     excerpt:
       "A considered comparison of Tanzania and Botswana for luxury safari, from privacy and pace to wildlife style, activities, and which destination fits different travellers best.",
     readingTime: 8,
-    publishedAt: "2024-09-24",
+    publishedAt: "2026-04-08",
     img: {
       src:     "/journal/tanzania-vs-botswana-luxury-safari/hero.jpg",
       alt:     "Luxury safari comparison between Botswana and Tanzania",
@@ -683,7 +686,7 @@ const ARTICLES: Record<string, FullArticle> = {
         excerpt:
           "A Mason & Wild perspective on the Okavango Delta in dry season, from wildlife concentration and guiding quality to why private access still changes the experience.",
         readingTime: 7,
-        publishedAt: "2024-09-28",
+        publishedAt: "2026-04-11",
       },
       {
         slug:        "destination-notes-tanzania",
@@ -692,7 +695,7 @@ const ARTICLES: Record<string, FullArticle> = {
         excerpt:
           "Firsthand observations on what makes Tanzania so compelling, from the scale of the Serengeti to the finishing ease of Zanzibar, and how to shape it into a journey that feels cinematic rather than crowded.",
         readingTime: 7,
-        publishedAt: "2024-06-28",
+        publishedAt: "2026-02-22",
       },
       {
         slug:        "destination-notes-south-africa",
@@ -701,7 +704,7 @@ const ARTICLES: Record<string, FullArticle> = {
         excerpt:
           "Firsthand observations on the regions that make South Africa so complete, from Cape Town and the Winelands to private safari, coastline, and cultural depth.",
         readingTime: 7,
-        publishedAt: "2024-06-24",
+        publishedAt: "2026-02-18",
       },
     ],
   },
@@ -718,7 +721,7 @@ const ARTICLES: Record<string, FullArticle> = {
     excerpt:
       "A Mason & Wild perspective on the Okavango Delta in dry season, from wildlife concentration and guiding quality to why private access still changes the experience.",
     readingTime: 7,
-    publishedAt: "2024-09-28",
+    publishedAt: "2026-04-11",
     img: {
       src:     "/journal/okavango-dry-season-private-safari/hero.jpg",
       alt:     "Private boat moving through the Okavango Delta in Botswana during dry season",
@@ -906,7 +909,7 @@ const ARTICLES: Record<string, FullArticle> = {
         excerpt:
           "For travellers who have spent years managing their visibility, the experience of being entirely unremarkable in a landscape is not a small thing.",
         readingTime: 7,
-        publishedAt: "2024-10-15",
+        publishedAt: "2026-04-15",
       },
       {
         slug:        "lgbtq-travel-southern-africa",
@@ -915,7 +918,7 @@ const ARTICLES: Record<string, FullArticle> = {
         excerpt:
           "A practical luxury guide to LGBTQ+ travel in Southern Africa, covering South Africa, Botswana, Namibia, Mozambique, Zambia, and Zimbabwe through the lens of privacy, hosting culture, and real-world trip design.",
         readingTime: 9,
-        publishedAt: "2024-08-05",
+        publishedAt: "2026-03-12",
       },
     ],
   },
@@ -932,7 +935,7 @@ const ARTICLES: Record<string, FullArticle> = {
     excerpt:
       "A practical luxury guide to how private conservancies differ from national parks, from vehicle density and off-road access to guiding flexibility, sightings, and overall safari quality.",
     readingTime: 8,
-    publishedAt: "2024-08-22",
+    publishedAt: "2026-03-20",
     img: {
       src:     "/journal/private-conservancies-vs-national-parks/hero.jpg",
       alt:     "Luxury safari landscape illustrating private safari access in Africa",
@@ -1110,7 +1113,7 @@ const ARTICLES: Record<string, FullArticle> = {
         excerpt:
           "For travellers who have spent years managing their visibility, the experience of being entirely unremarkable in a landscape is not a small thing.",
         readingTime: 7,
-        publishedAt: "2024-10-15",
+        publishedAt: "2026-04-15",
       },
       {
         slug:        "okavango-dry-season-private-safari",
@@ -1119,7 +1122,7 @@ const ARTICLES: Record<string, FullArticle> = {
         excerpt:
           "A Mason & Wild perspective on the Okavango Delta in dry season, from wildlife concentration and guiding quality to why private access still changes the experience.",
         readingTime: 7,
-        publishedAt: "2024-09-28",
+        publishedAt: "2026-04-11",
       },
       {
         slug:        "lgbtq-travel-southern-africa",
@@ -1128,7 +1131,7 @@ const ARTICLES: Record<string, FullArticle> = {
         excerpt:
           "A practical luxury guide to LGBTQ+ travel in Southern Africa, covering South Africa, Botswana, Namibia, Mozambique, Zambia, and Zimbabwe through the lens of privacy, hosting culture, and real-world trip design.",
         readingTime: 9,
-        publishedAt: "2024-08-05",
+        publishedAt: "2026-03-12",
       },
     ],
   },
@@ -1145,7 +1148,7 @@ const ARTICLES: Record<string, FullArticle> = {
     excerpt:
       "A Mason & Wild perspective on Namibia as a place of silence, relief, and extraordinary landscape, for travellers seeking calm, space, and a more private kind of luxury.",
     readingTime: 7,
-    publishedAt: "2024-09-10",
+    publishedAt: "2026-03-28",
     img: {
       src:     "/journal/solitude-architecture-of-silence-namibia/hero.jpg",
       alt:     "Sossusvlei desert landscape in Namibia",
@@ -1328,7 +1331,7 @@ const ARTICLES: Record<string, FullArticle> = {
         excerpt:
           "For travellers who have spent years managing their visibility, the experience of being entirely unremarkable in a landscape is not a small thing.",
         readingTime: 7,
-        publishedAt: "2024-10-15",
+        publishedAt: "2026-04-15",
       },
       {
         slug:        "lgbtq-travel-southern-africa",
@@ -1337,7 +1340,7 @@ const ARTICLES: Record<string, FullArticle> = {
         excerpt:
           "A practical luxury guide to LGBTQ+ travel in Southern Africa, covering South Africa, Botswana, Namibia, Mozambique, Zambia, and Zimbabwe through the lens of privacy, hosting culture, and real-world trip design.",
         readingTime: 9,
-        publishedAt: "2024-08-05",
+        publishedAt: "2026-03-12",
       },
     ],
   },
@@ -1354,7 +1357,7 @@ const ARTICLES: Record<string, FullArticle> = {
     excerpt:
       "A clear-eyed look at what private travel actually owes conservation, from land protection and anti-poaching to community partnership, restraint, and long-term ecological seriousness.",
     readingTime: 8,
-    publishedAt: "2024-07-18",
+    publishedAt: "2026-03-04",
     img: {
       src:     "/journal/private-travel-owes-conservation/hero.jpg",
       alt:     "Rhino conservation fieldwork in South Africa",
@@ -1595,7 +1598,7 @@ const ARTICLES: Record<string, FullArticle> = {
         excerpt:
           "A practical luxury guide to how private conservancies differ from national parks, from vehicle density and off-road access to guiding flexibility, sightings, and overall safari quality.",
         readingTime: 8,
-        publishedAt: "2024-08-22",
+        publishedAt: "2026-03-20",
       },
       {
         slug:        "choosing-africa-with-intention",
@@ -1604,7 +1607,7 @@ const ARTICLES: Record<string, FullArticle> = {
         excerpt:
           "A luxury perspective on privacy, remoteness, and why certain African journeys feel different for LGBTQ+ travellers. A calm, experience-led view from Mason & Wild.",
         readingTime: 6,
-        publishedAt: "2024-10-15",
+        publishedAt: "2026-04-15",
       },
       {
         slug:        "lgbtq-travel-southern-africa",
@@ -1613,7 +1616,7 @@ const ARTICLES: Record<string, FullArticle> = {
         excerpt:
           "A practical luxury guide to LGBTQ+ travel in Southern Africa, covering South Africa, Botswana, Namibia, Mozambique, Zambia, and Zimbabwe through the lens of privacy, hosting culture, and real-world trip design.",
         readingTime: 9,
-        publishedAt: "2024-08-05",
+        publishedAt: "2026-03-12",
       },
     ],
   },
@@ -1630,7 +1633,7 @@ const ARTICLES: Record<string, FullArticle> = {
     excerpt:
       "Firsthand observations on the regions that make South Africa so complete, from Cape Town and the Winelands to private safari, coastline, and cultural depth.",
     readingTime: 7,
-    publishedAt: "2024-06-24",
+    publishedAt: "2026-02-18",
     img: {
       src:     "/journal/destination-notes-south-africa/hero.jpg",
       alt:     "Luxury South Africa landscape with coastal or Winelands character",
@@ -1888,7 +1891,7 @@ const ARTICLES: Record<string, FullArticle> = {
         excerpt:
           "A practical luxury guide to how private conservancies differ from national parks, from vehicle density and off-road access to guiding flexibility, sightings, and overall safari quality.",
         readingTime: 8,
-        publishedAt: "2024-08-22",
+        publishedAt: "2026-03-20",
       },
       {
         slug:        "lgbtq-travel-southern-africa",
@@ -1897,7 +1900,7 @@ const ARTICLES: Record<string, FullArticle> = {
         excerpt:
           "A practical luxury guide to LGBTQ+ travel in Southern Africa, covering South Africa, Botswana, Namibia, Mozambique, Zambia, and Zimbabwe through the lens of privacy, hosting culture, and real-world trip design.",
         readingTime: 9,
-        publishedAt: "2024-08-05",
+        publishedAt: "2026-03-12",
       },
       {
         slug:        "cape-town-gay-capital-of-africa",
@@ -1906,7 +1909,7 @@ const ARTICLES: Record<string, FullArticle> = {
         excerpt:
           "A considered look at why Cape Town remains the strongest queer city on the continent, from legal confidence and public ease to nightlife, design, hospitality, and the simple luxury of being out in the world.",
         readingTime: 7,
-        publishedAt: "2024-09-18",
+        publishedAt: "2026-04-05",
       },
     ],
   },
@@ -1923,7 +1926,7 @@ const ARTICLES: Record<string, FullArticle> = {
     excerpt:
       "Firsthand observations on what makes Tanzania so compelling, from the scale of the Serengeti to the finishing ease of Zanzibar, and how to shape it into a journey that feels cinematic rather than crowded.",
     readingTime: 7,
-    publishedAt: "2024-06-28",
+    publishedAt: "2026-02-22",
     img: {
       src:     "/journal/destination-notes-tanzania/hero-placeholder.svg",
       alt:     "Luxury Tanzania landscape with safari or coastal character",
@@ -2168,7 +2171,7 @@ const ARTICLES: Record<string, FullArticle> = {
         excerpt:
           "A practical luxury guide to how private conservancies differ from national parks, from vehicle density and off-road access to guiding flexibility, sightings, and overall safari quality.",
         readingTime: 8,
-        publishedAt: "2024-08-22",
+        publishedAt: "2026-03-20",
       },
       {
         slug:        "tanzania-vs-botswana-luxury-safari",
@@ -2177,7 +2180,7 @@ const ARTICLES: Record<string, FullArticle> = {
         excerpt:
           "A considered comparison of Tanzania and Botswana for luxury safari, from privacy and pace to wildlife style, activities, and which destination fits different travellers best.",
         readingTime: 8,
-        publishedAt: "2024-09-24",
+        publishedAt: "2026-04-08",
       },
       {
         slug:        "lgbtq-travel-southern-africa",
@@ -2186,7 +2189,7 @@ const ARTICLES: Record<string, FullArticle> = {
         excerpt:
           "A practical luxury guide to LGBTQ+ travel in Southern Africa, covering South Africa, Botswana, Namibia, Mozambique, Zambia, and Zimbabwe through the lens of privacy, hosting culture, and real-world trip design.",
         readingTime: 9,
-        publishedAt: "2024-08-05",
+        publishedAt: "2026-03-12",
       },
     ],
   },
@@ -2203,7 +2206,7 @@ const ARTICLES: Record<string, FullArticle> = {
     excerpt:
       "A practical luxury guide to LGBTQ+ travel in Southern Africa, covering South Africa, Botswana, Namibia, Mozambique, Zambia, and Zimbabwe through the lens of privacy, hosting culture, and real-world trip design.",
     readingTime: 9,
-    publishedAt: "2024-08-05",
+    publishedAt: "2026-03-12",
     img: {
       src:     "/journal/lgbtq-travel-southern-africa/hero.jpg",
       alt:     "Lantern-lit lodge deck overlooking the Southern African landscape at dusk",
@@ -2588,13 +2591,13 @@ const ARTICLES: Record<string, FullArticle> = {
         excerpt:
           "For travellers who have spent years managing their visibility, the experience of being entirely unremarkable in a landscape is not a small thing.",
         readingTime: 7,
-        publishedAt: "2024-10-15",
+        publishedAt: "2026-04-15",
       },
     ],
   },
 };
 
-// ─── Helpers ──────────────────────────────────────────────────────────────────
+// â”€â”€â”€ Helpers â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 function formatDate(iso: string): string {
   return new Date(iso).toLocaleDateString("en-GB", {
@@ -2641,13 +2644,13 @@ function renderInlineContent(content: readonly ArticleInline[]) {
   });
 }
 
-// ─── Static params ────────────────────────────────────────────────────────────
+// â”€â”€â”€ Static params â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 export function generateStaticParams() {
   return Object.keys(ARTICLES).map((slug) => ({ slug }));
 }
 
-// ─── Metadata ─────────────────────────────────────────────────────────────────
+// â”€â”€â”€ Metadata â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 export async function generateMetadata({
   params,
@@ -2660,19 +2663,29 @@ export async function generateMetadata({
   return {
     title:       article.metaTitle ?? article.title,
     description: article.metaDescription ?? article.excerpt,
+    alternates: {
+      canonical: `${NAV_HREFS.journal}/${article.slug}`,
+    },
     openGraph: {
       title:         article.seoTitle ?? article.title,
       description:   article.metaDescription ?? article.excerpt,
+      url:           absoluteUrl(`${NAV_HREFS.journal}/${article.slug}`),
       type:          "article",
       publishedTime: article.publishedAt,
       images: article.img
         ? [{ url: article.img.src, alt: article.img.alt }]
         : undefined,
     },
+    twitter: {
+      card: "summary_large_image",
+      title: article.seoTitle ?? article.title,
+      description: article.metaDescription ?? article.excerpt,
+      images: article.img ? [article.img.src] : undefined,
+    },
   };
 }
 
-// ─── Page ─────────────────────────────────────────────────────────────────────
+// â”€â”€â”€ Page â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 export default function ArticlePage({
   params,
@@ -2699,9 +2712,33 @@ export default function ArticlePage({
     notFound();
   }
 
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: article.title,
+    description: article.metaDescription ?? article.excerpt,
+    datePublished: article.publishedAt,
+    dateModified: article.publishedAt,
+    articleSection: JOURNAL_CATEGORY_LABELS[article.category],
+    url: absoluteUrl(`${NAV_HREFS.journal}/${article.slug}`),
+    image: article.img ? [absoluteUrl(article.img.src)] : undefined,
+    author: {
+      "@type": "Organization",
+      name: BRAND_NAME,
+      url: absoluteUrl("/"),
+    },
+    publisher: {
+      "@type": "Organization",
+      name: BRAND_NAME,
+      url: absoluteUrl("/"),
+    },
+    mainEntityOfPage: absoluteUrl(`${NAV_HREFS.journal}/${article.slug}`),
+  };
+
   return (
     <>
-      {/* ─── Article header ───────────────────────────────────────────── */}
+      <JsonLd data={articleSchema} />
+      {/* â”€â”€â”€ Article header â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <header
         className="pt-[calc(68px+clamp(34px,5vw,72px))] pb-[clamp(30px,4vw,48px)] border-b border-stone-200"
         aria-labelledby="article-title"
@@ -2770,7 +2807,7 @@ export default function ArticlePage({
         </div>
       </header>
 
-      {/* ─── Hero image ───────────────────────────────────────────────── */}
+      {/* â”€â”€â”€ Hero image â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       {/*
         Caption uses article.img.caption if provided  -  a short editorial
         location or territory note, not the full alt text.
@@ -2802,7 +2839,7 @@ export default function ArticlePage({
         </Reveal>
       )}
 
-      {/* ─── Article body ─────────────────────────────────────────────── */}
+      {/* â”€â”€â”€ Article body â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       {/*
         Prose column: max-w-[680px] constrains line length to ~68ch.
         No sidebar. No sticky elements.
@@ -2981,7 +3018,7 @@ export default function ArticlePage({
         </div>
       </article>
 
-      {/* ─── Commercial bridge ────────────────────────────────────────── */}
+      {/* â”€â”€â”€ Commercial bridge â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       {article.relatedJourneys && article.relatedJourneys.length > 0 && (
         <section
           className="border-t border-stone-200 bg-page-subtle"
@@ -3039,7 +3076,7 @@ export default function ArticlePage({
         </section>
       )}
 
-      {/* ─── Related articles ─────────────────────────────────────────── */}
+      {/* â”€â”€â”€ Related articles â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       {article.relatedArticles && article.relatedArticles.length > 0 && (
         <section
           className="border-t border-stone-200"
@@ -3101,3 +3138,4 @@ export default function ArticlePage({
     </>
   );
 }
+

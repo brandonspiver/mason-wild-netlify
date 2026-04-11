@@ -44,7 +44,7 @@ export const CTA = {
   // Exploratory
   viewCollection:      "View the Collection",
   viewAllJourneys:     "View All Journeys",
-  viewAllFive:         "View All Six Archetypes",
+  viewAllFive:         "View All Seven Archetypes",
   viewItinerary:       "View Itinerary",
   theExperience:       "The Experience",
   ourPhilosophy:       "Our Philosophy",
@@ -159,7 +159,7 @@ export type DurationOption = typeof DURATION_OPTIONS[number]["value"];
 export const SOCIAL_COPY = {
   sectionLabel:      "By Invitation Only",
   statement:         "A small group of aligned travellers. One shared season. Designed for those who find the right company as rare as the right landscape.",
-  foundingNote:      "The circle for 2025 is currently being assembled.",
+  foundingNote:      "The 2027 circle is being assembled.",
   applicationPrompt: "Membership is by introduction only.",
 } as const;
 
@@ -169,7 +169,7 @@ export const INQUIRY_COPY = {
   pageSubhead:
     "We take on a limited number of journeys each month to ensure each one receives the attention it deserves. Our process is personal and unhurried.",
   processBody:
-    "Each journey begins with a conversation. We do not offer packages  -  we design itineraries around a specific brief. Once we receive your enquiry, a member of our team will review it carefully before responding.",
+    "Each journey begins with a conversation. We do not offer packages  -  we design itineraries around a specific brief. Once we receive your inquiry, a member of our team will review it carefully before responding.",
   fullNameLabel:       "Full Name",
   fullNamePlaceholder: "As it appears on your travel document",
   emailLabel:          "Email",

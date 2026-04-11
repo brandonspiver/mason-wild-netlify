@@ -6,7 +6,9 @@ import { Reveal } from "@/components/ui/Reveal";
 import { Button } from "@/components/ui/Button";
 import { JourneyCarousel } from "@/components/journey/JourneyCarousel";
 import { JourneySummaryPanel } from "@/components/journey/JourneySummaryPanel";
+import { JsonLd } from "@/lib/jsonld";
 import { NAV_HREFS, CTA } from "@/lib/constants";
+import { absoluteUrl } from "@/lib/seo";
 
 type JourneyImage = {
   readonly src: string;
@@ -781,7 +783,7 @@ const JOURNEYS: Record<string, JourneyData> = {
         number: "01",
         period: "Days 1-4",
         title: "Cape Town, Properly",
-        body: "Begin at Mount Nelson, where Cape Town opens in a way that feels both elegant and deeply assured. Arrival settles into dinner at Amura at Mount Nelson, followed by a city chapter shaped around private touring, Table Mountain, Kloof Street House, Cafe Manhattan, Boulders Beach, the drive back via Chapman's Peak, lunch at Mantra Cafe, a 5:00 PM helicopter flight from the V&A Waterfront, a private champagne sunset yacht cruise, dinner at Marble, and a final free day with private guide time for shopping, beaching, art galleries, and dinner at The Wiggle Room. It is a stylish opening, but never an overworked one.",
+        body: "Begin at Mount Nelson, where Cape Town opens in a way that feels both elegant and deeply assured. Arrival settles into dinner at Amura at Mount Nelson, followed by a city chapter shaped around private touring, Table Mountain, Kloof Street House, Café Manhattan, Boulders Beach, the drive back via Chapman's Peak, lunch at Mantra Café, a 5:00 PM helicopter flight from the V&A Waterfront, a private champagne sunset yacht cruise, dinner at Marble, and a final free day with private guide time for shopping, beaching, art galleries, and dinner at The Wiggle Room. It is a stylish opening, but never an overworked one.",
       },
       {
         number: "02",
@@ -1159,7 +1161,7 @@ const JOURNEYS: Record<string, JourneyData> = {
         number: "03",
         period: "Day 3",
         title: "City & Coast",
-        body: "A more flexible Cape Town day, left open for independent exploring or additional time with your guide, with lunch at The Roundhouse and dinner and drinks at Cafe Manhattan.",
+        body: "A more flexible Cape Town day, left open for independent exploring or additional time with your guide, with lunch at The Roundhouse and dinner and drinks at Café Manhattan.",
       },
       {
         number: "04",
@@ -2015,6 +2017,24 @@ export async function generateMetadata({
   return {
     title: journey.name,
     description: `${journey.identity} A private African journey through ${journey.territory}, designed for discerning LGBTQ+ travellers.`,
+    alternates: {
+      canonical: `${NAV_HREFS.journeys}/${journey.slug}`,
+    },
+    openGraph: {
+      title: journey.name,
+      description: `${journey.identity} A private African journey through ${journey.territory}, designed for discerning LGBTQ+ travellers.`,
+      url: absoluteUrl(`${NAV_HREFS.journeys}/${journey.slug}`),
+      type: "website",
+      images: journey.heroImg
+        ? [{ url: journey.heroImg.src, alt: journey.heroImg.alt }]
+        : undefined,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: journey.name,
+      description: `${journey.identity} A private African journey through ${journey.territory}, designed for discerning LGBTQ+ travellers.`,
+      images: journey.heroImg ? [journey.heroImg.src] : undefined,
+    },
   };
 }
 
@@ -2129,8 +2149,33 @@ export default function JourneyDetailPage({
     ctaHeading = journey.ctaHeading;
   }
 
+  const journeySchema = {
+    "@context": "https://schema.org",
+    "@type": "Trip",
+    name: journey.name,
+    description: journey.identity,
+    url: absoluteUrl(`${NAV_HREFS.journeys}/${journey.slug}`),
+    image: absoluteUrl(journey.heroImg.src),
+    itinerary: {
+      "@type": "ItemList",
+      itemListElement: journey.flow.map((phase, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: phase.title,
+        description: phase.body,
+      })),
+    },
+    provider: {
+      "@type": "Organization",
+      name: "Mason & Wild",
+      url: absoluteUrl("/"),
+    },
+    touristType: "LGBTQ+ travellers",
+  };
+
   return (
     <>
+      <JsonLd data={journeySchema} />
       <section
         className="relative min-h-svh flex flex-col justify-end pb-[clamp(52px,9vh,96px)] overflow-hidden"
         aria-labelledby="journey-name"

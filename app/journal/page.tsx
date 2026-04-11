@@ -1,22 +1,25 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Reveal } from "@/components/ui/Reveal";
 import { Button } from "@/components/ui/Button";
 import { JournalNewsletter } from "@/components/journal/JournalNewsletter";
+import { JsonLd } from "@/lib/jsonld";
 import {
   JOURNAL_CATEGORY_LABELS,
   type JournalCategory,
   NAV_HREFS,
   CTA,
 } from "@/lib/constants";
+import { absoluteUrl, buildPageMetadata } from "@/lib/seo";
 import type { ArticleSummary } from "@/types/journal";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "The Journal",
   description:
     "Field notes, territory intelligence, and perspectives on private African travel for discerning LGBTQ+ travellers. Published by Mason & Wild.",
-};
+  path: "/journal",
+});
 
 // In production: replace with getArticles() from lib/journal.ts,
 // sourcing from contentlayer's allArticles sorted by publishedAt desc.
@@ -28,7 +31,7 @@ const ARTICLES: ArticleSummary[] = [
     excerpt:
       "A luxury perspective on privacy, remoteness, and why certain African journeys feel different for LGBTQ+ travellers. A calm, experience-led view from Mason & Wild.",
     readingTime: 6,
-    publishedAt: "2024-10-15",
+    publishedAt: "2026-04-15",
     img: {
       src: "/journal/choosing-africa-with-intention/hero.jpg",
       alt: "Private conservancy landscape in Botswana at golden hour",
@@ -41,7 +44,7 @@ const ARTICLES: ArticleSummary[] = [
     excerpt:
       "A considered look at why Cape Town remains the strongest queer city on the continent, from legal confidence and public ease to nightlife, design, hospitality, and the simple luxury of being out in the world.",
     readingTime: 7,
-    publishedAt: "2024-09-18",
+    publishedAt: "2026-04-05",
     img: {
       src: "/journal/cape-town-gay-capital-of-africa/hero.jpg",
       alt: "Stylish Cape Town city scene for LGBTQ plus luxury travel",
@@ -54,7 +57,7 @@ const ARTICLES: ArticleSummary[] = [
     excerpt:
       "A considered comparison of Tanzania and Botswana for luxury safari, from privacy and pace to wildlife style, activities, and which destination fits different travellers best.",
     readingTime: 8,
-    publishedAt: "2024-09-24",
+    publishedAt: "2026-04-08",
     img: {
       src: "/journal/tanzania-vs-botswana-luxury-safari/hero.jpg",
       alt: "Luxury safari comparison between Botswana and Tanzania",
@@ -67,7 +70,7 @@ const ARTICLES: ArticleSummary[] = [
     excerpt:
       "A Mason & Wild perspective on the Okavango Delta in dry season, from wildlife concentration and guiding quality to why private access still changes the experience.",
     readingTime: 7,
-    publishedAt: "2024-09-28",
+    publishedAt: "2026-04-11",
     img: {
       src: "/journal/okavango-dry-season-private-safari/hero.jpg",
       alt: "Private boat moving through the Okavango Delta in Botswana during dry season",
@@ -80,7 +83,7 @@ const ARTICLES: ArticleSummary[] = [
     excerpt:
       "A Mason & Wild perspective on Namibia as a place of silence, relief, and extraordinary landscape, for travellers seeking calm, space, and a more private kind of luxury.",
     readingTime: 7,
-    publishedAt: "2024-09-10",
+    publishedAt: "2026-03-28",
     img: {
       src: "/journal/solitude-architecture-of-silence-namibia/hero.jpg",
       alt: "Sossusvlei desert landscape in Namibia",
@@ -93,7 +96,7 @@ const ARTICLES: ArticleSummary[] = [
     excerpt:
       "A practical luxury guide to how private conservancies differ from national parks, from vehicle density and off-road access to guiding flexibility, sightings, and overall safari quality.",
     readingTime: 8,
-    publishedAt: "2024-08-22",
+    publishedAt: "2026-03-20",
     img: {
       src: "/journal/private-conservancies-vs-national-parks/hero.jpg",
       alt: "Luxury safari landscape illustrating private safari access in Africa",
@@ -106,7 +109,7 @@ const ARTICLES: ArticleSummary[] = [
     excerpt:
       "A practical luxury guide to LGBTQ+ travel in Southern Africa, covering South Africa, Botswana, Namibia, Mozambique, Zambia, and Zimbabwe through the lens of privacy, hosting culture, and real-world trip design.",
     readingTime: 9,
-    publishedAt: "2024-08-05",
+    publishedAt: "2026-03-12",
   },
   {
     slug:        "private-travel-owes-conservation",
@@ -115,7 +118,7 @@ const ARTICLES: ArticleSummary[] = [
     excerpt:
       "A clear-eyed look at what private travel actually owes conservation, from land protection and anti-poaching to community partnership, restraint, and long-term ecological seriousness.",
     readingTime: 8,
-    publishedAt: "2024-07-18",
+    publishedAt: "2026-03-04",
     img: {
       src: "/journal/private-travel-owes-conservation/hero.jpg",
       alt: "Rhino conservation fieldwork in South Africa",
@@ -128,7 +131,7 @@ const ARTICLES: ArticleSummary[] = [
     excerpt:
       "Firsthand observations on the delta's private concessions, seasonal access windows, and the specific camps worth knowing about. Updated for the current season.",
     readingTime: 5,
-    publishedAt: "2024-07-02",
+    publishedAt: "2026-02-26",
   },
   {
     slug:        "destination-notes-south-africa",
@@ -137,7 +140,7 @@ const ARTICLES: ArticleSummary[] = [
     excerpt:
       "Firsthand observations on the regions that make South Africa so complete, from Cape Town and the Winelands to private safari, coastline, and cultural depth.",
     readingTime: 7,
-    publishedAt: "2024-06-24",
+    publishedAt: "2026-02-18",
     img: {
       src: "/journal/destination-notes-south-africa/hero.jpg",
       alt: "Luxury South Africa landscape with coastal or Winelands character",
@@ -150,7 +153,7 @@ const ARTICLES: ArticleSummary[] = [
     excerpt:
       "Firsthand observations on what makes Tanzania so compelling, from the scale of the Serengeti to the finishing ease of Zanzibar, and how to shape it into a journey that feels cinematic rather than crowded.",
     readingTime: 7,
-    publishedAt: "2024-06-28",
+    publishedAt: "2026-02-22",
     img: {
       src: "/journal/destination-notes-tanzania/hero-placeholder.svg",
       alt: "Luxury Tanzania landscape with safari or coastal character",
@@ -180,6 +183,19 @@ const JOURNAL_SHELL =
   "mx-auto w-full max-w-[1720px] px-[clamp(18px,3vw,54px)]";
 
 export default function JournalPage() {
+  const journalCollectionSchema = {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    name: "The Journal",
+    url: absoluteUrl("/journal"),
+    blogPost: ARTICLES.map((article) => ({
+      "@type": "BlogPosting",
+      headline: article.title,
+      datePublished: article.publishedAt,
+      url: absoluteUrl(`/journal/${article.slug}`),
+    })),
+  };
+
   const [featured, ...rest] = ARTICLES;
 
   const byCategory = rest.reduce<Partial<Record<JournalCategory, ArticleSummary[]>>>(
@@ -193,6 +209,7 @@ export default function JournalPage() {
 
   return (
     <>
+      <JsonLd data={journalCollectionSchema} />
       <section
         className="pt-[var(--page-header-pt)] pb-[clamp(48px,6vw,80px)] border-b border-stone-200"
         aria-labelledby="journal-heading"
@@ -326,3 +343,4 @@ export default function JournalPage() {
     </>
   );
 }
+
