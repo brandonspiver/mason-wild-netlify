@@ -94,7 +94,7 @@ const ARCHETYPES = [
       src: "/journeys/the-private-circuit-card.png",
       alt: "Sailing at sunset on calm waters",
     },
-    reversed: false,
+    reversed: true,
   },
 ] as const;
 
