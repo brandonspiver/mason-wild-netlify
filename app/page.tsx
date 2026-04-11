@@ -288,7 +288,7 @@ export default function HomePage() {
                       href={`${NAV_HREFS.journeys}/${j.slug}`}
                       className="self-start text-2xs tracking-wide uppercase text-[#fff4e2] border-b border-[#fff4e2]/50 pb-px transition-all duration [text-shadow:0_2px_10px_rgba(0,0,0,0.88)] group-hover:text-white group-hover:border-white"
                     >
-                      Explore ->
+                      Explore {"->"}
                     </Link>
                   </div>
                 </article>
