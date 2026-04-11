@@ -89,7 +89,7 @@ const ARCHETYPES = [
     territory: "Tanzania · Zanzibar",
     tagline:   "The full breadth of the continent, without compromise.",
     body:
-      "Multiple ecosystems. Multiple territories. Multiple wildlife encounters  -  without sacrificing the privacy and control that make them meaningful. Private aircraft, exclusive-use properties throughout, and a single specialist from first enquiry to final departure.",
+      "Multiple ecosystems. Multiple territories. Multiple wildlife encounters  -  without sacrificing the privacy and control that make them meaningful. Private aircraft, exclusive-use properties throughout, and a single specialist from first enquiry to final departure. Every transition is intentionally paced, so each chapter feels distinct while the overall journey remains seamless, calm, and unmistakably yours.",
     img: {
       src: "/journeys/the-private-circuit-card.png",
       alt: "Sailing at sunset on calm waters",

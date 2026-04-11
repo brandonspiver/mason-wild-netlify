@@ -254,7 +254,7 @@ export default function JournalPage() {
                 <h2 className="font-serif font-light text-[clamp(2rem,3vw,3.35rem)] text-stone-900 leading-[1.05] tracking-[-0.018em] mb-6 group-hover:text-forest transition-colors duration" id="featured-heading">
                   {featured.title}
                 </h2>
-                <p className="text-[clamp(1rem,1.08vw,1.06rem)] font-light text-stone-500 leading-[1.9] mb-10">
+                <p className="text-[clamp(0.93rem,0.95vw,0.98rem)] font-light text-stone-500 leading-[1.78] mb-10">
                   {featured.excerpt}
                 </p>
                 <div className="flex items-center justify-between gap-6">
@@ -295,7 +295,7 @@ export default function JournalPage() {
                           <h3 className="font-serif font-light text-[clamp(1.7rem,2.25vw,2.5rem)] text-stone-900 leading-[1.08] tracking-[-0.014em] mb-3 group-hover:text-forest transition-colors duration">
                             {article.title}
                           </h3>
-                          <p className="text-[clamp(1rem,1.04vw,1.05rem)] font-light text-stone-500 leading-[1.85] max-w-[980px]">{article.excerpt}</p>
+                          <p className="text-[clamp(0.92rem,0.92vw,0.97rem)] font-light text-stone-500 leading-[1.76] max-w-[980px]">{article.excerpt}</p>
                         </div>
                         <div className="flex flex-row md:flex-col items-center md:items-end gap-4 md:gap-3 md:pt-[4px] shrink-0">
                           <time dateTime={article.publishedAt} className="label-tag whitespace-nowrap">{formatDate(article.publishedAt)}</time>

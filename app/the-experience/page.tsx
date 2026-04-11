@@ -246,7 +246,7 @@ export default function TheExperiencePage() {
             </h2>
           </Reveal>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-white/[0.07]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-white/[0.07] border border-white/[0.10]">
             {PROCESS_STEPS.map((step, i) => (
               <Reveal key={step.n} delay={(i % 4) as 0 | 1 | 2 | 3 | 4}>
                 <div className="bg-stone-900 p-10 h-full">
@@ -285,7 +285,7 @@ export default function TheExperiencePage() {
             Each item carries equal weight; the grid reads as a considered list,
             not a designed feature matrix.
           */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/[0.12]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/[0.12] border border-white/[0.14]">
             {INCLUSIVE_ITEMS.map((item, i) => (
               <Reveal key={item.key} delay={(i % 3) as 0 | 1 | 2 | 3 | 4}>
                 <div className="bg-forest hover:bg-[#446f50] transition-colors duration p-10 h-full">

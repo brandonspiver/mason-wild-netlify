@@ -428,7 +428,7 @@ export default function SocialShiftPage() {
 
       <section className="border-b border-stone-200" aria-label="Trip metadata">
         <div className="container-site">
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-7 gap-px bg-stone-200">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-7 gap-px bg-stone-200 border-x border-stone-200">
             {metadataItems.map((item, index) => (
               <Reveal key={item.label} className="h-full" delay={(index % 3) as 0 | 1 | 2 | 3 | 4}>
                 <div className="bg-page px-8 py-10 h-full">

@@ -103,7 +103,7 @@ export function SocialJourneyPanel({
                     >
                       Journey Flow
                     </h2>
-                    <p className="mt-6 max-w-[760px] text-base font-light text-stone-500 leading-relaxed">
+                    <p className="mt-6 max-w-[760px] text-sm font-light text-stone-500 leading-relaxed">
                       {intro}
                     </p>
                   </div>
@@ -128,7 +128,7 @@ export function SocialJourneyPanel({
                               <p className="font-serif font-light text-[clamp(1.8rem,3vw,2.5rem)] leading-[1.02] tracking-[-0.02em] text-stone-900 mb-4">
                                 <em>{card.title}</em>
                               </p>
-                              <p className="max-w-[860px] text-base font-light text-stone-500 leading-relaxed md:text-[1.08rem] md:leading-[1.85]">
+                              <p className="max-w-[860px] text-sm font-light text-stone-500 leading-relaxed">
                                 {card.copy}
                               </p>
                             </div>
@@ -162,7 +162,7 @@ export function SocialJourneyPanel({
                     >
                       What Defines This Journey
                     </h2>
-                    <p className="mt-6 max-w-[760px] text-base font-light text-stone-500 leading-relaxed">
+                    <p className="mt-6 max-w-[760px] text-sm font-light text-stone-500 leading-relaxed">
                       {definesIntro}
                     </p>
                   </div>
@@ -173,7 +173,7 @@ export function SocialJourneyPanel({
                     <Reveal key={item.title} delay={(index % 3) as 0 | 1 | 2 | 3 | 4}>
                       <div className="border-t border-stone-200 py-7 md:py-8">
                         <p className="label-tag mb-4">{item.title}</p>
-                        <p className="max-w-[34rem] text-base font-light text-stone-500 leading-relaxed">
+                        <p className="max-w-[34rem] text-sm font-light text-stone-500 leading-relaxed">
                           {item.copy}
                         </p>
                       </div>
@@ -192,7 +192,7 @@ export function SocialJourneyPanel({
                     >
                       What&apos;s Included
                     </h2>
-                    <p className="mt-6 max-w-[760px] text-base font-light text-stone-500 leading-relaxed">
+                    <p className="mt-6 max-w-[760px] text-sm font-light text-stone-500 leading-relaxed">
                       {includesIntro}
                     </p>
                   </div>
@@ -203,7 +203,7 @@ export function SocialJourneyPanel({
                     <Reveal key={item.title} delay={(index % 3) as 0 | 1 | 2 | 3 | 4}>
                       <div className="border-t border-stone-200 py-7 md:py-8">
                         <p className="label-tag mb-4">{item.title}</p>
-                        <p className="max-w-[34rem] text-base font-light text-stone-500 leading-relaxed">
+                        <p className="max-w-[34rem] text-sm font-light text-stone-500 leading-relaxed">
                           {item.copy}
                         </p>
                       </div>

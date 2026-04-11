@@ -232,7 +232,7 @@ export default function HomePage() {
             </div>
           </Reveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-[2px]">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-stone-200 border-x border-stone-200">
             {FEATURED_JOURNEYS.map((j, i) => (
               <Reveal key={j.slug} delay={(i + 1) as 1|2|3}>
                 <article className="relative overflow-hidden bg-stone-800 group">

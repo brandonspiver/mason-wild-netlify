@@ -141,7 +141,7 @@ export function InquiryForm() {
           {INQUIRY_COPY.durationLabel}
         </p>
         <div
-          className="flex gap-px bg-stone-200 w-fit"
+          className="flex gap-px bg-stone-200 w-fit border border-stone-200"
           role="group"
           aria-labelledby="duration-label"
         >

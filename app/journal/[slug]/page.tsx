@@ -388,7 +388,7 @@ const ARTICLES: Record<string, FullArticle> = {
         name:    "The Social Shift",
         outcome: "Connection",
         img: {
-          src: "/journeys/the-social-shift-card.png",
+          src: "/journeys/the-social.jpg",
           alt: "The Social Shift journey card",
         },
       },
@@ -2999,7 +2999,7 @@ export default function ArticlePage({
               </h2>
             </Reveal>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[2px]">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-stone-200 border-x border-stone-200">
               {article.relatedJourneys.map((journey, i) => (
                 <Reveal key={journey.slug} delay={(i % 3) as 0 | 1 | 2}>
                   <Link

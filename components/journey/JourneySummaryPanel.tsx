@@ -128,7 +128,7 @@ export function JourneySummaryPanel({
                         </>
                       ) : null}
                     </h2>
-                    <p className="mt-6 max-w-[760px] text-base font-light text-stone-500 leading-relaxed">
+                    <p className="mt-6 max-w-[760px] text-sm font-light text-stone-500 leading-relaxed">
                       {flowIntro}
                     </p>
                   </div>
@@ -151,7 +151,7 @@ export function JourneySummaryPanel({
                           <p className="font-serif font-light text-[clamp(1.8rem,3vw,2.5rem)] leading-[1.02] tracking-[-0.02em] text-stone-900 mb-4">
                             <em>{phase.title}</em>
                           </p>
-                          <p className="max-w-[860px] text-base font-light text-stone-500 leading-relaxed md:text-[1.08rem] md:leading-[1.85]">
+                          <p className="max-w-[860px] text-sm font-light text-stone-500 leading-relaxed">
                             {phase.body}
                           </p>
                         </div>
@@ -174,7 +174,7 @@ export function JourneySummaryPanel({
                         </>
                       ) : null}
                     </h2>
-                    <p className="mt-6 max-w-[760px] text-base font-light text-stone-500 leading-relaxed">
+                    <p className="mt-6 max-w-[760px] text-sm font-light text-stone-500 leading-relaxed">
                       {definesIntro}
                     </p>
                   </div>
@@ -185,7 +185,7 @@ export function JourneySummaryPanel({
                     <Reveal key={pillar.key} delay={(index % 3) as 0 | 1 | 2 | 3 | 4}>
                       <div className="border-t border-stone-200 py-7 md:py-8">
                         <p className="label-tag mb-4">{pillar.title}</p>
-                        <p className="max-w-[34rem] text-base font-light text-stone-500 leading-relaxed">
+                        <p className="max-w-[34rem] text-sm font-light text-stone-500 leading-relaxed">
                           {pillar.body}
                         </p>
                       </div>
@@ -207,7 +207,7 @@ export function JourneySummaryPanel({
                         </>
                       ) : null}
                     </h2>
-                    <p className="mt-6 max-w-[760px] text-base font-light text-stone-500 leading-relaxed">
+                    <p className="mt-6 max-w-[760px] text-sm font-light text-stone-500 leading-relaxed">
                       {includesIntro}
                     </p>
                   </div>
@@ -218,7 +218,7 @@ export function JourneySummaryPanel({
                     <Reveal key={item.key} delay={(index % 3) as 0 | 1 | 2 | 3 | 4}>
                       <div className="border-t border-stone-200 py-7 md:py-8">
                         <p className="label-tag mb-4">{item.title}</p>
-                        <p className="max-w-[34rem] text-base font-light text-stone-500 leading-relaxed">
+                        <p className="max-w-[34rem] text-sm font-light text-stone-500 leading-relaxed">
                           {item.body}
                         </p>
                       </div>

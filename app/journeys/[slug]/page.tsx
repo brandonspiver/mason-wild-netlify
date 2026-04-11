@@ -681,7 +681,7 @@ const JOURNEYS: Record<string, JourneyData> = {
     },
     galleryImgs: [
       {
-        src: "/journeys/the-romantic/MN 3.jpg",
+        src: "/journeys/the-romantic/MN 3 .png",
         alt: "Mount Nelson Hotel in Cape Town",
         position: "center 50%",
       },
@@ -2192,9 +2192,9 @@ export default function JourneyDetailPage({
 
       <section className="border-b border-stone-200" aria-label="Journey details">
         <div className="container-site">
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-px bg-stone-200">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-px bg-stone-200 border-x border-stone-200">
             {journey.metadataItems.map((item, index) => (
-              <Reveal key={item.label} delay={(index % 3) as 0 | 1 | 2 | 3 | 4}>
+              <Reveal key={item.label} className="h-full" delay={(index % 3) as 0 | 1 | 2 | 3 | 4}>
                 <div className="bg-page px-8 py-10 h-full">
                   <p className="label-tag mb-4">{item.label}</p>
                   <p className="font-serif font-light italic text-base text-stone-800 leading-snug mb-4">
@@ -2265,7 +2265,7 @@ export default function JourneyDetailPage({
                     className={
                       index === 0
                         ? "font-serif font-light text-display-sm text-stone-800 leading-[1.45] tracking-[-0.01em]"
-                        : "text-base font-light text-stone-500 leading-relaxed"
+                        : "text-sm font-light text-stone-500 leading-relaxed"
                     }
                   >
                     {paragraph}
@@ -2374,7 +2374,7 @@ export default function JourneyDetailPage({
                   <em>form.</em>
                 </p>
               </div>
-              <p className="text-base font-light text-stone-500 leading-relaxed max-w-[560px] self-end">
+              <p className="text-sm font-light text-stone-500 leading-relaxed max-w-[560px] self-end">
                 {journey.accommodationsIntro}
               </p>
             </div>
@@ -2398,7 +2398,7 @@ export default function JourneyDetailPage({
                     {accommodation.stay && (
                       <p className="label-tag text-stone-400 mb-5">{accommodation.stay}</p>
                     )}
-                    <p className="text-base font-light text-stone-500 leading-relaxed">
+                    <p className="text-sm font-light text-stone-500 leading-relaxed">
                       {accommodation.description}
                     </p>
                   </div>
@@ -2463,7 +2463,7 @@ export default function JourneyDetailPage({
                       <span className="text-stone-300" aria-hidden="true">
                         +
                       </span>
-                      <p className="text-base font-light text-stone-500 leading-relaxed">
+                      <p className="text-sm font-light text-stone-500 leading-relaxed">
                         {item}
                       </p>
                     </div>
@@ -2501,7 +2501,7 @@ export default function JourneyDetailPage({
                       <span className="text-stone-300" aria-hidden="true">
                         +
                       </span>
-                      <p className="text-base font-light text-stone-500 leading-relaxed">
+                      <p className="text-sm font-light text-stone-500 leading-relaxed">
                         {item}
                       </p>
                     </div>
@@ -2540,7 +2540,7 @@ export default function JourneyDetailPage({
                     </>
                   ) : null}
                 </h2>
-                <p className="text-base font-light text-stone-500 leading-relaxed max-w-[440px]">
+                <p className="text-sm font-light text-stone-500 leading-relaxed max-w-[440px]">
                   {journey.inquiryBody}
                 </p>
               </div>

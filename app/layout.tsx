@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     locale:    "en_GB",
     type:      "website",
     images: [{
-      url:    "/og-default.jpg",
+      url:    "/home/home-hero.jpg",
       width:  1200,
       height: 630,
       alt:    BRAND_NAME,
