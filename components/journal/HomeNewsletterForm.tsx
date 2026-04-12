@@ -95,20 +95,20 @@ export function HomeNewsletterForm({ inputId }: { inputId: string }) {
             required
             className="mt-[2px] h-4 w-4 shrink-0 rounded-none border border-white/40 bg-transparent text-forest focus:ring-forest/80"
           />
-          <span className="flex-1 text-[13px] font-light text-white/72 leading-[1.7]">
+          <span className="flex-1 text-[13px] font-light text-white leading-[1.7]">
             I would like to receive news, updates, and travel inspiration from
             Mason &amp; Wild by email. I understand that I can unsubscribe at
             any time.
           </span>
         </label>
 
-        <p className="mt-3 max-w-[660px] text-left text-[11px] font-light text-white/54 leading-relaxed">
+        <p className="mt-3 max-w-[660px] text-left text-[11px] font-light text-forest-light leading-relaxed">
           By submitting this form, you agree that Mason &amp; Wild may process
           your personal information to respond to your enquiry and manage
           related communications in accordance with our{" "}
           <Link
             href="/privacy"
-            className="text-white/75 border-b border-white/35 hover:text-white hover:border-white/60 pb-px transition-colors duration"
+            className="text-forest border-b border-forest/45 hover:text-forest-light hover:border-forest-light/65 pb-px transition-colors duration"
           >
             Privacy Policy
           </Link>

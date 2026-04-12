@@ -104,7 +104,7 @@ export function JournalNewsletter({ inputId }: { inputId: string }) {
 
             <label
               htmlFor={`${inputId}-consent`}
-              className="mt-5 inline-flex max-w-[880px] items-start gap-3.5 cursor-pointer"
+              className="mt-5 flex max-w-[880px] items-start gap-4.5 md:gap-5 cursor-pointer"
             >
               <input
                 id={`${inputId}-consent`}
@@ -112,9 +112,9 @@ export function JournalNewsletter({ inputId }: { inputId: string }) {
                 checked={consent}
                 onChange={(e) => setConsent(e.target.checked)}
                 required
-                className="mt-[2px] h-4 w-4 rounded-none border border-stone-300 text-forest focus:ring-forest"
+                className="mt-[2px] h-4 w-4 shrink-0 rounded-none border border-stone-300 text-forest focus:ring-forest"
               />
-              <span className="text-[13px] md:text-[13.5px] font-light text-stone-500 leading-[1.8]">
+              <span className="flex-1 text-[13px] md:text-[13.5px] font-light text-stone-500 leading-[1.8]">
                 I would like to receive news, updates, and travel inspiration
                 from Mason &amp; Wild by email. I understand that I can
                 unsubscribe at any time.

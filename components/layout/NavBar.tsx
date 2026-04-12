@@ -67,12 +67,12 @@ export function NavBar() {
           aria-label="Mason & Wild home"
         >
           <Image
-            src="/branding/mason-wild-header-logo.png"
+            src="/branding/mason-wild-header-wordmark-cropped.png"
             alt="Mason & Wild"
-            width={1291}
-            height={347}
+            width={1075}
+            height={453}
             priority
-            className="h-[28px] w-auto sm:h-[32px] md:h-[34px]"
+            className="h-[34px] w-auto sm:h-[38px] md:h-[40px]"
           />
         </Link>
 

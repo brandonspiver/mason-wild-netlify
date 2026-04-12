@@ -80,10 +80,10 @@ export default function HomePage() {
               "animate-[fadeRise_0.9s_cubic-bezier(0.16,1,0.3,1)_0.3s_forwards]",
             ].join(" ")}
           >
-            Privately designed African journeys{" "}
-            <br className="hidden sm:block" />
-            for discerning{" "}
-            <em>LGBTQ+ travellers.</em>
+            <span className="block">Privately designed</span>
+            <span className="block">African journeys</span>
+            <span className="block">for discerning</span>
+            <em className="block">LGBTQ+ travellers.</em>
           </h1>
 
           <p
@@ -536,7 +536,7 @@ export default function HomePage() {
               on the art of disappearing well.
             </p>
             <HomeNewsletterForm inputId="nl-email" />
-            <p className="mt-[14px] text-2xs tracking-[0.1em] text-white/18">
+            <p className="mt-[14px] text-2xs tracking-[0.1em] text-white">
               Quarterly. No noise. Unsubscribe at any time.
             </p>
           </Reveal>

@@ -690,13 +690,13 @@ const JOURNEYS: Record<string, JourneyData> = {
     },
     galleryImgs: [
       {
-        src: "/journeys/the-romantic/MN 3 .png",
+        src: "/journeys/the-romantic/MN 7.jpg",
         alt: "Mount Nelson Hotel in Cape Town",
         position: "center 50%",
       },
       {
-        src: "/journeys/the-romantic/AS 4.png",
-        alt: "Vineyard setting in Franschhoek",
+        src: "/journeys/the-romantic/BBL (20).jpg",
+        alt: "Benguerra Island view in Mozambique",
         position: "center 50%",
       },
       {
@@ -2074,7 +2074,7 @@ export default function JourneyDetailPage({
   });
 
   const collageImages = journey.galleryImgs.slice(0, 3);
-  const intimateCarouselExtras =
+  const intimateCarouselExtras: JourneyImage[] =
     journey.slug === "the-intimate"
       ? [
           {
@@ -2164,7 +2164,7 @@ export default function JourneyDetailPage({
         ]
       : [];
 
-  const carouselImages = [
+  const carouselImages: JourneyImage[] = [
     ...journey.galleryImgs,
     ...journey.accommodations.flatMap((accommodation) => accommodation.images),
     ...intimateCarouselExtras,
