@@ -1,4 +1,5 @@
-﻿import Link from "next/link";
+import Image from "next/image";
+import Link from "next/link";
 import { FOOTER_NAV, BRAND_DESCRIPTOR } from "@/lib/constants";
 import { CookieSettingsButton } from "@/components/layout/CookieSettingsButton";
 
@@ -10,9 +11,15 @@ export function Footer() {
       className="bg-stone-900 border-t border-white/[0.06] px-[var(--px)] py-10 flex items-center justify-between gap-6 flex-wrap"
       role="contentinfo"
     >
-      <p className="font-serif text-base font-light text-white/50 tracking-[0.04em]">
-        Mason <em>&amp;</em> Wild
-      </p>
+      <Link href="/" aria-label="Mason & Wild home" className="inline-flex items-center">
+        <Image
+          src="/branding/mason-wild-footer-wordmark.png"
+          alt="Mason & Wild"
+          width={1087}
+          height={193}
+          className="h-[20px] w-auto opacity-95 md:h-[22px]"
+        />
+      </Link>
 
       <nav aria-label="Footer navigation">
         <ul className="flex gap-7 flex-wrap" role="list">
@@ -39,5 +46,3 @@ export function Footer() {
     </footer>
   );
 }
-
-

@@ -34,7 +34,46 @@ const ARTICLES: ArticleSummary[] = [
     publishedAt: "2026-04-12",
     img: {
       src: "/journal/choosing-africa-with-intention/hero.jpg",
-      alt: "Private conservancy landscape in Botswana at golden hour",
+      alt: "Cape Town cityscape at dusk with ocean light",
+    },
+  },
+  {
+    slug:        "what-lgbtq-travellers-should-look-for-in-a-luxury-african-journey",
+    title:       "What LGBTQ+ Travellers Should Look For in a Luxury African Journey",
+    category:    "lgbtq-travel-intelligence",
+    excerpt:
+      "A practical, considered guide to what actually makes a luxury African journey feel calm, private, and well handled for LGBTQ+ travellers, beyond marketing language and surface-level reassurance.",
+    readingTime: 8,
+    publishedAt: "2026-04-12",
+    img: {
+      src: "/journal/what-lgbtq-travellers-should-look-for-in-a-luxury-african-journey/hero.jpg",
+      alt: "Refined African luxury travel setting with privacy and calm",
+    },
+  },
+  {
+    slug:        "privacy-is-a-luxury",
+    title:       "Privacy Is a Luxury: Why the Best Journeys Feel Unobserved",
+    category:    "private-travel-philosophy",
+    excerpt:
+      "A considered look at privacy not as secrecy or status, but as the relief of not feeling watched, crowded, or over-managed while you travel.",
+    readingTime: 7,
+    publishedAt: "2026-04-12",
+    img: {
+      src: "/journal/privacy-is-a-luxury/hero.jpg",
+      alt: "Quiet luxury travel setting with privacy and emotional ease",
+    },
+  },
+  {
+    slug:        "the-best-luxury-travel-feels-edited",
+    title:       "The Best Luxury Travel Feels Edited",
+    category:    "private-travel-philosophy",
+    excerpt:
+      "A considered look at why the most memorable journeys are shaped by coherence, rhythm, and restraint rather than sheer volume, and why saying no is part of real travel expertise.",
+    readingTime: 7,
+    publishedAt: "2026-04-12",
+    img: {
+      src: "/journal/the-best-luxury-travel-feels-edited/hero.jpg",
+      alt: "Refined luxury travel setting with calm and visual coherence",
     },
   },
   {
@@ -110,6 +149,36 @@ const ARTICLES: ArticleSummary[] = [
       "A practical luxury guide to LGBTQ+ travel in Southern Africa, covering South Africa, Botswana, Namibia, Mozambique, Zambia, and Zimbabwe through the lens of privacy, hosting culture, and real-world trip design.",
     readingTime: 9,
     publishedAt: "2026-03-12",
+    img: {
+      src: "/journal/lgbtq-travel-southern-africa/hero.jpg",
+      alt: "Lantern-lit lodge deck overlooking the Southern African landscape at dusk",
+    },
+  },
+  {
+    slug:        "what-conservation-looks-like-when-it-is-working",
+    title:       "What Conservation Looks Like When It Is Working",
+    category:    "conservation-and-culture",
+    excerpt:
+      "A practical, clear-eyed look at the signs that conservation is working, from land recovery and anti-poaching to local partnership, pressure control, education, and long-term seriousness.",
+    readingTime: 8,
+    publishedAt: "2026-04-12",
+    img: {
+      src: "/journal/what-conservation-looks-like-when-it-is-working/hero.jpg",
+      alt: "African conservation landscape under long-term stewardship",
+    },
+  },
+  {
+    slug:        "culture-is-not-an-add-on",
+    title:       "Culture Is Not an Add-On: What Thoughtful African Travel Owes Place",
+    category:    "conservation-and-culture",
+    excerpt:
+      "A clear-eyed look at why culture should shape an African journey rather than decorate it, and why thoughtful travel owes more to place than scenery alone.",
+    readingTime: 8,
+    publishedAt: "2026-04-12",
+    img: {
+      src: "/journal/culture-is-not-an-add-on/hero.jpg",
+      alt: "Culturally grounded luxury travel scene in Africa",
+    },
   },
   {
     slug:        "private-travel-owes-conservation",
@@ -248,16 +317,26 @@ export default function JournalPage() {
         </div>
       </section>
 
-      <div className="border-b border-stone-200 overflow-x-auto bg-page-subtle" aria-label="Journal categories">
-        <div className={`flex min-w-max ${JOURNAL_SHELL}`}>
-          <Link href="/journal" aria-current="page" className="py-4 pr-9 text-2xs font-normal tracking-wide uppercase text-stone-900 border-b-[1.5px] border-stone-900 whitespace-nowrap">
-            All
-          </Link>
-          {CATEGORY_ORDER.map((cat) => (
-            <Link key={cat} href={getCategoryHref(cat)} className="py-4 px-9 text-2xs font-normal tracking-wide uppercase text-stone-400 hover:text-stone-700 border-b-[1.5px] border-transparent hover:border-stone-300 whitespace-nowrap transition-colors duration-500">
-              {JOURNAL_CATEGORY_LABELS[cat]}
+      <div className="border-b border-stone-200 bg-page-subtle" aria-label="Journal categories">
+        <div className={`${JOURNAL_SHELL} py-4 md:py-5`}>
+          <div className="flex flex-wrap gap-2 md:gap-3">
+            <Link
+              href="/journal"
+              aria-current="page"
+              className="inline-flex items-center rounded-full border border-stone-900 bg-stone-900 px-4 py-[11px] text-[11px] font-normal tracking-[0.16em] uppercase text-white whitespace-nowrap transition-colors duration-300 hover:bg-stone-800 hover:border-stone-800"
+            >
+              All
             </Link>
-          ))}
+            {CATEGORY_ORDER.map((cat) => (
+              <Link
+                key={cat}
+                href={getCategoryHref(cat)}
+                className="inline-flex items-center rounded-full border border-stone-200 bg-page px-4 py-[11px] text-[11px] font-normal tracking-[0.16em] uppercase text-stone-500 whitespace-nowrap transition-all duration-300 hover:border-stone-400 hover:bg-white hover:text-stone-900"
+              >
+                {JOURNAL_CATEGORY_LABELS[cat]}
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
 

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { NAV_LABELS, NAV_HREFS, CTA } from "@/lib/constants";
 
@@ -62,13 +63,17 @@ export function NavBar() {
         {/* Logo */}
         <Link
           href={NAV_HREFS.home}
-          className={[
-            "font-serif text-[1.1rem] font-normal tracking-[0.05em] transition-colors duration-[300ms]",
-            "text-stone-900",
-          ].join(" ")}
-          aria-label="Mason & Wild  -  home"
+          className="inline-flex items-center"
+          aria-label="Mason & Wild home"
         >
-          Mason <em>&amp;</em> Wild
+          <Image
+            src="/branding/mason-wild-header-logo.png"
+            alt="Mason & Wild"
+            width={1291}
+            height={347}
+            priority
+            className="h-[28px] w-auto sm:h-[32px] md:h-[34px]"
+          />
         </Link>
 
         {/* Desktop links */}
