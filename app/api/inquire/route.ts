@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from "next/server";
+﻿import { NextRequest, NextResponse } from "next/server";
 import { sendFormEmail } from "@/lib/email";
 
 type InquiryPayload = {
@@ -6,6 +6,7 @@ type InquiryPayload = {
   email: string;
   duration?: string;
   narrative: string;
+  marketingConsent?: boolean;
   website?: string;
 };
 
@@ -85,13 +86,14 @@ function validatePayload(body: unknown): {
   }
 
   const website = typeof raw.website === "string" ? raw.website : "";
+  const marketingConsent = raw.marketingConsent === true;
 
   if (errors.length > 0) {
     return { data: null, errors };
   }
 
   return {
-    data: { name, email, duration, narrative, website },
+    data: { name, email, duration, narrative, marketingConsent, website },
     errors: [],
   };
 }
@@ -119,6 +121,10 @@ async function handleSubmission(inquiry: InquiryPayload): Promise<void> {
       { label: "Email", value: inquiry.email },
       { label: "Duration", value: inquiry.duration ?? "Not provided" },
       { label: "Narrative", value: inquiry.narrative },
+      {
+        label: "Marketing Consent",
+        value: inquiry.marketingConsent ? "Yes" : "No",
+      },
     ],
   });
 }
@@ -180,7 +186,7 @@ export async function POST(request: NextRequest): Promise<NextResponse<SuccessRe
   }
 
   return NextResponse.json<SuccessResponse>(
-    { ok: true, message: "Inquiry received. We will respond within 48-72 hours." },
+    { ok: true, message: "Inquiry received. We will respond within 24-48 hours." },
     { status: 200 }
   );
 }
@@ -191,3 +197,5 @@ export function GET(): NextResponse<ErrorResponse> {
     { status: 405, headers: { Allow: "POST" } }
   );
 }
+
+

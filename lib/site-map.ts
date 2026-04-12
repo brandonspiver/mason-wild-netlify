@@ -1,4 +1,4 @@
-export const JOURNEY_SLUGS = [
+﻿export const JOURNEY_SLUGS = [
   "the-intimate",
   "the-untamed",
   "the-romantic",
@@ -16,7 +16,8 @@ export const JOURNAL_SLUGS = [
   "private-conservancies-vs-national-parks",
   "lgbtq-travel-southern-africa",
   "private-travel-owes-conservation",
-  "okavango-delta-notes",
+  "destination-notes-botswana",
   "destination-notes-south-africa",
   "destination-notes-tanzania",
 ] as const;
+

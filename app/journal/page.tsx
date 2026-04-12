@@ -1,4 +1,4 @@
-ï»¿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Reveal } from "@/components/ui/Reveal";
@@ -31,7 +31,7 @@ const ARTICLES: ArticleSummary[] = [
     excerpt:
       "A luxury perspective on privacy, remoteness, and why certain African journeys feel different for LGBTQ+ travellers. A calm, experience-led view from Mason & Wild.",
     readingTime: 6,
-    publishedAt: "2026-04-15",
+    publishedAt: "2026-04-12",
     img: {
       src: "/journal/choosing-africa-with-intention/hero.jpg",
       alt: "Private conservancy landscape in Botswana at golden hour",
@@ -125,13 +125,17 @@ const ARTICLES: ArticleSummary[] = [
     },
   },
   {
-    slug:        "okavango-delta-notes",
-    title:       "Destination Notes: Okavango Delta",
+    slug:        "destination-notes-botswana",
+    title:       "Destination Notes: Botswana",
     category:    "destination-notes",
     excerpt:
-      "Firsthand observations on the delta's private concessions, seasonal access windows, and the specific camps worth knowing about. Updated for the current season.",
-    readingTime: 5,
+      "Firsthand observations on Botswana's private safari rhythm, from Delta water-based immersion and Savute firelight to Makgadikgadi salt-pan scale.",
+    readingTime: 7,
     publishedAt: "2026-02-26",
+    img: {
+      src: "/journal/destination-notes-botswana/hero.jpg",
+      alt: "Helicopter and curated setup on Botswana salt pans at dusk",
+    },
   },
   {
     slug:        "destination-notes-south-africa",
@@ -155,7 +159,7 @@ const ARTICLES: ArticleSummary[] = [
     readingTime: 7,
     publishedAt: "2026-02-22",
     img: {
-      src: "/journal/destination-notes-tanzania/hero-placeholder.svg",
+      src: "/journal/destination-notes-tanzania/hero.jpg",
       alt: "Luxury Tanzania landscape with safari or coastal character",
     },
   },
@@ -211,36 +215,46 @@ export default function JournalPage() {
     <>
       <JsonLd data={journalCollectionSchema} />
       <section
-        className="pt-[var(--page-header-pt)] pb-[clamp(48px,6vw,80px)] border-b border-stone-200"
+        className="pt-[var(--page-header-pt)] pb-[clamp(56px,7vw,96px)] border-b border-stone-200"
         aria-labelledby="journal-heading"
       >
         <div className={JOURNAL_SHELL}>
-          <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1.2fr)_420px] xl:grid-cols-[minmax(0,1.35fr)_460px] gap-[clamp(40px,6vw,88px)] items-end">
+          <Reveal>
+            <div className="border-y border-stone-200 py-4 mb-10 flex items-center justify-between gap-6">
+              <p className="label-tag">Mason &amp; Wild</p>
+              <p className="label-tag text-stone-300">Edition · April 2026</p>
+            </div>
+          </Reveal>
+
+          <div className="grid grid-cols-1 xl:grid-cols-[minmax(0,1.25fr)_minmax(280px,420px)] gap-[clamp(36px,6vw,92px)] items-end">
             <div>
-              <Reveal><p className="label-tag mb-6">Mason &amp; Wild</p></Reveal>
               <Reveal delay={1}>
-                <h1 className="font-serif font-light text-stone-900 text-[clamp(3rem,6vw,6.4rem)] leading-[1.02] tracking-[-0.025em]" id="journal-heading">
+                <h1
+                  className="font-serif font-light text-stone-900 text-[clamp(3.35rem,7vw,7.25rem)] leading-[0.98] tracking-[-0.028em]"
+                  id="journal-heading"
+                >
                   The <em>Journal</em>
                 </h1>
               </Reveal>
             </div>
             <Reveal delay={2}>
-              <p className="text-[clamp(1rem,1.1vw,1.08rem)] font-light text-stone-500 leading-[1.9] max-w-[460px]">
-                Field notes, territory intelligence, and perspectives on private African travel.
-                Written for those who read carefully before they travel.
+              <p className="text-[clamp(0.98rem,1.02vw,1.06rem)] font-light text-stone-500 leading-[1.95] max-w-[420px] xl:ml-auto">
+                Field notes, territory intelligence, and considered perspectives
+                on private African travel for readers who value taste, detail,
+                and editorial clarity.
               </p>
             </Reveal>
           </div>
         </div>
       </section>
 
-      <div className="border-b border-stone-200 overflow-x-auto" aria-label="Journal categories">
+      <div className="border-b border-stone-200 overflow-x-auto bg-page-subtle" aria-label="Journal categories">
         <div className={`flex min-w-max ${JOURNAL_SHELL}`}>
-          <Link href="/journal" aria-current="page" className="py-4 pr-8 text-2xs font-normal tracking-wide uppercase text-stone-900 border-b-[1.5px] border-stone-900 whitespace-nowrap">
+          <Link href="/journal" aria-current="page" className="py-4 pr-9 text-2xs font-normal tracking-wide uppercase text-stone-900 border-b-[1.5px] border-stone-900 whitespace-nowrap">
             All
           </Link>
           {CATEGORY_ORDER.map((cat) => (
-            <Link key={cat} href={getCategoryHref(cat)} className="py-4 px-8 text-2xs font-normal tracking-wide uppercase text-stone-400 hover:text-stone-700 border-b-[1.5px] border-transparent hover:border-stone-300 whitespace-nowrap transition-colors duration">
+            <Link key={cat} href={getCategoryHref(cat)} className="py-4 px-9 text-2xs font-normal tracking-wide uppercase text-stone-400 hover:text-stone-700 border-b-[1.5px] border-transparent hover:border-stone-300 whitespace-nowrap transition-colors duration-500">
               {JOURNAL_CATEGORY_LABELS[cat]}
             </Link>
           ))}
@@ -249,35 +263,35 @@ export default function JournalPage() {
 
       {featured && (
         <section className="border-b border-stone-200" aria-labelledby="featured-heading">
-          <div className={`${JOURNAL_SHELL} py-[clamp(24px,3vw,40px)]`}>
+          <div className={`${JOURNAL_SHELL} py-[clamp(26px,3vw,44px)]`}>
             <Reveal>
-              <Link href={`/journal/${featured.slug}`} className="group grid grid-cols-1 xl:grid-cols-[minmax(0,1.18fr)_minmax(360px,460px)] items-stretch border border-stone-200 bg-page-subtle">
+              <Link href={`/journal/${featured.slug}`} className="group grid grid-cols-1 xl:grid-cols-[minmax(0,1.22fr)_minmax(380px,510px)] items-stretch border border-stone-200 bg-page-subtle">
               {featured.img && (
                 <div className="overflow-hidden bg-stone-100">
                   <Image src={featured.img.src} alt={featured.img.alt} width={1200} height={800}
-                    className="w-full aspect-[16/11] xl:aspect-auto xl:h-full object-cover object-center transition-transform duration-[900ms] ease-out group-hover:scale-[1.025]"
+                    className="w-full aspect-[16/11] xl:aspect-auto xl:h-full object-cover object-center transition-transform duration-[900ms] ease-out group-hover:scale-[1.02]"
                     priority
                   />
                 </div>
               )}
-              <div className="flex flex-col justify-end px-[clamp(28px,4vw,56px)] py-[clamp(32px,4vw,56px)] bg-page-subtle group-hover:bg-stone-100 transition-colors duration">
-                <div className="flex items-center gap-4 mb-8 flex-wrap">
-                  <span className="label-tag text-forest">Most Recent</span>
+              <div className="flex flex-col justify-end px-[clamp(28px,4vw,58px)] py-[clamp(34px,4.2vw,62px)] bg-page-subtle group-hover:bg-stone-100 transition-colors duration-500">
+                <div className="flex items-center gap-4 mb-9 flex-wrap">
+                  <span className="label-tag text-forest">Cover Story</span>
                   <span className="w-px h-3 bg-stone-300" aria-hidden="true" />
                   <span className="label-tag">{JOURNAL_CATEGORY_LABELS[featured.category]}</span>
                   <span className="w-px h-3 bg-stone-300" aria-hidden="true" />
                   <span className="label-tag">{featured.readingTime} min</span>
                 </div>
-                <h2 className="font-serif font-light text-[clamp(2rem,3vw,3.35rem)] text-stone-900 leading-[1.05] tracking-[-0.018em] mb-6 group-hover:text-forest transition-colors duration" id="featured-heading">
+                <h2 className="font-serif font-light text-[clamp(2.25rem,3.35vw,3.75rem)] text-stone-900 leading-[1.02] tracking-[-0.02em] mb-6 group-hover:text-forest transition-colors duration-500" id="featured-heading">
                   {featured.title}
                 </h2>
-                <p className="text-[clamp(0.93rem,0.95vw,0.98rem)] font-light text-stone-500 leading-[1.78] mb-10">
+                <p className="text-[clamp(0.93rem,0.96vw,1rem)] font-light text-stone-500 leading-[1.86] mb-11">
                   {featured.excerpt}
                 </p>
                 <div className="flex items-center justify-between gap-6">
                   <time dateTime={featured.publishedAt} className="label-tag">{formatDate(featured.publishedAt)}</time>
-                  <span className="text-2xs font-normal tracking-wide uppercase text-stone-400 border-b border-stone-300 group-hover:text-stone-900 group-hover:border-stone-900 pb-[2px] transition-colors duration">
-                    Read More
+                  <span className="text-2xs font-normal tracking-wide uppercase text-stone-400 border-b border-stone-300 group-hover:text-stone-900 group-hover:border-stone-900 pb-[2px] transition-colors duration-500">
+                    Read Story
                   </span>
                 </div>
               </div>
@@ -293,30 +307,49 @@ export default function JournalPage() {
             const articles = byCategory[cat];
             if (!articles?.length) return null;
             return (
-              <div key={cat} id={cat} className="mb-[clamp(56px,8vw,96px)] last:mb-0 scroll-mt-28">
+              <div key={cat} id={cat} className="mb-[clamp(72px,9vw,124px)] last:mb-0 scroll-mt-28">
                 <Reveal>
-                  <div className="flex items-baseline justify-between gap-6 mb-8 pb-5 border-b border-stone-200">
-                    <h2 className="font-serif font-light text-display-sm text-stone-900 tracking-[-0.01em]">
+                  <div className="flex items-end justify-between gap-6 mb-10 pb-6 border-b border-stone-200">
+                    <h2 className="font-serif font-light text-[clamp(1.85rem,2.7vw,3rem)] text-stone-900 leading-[1.06] tracking-[-0.018em]">
                       <em>{JOURNAL_CATEGORY_LABELS[cat]}</em>
                     </h2>
-                    <Link href={getCategoryHref(cat)} className="text-2xs font-normal tracking-wide uppercase text-stone-400 hover:text-stone-700 border-b border-stone-200 hover:border-stone-500 pb-[2px] transition-colors duration whitespace-nowrap">
-                      View All
-                    </Link>
                   </div>
                 </Reveal>
-                <div className="flex flex-col gap-0">
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-px bg-stone-200 border border-stone-200">
                   {articles.map((article, i) => (
                     <Reveal key={article.slug} delay={(i % 3) as 0 | 1 | 2}>
-                      <Link href={`/journal/${article.slug}`} className="group grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_auto] gap-6 md:gap-14 items-start border-t border-stone-200 py-9 last:border-b last:border-stone-200 hover:bg-page-subtle transition-colors duration -mx-3 px-3 md:-mx-5 md:px-5">
+                      <Link href={`/journal/${article.slug}`} className="group block bg-page hover:bg-page-subtle transition-colors duration-500">
                         <div>
-                          <h3 className="font-serif font-light text-[clamp(1.7rem,2.25vw,2.5rem)] text-stone-900 leading-[1.08] tracking-[-0.014em] mb-3 group-hover:text-forest transition-colors duration">
+                          {article.img ? (
+                            <div className="overflow-hidden">
+                              <Image
+                                src={article.img.src}
+                                alt={article.img.alt}
+                                width={900}
+                                height={620}
+                                className="w-full aspect-[16/10] object-cover object-center transition-transform duration-[850ms] ease-out group-hover:scale-[1.025]"
+                                loading="lazy"
+                              />
+                            </div>
+                          ) : (
+                            <div className="w-full aspect-[16/10] bg-page-canvas border-b border-stone-200" aria-hidden="true" />
+                          )}
+                        </div>
+
+                        <div className="px-6 py-7">
+                          <div className="flex items-center gap-3 mb-4 flex-wrap">
+                            <time dateTime={article.publishedAt} className="label-tag whitespace-nowrap">{formatDate(article.publishedAt)}</time>
+                            <span className="w-px h-3 bg-stone-300" aria-hidden="true" />
+                            <span className="label-tag text-stone-300 whitespace-nowrap">{article.readingTime} min</span>
+                          </div>
+
+                          <h3 className="font-serif font-light text-[clamp(1.5rem,2vw,2.25rem)] text-stone-900 leading-[1.08] tracking-[-0.014em] mb-4 group-hover:text-forest transition-colors duration-500">
                             {article.title}
                           </h3>
-                          <p className="text-[clamp(0.92rem,0.92vw,0.97rem)] font-light text-stone-500 leading-[1.76] max-w-[980px]">{article.excerpt}</p>
-                        </div>
-                        <div className="flex flex-row md:flex-col items-center md:items-end gap-4 md:gap-3 md:pt-[4px] shrink-0">
-                          <time dateTime={article.publishedAt} className="label-tag whitespace-nowrap">{formatDate(article.publishedAt)}</time>
-                          <span className="label-tag text-stone-300 whitespace-nowrap">{article.readingTime} min</span>
+
+                          <p className="text-[clamp(0.9rem,0.9vw,0.96rem)] font-light text-stone-500 leading-[1.8]">
+                            {article.excerpt}
+                          </p>
                         </div>
                       </Link>
                     </Reveal>
@@ -343,4 +376,6 @@ export default function JournalPage() {
     </>
   );
 }
+
+
 

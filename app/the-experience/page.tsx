@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Reveal } from "@/components/ui/Reveal";
@@ -18,7 +18,7 @@ const PROCESS_STEPS = [
     n:     "01",
     title: "Private Inquiry",
     body:
-      "You submit a brief through our private onboarding form. We ask about landscape, feeling, and duration  -  not dates and budgets. A member of our team responds within 48–72 hours.",
+      "You submit a brief through our private onboarding form. We ask about landscape, feeling, and duration  -  not dates and budgets. A member of our team responds within 24-48 hours.",
   },
   {
     n:     "02",
@@ -110,7 +110,7 @@ const ARCHETYPES = [
 export default function TheExperiencePage() {
   return (
     <>
-      {/* ─── Page hero ─────────────────────────────────────────────────── */}
+      {/* â”€â”€â”€ Page hero â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section
         className="pt-[var(--page-header-pt)] pb-[clamp(56px,8vw,96px)] border-b border-stone-200"
         aria-labelledby="experience-heading"
@@ -167,7 +167,7 @@ export default function TheExperiencePage() {
         </div>
       </section>
 
-      {/* ─── Full-bleed image ───────────────────────────────────────────── */}
+      {/* â”€â”€â”€ Full-bleed image â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <div className="relative w-full overflow-hidden">
         <Image
           src="/experience/private-conservancy-botswana.jpg"
@@ -186,7 +186,7 @@ export default function TheExperiencePage() {
         </div>
       </div>
 
-      {/* ─── Philosophy split ───────────────────────────────────────────── */}
+      {/* â”€â”€â”€ Philosophy split â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="section-sm" aria-labelledby="philosophy-heading">
         <div className="grid grid-cols-1 md:grid-cols-2">
           <Reveal>
@@ -231,7 +231,7 @@ export default function TheExperiencePage() {
         </div>
       </section>
 
-      {/* ─── Process steps ──────────────────────────────────────────────── */}
+      {/* â”€â”€â”€ Process steps â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section
         className="bg-stone-900 px-[var(--px)] py-[var(--section-gap)]"
         aria-labelledby="process-heading"
@@ -266,7 +266,7 @@ export default function TheExperiencePage() {
         </div>
       </section>
 
-      {/* ─── Inclusive intelligence ─────────────────────────────────────── */}
+      {/* â”€â”€â”€ Inclusive intelligence â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="section bg-forest" aria-labelledby="inclusive-heading">
         <div className="container-site">
           <Reveal>
@@ -287,9 +287,13 @@ export default function TheExperiencePage() {
             Each item carries equal weight; the grid reads as a considered list,
             not a designed feature matrix.
           */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/[0.12] border border-white/[0.14]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 border-t border-l border-white/[0.20]">
             {INCLUSIVE_ITEMS.map((item, i) => (
-              <Reveal key={item.key} delay={(i % 3) as 0 | 1 | 2 | 3 | 4}>
+              <Reveal
+                key={item.key}
+                delay={(i % 3) as 0 | 1 | 2 | 3 | 4}
+                className="h-full border-r border-b border-white/[0.20]"
+              >
                 <div className="bg-forest hover:bg-[#446f50] transition-colors duration p-10 h-full">
                   <p className="label-tag text-white mb-4">{item.title}</p>
                   <p className="text-base font-light text-white leading-relaxed">
@@ -302,7 +306,7 @@ export default function TheExperiencePage() {
         </div>
       </section>
 
-      {/* ─── Archetype strip ────────────────────────────────────────────── */}
+      {/* â”€â”€â”€ Archetype strip â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section aria-labelledby="archetypes-heading">
 
         {/* Header */}
@@ -379,7 +383,7 @@ export default function TheExperiencePage() {
 
       </section>
 
-      {/* ─── CTA band ───────────────────────────────────────────────────── */}
+      {/* â”€â”€â”€ CTA band â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="bg-forest px-[var(--px)] py-[clamp(72px,10vw,120px)] text-center">
         <Reveal>
           <p className="label-tag text-white/36 mb-5">Private Onboarding</p>
@@ -408,3 +412,5 @@ export default function TheExperiencePage() {
     </>
   );
 }
+
+

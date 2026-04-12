@@ -1,8 +1,9 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { Cormorant_Garamond, DM_Sans } from "next/font/google";
 import "../styles/globals.css";
 import { NavBar } from "@/components/layout/NavBar";
 import { Footer } from "@/components/layout/Footer";
+import { CookieBanner } from "@/components/layout/CookieBanner";
 import { PRIMARY_POSITIONING_LINE, BRAND_NAME } from "@/lib/constants";
 import { JsonLd } from "@/lib/jsonld";
 import { getOrganizationSchema, getSiteUrl, getWebsiteSchema } from "@/lib/seo";
@@ -71,8 +72,10 @@ export default function RootLayout({
         <JsonLd data={[getOrganizationSchema(), getWebsiteSchema()]} />
         <NavBar />
         <main>{children}</main>
+        <CookieBanner />
         <Footer />
       </body>
     </html>
   );
 }
+

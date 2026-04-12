@@ -140,7 +140,7 @@ export default function HomePage() {
         className="flex items-center gap-5 border-b border-stone-200 px-[var(--px)] py-4"
         aria-hidden="true"
       >
-        <span className="label-tag whitespace-nowrap">Mason &amp; Wild · Est. February 2026</span>
+        <span className="label-tag whitespace-nowrap">Mason &amp; Wild · Est. 2026</span>
         <div className="hidden sm:block flex-1 h-px bg-stone-200" />
         <span className="hidden sm:block label-tag whitespace-nowrap">
           Private journeys. Discreet by design.
@@ -545,6 +545,7 @@ export default function HomePage() {
     </>
   );
 }
+
 
 
 

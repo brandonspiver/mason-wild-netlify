@@ -1,7 +1,7 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { BRAND_NAME, PRIMARY_POSITIONING_LINE } from "@/lib/constants";
 
-const FALLBACK_SITE_URL = "https://masonwild.com";
+const FALLBACK_SITE_URL = "https://masonandwild.com";
 const DEFAULT_OG_IMAGE = "/home/home-hero.jpg";
 
 export function getSiteUrl(): string {
@@ -82,3 +82,4 @@ export function getWebsiteSchema() {
     inLanguage: "en",
   };
 }
+

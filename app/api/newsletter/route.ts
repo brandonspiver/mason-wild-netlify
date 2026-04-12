@@ -1,10 +1,11 @@
-import { NextRequest, NextResponse } from "next/server";
+﻿import { NextRequest, NextResponse } from "next/server";
 import { sendFormEmail } from "@/lib/email";
 
 type NewsletterPayload = {
   email: string;
   source?: string;
   website?: string;
+  consent: boolean;
 };
 
 type SuccessResponse = {
@@ -28,10 +29,11 @@ function validatePayload(body: unknown): NewsletterPayload | null {
   const email = typeof raw.email === "string" ? raw.email.trim().toLowerCase() : "";
   const source = typeof raw.source === "string" ? raw.source.trim() : undefined;
   const website = typeof raw.website === "string" ? raw.website.trim() : "";
+  const consent = raw.consent === true;
 
-  if (!email || !isValidEmail(email)) return null;
+  if (!email || !isValidEmail(email) || !consent) return null;
 
-  return { email, source, website };
+  return { email, source, website, consent };
 }
 
 export async function POST(
@@ -50,7 +52,7 @@ export async function POST(
   const payload = validatePayload(body);
   if (!payload) {
     return NextResponse.json(
-      { ok: false, error: "Valid email is required." },
+      { ok: false, error: "Valid email and consent are required." },
       { status: 400 }
     );
   }
@@ -69,6 +71,7 @@ export async function POST(
       sections: [
         { label: "Email", value: payload.email },
         { label: "Source", value: payload.source ?? "Unknown" },
+        { label: "Marketing Consent", value: "Yes" },
         { label: "Submitted At", value: new Date().toISOString() },
       ],
     });
@@ -92,3 +95,4 @@ export async function POST(
     { status: 200 }
   );
 }
+

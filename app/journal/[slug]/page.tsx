@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Fragment } from "react";
@@ -25,12 +25,103 @@ const JOURNAL_SHELL =
   "mx-auto w-full max-w-[1720px] px-[clamp(18px,3vw,54px)]";
 const JOURNAL_GRID =
   "grid grid-cols-1 lg:grid-cols-[220px_minmax(0,820px)] xl:grid-cols-[240px_minmax(0,900px)_minmax(120px,1fr)] gap-[clamp(28px,4vw,76px)]";
+type JourneyBridgeDetail = {
+  readonly summary: string;
+  readonly highlights: readonly { readonly label: string; readonly value: string }[];
+  readonly ctaLabel?: string;
+};
+
+const JOURNEY_BRIDGE_DETAILS: Record<string, JourneyBridgeDetail> = {
+  "the-intimate": {
+    summary:
+      "A privacy-led Botswana and Victoria Falls progression built around emotional pacing, softer transitions, and privately guided wilderness time.",
+    highlights: [
+      { label: "Territory", value: "Botswana & Victoria Falls" },
+      { label: "Style", value: "Privately guided throughout" },
+      { label: "Best For", value: "Couples and private groups" },
+      { label: "Rhythm", value: "Desert to Delta to river finish" },
+    ],
+    ctaLabel: "View The Intimate",
+  },
+  "the-private-circuit": {
+    summary:
+      "A multi-territory East Africa journey designed for travellers who want scale, variety, and privately held transitions from safari to coast.",
+    highlights: [
+      { label: "Territory", value: "Tanzania & Zanzibar" },
+      { label: "Style", value: "Private circuit design" },
+      { label: "Best For", value: "Travellers wanting range and polish" },
+      { label: "Rhythm", value: "Safari depth with a coastal close" },
+    ],
+    ctaLabel: "View The Private Circuit",
+  },
+  "the-social-shift": {
+    summary:
+      "A socially led South Africa journey for travellers drawn to city energy, design, dining, and privately paced movement into safari.",
+    highlights: [
+      { label: "Territory", value: "South Africa" },
+      { label: "Style", value: "Socially confident, privately held" },
+      { label: "Best For", value: "Connection, style, and culture" },
+      { label: "Rhythm", value: "City momentum into softer wild spaces" },
+    ],
+    ctaLabel: "Explore The Social Shift",
+  },
+  "the-adventure": {
+    summary:
+      "A high-texture Southern Africa route designed for travellers who want movement, contrast, and layered landscapes without losing private handling.",
+    highlights: [
+      { label: "Territory", value: "South Africa & Namibia" },
+      { label: "Style", value: "Experiential, high-contrast design" },
+      { label: "Best For", value: "Active travellers and explorers" },
+      { label: "Rhythm", value: "Urban sophistication to remote terrain" },
+    ],
+    ctaLabel: "View The Adventure",
+  },
+  "the-classic": {
+    summary:
+      "A measured Southern Africa progression with polished city chapters, strong safari, and an elegant finish designed for first-time confidence.",
+    highlights: [
+      { label: "Territory", value: "South Africa, Zimbabwe & safari" },
+      { label: "Style", value: "Classic luxury, privately guided" },
+      { label: "Best For", value: "First Southern Africa journeys" },
+      { label: "Rhythm", value: "City to bush to river close" },
+    ],
+    ctaLabel: "View The Classic",
+  },
+  "the-romantic": {
+    summary:
+      "A cinematic journey for two, designed around mood, intimacy, and beautifully paced transitions across private settings in Southern Africa.",
+    highlights: [
+      { label: "Territory", value: "Southern Africa" },
+      { label: "Style", value: "Romantic, design-led, private" },
+      { label: "Best For", value: "Honeymoons and couples" },
+      { label: "Rhythm", value: "Intimate chapters with soft transitions" },
+    ],
+    ctaLabel: "View The Romantic",
+  },
+  "the-untamed": {
+    summary:
+      "A Zambia-focused safari progression built around wild depth, guiding quality, and a less mediated encounter with landscape and wildlife.",
+    highlights: [
+      { label: "Territory", value: "Zambia" },
+      { label: "Style", value: "Wild, immersive, privately guided" },
+      { label: "Best For", value: "Purist safari travellers" },
+      { label: "Rhythm", value: "Bush depth with clean sequencing" },
+    ],
+    ctaLabel: "View The Untamed",
+  },
+};
 
 function getCategoryHref(category: keyof typeof JOURNAL_CATEGORY_LABELS): string {
   return `/journal#${category}`;
 }
 
-// â”€â”€â”€ Article data â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+function getJourneyHref(slug: string): string {
+  return slug === "the-social-shift"
+    ? NAV_HREFS.social
+    : `${NAV_HREFS.journeys}/${slug}`;
+}
+
+// ─── Article data ─────────────────────────────────────────────────────────────
 // In production: replace with getArticleBySlug(slug) from lib/journal.ts,
 // which reads from contentlayer's allArticles and calls notFound() when
 // no matching slug is found. The FullArticle type is the migration target  - 
@@ -49,7 +140,7 @@ const ARTICLES: Record<string, FullArticle> = {
     excerpt:
       "A luxury perspective on privacy, remoteness, and why certain African journeys feel different for LGBTQ+ travellers. A calm, experience-led view from Mason & Wild.",
     readingTime: 6,
-    publishedAt: "2026-04-15",
+    publishedAt: "2026-04-12",
     img: {
       src:     "/journal/choosing-africa-with-intention/hero.jpg",
       alt:     "Private conservancy landscape in Botswana at golden hour",
@@ -163,7 +254,7 @@ const ARTICLES: Record<string, FullArticle> = {
           { type: "text", text: "For travellers drawn to a calmer, more private rhythm in Botswana, " },
           { type: "link", text: "The Intimate", href: "/journeys/the-intimate" },
           { type: "text", text: " is the journey in our collection that speaks most directly to this way of travelling. If you would prefer to shape something more personally, " },
-          { type: "link", text: "enquire privately", href: "/inquire" },
+          { type: "link", text: "enquire privately", href: "/enquire" },
           { type: "text", text: " and we will begin from the pace, privacy, and emotional texture you want the journey to hold." },
         ],
       },
@@ -262,7 +353,7 @@ const ARTICLES: Record<string, FullArticle> = {
       },
       {
         type: "p",
-        text: "CafÃ© Manhattan belongs in that story. It is not simply another venue. It represents one of the city's longstanding queer institutions, the kind of place that gives a neighbourhood memory as well as energy. It works because it feels woven into the life of the area rather than staged for visitors.",
+        text: "Café Manhattan belongs in that story. It is not simply another venue. It represents one of the city's longstanding queer institutions, the kind of place that gives a neighbourhood memory as well as energy. It works because it feels woven into the life of the area rather than staged for visitors.",
       },
       {
         type: "image",
@@ -293,7 +384,7 @@ const ARTICLES: Record<string, FullArticle> = {
       },
       {
         type: "p",
-        text: "Cape Town Pride remains one of the city's clearest annual queer markers, while seasonal fixtures such as the Pink Party and MCQP give the summer calendar real continuity. On the ground, CafÃ© Manhattan still anchors De Waterkant, and venues such as Zer021 bring a more nightlife-led energy when travellers want it. What matters, though, is not any single address. It is the fact that Cape Town has an ecosystem rather than a token scene.",
+        text: "Cape Town Pride remains one of the city's clearest annual queer markers, while seasonal fixtures such as the Pink Party and MCQP give the summer calendar real continuity. On the ground, Café Manhattan still anchors De Waterkant, and venues such as Zer021 bring a more nightlife-led energy when travellers want it. What matters, though, is not any single address. It is the fact that Cape Town has an ecosystem rather than a token scene.",
       },
       {
         type: "p",
@@ -304,7 +395,7 @@ const ARTICLES: Record<string, FullArticle> = {
         image: {
           src: "/journal/cape-town-gay-capital-of-africa/nightlife.png",
           alt: "Upscale queer-friendly nightlife or dining scene in Cape Town",
-          caption: "CafÃ© Manhattan, De Waterkant",
+          caption: "Café Manhattan, De Waterkant",
           position: "center 52%",
         },
         description: "Cape Town's social life works best when it feels polished, relaxed, and folded into a wider rhythm of living well.",
@@ -342,7 +433,7 @@ const ARTICLES: Record<string, FullArticle> = {
         type: "p",
         content: [
           { type: "text", text: "This is another reason the city matters commercially as well as culturally. Cape Town is often where a wider South African journey begins to make sense. It opens naturally into the Winelands, then into safari, or into a more social route shaped around style, food, and city life. For travellers who want that kind of urban start before the rest of the country unfolds, " },
-          { type: "link", text: "The Social Shift", href: "/journeys/the-social-shift" },
+          { type: "link", text: "The Social Shift", href: "/the-social" },
           { type: "text", text: " is the clearest Mason & Wild journey expression of this side of South Africa." },
         ],
       },
@@ -358,9 +449,9 @@ const ARTICLES: Record<string, FullArticle> = {
         type: "p",
         content: [
           { type: "text", text: "For travellers drawn to Cape Town's style, confidence, and social ease, explore " },
-          { type: "link", text: "The Social Shift", href: "/journeys/the-social-shift" },
+          { type: "link", text: "The Social Shift", href: "/the-social" },
           { type: "text", text: " or " },
-          { type: "link", text: "enquire privately", href: "/inquire" },
+          { type: "link", text: "enquire privately", href: "/enquire" },
           { type: "text", text: "." },
         ],
       },
@@ -474,11 +565,11 @@ const ARTICLES: Record<string, FullArticle> = {
         type: "image",
         image: {
           src: "/journal/tanzania-vs-botswana-luxury-safari/tanzania.jpg",
-          alt: "Luxury safari camp scene in northern Tanzania",
+          alt: "Portrait of a Maasai guide in northern Tanzania",
           caption: "Northern Tanzania",
           position: "center 42%",
         },
-        description: "Tanzania's safari language often carries more theatre, momentum, and recognisable East African atmosphere from the outset.",
+        description: "Northern Tanzania pairs iconic safari scale with living cultural texture, where Maasai heritage remains part of the landscape.",
         aspect: "4 / 5",
       },
       {
@@ -631,7 +722,7 @@ const ARTICLES: Record<string, FullArticle> = {
         type: "p",
         content: [
           { type: "text", text: "If you are deciding between Tanzania and Botswana for your next safari, " },
-          { type: "link", text: "enquire privately", href: "/inquire" },
+          { type: "link", text: "enquire privately", href: "/enquire" },
           { type: "text", text: " and we will shape the right fit around how you actually want to travel." },
         ],
       },
@@ -909,7 +1000,7 @@ const ARTICLES: Record<string, FullArticle> = {
         excerpt:
           "For travellers who have spent years managing their visibility, the experience of being entirely unremarkable in a landscape is not a small thing.",
         readingTime: 7,
-        publishedAt: "2026-04-15",
+        publishedAt: "2026-04-12",
       },
       {
         slug:        "lgbtq-travel-southern-africa",
@@ -1084,7 +1175,7 @@ const ARTICLES: Record<string, FullArticle> = {
         type: "p",
         content: [
           { type: "text", text: "For travellers who value privacy, flexibility, and a more composed safari rhythm, the answer is often found in the access model rather than the headline name. If you want help understanding which safari model best suits the way you travel, " },
-          { type: "link", text: "enquire privately", href: "/inquire" },
+          { type: "link", text: "enquire privately", href: "/enquire" },
           { type: "text", text: "." },
         ],
       },
@@ -1113,7 +1204,7 @@ const ARTICLES: Record<string, FullArticle> = {
         excerpt:
           "For travellers who have spent years managing their visibility, the experience of being entirely unremarkable in a landscape is not a small thing.",
         readingTime: 7,
-        publishedAt: "2026-04-15",
+        publishedAt: "2026-04-12",
       },
       {
         slug:        "okavango-dry-season-private-safari",
@@ -1254,7 +1345,7 @@ const ARTICLES: Record<string, FullArticle> = {
         type: "image",
         image: {
           src: "/journal/solitude-architecture-of-silence-namibia/experience-two.jpg",
-          alt: "Experience-led travel moment in the Namib Desert",
+          alt: "Hot air balloon over the Namib Desert at sunrise",
           caption: "Namib Desert",
         },
         aspect: "16 / 10",
@@ -1293,7 +1384,7 @@ const ARTICLES: Record<string, FullArticle> = {
           { type: "text", text: "For travellers drawn to Namibia's calmer, more expansive kind of luxury, explore " },
           { type: "link", text: "The Adventure", href: "/journeys/the-adventure" },
           { type: "text", text: " or " },
-          { type: "link", text: "enquire privately", href: "/inquire" },
+          { type: "link", text: "enquire privately", href: "/enquire" },
           { type: "text", text: "." },
         ],
       },
@@ -1331,7 +1422,7 @@ const ARTICLES: Record<string, FullArticle> = {
         excerpt:
           "For travellers who have spent years managing their visibility, the experience of being entirely unremarkable in a landscape is not a small thing.",
         readingTime: 7,
-        publishedAt: "2026-04-15",
+        publishedAt: "2026-04-12",
       },
       {
         slug:        "lgbtq-travel-southern-africa",
@@ -1557,7 +1648,7 @@ const ARTICLES: Record<string, FullArticle> = {
         type: "p",
         content: [
           { type: "text", text: "If you want to travel in a way that values stewardship as much as experience, " },
-          { type: "link", text: "enquire privately", href: "/inquire" },
+          { type: "link", text: "enquire privately", href: "/enquire" },
           { type: "text", text: "." },
         ],
       },
@@ -1607,7 +1698,7 @@ const ARTICLES: Record<string, FullArticle> = {
         excerpt:
           "A luxury perspective on privacy, remoteness, and why certain African journeys feel different for LGBTQ+ travellers. A calm, experience-led view from Mason & Wild.",
         readingTime: 6,
-        publishedAt: "2026-04-15",
+        publishedAt: "2026-04-12",
       },
       {
         slug:        "lgbtq-travel-southern-africa",
@@ -1617,6 +1708,194 @@ const ARTICLES: Record<string, FullArticle> = {
           "A practical luxury guide to LGBTQ+ travel in Southern Africa, covering South Africa, Botswana, Namibia, Mozambique, Zambia, and Zimbabwe through the lens of privacy, hosting culture, and real-world trip design.",
         readingTime: 9,
         publishedAt: "2026-03-12",
+      },
+    ],
+  },
+  "destination-notes-botswana": {
+    slug:        "destination-notes-botswana",
+    title:       "Destination Notes: Botswana",
+    subtitle:
+      "A Mason & Wild destination note on Botswana, from Okavango Delta water-logic and Savute firelight to Makgadikgadi salt-pan scale, and why privacy still defines the experience.",
+    seoTitle:    "Destination Notes: Botswana",
+    metaTitle:   "Botswana Luxury Safari Guide | Mason & Wild Journal",
+    metaDescription:
+      "A Mason & Wild destination note on Botswana, from Delta channels and private concessions to Savute and the Makgadikgadi, and how to design a safari with depth, privacy, and rhythm.",
+    category:    "destination-notes",
+    excerpt:
+      "Firsthand observations on Botswana's private safari rhythm, from Delta water-based immersion and Savute firelight to Makgadikgadi salt-pan scale.",
+    readingTime: 7,
+    publishedAt: "2026-02-26",
+    img: {
+      src:     "/journal/destination-notes-botswana/hero.jpg",
+      alt:     "Helicopter and curated setup on Botswana salt pans at dusk",
+      caption: "Botswana",
+      position: "center",
+    },
+    body: [
+      {
+        type: "p-lead",
+        text: "Botswana remains one of the clearest expressions of privacy-led safari in Africa.",
+      },
+      {
+        type: "p",
+        text: "Its strength is not only wildlife quality. It is structure. Lower bed density, private concession logic, and landscapes that reward slower movement all combine to create a journey that feels less crowded, less performative, and more lived-in.",
+      },
+      {
+        type: "p",
+        text: "For travellers who care about pace, atmosphere, and emotional space as much as sightings, Botswana often feels immediately different.",
+      },
+      {
+        type: "h2",
+        text: "The Okavango Delta is about movement through water",
+      },
+      {
+        type: "p",
+        text: "The Delta changes the rhythm of safari. The day is not built only around drives. It moves between channels, islands, reeds, floodplains, and long moments of stillness where birdlife, light, and habitat become part of the experience rather than background.",
+      },
+      {
+        type: "p",
+        text: "Boating, mokoro excursions, and water-level game viewing are not add-ons here. They are part of what makes Botswana distinct from more land-dominant safari formats.",
+      },
+      {
+        type: "image",
+        image: {
+          src:     "/journal/destination-notes-botswana/okavango-delta.jpg",
+          alt:     "Motorboat cutting through Okavango Delta channels in Botswana",
+          caption: "Okavango Delta",
+          position: "center",
+        },
+      },
+      {
+        type: "h2",
+        text: "Savute brings a drier, more elemental chapter",
+      },
+      {
+        type: "p",
+        text: "Savute shifts the register. The atmosphere is drier, more dramatic, and often more predator-forward depending on season. This contrast matters because it prevents Botswana from feeling one-note.",
+      },
+      {
+        type: "p",
+        text: "Evenings around a firepit overlooking active waterholes capture the Botswana mood well: quiet, grounded, and deeply connected to place without excess staging.",
+      },
+      {
+        type: "image",
+        image: {
+          src:     "/journal/destination-notes-botswana/savute-firepit.jpg",
+          alt:     "Savute safari lodge firepit at dusk with elephants at a distant waterhole",
+          caption: "Savute",
+          position: "center",
+        },
+      },
+      {
+        type: "h2",
+        text: "Makgadikgadi offers scale and silence",
+      },
+      {
+        type: "p",
+        text: "The salt pans bring a different kind of awe. The landscape is minimal, open, and emotionally clean. It creates a chapter that is less about density and more about scale, light, and perspective.",
+      },
+      {
+        type: "p",
+        text: "Used well, this chapter adds breathing room to a Botswana itinerary and gives the wider journey a stronger arc from immersion to release.",
+      },
+      {
+        type: "image",
+        image: {
+          src:     "/journal/destination-notes-botswana/salt-pan.jpg",
+          alt:     "Helicopter and private setup on Botswana salt pans at twilight",
+          caption: "Makgadikgadi Salt Pans",
+          position: "center",
+        },
+      },
+      {
+        type: "h2",
+        text: "Why Botswana works so well for private travel",
+      },
+      {
+        type: "p",
+        text: "Botswana rewards travellers who want depth over volume. The strongest routes are shaped around concession quality, guide standards, transfer logic, and how each chapter changes the emotional feel of the trip.",
+      },
+      {
+        type: "p",
+        text: "This is also why Botswana remains such a strong fit for LGBTQ+ travellers seeking discretion and ease. The luxury is not only where you stay. It is how little social friction the day contains.",
+      },
+      {
+        type: "h2",
+        text: "Final thought",
+      },
+      {
+        type: "p",
+        text: "Botswana is at its best when the route is composed with intent: Delta immersion, a drier contrast chapter, and enough room for stillness between the marquee moments.",
+      },
+      {
+        type: "p",
+        content: [
+          { type: "text", text: "For travellers drawn to Botswana's privacy, pace, and wilderness depth, explore " },
+          { type: "link", text: "The Intimate", href: "/journeys/the-intimate" },
+          { type: "text", text: " or " },
+          { type: "link", text: "enquire privately", href: "/enquire" },
+          { type: "text", text: " to shape a route around the way you want the journey to feel." },
+        ],
+      },
+      {
+        type: "h2",
+        text: "Continue reading",
+      },
+      {
+        type: "p",
+        content: [
+          { type: "text", text: "For a direct country comparison with East Africa, continue with " },
+          { type: "link", text: "Tanzania vs Botswana for Luxury Safari: Which One Fits the Way You Travel?", href: "/journal/tanzania-vs-botswana-luxury-safari" },
+          { type: "text", text: "." },
+        ],
+      },
+      {
+        type: "p",
+        content: [
+          { type: "text", text: "For a deeper look at how access and privacy change safari quality, read " },
+          { type: "link", text: "Private Conservancies vs National Parks: What Actually Changes the Experience", href: "/journal/private-conservancies-vs-national-parks" },
+          { type: "text", text: "." },
+        ],
+      },
+    ],
+    relatedJourneys: [
+      {
+        slug:    "the-intimate",
+        name:    "The Intimate",
+        outcome: "Solitude",
+        img: {
+          src: "/journeys/the-intimate/makgadikgadi-dusk.jpg",
+          alt: "The Intimate journey card",
+        },
+      },
+    ],
+    relatedArticles: [
+      {
+        slug:        "tanzania-vs-botswana-luxury-safari",
+        title:       "Tanzania vs Botswana for Luxury Safari: Which One Fits the Way You Travel?",
+        category:    "safari-guides",
+        excerpt:
+          "A considered comparison of Tanzania and Botswana for luxury safari, from privacy and pace to wildlife style, activities, and which destination fits different travellers best.",
+        readingTime: 8,
+        publishedAt: "2026-04-08",
+      },
+      {
+        slug:        "private-conservancies-vs-national-parks",
+        title:       "Private Conservancies vs National Parks: What Actually Changes the Experience",
+        category:    "safari-guides",
+        excerpt:
+          "A practical luxury guide to how private conservancies differ from national parks, from vehicle density and off-road access to guiding flexibility, sightings, and overall safari quality.",
+        readingTime: 8,
+        publishedAt: "2026-03-20",
+      },
+      {
+        slug:        "okavango-dry-season-private-safari",
+        title:       "The Okavango in Dry Season: Where Privacy Still Changes Everything",
+        category:    "safari-guides",
+        excerpt:
+          "A Mason & Wild perspective on the Okavango Delta in dry season, from wildlife concentration and guiding quality to why private access still changes the experience.",
+        readingTime: 7,
+        publishedAt: "2026-04-11",
       },
     ],
   },
@@ -1839,7 +2118,7 @@ const ARTICLES: Record<string, FullArticle> = {
       },
       {
         type: "h2",
-        text: "CTA",
+        text: "Plan Your South Africa Journey",
       },
       {
         type: "p",
@@ -1847,7 +2126,7 @@ const ARTICLES: Record<string, FullArticle> = {
           { type: "text", text: "For travellers drawn to South Africa's range, polish, and depth, explore " },
           { type: "link", text: "The Classic", href: "/journeys/the-classic" },
           { type: "text", text: " or " },
-          { type: "link", text: "enquire privately", href: "/inquire" },
+          { type: "link", text: "enquire privately", href: "/enquire" },
           { type: "text", text: " to begin with the pace, privacy, and regional balance you want the journey to hold." },
         ],
       },
@@ -1928,8 +2207,8 @@ const ARTICLES: Record<string, FullArticle> = {
     readingTime: 7,
     publishedAt: "2026-02-22",
     img: {
-      src:     "/journal/destination-notes-tanzania/hero-placeholder.svg",
-      alt:     "Luxury Tanzania landscape with safari or coastal character",
+      src:     "/journal/destination-notes-tanzania/hero.jpg",
+      alt:     "Sunrise over Tanzania with hot air balloon",
       caption: "Northern Tanzania",
       position: "center",
     },
@@ -1965,7 +2244,7 @@ const ARTICLES: Record<string, FullArticle> = {
       {
         type: "image",
         image: {
-          src:     "/journal/destination-notes-tanzania/serengeti-placeholder.svg",
+          src:     "/journal/destination-notes-tanzania/serengeti.jpg",
           alt:     "Serengeti luxury safari landscape in Tanzania",
           caption: "Serengeti",
           position: "center",
@@ -1990,7 +2269,7 @@ const ARTICLES: Record<string, FullArticle> = {
       {
         type: "image",
         image: {
-          src:     "/journal/destination-notes-tanzania/ngorongoro-placeholder.svg",
+          src:     "/journal/destination-notes-tanzania/ngorongoro.jpg",
           alt:     "Ngorongoro landscape or lodge atmosphere in Tanzania",
           caption: "Ngorongoro",
           position: "center",
@@ -2047,7 +2326,7 @@ const ARTICLES: Record<string, FullArticle> = {
       {
         type: "image",
         image: {
-          src:     "/journal/destination-notes-tanzania/zanzibar-placeholder.svg",
+          src:     "/journal/destination-notes-tanzania/zanzibar.jpg",
           alt:     "Quiet luxury coastal scene in Zanzibar",
           caption: "Zanzibar",
           position: "center",
@@ -2119,7 +2398,7 @@ const ARTICLES: Record<string, FullArticle> = {
       },
       {
         type: "h2",
-        text: "CTA",
+        text: "Plan Your Tanzania Journey",
       },
       {
         type: "p",
@@ -2127,7 +2406,7 @@ const ARTICLES: Record<string, FullArticle> = {
           { type: "text", text: "For travellers drawn to Tanzania's scale, atmosphere, and safari-to-sea rhythm, explore " },
           { type: "link", text: "The Private Circuit", href: "/journeys/the-private-circuit" },
           { type: "text", text: " or " },
-          { type: "link", text: "enquire privately", href: "/inquire" },
+          { type: "link", text: "enquire privately", href: "/enquire" },
           { type: "text", text: " to begin shaping a journey with more privacy, better pacing, and a cleaner finish." },
         ],
       },
@@ -2591,13 +2870,13 @@ const ARTICLES: Record<string, FullArticle> = {
         excerpt:
           "For travellers who have spent years managing their visibility, the experience of being entirely unremarkable in a landscape is not a small thing.",
         readingTime: 7,
-        publishedAt: "2026-04-15",
+        publishedAt: "2026-04-12",
       },
     ],
   },
 };
 
-// â”€â”€â”€ Helpers â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── Helpers ──────────────────────────────────────────────────────────────────
 
 function formatDate(iso: string): string {
   return new Date(iso).toLocaleDateString("en-GB", {
@@ -2644,13 +2923,13 @@ function renderInlineContent(content: readonly ArticleInline[]) {
   });
 }
 
-// â”€â”€â”€ Static params â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── Static params ────────────────────────────────────────────────────────────
 
 export function generateStaticParams() {
   return Object.keys(ARTICLES).map((slug) => ({ slug }));
 }
 
-// â”€â”€â”€ Metadata â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── Metadata ─────────────────────────────────────────────────────────────────
 
 export async function generateMetadata({
   params,
@@ -2685,7 +2964,7 @@ export async function generateMetadata({
   };
 }
 
-// â”€â”€â”€ Page â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── Page ─────────────────────────────────────────────────────────────────────
 
 export default function ArticlePage({
   params,
@@ -2704,7 +2983,6 @@ export default function ArticlePage({
     ) : (
       article?.title
     );
-
   // In production: replace with notFound() after getArticleBySlug() returns
   // undefined. notFound() is imported but guarded here so the scaffold renders.
   // When contentlayer is wired: if (!article) notFound();
@@ -2738,7 +3016,7 @@ export default function ArticlePage({
   return (
     <>
       <JsonLd data={articleSchema} />
-      {/* â”€â”€â”€ Article header â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* ─── Article header ───────────────────────────────────────────── */}
       <header
         className="pt-[calc(68px+clamp(34px,5vw,72px))] pb-[clamp(30px,4vw,48px)] border-b border-stone-200"
         aria-labelledby="article-title"
@@ -2807,7 +3085,7 @@ export default function ArticlePage({
         </div>
       </header>
 
-      {/* â”€â”€â”€ Hero image â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* ─── Hero image ───────────────────────────────────────────────── */}
       {/*
         Caption uses article.img.caption if provided  -  a short editorial
         location or territory note, not the full alt text.
@@ -2839,7 +3117,7 @@ export default function ArticlePage({
         </Reveal>
       )}
 
-      {/* â”€â”€â”€ Article body â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* ─── Article body ─────────────────────────────────────────────── */}
       {/*
         Prose column: max-w-[680px] constrains line length to ~68ch.
         No sidebar. No sticky elements.
@@ -3018,7 +3296,7 @@ export default function ArticlePage({
         </div>
       </article>
 
-      {/* â”€â”€â”€ Commercial bridge â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* ─── Commercial bridge ────────────────────────────────────────── */}
       {article.relatedJourneys && article.relatedJourneys.length > 0 && (
         <section
           className="border-t border-stone-200 bg-page-subtle"
@@ -3031,38 +3309,89 @@ export default function ArticlePage({
                 className="font-serif font-light text-display-md text-stone-900 mb-12 max-w-[480px]"
                 id="related-journeys-heading"
               >
-                The journey this article<br />
+                The journey this article
+                <br />
                 is <em>written towards.</em>
               </h2>
+              <p className="text-sm md:text-[0.98rem] font-light text-stone-600 leading-[1.9] max-w-[880px] mb-12">
+                Each article in the Journal maps to a real Mason &amp; Wild
+                journey. Below you can see the matching tour structure, what it
+                is designed for, and the clearest next step if you want to
+                continue.
+              </p>
             </Reveal>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-stone-200 border-x border-stone-200">
-              {article.relatedJourneys.map((journey, i) => (
-                <Reveal key={journey.slug} delay={(i % 3) as 0 | 1 | 2}>
-                  <Link
-                    href={`${NAV_HREFS.journeys}/${journey.slug}`}
-                    className="group relative overflow-hidden bg-stone-800 block"
-                  >
-                    <Image
-                      src={journey.img.src}
-                      alt={journey.img.alt}
-                      width={600}
-                      height={500}
-                      className="w-full aspect-[4/3] object-cover object-center transition-transform duration-[900ms] ease-out group-hover:scale-[1.04] group-hover:opacity-[0.87]"
-                      loading="lazy"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[rgba(14,12,8,0.85)] via-[rgba(14,12,8,0.25)] to-transparent flex flex-col justify-end p-7">
-                      <p className="label-tag text-white/40 mb-2">{journey.outcome}</p>
-                      <p className="font-serif font-light text-display-sm text-white leading-[1.1] tracking-[-0.01em] mb-4">
-                        <em>{journey.name}</em>
-                      </p>
-                      <span className="text-2xs tracking-wide uppercase text-white/0 border-b border-white/0 pb-px transition-all duration group-hover:text-white/65 group-hover:border-white/30 self-start">
-                        Explore
-                      </span>
-                    </div>
-                  </Link>
-                </Reveal>
-              ))}
+            <div className="flex flex-col gap-6">
+              {article.relatedJourneys.map((journey, i) => {
+                const details = JOURNEY_BRIDGE_DETAILS[journey.slug];
+                return (
+                  <Reveal key={journey.slug} delay={(i % 3) as 0 | 1 | 2}>
+                    <article className="border border-stone-200 bg-page-subtle">
+                      <div className="grid grid-cols-1 xl:grid-cols-[minmax(300px,40%)_minmax(0,1fr)]">
+                        <Link
+                          href={getJourneyHref(journey.slug)}
+                          className="group relative overflow-hidden bg-stone-800 block"
+                        >
+                          <Image
+                            src={journey.img.src}
+                            alt={journey.img.alt}
+                            width={1000}
+                            height={760}
+                            className="w-full h-full min-h-[280px] object-cover object-center transition-transform duration-[900ms] ease-out group-hover:scale-[1.04] group-hover:opacity-[0.87]"
+                            loading="lazy"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-[rgba(14,12,8,0.88)] via-[rgba(14,12,8,0.32)] to-transparent flex flex-col justify-end p-7">
+                            <p className="label-tag text-white/45 mb-2">
+                              {journey.outcome}
+                            </p>
+                            <p className="font-serif font-light text-display-sm text-white leading-[1.1] tracking-[-0.01em]">
+                              <em>{journey.name}</em>
+                            </p>
+                          </div>
+                        </Link>
+
+                        <div className="px-[clamp(24px,3.3vw,44px)] py-[clamp(24px,3.3vw,42px)] flex flex-col">
+                          <p className="label-tag mb-4">Tour Snapshot</p>
+                          <h3 className="font-serif font-light text-[clamp(1.6rem,2.3vw,2.55rem)] text-stone-900 leading-[1.08] tracking-[-0.014em] mb-5">
+                            {journey.name}
+                          </h3>
+                          <p className="text-sm md:text-[0.97rem] font-light text-stone-600 leading-[1.9]">
+                            {details?.summary ??
+                              "A privately designed Mason & Wild journey shaped around pace, privacy, and a clear emotional progression."}
+                          </p>
+
+                          <dl className="mt-7 grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-4 border-y border-stone-200 py-6">
+                            {(details?.highlights ?? [
+                              { label: "Format", value: "Private itinerary design" },
+                              { label: "Style", value: "Tailored around your pace" },
+                              { label: "Handling", value: "Direct specialist support" },
+                              { label: "Access", value: "By private enquiry" },
+                            ]).map((item) => (
+                              <div key={`${journey.slug}-${item.label}`}>
+                                <dt className="label-tag text-stone-300 mb-1">
+                                  {item.label}
+                                </dt>
+                                <dd className="text-[0.95rem] font-light text-stone-700 leading-[1.55]">
+                                  {item.value}
+                                </dd>
+                              </div>
+                            ))}
+                          </dl>
+
+                          <div className="mt-7 flex flex-wrap items-center gap-8">
+                            <Button href={getJourneyHref(journey.slug)} variant="ghost">
+                              {details?.ctaLabel ?? CTA.viewItinerary}
+                            </Button>
+                            <Button href={NAV_HREFS.inquire} variant="ghost">
+                              {CTA.inquirePrivately}
+                            </Button>
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+                  </Reveal>
+                );
+              })}
             </div>
 
             <Reveal>
@@ -3076,7 +3405,7 @@ export default function ArticlePage({
         </section>
       )}
 
-      {/* â”€â”€â”€ Related articles â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* ─── Related articles ─────────────────────────────────────────── */}
       {article.relatedArticles && article.relatedArticles.length > 0 && (
         <section
           className="border-t border-stone-200"
@@ -3138,4 +3467,7 @@ export default function ArticlePage({
     </>
   );
 }
+
+
+
 

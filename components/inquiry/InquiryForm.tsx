@@ -1,21 +1,23 @@
-"use client";
+﻿"use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import { INQUIRY_COPY, DURATION_OPTIONS, CTA } from "@/lib/constants";
 
-// ─── Types ────────────────────────────────────────────────────────────────────
+// â”€â”€â”€ Types â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 type FormState = {
   name:      string;
   email:     string;
   duration:  string;
   narrative: string;
+  marketingConsent: boolean;
   website:   string;
 };
 
 type SubmitState = "idle" | "submitting" | "success" | "error";
 
-// ─── Shared input className ───────────────────────────────────────────────────
+// â”€â”€â”€ Shared input className â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 const inputClass = [
   "w-full bg-transparent border-b border-stone-200",
@@ -25,7 +27,7 @@ const inputClass = [
   "transition-colors duration",
 ].join(" ");
 
-// ─── Component ───────────────────────────────────────────────────────────────
+// â”€â”€â”€ Component â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 export function InquiryForm() {
   const [form, setForm] = useState<FormState>({
@@ -33,6 +35,7 @@ export function InquiryForm() {
     email:     "",
     duration:  "",
     narrative: "",
+    marketingConsent: false,
     website:   "",
   });
 
@@ -41,7 +44,13 @@ export function InquiryForm() {
   function handleChange(
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) {
-    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    const target = e.target;
+    const value =
+      target instanceof HTMLInputElement && target.type === "checkbox"
+        ? target.checked
+        : target.value;
+
+    setForm((prev) => ({ ...prev, [target.name]: value }));
   }
 
   function handleDuration(value: string) {
@@ -71,7 +80,7 @@ export function InquiryForm() {
     }
   }
 
-  // ── Success state  -  rendered in-place, page structure intact ────────────
+  // â”€â”€ Success state  -  rendered in-place, page structure intact â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   if (submitState === "success") {
     return (
       <div className="flex flex-col gap-6 py-2">
@@ -82,7 +91,7 @@ export function InquiryForm() {
         </p>
         <p className="text-base font-light text-stone-500 leading-relaxed max-w-[480px]">
           Your inquiry has been received. A specialist will review it
-          personally and respond within 48–72 hours via the address
+          personally and respond within 24-48 hours via the address
           you provided.
         </p>
         <p className="text-base font-light text-stone-500 leading-relaxed max-w-[480px]">
@@ -100,7 +109,7 @@ export function InquiryForm() {
     );
   }
 
-  // ── Form ────────────────────────────────────────────────────────────────
+  // â”€â”€ Form â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   return (
     <form
       onSubmit={handleSubmit}
@@ -205,6 +214,27 @@ export function InquiryForm() {
         />
       </div>
 
+      <div className="border-t border-stone-200 pt-6">
+        <label
+          htmlFor="marketingConsent"
+          className="inline-flex items-start gap-3 cursor-pointer"
+        >
+          <input
+            id="marketingConsent"
+            name="marketingConsent"
+            type="checkbox"
+            checked={form.marketingConsent}
+            onChange={handleChange}
+            className="mt-[2px] h-4 w-4 rounded-none border border-stone-300 text-forest focus:ring-forest"
+          />
+          <span className="text-sm font-light text-stone-500 leading-relaxed">
+            I would like to receive occasional marketing emails, updates, and
+            relevant travel inspiration from Mason &amp; Wild. I understand
+            that I can unsubscribe at any time.
+          </span>
+        </label>
+      </div>
+
       {/* Submit */}
       <div className="pt-2 flex flex-col sm:flex-row sm:items-center gap-6">
         <button
@@ -219,9 +249,9 @@ export function InquiryForm() {
             "disabled:opacity-50 disabled:cursor-not-allowed",
           ].join(" ")}
         >
-          {submitState === "submitting" ? "Sending…" : CTA.requestPrivateAccess}
+          {submitState === "submitting" ? "Sending..." : CTA.requestPrivateAccess}
           {submitState !== "submitting" && (
-            <span aria-hidden="true">→</span>
+            <span aria-hidden="true">-&gt;</span>
           )}
         </button>
 
@@ -229,6 +259,19 @@ export function InquiryForm() {
           {CTA.formResponseNote}
         </p>
       </div>
+
+      <p className="text-xs font-light text-stone-400 leading-relaxed">
+        By submitting this form, you agree that Mason &amp; Wild may process
+        your personal information to respond to your enquiry and manage related
+        communications in accordance with our{" "}
+        <Link
+          href="/privacy"
+          className="text-stone-500 border-b border-stone-300 hover:text-stone-700 hover:border-stone-500 pb-px transition-colors duration"
+        >
+          Privacy Policy
+        </Link>
+        .
+      </p>
 
       {/* Error */}
       {submitState === "error" && (
@@ -247,3 +290,5 @@ export function InquiryForm() {
     </form>
   );
 }
+
+

@@ -1,8 +1,8 @@
-// lib/constants.ts
+﻿// lib/constants.ts
 // Single source of truth for all brand language.
 // No UI component may hardcode strings that appear here.
 
-// ─── Primary Positioning ──────────────────────────────────────────────────────
+// â”€â”€â”€ Primary Positioning â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 export const BRAND_NAME = "Mason & Wild" as const;
 
@@ -11,7 +11,7 @@ export const PRIMARY_POSITIONING_LINE =
 
 export const BRAND_DESCRIPTOR = "The Silent Observer" as const;
 
-// ─── Navigation ──────────────────────────────────────────────────────────────
+// â”€â”€â”€ Navigation â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 export const NAV_LABELS = {
   home:       "Home",
@@ -28,11 +28,11 @@ export const NAV_HREFS = {
   journeys:   "/journeys",
   journal:    "/journal",
   about:      "/about",
-  inquire:    "/inquire",
+  inquire:    "/enquire",
   social:     "/the-social",
 } as const;
 
-// ─── CTA Language ────────────────────────────────────────────────────────────
+// â”€â”€â”€ CTA Language â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 export const CTA = {
   // Primary conversion
@@ -55,10 +55,10 @@ export const CTA = {
 
   // Form
   formSubmit:          "Request Access",
-  formResponseNote:    "Response time is typically 48–72 hours via our private desk.",
+  formResponseNote:    "Response time is typically 24-48 hours via our private desk.",
 } as const;
 
-// ─── Differentiator Pillars ───────────────────────────────────────────────────
+// â”€â”€â”€ Differentiator Pillars â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 export const DIFFERENTIATORS = [
   {
@@ -83,7 +83,7 @@ export const DIFFERENTIATORS = [
   },
 ] as const;
 
-// ─── Journey Archetypes ───────────────────────────────────────────────────────
+// â”€â”€â”€ Journey Archetypes â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 export const EMOTIONAL_OUTCOMES = {
   solitude:    "Solitude",
@@ -92,7 +92,7 @@ export const EMOTIONAL_OUTCOMES = {
   sovereignty: "Sovereignty",
 } as const;
 
-// ─── Journey Cards  -  Homepage ─────────────────────────────────────────────────
+// â”€â”€â”€ Journey Cards  -  Homepage â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 export const FEATURED_JOURNEYS = [
   {
@@ -127,7 +127,7 @@ export const FEATURED_JOURNEYS = [
   },
 ] as const;
 
-// ─── Journal Categories ───────────────────────────────────────────────────────
+// â”€â”€â”€ Journal Categories â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 export type JournalCategory =
   | "lgbtq-travel-intelligence"
@@ -144,17 +144,17 @@ export const JOURNAL_CATEGORY_LABELS: Record<JournalCategory, string> = {
   "destination-notes":         "Destination Notes",
 } as const;
 
-// ─── Duration Options ─────────────────────────────────────────────────────────
+// â”€â”€â”€ Duration Options â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 export const DURATION_OPTIONS = [
-  { value: "7-10",       label: "7–10 Days" },
-  { value: "14-21",      label: "14–21 Days" },
+  { value: "7-10",       label: "7-10 Days" },
+  { value: "14-21",      label: "14-21 Days" },
   { value: "sabbatical", label: "Sabbatical (30+)" },
 ] as const;
 
 export type DurationOption = typeof DURATION_OPTIONS[number]["value"];
 
-// ─── The Social ───────────────────────────────────────────────────────────────
+// â”€â”€â”€ The Social â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 export const SOCIAL_COPY = {
   sectionLabel:      "By Invitation Only",
@@ -163,7 +163,7 @@ export const SOCIAL_COPY = {
   applicationPrompt: "Membership is by introduction only.",
 } as const;
 
-// ─── Inquiry Form ─────────────────────────────────────────────────────────────
+// â”€â”€â”€ Inquiry Form â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 export const INQUIRY_COPY = {
   pageSubhead:
@@ -178,14 +178,17 @@ export const INQUIRY_COPY = {
   narrativeLabel:      "What you are looking for",
   narrativePlaceholder:"Tell us about a landscape or feeling you have been seeking.",
   availabilityHeading: "Seasonal Availability",
-  contactLine:         "direct.concierge@masonwild.com",
+  contactLine:         "hello@masonandwild.com",
 } as const;
 
-// ─── Footer ───────────────────────────────────────────────────────────────────
+// â”€â”€â”€ Footer â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 export const FOOTER_NAV = [
   { label: "About",   href: "/about" },
   { label: "Journal", href: "/journal" },
-  { label: "Enquire", href: "/inquire" },
+  { label: "Enquire", href: "/enquire" },
   { label: "Privacy", href: "/privacy" },
+  { label: "Terms",   href: "/terms" },
+  { label: "PAIA",    href: "/paia" },
 ] as const;
+

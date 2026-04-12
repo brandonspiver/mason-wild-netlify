@@ -1,4 +1,4 @@
-import type { MetadataRoute } from "next";
+﻿import type { MetadataRoute } from "next";
 import { JOURNAL_SLUGS, JOURNEY_SLUGS } from "@/lib/site-map";
 import { absoluteUrl } from "@/lib/seo";
 
@@ -8,11 +8,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
     "/",
     "/about",
-    "/inquire",
+    "/enquire",
     "/journeys",
     "/journal",
     "/the-experience",
     "/the-social",
+    "/privacy",
+    "/terms",
+    "/paia",
   ];
 
   const journeyRoutes = JOURNEY_SLUGS.map((slug) => `/journeys/${slug}`);
@@ -25,3 +28,4 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: path === "/" ? 1 : 0.8,
   }));
 }
+

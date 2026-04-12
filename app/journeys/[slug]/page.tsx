@@ -409,7 +409,7 @@ const JOURNEYS: Record<string, JourneyData> = {
       "Personally selected by Zannon James through firsthand experience. The South Luangwa Camps are chosen from deep personal knowledge of South Luangwa, shaped by more than a month spent in the bush here. That firsthand time in the region created a strong understanding of its wildlife, its rhythm, and the dramatic beauty of its changing landscapes, from waterways and riverbanks to open plains and woodland. Combined with outstanding game viewing and a deep sense of immersion, it is this layered, ever-shifting setting that makes South Luangwa one of the most compelling safari experiences in Africa.",
     vettedLocation: "South Luangwa National Park, Zambia",
     vettedImg: {
-      src: "/journeys/the-untamed/vetted-south-luangwa.png",
+      src: "/journeys/the-untamed/vetted-south-luangwa-optimized.jpg",
       alt: "South Luangwa National Park in Zambia",
       position: "center 50%",
     },
@@ -664,7 +664,7 @@ const JOURNEYS: Record<string, JourneyData> = {
       "Personally selected by Zannon James through firsthand experience. Monwana was recently experienced on safari and left a lasting impression for all the right reasons, from hospitality, food, suite design and everything else. The guiding was the strongest I have ever experienced, marked by rare instinct, deep knowledge, and an effortless ability to make every sighting feel meaningful. It is chosen not only for the quality of the wildlife experience, but for the way it balances intimacy, polish, and a true sense of place in the bush.",
     vettedLocation: "MOWANA, SOUTH AFRICA",
     vettedImg: {
-      src: "/journeys/the-romantic/vetted-monwana.png",
+      src: "/journeys/the-romantic/vetted-monwana-optimized.jpg",
       alt: "Monwana safari setting in Greater Kruger",
       position: "center 50%",
     },
@@ -1715,7 +1715,7 @@ const JOURNEYS: Record<string, JourneyData> = {
       "Personally selected by Zannon James through direct safari experience, trusted industry relationships, and careful on the ground vetting, this Tanzania journey has been curated to reflect the very best of the country with substance, style, and operational confidence. Extensive time spent across East and Southern Africa, combined with a strong network of respected guides, camp owners, and safari operators, gives full confidence in the standard of experience offered here. Siringit holds particular meaning within this journey, not only for its positioning and design, but also through a trusted personal relationship with its ownership. That closeness brings an added layer of confidence in the quality, care, and consistency of the experience on the ground.",
     vettedLocation: "SERENGETI, TANZANIA",
     vettedImg: {
-      src: "/journeys/the-private-circuit/vetted-serengeti.png",
+      src: "/journeys/the-private-circuit/vetted-serengeti-optimized.jpg",
       alt: "Serengeti safari scene in Tanzania",
       position: "center 74%",
     },

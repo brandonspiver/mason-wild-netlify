@@ -1,5 +1,6 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { FOOTER_NAV, BRAND_DESCRIPTOR } from "@/lib/constants";
+import { CookieSettingsButton } from "@/components/layout/CookieSettingsButton";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -25,13 +26,18 @@ export function Footer() {
               </Link>
             </li>
           ))}
+          <li>
+            <CookieSettingsButton />
+          </li>
         </ul>
       </nav>
 
       <p className="text-2xs tracking-[0.08em] text-white/[0.16]">
-        © {year} Mason &amp; Wild.{" "}
+        (c) {year} Mason &amp; Wild.{" "}
         <span className="text-white/[0.12]">{BRAND_DESCRIPTOR}.</span>
       </p>
     </footer>
   );
 }
+
+
