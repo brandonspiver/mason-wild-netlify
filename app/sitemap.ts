@@ -16,6 +16,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/privacy",
     "/terms",
     "/paia",
+    "/llms.txt",
+    "/llms-full.txt",
   ];
 
   const journeyRoutes = JOURNEY_SLUGS.map((slug) => `/journeys/${slug}`);

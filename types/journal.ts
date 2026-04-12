@@ -14,6 +14,8 @@ export type ArticleImage = {
   readonly alt:     string;
   readonly caption?: string; // Optional short editorial caption, separate from alt
   readonly position?: string;
+  readonly fit?: "cover" | "contain";
+  readonly maxWidthPx?: number;
 };
 
 export type ArticleInline =

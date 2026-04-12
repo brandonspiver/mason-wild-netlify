@@ -111,7 +111,7 @@ const ARTICLES: ArticleSummary[] = [
     readingTime: 7,
     publishedAt: "2026-04-11",
     img: {
-      src: "/journal/okavango-dry-season-private-safari/hero.jpg",
+      src: "/journal/okavango-dry-season-private-safari/mokoro.jpg",
       alt: "Private boat moving through the Okavango Delta in Botswana during dry season",
     },
   },
@@ -353,6 +353,7 @@ export default function JournalPage() {
               {featured.img && (
                 <div className="overflow-hidden bg-stone-100">
                   <Image src={featured.img.src} alt={featured.img.alt} width={1200} height={800}
+                    quality={95}
                     className="w-full aspect-[16/11] xl:aspect-auto xl:h-full object-cover object-center transition-transform duration-[900ms] ease-out group-hover:scale-[1.02]"
                     priority
                   />
@@ -399,9 +400,13 @@ export default function JournalPage() {
                     </h2>
                   </div>
                 </Reveal>
-                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-px bg-stone-200 border border-stone-200">
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 border border-stone-200">
                   {articles.map((article, i) => (
-                    <Reveal key={article.slug} delay={(i % 3) as 0 | 1 | 2} className="h-full">
+                    <Reveal
+                      key={article.slug}
+                      delay={(i % 3) as 0 | 1 | 2}
+                      className="h-full border-t border-stone-200 first:border-t-0 md:[&:nth-child(-n+2)]:border-t-0 xl:[&:nth-child(-n+3)]:border-t-0 md:border-r md:[&:nth-child(2n)]:border-r-0 xl:border-r xl:[&:nth-child(2n)]:border-r xl:[&:nth-child(3n)]:border-r-0"
+                    >
                       <Link href={`/journal/${article.slug}`} className="group flex h-full flex-col bg-page hover:bg-page-subtle transition-colors duration-500">
                         <div>
                           {article.img ? (
@@ -411,6 +416,7 @@ export default function JournalPage() {
                                 alt={article.img.alt}
                                 width={900}
                                 height={620}
+                                quality={95}
                                 className="w-full aspect-[16/10] object-cover object-center transition-transform duration-[850ms] ease-out group-hover:scale-[1.025]"
                                 loading="lazy"
                               />

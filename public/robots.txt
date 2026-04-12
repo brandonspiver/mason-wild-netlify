@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://masonwild.com/sitemap.xml
+Sitemap: https://masonandwild.com/sitemap.xml
+# AI discovery
+# https://masonandwild.com/llms.txt

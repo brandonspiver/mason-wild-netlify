@@ -520,6 +520,7 @@ export default function SocialShiftPage() {
                       alt={accommodation.images[0].alt}
                       width={1200}
                       height={1500}
+                      quality={95}
                       className="h-[360px] w-full object-cover object-center transition-transform duration-[900ms] ease-out hover:scale-[1.03] md:h-full"
                       style={{ objectPosition: accommodation.images[0].position ?? "center" }}
                       loading="lazy"
@@ -534,6 +535,7 @@ export default function SocialShiftPage() {
                           alt={image.alt}
                           width={700}
                           height={560}
+                          quality={95}
                           className="h-full w-full object-cover object-center transition-transform duration-[900ms] ease-out hover:scale-[1.03]"
                           style={{ objectPosition: image.position ?? "center" }}
                           loading="lazy"

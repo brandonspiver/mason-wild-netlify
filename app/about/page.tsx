@@ -58,6 +58,7 @@ export default function AboutPage() {
               alt="Zannon James portrait"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
+              quality={95}
               className="object-cover object-[20%_36%]"
               priority
             />
@@ -281,7 +282,8 @@ export default function AboutPage() {
             alt="Private conservancy at dawn - Botswana"
             width={2400}
             height={900}
-            className="w-full aspect-[21/8] object-cover object-center"
+            quality={95}
+            className="w-full aspect-[21/8] object-cover object-[50%_70%] md:object-[50%_66%]"
             loading="lazy"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/15 via-transparent to-black/15" />

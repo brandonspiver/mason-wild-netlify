@@ -71,7 +71,7 @@ export function InquiryForm() {
       });
 
       if (!response.ok) {
-        throw new Error("Inquiry submission failed.");
+        throw new Error("Enquiry submission failed.");
       }
 
       setSubmitState("success");
@@ -84,13 +84,13 @@ export function InquiryForm() {
   if (submitState === "success") {
     return (
       <div className="flex flex-col gap-6 py-2">
-        <p className="label-tag">Inquiry Received</p>
+        <p className="label-tag">Enquiry Received</p>
         <p className="font-serif font-light text-display-sm text-stone-900 leading-[1.45] tracking-[-0.01em]">
           Thank you,{" "}
           <em>{form.name.split(" ")[0] || "thank you"}</em>.
         </p>
         <p className="text-base font-light text-stone-500 leading-relaxed max-w-[480px]">
-          Your inquiry has been received. A specialist will review it
+          Your enquiry has been received. A specialist will review it
           personally and respond within 24-48 hours via the address
           you provided.
         </p>
@@ -114,7 +114,7 @@ export function InquiryForm() {
     <form
       onSubmit={handleSubmit}
       noValidate
-      aria-label="Private journey inquiry"
+      aria-label="Private journey enquiry"
       className="flex flex-col gap-10"
     >
       {/* Name */}

@@ -374,6 +374,8 @@ const ARTICLES: Record<string, FullArticle> = {
           alt: "Spacious safari or desert landscape showing privacy in travel",
           caption: "Safari Space",
           position: "center",
+          fit: "contain",
+          maxWidthPx: 1200,
         },
         aspect: "16 / 10",
       },
@@ -751,7 +753,7 @@ const ARTICLES: Record<string, FullArticle> = {
       {
         type: "image",
         image: {
-          src: "/journal/cape-town-gay-capital-of-africa/city.png",
+          src: "/journal/cape-town-gay-capital-of-africa/city-hero.jpg",
           alt: "De Waterkant or City Bowl streetscape in Cape Town",
           caption: "City Bowl",
           position: "center 42%",
@@ -790,6 +792,8 @@ const ARTICLES: Record<string, FullArticle> = {
           alt: "Upscale queer-friendly nightlife or dining scene in Cape Town",
           caption: "Café Manhattan, De Waterkant",
           position: "center 52%",
+          fit: "contain",
+          maxWidthPx: 1107,
         },
         description: "Cape Town's social life works best when it feels polished, relaxed, and folded into a wider rhythm of living well.",
         aspect: "16 / 10",
@@ -1207,10 +1211,12 @@ const ARTICLES: Record<string, FullArticle> = {
     readingTime: 7,
     publishedAt: "2026-04-11",
     img: {
-      src:     "/journal/okavango-dry-season-private-safari/hero.jpg",
+      src:     "/journal/okavango-dry-season-private-safari/mokoro.jpg",
       alt:     "Private boat moving through the Okavango Delta in Botswana during dry season",
       caption: "Okavango Delta, Botswana",
-      position: "center 36%",
+      position: "center 52%",
+      fit: "contain",
+      maxWidthPx: 1420,
     },
     body: [
       {
@@ -1292,6 +1298,8 @@ const ARTICLES: Record<string, FullArticle> = {
           src: "/journal/okavango-dry-season-private-safari/horse-riding.jpg",
           alt: "Horse riding safari in the Okavango Delta during dry season",
           caption: "Botswana",
+          fit: "contain",
+          maxWidthPx: 1000,
         },
         aspect: "16 / 10",
       },
@@ -1719,6 +1727,8 @@ const ARTICLES: Record<string, FullArticle> = {
           src: "/journal/solitude-architecture-of-silence-namibia/experience-one.jpg",
           alt: "Experience-led travel moment in the Namib Desert",
           caption: "Sossusvlei",
+          fit: "contain",
+          maxWidthPx: 945,
         },
         aspect: "16 / 10",
       },
@@ -1847,6 +1857,8 @@ const ARTICLES: Record<string, FullArticle> = {
       alt:     "Refined African luxury travel setting with privacy and calm",
       caption: "Privacy, design, and emotional ease",
       position: "center",
+      fit: "contain",
+      maxWidthPx: 1024,
     },
     body: [
       {
@@ -1979,7 +1991,7 @@ const ARTICLES: Record<string, FullArticle> = {
       },
       {
         type: "h2",
-        text: "CTA",
+        text: "Continue with Intention",
       },
       {
         type: "p",
@@ -2221,7 +2233,7 @@ const ARTICLES: Record<string, FullArticle> = {
       },
       {
         type: "h2",
-        text: "CTA",
+        text: "Where to Go Next",
       },
       {
         type: "p",
@@ -2447,7 +2459,7 @@ const ARTICLES: Record<string, FullArticle> = {
       },
       {
         type: "h2",
-        text: "CTA",
+        text: "Further Reading",
       },
       {
         type: "p",
@@ -2633,6 +2645,8 @@ const ARTICLES: Record<string, FullArticle> = {
           src: "/journal/private-travel-owes-conservation/section-community.jpg",
           alt: "Schoolchildren and community life connected to safari tourism in Zambia",
           caption: "Zambia",
+          fit: "contain",
+          maxWidthPx: 1280,
         },
         description: "Conservation holds more strongly when communities benefit alongside landscapes.",
         aspect: "16 / 10",
@@ -3212,7 +3226,7 @@ const ARTICLES: Record<string, FullArticle> = {
         name:    "The Classic",
         outcome: "Foundation",
         img: {
-          src: "/journeys/the-classic/collage-cape-town-pool.jpg",
+          src: "/journeys/the-classic/PineApple House  (2).png",
           alt: "The Classic journey card",
         },
       },
@@ -4151,14 +4165,31 @@ export default function ArticlePage({
         <Reveal>
           <div className="border-b border-stone-200">
             <div className={`${JOURNAL_SHELL} py-[clamp(22px,3vw,36px)]`}>
-              <div className="overflow-hidden border border-stone-200 bg-page-subtle">
+              <div
+                className={[
+                  "overflow-hidden border border-stone-200",
+                  article.img.fit === "contain"
+                    ? "bg-page-canvas p-[clamp(10px,1.2vw,16px)]"
+                    : "bg-page-subtle",
+                ].join(" ")}
+              >
                 <Image
                   src={article.img.src}
                   alt={article.img.alt}
                   width={2400}
                   height={1080}
-                  className="w-full aspect-[16/7] xl:aspect-[18/7] object-cover object-center"
-                  style={{ objectPosition: article.img.position ?? "center" }}
+                  quality={95}
+                  className={
+                    article.img.fit === "contain"
+                      ? "mx-auto h-auto w-auto max-w-full max-h-[78vh] object-contain"
+                      : "w-full aspect-[16/7] xl:aspect-[18/7] object-cover object-center"
+                  }
+                  style={{
+                    objectPosition: article.img.position ?? "center",
+                    maxWidth: article.img.fit === "contain" && article.img.maxWidthPx
+                      ? `${article.img.maxWidthPx}px`
+                      : undefined,
+                  }}
                   priority
                 />
               </div>
@@ -4262,16 +4293,33 @@ export default function ArticlePage({
                   return (
                     <Reveal key={i}>
                       <figure className="my-[clamp(52px,7vw,92px)] xl:-mr-[min(12vw,180px)]">
-                        <div className="overflow-hidden border border-stone-200 bg-page-subtle">
+                        <div
+                          className={[
+                            "overflow-hidden border border-stone-200",
+                            block.image.fit === "contain"
+                              ? "bg-page-canvas p-[clamp(10px,1.2vw,16px)]"
+                              : "bg-page-subtle",
+                          ].join(" ")}
+                        >
                           <Image
                             src={block.image.src}
                             alt={block.image.alt}
                             width={1600}
                             height={1000}
-                            className="w-full object-cover object-center"
+                            quality={95}
+                            className={
+                              block.image.fit === "contain"
+                                ? "mx-auto h-auto w-auto max-w-full max-h-[72vh] object-contain"
+                                : "w-full object-cover object-center"
+                            }
                             style={{
-                              aspectRatio: block.aspect ?? "16 / 10",
+                              aspectRatio: block.image.fit === "contain"
+                                ? undefined
+                                : (block.aspect ?? "16 / 10"),
                               objectPosition: block.image.position ?? "center",
+                              maxWidth: block.image.fit === "contain" && block.image.maxWidthPx
+                                ? `${block.image.maxWidthPx}px`
+                                : undefined,
                             }}
                             loading="lazy"
                           />
@@ -4392,6 +4440,7 @@ export default function ArticlePage({
                             alt={journey.img.alt}
                             width={1000}
                             height={760}
+                            quality={95}
                             className="w-full h-full min-h-[280px] object-cover object-center transition-transform duration-[900ms] ease-out group-hover:scale-[1.04] group-hover:opacity-[0.87]"
                             loading="lazy"
                           />

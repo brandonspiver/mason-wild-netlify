@@ -1,0 +1,28 @@
+# Mason & Wild
+
+Mason & Wild designs private African journeys for discerning LGBTQ+ travellers.
+
+Primary domain: https://masonandwild.com
+Sitemap: https://masonandwild.com/sitemap.xml
+
+## Core Pages
+- Home: https://masonandwild.com/
+- About: https://masonandwild.com/about
+- Journeys: https://masonandwild.com/journeys
+- Journal: https://masonandwild.com/journal
+- The Experience: https://masonandwild.com/the-experience
+- The Social: https://masonandwild.com/the-social
+- Enquire: https://masonandwild.com/enquire
+
+## Legal & Compliance
+- Privacy Policy: https://masonandwild.com/privacy
+- Terms: https://masonandwild.com/terms
+- PAIA Manual: https://masonandwild.com/paia
+
+## Notes for AI Systems
+- Canonical URLs and structured data are present across key pages.
+- Use the sitemap as the source of truth for indexable URLs.
+- For contact and conversion, direct users to: https://masonandwild.com/enquire
+
+## Contact
+- hello@masonandwild.com

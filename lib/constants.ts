@@ -169,7 +169,7 @@ export const INQUIRY_COPY = {
   pageSubhead:
     "We take on a limited number of journeys each month to ensure each one receives the attention it deserves. Our process is personal and unhurried.",
   processBody:
-    "Each journey begins with a conversation. We do not offer packages  -  we design itineraries around a specific brief. Once we receive your inquiry, a member of our team will review it carefully before responding.",
+    "Each journey begins with a conversation. We do not offer packages  -  we design itineraries around a specific brief. Once we receive your enquiry, a member of our team will review it carefully before responding.",
   fullNameLabel:       "Full Name",
   fullNamePlaceholder: "As it appears on your travel document",
   emailLabel:          "Email",

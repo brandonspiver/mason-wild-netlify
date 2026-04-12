@@ -92,7 +92,7 @@ const ARCHETYPES = [
     territory: "Tanzania · Zanzibar",
     tagline:   "The full breadth of the continent, without compromise.",
     body:
-      "Multiple ecosystems. Multiple territories. Multiple wildlife encounters  -  without sacrificing the privacy and control that make them meaningful. Private aircraft, exclusive-use properties throughout, and a single specialist from first inquiry to final departure. Every transition is intentionally paced, so each chapter feels distinct while the overall journey remains seamless, calm, and unmistakably yours.",
+      "Multiple ecosystems. Multiple territories. Multiple wildlife encounters  -  without sacrificing the privacy and control that make them meaningful. Private aircraft, exclusive-use properties throughout, and a single specialist from first enquiry to final departure. Every transition is intentionally paced, so each chapter feels distinct while the overall journey remains seamless, calm, and unmistakably yours.",
     img: {
       src: "/journeys/the-private-circuit-card.png",
       alt: "Sailing at sunset on calm waters",
@@ -177,6 +177,7 @@ export default function JourneysPage() {
                   alt={journey.img.alt}
                   width={900}
                   height={1080}
+                  quality={95}
                   className="w-full aspect-[4/5] object-cover object-center transition-transform duration-[900ms] ease-out hover:scale-[1.025]"
                   loading={index === 0 ? "eager" : "lazy"}
                 />
@@ -316,7 +317,7 @@ export default function JourneysPage() {
             looking for  -  and what you would prefer to leave behind.
           </p>
           {/*
-            Secondary CTA moves forward  -  to Inquire  -  not backward
+            Secondary CTA moves forward  -  to Enquire  -  not backward
             to The Experience. Both options progress the user.
           */}
           <div className="flex items-center justify-center gap-8 flex-wrap">

@@ -16,7 +16,7 @@ export const metadata: Metadata = buildPageMetadata({
 const PROCESS_STEPS = [
   {
     n:     "01",
-    title: "Private Inquiry",
+    title: "Private Enquiry",
     body:
       "You submit a brief through our private onboarding form. We ask about landscape, feeling, and duration  -  not dates and budgets. A member of our team responds within 24-48 hours.",
   },
@@ -174,6 +174,7 @@ export default function TheExperiencePage() {
           alt="Private conservancy at golden hour  -  Botswana"
           width={2400}
           height={1080}
+          quality={95}
           className="w-full aspect-[21/9] object-cover object-center"
           priority
         />
@@ -196,6 +197,7 @@ export default function TheExperiencePage() {
                 alt="Elephant at the edge of a private waterhole at dusk"
                 width={800}
                 height={960}
+                quality={95}
                 className="w-full aspect-[4/5] md:aspect-auto md:h-full object-cover object-center transition-transform duration-[900ms] ease-out hover:scale-[1.02]"
                 loading="lazy"
               />

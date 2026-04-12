@@ -73,6 +73,10 @@ export default function RootLayout({
       lang="en"
       className={`${cormorant.variable} ${dmSans.variable}`}
     >
+      <head>
+        <link rel="alternate" type="text/plain" href="/llms.txt" title="LLMs.txt" />
+        <link rel="alternate" type="text/plain" href="/llms-full.txt" title="LLMs Full" />
+      </head>
       <body>
         <JsonLd data={[getOrganizationSchema(), getWebsiteSchema()]} />
         <NavBar />

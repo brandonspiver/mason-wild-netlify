@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import type { CSSProperties } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -14,6 +15,8 @@ type JourneyImage = {
   readonly src: string;
   readonly alt: string;
   readonly position?: string;
+  readonly fit?: "cover" | "contain";
+  readonly maxWidthPx?: number;
 };
 
 type JourneyMetadataItem = {
@@ -340,6 +343,8 @@ const JOURNEYS: Record<string, JourneyData> = {
             src: "/journeys/the-intimate/victoria-falls-forest-path.jpg",
             alt: "River view at Victoria Falls Island Lodge",
             position: "center 50%",
+            fit: "contain",
+            maxWidthPx: 1000,
           },
           {
             src: "/journeys/the-intimate/victoria-falls-suite.jpg",
@@ -350,6 +355,8 @@ const JOURNEYS: Record<string, JourneyData> = {
             src: "/journeys/the-intimate/victoria-falls-boat-sunset.jpg",
             alt: "Zambezi river scene at sunset",
             position: "center 52%",
+            fit: "contain",
+            maxWidthPx: 1000,
           },
         ],
       },
@@ -827,6 +834,8 @@ const JOURNEYS: Record<string, JourneyData> = {
           src: "/journeys/the-romantic/MN1.png",
           alt: "Suite interior at Mount Nelson Hotel",
           position: "center 50%",
+          fit: "contain",
+          maxWidthPx: 577,
         },
         {
           src: "/journeys/the-romantic/MN 5.jpg",
@@ -1016,6 +1025,8 @@ const JOURNEYS: Record<string, JourneyData> = {
         src: "/journeys/the-classic/collage-mbano-helicopter-falls.jpg",
         alt: "Helicopter flying above Victoria Falls",
         position: "center 50%",
+        fit: "contain",
+        maxWidthPx: 590,
       },
       {
         src: "/journeys/the-classic/PineApple House  (1).png",
@@ -2049,6 +2060,19 @@ export default function JourneyDetailPage({
     notFound();
   }
 
+  const getImageClass = (image: JourneyImage): string =>
+    image.fit === "contain" ? "object-contain bg-page-subtle" : "object-cover";
+
+  const getImageStyle = (image: JourneyImage): CSSProperties => ({
+    objectPosition: image.position ?? "center",
+    ...(image.fit === "contain" && image.maxWidthPx
+      ? {
+          maxWidth: `${image.maxWidthPx}px`,
+          marginInline: "auto",
+        }
+      : {}),
+  });
+
   const collageImages = journey.galleryImgs.slice(0, 3);
   const intimateCarouselExtras =
     journey.slug === "the-intimate"
@@ -2072,6 +2096,8 @@ export default function JourneyDetailPage({
             src: "/journeys/the-intimate/updates/delta-wild-dogs.jpg",
             alt: "Wild dogs in the Okavango Delta",
             position: "center 45%",
+            fit: "contain",
+            maxWidthPx: 1100,
           },
           {
             src: "/journeys/the-intimate/updates/delta-leopard.jpg",
@@ -2102,6 +2128,8 @@ export default function JourneyDetailPage({
             src: "/journeys/the-intimate/updates/delta-wild-dogs-resting.jpg",
             alt: "Wild dogs resting in the Delta grass",
             position: "center 42%",
+            fit: "contain",
+            maxWidthPx: 1100,
           },
           {
             src: "/journeys/the-intimate/updates/delta-plunge-pool.jpg",
@@ -2277,8 +2305,9 @@ export default function JourneyDetailPage({
                           alt={journey.vettedImg.alt}
                           width={900}
                           height={720}
-                          className="w-full aspect-[6/5] object-cover object-center"
-                          style={{ objectPosition: journey.vettedImg.position ?? "center" }}
+                          quality={95}
+                          className={`w-full aspect-[6/5] ${getImageClass(journey.vettedImg)} object-center`}
+                          style={getImageStyle(journey.vettedImg)}
                           loading="lazy"
                         />
                       </div>
@@ -2354,8 +2383,9 @@ export default function JourneyDetailPage({
                   alt={collageImages[0].alt}
                   width={1200}
                   height={1400}
-                  className="h-[320px] w-full object-cover object-center transition-transform duration-[900ms] ease-out hover:scale-[1.03] md:h-full"
-                  style={{ objectPosition: collageImages[0].position ?? "center" }}
+                  quality={95}
+                  className={`h-[320px] w-full ${getImageClass(collageImages[0])} object-center transition-transform duration-[900ms] ease-out hover:scale-[1.03] md:h-full`}
+                  style={getImageStyle(collageImages[0])}
                   priority
                 />
               </div>
@@ -2368,8 +2398,9 @@ export default function JourneyDetailPage({
                       alt={image.alt}
                       width={700}
                       height={520}
-                      className="h-full w-full object-cover object-center transition-transform duration-[900ms] ease-out hover:scale-[1.03]"
-                      style={{ objectPosition: image.position ?? "center" }}
+                      quality={95}
+                      className={`h-full w-full ${getImageClass(image)} object-center transition-transform duration-[900ms] ease-out hover:scale-[1.03]`}
+                      style={getImageStyle(image)}
                       loading="lazy"
                     />
                   </div>
@@ -2457,8 +2488,9 @@ export default function JourneyDetailPage({
                         alt={accommodation.images[0].alt}
                         width={900}
                         height={1125}
-                        className="h-[360px] w-full object-cover object-center transition-transform duration-[900ms] ease-out hover:scale-[1.03] md:h-full"
-                        style={{ objectPosition: accommodation.images[0].position ?? "center" }}
+                        quality={95}
+                        className={`h-[360px] w-full ${getImageClass(accommodation.images[0])} object-center transition-transform duration-[900ms] ease-out hover:scale-[1.03] md:h-full`}
+                        style={getImageStyle(accommodation.images[0])}
                         loading="lazy"
                       />
                     </div>
@@ -2470,8 +2502,9 @@ export default function JourneyDetailPage({
                             alt={image.alt}
                             width={600}
                             height={450}
-                            className="h-full w-full object-cover object-center transition-transform duration-[900ms] ease-out hover:scale-[1.03]"
-                            style={{ objectPosition: image.position ?? "center" }}
+                            quality={95}
+                            className={`h-full w-full ${getImageClass(image)} object-center transition-transform duration-[900ms] ease-out hover:scale-[1.03]`}
+                            style={getImageStyle(image)}
                             loading="lazy"
                           />
                         </div>
@@ -2626,7 +2659,9 @@ export default function JourneyDetailPage({
                   alt={journey.nextJourney.img.alt}
                   width={800}
                   height={600}
-                  className="w-full aspect-[4/3] object-cover object-center transition-transform duration-[900ms] ease-out group-hover:scale-[1.025]"
+                  quality={95}
+                  className={`w-full aspect-[4/3] ${getImageClass(journey.nextJourney.img)} object-center transition-transform duration-[900ms] ease-out group-hover:scale-[1.025]`}
+                  style={getImageStyle(journey.nextJourney.img)}
                   loading="lazy"
                 />
               </div>
@@ -2641,7 +2676,7 @@ export default function JourneyDetailPage({
                 </p>
                 <span className="inline-flex items-center gap-3 text-2xs font-normal tracking-wide uppercase text-stone-500 border-b border-stone-300 group-hover:text-stone-900 group-hover:border-stone-900 pb-[2px] transition-colors duration self-start">
                   Explore This Journey
-                  <span aria-hidden="true">→</span>
+                  <span aria-hidden="true">&rarr;</span>
                 </span>
               </div>
             </Link>

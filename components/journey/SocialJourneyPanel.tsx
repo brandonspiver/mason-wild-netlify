@@ -139,6 +139,7 @@ export function SocialJourneyPanel({
                                 alt={card.image?.alt ?? card.title}
                                 width={960}
                                 height={720}
+                                quality={95}
                                 className="w-full aspect-[6/4] object-cover object-center transition-transform duration-[900ms] ease-out hover:scale-[1.02]"
                                 style={{ objectPosition: card.image?.position ?? "center" }}
                                 loading="lazy"

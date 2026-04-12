@@ -7,6 +7,8 @@ type JourneyCarouselImage = {
   readonly src: string;
   readonly alt: string;
   readonly position?: string;
+  readonly fit?: "cover" | "contain";
+  readonly maxWidthPx?: number;
 };
 
 type JourneyCarouselProps = {
@@ -62,8 +64,17 @@ export function JourneyCarousel({
               alt={image.alt}
               fill
               sizes="100vw"
-              className="object-cover object-center scale-[1.03]"
-              style={{ objectPosition: image.position ?? "center" }}
+              quality={95}
+              className={`${image.fit === "contain" ? "object-contain bg-[#161614]" : "object-cover"} object-center scale-[1.03]`}
+              style={{
+                objectPosition: image.position ?? "center",
+                ...(image.fit === "contain" && image.maxWidthPx
+                  ? {
+                      maxWidth: `${image.maxWidthPx}px`,
+                      marginInline: "auto",
+                    }
+                  : {}),
+              }}
               priority={index === 0}
             />
             <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(17,17,16,0.18)_0%,transparent_12%,transparent_88%,rgba(17,17,16,0.18)_100%),linear-gradient(to_top,rgba(17,17,16,0.55)_0%,transparent_40%)]" />
@@ -81,7 +92,7 @@ export function JourneyCarousel({
             }
             className="absolute left-6 top-1/2 z-10 hidden h-11 w-11 -translate-y-1/2 items-center justify-center border border-[rgba(245,242,237,0.14)] bg-[rgba(245,242,237,0.06)] text-[rgba(245,242,237,0.7)] backdrop-blur-sm transition-colors duration hover:border-[rgba(245,242,237,0.3)] hover:bg-[rgba(245,242,237,0.14)] hover:text-white md:flex"
           >
-            <span aria-hidden="true">←</span>
+            <span aria-hidden="true">&larr;</span>
           </button>
 
           <button
@@ -90,7 +101,7 @@ export function JourneyCarousel({
             onClick={() => setActiveIndex((current) => (current + 1) % totalSlides)}
             className="absolute right-6 top-1/2 z-10 hidden h-11 w-11 -translate-y-1/2 items-center justify-center border border-[rgba(245,242,237,0.14)] bg-[rgba(245,242,237,0.06)] text-[rgba(245,242,237,0.7)] backdrop-blur-sm transition-colors duration hover:border-[rgba(245,242,237,0.3)] hover:bg-[rgba(245,242,237,0.14)] hover:text-white md:flex"
           >
-            <span aria-hidden="true">→</span>
+            <span aria-hidden="true">&rarr;</span>
           </button>
         </>
       )}

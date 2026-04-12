@@ -1,0 +1,29 @@
+# Mason & Wild - Extended URL Index
+
+Primary domain: https://masonandwild.com
+Sitemap: https://masonandwild.com/sitemap.xml
+
+## Journey Archetypes
+- https://masonandwild.com/journeys/the-intimate
+- https://masonandwild.com/journeys/the-untamed
+- https://masonandwild.com/journeys/the-romantic
+- https://masonandwild.com/journeys/the-classic
+- https://masonandwild.com/journeys/the-adventure
+- https://masonandwild.com/journeys/the-private-circuit
+
+## Journal Hub
+- https://masonandwild.com/journal
+
+## Destination Notes
+- https://masonandwild.com/journal/destination-notes-south-africa
+- https://masonandwild.com/journal/destination-notes-tanzania
+- https://masonandwild.com/journal/destination-notes-botswana
+
+## Convert / Contact
+- https://masonandwild.com/enquire
+- hello@masonandwild.com
+
+## Policies
+- https://masonandwild.com/privacy
+- https://masonandwild.com/terms
+- https://masonandwild.com/paia

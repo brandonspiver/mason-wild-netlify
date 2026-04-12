@@ -32,6 +32,35 @@ type ValidDuration = (typeof VALID_DURATIONS)[number];
 const MAX_NAME_LENGTH = 120;
 const MAX_EMAIL_LENGTH = 254;
 const MAX_NARRATIVE_LENGTH = 4000;
+const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000;
+const RATE_LIMIT_MAX_REQUESTS = 8;
+
+const requestLog = new Map<string, number[]>();
+
+function getClientIp(request: NextRequest): string {
+  const forwardedFor = request.headers.get("x-forwarded-for");
+  if (forwardedFor) {
+    return forwardedFor.split(",")[0]?.trim() || "unknown";
+  }
+  return request.headers.get("x-real-ip") ?? "unknown";
+}
+
+function isRateLimited(request: NextRequest): boolean {
+  const ip = getClientIp(request);
+  const now = Date.now();
+  const windowStart = now - RATE_LIMIT_WINDOW_MS;
+  const history = requestLog.get(ip) ?? [];
+  const recent = history.filter((ts) => ts >= windowStart);
+
+  if (recent.length >= RATE_LIMIT_MAX_REQUESTS) {
+    requestLog.set(ip, recent);
+    return true;
+  }
+
+  recent.push(now);
+  requestLog.set(ip, recent);
+  return false;
+}
 
 function isValidEmail(value: string): boolean {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
@@ -105,15 +134,13 @@ async function handleSubmission(inquiry: InquiryPayload): Promise<void> {
     JSON.stringify({
       event: "inquiry.received",
       submittedAt,
-      name: inquiry.name,
-      email: inquiry.email,
       duration: inquiry.duration ?? null,
       narrativeLength: inquiry.narrative.length,
     })
   );
 
   await sendFormEmail({
-    subject: "New Inquiry Submission - Mason & Wild",
+    subject: "New Enquiry Submission - Mason & Wild",
     replyTo: inquiry.email,
     sections: [
       { label: "Submitted At", value: submittedAt },
@@ -130,6 +157,16 @@ async function handleSubmission(inquiry: InquiryPayload): Promise<void> {
 }
 
 export async function POST(request: NextRequest): Promise<NextResponse<SuccessResponse | ErrorResponse>> {
+  if (isRateLimited(request)) {
+    return NextResponse.json<ErrorResponse>(
+      {
+        ok: false,
+        error: "Too many requests. Please wait a few minutes and try again.",
+      },
+      { status: 429 }
+    );
+  }
+
   let body: unknown;
   try {
     body = await request.json();
@@ -147,7 +184,7 @@ export async function POST(request: NextRequest): Promise<NextResponse<SuccessRe
 
   if (typeof honeypot === "string" && honeypot.trim().length > 0) {
     return NextResponse.json<SuccessResponse>(
-      { ok: true, message: "Inquiry received." },
+      { ok: true, message: "Enquiry received." },
       { status: 200 }
     );
   }
@@ -172,7 +209,6 @@ export async function POST(request: NextRequest): Promise<NextResponse<SuccessRe
       JSON.stringify({
         event: "inquiry.error",
         message: err instanceof Error ? err.message : String(err),
-        email: data.email,
       })
     );
 
@@ -186,7 +222,7 @@ export async function POST(request: NextRequest): Promise<NextResponse<SuccessRe
   }
 
   return NextResponse.json<SuccessResponse>(
-    { ok: true, message: "Inquiry received. We will respond within 24-48 hours." },
+    { ok: true, message: "Enquiry received. We will respond within 24-48 hours." },
     { status: 200 }
   );
 }

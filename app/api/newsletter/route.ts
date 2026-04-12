@@ -80,7 +80,6 @@ export async function POST(
       JSON.stringify({
         event: "newsletter.error",
         message: err instanceof Error ? err.message : String(err),
-        email: payload.email,
       })
     );
 

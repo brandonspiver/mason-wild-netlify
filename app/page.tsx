@@ -212,6 +212,7 @@ export default function HomePage() {
                   alt="Elephant moving through a private conservancy at dusk  -  no other travellers present"
                   width={800}
                   height={1000}
+                  quality={95}
                   className="w-full aspect-[4/5] object-cover object-center transition-transform duration-[900ms] ease-out hover:scale-[1.025]"
                   loading="lazy"
                 />
@@ -270,6 +271,7 @@ export default function HomePage() {
                     alt={j.img.alt}
                     width={600}
                     height={800}
+                    quality={95}
                     className="w-full aspect-[3/4] object-cover object-center transition-transform duration-[850ms] ease-out group-hover:scale-[1.04] group-hover:opacity-[0.87]"
                     loading="lazy"
                   />
@@ -449,6 +451,7 @@ export default function HomePage() {
                   alt="Private tent at dusk  -  lantern light and the savanna beyond"
                   width={750}
                   height={938}
+                  quality={95}
                   className="w-full aspect-[4/5] object-cover object-center transition-transform duration-[900ms] ease-out hover:scale-[1.025]"
                   loading="lazy"
                 />
