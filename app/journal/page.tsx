@@ -318,25 +318,30 @@ export default function JournalPage() {
       </section>
 
       <div className="border-b border-stone-200 bg-page-subtle" aria-label="Journal categories">
-        <div className={`${JOURNAL_SHELL} py-4 md:py-5`}>
-          <div className="flex flex-wrap gap-2 md:gap-3">
-            <Link
-              href="/journal"
-              aria-current="page"
-              className="inline-flex items-center rounded-full border border-stone-900 bg-stone-900 px-4 py-[11px] text-[11px] font-normal tracking-[0.16em] uppercase text-white whitespace-nowrap transition-colors duration-300 hover:bg-stone-800 hover:border-stone-800"
-            >
-              All
-            </Link>
-            {CATEGORY_ORDER.map((cat) => (
+        <div className={JOURNAL_SHELL}>
+          <nav className="overflow-x-auto" aria-label="Journal category navigation">
+            <div className="flex min-w-max items-center py-5 md:py-6">
               <Link
-                key={cat}
-                href={getCategoryHref(cat)}
-                className="inline-flex items-center rounded-full border border-stone-200 bg-page px-4 py-[11px] text-[11px] font-normal tracking-[0.16em] uppercase text-stone-500 whitespace-nowrap transition-all duration-300 hover:border-stone-400 hover:bg-white hover:text-stone-900"
+                href="/journal"
+                aria-current="page"
+                className="relative pb-3 text-2xs font-normal tracking-wide uppercase text-stone-900 transition-colors duration hover:text-forest"
               >
-                {JOURNAL_CATEGORY_LABELS[cat]}
+                All
+                <span className="absolute inset-x-0 bottom-0 h-px bg-stone-900" aria-hidden="true" />
               </Link>
-            ))}
-          </div>
+              {CATEGORY_ORDER.map((cat) => (
+                <div key={cat} className="flex items-center">
+                  <span className="mx-5 h-3 w-px bg-stone-200 md:mx-6" aria-hidden="true" />
+                  <Link
+                    href={getCategoryHref(cat)}
+                    className="relative pb-3 text-2xs font-normal tracking-wide uppercase text-stone-400 whitespace-nowrap transition-colors duration hover:text-stone-900"
+                  >
+                    {JOURNAL_CATEGORY_LABELS[cat]}
+                  </Link>
+                </div>
+              ))}
+            </div>
+          </nav>
         </div>
       </div>
 
@@ -396,8 +401,8 @@ export default function JournalPage() {
                 </Reveal>
                 <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-px bg-stone-200 border border-stone-200">
                   {articles.map((article, i) => (
-                    <Reveal key={article.slug} delay={(i % 3) as 0 | 1 | 2}>
-                      <Link href={`/journal/${article.slug}`} className="group block bg-page hover:bg-page-subtle transition-colors duration-500">
+                    <Reveal key={article.slug} delay={(i % 3) as 0 | 1 | 2} className="h-full">
+                      <Link href={`/journal/${article.slug}`} className="group flex h-full flex-col bg-page hover:bg-page-subtle transition-colors duration-500">
                         <div>
                           {article.img ? (
                             <div className="overflow-hidden">
@@ -415,7 +420,7 @@ export default function JournalPage() {
                           )}
                         </div>
 
-                        <div className="px-6 py-7">
+                        <div className="flex flex-1 flex-col px-6 py-7">
                           <div className="flex items-center gap-3 mb-4 flex-wrap">
                             <time dateTime={article.publishedAt} className="label-tag whitespace-nowrap">{formatDate(article.publishedAt)}</time>
                             <span className="w-px h-3 bg-stone-300" aria-hidden="true" />

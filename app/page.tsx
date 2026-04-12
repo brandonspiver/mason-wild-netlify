@@ -248,7 +248,7 @@ export default function HomePage() {
       <section className="pb-[var(--section-gap)]" aria-labelledby="journeys-heading">
         <div className="container-site">
           <Reveal>
-            <div className="flex items-end justify-between gap-6 mb-12 flex-wrap">
+            <div className="mb-12">
               <div>
                 <p className="label-tag mb-4">Seven Archetypes</p>
                 <h2
@@ -258,9 +258,6 @@ export default function HomePage() {
                   Selected <em>Journeys</em>
                 </h2>
               </div>
-              <p className="text-sm font-light text-stone-400 max-w-[220px] leading-relaxed text-right sm:text-left">
-                These are not packages. They are ways of experiencing Africa.
-              </p>
             </div>
           </Reveal>
 
