@@ -222,7 +222,7 @@ export default function JournalPage() {
           <Reveal>
             <div className="border-y border-stone-200 py-4 mb-10 flex items-center justify-between gap-6">
               <p className="label-tag">Mason &amp; Wild</p>
-              <p className="label-tag text-stone-300">Edition · April 2026</p>
+              <p className="label-tag text-stone-300">Edition &middot; April 2026</p>
             </div>
           </Reveal>
 
