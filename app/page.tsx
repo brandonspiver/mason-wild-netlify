@@ -221,8 +221,9 @@ export default function HomePage() {
                   alt="Elephant moving through a private conservancy at dusk  -  no other travellers present"
                   width={800}
                   height={1000}
-                  quality={95}
-                  className="w-full aspect-[4/5] object-cover object-center transition-transform duration-[900ms] ease-out hover:scale-[1.025]"
+                  quality={88}
+                  sizes="(max-width: 767px) 100vw, 56vw"
+                  className="w-full aspect-[4/5] object-cover object-center transition-transform motion-premium hover:scale-[1.02]"
                   loading="lazy"
                 />
               </div>
@@ -357,7 +358,7 @@ export default function HomePage() {
               alt="Founder portrait  -  Zannon James"
               fill
               sizes="(max-width: 768px) 100vw, 42vw"
-              quality={95}
+              quality={88}
               className="object-cover object-center"
               loading="lazy"
             />
@@ -429,8 +430,9 @@ export default function HomePage() {
                   alt="Private tent at dusk  -  lantern light and the savanna beyond"
                   width={750}
                   height={938}
-                  quality={95}
-                  className="w-full aspect-[4/5] object-cover object-center transition-transform duration-[900ms] ease-out hover:scale-[1.025]"
+                  quality={88}
+                  sizes="(max-width: 767px) 100vw, 55vw"
+                  className="w-full aspect-[4/5] object-cover object-center transition-transform motion-premium hover:scale-[1.02]"
                   loading="lazy"
                 />
               </div>

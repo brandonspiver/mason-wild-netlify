@@ -84,8 +84,9 @@ export function RotatingJourneyCards({ journeys }: RotatingJourneyCardsProps) {
             alt={journey.img.alt}
             width={600}
             height={800}
-            quality={92}
-            className="w-full aspect-[3/4] object-cover object-center transition-transform duration-[900ms] ease-out group-hover:scale-[1.035] group-hover:opacity-[0.9]"
+            quality={88}
+            sizes="(max-width: 767px) 100vw, 33vw"
+            className="w-full aspect-[3/4] object-cover object-center transition-transform motion-premium group-hover:scale-[1.03] group-hover:opacity-[0.9]"
             loading="lazy"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[rgba(14,12,8,0.98)] via-[rgba(14,12,8,0.72)] via-55% to-[rgba(14,12,8,0.18)] flex flex-col justify-end p-7">
@@ -95,7 +96,7 @@ export function RotatingJourneyCards({ journeys }: RotatingJourneyCardsProps) {
             <h3 className="font-serif font-light text-display-sm text-[#fffaf2] leading-[1.1] tracking-[-0.01em] mb-5 [text-shadow:0_2px_14px_rgba(0,0,0,0.9)]">
               The <em>{journey.name.replace("The ", "")}</em>
             </h3>
-            <p className="text-sm font-light text-[#e8ddd0] leading-relaxed mb-5 max-w-[22ch] [text-shadow:0_2px_12px_rgba(0,0,0,0.88)]">
+            <p className="clamp-3 text-sm font-light text-[#e8ddd0] leading-relaxed mb-5 max-w-[22ch] [text-shadow:0_2px_12px_rgba(0,0,0,0.88)]">
               {journey.tagline}
             </p>
             <Link

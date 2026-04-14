@@ -4134,8 +4134,15 @@ export default function ArticlePage({
 
             <div className="min-w-0 xl:max-w-[980px]">
               <Reveal delay={1}>
+                <div className="flex items-center gap-4 mb-5 flex-wrap">
+                  <span className="label-tag text-forest">{JOURNAL_CATEGORY_LABELS[article.category]}</span>
+                  <span className="w-px h-3 bg-stone-300" aria-hidden="true" />
+                  <span className="label-tag">{article.readingTime} min read</span>
+                </div>
+              </Reveal>
+              <Reveal delay={1}>
                 <h1
-                  className="font-serif font-light text-stone-900 text-[clamp(2.55rem,5vw,5.75rem)] leading-[1.02] tracking-[-0.02em] mb-6"
+                  className="font-serif font-light text-stone-900 text-[clamp(2.4rem,4.8vw,5.2rem)] leading-[1.04] tracking-[-0.018em] mb-6"
                   id="article-title"
                 >
                   {articleTitleMarkup}
@@ -4144,7 +4151,7 @@ export default function ArticlePage({
 
               {article.subtitle && (
                 <Reveal delay={2}>
-                  <p className="font-serif font-light italic text-[clamp(1.05rem,1.5vw,1.35rem)] text-stone-500 leading-[1.75] max-w-[720px]">
+                  <p className="font-serif font-light italic text-[clamp(1rem,1.35vw,1.26rem)] text-stone-500 leading-[1.72] max-w-[720px]">
                     {article.subtitle}
                   </p>
                 </Reveal>
@@ -4178,7 +4185,8 @@ export default function ArticlePage({
                   alt={article.img.alt}
                   width={2400}
                   height={1080}
-                  quality={95}
+                  quality={88}
+                  sizes="(max-width: 1279px) 100vw, 90vw"
                   className={
                     article.img.fit === "contain"
                       ? "mx-auto h-auto w-auto max-w-full max-h-[78vh] object-contain"
@@ -4306,7 +4314,8 @@ export default function ArticlePage({
                             alt={block.image.alt}
                             width={1600}
                             height={1000}
-                            quality={95}
+                            quality={86}
+                            sizes="(max-width: 1279px) 100vw, 78vw"
                             className={
                               block.image.fit === "contain"
                                 ? "mx-auto h-auto w-auto max-w-full max-h-[72vh] object-contain"
@@ -4440,8 +4449,9 @@ export default function ArticlePage({
                             alt={journey.img.alt}
                             width={1000}
                             height={760}
-                            quality={95}
-                            className="w-full h-full min-h-[280px] object-cover object-center transition-transform duration-[900ms] ease-out group-hover:scale-[1.04] group-hover:opacity-[0.87]"
+                            quality={86}
+                            sizes="(max-width: 1279px) 100vw, 40vw"
+                            className="w-full h-full min-h-[280px] object-cover object-center transition-transform motion-premium group-hover:scale-[1.03] group-hover:opacity-[0.9]"
                             loading="lazy"
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-[rgba(14,12,8,0.88)] via-[rgba(14,12,8,0.32)] to-transparent flex flex-col justify-end p-7">
@@ -4459,7 +4469,7 @@ export default function ArticlePage({
                           <h3 className="font-serif font-light text-[clamp(1.6rem,2.3vw,2.55rem)] text-stone-900 leading-[1.08] tracking-[-0.014em] mb-5">
                             {journey.name}
                           </h3>
-                          <p className="text-sm md:text-[0.97rem] font-light text-stone-600 leading-[1.9]">
+                          <p className="clamp-3 text-sm md:text-[0.97rem] font-light text-stone-600 leading-[1.9]">
                             {details?.summary ??
                               "A privately designed Mason & Wild journey shaped around pace, privacy, and a clear emotional progression."}
                           </p>

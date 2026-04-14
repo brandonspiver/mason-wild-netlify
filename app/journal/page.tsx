@@ -324,7 +324,7 @@ export default function JournalPage() {
               <Link
                 href="/journal"
                 aria-current="page"
-                className="relative pb-3 text-2xs font-normal tracking-wide uppercase text-stone-900 transition-colors duration hover:text-forest"
+                className="relative pb-3 text-2xs font-normal tracking-wide uppercase text-stone-900 transition-colors motion-premium-fast hover:text-forest"
               >
                 All
                 <span className="absolute inset-x-0 bottom-0 h-px bg-stone-900" aria-hidden="true" />
@@ -334,7 +334,7 @@ export default function JournalPage() {
                   <span className="mx-5 h-3 w-px bg-stone-200 md:mx-6" aria-hidden="true" />
                   <Link
                     href={getCategoryHref(cat)}
-                    className="relative pb-3 text-2xs font-normal tracking-wide uppercase text-stone-400 whitespace-nowrap transition-colors duration hover:text-stone-900"
+                    className="relative pb-3 text-2xs font-normal tracking-wide uppercase text-stone-400 whitespace-nowrap transition-colors motion-premium-fast hover:text-stone-900"
                   >
                     {JOURNAL_CATEGORY_LABELS[cat]}
                   </Link>
@@ -353,13 +353,14 @@ export default function JournalPage() {
               {featured.img && (
                 <div className="overflow-hidden bg-stone-100">
                   <Image src={featured.img.src} alt={featured.img.alt} width={1200} height={800}
-                    quality={95}
-                    className="w-full aspect-[16/11] xl:aspect-auto xl:h-full object-cover object-center transition-transform duration-[900ms] ease-out group-hover:scale-[1.02]"
+                    quality={88}
+                    sizes="(max-width: 1279px) 100vw, 62vw"
+                    className="w-full aspect-[16/11] xl:aspect-auto xl:h-full object-cover object-center transition-transform motion-premium group-hover:scale-[1.02]"
                     priority
                   />
                 </div>
               )}
-              <div className="flex flex-col justify-end px-[clamp(28px,4vw,58px)] py-[clamp(34px,4.2vw,62px)] bg-page-subtle group-hover:bg-stone-100 transition-colors duration-500">
+              <div className="flex flex-col justify-end px-[clamp(28px,4vw,58px)] py-[clamp(34px,4.2vw,62px)] bg-page-subtle group-hover:bg-stone-100 transition-colors motion-premium">
                 <div className="flex items-center gap-4 mb-9 flex-wrap">
                   <span className="label-tag text-forest">Cover Story</span>
                   <span className="w-px h-3 bg-stone-300" aria-hidden="true" />
@@ -367,15 +368,15 @@ export default function JournalPage() {
                   <span className="w-px h-3 bg-stone-300" aria-hidden="true" />
                   <span className="label-tag">{featured.readingTime} min</span>
                 </div>
-                <h2 className="font-serif font-light text-[clamp(2.25rem,3.35vw,3.75rem)] text-stone-900 leading-[1.02] tracking-[-0.02em] mb-6 group-hover:text-forest transition-colors duration-500" id="featured-heading">
+                <h2 className="font-serif font-light text-[clamp(2.25rem,3.35vw,3.75rem)] text-stone-900 leading-[1.02] tracking-[-0.02em] mb-6 group-hover:text-forest transition-colors motion-premium" id="featured-heading">
                   {featured.title}
                 </h2>
-                <p className="text-[clamp(0.93rem,0.96vw,1rem)] font-light text-stone-500 leading-[1.86] mb-11">
+                <p className="clamp-3 text-[clamp(0.93rem,0.96vw,1rem)] font-light text-stone-500 leading-[1.86] mb-11">
                   {featured.excerpt}
                 </p>
                 <div className="flex items-center justify-between gap-6">
                   <time dateTime={featured.publishedAt} className="label-tag">{formatDate(featured.publishedAt)}</time>
-                  <span className="text-2xs font-normal tracking-wide uppercase text-stone-400 border-b border-stone-300 group-hover:text-stone-900 group-hover:border-stone-900 pb-[2px] transition-colors duration-500">
+                  <span className="text-2xs font-normal tracking-wide uppercase text-stone-400 border-b border-stone-300 group-hover:text-stone-900 group-hover:border-stone-900 pb-[2px] transition-colors motion-premium-fast">
                     Read Story
                   </span>
                 </div>
@@ -407,7 +408,7 @@ export default function JournalPage() {
                       delay={(i % 3) as 0 | 1 | 2}
                       className="h-full border-t border-stone-200 first:border-t-0 md:[&:nth-child(-n+2)]:border-t-0 xl:[&:nth-child(-n+3)]:border-t-0 md:border-r md:[&:nth-child(2n)]:border-r-0 xl:border-r xl:[&:nth-child(2n)]:border-r xl:[&:nth-child(3n)]:border-r-0"
                     >
-                      <Link href={`/journal/${article.slug}`} className="group flex h-full flex-col bg-page hover:bg-page-subtle transition-colors duration-500">
+                      <Link href={`/journal/${article.slug}`} className="group flex h-full flex-col bg-page hover:bg-page-subtle transition-colors motion-premium">
                         <div>
                           {article.img ? (
                             <div className="overflow-hidden">
@@ -416,8 +417,9 @@ export default function JournalPage() {
                                 alt={article.img.alt}
                                 width={900}
                                 height={620}
-                                quality={95}
-                                className="w-full aspect-[16/10] object-cover object-center transition-transform duration-[850ms] ease-out group-hover:scale-[1.025]"
+                                quality={86}
+                                sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 33vw"
+                                className="w-full aspect-[16/10] object-cover object-center transition-transform motion-premium group-hover:scale-[1.02]"
                                 loading="lazy"
                               />
                             </div>
@@ -433,13 +435,16 @@ export default function JournalPage() {
                             <span className="label-tag text-stone-300 whitespace-nowrap">{article.readingTime} min</span>
                           </div>
 
-                          <h3 className="font-serif font-light text-[clamp(1.5rem,2vw,2.25rem)] text-stone-900 leading-[1.08] tracking-[-0.014em] mb-4 group-hover:text-forest transition-colors duration-500">
+                          <h3 className="clamp-2 font-serif font-light text-[clamp(1.5rem,2vw,2.25rem)] text-stone-900 leading-[1.08] tracking-[-0.014em] mb-4 group-hover:text-forest transition-colors motion-premium">
                             {article.title}
                           </h3>
 
-                          <p className="text-[clamp(0.9rem,0.9vw,0.96rem)] font-light text-stone-500 leading-[1.8]">
+                          <p className="clamp-3 text-[clamp(0.9rem,0.9vw,0.96rem)] font-light text-stone-500 leading-[1.8]">
                             {article.excerpt}
                           </p>
+                          <span className="mt-6 self-start text-2xs tracking-wide uppercase text-stone-400 border-b border-stone-300 pb-[2px] transition-colors motion-premium-fast group-hover:text-stone-900 group-hover:border-stone-900">
+                            Read Story {"->"}
+                          </span>
                         </div>
                       </Link>
                     </Reveal>

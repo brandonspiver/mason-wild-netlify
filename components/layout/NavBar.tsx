@@ -44,6 +44,11 @@ export function NavBar() {
     pathname === NAV_HREFS.journeys ||
     pathname.startsWith(`${NAV_HREFS.journeys}/`) ||
     pathname === NAV_HREFS.social;
+  const isNavItemActive = (href: string) => {
+    if (href === NAV_HREFS.home) return pathname === NAV_HREFS.home;
+    if (href === NAV_HREFS.journeys) return journeysActive;
+    return pathname === href || pathname.startsWith(`${href}/`);
+  };
 
   const clearJourneysCloseTimer = () => {
     if (journeysCloseTimer.current) {
@@ -154,7 +159,7 @@ export function NavBar() {
                     aria-expanded={journeysOpen}
                     aria-controls="journeys-desktop-menu"
                     className={[
-                      "inline-flex items-center gap-2 text-2xs leading-none font-normal tracking-wide uppercase transition-colors duration-[220ms]",
+                      "inline-flex items-center gap-2 text-2xs leading-none font-normal tracking-wide uppercase transition-colors motion-premium-fast",
                       journeysOpen || journeysActive
                         ? "text-stone-900"
                         : "text-stone-500 hover:text-stone-900",
@@ -163,7 +168,7 @@ export function NavBar() {
                     <span>{label}</span>
                     <span
                       className={[
-                        "text-[9px] leading-none transition-transform duration-[220ms]",
+                        "text-[9px] leading-none transition-transform motion-premium-fast",
                         journeysOpen ? "translate-y-[1px] rotate-180" : "translate-y-0 rotate-0",
                       ].join(" ")}
                       aria-hidden="true"
@@ -175,8 +180,10 @@ export function NavBar() {
                   <Link
                     href={href}
                     className={[
-                      "text-2xs leading-none font-normal tracking-wide uppercase transition-colors duration-[200ms]",
-                      "text-stone-500 hover:text-stone-900",
+                      "text-2xs leading-none font-normal tracking-wide uppercase transition-colors motion-premium-fast",
+                      isNavItemActive(href)
+                        ? "text-stone-900"
+                        : "text-stone-500 hover:text-stone-900",
                     ].join(" ")}
                   >
                     {label}

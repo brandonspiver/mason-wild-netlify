@@ -97,6 +97,7 @@ export const EMOTIONAL_OUTCOMES = {
 export const FEATURED_JOURNEYS = [
   {
     slug:    "the-intimate",
+    href:    "/journeys/the-intimate",
     name:    "The Intimate",
     outcome: "Solitude",
     tagline: "For those who need to disappear. Seclusion within private conservancies.",
@@ -107,6 +108,7 @@ export const FEATURED_JOURNEYS = [
   },
   {
     slug:    "the-untamed",
+    href:    "/journeys/the-untamed",
     name:    "The Untamed",
     outcome: "Connection",
     tagline: "Elemental Africa, experienced at its own pace.",
@@ -117,6 +119,7 @@ export const FEATURED_JOURNEYS = [
   },
   {
     slug:    "the-private-circuit",
+    href:    "/journeys/the-private-circuit",
     name:    "The Private Circuit",
     outcome: "Sovereignty",
     tagline: "Multi-territory. Private air access. Every arrival exclusively yours.",
@@ -127,6 +130,7 @@ export const FEATURED_JOURNEYS = [
   },
   {
     slug:    "the-romantic",
+    href:    "/journeys/the-romantic",
     name:    "The Romantic",
     outcome: "Wonder",
     tagline: "Cinematic moments designed for two. Intimacy before itineraries.",
@@ -137,6 +141,7 @@ export const FEATURED_JOURNEYS = [
   },
   {
     slug:    "the-classic",
+    href:    "/journeys/the-classic",
     name:    "The Classic",
     outcome: "Foundation",
     tagline: "A refined first journey through Southern Africa.",
@@ -147,6 +152,7 @@ export const FEATURED_JOURNEYS = [
   },
   {
     slug:    "the-adventure",
+    href:    "/journeys/the-adventure",
     name:    "The Adventure",
     outcome: "Adventure",
     tagline: "Bold landscapes, private guiding, and the road as part of the pleasure.",
