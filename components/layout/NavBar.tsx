@@ -121,7 +121,7 @@ export function NavBar() {
             width={1075}
             height={453}
             priority
-            className="block h-[36px] w-auto lg:h-[38px]"
+            className="block h-[38px] w-auto -translate-y-[1px] lg:h-[42px]"
           />
         </Link>
 

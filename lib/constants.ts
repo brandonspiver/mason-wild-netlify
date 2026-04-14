@@ -106,6 +106,16 @@ export const FEATURED_JOURNEYS = [
     },
   },
   {
+    slug:    "the-untamed",
+    name:    "The Untamed",
+    outcome: "Connection",
+    tagline: "Elemental Africa, experienced at its own pace.",
+    img: {
+      src: "/journeys/the-untamed-card.png",
+      alt: "Elemental Zambia wilderness and river crossing",
+    },
+  },
+  {
     slug:    "the-private-circuit",
     name:    "The Private Circuit",
     outcome: "Sovereignty",
@@ -123,6 +133,37 @@ export const FEATURED_JOURNEYS = [
     img: {
       src: "/home/the-romantic-card.png",
       alt: "Namibian desert dunes at first light",
+    },
+  },
+  {
+    slug:    "the-classic",
+    name:    "The Classic",
+    outcome: "Foundation",
+    tagline: "A refined first journey through Southern Africa.",
+    img: {
+      src: "/journeys/the-classic/mbano-manor-card.jpg",
+      alt: "Victoria Falls chapter at Mbano Manor",
+    },
+  },
+  {
+    slug:    "the-adventure",
+    name:    "The Adventure",
+    outcome: "Adventure",
+    tagline: "Bold landscapes, private guiding, and the road as part of the pleasure.",
+    img: {
+      src: "/journeys/the-adventure/ZS (5).jpg",
+      alt: "Namibia expedition landscape at golden light",
+    },
+  },
+  {
+    slug:    "the-social-shift",
+    href:    "/the-social",
+    name:    "The Social Shift",
+    outcome: "Connection",
+    tagline: "A private group journey designed around rhythm, style, and shared perspective.",
+    img: {
+      src: "/journeys/the-social.jpg",
+      alt: "South Africa private group social journey setting",
     },
   },
 ] as const;

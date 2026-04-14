@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Reveal } from "@/components/ui/Reveal";
 import { Button } from "@/components/ui/Button";
+import { RotatingJourneyCards } from "@/components/home/RotatingJourneyCards";
 import { HomeNewsletterForm } from "@/components/journal/HomeNewsletterForm";
 import { JsonLd } from "@/lib/jsonld";
 import {
@@ -43,7 +44,7 @@ export default function HomePage() {
       "@type": "ListItem",
       position: index + 1,
       name: journey.name,
-      url: absoluteUrl(`${NAV_HREFS.journeys}/${journey.slug}`),
+      url: absoluteUrl(journey.href ?? `${NAV_HREFS.journeys}/${journey.slug}`),
     })),
   };
 
@@ -270,38 +271,7 @@ export default function HomePage() {
             </div>
           </Reveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-stone-200 border-x border-stone-200">
-            {FEATURED_JOURNEYS.map((j, i) => (
-              <Reveal key={j.slug} delay={(i + 1) as 1|2|3}>
-                <article className="relative overflow-hidden bg-stone-800 group">
-                  <Image
-                    src={j.img.src}
-                    alt={j.img.alt}
-                    width={600}
-                    height={800}
-                    quality={95}
-                    className="w-full aspect-[3/4] object-cover object-center transition-transform duration-[850ms] ease-out group-hover:scale-[1.04] group-hover:opacity-[0.87]"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[rgba(14,12,8,0.98)] via-[rgba(14,12,8,0.72)] via-55% to-[rgba(14,12,8,0.18)] flex flex-col justify-end p-7">
-                    <p className="label-tag text-[#e8ddd0] mb-2 [text-shadow:0_1px_8px_rgba(0,0,0,0.85)]">{j.outcome}</p>
-                    <h3 className="font-serif font-light text-display-sm text-[#fffaf2] leading-[1.1] tracking-[-0.01em] mb-5 [text-shadow:0_2px_14px_rgba(0,0,0,0.9)]">
-                      The <em>{j.name.replace("The ", "")}</em>
-                    </h3>
-                    <p className="text-sm font-light text-[#e8ddd0] leading-relaxed mb-5 max-w-[22ch] [text-shadow:0_2px_12px_rgba(0,0,0,0.88)]">
-                      {j.tagline}
-                    </p>
-                    <Link
-                      href={`${NAV_HREFS.journeys}/${j.slug}`}
-                      className="self-start text-2xs tracking-wide uppercase text-[#fff4e2] border-b border-[#fff4e2]/50 pb-px transition-all duration [text-shadow:0_2px_10px_rgba(0,0,0,0.88)] group-hover:text-white group-hover:border-white"
-                    >
-                      Explore {"->"}
-                    </Link>
-                  </div>
-                </article>
-              </Reveal>
-            ))}
-          </div>
+          <RotatingJourneyCards journeys={FEATURED_JOURNEYS} />
 
           <Reveal>
             <div className="mt-10 text-center">
