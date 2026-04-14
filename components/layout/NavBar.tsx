@@ -103,7 +103,7 @@ export function NavBar() {
     <>
       <header
         className={[
-          "fixed top-0 left-0 right-0 z-[200] h-[72px] flex items-center justify-between",
+          "fixed top-0 left-0 right-0 z-[200] h-[72px] flex items-center justify-between md:grid md:grid-cols-[1fr_auto_1fr] md:items-center",
           "px-[var(--px)] border-b transition-all duration-slow",
           "bg-white/[0.95] border-stone-200 backdrop-blur-md",
         ].join(" ")}
@@ -112,7 +112,7 @@ export function NavBar() {
         {/* Logo */}
         <Link
           href={NAV_HREFS.home}
-          className="inline-flex h-full items-center -translate-y-[3px] md:-translate-y-[4px]"
+          className="inline-flex items-center md:justify-self-start"
           aria-label="Mason & Wild home"
         >
           <Image
@@ -121,13 +121,13 @@ export function NavBar() {
             width={1075}
             height={453}
             priority
-            className="block h-[36px] w-auto sm:h-[40px] md:h-[44px]"
+            className="block h-[36px] w-auto lg:h-[38px]"
           />
         </Link>
 
         {/* Desktop links */}
-        <nav aria-label="Primary navigation">
-          <ul className="hidden md:flex h-full items-center gap-10" role="list">
+        <nav aria-label="Primary navigation" className="justify-self-center">
+          <ul className="hidden md:flex items-center gap-10" role="list">
             {NAV_ITEMS.map(({ label, href }) => (
               <li
                 key={href}
@@ -154,7 +154,7 @@ export function NavBar() {
                     aria-expanded={journeysOpen}
                     aria-controls="journeys-desktop-menu"
                     className={[
-                      "inline-flex items-center gap-2 text-2xs font-normal tracking-wide uppercase transition-colors duration-[220ms]",
+                      "inline-flex items-center gap-2 text-2xs leading-none font-normal tracking-wide uppercase transition-colors duration-[220ms]",
                       journeysOpen || journeysActive
                         ? "text-stone-900"
                         : "text-stone-500 hover:text-stone-900",
@@ -168,14 +168,14 @@ export function NavBar() {
                       ].join(" ")}
                       aria-hidden="true"
                     >
-                      ▾
+                      v
                     </span>
                   </button>
                 ) : (
                   <Link
                     href={href}
                     className={[
-                      "text-2xs font-normal tracking-wide uppercase transition-colors duration-[200ms]",
+                      "text-2xs leading-none font-normal tracking-wide uppercase transition-colors duration-[200ms]",
                       "text-stone-500 hover:text-stone-900",
                     ].join(" ")}
                   >
@@ -229,7 +229,7 @@ export function NavBar() {
         {/* Desktop CTA */}
         <Link
           href={NAV_HREFS.inquire}
-          className="hidden md:inline-flex items-center text-2xs font-normal tracking-wide uppercase text-white bg-forest hover:bg-forest-light px-5 py-[10px] transition-colors duration"
+          className="hidden md:inline-flex items-center justify-self-end text-2xs leading-none font-normal tracking-wide uppercase text-white bg-forest hover:bg-forest-light px-5 py-[10px] transition-colors duration"
         >
           {CTA.inquirePrivately}
         </Link>
