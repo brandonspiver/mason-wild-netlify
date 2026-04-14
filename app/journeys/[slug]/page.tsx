@@ -293,11 +293,10 @@ const JOURNEYS: Record<string, JourneyData> = {
         title: "The River & The Falls",
         body: "End at Victoria Falls Island Lodge in the Island Treehouse Suite, where the final chapter unfolds at a gentler pace. River cruises, game activities, and time at the Falls bring a more celebratory energy, while the setting itself offers privacy, atmosphere, and a strong sense of conclusion.",
         image: {
-          src: "/journeys/the-intimate/victoria-falls-forest-path.jpg",
-          alt: "Victoria Falls River Lodge treetop suite in warm light",
-          position: "center 52%",
-          fit: "contain",
-          maxWidthPx: 1000,
+          src: "/journeys/the-intimate/victoria-falls-river-deck.jpg",
+          alt: "Victoria Falls Island Lodge river deck at golden hour",
+          position: "center 50%",
+          mobilePosition: "center 52%",
         },
       },
       {

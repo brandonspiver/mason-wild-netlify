@@ -1,8 +1,9 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { NAV_LABELS, NAV_HREFS, CTA } from "@/lib/constants";
 
 const NAV_ITEMS = [
@@ -36,6 +37,33 @@ const OVERLAY_ITEMS = [
 export function NavBar() {
   const [open, setOpen]         = useState(false);
   const [journeysOpen, setJourneysOpen] = useState(false);
+  const pathname = usePathname();
+  const journeysItemRef = useRef<HTMLLIElement | null>(null);
+  const journeysCloseTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const journeysActive =
+    pathname === NAV_HREFS.journeys ||
+    pathname.startsWith(`${NAV_HREFS.journeys}/`) ||
+    pathname === NAV_HREFS.social;
+
+  const clearJourneysCloseTimer = () => {
+    if (journeysCloseTimer.current) {
+      clearTimeout(journeysCloseTimer.current);
+      journeysCloseTimer.current = null;
+    }
+  };
+
+  const openJourneysMenu = () => {
+    clearJourneysCloseTimer();
+    setJourneysOpen(true);
+  };
+
+  const closeJourneysMenuSoon = () => {
+    clearJourneysCloseTimer();
+    journeysCloseTimer.current = setTimeout(() => {
+      setJourneysOpen(false);
+      journeysCloseTimer.current = null;
+    }, 90);
+  };
 
   // Lock body scroll when overlay is open
   useEffect(() => {
@@ -43,11 +71,32 @@ export function NavBar() {
     return () => { document.body.style.overflow = ""; };
   }, [open]);
 
+  // Close journeys menu on outside click
+  useEffect(() => {
+    const onPointerDown = (e: PointerEvent) => {
+      if (!journeysItemRef.current) return;
+      if (journeysItemRef.current.contains(e.target as Node)) return;
+      setJourneysOpen(false);
+    };
+
+    document.addEventListener("pointerdown", onPointerDown);
+    return () => document.removeEventListener("pointerdown", onPointerDown);
+  }, []);
+
   // Close on Escape
   useEffect(() => {
-    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setOpen(false); };
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setOpen(false);
+        setJourneysOpen(false);
+      }
+    };
     document.addEventListener("keydown", onKey);
     return () => document.removeEventListener("keydown", onKey);
+  }, []);
+
+  useEffect(() => {
+    return () => clearJourneysCloseTimer();
   }, []);
 
   return (
@@ -72,7 +121,7 @@ export function NavBar() {
             width={1075}
             height={453}
             priority
-            className="h-[38px] w-auto sm:h-[42px] md:h-[46px] md:-translate-y-[1px]"
+            className="h-[38px] w-auto -translate-y-[2px] sm:h-[42px] md:h-[46px]"
           />
         </Link>
 
@@ -82,38 +131,87 @@ export function NavBar() {
             {NAV_ITEMS.map(({ label, href }) => (
               <li
                 key={href}
+                ref={href === NAV_HREFS.journeys ? journeysItemRef : undefined}
                 className={href === NAV_HREFS.journeys ? "relative" : undefined}
-                onMouseEnter={href === NAV_HREFS.journeys ? () => setJourneysOpen(true) : undefined}
-                onMouseLeave={href === NAV_HREFS.journeys ? () => setJourneysOpen(false) : undefined}
+                onMouseEnter={href === NAV_HREFS.journeys ? openJourneysMenu : undefined}
+                onMouseLeave={href === NAV_HREFS.journeys ? closeJourneysMenuSoon : undefined}
               >
-                <Link
-                  href={href}
-                  onFocus={href === NAV_HREFS.journeys ? () => setJourneysOpen(true) : undefined}
-                  className={[
-                    "text-2xs font-normal tracking-wide uppercase transition-colors duration-[200ms]",
-                    "text-stone-500 hover:text-stone-900",
-                  ].join(" ")}
-                >
-                  {label}
-                </Link>
+                {href === NAV_HREFS.journeys ? (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      clearJourneysCloseTimer();
+                      setJourneysOpen((prev) => !prev);
+                    }}
+                    onFocus={openJourneysMenu}
+                    onBlur={closeJourneysMenuSoon}
+                    onKeyDown={(e) => {
+                      if (e.key === "ArrowDown" || e.key === "Enter" || e.key === " ") {
+                        e.preventDefault();
+                        openJourneysMenu();
+                      }
+                    }}
+                    aria-expanded={journeysOpen}
+                    aria-controls="journeys-desktop-menu"
+                    className={[
+                      "inline-flex items-center gap-2 text-2xs font-normal tracking-wide uppercase transition-colors duration-[220ms]",
+                      journeysOpen || journeysActive
+                        ? "text-stone-900"
+                        : "text-stone-500 hover:text-stone-900",
+                    ].join(" ")}
+                  >
+                    <span>{label}</span>
+                    <span
+                      className={[
+                        "text-[9px] leading-none transition-transform duration-[220ms]",
+                        journeysOpen ? "translate-y-[1px] rotate-180" : "translate-y-0 rotate-0",
+                      ].join(" ")}
+                      aria-hidden="true"
+                    >
+                      ▾
+                    </span>
+                  </button>
+                ) : (
+                  <Link
+                    href={href}
+                    className={[
+                      "text-2xs font-normal tracking-wide uppercase transition-colors duration-[200ms]",
+                      "text-stone-500 hover:text-stone-900",
+                    ].join(" ")}
+                  >
+                    {label}
+                  </Link>
+                )}
 
                 {href === NAV_HREFS.journeys && (
                   <div
+                    id="journeys-desktop-menu"
                     className={[
-                      "absolute left-1/2 top-full z-[220] w-max min-w-[214px] -translate-x-1/2 pt-3 transition-all duration-[220ms]",
+                      "absolute left-1/2 top-full z-[220] w-max min-w-[240px] -translate-x-1/2 pt-3 transition-all duration-[240ms] ease-out",
                       journeysOpen
                         ? "pointer-events-auto translate-y-0 opacity-100"
-                        : "pointer-events-none -translate-y-1 opacity-0",
+                        : "pointer-events-none -translate-y-[6px] opacity-0",
                     ].join(" ")}
+                    onMouseEnter={openJourneysMenu}
+                    onMouseLeave={closeJourneysMenuSoon}
                   >
-                    <div className="border border-stone-200 bg-white shadow-[0_18px_40px_rgba(20,16,10,0.08)]">
+                    <div className="border border-stone-200/90 bg-white/95 backdrop-blur-[2px] shadow-[0_20px_44px_rgba(20,16,10,0.09)]">
+                      <div className="border-b border-stone-200 px-4 py-3">
+                        <Link
+                          href={NAV_HREFS.journeys}
+                          onClick={() => setJourneysOpen(false)}
+                          className="text-2xs tracking-[0.14em] uppercase text-stone-500 hover:text-stone-900 transition-colors duration-[200ms]"
+                        >
+                          View All Journeys
+                        </Link>
+                      </div>
                       <div className="flex flex-col p-2">
                         {JOURNEY_MENU_ITEMS.map((item) => (
                           <Link
                             key={item.href}
                             href={item.href}
                             onClick={() => setJourneysOpen(false)}
-                            onBlur={() => setJourneysOpen(false)}
+                            onBlur={closeJourneysMenuSoon}
                             className="px-3.5 py-[12px] font-serif text-[1.03rem] font-light leading-none text-stone-800 transition-colors duration-[220ms] hover:bg-forest hover:text-white focus:bg-forest focus:text-white"
                           >
                             <em>{item.label}</em>
