@@ -1,13 +1,24 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type CSSProperties } from "react";
+import Image from "next/image";
 import { Reveal } from "@/components/ui/Reveal";
+
+type FlowImage = {
+  readonly src: string;
+  readonly alt: string;
+  readonly position?: string;
+  readonly mobilePosition?: string;
+  readonly fit?: "cover" | "contain";
+  readonly maxWidthPx?: number;
+};
 
 type FlowItem = {
   readonly number: string;
   readonly period: string;
   readonly title: string;
   readonly body: string;
+  readonly image?: FlowImage;
 };
 
 type PillarItem = {
@@ -19,6 +30,7 @@ type PillarItem = {
 type JourneySummaryPanelProps = {
   flowIntro: string;
   flow: readonly FlowItem[];
+  flowImages?: readonly FlowImage[];
   definesIntro: string;
   defines: readonly PillarItem[];
   includesIntro: string;
@@ -40,6 +52,7 @@ type JourneySummaryPanelProps = {
 export function JourneySummaryPanel({
   flowIntro,
   flow,
+  flowImages = [],
   definesIntro,
   defines,
   includesIntro,
@@ -137,23 +150,55 @@ export function JourneySummaryPanel({
                 <div className="border-t border-stone-200">
                   {flow.map((phase, index) => (
                     <Reveal key={phase.number} delay={(index % 4) as 0 | 1 | 2 | 3 | 4}>
-                      <div className="grid grid-cols-[56px_1fr] gap-6 border-b border-stone-200 py-8 md:grid-cols-[84px_1fr] md:gap-10 md:py-10">
-                        <div className="flex flex-col items-center">
+                      <div className="grid grid-cols-1 gap-8 border-b border-stone-200 py-8 md:gap-10 md:py-10 lg:grid-cols-[84px_minmax(0,1fr)]">
+                        <div className="flex items-start gap-4 lg:block">
                           <span className="font-serif font-light text-[2rem] leading-none text-stone-300">
                             {phase.number}
                           </span>
-                          {index < flow.length - 1 && (
-                            <span className="mt-5 w-px flex-1 bg-stone-200" aria-hidden="true" />
-                          )}
+                          <div className="lg:mt-6">
+                            <p className="label-tag">{phase.period}</p>
+                          </div>
                         </div>
+
                         <div className="min-w-0">
-                          <p className="label-tag mb-3">{phase.period}</p>
-                          <p className="font-serif font-light text-[clamp(1.8rem,3vw,2.5rem)] leading-[1.02] tracking-[-0.02em] text-stone-900 mb-4">
-                            <em>{phase.title}</em>
-                          </p>
-                          <p className="max-w-[860px] text-sm font-light text-stone-500 leading-relaxed">
-                            {phase.body}
-                          </p>
+                          {(() => {
+                            const image = phase.image ?? flowImages[index];
+                            return (
+                              <div className="grid grid-cols-1 gap-6 xl:grid-cols-[minmax(0,1.3fr)_320px] xl:items-start xl:gap-10">
+                                <div className="min-w-0">
+                                  <p className="font-serif font-light text-[clamp(1.8rem,3vw,2.5rem)] leading-[1.02] tracking-[-0.02em] text-stone-900 mb-4">
+                                    <em>{phase.title}</em>
+                                  </p>
+                                  <p className="max-w-[860px] text-sm font-light text-stone-500 leading-relaxed">
+                                    {phase.body}
+                                  </p>
+                                </div>
+
+                                {image ? (
+                                  <div className="overflow-hidden bg-page-subtle">
+                                    <Image
+                                      src={image.src}
+                                      alt={image.alt}
+                                      width={960}
+                                      height={720}
+                                      quality={95}
+                                      className={[
+                                        "journey-flow-image w-full aspect-[6/4] transition-transform duration-[900ms] ease-out hover:scale-[1.02]",
+                                        image.fit === "contain" ? "object-contain bg-page-subtle" : "object-cover",
+                                      ].join(" ")}
+                                      style={{
+                                        "--flow-pos-mobile": image.mobilePosition ?? image.position ?? "center",
+                                        "--flow-pos-desktop": image.position ?? image.mobilePosition ?? "center",
+                                        maxWidth: image.fit === "contain" && image.maxWidthPx ? `${image.maxWidthPx}px` : undefined,
+                                        marginInline: image.fit === "contain" && image.maxWidthPx ? "auto" : undefined,
+                                      } as CSSProperties}
+                                      loading="lazy"
+                                    />
+                                  </div>
+                                ) : null}
+                              </div>
+                            );
+                          })()}
                         </div>
                       </div>
                     </Reveal>

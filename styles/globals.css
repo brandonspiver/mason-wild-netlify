@@ -204,6 +204,16 @@
     color: #161310;
     border-bottom-color: rgba(76, 71, 64, 0.95);
   }
+
+  .journey-flow-image {
+    object-position: var(--flow-pos-mobile, center);
+  }
+}
+
+@media (min-width: 1280px) {
+  .journey-flow-image {
+    object-position: var(--flow-pos-desktop, var(--flow-pos-mobile, center));
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

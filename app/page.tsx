@@ -56,18 +56,26 @@ export default function HomePage() {
         className="relative min-h-svh flex flex-col justify-end pb-[clamp(56px,10vh,112px)] overflow-hidden"
         aria-label="Mason &amp; Wild  -  private African journeys"
       >
-        <div
-          className="absolute inset-0 bg-cover bg-center animate-[heroZoom_20s_cubic-bezier(0.16,1,0.3,1)_forwards]"
-          style={{
-            backgroundImage: [
-              "linear-gradient(to bottom, rgba(14,12,8,0.10) 0%, rgba(14,12,8,0.00) 22%, rgba(14,12,8,0.40) 65%, rgba(14,12,8,0.80) 100%)",
-              "url('/home/home-hero.jpg')",
-            ].join(", "),
-            backgroundPosition: "center 38%",
-          }}
-          role="img"
-          aria-label="Private African conservancy at golden hour"
-        />
+        <div className="absolute inset-0 overflow-hidden" role="img" aria-label="Private African conservancy at golden hour">
+          <Image
+            src="/home/home-hero.jpg"
+            alt=""
+            fill
+            priority
+            quality={90}
+            sizes="100vw"
+            className="object-cover animate-[heroZoom_20s_cubic-bezier(0.16,1,0.3,1)_forwards]"
+            style={{ objectPosition: "center 38%" }}
+          />
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(to bottom, rgba(14,12,8,0.10) 0%, rgba(14,12,8,0.00) 22%, rgba(14,12,8,0.40) 65%, rgba(14,12,8,0.80) 100%)",
+            }}
+            aria-hidden="true"
+          />
+        </div>
 
         <div className="relative z-10 container-site">
           <h1

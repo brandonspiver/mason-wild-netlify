@@ -232,9 +232,9 @@ const shapeCards: readonly ShapeCard[] = [
     copy:
       "A final morning at your own pace before onward departure. By this stage, the journey should feel fully held, emotionally complete, and far removed from the mechanics of ordinary travel.",
     image: {
-      src: "/journeys/the-social-shift/TA (3).png",
-      alt: "Coastal setting in Cape Town",
-      position: "center 50%",
+      src: "/journeys/the-social-shift/TA (1).png",
+      alt: "Ocean-facing villa view in Cape Town",
+      position: "center 52%",
     },
   },
 ] as const;
@@ -327,18 +327,26 @@ export default function SocialShiftPage() {
         className="relative min-h-svh flex flex-col justify-end pb-[clamp(56px,10vh,104px)] overflow-hidden"
         aria-labelledby="social-shift-heading"
       >
-        <div
-          className="absolute inset-0 bg-cover bg-center animate-[heroZoom_20s_cubic-bezier(0.16,1,0.3,1)_forwards]"
-          style={{
-            backgroundImage: [
-              "linear-gradient(to bottom, rgba(14,12,8,0.12) 0%, rgba(14,12,8,0.08) 18%, rgba(14,12,8,0.46) 62%, rgba(14,12,8,0.88) 100%)",
-              "url('/journeys/the-social-shift/FF (4).jpg')",
-            ].join(", "),
-            backgroundPosition: "center 42%",
-          }}
-          role="img"
-          aria-label="The Social Shift journey setting in South Africa"
-        />
+        <div className="absolute inset-0 overflow-hidden" role="img" aria-label="The Social Shift journey setting in South Africa">
+          <Image
+            src="/journeys/the-social-shift/FF (4).jpg"
+            alt=""
+            fill
+            priority
+            quality={90}
+            sizes="100vw"
+            className="object-cover animate-[heroZoom_20s_cubic-bezier(0.16,1,0.3,1)_forwards]"
+            style={{ objectPosition: "center 42%" }}
+          />
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(to bottom, rgba(14,12,8,0.12) 0%, rgba(14,12,8,0.08) 18%, rgba(14,12,8,0.46) 62%, rgba(14,12,8,0.88) 100%)",
+            }}
+            aria-hidden="true"
+          />
+        </div>
 
         <nav
           className="absolute top-[84px] left-[var(--px)] z-10 flex items-center gap-3"

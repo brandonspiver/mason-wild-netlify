@@ -54,7 +54,7 @@ export function NavBar() {
     <>
       <header
         className={[
-          "fixed top-0 left-0 right-0 z-[200] h-[68px] flex items-center justify-between",
+          "fixed top-0 left-0 right-0 z-[200] h-[72px] flex items-center justify-between",
           "px-[var(--px)] border-b transition-all duration-slow",
           "bg-white/[0.95] border-stone-200 backdrop-blur-md",
         ].join(" ")}
@@ -63,7 +63,7 @@ export function NavBar() {
         {/* Logo */}
         <Link
           href={NAV_HREFS.home}
-          className="inline-flex items-center"
+          className="inline-flex h-full items-center"
           aria-label="Mason & Wild home"
         >
           <Image
@@ -72,13 +72,13 @@ export function NavBar() {
             width={1075}
             height={453}
             priority
-            className="h-[34px] w-auto sm:h-[38px] md:h-[40px]"
+            className="h-[38px] w-auto sm:h-[42px] md:h-[46px] md:-translate-y-[1px]"
           />
         </Link>
 
         {/* Desktop links */}
         <nav aria-label="Primary navigation">
-          <ul className="hidden md:flex items-center gap-10" role="list">
+          <ul className="hidden md:flex h-full items-center gap-10" role="list">
             {NAV_ITEMS.map(({ label, href }) => (
               <li
                 key={href}

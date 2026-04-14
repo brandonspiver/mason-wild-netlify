@@ -15,6 +15,7 @@ type JourneyImage = {
   readonly src: string;
   readonly alt: string;
   readonly position?: string;
+  readonly mobilePosition?: string;
   readonly fit?: "cover" | "contain";
   readonly maxWidthPx?: number;
 };
@@ -42,6 +43,7 @@ type JourneyFlowPhase = {
   readonly period: string;
   readonly title: string;
   readonly body: string;
+  readonly image?: JourneyImage;
 };
 
 type JourneyNarrativePoint = {
@@ -267,24 +269,49 @@ const JOURNEYS: Record<string, JourneyData> = {
         period: "Days 1-3",
         title: "Into the Silence",
         body: "Begin at Jack's Private Camp in the Makgadikgadi, where the landscape feels almost otherworldly in its scale and stillness. Private guiding, meerkat encounters, Bushman walks, and seasonal quad biking create a strong sense of place from the outset, while a helicopter flight, horseback riding, and a 90-minute spa treatment add a softer, more sensual rhythm to the opening days.",
+        image: {
+          src: "/journeys/the-intimate/makgadikgadi-horseback.jpg",
+          alt: "Makgadikgadi horseback experience at sunset",
+          position: "center 56%",
+          mobilePosition: "center 62%",
+        },
       },
       {
         number: "02",
         period: "Days 4-6",
         title: "Deeper into the Delta",
         body: "Continue to Duke's East, where the experience becomes richer, slower, and more immersive. Water-based exploration, game drives, and the quieter texture of the Delta shape this chapter, while one night of fly-camping under the stars becomes the most intimate and elemental moment of the journey.",
+        image: {
+          src: "/journeys/the-intimate/updates/delta-treehouse-suite.jpg",
+          alt: "Duke's East suite framed by Delta forest",
+          position: "center 48%",
+        },
       },
       {
         number: "03",
         period: "Days 7-8",
         title: "The River & The Falls",
         body: "End at Victoria Falls Island Lodge in the Island Treehouse Suite, where the final chapter unfolds at a gentler pace. River cruises, game activities, and time at the Falls bring a more celebratory energy, while the setting itself offers privacy, atmosphere, and a strong sense of conclusion.",
+        image: {
+          src: "/journeys/the-intimate/victoria-falls-forest-path.jpg",
+          alt: "Victoria Falls River Lodge treetop suite in warm light",
+          position: "center 52%",
+          fit: "contain",
+          maxWidthPx: 1000,
+        },
       },
       {
         number: "04",
         period: "Departure",
         title: "Leave Lightly",
         body: "A final morning at your own pace before onward departure. By this stage, the journey should feel seamless, fully held, and entirely removed from the logistics of ordinary travel.",
+        image: {
+          src: "/journeys/the-intimate/victoria-falls-boat-sunset.jpg",
+          alt: "Zambezi river boat at sunset",
+          position: "center 55%",
+          fit: "contain",
+          maxWidthPx: 1000,
+        },
       },
     ],
     accommodationsIntro:
@@ -525,24 +552,44 @@ const JOURNEYS: Record<string, JourneyData> = {
         period: "Days 1-2",
         title: "Arrive Softly",
         body: "Begin in Lusaka with a polished arrival and time to exhale before moving further in. The journey starts quietly and without haste.",
+        image: {
+          src: "/journeys/the-untamed/Latitude 15 (7).png",
+          alt: "Arrival suite at Latitude 15 in Lusaka",
+          position: "center 50%",
+        },
       },
       {
         number: "02",
         period: "Days 3-4",
         title: "Reset the Rhythm",
         body: "At KuKaya, the pace softens. This chapter is designed for recovery, privacy, and the feeling of ordinary life receding properly before safari begins in earnest.",
+        image: {
+          src: "/journeys/the-untamed/KuKaya (12).jpg",
+          alt: "Quiet natural setting at KuKaya",
+          position: "center 50%",
+        },
       },
       {
         number: "03",
         period: "Days 5-7",
         title: "Go Deeper",
         body: "Move into South Luangwa, where the landscape becomes more elemental and the rhythm more instinctive. Guiding deepens, and the journey starts to feel less curated and more lived.",
+        image: {
+          src: "/journeys/the-untamed/Chindeni (5).jpg",
+          alt: "South Luangwa bush landscape at Chindeni",
+          position: "center 50%",
+        },
       },
       {
         number: "04",
         period: "Days 8-9",
         title: "Leave Changed",
         body: "End in a chapter of quieter immersion, where the wild feels closer and the pace more resolved. By departure, the journey should feel coherent, held, and complete.",
+        image: {
+          src: "/journeys/the-untamed/Zungulila (18).jpg",
+          alt: "Sunset atmosphere in South Luangwa",
+          position: "center 52%",
+        },
       },
     ],
     accommodationsIntro:
@@ -791,30 +838,57 @@ const JOURNEYS: Record<string, JourneyData> = {
         period: "Days 1-4",
         title: "Cape Town, Properly",
         body: "Begin at Mount Nelson, where Cape Town opens in a way that feels both elegant and deeply assured. Arrival settles into dinner at Amura at Mount Nelson, followed by a city chapter shaped around private touring, Table Mountain, Kloof Street House, Café Manhattan, Boulders Beach, the drive back via Chapman's Peak, lunch at Mantra Café, a 5:00 PM helicopter flight from the V&A Waterfront, a private champagne sunset yacht cruise, dinner at Marble, and a final free day with private guide time for shopping, beaching, art galleries, and dinner at The Wiggle Room. It is a stylish opening, but never an overworked one.",
+        image: {
+          src: "/journeys/the-romantic/MN 6.jpg",
+          alt: "Mount Nelson opening chapter in Cape Town",
+          position: "center 50%",
+          mobilePosition: "center 46%",
+        },
       },
       {
         number: "02",
         period: "Days 5-6",
         title: "Into the Winelands",
         body: "Continue to Akademie Street in Franschhoek, where the pace slows and the focus shifts to refinement, atmosphere, and a more intimate kind of luxury. This chapter is designed as a soft interlude of village ease, beautiful food and wine, and the feeling of being somewhere chosen with real design and emotional intelligence.",
+        image: {
+          src: "/journeys/the-romantic/AS 10.png",
+          alt: "Franschhoek vineyard atmosphere near Akademie Street",
+          position: "center 52%",
+        },
       },
       {
         number: "03",
         period: "Days 7-10",
         title: "Safari with Depth",
         body: "At Monwana, the journey deepens into the immersive rhythm of Greater Kruger. More than a wildlife stop, this is the point where the outside world falls away and the days begin to move according to light, landscape, and instinct. Very early on day 2 at Monwana, a hot air balloon safari shifts perspective completely before the chapter returns to the richer, slower texture of safari on the ground.",
+        image: {
+          src: "/journeys/the-romantic/MW  (7).jpg",
+          alt: "Monwana safari landscape in Greater Kruger",
+          position: "center 50%",
+        },
       },
       {
         number: "04",
         period: "Days 11-14",
         title: "The Ocean Release",
         body: "End on Benguerra Island, where everything softens into sea air, marine beauty, barefoot privacy, and a more spacious sense of time. The final chapter is designed to feel restorative, atmospheric, and emotionally complete, with the kind of coastal ease that makes an ending feel worthy of the journey that came before it.",
+        image: {
+          src: "/journeys/the-romantic/BBL (1).jpg",
+          alt: "Benguerra Island ocean-facing villa setting",
+          position: "center 50%",
+          mobilePosition: "center 54%",
+        },
       },
       {
         number: "05",
         period: "Departure",
         title: "Leave Softly",
         body: "A final morning at your own pace before onward departure. By this stage, the journey should feel seamless, fully held, and entirely removed from the logistics of ordinary travel.",
+        image: {
+          src: "/journeys/the-romantic/BBL (6).jpg",
+          alt: "Soft final morning on Benguerra Island",
+          position: "center 52%",
+        },
       },
     ],
     accommodationsIntro:
@@ -1161,48 +1235,95 @@ const JOURNEYS: Record<string, JourneyData> = {
         period: "Day 1",
         title: "Arrival in Cape Town",
         body: "Private transfer to The Pineapple House and time to settle in properly before dinner at Asoka sets the tone for the city chapter.",
+        image: {
+          src: "/journeys/the-classic/PineApple House  (4).png",
+          alt: "Arrival atmosphere at The Pineapple House",
+          position: "center 50%",
+          fit: "contain",
+          maxWidthPx: 989,
+        },
       },
       {
         number: "02",
         period: "Day 2",
         title: "Cape Peninsula",
         body: "A private full-day experience through Table Mountain, Chapman's Peak Drive, Cape Point, and Boulders Beach, with lunch at Kloof Street House and the evening left open.",
+        image: {
+          src: "/journeys/the-classic/collage-cape-town-pool.jpg",
+          alt: "Cape Town peninsula and coast chapter",
+          position: "center 52%",
+          mobilePosition: "center 58%",
+        },
       },
       {
         number: "03",
         period: "Day 3",
         title: "City & Coast",
         body: "A more flexible Cape Town day, left open for independent exploring or additional time with your guide, with lunch at The Roundhouse and dinner and drinks at Café Manhattan.",
+        image: {
+          src: "/journeys/the-classic/PineApple House  (7).png",
+          alt: "Cape Town city and coast rhythm",
+          position: "center 50%",
+          fit: "contain",
+          maxWidthPx: 1059,
+        },
       },
       {
         number: "04",
         period: "Day 4",
         title: "Cape Town to Kruger",
         body: "Private transfer and flight into Greater Kruger, arriving at Simbavati Waterside in time for the first afternoon game drive.",
+        image: {
+          src: "/journeys/the-classic/simbavati-waterside-large-suite.jpeg",
+          alt: "Arrival into Greater Kruger at Simbavati Waterside",
+          position: "center 50%",
+        },
       },
       {
         number: "05",
         period: "Days 5-7",
         title: "Safari Experience",
         body: "Twice-daily game drives shape the days, while the time between them is left deliberately open for rest, photography, and settling fully into the slower rhythm of the bush.",
+        image: {
+          src: "/journeys/the-classic/simbavati-waterside-small-boma.jpg",
+          alt: "Simbavati safari rhythm in Greater Kruger",
+          position: "center 50%",
+        },
       },
       {
         number: "06",
         period: "Day 8",
         title: "Kruger to Victoria Falls",
         body: "Fly to Victoria Falls, check in at Mbano Manor, and shift into a softer final chapter with a sunset cruise on the Zambezi.",
+        image: {
+          src: "/journeys/the-classic/mbano-manor-exterior.jpg",
+          alt: "Arrival at Mbano Manor in Victoria Falls",
+          position: "center 50%",
+        },
       },
       {
         number: "07",
         period: "Day 9",
         title: "Victoria Falls",
         body: "A private guided tour of the Falls, followed by a helicopter flight over the gorge and a free afternoon to hold the scale of the experience without further pressure.",
+        image: {
+          src: "/journeys/the-classic/collage-mbano-helicopter-falls.jpg",
+          alt: "Helicopter perspective over Victoria Falls",
+          position: "center 50%",
+          fit: "contain",
+          maxWidthPx: 590,
+        },
       },
       {
         number: "08",
         period: "Day 10",
         title: "Departure",
         body: "Private transfer to the airport for onward departure, with the route closing cleanly and without complication.",
+        image: {
+          src: "/journeys/the-classic/mbano-manor-suite.jpg",
+          alt: "Quiet departure morning at Mbano Manor",
+          position: "center 50%",
+        },
       },
     ],
     accommodationsIntro:
@@ -1476,84 +1597,156 @@ const JOURNEYS: Record<string, JourneyData> = {
         period: "Day 1",
         title: "Cape Town, On Arrival",
         body: "Arrive in Cape Town and settle into Camissa House, where the mountain-facing setting makes the first chapter feel intimate and properly composed. Depending on timing and weather, the journey begins in the air with tandem paragliding from Signal Hill or Lion's Head, before dinner at Asoka sets an assured tone for the days ahead.",
+        image: {
+          src: "/journeys/the-adventure/Camissa House.jpg",
+          alt: "Camissa House opening in Cape Town",
+          position: "center 52%",
+          mobilePosition: "center 58%",
+        },
       },
       {
         number: "02",
         period: "Day 2",
         title: "Mountain Light",
         body: "Begin early with a sunrise hike on Lion's Head or Table Mountain, then return to the city for lunch at Café Caprice in Camps Bay. The afternoon remains at leisure before dinner at Wiggle Room, with the option to add a Table Mountain abseil if you want the day to hold onto its sharper edge.",
+        image: {
+          src: "/journeys/the-adventure/Camissa House Cape Town_7.jpg",
+          alt: "Morning light chapter in Cape Town",
+          position: "center 52%",
+        },
       },
       {
         number: "03",
         period: "Day 3",
         title: "Into The Water",
         body: "Travel with your private guide to Gansbaai for shark cage diving, then return to Cape Town as the light drops. Drinks and dinner at Café Manhattan bring the city chapter to a close with the same social ease and confidence with which it began.",
+        image: {
+          src: "/journeys/the-adventure/Camissa House Cape Town_4.jpg",
+          alt: "Cape Town coastline and water chapter",
+          position: "center 50%",
+        },
       },
       {
         number: "04",
         period: "Day 4",
         title: "Namibia Begins",
         body: "Fly to Windhoek, where you are met on arrival by your private adventure guide. From this point onward, Namibia becomes one continuous overland chapter in a fully equipped 4x4, beginning softly with a night at Zannier Omaanda in the Windhoek Highlands.",
+        image: {
+          src: "/journeys/the-adventure/ZO (10).jpg",
+          alt: "Arrival chapter at Zannier Omaanda",
+          position: "center 52%",
+        },
       },
       {
         number: "05",
         period: "Day 5",
         title: "A Soft Landing In The Highlands",
         body: "Use Omaanda as a true entry into Namibia rather than a pause in transit. This is the moment to reset, settle into the guide-led rhythm ahead, and, where timing allows, explore the reserve through private rhino tracking and a quieter wildlife experience before the road deepens properly.",
+        image: {
+          src: "/journeys/the-adventure/ZO (14).jpg",
+          alt: "Quiet highlands reset at Omaanda",
+          position: "center 50%",
+        },
       },
       {
         number: "06",
         period: "Day 6",
         title: "Into The Namib",
         body: "Continue by road into the Namib Desert, with the sense of scale widening steadily as the terrain simplifies. Arrive at Zannier Sonop, where the journey opens into a more cinematic register of desert light, distance, and polished adventure.",
+        image: {
+          src: "/journeys/the-adventure/ZS (7).jpg",
+          alt: "Entering the Namib at Zannier Sonop",
+          position: "center 50%",
+        },
       },
       {
         number: "07",
         period: "Day 7",
         title: "Sonop In Motion",
         body: "A full day at Sonop gives the desert chapter its proper breadth, with guided 4x4 exploration, hot air ballooning, and the option of horse riding or quad biking layered into the experience without making it feel overworked.",
+        image: {
+          src: "/journeys/the-adventure/ZS (10).jpg",
+          alt: "Adventure day in the Sonop desert chapter",
+          position: "center 50%",
+        },
       },
       {
         number: "08",
         period: "Day 8",
         title: "Desert, Slower",
         body: "A second day at Sonop allows the pace to soften. There is still room for exploration, but this chapter also needs time for the property itself, for long desert views, and for the quieter immersion that turns spectacle into something more inhabitable.",
+        image: {
+          src: "/journeys/the-adventure/ZS (13).jpg",
+          alt: "Slower desert rhythm at Sonop",
+          position: "center 50%",
+        },
       },
       {
         number: "09",
         period: "Day 9",
         title: "Toward Damaraland",
         body: "Travel onward to Damaraland, where the route becomes rougher in tone and more elemental in feeling. Arriving at Wilderness Desert Rhino Camp marks a decisive shift from polished desert glamour into something rarer, more remote, and more purposeful.",
+        image: {
+          src: "/journeys/the-adventure/Wilderness Desert Rhino Camp (4).jpg",
+          alt: "Road into remote Damaraland",
+          position: "center 52%",
+          mobilePosition: "center 46%",
+        },
       },
       {
         number: "10",
         period: "Day 10",
         title: "Tracking With Meaning",
         body: "Spend the day at Desert Rhino Camp with expert monitors, following black rhino through one of Namibia's most extraordinary conservation landscapes. This is not generic game viewing; it is a rarer, more exacting kind of wilderness engagement.",
+        image: {
+          src: "/journeys/the-adventure/Wilderness Desert Rhino Camp (8).jpg",
+          alt: "Conservation-led rhino tracking chapter",
+          position: "center 50%",
+        },
       },
       {
         number: "11",
         period: "Day 11",
         title: "Palmwag After Dark",
         body: "Continue exploring the wider Palmwag landscape through nature drives, guided walks, and the slower observations that this terrain rewards. By night, stargazing becomes part of the experience, reinforcing the remoteness that gives this chapter its real authority.",
+        image: {
+          src: "/journeys/the-adventure/Wilderness Desert Rhino Camp (16).jpg",
+          alt: "Palmwag evening and stargazing atmosphere",
+          position: "center 50%",
+        },
       },
       {
         number: "12",
         period: "Day 12",
         title: "The Final Shift",
         body: "Continue north-east toward the Etosha region and arrive at Little Ongava. After the road journey, the privacy and polish here land differently: not as excess, but as a deeply welcome final settling of the route.",
+        image: {
+          src: "/journeys/the-adventure/Little Ongava (14).jpg",
+          alt: "Arrival at Little Ongava",
+          position: "center 50%",
+        },
       },
       {
         number: "13",
         period: "Day 13",
         title: "Etosha, Properly",
         body: "Safari experiences at Little Ongava bring a final chapter of real payoff, with exclusive access, a more relaxed sense of time, and wildlife encounters that feel heightened by everything the journey has already asked of you.",
+        image: {
+          src: "/journeys/the-adventure/Little Ongava (9).jpg",
+          alt: "Final Etosha safari chapter at Little Ongava",
+          position: "center 50%",
+        },
       },
       {
         number: "14",
         period: "Day 14",
         title: "Leave From Depth",
         body: "A final morning in Namibia before onward departure. By this stage, the journey should feel expansive, seamless, and fully lived in rather than simply completed.",
+        image: {
+          src: "/journeys/the-adventure/Little Ongava (6).jpg",
+          alt: "Final morning departure from Little Ongava",
+          position: "center 52%",
+        },
       },
     ],
     accommodationsIntro:
@@ -1846,36 +2039,72 @@ const JOURNEYS: Record<string, JourneyData> = {
         period: "Days 1-2",
         title: "Settle In Properly",
         body: "Begin at Siringit Villa, where the first two nights are designed to create ease, privacy, and a gentler entry into the journey. Before the movement of safari begins, there is time to settle, reset, and let the trip start with proper calm rather than momentum.",
+        image: {
+          src: "/journeys/the-private-circuit/SV (14).jpg",
+          alt: "Settling in at Siringit Villa",
+          position: "center 52%",
+        },
       },
       {
         number: "02",
         period: "Days 3-4",
         title: "Into Tarangire",
         body: "Continue to Siringit Tarangire Camp, where four private game drives reveal one of Tanzania's most textured national parks. Elephant herds, baobab silhouettes, and a denser, more earthbound landscape give this chapter a strong sense of depth and place.",
+        image: {
+          src: "/journeys/the-private-circuit/ST (1).png",
+          alt: "Tarangire chapter at Siringit Camp",
+          position: "center 50%",
+        },
       },
       {
         number: "03",
         period: "Days 5-6",
         title: "Serengeti in Motion",
         body: "At Siringit Migration Camp, the Serengeti opens into something broader, lighter, and more dynamic. Private game drives take on a greater sense of scale here, while the hot air balloon experience adds an aerial perspective that changes the emotional register of the stay entirely.",
+        image: {
+          src: "/journeys/the-private-circuit/SM (19).jpg",
+          alt: "Serengeti migration chapter with balloon perspective",
+          position: "center 56%",
+          mobilePosition: "center 44%",
+        },
       },
       {
         number: "04",
         period: "Days 7-8",
         title: "A More Settled Safari Finish",
         body: "End the safari at Siringit Serengeti Camp, where the final bush chapter feels steadier and more fully absorbed into the rhythm of the plains. By this point, the landscape no longer feels new. It feels inhabited, understood, and properly part of the journey.",
+        image: {
+          src: "/journeys/the-private-circuit/SS (9).jpg",
+          alt: "Settled Serengeti finish at Siringit Serengeti Camp",
+          position: "center 50%",
+        },
       },
       {
         number: "05",
         period: "Days 9-12",
         title: "The Ocean Release",
         body: "Fly on to Xanadu in Zanzibar, where the final chapter softens into sea air, villa privacy, private sunset dhow cruising, and a more spacious sense of time. After the movement and scale of safari, the island is there to restore, lighten, and bring the journey to a beautifully intimate close.",
+        image: {
+          src: "/journeys/the-private-circuit/XI (8).png",
+          alt: "Ocean release chapter at Xanadu Zanzibar",
+          position: "center 50%",
+          mobilePosition: "center 56%",
+          fit: "contain",
+          maxWidthPx: 1100,
+        },
       },
       {
         number: "06",
         period: "Departure",
         title: "Leave Well Held",
         body: "A final morning at your own pace before onward departure. By this stage, the journey should feel seamless, complete, and entirely removed from the mechanics of ordinary travel.",
+        image: {
+          src: "/journeys/the-private-circuit/XI (6).png",
+          alt: "Final morning at Xanadu before departure",
+          position: "center 52%",
+          fit: "contain",
+          maxWidthPx: 1167,
+        },
       },
     ],
     accommodationsIntro:
@@ -2208,18 +2437,26 @@ export default function JourneyDetailPage({
         className="relative min-h-svh flex flex-col justify-end pb-[clamp(52px,9vh,96px)] overflow-hidden"
         aria-labelledby="journey-name"
       >
-        <div
-          className="absolute inset-0 bg-cover bg-center animate-[heroZoom_20s_cubic-bezier(0.16,1,0.3,1)_forwards]"
-          style={{
-            backgroundImage: [
-              "linear-gradient(to bottom, rgba(14,12,8,0.08) 0%, rgba(14,12,8,0.0) 20%, rgba(14,12,8,0.45) 62%, rgba(14,12,8,0.85) 100%)",
-              `url('${journey.heroImg.src}')`,
-            ].join(", "),
-            backgroundPosition: journey.heroImg.position ?? "center 40%",
-          }}
-          role="img"
-          aria-label={journey.heroImg.alt}
-        />
+        <div className="absolute inset-0 overflow-hidden" role="img" aria-label={journey.heroImg.alt}>
+          <Image
+            src={journey.heroImg.src}
+            alt=""
+            fill
+            priority
+            quality={90}
+            sizes="100vw"
+            className="object-cover animate-[heroZoom_20s_cubic-bezier(0.16,1,0.3,1)_forwards]"
+            style={{ objectPosition: journey.heroImg.position ?? "center 40%" }}
+          />
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(to bottom, rgba(14,12,8,0.08) 0%, rgba(14,12,8,0.0) 20%, rgba(14,12,8,0.45) 62%, rgba(14,12,8,0.85) 100%)",
+            }}
+            aria-hidden="true"
+          />
+        </div>
 
         <nav
           className="absolute top-[84px] left-[var(--px)] z-10 flex items-center gap-3"
@@ -2418,6 +2655,7 @@ export default function JourneyDetailPage({
       <JourneySummaryPanel
         flowIntro={journey.flowIntro}
         flow={journey.flow}
+        flowImages={carouselImages}
         definesIntro={journey.pillarsIntro}
         defines={journey.pillars}
         includesIntro={journey.includesIntro}
