@@ -17,7 +17,7 @@ import {
 import { absoluteUrl, buildPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Private African Journeys for LGBTQ+ Travellers",
+  title: "Luxury African Journeys for LGBTQ+ Travellers",
   description: PRIMARY_POSITIONING_LINE,
   path: "/",
 });
@@ -26,7 +26,7 @@ export default function HomePage() {
   const homepageSchema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "Private African Journeys for LGBTQ+ Travellers",
+    name: "Luxury African Journeys for LGBTQ+ Travellers",
     description: PRIMARY_POSITIONING_LINE,
     url: absoluteUrl("/"),
     isPartOf: {
@@ -44,7 +44,7 @@ export default function HomePage() {
       "@type": "ListItem",
       position: index + 1,
       name: journey.name,
-      url: absoluteUrl(journey.href ?? `${NAV_HREFS.journeys}/${journey.slug}`),
+      url: absoluteUrl(journey.href),
     })),
   };
 
@@ -89,10 +89,10 @@ export default function HomePage() {
               "animate-[fadeRise_0.9s_cubic-bezier(0.16,1,0.3,1)_0.3s_forwards]",
             ].join(" ")}
           >
-            <span className="block">Privately designed</span>
-            <span className="block">African journeys</span>
-            <span className="block">for discerning</span>
-            <em className="block">LGBTQ+ travellers.</em>
+            <span className="block">Luxury African journeys</span>
+            <span className="block">for LGBTQ+ travellers</span>
+            <span className="block">who want privacy, beauty,</span>
+            <em className="block">and nothing performative.</em>
           </h1>
 
           <p
@@ -103,9 +103,9 @@ export default function HomePage() {
               "animate-[fadeRise_0.9s_cubic-bezier(0.16,1,0.3,1)_0.52s_forwards]",
             ].join(" ")}
           >
-            Absolute discretion. Vetted territories.
-            Every journey built around who you are,
-            not what is available.
+            Mason &amp; Wild designs deeply considered journeys across
+            Southern and Eastern Africa for clients who want to feel
+            safe, understood, and exceptionally well looked after.
           </p>
 
           <div
@@ -116,7 +116,7 @@ export default function HomePage() {
             ].join(" ")}
           >
             <Button href={NAV_HREFS.experience} variant="primary">
-              {CTA.beginJourney}
+              Start Your Journey
             </Button>
             <Button
               href={NAV_HREFS.journeys}
@@ -124,7 +124,7 @@ export default function HomePage() {
               arrow={false}
               className="hover:text-[#4b8059] hover:border-[#4b8059]"
             >
-              {CTA.viewCollection}
+              Explore the Collection
             </Button>
           </div>
         </div>
@@ -163,22 +163,23 @@ export default function HomePage() {
 
             <div>
               <Reveal>
-                <p className="label-tag mb-6">The Mason &amp; Wild Difference</p>
+                <p className="label-tag mb-6">Africa, edited properly.</p>
               </Reveal>
               <Reveal delay={1}>
                 <h2
                   className="font-serif font-light text-display-lg text-stone-900 mb-6"
                   id="intro-heading"
                 >
-                  Luxury is the absence<br />
-                  of unnecessary <em>compromise.</em>
+                  Africa,
+                  <br />
+                  edited <em>properly.</em>
                 </h2>
               </Reveal>
               <Reveal delay={2}>
                 <p className="text-base font-light text-stone-500 leading-relaxed max-w-[440px] mb-9">
-                  We design private African journeys for travellers who want
-                  to move through the world on their own terms. Our journeys
-                  are built from a single brief: yours.
+                  The best journeys do not overwhelm. They do not confuse
+                  luxury with excess. Mason &amp; Wild creates high-touch
+                  African travel with confidence, clarity, and precise fit.
                 </p>
               </Reveal>
               <Reveal delay={3}>
@@ -187,7 +188,7 @@ export default function HomePage() {
                   variant="ghost"
                   className="hover:text-[#4b8059] hover:border-[#4b8059]"
                 >
-                  {CTA.theExperience}
+                  The Experience
                 </Button>
               </Reveal>
             </div>
@@ -228,26 +229,26 @@ export default function HomePage() {
                 />
               </div>
               <div className="px-0 md:px-[clamp(36px,5.5vw,72px)] pt-10 md:pt-0">
-                <p className="label-tag mb-5">Exclusivity Details</p>
+                <p className="label-tag mb-5">Vetted Through Real Experience</p>
                 <h2
                   className="font-serif font-light text-display-md text-stone-900 mb-5"
                   id="feature-conservancy"
                 >
-                  Private conservancies<br />
-                  and <em>closed-access</em><br />
-                  reserves.
+                  Vetted through
+                  <br />
+                  real <em>experience.</em>
                 </h2>
                 <p className="text-base font-light text-stone-500 leading-relaxed mb-8">
-                  By securing access to restricted territories, we eliminate
-                  the visual noise of traditional tourism. Your journey is
-                  defined by the rhythm of the wild, not the schedule of others.
+                  We recommend places because they hold up in real life.
+                  The difference between good and exceptional is felt in the
+                  service, atmosphere, and how fully you can relax.
                 </p>
                 <Button
                   href={NAV_HREFS.journeys}
                   variant="ghost"
                   className="hover:text-[#4b8059] hover:border-[#4b8059]"
                 >
-                  Explore Our Territories
+                  Explore the Collection
                 </Button>
               </div>
             </div>
@@ -261,12 +262,12 @@ export default function HomePage() {
           <Reveal>
             <div className="mb-12">
               <div>
-                <p className="label-tag mb-4">Seven Archetypes</p>
+                <p className="label-tag mb-4">The Collection</p>
                 <h2
                   className="font-serif font-light text-display-lg text-stone-900"
                   id="journeys-heading"
                 >
-                  Selected <em>Journeys</em>
+                  The <em>Collection</em>
                 </h2>
               </div>
             </div>
@@ -298,17 +299,19 @@ export default function HomePage() {
 
             <Reveal>
               <div>
-                <p className="label-tag mb-5">Inclusive Intelligence</p>
+                <p className="label-tag mb-5">What We Do Not Do</p>
                 <h2
                   className="font-serif font-light text-display-md text-stone-900 mb-5"
                   id="diff-heading"
                 >
-                  Discretion and belonging<br />
-                  <em>are not in tension.</em>
+                  Luxury is
+                  <br />
+                  what gets <em>removed.</em>
                 </h2>
                 <p className="text-base font-light text-stone-500 leading-relaxed mb-9">
-                  We hold both as operational standards  -  not aspirations.
-                  This is what every element of our network is built to deliver.
+                  We do not build crowded, generic safari circuits. We do not
+                  recommend places because they are fashionable. We only design
+                  journeys that make sense.
                 </p>
                 <Button
                   href={NAV_HREFS.experience}
@@ -386,24 +389,17 @@ export default function HomePage() {
               className="font-serif font-light text-display-md text-stone-900 mb-7 tracking-[-0.01em]"
               id="founder-heading"
             >
-              Zannon James
+              Meet Zannon James
             </h2>
             <p className="font-serif italic font-light text-[clamp(1.0625rem,1.7vw,1.3125rem)] text-stone-800 leading-[1.56] mb-6">
-              Travel should not require a choice between luxury
-              and your authentic self. I built Mason &amp; Wild to remove
-              that choice entirely.
+              Mason &amp; Wild is shaped by founder Zannon James, whose work
+              across African travel is rooted in curation, judgment, and fit.
             </p>
             <p className="text-base font-light text-stone-500 leading-[1.85] mb-10">
-              Zannon has built his career across Africa&apos;s luxury travel world,
-              with experience spanning hotel concierge, travel consulting,
-              safari planning, lodge-side commerce, and on-the-ground product.
-              He has spent years designing and shaping journeys for high-net-worth
-              individuals and discerning travellers who value substance,
-              discretion, and exceptional execution. That depth gives Mason &amp; Wild
-              a level of expertise grounded in real operating knowledge, not just
-              sales language. Every journey is curated under his direct oversight,
-              with each property, routing, and local handler selected to meet the
-              brand&apos;s standard for trust, discretion, and high-touch luxury.
+              His approach is simple: design the right version of Africa for each
+              client. One that feels considered, effortless, and entirely aligned.
+              The work is selective by design, with every recommendation tested
+              against privacy, service quality, and emotional coherence.
             </p>
             <Button
               href={NAV_HREFS.about}
@@ -437,19 +433,19 @@ export default function HomePage() {
                 />
               </div>
               <div className="md:order-1 pt-10 md:pt-0 md:pr-[clamp(36px,5.5vw,72px)]">
-                <p className="label-tag mb-5">The Romantic</p>
+                <p className="label-tag mb-5">How It Works</p>
                 <h2
                   className="font-serif font-light text-display-md text-stone-900 mb-5"
                   id="feature-romantic-heading"
                 >
-                  Cinematic moments<br />
-                  designed for <em>two.</em>
+                  A considered
+                  <br />
+                  process that feels <em>effortless.</em>
                 </h2>
                 <p className="text-base font-light text-stone-500 leading-relaxed mb-8">
-                  Sleep beneath the Namibian sky, dine on private sundowners
-                  at the edge of the Victoria Falls, and enter the luxury
-                  of unhurried time together. Designed around intimacy,
-                  not itineraries.
+                  We begin by understanding how you want to travel. We design
+                  around fit, not volume. We refine every detail properly.
+                  You travel with complete confidence.
                 </p>
                 <Button
                   href={`${NAV_HREFS.journeys}/the-romantic`}
@@ -467,18 +463,20 @@ export default function HomePage() {
       {/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ CTA band ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */}
       <section className="bg-forest px-[var(--px)] py-[clamp(72px,10vw,120px)] text-center">
         <Reveal>
-          <p className="label-tag text-white/36 mb-5">Private Onboarding</p>
+          <p className="label-tag text-white/36 mb-5">Private Enquiry</p>
           <h2 className="font-serif font-light text-display-2xl text-white mb-5 tracking-tighter">
-            Begin<br /><em>Your Journey.</em>
+            The right journey should feel
+            <br />
+            <em>obvious once you see it.</em>
           </h2>
           <p className="text-base font-light text-white/50 leading-relaxed max-w-[420px] mx-auto mb-12">
-            We take on a limited number of journeys each month.
-            Our process is personal and unhurried  -  beginning
-            with a single conversation.
+            If you are looking for an African travel experience that feels
+            private, refined, and fully considered, we would love to
+            design it with you.
           </p>
           <div className="flex items-center justify-center gap-8 flex-wrap">
             <Button href={NAV_HREFS.inquire} variant="outline-light">
-              {CTA.requestPrivateAccess}
+              Start Your Journey
             </Button>
             <Button
               href={NAV_HREFS.journeys}

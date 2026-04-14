@@ -7,7 +7,7 @@
 export const BRAND_NAME = "Mason & Wild" as const;
 
 export const PRIMARY_POSITIONING_LINE =
-  "Privately designed African journeys for discerning LGBTQ+ travellers." as const;
+  "Luxury African journeys for LGBTQ+ travellers who value privacy, beauty, and precision." as const;
 
 export const BRAND_DESCRIPTOR = "The Silent Observer" as const;
 
@@ -63,23 +63,23 @@ export const CTA = {
 export const DIFFERENTIATORS = [
   {
     key: "safetyIntelligence",
-    label: "LGBTQ+ Safety Intelligence",
-    body:  "We assess every destination for safety, legal standing, and suitability before it enters our collection. You should never have to do that work yourself.",
+    label: "You Are Understood Properly",
+    body:  "LGBTQ+ travel is operational in how we plan, advise, and curate. Comfort, privacy, and local context are built into every decision.",
   },
   {
     key: "discreteRouting",
-    label: "Discreet Routing",
-    body:  "Private transfers, secluded arrivals, and lodge placements chosen for their distance from public access. Your presence in each destination is entirely your own.",
+    label: "We Filter Everything",
+    body:  "Not every hotel, destination, or experience earns its place. We remove what does not belong, so the journey stays coherent.",
   },
   {
     key: "vettedEcosystem",
-    label: "Vetted Ecosystem",
-    body:  "Every lodge, guide, and operator in our network is personally vetted. We work only with partners who share our commitment to privacy and genuine welcome.",
+    label: "Real Regional Knowledge",
+    body:  "Recommendations are shaped by lived experience and trusted relationships on the ground, not supplier copy or trend cycles.",
   },
   {
     key: "privateByDesign",
-    label: "Private by Design",
-    body:  "We do not work from templates. Each journey is built from a direct conversation about what you are looking for  -  and what you would prefer to leave behind.",
+    label: "A Coherent Journey",
+    body:  "Luxury is not more. It is what has been refined. Every chapter flows with intention, pace, and emotional precision.",
   },
 ] as const;
 
@@ -100,7 +100,7 @@ export const FEATURED_JOURNEYS = [
     href:    "/journeys/the-intimate",
     name:    "The Intimate",
     outcome: "Solitude",
-    tagline: "For those who need to disappear. Seclusion within private conservancies.",
+    tagline: "For clients who need quiet, privacy, and no performative safari noise.",
     img: {
       src: "/home/the-intimate.jpg",
       alt: "Okavango Delta at dawn  -  still water and open sky",
@@ -111,7 +111,7 @@ export const FEATURED_JOURNEYS = [
     href:    "/journeys/the-untamed",
     name:    "The Untamed",
     outcome: "Connection",
-    tagline: "Elemental Africa, experienced at its own pace.",
+    tagline: "Elemental Africa with proper guiding, pace, and emotional depth.",
     img: {
       src: "/journeys/the-untamed-card.png",
       alt: "Elemental Zambia wilderness and river crossing",
@@ -122,7 +122,7 @@ export const FEATURED_JOURNEYS = [
     href:    "/journeys/the-private-circuit",
     name:    "The Private Circuit",
     outcome: "Sovereignty",
-    tagline: "Multi-territory. Private air access. Every arrival exclusively yours.",
+    tagline: "Multi-territory routing with private handling and seamless transitions.",
     img: {
       src: "/home/private-circuit.jpg",
       alt: "Remote wilderness and dramatic sky",
@@ -133,7 +133,7 @@ export const FEATURED_JOURNEYS = [
     href:    "/journeys/the-romantic",
     name:    "The Romantic",
     outcome: "Wonder",
-    tagline: "Cinematic moments designed for two. Intimacy before itineraries.",
+    tagline: "Cinematic travel for two, designed around intimacy rather than volume.",
     img: {
       src: "/home/the-romantic-card.png",
       alt: "Namibian desert dunes at first light",
@@ -144,7 +144,7 @@ export const FEATURED_JOURNEYS = [
     href:    "/journeys/the-classic",
     name:    "The Classic",
     outcome: "Foundation",
-    tagline: "A refined first journey through Southern Africa.",
+    tagline: "A refined first journey through Southern Africa, edited properly.",
     img: {
       src: "/journeys/the-classic/mbano-manor-card.jpg",
       alt: "Victoria Falls chapter at Mbano Manor",
@@ -155,7 +155,7 @@ export const FEATURED_JOURNEYS = [
     href:    "/journeys/the-adventure",
     name:    "The Adventure",
     outcome: "Adventure",
-    tagline: "Bold landscapes, private guiding, and the road as part of the pleasure.",
+    tagline: "Bold landscapes, private guiding, and route design that still feels elegant.",
     img: {
       src: "/journeys/the-adventure/ZS (5).jpg",
       alt: "Namibia expedition landscape at golden light",
@@ -166,7 +166,7 @@ export const FEATURED_JOURNEYS = [
     href:    "/the-social",
     name:    "The Social Shift",
     outcome: "Connection",
-    tagline: "A private group journey designed around rhythm, style, and shared perspective.",
+    tagline: "A private group journey shaped by rhythm, style, and strong curation.",
     img: {
       src: "/journeys/the-social.jpg",
       alt: "South Africa private group social journey setting",
@@ -214,16 +214,16 @@ export const SOCIAL_COPY = {
 
 export const INQUIRY_COPY = {
   pageSubhead:
-    "We take on a limited number of journeys each month to ensure each one receives the attention it deserves. Our process is personal and unhurried.",
+    "Private African travel, designed around who you are and how you want to move through the world. Mason & Wild creates privately designed journeys for travellers who value discretion, strong curation, and the confidence of being understood properly from the start.",
   processBody:
-    "Each journey begins with a conversation. We do not offer packages  -  we design itineraries around a specific brief. Once we receive your enquiry, a member of our team will review it carefully before responding.",
+    "This is not a generic enquiry form. It is the start of a private design process. We work with a limited number of clients and assess every brief through pace, privacy, and destination fit before we recommend anything.",
   fullNameLabel:       "Full Name",
-  fullNamePlaceholder: "As it appears on your travel document",
+  fullNamePlaceholder: "How you would like us to address you",
   emailLabel:          "Email",
-  emailPlaceholder:    "For private correspondence",
-  durationLabel:       "Intended Duration",
-  narrativeLabel:      "What you are looking for",
-  narrativePlaceholder:"Tell us about a landscape or feeling you have been seeking.",
+  emailPlaceholder:    "For private correspondence only",
+  durationLabel:       "Preferred Journey Length",
+  narrativeLabel:      "A few details to shape your journey properly",
+  narrativePlaceholder:"Share who is travelling, when you are considering, and what matters most.",
   availabilityHeading: "Seasonal Availability",
   contactLine:         "hello@masonandwild.com",
 } as const;

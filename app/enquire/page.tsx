@@ -1,13 +1,13 @@
 ﻿import type { Metadata } from "next";
 import { Reveal } from "@/components/ui/Reveal";
 import { InquiryForm } from "@/components/inquiry/InquiryForm";
-import { INQUIRY_COPY, CTA } from "@/lib/constants";
+import { INQUIRY_COPY } from "@/lib/constants";
 import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildPageMetadata({
   title: "Enquire",
   description:
-    "Begin a private journey with Mason & Wild. Every enquiry is reviewed personally. Our process is personal and unhurried.",
+    "Begin your private journey with Mason & Wild. This is the start of a selective, trust-led design process shaped around privacy and fit.",
   path: "/enquire",
 });
 
@@ -23,16 +23,15 @@ export default function EnquirePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-[clamp(48px,7vw,96px)] items-end">
             <div>
               <Reveal>
-                <p className="label-tag mb-7">Private Onboarding</p>
+                <p className="label-tag mb-7">Start Your Journey</p>
               </Reveal>
               <Reveal delay={1}>
                 <h1
                   className="font-serif font-light text-display-2xl text-stone-900"
                   id="enquire-heading"
                 >
-                  The luxury of<br />
-                  <em>undivided</em><br />
-                  attention.
+                  Begin Your<br />
+                  <em>Journey</em>
                 </h1>
               </Reveal>
             </div>
@@ -63,13 +62,13 @@ export default function EnquirePage() {
                   </div>
 
                   <div className="border-t border-white/35 py-8">
-                    <p className="label-tag text-white/45 mb-5">What Helps</p>
+                    <p className="label-tag text-white/45 mb-5">Who This Is For</p>
                     <div className="flex flex-col gap-0">
                       {[
-                        "The kind of landscape or feeling you are drawn to  -  not a destination list.",
-                        "Whether you are travelling alone, with a partner, or in a small private party.",
-                        "A rough sense of when you have in mind, and how long.",
-                        "Anything particular you would like us to know.",
+                        "For travellers who value privacy, discretion, and strong curation, including LGBTQ+ guests seeking practical reassurance.",
+                        "For couples, private groups, and discerning individuals who want a journey shaped around them.",
+                        "Not for lowest-price shopping or instant quotes without a proper brief.",
+                        "Not for high-volume itinerary comparisons across multiple agencies.",
                       ].map((line, i) => (
                         <div
                           key={i}
@@ -92,7 +91,7 @@ export default function EnquirePage() {
                       {INQUIRY_COPY.contactLine}
                     </a>
                     <p className="text-sm font-light text-white leading-relaxed mt-3">
-                      {CTA.formResponseNote}
+                      Once your enquiry is received, it is reviewed personally. If there is strong fit, we respond with clear next steps within 24 to 48 hours.
                     </p>
                   </div>
 

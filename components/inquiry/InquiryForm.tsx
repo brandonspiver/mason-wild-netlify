@@ -84,19 +84,18 @@ export function InquiryForm() {
   if (submitState === "success") {
     return (
       <div className="flex flex-col gap-6 py-2">
-        <p className="label-tag">Enquiry Received</p>
+        <p className="label-tag">Private Enquiry Received</p>
         <p className="font-serif font-light text-display-sm text-stone-900 leading-[1.45] tracking-[-0.01em]">
           Thank you,{" "}
           <em>{form.name.split(" ")[0] || "thank you"}</em>.
         </p>
         <p className="text-base font-light text-stone-500 leading-relaxed max-w-[480px]">
-          Your enquiry has been received. A specialist will review it
-          personally and respond within 24-48 hours via the address
-          you provided.
+          Thank you for sharing your brief. Your enquiry has been received and
+          will be reviewed personally. If there is strong fit, we will respond
+          within 24-48 hours via the address you provided.
         </p>
         <p className="text-base font-light text-stone-500 leading-relaxed max-w-[480px]">
-          If you have questions in the meantime, write to us directly
-          at{" "}
+          If you need anything in the meantime, write to us directly at{" "}
           <a
             href={`mailto:${INQUIRY_COPY.contactLine}`}
             className="text-stone-700 border-b border-stone-300 hover:border-stone-700 pb-px transition-colors duration"
@@ -249,7 +248,7 @@ export function InquiryForm() {
             "disabled:opacity-50 disabled:cursor-not-allowed",
           ].join(" ")}
         >
-          {submitState === "submitting" ? "Sending..." : CTA.requestPrivateAccess}
+          {submitState === "submitting" ? "Sending..." : "Start Your Private Enquiry"}
           {submitState !== "submitting" && (
             <span aria-hidden="true">-&gt;</span>
           )}
@@ -276,8 +275,8 @@ export function InquiryForm() {
       {/* Error */}
       {submitState === "error" && (
         <p className="text-sm font-light text-stone-500 leading-relaxed border-l-2 border-stone-300 pl-4">
-          Something went wrong. Please try again or write to us directly
-          at{" "}
+          We could not submit your enquiry just now. Please try again, or write
+          to us directly at{" "}
           <a
             href={`mailto:${INQUIRY_COPY.contactLine}`}
             className="text-stone-700 border-b border-stone-300 hover:border-stone-700 pb-px transition-colors duration"

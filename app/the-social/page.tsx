@@ -10,7 +10,7 @@ import { buildPageMetadata } from "@/lib/seo";
 export const metadata: Metadata = buildPageMetadata({
   title: "The Social Shift",
   description:
-    "A 12-night South Africa journey for six guests, designed around connection, private guiding, and a more considered social rhythm.",
+    "A beautifully hosted 12-night South Africa journey designed for travellers who want connection, style, and socially intelligent pacing.",
   path: "/the-social",
 });
 
@@ -51,37 +51,37 @@ const metadataItems: readonly MetadataItem[] = [
   {
     label: "Length",
     title: "12 nights",
-    body: "A measured South Africa progression that moves from Johannesburg into safari, softens in Franschhoek, and closes in Cape Town with a fully hosted private-villa finish.",
+    body: "A socially intelligent South Africa progression that moves from city energy into wine-country ease, safari depth, and a softer coastal release.",
   },
   {
     label: "Designed For",
-    title: "6 guests",
-    body: "A privately held group journey for guests who want connection, perspective, and enough space for shared experience to feel elegant rather than over-managed.",
+    title: "Friends, solo travellers joining the right group, and private social groups",
+    body: "Best for travellers who enjoy connection, shared experience, and social atmosphere that still leaves room for privacy and personal space.",
   },
   {
     label: "Style",
-    title: "Privately guided",
-    body: "Private handling throughout, with the rhythm shaped around the group itself rather than the constraints of scheduled group travel.",
+    title: "Hosted, design-led, socially intelligent",
+    body: "Carefully hosted and privately arranged where needed, with pacing built to create flow, chemistry, and ease rather than group fatigue.",
   },
   {
     label: "Where",
     title: "South Africa",
-    body: "Johannesburg, safari, Franschhoek, and Cape Town, sequenced to deepen first, then soften, then release into a more social final chapter.",
+    body: "Cape Town, the Cape Winelands, safari, and the coast, sequenced to move from high social energy into deeper connection and softer release.",
   },
   {
     label: "Flow",
-    title: "Johannesburg, safari, Franschhoek, Cape Town",
-    body: "The route is built as an emotional progression rather than a circuit, with each chapter chosen for how it prepares the group for what follows.",
+    title: "City, Winelands, safari, coast",
+    body: "The route is intentionally sequenced to gather people, deepen the experience, and then release the journey with the right final atmosphere.",
   },
   {
     label: "Flexibility",
     title: "Tailored around your group",
-    body: "The structure is considered, but the pace, emphasis, and finer details within each chapter remain responsive to the mood and interests of the group.",
+    body: "The structure is deliberate, but social tone, activity level, and daily rhythm remain responsive to your group and preferred pace.",
   },
   {
-    label: "From",
-    title: "$15,000 per person",
-    body: "Presented as a privately designed South Africa journey for six guests, with the experience shaped around atmosphere, access, and seamless handling rather than volume.",
+    label: "Starting From",
+    title: "From $11,500 per person",
+    body: "From $11,500 per person, depending on season, room category, group format, and final journey design.",
   },
 ] as const;
 
@@ -89,7 +89,7 @@ const accommodations: readonly Accommodation[] = [
   {
     name: "Satyagraha House",
     copy:
-      "The opening chapter is intentionally quiet. Satyagraha House brings a more thoughtful and culturally grounded beginning to the journey, allowing everyone to arrive properly before the trip deepens. Its atmosphere suits the role perfectly: intimate, design-led, and quietly reflective rather than overtly performative. This is not Johannesburg at full volume. It is Johannesburg as introduction, context, and emotional grounding.",
+      "This stay gives the journey its opening energy, combining design, location, and social atmosphere without sacrificing comfort or privacy. It sets the tone for a hosted experience that feels stylish from the first night.",
     images: [
       {
         src: "/journeys/the-social-shift/SH (1).jpeg",
@@ -111,7 +111,7 @@ const accommodations: readonly Accommodation[] = [
   {
     name: "Few & Far Luvhondo",
     copy:
-      "Few & Far Luvhondo is the dramatic heart of the journey. This is where the landscape expands, the outside world falls away, and the group settles into a more immersive private safari rhythm. The property has been chosen not just for wilderness and privacy, but for the way it holds shared experience: expansive enough to feel wild, but considered enough to keep the journey elegant. It is the chapter that gives the itinerary its depth and scale.",
+      "This is where the journey gains depth. Shared game drives, bush rhythm, and a change of environment create a more meaningful group dynamic without forcing connection.",
     images: [
       {
         src: "/journeys/the-social-shift/FF (4).jpg",
@@ -133,7 +133,7 @@ const accommodations: readonly Accommodation[] = [
   {
     name: "Sterrekopje",
     copy:
-      "After safari, the rhythm changes deliberately. Sterrekopje introduces a softer, more sensorial chapter shaped by beauty, design, stillness, and a slower shared pace. It is not included as a stopover, but as a meaningful pause in the middle-to-late journey, allowing what has already been experienced to settle properly. This is where the trip exhales.",
+      "This chapter slows the pace and creates room for longer meals, stronger conversation, and a more relaxed kind of connection. It adds softness and balance to the social rhythm.",
     images: [
       {
         src: "/journeys/the-social-shift/SK (6).avif",
@@ -155,7 +155,7 @@ const accommodations: readonly Accommodation[] = [
   {
     name: "The Aven",
     copy:
-      "The final chapter unfolds at The Aven in Cape Town, where the journey becomes lighter, more social, and more outward-facing again. Private-villa living changes the texture of the final days completely. There is more room, more ease, and more freedom to move between shared time and privacy without friction. As an ending, it feels generous, hosted, and beautifully relaxed.",
+      "This final stay gives the journey lift. It closes the experience with warmth, movement, and a softer celebratory energy that feels natural rather than staged.",
     images: [
       {
         src: "/journeys/the-social-shift/TA (6).png",
@@ -179,10 +179,10 @@ const accommodations: readonly Accommodation[] = [
 const shapeCards: readonly ShapeCard[] = [
   {
     number: "01",
-    days: "Days 1-2",
-    title: "Grounding in Johannesburg",
+    days: "Days 1-4",
+    title: "Begin with Energy",
     copy:
-      "Begin with two nights at Satyagraha House, where the journey opens with a quieter cultural rhythm. A private Soweto day and lunch at Proud Mary give the opening chapter depth without overloading it, while dinner at the house on the first night and Marble on the second create a measured sense of arrival.",
+      "Start in Cape Town, where design, dining, and city life create the perfect opening chapter. This is where the group dynamic starts to form naturally and the journey takes on personality from the outset.",
     image: {
       src: "/journeys/the-social-shift/SH (4).jpg",
       alt: "Satyagraha House setting in Johannesburg",
@@ -191,10 +191,10 @@ const shapeCards: readonly ShapeCard[] = [
   },
   {
     number: "02",
-    days: "Days 3-6",
-    title: "Into the Wild",
+    days: "Days 5-6",
+    title: "Shift into Ease",
     copy:
-      "Continue to Few & Far Luvhondo for four nights of private safari. This is the deepest and most dramatic chapter of the journey, where landscape, privacy, and shared experience create the emotional core of the trip.",
+      "Move into the Winelands, where the social tone softens into something slower, more indulgent, and more connected. This chapter gives the journey space and balance.",
     image: {
       src: "/journeys/the-social-shift/FF (5).jpg",
       alt: "Few & Far Luvhondo landscape in South Africa",
@@ -203,10 +203,10 @@ const shapeCards: readonly ShapeCard[] = [
   },
   {
     number: "03",
-    days: "Days 7-8",
-    title: "A Softer Interlude",
+    days: "Days 7-9",
+    title: "Deepen Through Safari",
     copy:
-      "Sterrekopje brings a slower, more sensorial pause after safari. Beauty, design, and a more reflective shared pace create a chapter that restores without turning the journey into retreat language or performance.",
+      "Continue into safari, where the rhythm changes again. Shared wildlife experience creates a different kind of connection, grounding the group in something quieter, richer, and more memorable.",
     image: {
       src: "/journeys/the-social-shift/SK (11).avif",
       alt: "Sterrekopje house and garden setting in Franschhoek",
@@ -215,10 +215,10 @@ const shapeCards: readonly ShapeCard[] = [
   },
   {
     number: "04",
-    days: "Days 9-12",
-    title: "Cape Town, Socially",
+    days: "Days 10-12",
+    title: "Finish by the Coast",
     copy:
-      "The final chapter unfolds at The Aven, where Cape Town brings the journey back into movement, style, and shared living. Arrival begins with dinner at Café Manhattan, then continues through private city and Table Mountain guiding, Kloof Street House, The Athletic Club & Social, Boulders Beach, Chapman's Peak, Mantra Café, a 5:00 PM helicopter flight from the V&A Waterfront, a private champagne sunset yacht cruise, Sevruga, a Constantia afternoon beginning at Groot Constantia and ending at La Colombe, and a slow final villa day with a hosted farewell dinner.",
+      "End with the coast, where the journey becomes lighter, freer, and more celebratory. It is the right final release, giving the group a beautiful close without losing the sense of polish that defines the rest of the trip.",
     image: {
       src: "/journeys/the-social-shift/TA (10).png",
       alt: "The Aven in Cape Town",
@@ -230,7 +230,7 @@ const shapeCards: readonly ShapeCard[] = [
     days: "Departure",
     title: "Leave Lighter",
     copy:
-      "A final morning at your own pace before onward departure. By this stage, the journey should feel fully held, emotionally complete, and far removed from the mechanics of ordinary travel.",
+      "A final morning at your own pace before onward departure. By this stage, the journey should feel connected, complete, and beautifully well held.",
     image: {
       src: "/journeys/the-social-shift/TA (1).png",
       alt: "Ocean-facing villa view in Cape Town",
@@ -241,82 +241,82 @@ const shapeCards: readonly ShapeCard[] = [
 
 const definesItems: readonly Inclusion[] = [
   {
-    title: "Private Guiding Throughout",
+    title: "Hosted with Intent",
     copy:
-      "A privately arranged rhythm across the journey, so your days move according to your group, your interests, and the quality of each moment rather than a shared schedule.",
+      "This is social travel without chaos. Hosting is active, refined, and calibrated to keep the group dynamic strong without forcing pace or personality.",
   },
   {
-    title: "Culture, Safari, Winelands & Coast",
+    title: "A Curated Social Rhythm",
     copy:
-      "This itinerary has been built as a progression rather than a loop. Johannesburg brings context and grounding. Few & Far brings immersion and shared wilderness intensity. Sterrekopje brings restoration and beauty. Cape Town brings release, style, and a more social final rhythm.",
+      "The route is built as progression rather than pressure, moving from city energy to wine-country softness, safari depth, and a lighter coastal finish.",
   },
   {
-    title: "A Thoughtful Johannesburg Opening",
+    title: "Connection Without Crowd Fatigue",
     copy:
-      "Two nights at Satyagraha House create a more intentional arrival, with space to settle properly and a privately guided Soweto culture day that gives the journey depth from the outset.",
+      "The structure leaves room for privacy and personal space, so connection happens naturally instead of feeling over-managed.",
   },
   {
-    title: "A Privately Held Safari Core",
+    title: "Atmosphere as a Design Decision",
     copy:
-      "Four nights at Few & Far Luvhondo allow the safari chapter to breathe properly, with private guiding, dramatic landscape, and enough continuity for the experience to feel expansive rather than hurried.",
+      "Properties are chosen for how they host people in real life, not just for visual appeal. Service, flow, and social chemistry all need to hold.",
   },
   {
-    title: "A Softer Winelands Pause",
+    title: "LGBTQ+ Confidence Built In",
     copy:
-      "Two nights at Sterrekopje bring a slower, more sensorial chapter to the journey, where beauty, design, and a shared rhythm of rest create a meaningful reset after safari.",
+      "Comfort, inclusion, and discretion are built into planning and partner choice, so the social energy feels open, safe, and effortless.",
   },
   {
-    title: "A Social Cape Town Finish",
+    title: "What We Do Not Do",
     copy:
-      "Four nights at The Aven in Camps Bay bring the journey to a more celebratory close, with private chef breakfasts, villa living, exceptional dining, and a coastal rhythm that feels both relaxed and fully hosted.",
+      "We do not build social travel around chaos, generic departures, or mass-market group formats presented as curation.",
   },
   {
-    title: "Signature Cape Town Moments",
+    title: "People, Place, and Pace in Sync",
     copy:
-      "Private city and peninsula touring, a helicopter flight, a private champagne sunset yacht cruise, and a Constantia Valley afternoon beginning at Groot Constantia and ending at La Colombe give the final chapter both energy and polish.",
+      "Every chapter is there for a reason, and every transition supports the mood. That is what makes the journey feel alive rather than scheduled.",
   },
   {
     title: "Direct Mason & Wild Support",
     copy:
-      "A dedicated Mason & Wild specialist available discreetly throughout, with preferences, adjustments, and finer requests managed personally rather than passed around.",
+      "A dedicated Mason & Wild specialist remains discreetly available throughout, with refinements handled personally from first brief to final departure.",
   },
 ] as const;
 
 const includesItems: readonly Inclusion[] = [
   {
-    title: "Satyagraha House in Johannesburg",
+    title: "City Opening with Social Energy",
     copy:
-      "A two-night opening stay that gives the journey a calmer, more reflective beginning before the group moves deeper into the route.",
+      "The opening chapter is designed to create chemistry quickly, with strong setting, hosting, and enough freedom for personality to emerge.",
   },
   {
-    title: "Private Soweto Culture Day",
+    title: "Winelands Ease and Reset",
     copy:
-      "The Johannesburg chapter includes a privately guided Soweto experience that gives the opening days texture and context rather than treating the city as transit.",
+      "A softer middle chapter introduces indulgence, slower movement, and room for stronger conversation and relaxed connection.",
   },
   {
-    title: "Few & Far Luvhondo Safari Stay",
+    title: "Safari Depth for the Group",
     copy:
-      "A four-night private safari chapter forms the emotional core of the journey, with enough time for landscape, privacy, and group rhythm to settle properly.",
+      "Shared wildlife rhythm creates a different quality of connection and gives the social journey emotional substance.",
   },
   {
-    title: "Sterrekopje Winelands Pause",
+    title: "Coastal Close with Lift",
     copy:
-      "Two nights in Franschhoek bring a slower interlude of design, restoration, and beauty after safari and before the final coastal chapter.",
+      "The final chapter closes with warmth, movement, and celebratory ease without losing style or control.",
   },
   {
-    title: "The Aven Private Villa in Cape Town",
+    title: "Carefully Hosted Flow",
     copy:
-      "A four-night hosted villa finish in Camps Bay gives the group shared space, privacy, and a more social final rhythm without losing elegance.",
+      "The journey is hosted to keep people comfortable, included, and energised rather than fatigued by group logistics.",
   },
   {
-    title: "Signature Cape Town Experiences",
+    title: "Privately Arranged Where It Matters",
     copy:
-      "Private city and peninsula guiding, a helicopter flight, a private champagne sunset yacht cruise, and a Constantia afternoon are built into the closing chapter.",
+      "Private handling around key transitions and experiences protects quality and keeps the social atmosphere premium.",
   },
   {
-    title: "Hosted Dining and Ongoing Support",
+    title: "Inclusion and Practical Confidence",
     copy:
-      "Private chef breakfasts, well-placed dining, a hosted farewell dinner, and direct Mason & Wild support help the journey feel fully held from start to finish.",
+      "The experience is designed around places and partners where comfort, ease, and LGBTQ+ inclusion are visible in practice.",
   },
 ] as const;
 
@@ -373,7 +373,7 @@ export default function SocialShiftPage() {
               <span className="w-px h-3 bg-white/25" aria-hidden="true" />
               <span className="label-tag text-white/35">SOUTH AFRICA</span>
               <span className="w-px h-3 bg-white/25" aria-hidden="true" />
-              <span className="label-tag text-white/35">12 NIGHTS FROM $15,000 PER PERSON</span>
+              <span className="label-tag text-white/35">12 NIGHTS FROM $11,500 PER PERSON</span>
             </div>
           </div>
 
@@ -385,8 +385,9 @@ export default function SocialShiftPage() {
           </h1>
 
           <p className="font-serif font-light italic text-xl text-white/62 max-w-[620px] leading-relaxed opacity-0 translate-y-4 animate-[fadeRise_0.9s_cubic-bezier(0.16,1,0.3,1)_0.64s_forwards]">
-            Designed for connection, perspective, and the kind of South Africa journey
-            that changes the pace of everything.
+            A beautifully hosted South Africa journey for travellers who want
+            connection, style, and the kind of group energy that still feels
+            considered.
           </p>
         </div>
       </section>
@@ -401,8 +402,9 @@ export default function SocialShiftPage() {
                   className="font-serif font-light text-display-sm text-stone-800 leading-[1.45] tracking-[-0.01em]"
                   id="journey-identity-heading"
                 >
-                  Some group journeys are built around momentum. This one is built
-                  around what changes when the rhythm is right.
+                  This is social travel without the usual compromises. Strong
+                  design, the right people, and a route built to create chemistry
+                  naturally rather than force it.
                 </p>
               </Reveal>
             </div>
@@ -410,25 +412,18 @@ export default function SocialShiftPage() {
             <div className="flex flex-col gap-6">
               <Reveal delay={1}>
                 <p className="font-serif font-light text-display-sm text-stone-800 leading-[1.45] tracking-[-0.01em]">
-                  It begins in Johannesburg, where the opening is thoughtful,
-                  cultural, and quietly grounding. From there, the journey deepens
-                  into Few &amp; Far Luvhondo, where private safari, landscape, and
-                  shared experience create the emotional core of the trip. It then
-                  softens into Sterrekopje, where design, beauty, and a slower
-                  sensorial pace allow everything to settle. It ends in Cape Town in
-                  a fully hosted private villa, where the final chapter becomes
-                  lighter, more social, and more celebratory without ever losing the
-                  sense of care that shaped the trip from the beginning.
+                  The journey moves through Cape Town, the Winelands, safari, and
+                  the coast with a rhythm that balances energy, privacy,
+                  celebration, and ease. No chaotic group travel. No generic
+                  departures. Just a more elevated way to experience South Africa
+                  together.
                 </p>
               </Reveal>
               <Reveal delay={2}>
                 <p className="text-base font-light text-stone-500 leading-relaxed">
-                  This itinerary is designed as a progression rather than a collection
-                  of stops. Arrival to immersion. Immersion to reset. Reset to
-                  release. Each chapter changes the emotional temperature of the
-                  journey, and each place has been chosen not only for what it offers
-                  on its own, but for how well it prepares the group for what comes
-                  next.
+                  This is a journey for people who like their travel to feel alive.
+                  Not loud for the sake of it. Not performative. Not built around
+                  forced fun. The atmosphere is not accidental. It is curated.
                 </p>
               </Reveal>
             </div>
@@ -466,9 +461,9 @@ export default function SocialShiftPage() {
                   className="font-serif font-light text-display-lg text-stone-900 leading-[1.08] tracking-[-0.015em]"
                   id="progression-heading"
                 >
-                  A journey shaped more by feeling
+                  The best social journeys are built,
                   <br />
-                  than by distance.
+                  not improvised.
                 </h2>
               </div>
             </Reveal>
@@ -476,20 +471,18 @@ export default function SocialShiftPage() {
             <div className="flex flex-col gap-6">
               <Reveal delay={1}>
                 <p className="text-base font-light text-stone-500 leading-relaxed max-w-[740px]">
-                  Johannesburg is there to ground the group properly. Few &amp; Far
-                  Luvhondo is where the scale of the trip opens and the outside world
-                  begins to drop away. Sterrekopje softens the register, allowing
-                  everything already experienced to settle into a slower and more
-                  sensorial pace. Cape Town then shifts the energy once more, not into
-                  noise, but into social ease, hosted living, and a lighter, more
-                  expansive finish.
+                  Too many group trips mistake activity for atmosphere and
+                  logistics for hosting. Too many luxury itineraries forget that
+                  the energy between people matters just as much as the places
+                  themselves.
                 </p>
               </Reveal>
               <Reveal delay={2}>
                 <p className="text-base font-light text-stone-500 leading-relaxed max-w-[740px]">
-                  The transformation here is not something announced. It happens
-                  through sequence, atmosphere, and the quality of time each chapter
-                  is given. That is why the route works.
+                  The Social Shift is designed differently. It creates the right
+                  conditions for connection through strong settings, good pacing,
+                  and a sequence that knows when to gather people and when to let
+                  the journey breathe.
                 </p>
               </Reveal>
             </div>
@@ -559,11 +552,11 @@ export default function SocialShiftPage() {
       ))}
 
       <SocialJourneyPanel
-        intro="The route and sequencing are intentional. Within that structure, each chapter still has room to breathe, with the pace and emphasis shaped around your group, your guide, and the mood of the journey itself."
-        definesIntro="The Social Shift is defined by progression: grounding in Johannesburg, depth on safari, restoration in the Winelands, and a more social, beautifully hosted finish in Cape Town."
+        intro="The route and sequencing are intentional. Within that structure, each chapter still has room to breathe, with the pace and emphasis shaped around your group and the social mood of the journey."
+        definesIntro="The Social Shift is defined by social intelligence: city energy, wine-country ease, safari depth, and a coastal finish that keeps the experience stylish, connected, and well held."
         definesItems={definesItems}
         shapeCards={shapeCards}
-        includesIntro="What is included here is built around hosting the group properly: private stays, key guiding and social experiences, and enough structure to keep the journey easy without making it feel managed."
+        includesIntro="What is included here is built around hosting people properly: strong settings, considered pacing, and enough structure to keep the journey easy without making it feel managed."
         includesItems={includesItems}
       />
 
@@ -577,25 +570,23 @@ export default function SocialShiftPage() {
                   className="font-serif font-light text-display-md text-stone-900 tracking-[-0.015em]"
                   id="proof-heading"
                 >
-                  Quiet authority,
+                  Vetted through real social
                   <br />
-                  properly applied.
+                  and regional experience.
                 </h2>
               </div>
             </Reveal>
 
             <Reveal delay={1}>
               <p className="text-base font-light text-stone-500 leading-relaxed max-w-[760px]">
-                Personally designed by Zannon James, drawing on a level of
-                first-hand familiarity that goes well beyond standard travel
-                planning, including properties connected to his family&apos;s
-                interior design legacy and destinations chosen for how they feel in
-                practice rather than on paper. The journey also includes places such
-                as Sterrekopje, owned and run by Nicole and Fleur, whose presence
-                adds a quieter sense of alignment to the experience without ever
-                needing to overstate it. Every partner included has been selected for
-                privacy, atmosphere, operational excellence, and the ability to
-                deliver a journey that feels deeply personal rather than performative.
+                Personally selected by Zannon James through firsthand experience
+                and strong regional knowledge. This journey is built around
+                properties, experiences, and settings chosen for more than visual
+                appeal. Service, flow, atmosphere, privacy, and the ability to host
+                people well all need to hold to a consistently high standard in
+                real life. For LGBTQ+ travellers, this also means confidence. The
+                journey is designed around places and partners where comfort,
+                inclusion, and ease are not left to chance.
               </p>
             </Reveal>
           </div>
@@ -612,14 +603,18 @@ export default function SocialShiftPage() {
                   className="font-serif font-light text-display-xl text-stone-900 mb-6 tracking-[-0.018em]"
                   id="inquiry-heading"
                 >
-                  Start planning
+                  Plan
                   <br />
-                  <em>The Social Shift.</em>
+                  <em>The Social Shift with Mason &amp; Wild.</em>
                 </h2>
                 <p className="text-base font-light text-stone-500 leading-relaxed max-w-[460px]">
-                  Share a few details and a Mason &amp; Wild specialist will come
-                  back to you personally with next steps, availability guidance, and
-                  the refinements needed to shape the journey around your group.
+                  This journey is personally shaped around the format, pace, and
+                  social tone you want to create, whether you are travelling with
+                  friends or joining a like-minded group. Every detail is
+                  considered to keep the experience stylish, easy, and genuinely
+                  enjoyable from beginning to end. Designed for travellers who
+                  want connection, good taste, and a South Africa journey that
+                  feels hosted properly rather than simply organised.
                 </p>
               </div>
             </Reveal>
@@ -628,7 +623,7 @@ export default function SocialShiftPage() {
               <div className="lg:pl-16 lg:border-l lg:border-stone-200">
                 <div className="flex flex-col items-start gap-5">
                   <Button href={NAV_HREFS.inquire} variant="primary">
-                    {CTA.requestPrivateAccess}
+                    Request Private Planning
                   </Button>
                   <Button href={NAV_HREFS.journeys} variant="ghost" arrow={false}>
                     {CTA.viewAllJourneys}
