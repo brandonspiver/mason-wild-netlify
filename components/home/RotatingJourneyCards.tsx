@@ -108,6 +108,7 @@ export function RotatingJourneyCards({ journeys }: RotatingJourneyCardsProps) {
               "transition-opacity",
             ].join(" ")
           : [
+              incomingStartIndex !== null ? "pointer-events-none" : "pointer-events-auto",
               incomingStartIndex === null
                 ? "opacity-100"
                 : incomingVisible
@@ -119,6 +120,7 @@ export function RotatingJourneyCards({ journeys }: RotatingJourneyCardsProps) {
       style={{
         transitionDuration: reducedMotion ? "0ms" : `${FADE_MS}ms`,
         transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)",
+        willChange: "opacity",
       }}
       aria-hidden={layer === "incoming"}
     >

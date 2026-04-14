@@ -65,6 +65,7 @@ export function getOrganizationSchema() {
     name: BRAND_NAME,
     url: absoluteUrl("/"),
     description: PRIMARY_POSITIONING_LINE,
+    inLanguage: "en-US",
   };
 }
 
@@ -79,7 +80,7 @@ export function getWebsiteSchema() {
       "@type": "Organization",
       name: BRAND_NAME,
     },
-    inLanguage: "en",
+    inLanguage: "en-US",
   };
 }
 

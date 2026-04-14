@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, DM_Sans } from "next/font/google";
 import "../styles/globals.css";
 import { NavBar } from "@/components/layout/NavBar";
@@ -27,13 +27,23 @@ const dmSans = DM_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL(getSiteUrl()),
+  applicationName: BRAND_NAME,
   title: {
     template: `%s  -  ${BRAND_NAME}`,
-    default:  `${BRAND_NAME} | Private African Journeys for LGBTQ+ Travellers`,
+    default: `${BRAND_NAME} | Private African Journeys for LGBTQ+ Travellers`,
   },
   description: PRIMARY_POSITIONING_LINE,
+  referrer: "origin-when-cross-origin",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   alternates: {
     canonical: "/",
+    languages: {
+      "en-US": "/",
+    },
   },
   icons: {
     icon: [{ url: "/icon.png", type: "image/png" }],
@@ -41,15 +51,17 @@ export const metadata: Metadata = {
     shortcut: ["/icon.png"],
   },
   openGraph: {
-    siteName:  BRAND_NAME,
-    locale:    "en_US",
-    type:      "website",
-    images: [{
-      url:    "/home/home-hero.jpg",
-      width:  1200,
-      height: 630,
-      alt:    BRAND_NAME,
-    }],
+    siteName: BRAND_NAME,
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: "/home/home-hero.jpg",
+        width: 1200,
+        height: 630,
+        alt: BRAND_NAME,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
@@ -58,9 +70,17 @@ export const metadata: Metadata = {
     images: ["/home/home-hero.jpg"],
   },
   robots: {
-    index:  true,
+    index: true,
     follow: true,
   },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+  themeColor: "#FDFCFA",
+  colorScheme: "light",
 };
 
 export default function RootLayout({
@@ -69,10 +89,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html
-      lang="en"
-      className={`${cormorant.variable} ${dmSans.variable}`}
-    >
+    <html lang="en" className={`${cormorant.variable} ${dmSans.variable}`}>
       <head>
         <link rel="alternate" type="text/plain" href="/llms.txt" title="LLMs.txt" />
         <link rel="alternate" type="text/plain" href="/llms-full.txt" title="LLMs Full" />
@@ -87,4 +104,3 @@ export default function RootLayout({
     </html>
   );
 }
-

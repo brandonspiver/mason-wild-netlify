@@ -67,7 +67,7 @@ export function NavBar() {
     journeysCloseTimer.current = setTimeout(() => {
       setJourneysOpen(false);
       journeysCloseTimer.current = null;
-    }, 90);
+    }, 240);
   };
 
   // Lock body scroll when overlay is open
@@ -108,7 +108,7 @@ export function NavBar() {
     <>
       <header
         className={[
-          "fixed top-0 left-0 right-0 z-[200] h-[76px] flex items-center justify-between md:grid md:grid-cols-[1fr_auto_1fr] md:items-center",
+          "fixed top-0 left-0 right-0 z-[200] h-[74px] flex items-center justify-between md:grid md:grid-cols-[1fr_auto_1fr] md:items-center",
           "px-[var(--px)] border-b transition-all duration-slow",
           "bg-[rgba(253,252,250,0.88)] border-stone-200/85 backdrop-blur-xl",
           "shadow-[0_1px_0_rgba(22,19,16,0.02)]",
@@ -127,13 +127,13 @@ export function NavBar() {
             width={1075}
             height={453}
             priority
-            className="block h-[36px] w-auto -translate-y-[2px] lg:h-[39px]"
+            className="block h-[36px] w-auto -translate-y-[1px] lg:h-[39px]"
           />
         </Link>
 
         {/* Desktop links */}
         <nav aria-label="Primary navigation" className="justify-self-center">
-          <ul className="hidden md:flex items-center gap-11" role="list">
+          <ul className="hidden md:flex md:items-center md:gap-10" role="list">
             {NAV_ITEMS.map(({ label, href }) => (
               <li
                 key={href}
@@ -150,17 +150,17 @@ export function NavBar() {
                       setJourneysOpen((prev) => !prev);
                     }}
                     onFocus={openJourneysMenu}
-                    onBlur={closeJourneysMenuSoon}
                     onKeyDown={(e) => {
                       if (e.key === "ArrowDown" || e.key === "Enter" || e.key === " ") {
                         e.preventDefault();
                         openJourneysMenu();
                       }
                     }}
+                    aria-haspopup="menu"
                     aria-expanded={journeysOpen}
                     aria-controls="journeys-desktop-menu"
                     className={[
-                      "inline-flex items-center gap-2 border-b pb-[3px] text-[11px] leading-none font-normal tracking-[0.16em] uppercase transition-all motion-premium-fast",
+                      "inline-flex items-center gap-2 whitespace-nowrap border-b pb-[3px] text-[12px] leading-none font-normal tracking-[0.12em] uppercase transition-all motion-premium-fast",
                       journeysOpen || journeysActive
                         ? "text-stone-900 border-stone-300"
                         : "text-stone-600 border-transparent hover:text-stone-900 hover:border-stone-300/70",
@@ -174,14 +174,14 @@ export function NavBar() {
                       ].join(" ")}
                       aria-hidden="true"
                     >
-                      v
+                      ▾
                     </span>
                   </button>
                 ) : (
                   <Link
                     href={href}
                     className={[
-                      "border-b pb-[3px] text-[11px] leading-none font-normal tracking-[0.16em] uppercase transition-all motion-premium-fast",
+                      "whitespace-nowrap border-b pb-[3px] text-[12px] leading-none font-normal tracking-[0.12em] uppercase transition-all motion-premium-fast",
                       isNavItemActive(href)
                         ? "text-stone-900 border-stone-300"
                         : "text-stone-600 border-transparent hover:text-stone-900 hover:border-stone-300/70",
@@ -194,15 +194,17 @@ export function NavBar() {
                 {href === NAV_HREFS.journeys && (
                   <div
                     id="journeys-desktop-menu"
+                    role="menu"
                     className={[
-                      "absolute left-1/2 top-full z-[220] w-max min-w-[260px] -translate-x-1/2 pt-4 transition-all duration-[260ms] ease-out",
+                      "absolute left-1/2 top-full z-[220] w-max min-w-[260px] -translate-x-1/2 pt-1 transition-all duration-[260ms] ease-out",
                       journeysOpen
                         ? "pointer-events-auto translate-y-0 opacity-100"
-                        : "pointer-events-none -translate-y-[6px] opacity-0",
+                        : "pointer-events-none -translate-y-[4px] opacity-0",
                     ].join(" ")}
                     onMouseEnter={openJourneysMenu}
                     onMouseLeave={closeJourneysMenuSoon}
                   >
+                    <div className="absolute left-0 right-0 -top-2 h-2" aria-hidden="true" />
                     <div className="border border-stone-200/95 bg-[rgba(253,252,250,0.96)] backdrop-blur-[8px] shadow-[0_26px_60px_rgba(20,16,10,0.12)]">
                       <div className="border-b border-stone-200 px-4 py-3.5">
                         <Link
@@ -219,7 +221,7 @@ export function NavBar() {
                             key={item.href}
                             href={item.href}
                             onClick={() => setJourneysOpen(false)}
-                            onBlur={closeJourneysMenuSoon}
+                            role="menuitem"
                             className="px-3.5 py-[12px] font-serif text-[1.03rem] font-light leading-none text-stone-800 transition-colors duration-[220ms] hover:bg-stone-900 hover:text-white focus:bg-stone-900 focus:text-white"
                           >
                             <em>{item.label}</em>
@@ -237,7 +239,7 @@ export function NavBar() {
         {/* Desktop CTA */}
         <Link
           href={NAV_HREFS.inquire}
-          className="hidden md:inline-flex items-center justify-self-end text-[11px] leading-none font-normal tracking-[0.16em] uppercase text-white bg-forest hover:bg-forest-light px-6 py-[13px] transition-all duration shadow-[0_10px_24px_rgba(40,78,53,0.24)] hover:shadow-[0_14px_30px_rgba(40,78,53,0.30)]"
+          className="hidden md:inline-flex items-center justify-self-end text-[11px] leading-none font-normal tracking-[0.14em] uppercase text-white bg-forest hover:bg-forest-light px-6 py-[13px] transition-all duration shadow-[0_10px_24px_rgba(40,78,53,0.24)] hover:shadow-[0_14px_30px_rgba(40,78,53,0.30)]"
         >
           {CTA.inquirePrivately}
         </Link>

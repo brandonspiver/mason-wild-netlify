@@ -1445,16 +1445,16 @@ const JOURNEYS: Record<string, JourneyData> = {
   "the-adventure": {
     slug: "the-adventure",
     outcome: "ADVENTURE",
-    territory: "NAMIBIA",
-    price: "10 NIGHTS FROM $12,500 PER PERSON",
+    territory: "CAPE TOWN & NAMIBIA",
+    price: "13 NIGHTS FROM $12,500 PER PERSON",
     name: "The Adventure",
     identity:
-      "A privately guided Namibia journey for travellers who want scale, movement, and exhilaration without giving up comfort or control.",
+      "A privately guided Cape Town and Namibia expedition for travellers who want scale, movement, and exhilaration without giving up comfort or control.",
     metadataItems: [
       {
         label: "Length",
-        title: "10 nights",
-        body: "A high-contrast progression from polished arrival to coast, desert, and deeper wilderness, held together by clear route logic.",
+        title: "13 nights",
+        body: "An energetic Cape Town opening followed by a continuous privately guided Namibia overland expedition with clear chapter progression.",
       },
       {
         label: "Designed For",
@@ -1468,8 +1468,8 @@ const JOURNEYS: Record<string, JourneyData> = {
       },
       {
         label: "Where",
-        title: "Namibia",
-        body: "Windhoek, Swakopmund, Sossusvlei, and Damaraland, sequenced to reveal Namibia through contrast, scale, and deeper immersion.",
+        title: "Cape Town and Namibia",
+        body: "Cape Town, then onward via Windhoek into Zannier Omaanda, Zannier Sonop, Wilderness Desert Rhino Camp, and Little Ongava.",
       },
       {
         label: "Starting From",
@@ -1488,7 +1488,7 @@ const JOURNEYS: Record<string, JourneyData> = {
       position: "center 74%",
     },
     body: [
-      "This is Namibia done properly. Vast desert, dramatic coastline, and deep wilderness, all held together by clear planning, strong properties, and a route that knows when to move and when to pause. No unnecessary roughness. No generic self-drive energy. Just a high-design adventure built for travellers who want to feel the freedom of the landscape without losing the luxury of being well looked after.",
+      "This is Cape Town and Namibia done properly. Cape Town opens with private, adventure-led energy, then the journey continues into Namibia with one private adventure guide and a fully equipped 4x4 for seamless overland continuity. No unnecessary roughness. No generic self-drive energy. Just a high-design expedition built for travellers who want freedom without losing polish.",
       "Too many Namibia itineraries lean too hard into ruggedness and call it authenticity. Too many others smooth the country down so much that the experience loses all its edge.",
       "The Adventure is designed to do neither. It keeps the drama, the space, and the exhilaration, but removes the friction. The result is a journey that feels bold, cinematic, and entirely under control.",
       "Namibia is one of Africa's most visually arresting countries, but what makes it unforgettable is not only how it looks. It is how it makes you move.",
@@ -1523,17 +1523,17 @@ const JOURNEYS: Record<string, JourneyData> = {
       },
     ],
     pillarsIntro:
-      "This is not generic road-trip adventure. It is a privately guided, fully considered route where movement, comfort, and atmosphere work together from start to finish.",
+      "This is not generic road-trip adventure. It is a privately guided Cape Town and Namibia route where movement, comfort, and atmosphere work together from start to finish.",
     pillars: [
       {
         key: "windhoek-arrival",
-        title: "Arrive with Intention",
-        body: "The opening chapter is polished and controlled, giving the journey structure from the outset so it starts with ease rather than fatigue.",
+        title: "Cape Town Adventure Opening",
+        body: "Cape Town is an energetic, adventure-led opening chapter with a private guide throughout, not generic city sightseeing.",
       },
       {
         key: "private-guide",
         title: "Private Guide, Continuous Handling",
-        body: "From Namibia arrival onward, one private guide and fully coordinated logistics hold continuity across the route.",
+        body: "From arrival in Windhoek onward, one private adventure guide and a fully equipped 4x4 hold continuity across the Namibia expedition.",
       },
       {
         key: "overland",
@@ -1542,23 +1542,23 @@ const JOURNEYS: Record<string, JourneyData> = {
       },
       {
         key: "coastal-shift",
-        title: "Shift to the Coast",
-        body: "Swakopmund introduces Atlantic contrast and playful energy, resetting rhythm before the desert chapter takes over.",
+        title: "Omaanda as the Soft Landing",
+        body: "Zannier Omaanda is the elegant entry point into Namibia after the Cape Town flight connection, with reserve wildlife, rhino focus, and reset before the route deepens.",
       },
       {
         key: "sonop",
-        title: "Enter the Desert Properly",
-        body: "Sossusvlei becomes the cinematic centre of the route, built around light, dunes, and the exhilaration of pure scale.",
+        title: "Sonop as the Desert Adventure Core",
+        body: "Zannier Sonop is expansive and cinematic, built around guided 4x4 desert exploration, hot air ballooning, horse riding or quad biking, and meaningful downtime.",
       },
       {
         key: "rhino-camp",
-        title: "End in Wilder Country",
-        body: "Damaraland closes the route with remote terrain, tactile adventure, and a deeper final chapter that carries real substance.",
+        title: "Conservation Depth in Damaraland",
+        body: "Wilderness Desert Rhino Camp is remote, conservation-led, and purposeful, centred on black rhino tracking, stark landscapes, guided walks, and stargazing.",
       },
       {
         key: "ongava",
-        title: "What We Do Not Do",
-        body: "We do not confuse adventure with discomfort, build generic self-drive clichés, or overstuff routing and kill the sense of space.",
+        title: "Little Ongava Final Payoff",
+        body: "Little Ongava closes the expedition with elevated Etosha safari experiences, complete privacy, and relaxed luxury after the overland journey.",
       },
       {
         key: "addons",
@@ -1567,17 +1567,17 @@ const JOURNEYS: Record<string, JourneyData> = {
       },
     ],
     includesIntro:
-      "The Adventure is arranged as one continuous privately guided route, with each chapter selected to preserve both exhilaration and ease across Namibia.",
+      "The Adventure is arranged as one continuous privately guided route, starting in Cape Town and continuing through Namibia with one guide and one 4x4 for complete continuity.",
     includesItems: [
       {
         key: "windhoek-opening",
-        title: "Composed Arrival Chapter",
-        body: "A polished starting chapter creates comfort, design, and a clean handover into the movement ahead.",
+        title: "Cape Town Adventure Opening",
+        body: "Three private-guide days in Cape Town set the tone with tandem paragliding, sunrise hiking, shark cage diving, and high-energy dining.",
       },
       {
         key: "coastal-chapter",
-        title: "Coastal Contrast and Activity",
-        body: "The coast chapter introduces a cooler, more playful energy before the route turns toward desert scale.",
+        title: "Omaanda Namibia Entry",
+        body: "After flying Cape Town to Windhoek, guests meet their private adventure guide and continue directly to Zannier Omaanda, with no Windhoek overnight.",
       },
       {
         key: "private-guide-4x4",
@@ -1586,120 +1586,131 @@ const JOURNEYS: Record<string, JourneyData> = {
       },
       {
         key: "omaanda-sonop",
-        title: "Desert Drama with Comfort",
-        body: "Sossusvlei-focused chapters combine visual impact with strong infrastructure so the experience feels cinematic, not chaotic.",
+        title: "Sonop Desert Chapter",
+        body: "Zannier Sonop combines guided desert exploration, ballooning, horse riding or quad biking, and strong downtime in a cinematic setting.",
       },
       {
         key: "rhino-camp-chapter",
-        title: "Remote Wilderness Depth",
-        body: "Damaraland adds substance and remoteness, with a final chapter that feels wilder, quieter, and more grounded.",
+        title: "Desert Rhino Conservation Depth",
+        body: "Wilderness Desert Rhino Camp delivers expert black rhino tracking, guided nature walks, desert-adapted wildlife viewing, and rare wilderness remoteness.",
       },
       {
         key: "little-ongava-finish",
-        title: "Refined Final Safari Payoff",
-        body: "The final safari chapter closes the route with privacy, polish, and a strong sense of completion after the movement of the road journey.",
+        title: "Little Ongava Final Safari Payoff",
+        body: "Little Ongava closes with elevated Etosha safari, exclusivity, and a rewarding final chapter that feels intimate and complete.",
       },
     ],
     flowIntro:
-      "The route is intentionally sequenced from polished arrival to coastal shift, desert spectacle, and deeper wilderness. Movement is part of the pleasure, but control is never lost.",
+      "The route is intentionally sequenced from an adventure-led Cape Town opening into a seamless Namibia overland expedition. Movement is part of the pleasure, and control is never lost.",
     flow: [
       {
         number: "01",
-        period: "Days 1-2",
-        title: "Arrive with Intention",
-        body: "Begin in Windhoek with a polished arrival that gives the journey structure from the outset. This first chapter sets the tone and ensures the trip begins with ease rather than fatigue.",
+        period: "Days 1-3",
+        title: "Cape Town with Momentum",
+        body: "Begin in Cape Town with a private guide throughout. Paragliding, sunrise hiking, shark cage diving, and high-energy dining create an adventure-led opening chapter.",
         image: {
           src: "/journeys/the-adventure/Camissa House.jpg",
-          alt: "Polished arrival chapter in Windhoek",
+          alt: "Adventure-led Cape Town opening chapter",
           position: "center 52%",
           mobilePosition: "center 58%",
         },
       },
       {
         number: "02",
-        title: "Shift to the Coast",
-        period: "Days 3-4",
-        body: "Move into Swakopmund, where desert and Atlantic energy meet. The pace changes, the air sharpens, and the journey starts to feel playful, active, and distinctly Namibian.",
+        title: "Enter Namibia Properly",
+        period: "Day 4",
+        body: "Fly from Cape Town to Windhoek, meet your private adventure guide, and transition directly to Zannier Omaanda for a soft landing without a city overnight.",
         image: {
           src: "/journeys/the-adventure/ZO (14).jpg",
-          alt: "Coastal rhythm chapter in Swakopmund",
+          alt: "Zannier Omaanda soft landing chapter",
           position: "center 50%",
         },
       },
       {
         number: "03",
         period: "Days 5-7",
-        title: "Enter the Desert Properly",
-        body: "Continue to Sossusvlei, where the scale of the landscape takes over. This is the cinematic centre of the journey, built around dunes, light, and the feeling of being small in the best possible way.",
+        title: "Sonop Desert Chapter",
+        body: "Continue overland to Zannier Sonop. Guided 4x4 exploration, hot air ballooning, and riding-led options define a cinematic Namib chapter with space to fully exhale.",
         image: {
           src: "/journeys/the-adventure/ZS (7).jpg",
-          alt: "Sossusvlei desert chapter",
+          alt: "Zannier Sonop desert chapter",
           position: "center 52%",
         },
       },
       {
         number: "04",
         period: "Days 8-10",
-        title: "End in Wilder Country",
-        body: "Finish in Damaraland, where the journey deepens into a more remote and elemental final chapter. This is where adventure becomes more tactile, the landscape roughens beautifully, and the trip closes with real substance.",
+        title: "Conservation Depth in Damaraland",
+        body: "Move into Wilderness Desert Rhino Camp for black rhino tracking with expert monitors, guided walks, stark desert drives, and one of Namibia's most purposeful wilderness chapters.",
         image: {
           src: "/journeys/the-adventure/Wilderness Desert Rhino Camp (8).jpg",
-          alt: "Remote Damaraland closing chapter",
+          alt: "Wilderness Desert Rhino Camp conservation chapter",
+          position: "center 52%",
+        },
+      },
+      {
+        number: "05",
+        period: "Days 11-13",
+        title: "Little Ongava Final Payoff",
+        body: "End at Little Ongava for elevated Etosha safari, complete privacy, and a rewarding final chapter that feels intimate, exclusive, and fully complete.",
+        image: {
+          src: "/journeys/the-adventure/Little Ongava (10).jpg",
+          alt: "Little Ongava final safari chapter",
           position: "center 52%",
         },
       },
     ],
     accommodationsIntro:
-      "Where adventure becomes effortless. Each property is selected not only for comfort and design, but for the role it plays from arrival to coast, desert drama, and remote wilderness.",
+      "Where adventure becomes effortless. Each property is selected for its role in the sequence: energetic opening, elegant Namibia entry, desert spectacle, conservation depth, and refined safari close.",
     accommodations: [
       {
-        name: "Windhoek Property",
+        name: "Camissa House, Cape Town",
         description:
-          "This stay gives the journey a composed starting point, offering comfort, design, and a clean handover into the adventure ahead.",
+          "Camissa House anchors the Cape Town opening, where private-guide adventure and city energy set tone before Namibia begins.",
         images: [
           {
             src: "/journeys/the-adventure/Camissa House.jpg",
-            alt: "Opening property in Windhoek",
+            alt: "Camissa House opening chapter in Cape Town",
             position: "center 52%",
           },
           {
             src: "/journeys/the-adventure/Camissa House Cape Town_4.jpg",
-            alt: "Design and lounge detail at the Windhoek property",
+            alt: "Design and lounge detail at Camissa House",
             position: "center 50%",
           },
           {
             src: "/journeys/the-adventure/Camissa House Cape Town_7.jpg",
-            alt: "Suite detail at the Windhoek property",
+            alt: "Suite detail at Camissa House",
             position: "center 54%",
           },
         ],
       },
       {
-        name: "Swakopmund Property",
+        name: "Zannier Omaanda",
         description:
-          "This chapter introduces contrast. Coastline, activity, and a cooler, more playful energy reset the rhythm before the desert takes over.",
+          "Zannier Omaanda is the elegant entry point into Namibia, designed as a soft landing with reserve-based wildlife and reset before the overland route deepens.",
         images: [
           {
             src: "/journeys/the-adventure/ZO (10).jpg",
-            alt: "Swakopmund property and coastal atmosphere",
+            alt: "Zannier Omaanda reserve atmosphere",
             position: "center 52%",
           },
           {
             src: "/journeys/the-adventure/ZO (14).jpg",
-            alt: "Suite interior at the Swakopmund property",
+            alt: "Suite interior at Zannier Omaanda",
             position: "center 50%",
           },
           {
             src: "/journeys/the-adventure/ZO (1).jpg",
-            alt: "Active coastal chapter atmosphere",
+            alt: "Wildlife and landscape around Zannier Omaanda",
             position: "center 54%",
           },
         ],
       },
       {
-        name: "Sossusvlei Property",
+        name: "Sonop, Namib Desert",
         description:
-          "This is where the visual drama peaks. The property supports the scale of the landscape while preserving privacy, ease, and a sense of occasion.",
+          "Zannier Sonop is the cinematic desert core, where guided exploration, ballooning, horse riding or quad options, and premium downtime define the chapter.",
         images: [
           {
             src: "/journeys/the-adventure/ZS (10).jpg",
@@ -1719,9 +1730,9 @@ const JOURNEYS: Record<string, JourneyData> = {
         ],
       },
       {
-        name: "Damaraland Property",
+        name: "Wilderness Desert Rhino Camp",
         description:
-          "This final stay gives the journey depth. It trades spectacle for substance and closes the experience in a way that feels wilder, quieter, and more grounded.",
+          "Wilderness Desert Rhino Camp is where the journey turns most elemental and meaningful, centred on black rhino conservation and extraordinary remote landscapes.",
         images: [
           {
             src: "/journeys/the-adventure/Wilderness Desert Rhino Camp (10).jpg",
@@ -1741,23 +1752,23 @@ const JOURNEYS: Record<string, JourneyData> = {
         ],
       },
       {
-        name: "Wilderness Extension Property",
+        name: "Little Ongava",
         description:
-          "For travellers wanting one last wildlife chapter, this extension adds a refined final payoff while keeping the same privacy and design standard.",
+          "Little Ongava closes the expedition with elevated Etosha safari, privacy, exclusivity, and relaxed luxury after the road journey.",
         images: [
           {
             src: "/journeys/the-adventure/Little Ongava (7).jpg",
-            alt: "Optional wilderness extension lodge",
+            alt: "Little Ongava lodge in the Etosha region",
             position: "center 50%",
           },
           {
             src: "/journeys/the-adventure/Little Ongava (3).jpg",
-            alt: "Suite interior at the extension property",
+            alt: "Suite interior at Little Ongava",
             position: "center 50%",
           },
           {
             src: "/journeys/the-adventure/Little Ongava (10).jpg",
-            alt: "Final safari atmosphere on extension",
+            alt: "Final safari atmosphere at Little Ongava",
             position: "center 50%",
           },
         ],
@@ -2835,4 +2846,5 @@ export default function JourneyDetailPage({
     </>
   );
 }
+
 
