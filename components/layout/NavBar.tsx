@@ -112,7 +112,7 @@ export function NavBar() {
         {/* Logo */}
         <Link
           href={NAV_HREFS.home}
-          className="inline-flex h-full items-center"
+          className="inline-flex h-full items-center -translate-y-[3px] md:-translate-y-[4px]"
           aria-label="Mason & Wild home"
         >
           <Image
@@ -121,7 +121,7 @@ export function NavBar() {
             width={1075}
             height={453}
             priority
-            className="h-[38px] w-auto -translate-y-[2px] sm:h-[42px] md:h-[46px]"
+            className="block h-[36px] w-auto sm:h-[40px] md:h-[44px]"
           />
         </Link>
 
