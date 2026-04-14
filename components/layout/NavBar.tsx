@@ -39,7 +39,6 @@ export function NavBar() {
   const [journeysOpen, setJourneysOpen] = useState(false);
   const pathname = usePathname();
   const journeysItemRef = useRef<HTMLLIElement | null>(null);
-  const journeysCloseTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const journeysActive =
     pathname === NAV_HREFS.journeys ||
     pathname.startsWith(`${NAV_HREFS.journeys}/`) ||
@@ -48,26 +47,6 @@ export function NavBar() {
     if (href === NAV_HREFS.home) return pathname === NAV_HREFS.home;
     if (href === NAV_HREFS.journeys) return journeysActive;
     return pathname === href || pathname.startsWith(`${href}/`);
-  };
-
-  const clearJourneysCloseTimer = () => {
-    if (journeysCloseTimer.current) {
-      clearTimeout(journeysCloseTimer.current);
-      journeysCloseTimer.current = null;
-    }
-  };
-
-  const openJourneysMenu = () => {
-    clearJourneysCloseTimer();
-    setJourneysOpen(true);
-  };
-
-  const closeJourneysMenuSoon = () => {
-    clearJourneysCloseTimer();
-    journeysCloseTimer.current = setTimeout(() => {
-      setJourneysOpen(false);
-      journeysCloseTimer.current = null;
-    }, 240);
   };
 
   // Lock body scroll when overlay is open
@@ -100,9 +79,10 @@ export function NavBar() {
     return () => document.removeEventListener("keydown", onKey);
   }, []);
 
+  // Close dropdown after route changes
   useEffect(() => {
-    return () => clearJourneysCloseTimer();
-  }, []);
+    setJourneysOpen(false);
+  }, [pathname]);
 
   return (
     <>
@@ -139,21 +119,15 @@ export function NavBar() {
                 key={href}
                 ref={href === NAV_HREFS.journeys ? journeysItemRef : undefined}
                 className={href === NAV_HREFS.journeys ? "relative" : undefined}
-                onMouseEnter={href === NAV_HREFS.journeys ? openJourneysMenu : undefined}
-                onMouseLeave={href === NAV_HREFS.journeys ? closeJourneysMenuSoon : undefined}
               >
                 {href === NAV_HREFS.journeys ? (
                   <button
                     type="button"
-                    onClick={() => {
-                      clearJourneysCloseTimer();
-                      setJourneysOpen((prev) => !prev);
-                    }}
-                    onFocus={openJourneysMenu}
+                    onClick={() => setJourneysOpen((prev) => !prev)}
                     onKeyDown={(e) => {
                       if (e.key === "ArrowDown" || e.key === "Enter" || e.key === " ") {
                         e.preventDefault();
-                        openJourneysMenu();
+                        setJourneysOpen(true);
                       }
                     }}
                     aria-haspopup="menu"
@@ -174,7 +148,7 @@ export function NavBar() {
                       ].join(" ")}
                       aria-hidden="true"
                     >
-                      ▾
+                      v
                     </span>
                   </button>
                 ) : (
@@ -201,10 +175,7 @@ export function NavBar() {
                         ? "pointer-events-auto translate-y-0 opacity-100"
                         : "pointer-events-none -translate-y-[4px] opacity-0",
                     ].join(" ")}
-                    onMouseEnter={openJourneysMenu}
-                    onMouseLeave={closeJourneysMenuSoon}
                   >
-                    <div className="absolute left-0 right-0 -top-2 h-2" aria-hidden="true" />
                     <div className="border border-stone-200/95 bg-[rgba(253,252,250,0.96)] backdrop-blur-[8px] shadow-[0_26px_60px_rgba(20,16,10,0.12)]">
                       <div className="border-b border-stone-200 px-4 py-3.5">
                         <Link
@@ -314,3 +285,4 @@ export function NavBar() {
     </>
   );
 }
+
