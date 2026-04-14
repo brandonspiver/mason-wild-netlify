@@ -21,13 +21,19 @@ type RotatingJourneyCardsProps = {
   readonly journeys: readonly JourneyCard[];
 };
 
-const ROTATION_MS = 10000;
+const ROTATION_MS = 7000;
+const FADE_MS = 850;
+const STAGGER_MS = 85;
 
 export function RotatingJourneyCards({ journeys }: RotatingJourneyCardsProps) {
   const [startIndex, setStartIndex] = useState(0);
+  const [incomingStartIndex, setIncomingStartIndex] = useState<number | null>(null);
+  const [incomingVisible, setIncomingVisible] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
   const [reducedMotion, setReducedMotion] = useState(false);
   const wrapperRef = useRef<HTMLDivElement | null>(null);
+  const fadeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const completeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -39,45 +45,105 @@ export function RotatingJourneyCards({ journeys }: RotatingJourneyCardsProps) {
   }, []);
 
   useEffect(() => {
-    if (journeys.length <= 3 || isPaused) return;
+    return () => {
+      if (fadeTimerRef.current) clearTimeout(fadeTimerRef.current);
+      if (completeTimerRef.current) clearTimeout(completeTimerRef.current);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (journeys.length <= 3 || isPaused || incomingStartIndex !== null) return;
     const timer = setInterval(() => {
-      setStartIndex((prev) => (prev + 1) % journeys.length);
+      const nextStart = (startIndex + 1) % journeys.length;
+      setIncomingStartIndex(nextStart);
+      setIncomingVisible(false);
+
+      fadeTimerRef.current = setTimeout(() => {
+        setIncomingVisible(true);
+      }, 24);
+
+      completeTimerRef.current = setTimeout(() => {
+        setStartIndex(nextStart);
+        setIncomingStartIndex(null);
+        setIncomingVisible(false);
+      }, reducedMotion ? 0 : FADE_MS);
     }, ROTATION_MS);
+
     return () => clearInterval(timer);
-  }, [journeys.length, isPaused]);
+  }, [journeys.length, isPaused, incomingStartIndex, startIndex, reducedMotion]);
+
+  const getVisibleJourneys = (baseIndex: number) =>
+    Array.from({ length: Math.min(3, journeys.length) }, (_, slot) => {
+      const idx = (baseIndex + slot) % journeys.length;
+      return { slot, journey: journeys[idx] };
+    });
 
   const visibleJourneys = useMemo(
-    () =>
-      Array.from({ length: Math.min(3, journeys.length) }, (_, slot) => {
-        const idx = (startIndex + slot) % journeys.length;
-        return { slot, journey: journeys[idx] };
-      }),
+    () => getVisibleJourneys(startIndex),
     [journeys, startIndex],
   );
 
-  return (
+  const incomingJourneys = useMemo(() => {
+    if (incomingStartIndex === null) return [];
+    return getVisibleJourneys(incomingStartIndex);
+  }, [journeys, incomingStartIndex]);
+
+  const renderLayer = (
+    cards: { slot: number; journey: JourneyCard }[],
+    layer: "base" | "incoming",
+  ) => (
     <div
-      ref={wrapperRef}
-      className="grid grid-cols-1 md:grid-cols-3 gap-px bg-stone-200 border-x border-stone-200"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
-      onFocusCapture={() => setIsPaused(true)}
-      onBlurCapture={(e) => {
-        if (wrapperRef.current?.contains(e.relatedTarget as Node)) return;
-        setIsPaused(false);
+      className={[
+        "grid grid-cols-1 md:grid-cols-3 gap-px bg-stone-200 border-x border-stone-200",
+        layer === "incoming"
+          ? [
+              "absolute inset-0 pointer-events-none",
+              reducedMotion
+                ? incomingVisible
+                  ? "opacity-100"
+                  : "opacity-0"
+                : incomingVisible
+                  ? "opacity-100"
+                  : "opacity-0",
+              "transition-opacity",
+            ].join(" ")
+          : [
+              incomingStartIndex === null
+                ? "opacity-100"
+                : incomingVisible
+                  ? "opacity-0"
+                  : "opacity-100",
+              reducedMotion ? "" : "transition-opacity",
+            ].join(" "),
+      ].join(" ")}
+      style={{
+        transitionDuration: reducedMotion ? "0ms" : `${FADE_MS}ms`,
+        transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)",
       }}
-      aria-live="polite"
-      aria-label="Rotating journey archetypes"
+      aria-hidden={layer === "incoming"}
     >
-      {visibleJourneys.map(({ slot, journey }) => (
+      {cards.map(({ slot, journey }) => (
         <article
-          key={`${journey.slug}-${startIndex}-${slot}`}
+          key={`${layer}-${journey.slug}-${startIndex}-${slot}`}
           className={[
-            "relative overflow-hidden bg-stone-800 group",
-            reducedMotion
-              ? ""
-              : "animate-[fadeRise_0.95s_cubic-bezier(0.16,1,0.3,1)_both]",
+            "relative overflow-hidden bg-stone-800 group transition-opacity",
+            layer === "incoming"
+              ? incomingVisible
+                ? "opacity-100"
+                : "opacity-0"
+              : incomingStartIndex === null
+                ? "opacity-100"
+                : incomingVisible
+                  ? "opacity-0"
+                  : "opacity-100",
           ].join(" ")}
+          style={{
+            transitionDuration: reducedMotion ? "0ms" : `${FADE_MS}ms`,
+            transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)",
+            transitionDelay: reducedMotion
+              ? "0ms"
+              : `${slot * STAGGER_MS}ms`,
+          }}
         >
           <Image
             src={journey.img.src}
@@ -122,6 +188,25 @@ export function RotatingJourneyCards({ journeys }: RotatingJourneyCardsProps) {
           </div>
         </article>
       ))}
+    </div>
+  );
+
+  return (
+    <div
+      ref={wrapperRef}
+      className="relative"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+      onFocusCapture={() => setIsPaused(true)}
+      onBlurCapture={(e) => {
+        if (wrapperRef.current?.contains(e.relatedTarget as Node)) return;
+        setIsPaused(false);
+      }}
+      aria-live="polite"
+      aria-label="Rotating journey archetypes"
+    >
+      {renderLayer(visibleJourneys, "base")}
+      {incomingStartIndex !== null && renderLayer(incomingJourneys, "incoming")}
     </div>
   );
 }

@@ -108,9 +108,10 @@ export function NavBar() {
     <>
       <header
         className={[
-          "fixed top-0 left-0 right-0 z-[200] h-[72px] flex items-center justify-between md:grid md:grid-cols-[1fr_auto_1fr] md:items-center",
+          "fixed top-0 left-0 right-0 z-[200] h-[76px] flex items-center justify-between md:grid md:grid-cols-[1fr_auto_1fr] md:items-center",
           "px-[var(--px)] border-b transition-all duration-slow",
-          "bg-white/[0.95] border-stone-200 backdrop-blur-md",
+          "bg-[rgba(253,252,250,0.88)] border-stone-200/85 backdrop-blur-xl",
+          "shadow-[0_1px_0_rgba(22,19,16,0.02)]",
         ].join(" ")}
         role="banner"
       >
@@ -126,13 +127,13 @@ export function NavBar() {
             width={1075}
             height={453}
             priority
-            className="block h-[38px] w-auto -translate-y-[1px] lg:h-[42px]"
+            className="block h-[36px] w-auto -translate-y-[2px] lg:h-[39px]"
           />
         </Link>
 
         {/* Desktop links */}
         <nav aria-label="Primary navigation" className="justify-self-center">
-          <ul className="hidden md:flex items-center gap-10" role="list">
+          <ul className="hidden md:flex items-center gap-11" role="list">
             {NAV_ITEMS.map(({ label, href }) => (
               <li
                 key={href}
@@ -159,10 +160,10 @@ export function NavBar() {
                     aria-expanded={journeysOpen}
                     aria-controls="journeys-desktop-menu"
                     className={[
-                      "inline-flex items-center gap-2 text-2xs leading-none font-normal tracking-wide uppercase transition-colors motion-premium-fast",
+                      "inline-flex items-center gap-2 border-b pb-[3px] text-[11px] leading-none font-normal tracking-[0.16em] uppercase transition-all motion-premium-fast",
                       journeysOpen || journeysActive
-                        ? "text-stone-900"
-                        : "text-stone-500 hover:text-stone-900",
+                        ? "text-stone-900 border-stone-300"
+                        : "text-stone-600 border-transparent hover:text-stone-900 hover:border-stone-300/70",
                     ].join(" ")}
                   >
                     <span>{label}</span>
@@ -180,10 +181,10 @@ export function NavBar() {
                   <Link
                     href={href}
                     className={[
-                      "text-2xs leading-none font-normal tracking-wide uppercase transition-colors motion-premium-fast",
+                      "border-b pb-[3px] text-[11px] leading-none font-normal tracking-[0.16em] uppercase transition-all motion-premium-fast",
                       isNavItemActive(href)
-                        ? "text-stone-900"
-                        : "text-stone-500 hover:text-stone-900",
+                        ? "text-stone-900 border-stone-300"
+                        : "text-stone-600 border-transparent hover:text-stone-900 hover:border-stone-300/70",
                     ].join(" ")}
                   >
                     {label}
@@ -194,7 +195,7 @@ export function NavBar() {
                   <div
                     id="journeys-desktop-menu"
                     className={[
-                      "absolute left-1/2 top-full z-[220] w-max min-w-[240px] -translate-x-1/2 pt-3 transition-all duration-[240ms] ease-out",
+                      "absolute left-1/2 top-full z-[220] w-max min-w-[260px] -translate-x-1/2 pt-4 transition-all duration-[260ms] ease-out",
                       journeysOpen
                         ? "pointer-events-auto translate-y-0 opacity-100"
                         : "pointer-events-none -translate-y-[6px] opacity-0",
@@ -202,24 +203,24 @@ export function NavBar() {
                     onMouseEnter={openJourneysMenu}
                     onMouseLeave={closeJourneysMenuSoon}
                   >
-                    <div className="border border-stone-200/90 bg-white/95 backdrop-blur-[2px] shadow-[0_20px_44px_rgba(20,16,10,0.09)]">
-                      <div className="border-b border-stone-200 px-4 py-3">
+                    <div className="border border-stone-200/95 bg-[rgba(253,252,250,0.96)] backdrop-blur-[8px] shadow-[0_26px_60px_rgba(20,16,10,0.12)]">
+                      <div className="border-b border-stone-200 px-4 py-3.5">
                         <Link
                           href={NAV_HREFS.journeys}
                           onClick={() => setJourneysOpen(false)}
-                          className="text-2xs tracking-[0.14em] uppercase text-stone-500 hover:text-stone-900 transition-colors duration-[200ms]"
+                          className="text-2xs tracking-[0.16em] uppercase text-stone-500 hover:text-stone-900 transition-colors duration-[200ms]"
                         >
                           View All Journeys
                         </Link>
                       </div>
-                      <div className="flex flex-col p-2">
+                      <div className="flex flex-col p-2.5">
                         {JOURNEY_MENU_ITEMS.map((item) => (
                           <Link
                             key={item.href}
                             href={item.href}
                             onClick={() => setJourneysOpen(false)}
                             onBlur={closeJourneysMenuSoon}
-                            className="px-3.5 py-[12px] font-serif text-[1.03rem] font-light leading-none text-stone-800 transition-colors duration-[220ms] hover:bg-forest hover:text-white focus:bg-forest focus:text-white"
+                            className="px-3.5 py-[12px] font-serif text-[1.03rem] font-light leading-none text-stone-800 transition-colors duration-[220ms] hover:bg-stone-900 hover:text-white focus:bg-stone-900 focus:text-white"
                           >
                             <em>{item.label}</em>
                           </Link>
@@ -236,7 +237,7 @@ export function NavBar() {
         {/* Desktop CTA */}
         <Link
           href={NAV_HREFS.inquire}
-          className="hidden md:inline-flex items-center justify-self-end text-2xs leading-none font-normal tracking-wide uppercase text-white bg-forest hover:bg-forest-light px-5 py-[10px] transition-colors duration"
+          className="hidden md:inline-flex items-center justify-self-end text-[11px] leading-none font-normal tracking-[0.16em] uppercase text-white bg-forest hover:bg-forest-light px-6 py-[13px] transition-all duration shadow-[0_10px_24px_rgba(40,78,53,0.24)] hover:shadow-[0_14px_30px_rgba(40,78,53,0.30)]"
         >
           {CTA.inquirePrivately}
         </Link>
