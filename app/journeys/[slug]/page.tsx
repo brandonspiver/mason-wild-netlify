@@ -124,7 +124,7 @@ const JOURNEYS: Record<string, JourneyData> = {
     slug: "the-intimate",
     outcome: "INTIMACY",
     territory: "BOTSWANA & VICTORIA FALLS",
-    price: "8 NIGHTS FROM $18,000 PER PERSON",
+    price: "8 NIGHTS FROM $11,700 PER PERSON",
     name: "The Intimate",
     identity:
       "A privately guided Botswana and Victoria Falls journey for four guests who want privacy without compromise.",
@@ -151,7 +151,7 @@ const JOURNEYS: Record<string, JourneyData> = {
       },
       {
         label: "Price",
-        title: "From $18,000 per person",
+        title: "From $11,700 per person",
         body: "Fully private handling throughout, with every transition and experience intentionally managed end to end.",
       },
     ],
@@ -410,7 +410,7 @@ const JOURNEYS: Record<string, JourneyData> = {
     slug: "the-untamed",
     outcome: "CONNECTION",
     territory: "ZAMBIA",
-    price: "9 NIGHTS FROM $17,000 PER PERSON",
+    price: "9 NIGHTS FROM $11,050 PER PERSON",
     name: "The Untamed",
     identity:
       "A privately guided Zambia journey for travellers who want immersion, privacy, and a safari that feels elemental rather than performative.",
@@ -688,7 +688,7 @@ const JOURNEYS: Record<string, JourneyData> = {
     slug: "the-romantic",
     outcome: "INTIMACY",
     territory: "SOUTH AFRICA & MOZAMBIQUE",
-    price: "12 NIGHTS FROM $15,500 PER PERSON",
+    price: "12 NIGHTS FROM $10,075 PER PERSON",
     name: "The Romantic",
     identity:
       "A privately designed journey for two, shaped around intimacy, privacy, and the kind of luxury that feels effortless rather than overstated.",
@@ -715,8 +715,8 @@ const JOURNEYS: Record<string, JourneyData> = {
       },
       {
         label: "Starting From",
-        title: "From $15,500 per person",
-        body: "From $15,500 per person, depending on season, room category, and final journey design.",
+        title: "From $10,075 per person",
+        body: "From $10,075 per person, depending on season, room category, and final journey design.",
       },
     ],
     lead: "The best romantic journeys do not try too hard.",
@@ -1013,7 +1013,7 @@ const JOURNEYS: Record<string, JourneyData> = {
     slug: "the-classic",
     outcome: "FOUNDATION",
     territory: "CAPE TOWN, GREATER KRUGER & VICTORIA FALLS",
-    price: "9 NIGHTS FROM $6,000 PER PERSON",
+    price: "9 NIGHTS FROM $3,900 PER PERSON",
     name: "The Classic",
     identity:
       "A beautifully balanced Southern Africa journey for travellers who want to do the essentials properly, with privacy, polish, and none of the usual friction.",
@@ -1040,8 +1040,8 @@ const JOURNEYS: Record<string, JourneyData> = {
       },
       {
         label: "Starting From",
-        title: "From $6,000 per person",
-        body: "From $6,000 per person, depending on season, room category, and final routing.",
+        title: "From $3,900 per person",
+        body: "From $3,900 per person, depending on season, room category, and final routing.",
       },
     ],
     lead:
@@ -1446,7 +1446,7 @@ const JOURNEYS: Record<string, JourneyData> = {
     slug: "the-adventure",
     outcome: "ADVENTURE",
     territory: "CAPE TOWN & NAMIBIA",
-    price: "13 NIGHTS FROM $12,500 PER PERSON",
+    price: "13 NIGHTS FROM $8,125 PER PERSON",
     name: "The Adventure",
     identity:
       "A privately guided Cape Town and Namibia expedition for travellers who want scale, movement, and exhilaration without giving up comfort or control.",
@@ -1473,8 +1473,8 @@ const JOURNEYS: Record<string, JourneyData> = {
       },
       {
         label: "Starting From",
-        title: "From $12,500 per person",
-        body: "From $12,500 per person, depending on season, accommodation choice, and final journey design.",
+        title: "From $8,125 per person",
+        body: "From $8,125 per person, depending on season, accommodation choice, and final journey design.",
       },
     ],
     lead:
@@ -1796,7 +1796,7 @@ const JOURNEYS: Record<string, JourneyData> = {
     slug: "the-private-circuit",
     outcome: "PRIVATE SAFARI",
     territory: "TANZANIA & ZANZIBAR",
-    price: "10 NIGHTS FROM $18,500 PER PERSON",
+    price: "10 NIGHTS FROM $12,025 PER PERSON",
     name: "The Private Circuit",
     identity:
       "A privately designed Tanzania and Zanzibar journey for travellers who want East Africa with polish, privacy, and none of the usual excess.",
@@ -1823,8 +1823,8 @@ const JOURNEYS: Record<string, JourneyData> = {
       },
       {
         label: "Starting From",
-        title: "From $18,500 per person",
-        body: "From $18,500 per person, depending on season, room category, and final journey design.",
+        title: "From $12,025 per person",
+        body: "From $12,025 per person, depending on season, room category, and final journey design.",
       },
     ],
     lead: "East Africa rewards precision.",

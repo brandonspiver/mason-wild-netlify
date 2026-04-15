@@ -88,7 +88,7 @@ export function NavBar() {
     <>
       <header
         className={[
-          "fixed top-0 left-0 right-0 z-[200] h-[74px] flex items-center justify-between md:grid md:grid-cols-[1fr_auto_1fr] md:items-center",
+          "fixed top-0 left-0 right-0 z-[200] h-[74px] flex items-center justify-between md:grid md:h-[82px] md:grid-cols-[auto_1fr_auto] md:items-center",
           "px-[var(--px)] border-b transition-all duration-slow",
           "bg-[rgba(253,252,250,0.88)] border-stone-200/85 backdrop-blur-xl",
           "shadow-[0_1px_0_rgba(22,19,16,0.02)]",
@@ -98,67 +98,90 @@ export function NavBar() {
         {/* Logo */}
         <Link
           href={NAV_HREFS.home}
-          className="inline-flex items-center md:justify-self-start"
+          className="inline-flex items-center md:h-full md:justify-self-start"
           aria-label="Mason & Wild home"
         >
           <Image
-            src="/branding/mason-wild-header-wordmark-cropped.png"
+            src="/branding/mason-wild-header-wordmark-tight.png"
             alt="Mason & Wild"
             width={1075}
-            height={453}
+            height={193}
             priority
-            className="block h-[36px] w-auto -translate-y-[1px] lg:h-[39px]"
+            className="block h-[24px] w-auto md:h-[30px] lg:h-[32px]"
           />
         </Link>
 
         {/* Desktop links */}
-        <nav aria-label="Primary navigation" className="justify-self-center">
+        <nav
+          aria-label="Primary navigation"
+          className="hidden md:flex md:h-full md:items-center md:justify-self-center"
+        >
           <ul className="hidden md:flex md:items-center md:gap-10" role="list">
             {NAV_ITEMS.map(({ label, href }) => (
               <li
                 key={href}
                 ref={href === NAV_HREFS.journeys ? journeysItemRef : undefined}
                 className={href === NAV_HREFS.journeys ? "relative" : undefined}
+                onMouseEnter={
+                  href === NAV_HREFS.journeys ? () => setJourneysOpen(true) : undefined
+                }
+                onMouseLeave={
+                  href === NAV_HREFS.journeys ? () => setJourneysOpen(false) : undefined
+                }
+                onFocusCapture={
+                  href === NAV_HREFS.journeys ? () => setJourneysOpen(true) : undefined
+                }
+                onBlurCapture={
+                  href === NAV_HREFS.journeys
+                    ? (e) => {
+                        if (journeysItemRef.current?.contains(e.relatedTarget as Node)) return;
+                        setJourneysOpen(false);
+                      }
+                    : undefined
+                }
               >
                 {href === NAV_HREFS.journeys ? (
-                  <button
-                    type="button"
-                    onClick={() => setJourneysOpen((prev) => !prev)}
-                    onKeyDown={(e) => {
-                      if (e.key === "ArrowDown" || e.key === "Enter" || e.key === " ") {
-                        e.preventDefault();
-                        setJourneysOpen(true);
-                      }
-                    }}
-                    aria-haspopup="menu"
-                    aria-expanded={journeysOpen}
-                    aria-controls="journeys-desktop-menu"
+                  <div
                     className={[
                       "inline-flex items-center gap-2 whitespace-nowrap border-b pb-[3px] text-[12px] leading-none font-normal tracking-[0.12em] uppercase transition-all motion-premium-fast",
                       journeysOpen || journeysActive
-                        ? "text-stone-900 border-stone-300"
-                        : "text-stone-600 border-transparent hover:text-stone-900 hover:border-stone-300/70",
+                        ? "text-stone-900 border-stone-300 hover:text-forest hover:border-forest"
+                        : "text-stone-600 border-transparent hover:text-forest hover:border-forest",
                     ].join(" ")}
                   >
-                    <span>{label}</span>
-                    <span
+                    <Link href={href}>{label}</Link>
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setJourneysOpen((prev) => !prev);
+                      }}
+                      onKeyDown={(e) => {
+                        if (e.key === "ArrowDown" || e.key === "Enter" || e.key === " ") {
+                          e.preventDefault();
+                          setJourneysOpen(true);
+                        }
+                      }}
+                      aria-label="Toggle journeys menu"
+                      aria-haspopup="menu"
+                      aria-expanded={journeysOpen}
+                      aria-controls="journeys-desktop-menu"
                       className={[
-                        "text-[9px] leading-none transition-transform motion-premium-fast",
+                        "inline-flex items-center text-[9px] leading-none transition-transform motion-premium-fast",
                         journeysOpen ? "translate-y-[1px] rotate-180" : "translate-y-0 rotate-0",
                       ].join(" ")}
-                      aria-hidden="true"
                     >
                       v
-                    </span>
-                  </button>
+                    </button>
+                  </div>
                 ) : (
                   <Link
                     href={href}
                     className={[
                       "whitespace-nowrap border-b pb-[3px] text-[12px] leading-none font-normal tracking-[0.12em] uppercase transition-all motion-premium-fast",
                       isNavItemActive(href)
-                        ? "text-stone-900 border-stone-300"
-                        : "text-stone-600 border-transparent hover:text-stone-900 hover:border-stone-300/70",
+                        ? "text-stone-900 border-stone-300 hover:text-forest hover:border-forest"
+                        : "text-stone-600 border-transparent hover:text-forest hover:border-forest",
                     ].join(" ")}
                   >
                     {label}
@@ -170,30 +193,21 @@ export function NavBar() {
                     id="journeys-desktop-menu"
                     role="menu"
                     className={[
-                      "absolute left-1/2 top-full z-[220] w-max min-w-[260px] -translate-x-1/2 pt-1 transition-all duration-[260ms] ease-out",
+                      "absolute left-1/2 top-full z-[220] w-[220px] -translate-x-1/2 pt-1 transition-all duration-[260ms] ease-out",
                       journeysOpen
                         ? "pointer-events-auto translate-y-0 opacity-100"
                         : "pointer-events-none -translate-y-[4px] opacity-0",
                     ].join(" ")}
                   >
                     <div className="border border-stone-200/95 bg-[rgba(253,252,250,0.96)] backdrop-blur-[8px] shadow-[0_26px_60px_rgba(20,16,10,0.12)]">
-                      <div className="border-b border-stone-200 px-4 py-3.5">
-                        <Link
-                          href={NAV_HREFS.journeys}
-                          onClick={() => setJourneysOpen(false)}
-                          className="text-2xs tracking-[0.16em] uppercase text-stone-500 hover:text-stone-900 transition-colors duration-[200ms]"
-                        >
-                          View All Journeys
-                        </Link>
-                      </div>
-                      <div className="flex flex-col p-2.5">
+                      <div className="flex flex-col items-center p-2.5">
                         {JOURNEY_MENU_ITEMS.map((item) => (
                           <Link
                             key={item.href}
                             href={item.href}
                             onClick={() => setJourneysOpen(false)}
                             role="menuitem"
-                            className="px-3.5 py-[12px] font-serif text-[1.03rem] font-light leading-none text-stone-800 transition-colors duration-[220ms] hover:bg-stone-900 hover:text-white focus:bg-stone-900 focus:text-white"
+                            className="w-full px-4 py-[12px] text-center font-serif text-[1.03rem] font-light leading-none text-stone-800 transition-colors duration-[220ms] hover:bg-forest hover:text-white focus:bg-forest focus:text-white"
                           >
                             <em>{item.label}</em>
                           </Link>
