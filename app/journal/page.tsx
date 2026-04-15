@@ -46,7 +46,7 @@ const ARTICLES: ArticleSummary[] = [
     readingTime: 10,
     publishedAt: "2026-04-15",
     img: {
-      src: "/journeys/the-untamed/Chindeni (5).jpg",
+      src: "/journeys/the-untamed/vetted-south-luangwa-optimized.jpg",
       alt: "Walking safari scene in South Luangwa, Zambia",
     },
   },
