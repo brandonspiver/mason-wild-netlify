@@ -63,8 +63,8 @@ export const CTA = {
 export const DIFFERENTIATORS = [
   {
     key: "safetyIntelligence",
-    label: "You Are Understood Properly",
-    body:  "LGBTQ+ travel is operational in how we plan, advise, and curate. Comfort, privacy, and local context are built into every decision.",
+    label: "YOU ARE UNDERSTOOD PROPERLY",
+    body:  "LGBTQ+ awareness is not a layer added to our planning — it shapes which camps enter our collection, which guides are assigned, how transit between properties is routed, and how room configurations are handled by default. The decisions are operational, not performative.",
   },
   {
     key: "discreteRouting",

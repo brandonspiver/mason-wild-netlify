@@ -153,6 +153,17 @@ export default function JourneysPage() {
         </div>
       </section>
 
+      <section className="py-[clamp(40px,5vw,64px)] border-b border-stone-200">
+        <div className="container-site max-w-[920px]">
+          <p className="text-base font-light text-stone-500 leading-relaxed mb-6">
+            These seven journeys are not a product catalogue. Each one is built around a specific emotional register — a particular way of wanting to move through Africa — and every destination, property, and guide within them has passed Mason &amp; Wild&apos;s own vetting standard before being offered.
+          </p>
+          <p className="text-base font-light text-stone-500 leading-relaxed">
+            You are not browsing options. You are reading the output of a selection process that started long before this page did.
+          </p>
+        </div>
+      </section>
+
       {/* â”€â”€â”€ Archetype sections â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <div>
         {ARCHETYPES.map((journey, index) => (

@@ -45,7 +45,7 @@ const INCLUSIVE_ITEMS = [
     key:   "safety",
     title: "LGBTQ+ Safety Intelligence",
     body:
-      "We navigate the political and social landscape of each territory with precision  -  assessing every destination for safety, legal standing, and suitability before it enters our collection.",
+      "Every destination in our collection is assessed against a specific set of criteria before it is offered: legal standing, local enforcement practice — not just what the law says, but how it operates on the ground — guide values, camp culture, staff orientation, room configuration defaults, and how transit between properties is handled. Legislation alone tells us very little. What matters is the real-world experience of travelling through a place, and whether that experience holds up when it is no longer in a private lodge. This is not a static assessment. Countries change. Regional attitudes shift. Our evaluations are reviewed before each season and updated when the situation on the ground requires it. If a destination no longer meets our standard, it leaves the collection.",
   },
   {
     key:   "liaison",
@@ -61,9 +61,9 @@ const INCLUSIVE_ITEMS = [
   },
   {
     key:   "vetted",
-    title: "Vetted Ecosystem",
+    title: "Partner Vetting",
     body:
-      "Every lodge, pilot, and guide in our network is personally vetted. Standards are reviewed annually. There is no accreditation system  -  there is our own.",
+      "Every lodge, guide, and operator we work with has been visited and assessed in person. Not reviewed remotely. Not shortlisted from supplier materials. Visited, stayed in, and approved against a standard that includes how staff behave in practice, how the camp responds to LGBTQ+ guests outside of formal policy, and whether the atmosphere holds up in the way it is described. If Zannon has not been there personally, it is not in our collection.",
   },
   {
     key:   "comfort",
@@ -233,6 +233,23 @@ export default function TheExperiencePage() {
         </div>
       </section>
 
+      <section className="section" aria-label="Planning realities and specialist design process">
+        <div className="container-site max-w-[920px]">
+          <p className="text-base font-light text-stone-500 leading-relaxed mb-6">
+            You are researching camps across four countries, reading operator websites that all say the same things, trying to determine which LGBTQ+-friendly claims are operational and which are marketing. You are weighing up legal frameworks, social climates, transit routes, and guide cultures — without a reliable way to distinguish between them. You are managing significant spend and a once-in-a-decade trip with incomplete information and no named person accountable for the outcome.
+          </p>
+          <p className="text-base font-light text-stone-500 leading-relaxed mb-6">
+            The journey has not started and it is already work.
+          </p>
+          <p className="text-base font-light text-stone-500 leading-relaxed mb-6">
+            You submit a brief. A specialist who has been to the camps, knows the guides, and understands the specific texture of travelling as an LGBTQ+ couple across this continent reviews it personally. A journey is designed around your pace, your privacy requirements, and the emotional register you want the trip to hold. Every property has been visited and approved. Every guide has been assessed. Every transit point has been considered.
+          </p>
+          <p className="text-base font-light text-stone-500 leading-relaxed">
+            You arrive. Everything is in place. The only work left is being present.
+          </p>
+        </div>
+      </section>
+
       {/* â”€â”€â”€ Process steps â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section
         className="bg-stone-900 px-[var(--px)] py-[var(--section-gap)]"
@@ -265,6 +282,52 @@ export default function TheExperiencePage() {
               </Reveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="section border-b border-stone-200" aria-labelledby="journey-costs-heading">
+        <div className="container-site max-w-[920px]">
+          <h2
+            className="font-serif font-light text-display-md text-stone-900 mb-8"
+            id="journey-costs-heading"
+          >
+            What a Mason &amp; Wild Journey Costs
+          </h2>
+          <p className="text-base font-light text-stone-500 leading-relaxed mb-6">
+            Mason &amp; Wild journeys start from $15,000 per person.
+          </p>
+          <p className="text-base font-light text-stone-500 leading-relaxed mb-6">
+            That figure covers private guiding throughout, vetted accommodation selected for quality and fit, all internal transfers and logistics, and the design process itself — the research, the relationship, the operational intelligence that determines what is offered and what is not.
+          </p>
+          <p className="text-base font-light text-stone-500 leading-relaxed mb-6">
+            What it also covers is less visible but more valuable: years of direct experience across these territories. Knowledge of which camps hold their standard in practice. Understanding of how to route a journey so that the transitions feel seamless rather than managed. Confidence in which guides will read the room correctly from the first morning.
+          </p>
+          <p className="text-base font-light text-stone-500 leading-relaxed">
+            This is not a price that needs defending. It reflects what a journey of this quality, designed to this standard, for clients with these specific requirements, actually costs to deliver properly.
+          </p>
+        </div>
+      </section>
+
+      <section className="section border-b border-stone-200" aria-labelledby="design-fee-heading">
+        <div className="container-site max-w-[920px]">
+          <h2
+            className="font-serif font-light text-display-md text-stone-900 mb-8"
+            id="design-fee-heading"
+          >
+            The Design Fee
+          </h2>
+          <p className="text-base font-light text-stone-500 leading-relaxed mb-6">
+            When you submit an enquiry, a $100 private design fee is collected with your brief.
+          </p>
+          <p className="text-base font-light text-stone-500 leading-relaxed mb-6">
+            This is not a deposit. It is a signal — to us and to you — that the conversation is serious. It ensures that the time invested in reviewing your brief, consulting on territory fit, and beginning the design process is spent on clients for whom this is a genuine priority.
+          </p>
+          <p className="text-base font-light text-stone-500 leading-relaxed mb-6">
+            The fee is credited in full against your journey if you proceed. If after our initial consultation we are not the right fit for each other, it is refunded without question.
+          </p>
+          <p className="text-base font-light text-stone-500 leading-relaxed">
+            It exists because the quality of our process depends on the quality of the conversation. The $100 is what keeps that conversation at the right level from the start.
+          </p>
         </div>
       </section>
 
@@ -383,6 +446,63 @@ export default function TheExperiencePage() {
           </div>
         </Reveal>
 
+      </section>
+
+      <section className="section border-t border-b border-stone-200" aria-labelledby="why-specifically-heading">
+        <div className="container-site max-w-[980px]">
+          <Reveal>
+            <h2
+              className="font-serif font-light text-display-lg text-stone-900 mb-12"
+              id="why-specifically-heading"
+            >
+              Why Mason &amp; Wild, Specifically
+            </h2>
+          </Reveal>
+
+          <div className="flex flex-col gap-12">
+            <Reveal delay={1}>
+              <div>
+                <h3 className="font-serif font-light text-display-sm text-stone-900 mb-5">
+                  If you have worked with a US luxury travel advisor
+                </h3>
+                <p className="text-base font-light text-stone-500 leading-relaxed">
+                  US-based luxury advisors offer Africa as one destination among many. Their knowledge is broad and their Africa relationships are typically mediated through DMCs and ground operators they have not personally verified. For a standard luxury traveller, that is often sufficient. For an LGBTQ+ couple for whom the operational detail — the guide, the camp culture, the transit routing — is the difference between a transformative journey and an exhausting one, it is not.
+                </p>
+                <p className="text-base font-light text-stone-500 leading-relaxed mt-6">
+                  Mason &amp; Wild operates exclusively in Africa. The knowledge is not borrowed.
+                </p>
+              </div>
+            </Reveal>
+
+            <Reveal delay={2}>
+              <div>
+                <h3 className="font-serif font-light text-display-sm text-stone-900 mb-5">
+                  If you have used an Africa DMC
+                </h3>
+                <p className="text-base font-light text-stone-500 leading-relaxed">
+                  Destination management companies operate at volume. Their value is logistics at scale — ground handling, transfers, supplier relationships managed across hundreds of bookings. They are excellent at what they do. What they are not designed to do is hold a specific standard of curation for a specific client profile, or bring personal accountability to the design of each journey.
+                </p>
+                <p className="text-base font-light text-stone-500 leading-relaxed mt-6">
+                  Mason &amp; Wild accepts a limited number of journeys each month. Every one is reviewed personally. That is a different model, designed for a different client.
+                </p>
+              </div>
+            </Reveal>
+
+            <Reveal delay={3}>
+              <div>
+                <h3 className="font-serif font-light text-display-sm text-stone-900 mb-5">
+                  If you have travelled with an LGBTQ+ group travel company
+                </h3>
+                <p className="text-base font-light text-stone-500 leading-relaxed">
+                  Group travel companies serve a community function — shared experience, collective identity, the particular pleasure of travelling with people who understand you. For clients who want that, they are the right choice.
+                </p>
+                <p className="text-base font-light text-stone-500 leading-relaxed mt-6">
+                  Mason &amp; Wild is for clients who want the opposite: complete privacy, no shared vehicles, no group itinerary, no compromise on pace or preference. The LGBTQ+ awareness built into our model is operational, not social. It is there so that you travel as yourself, not as part of a category.
+                </p>
+              </div>
+            </Reveal>
+          </div>
+        </div>
       </section>
 
       {/* â”€â”€â”€ CTA band â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}

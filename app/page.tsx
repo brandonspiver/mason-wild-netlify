@@ -107,6 +107,25 @@ export default function HomePage() {
             Southern and Eastern Africa for clients who want to feel
             safe, understood, and exceptionally well looked after.
           </p>
+          <p
+            className={[
+              "text-sm font-light text-white/65 max-w-[400px] leading-relaxed mb-11",
+              "sm:mb-14",
+              "opacity-0 translate-y-4",
+              "animate-[fadeRise_0.9s_cubic-bezier(0.16,1,0.3,1)_0.6s_forwards]",
+            ].join(" ")}
+          >
+            Most well-designed luxury safaris still carry a hidden cost for LGBTQ+
+            travellers: the background layer of social calculation that follows
+            you from camp to camp, guide to guide, meal to meal. The quiet work
+            of managing how you are perceived, even in places that mean well.
+            <br />
+            <br />
+            Mason &amp; Wild is built to remove that cost entirely — not through
+            messaging, but through the decisions made before a journey is ever
+            proposed. Which territories are assessed. Which camps are selected.
+            Which guides are trusted. Which are not.
+          </p>
 
           <div
             className={[
@@ -163,23 +182,21 @@ export default function HomePage() {
 
             <div>
               <Reveal>
-                <p className="label-tag mb-6">Africa, edited properly.</p>
+                <p className="label-tag mb-6">Africa, Designed So You Never Have to Manage It.</p>
               </Reveal>
               <Reveal delay={1}>
                 <h2
                   className="font-serif font-light text-display-lg text-stone-900 mb-6"
                   id="intro-heading"
                 >
-                  Africa,
-                  <br />
-                  edited <em>properly.</em>
+                  Africa, Designed So You Never Have to Manage It.
                 </h2>
               </Reveal>
               <Reveal delay={2}>
                 <p className="text-base font-light text-stone-500 leading-relaxed max-w-[440px] mb-9">
-                  The best journeys do not overwhelm. They do not confuse
-                  luxury with excess. Mason &amp; Wild creates high-touch
-                  African travel with confidence, clarity, and precise fit.
+                  Private journeys for LGBTQ+ travellers who want the
+                  continent at its most extraordinary — without the
+                  background work of navigating it.
                 </p>
               </Reveal>
               <Reveal delay={3}>

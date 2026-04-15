@@ -219,6 +219,14 @@ export default function AboutPage() {
         </div>
       </section>
 
+      <section className="section border-b border-stone-200" aria-label="Direct property approval statement">
+        <div className="container-site max-w-[920px]">
+          <p className="text-base font-light text-stone-500 leading-relaxed">
+            Every property offered by Mason &amp; Wild has been visited and approved by Zannon James directly. Not reviewed, not vetted by proxy, not inherited from a previous operator relationship. If he has not stayed there himself and confirmed the standard holds, it is not offered. That is the constraint that keeps the collection honest, and the reason it remains small.
+          </p>
+        </div>
+      </section>
+
       <section
         className="section border-b border-stone-200"
         aria-labelledby="luxury-heading"
@@ -346,6 +354,26 @@ export default function AboutPage() {
               </Reveal>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="section bg-forest" aria-labelledby="how-safety-handled-heading">
+        <div className="container-site max-w-[920px]">
+          <h2
+            className="font-serif font-light text-display-md text-white leading-[1.07] tracking-[-0.012em] mb-8"
+            id="how-safety-handled-heading"
+          >
+            How Safety Is Handled
+          </h2>
+          <p className="text-base font-light text-white leading-relaxed mb-6">
+            We do not use the language of risk management, because that is not the experience we are designing. What we do instead is make decisions — before a journey is proposed — that mean safety is never something you need to think about once you arrive.
+          </p>
+          <p className="text-base font-light text-white leading-relaxed mb-6">
+            Those decisions are operational: which territories meet our standard for legal standing and real-world enforcement, which camps have been assessed for staff culture and guide values, how transit between properties is routed to reduce friction, how room configurations are handled by default rather than by request.
+          </p>
+          <p className="text-base font-light text-white leading-relaxed">
+            The result is not a journey where you feel protected. It is a journey where the question simply does not arise.
+          </p>
         </div>
       </section>
 
