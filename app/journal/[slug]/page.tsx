@@ -1853,9 +1853,9 @@ const ARTICLES: Record<string, FullArticle> = {
     readingTime: 10,
     publishedAt: "2026-04-15",
     img: {
-      src:     "/journeys/the-untamed/vetted-south-luangwa-optimized.jpg",
-      alt:     "Walking safari scene in South Luangwa, Zambia",
-      caption: "South Luangwa, Zambia",
+      src:     "/journeys/the-untamed/KuKaya (1).jpg",
+      alt:     "South Luangwa lodge room at KuKaya, Zambia",
+      caption: "KuKaya, South Luangwa",
       position: "center",
     },
     body: [
@@ -1914,7 +1914,7 @@ const ARTICLES: Record<string, FullArticle> = {
       {
         type: "image",
         image: {
-          src: "/journeys/the-untamed/vetted-south-luangwa-optimized.jpg",
+          src: "/journeys/the-untamed/Zungulila (18).jpg",
           alt: "Immersive safari landscape or wildlife scene from Zambia",
           caption: "Immersion, wilderness, and safari depth",
           position: "center",
