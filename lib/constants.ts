@@ -177,6 +177,7 @@ export const FEATURED_JOURNEYS = [
 // â”€â”€â”€ Journal Categories â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 export type JournalCategory =
+  | "journey-intelligence"
   | "lgbtq-travel-intelligence"
   | "safari-guides"
   | "private-travel-philosophy"
@@ -184,6 +185,7 @@ export type JournalCategory =
   | "destination-notes";
 
 export const JOURNAL_CATEGORY_LABELS: Record<JournalCategory, string> = {
+  "journey-intelligence":      "Journey Intelligence",
   "lgbtq-travel-intelligence": "LGBTQ+ Travel Intelligence",
   "safari-guides":             "Safari Guides",
   "private-travel-philosophy": "Private Travel Philosophy",

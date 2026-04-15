@@ -1838,6 +1838,856 @@ const ARTICLES: Record<string, FullArticle> = {
       },
     ],
   },
+  "how-to-choose-the-right-african-journey-for-your-travel-style": {
+    slug:        "how-to-choose-the-right-african-journey-for-your-travel-style",
+    title:       "How to Choose the Right African Journey for Your Travel Style",
+    subtitle:
+      "A considered guide to choosing the right African journey not by destination alone, but by the kind of experience you actually want to feel inside it.",
+    seoTitle:    "How to Choose the Right African Journey for Your Travel Style",
+    metaTitle:   "How to Choose the Right African Journey | Mason & Wild",
+    metaDescription:
+      "A Mason & Wild guide to choosing the right African journey for your travel style, from privacy and safari rhythm to romance, culture, adventure, and first-time confidence.",
+    category:    "journey-intelligence",
+    excerpt:
+      "A considered guide to choosing the right African journey not by destination alone, but by the kind of experience you actually want to feel inside it.",
+    readingTime: 10,
+    publishedAt: "2026-04-15",
+    body: [
+      {
+        type: "p-lead",
+        text: "The mistake most travellers make is starting with the map.",
+      },
+      {
+        type: "p",
+        text: "They ask where to go before they ask how they want the trip to feel. Safari or coast. South Africa or Tanzania. Botswana or Zambia. Those are sensible questions, but they come too early. The right African journey is rarely chosen by destination alone. It is chosen by rhythm, privacy, mood, pace, and the kind of luxury that feels natural to the person taking it.",
+      },
+      {
+        type: "p",
+        text: "That is why the better question is not simply where should we go. It is what kind of journey are we actually trying to have.",
+      },
+      {
+        type: "h2",
+        text: "If you want privacy more than sociability",
+      },
+      {
+        type: "p",
+        text: "Some travellers want the trip to feel quiet before it feels exciting.",
+      },
+      {
+        type: "p",
+        text: "They want space, emotional ease, and a journey that does not ask them to perform themselves socially in every setting. For those travellers, privacy is not a bonus. It is part of the luxury.",
+      },
+      {
+        type: "p",
+        content: [
+          { type: "text", text: "That usually points toward journeys where the pace is softer, the properties smaller, and the settings more immersive. Botswana often works beautifully here, as do quieter, more design-led safari formats that favour atmosphere over spectacle. This is where a journey like " },
+          { type: "link", text: "The Intimate", href: "/journeys/the-intimate" },
+          { type: "text", text: " makes sense. It is not built to be loud. It is built to feel calming, absorbing, and deeply private." },
+        ],
+      },
+      {
+        type: "h2",
+        text: "If you want immersion rather than performance",
+      },
+      {
+        type: "p",
+        text: "There is a certain kind of traveller who does not need the safari to announce itself constantly.",
+      },
+      {
+        type: "p",
+        text: "They want guiding, landscape, wildlife intelligence, and the feeling of being in a place that still has texture and edge. They are less interested in safari as theatre and more interested in safari as relationship. This is often where return travellers begin to separate themselves from first-timers. They are no longer looking only for recognition. They are looking for depth.",
+      },
+      {
+        type: "p",
+        content: [
+          { type: "text", text: "That is where " },
+          { type: "link", text: "The Untamed", href: "/journeys/the-untamed" },
+          { type: "text", text: " comes into its own. Zambia suits travellers who want immersion, strong guiding, wildlife seriousness, and a more grounded kind of luxury. It is one of the clearest answers for those who want a safari with more substance than performance." },
+        ],
+      },
+      {
+        type: "image",
+        image: {
+          src: "/journeys/the-untamed/vetted-south-luangwa-optimized.jpg",
+          alt: "Immersive safari landscape or wildlife scene from Zambia",
+          caption: "Immersion, wilderness, and safari depth",
+          position: "center",
+        },
+        aspect: "16 / 10",
+      },
+      {
+        type: "h2",
+        text: "If you want first-time Africa confidence",
+      },
+      {
+        type: "p",
+        text: "Not every traveller wants to start with the most complex or personality-heavy journey.",
+      },
+      {
+        type: "p",
+        text: "Some want to know they are entering Africa through a route that is polished, beautifully paced, and easy to understand. That does not mean basic. It means coherent. The trip should feel welcoming, well-judged, and strong from the first day rather than asking the guest to decode too much too quickly.",
+      },
+      {
+        type: "p",
+        content: [
+          { type: "text", text: "This is where " },
+          { type: "link", text: "The Classic", href: "/journeys/the-classic" },
+          { type: "text", text: " is such a useful entry point. It gives first-time travellers the confidence of a strong structure, recognisable quality, and a lower-friction introduction to African luxury travel. It is often the best answer for travellers who want the experience to feel effortless before it feels adventurous." },
+        ],
+      },
+      {
+        type: "h2",
+        text: "If you want romance, coast, or a softer finish",
+      },
+      {
+        type: "p",
+        text: "Some journeys are chosen less by wildlife intensity and more by mood.",
+      },
+      {
+        type: "p",
+        text: "These are the travellers who want beauty, sensuality, and a trip that holds them gently rather than pushes them forward constantly. They care about atmosphere, setting, design, and the emotional finish of a journey. They often want coast to matter, not just as an add-on, but as part of the travel language itself.",
+      },
+      {
+        type: "p",
+        content: [
+          { type: "text", text: "That usually points toward routes with softness built into them. " },
+          { type: "link", text: "The Romantic", href: "/journeys/the-romantic" },
+          { type: "text", text: " is the clearest example, especially for travellers drawn to South Africa and Mozambique as a pairing of polish, privacy, and ocean calm. For others, coast may arrive as the release valve after safari, as it does in " },
+          { type: "link", text: "The Private Circuit", href: "/journeys/the-private-circuit" },
+          { type: "text", text: " with Zanzibar." },
+        ],
+      },
+      {
+        type: "image",
+        image: {
+          src: "/journeys/the-romantic/BBL (12).jpg",
+          alt: "Refined coastal luxury scene in Mozambique",
+          caption: "Mozambique finish, softer pace",
+          position: "center",
+        },
+        aspect: "16 / 10",
+      },
+      {
+        type: "h2",
+        text: "If you want city, culture, and social energy as well as luxury",
+      },
+      {
+        type: "p",
+        text: "Some travellers want Africa to feel alive in the social sense, not only beautiful in the landscape sense.",
+      },
+      {
+        type: "p",
+        text: "They want public ease, city rhythm, design, dining, and the kind of journey that includes people, atmosphere, and cultural texture alongside privacy and comfort. This often suits LGBTQ+ travellers particularly well, as well as friends travelling together and anyone who wants the trip to hold more urban confidence.",
+      },
+      {
+        type: "p",
+        content: [
+          { type: "text", text: "That is where " },
+          { type: "link", text: "The Social Shift", href: "/the-social" },
+          { type: "text", text: " becomes the more natural fit. It leans into South Africa's style, openness, and public ease without sacrificing taste or structure. It is for travellers who do not want to disappear entirely. They want to move through a place that feels socially legible as well as luxurious." },
+        ],
+      },
+      {
+        type: "h2",
+        text: "If you want landscape drama and movement",
+      },
+      {
+        type: "p",
+        text: "Some travellers are drawn less to stillness and more to visual impact.",
+      },
+      {
+        type: "p",
+        text: "They want the dunes, the road, the horizon, the sense of one landscape giving way to another in a way that feels almost cinematic. They still want comfort, but they want the comfort to support movement rather than slow it down.",
+      },
+      {
+        type: "p",
+        content: [
+          { type: "text", text: "This is where " },
+          { type: "link", text: "The Adventure", href: "/journeys/the-adventure" },
+          { type: "text", text: " works so well. Namibia is ideal for travellers who want to feel the scale of a place, who love contrast, and who want a journey where the landscape is as much the point as the safari itself." },
+        ],
+      },
+      {
+        type: "h2",
+        text: "If you want iconic safari structure and East African scale",
+      },
+      {
+        type: "p",
+        text: "Some journeys are chosen because the traveller wants the recognisable frame.",
+      },
+      {
+        type: "p",
+        text: "The Serengeti. Ngorongoro. Zanzibar. A trip with shape, with a clear circuit, and with landscapes that arrive with a sense of reputation and theatrical scale. There is nothing wrong with that, but it does mean the journey should be built with care so that it feels composed rather than obvious.",
+      },
+      {
+        type: "p",
+        content: [
+          { type: "text", text: "That is where " },
+          { type: "link", text: "The Private Circuit", href: "/journeys/the-private-circuit" },
+          { type: "text", text: " works. It is the right fit for travellers drawn to East Africa's more cinematic side and to the safari-to-sea contrast Tanzania and Zanzibar can offer when the itinerary is paced properly." },
+        ],
+      },
+      {
+        type: "h2",
+        text: "If you are choosing between privacy, romance, or adventure",
+      },
+      {
+        type: "p",
+        text: "This is often where people get stuck, and the answer is usually emotional rather than geographic.",
+      },
+      {
+        type: "p",
+        text: "If you want the journey to quiet you, choose privacy. If you want it to hold you, choose romance. If you want it to move you, choose adventure. The destination matters, but those underlying instincts matter more. They determine whether the trip will feel natural once you are in it.",
+      },
+      {
+        type: "p",
+        text: "That is also why no journey should be chosen only because it sounds impressive. The right fit is the one that aligns with the way you actually like to travel, not the way you think you should.",
+      },
+      {
+        type: "h2",
+        text: "Final thought",
+      },
+      {
+        type: "p",
+        text: "The best African journey is not the one that contains the most. It is the one that feels most coherent to the person living it.",
+      },
+      {
+        type: "p",
+        text: "That is why travel style matters so much. The map is only one part of the answer. Privacy, pace, personality, and the emotional shape of the trip matter just as much. Once those are clear, the destination usually becomes easier to choose.",
+      },
+      {
+        type: "h2",
+        text: "CTA",
+      },
+      {
+        type: "p",
+        content: [
+          { type: "text", text: "If you want the shorter version of this question, read " },
+          { type: "link", text: "Which Mason & Wild Archetype Is Right for You?", href: "/journal/which-mason-and-wild-archetype-is-right-for-you" },
+          { type: "text", text: "." },
+        ],
+      },
+      {
+        type: "p",
+        content: [
+          { type: "text", text: "If you already know the feeling you are looking for and want help shaping the right journey around it, " },
+          { type: "link", text: "enquire privately", href: "/enquire" },
+          { type: "text", text: "." },
+        ],
+      },
+    ],
+    relatedArticles: [
+      {
+        slug:        "which-mason-and-wild-archetype-is-right-for-you",
+        title:       "Which Mason & Wild Archetype Is Right for You?",
+        category:    "journey-intelligence",
+        excerpt:
+          "A considered guide to choosing the journey style that fits how you travel, from privacy and romance to design, wildlife, celebration, and first-time safari confidence.",
+        readingTime: 11,
+        publishedAt: "2026-04-15",
+      },
+      {
+        slug:        "how-long-should-an-african-luxury-journey-be",
+        title:       "How Long Should an African Luxury Journey Be?",
+        category:    "journey-intelligence",
+        excerpt:
+          "A considered guide to how long an African luxury journey should really be, why 10 to 14 nights is often the sweet spot, and how to build a trip with rhythm rather than rush.",
+        readingTime: 9,
+        publishedAt: "2026-04-15",
+      },
+    ],
+  },
+  "how-long-should-an-african-luxury-journey-be": {
+    slug:        "how-long-should-an-african-luxury-journey-be",
+    title:       "How Long Should an African Luxury Journey Be?",
+    subtitle:
+      "A considered guide to how long an African luxury journey should really be, why 10 to 14 nights is often the sweet spot, and how to build a trip with rhythm rather than rush.",
+    seoTitle:    "How Long Should an African Luxury Journey Be?",
+    metaTitle:   "How Long Should an African Luxury Journey Be? | Mason & Wild",
+    metaDescription:
+      "A Mason & Wild guide to the ideal length of an African luxury journey, why 10 to 14 nights is often the sweet spot, and how to balance safari, city, and pace without rushing the experience.",
+    category:    "journey-intelligence",
+    excerpt:
+      "A considered guide to how long an African luxury journey should really be, why 10 to 14 nights is often the sweet spot, and how to build a trip with rhythm rather than rush.",
+    readingTime: 9,
+    publishedAt: "2026-04-15",
+    img: {
+      src:     "/journeys/the-romantic/vetted-monwana-optimized.jpg",
+      alt:     "Monwana landscape image representing calm, space, and luxury journey pacing",
+      caption: "Monwana, Greater Kruger",
+      position: "center",
+    },
+    body: [
+      {
+        type: "p-lead",
+        text: "Most African trips feel rushed not because they are short, but because they are asked to do too much.",
+      },
+      {
+        type: "p",
+        text: "That is the problem more often than travellers realise. The issue is not always the number of nights. It is the ambition loaded into them. Too many flights. Too many regions. Too many must-do names forced into one itinerary because the traveller assumes this may be their only chance to see them all. Luxury can cushion that kind of trip, but it cannot fully redeem it. A journey still needs room to breathe.",
+      },
+      {
+        type: "p",
+        text: "For most travellers, 10 to 14 nights is where an African luxury journey begins to feel properly shaped. That is often the point at which the trip can hold contrast, pacing, and genuine ease without turning into a sequence of transitions.",
+      },
+      {
+        type: "h2",
+        text: "Seven nights can work, but only when the ambition is edited",
+      },
+      {
+        type: "p",
+        text: "A seven-night African luxury trip is not too short by definition. It is too short when it is overbuilt.",
+      },
+      {
+        type: "p",
+        text: "Handled properly, seven nights can be elegant. One country. Two stops at most. A city and safari pairing, or a safari-only journey with enough time to settle into one landscape. The mistake is trying to use seven nights to prove how much can be covered. That usually results in a trip that looks exciting on paper and feels compressed in reality.",
+      },
+      {
+        type: "p",
+        text: "This is especially true in Africa, where distance, transfer time, and the emotional shift between places matter more than many travellers initially expect.",
+      },
+      {
+        type: "h2",
+        text: "Ten nights is often where a trip starts to feel generous",
+      },
+      {
+        type: "p",
+        text: "Ten nights is often the first point at which a luxury African journey begins to feel less like an exercise in efficiency and more like an actual experience.",
+      },
+      {
+        type: "p",
+        text: "There is enough time for contrast. Enough time for a city to open properly before safari begins. Enough time for safari not to feel cut short just as the guest starts to settle into it. Enough time for the trip to create rhythm rather than merely movement.",
+      },
+      {
+        type: "p",
+        text: "A Cape Town and safari itinerary, for example, begins to make much more sense at ten nights than it does at seven. The city has room. The bush has room. The traveller has room.",
+      },
+      {
+        type: "h2",
+        text: "Twelve to fourteen nights is where the best journeys often live",
+      },
+      {
+        type: "p",
+        text: "This is usually the sweet spot.",
+      },
+      {
+        type: "p",
+        text: "At 12 to 14 nights, a journey can carry shape. Not just content, but shape. It can open well, deepen properly, and finish with the kind of composure that makes the whole trip feel intentional rather than assembled. This is where contrast begins to work at a much more luxurious level.",
+      },
+      {
+        type: "p",
+        text: "Cape Town and safari is one of the clearest examples. With 12 to 14 nights, you can allow the city to be more than a gateway, the safari to be more than a highlight reel, and the entire journey to feel coherent rather than hurried. That does not require extravagance. It requires pacing.",
+      },
+      {
+        type: "p",
+        text: "This is also the length at which many travellers begin to feel they are not having to choose between seeing well and travelling well.",
+      },
+      {
+        type: "h2",
+        text: "Longer trips work because Africa rewards depth",
+      },
+      {
+        type: "p",
+        text: "The logic behind a longer African journey is not only commercial. It is experiential.",
+      },
+      {
+        type: "p",
+        text: "Africa is not a destination where more distance automatically creates more richness. But the right amount of time can transform the quality of the trip. More nights often mean fewer compromises, fewer unnecessary trade-offs, and a stronger emotional pace. They allow travellers to arrive more fully in each place and to feel the contrast between places instead of simply passing through them.",
+      },
+      {
+        type: "p",
+        text: "This is part of why longer trips often feel more luxurious. They are less pressured. Less defensive. Less obsessed with proving value through constant movement.",
+      },
+      {
+        type: "h2",
+        text: "Cape Town and safari is the clearest case for proper pacing",
+      },
+      {
+        type: "p",
+        text: "This pairing works so well because each place asks for something different.",
+      },
+      {
+        type: "p",
+        text: "Cape Town rewards lingering. It is a city of neighbourhoods, meals, views, design, and atmosphere. Safari asks for a different kind of attention entirely. Early mornings, slower immersion, and enough stillness for the bush to start making sense on its own terms. If the trip is too short, one side usually steals time from the other. The result is a pairing that technically works, but never fully lands.",
+      },
+      {
+        type: "p",
+        text: "At 12 to 14 nights, the relationship between the two becomes more graceful. Cape Town can open the journey properly. Safari can then deepen it. The trip begins to feel balanced rather than negotiated.",
+      },
+      {
+        type: "h2",
+        text: "The real question is not how much time you have",
+      },
+      {
+        type: "p",
+        text: "It is how much the trip is being asked to hold.",
+      },
+      {
+        type: "p",
+        text: "A well-edited 10-night journey will usually feel far better than a poorly built 14-night one. But when travellers do have more time, the smartest use of it is usually not to keep adding destinations. It is to improve the quality of the rhythm. Longer stays. Fewer abrupt transitions. More considered contrast. A stronger finish.",
+      },
+      {
+        type: "p",
+        text: "That is where luxury starts to separate itself from premium travel. Not in how much is included, but in how well the journey is held together.",
+      },
+      {
+        type: "h2",
+        text: "What travellers often underestimate",
+      },
+      {
+        type: "p",
+        text: "They underestimate recovery.",
+      },
+      {
+        type: "p",
+        text: "Long-haul arrival takes something out of people, even when they travel well. So do air hops, camp changes, and hard pivots between city, safari, and coast. A journey needs enough margin to absorb those transitions gracefully. Without that margin, the trip may still be beautiful, but it will feel more effortful than it should.",
+      },
+      {
+        type: "p",
+        text: "This is why longer journeys often work better. Not because excess is the point, but because ease is.",
+      },
+      {
+        type: "h2",
+        text: "How to think about the right length",
+      },
+      {
+        type: "p",
+        text: "A good question is not how much can we fit in.",
+      },
+      {
+        type: "p",
+        text: "A better question is how do we want this journey to feel.",
+      },
+      {
+        type: "p",
+        text: "If the answer is calm, layered, polished, immersive, and genuinely luxurious, then the trip usually needs enough time to let those qualities appear. That often means resisting the urge to treat Africa as a checklist and instead giving the journey room to become coherent.",
+      },
+      {
+        type: "p",
+        content: [
+          { type: "text", text: "For a broader reflection on why restraint matters so much, read " },
+          { type: "link", text: "The Best Luxury Travel Feels Edited", href: "/journal/the-best-luxury-travel-feels-edited" },
+          { type: "text", text: "." },
+        ],
+      },
+      {
+        type: "h2",
+        text: "Final thought",
+      },
+      {
+        type: "p",
+        text: "The best African luxury journeys are rarely the ones that cover the most.",
+      },
+      {
+        type: "p",
+        text: "They are the ones that allow enough time for contrast, rhythm, and place to register properly. For most travellers, that means aiming for 10 to 14 nights, and very often leaning toward the fuller end of that range if the goal is to combine destinations without compromising the experience.",
+      },
+      {
+        type: "p",
+        text: "A shorter journey can absolutely work. But a well-paced longer one is often where Africa begins to feel not only impressive, but complete.",
+      },
+      {
+        type: "h2",
+        text: "CTA",
+      },
+      {
+        type: "p",
+        content: [
+          { type: "text", text: "If you want help shaping the right journey length around how you actually travel, " },
+          { type: "link", text: "enquire privately", href: "/enquire" },
+          { type: "text", text: "." },
+        ],
+      },
+      {
+        type: "p",
+        content: [
+          { type: "text", text: "And if you are still deciding which kind of trip fits you best, read " },
+          { type: "link", text: "Which Mason & Wild Archetype Is Right for You?", href: "/journal/which-mason-and-wild-archetype-is-right-for-you" },
+          { type: "text", text: "." },
+        ],
+      },
+    ],
+    relatedArticles: [
+      {
+        slug:        "the-best-luxury-travel-feels-edited",
+        title:       "The Best Luxury Travel Feels Edited",
+        category:    "private-travel-philosophy",
+        excerpt:
+          "A considered look at why the most memorable journeys are shaped by coherence, rhythm, and restraint rather than sheer volume.",
+        readingTime: 7,
+        publishedAt: "2026-04-12",
+      },
+      {
+        slug:        "which-mason-and-wild-archetype-is-right-for-you",
+        title:       "Which Mason & Wild Archetype Is Right for You?",
+        category:    "journey-intelligence",
+        excerpt:
+          "A considered guide to choosing the journey style that fits how you travel, from privacy and romance to design, wildlife, celebration, and first-time safari confidence.",
+        readingTime: 11,
+        publishedAt: "2026-04-15",
+      },
+    ],
+  },
+  "which-mason-and-wild-archetype-is-right-for-you": {
+    slug:        "which-mason-and-wild-archetype-is-right-for-you",
+    title:       "Which Mason & Wild Archetype Is Right for You?",
+    subtitle:
+      "A considered guide to choosing the journey style that fits how you travel, from privacy and romance to design, wildlife, celebration, and first-time safari confidence.",
+    seoTitle:    "Which Mason & Wild Archetype Is Right for You?",
+    metaTitle:   "Which African Luxury Journey Is Right for You? | Mason & Wild",
+    metaDescription:
+      "A Mason & Wild guide to choosing the right African journey archetype, from romance and privacy to design, celebration, safari immersion, and first-time luxury travel confidence.",
+    category:    "journey-intelligence",
+    excerpt:
+      "A considered guide to choosing the journey style that fits how you travel, from privacy and romance to design, wildlife, celebration, and first-time safari confidence.",
+    readingTime: 11,
+    publishedAt: "2026-04-15",
+    img: {
+      src:     "/home/home-hero.jpg",
+      alt:     "Polished African landscape at golden hour with broad atmospheric depth",
+      caption: "Southern and Eastern Africa, curated by archetype",
+      position: "center 38%",
+    },
+    body: [
+      {
+        type: "p-lead",
+        text: "The best African journey is rarely chosen by destination alone.",
+      },
+      {
+        type: "p",
+        text: "It is chosen by rhythm, by personality, by the kind of luxury that actually suits the traveller behind the enquiry. Some people want privacy before anything else. Some want romance with polish. Some want wildlife intensity. Some want atmosphere, design, and social ease. Others want their first safari to feel confident, classic, and clear rather than overly ambitious.",
+      },
+      {
+        type: "p",
+        text: "That is why Mason & Wild's journeys are shaped as archetypes rather than generic itineraries. Each one speaks to a different travel instinct. The question is not which one sounds most impressive. It is which one feels most like the way you actually want to travel.",
+      },
+      {
+        type: "p",
+        text: "If you have been asking which African safari is right for me, start by identifying your African luxury travel style first. Destination comes after fit. The same applies if you are researching luxury safari travel style, African honeymoon travel ideas, or private luxury Africa journeys.",
+      },
+      {
+        type: "h2",
+        text: "If privacy, softness, and emotional ease matter most",
+      },
+      {
+        type: "p",
+        text: "Some travellers are not looking for the loudest version of luxury. They are looking for the one that asks the least of them.",
+      },
+      {
+        type: "h3",
+        text: "The Intimate",
+      },
+      {
+        type: "p",
+        content: [
+          { type: "link", text: "The Intimate", href: "/journeys/the-intimate" },
+          { type: "text", text: " is for travellers drawn to privacy, water, emotional spaciousness, and a more immersive safari rhythm. Botswana and Victoria Falls give this journey a softness that never becomes passive. Mokoro moments, refined camps, and a slower, more absorbing pace make it ideal for couples, honeymooners, and anyone who wants safari to feel deeply private rather than performative." },
+        ],
+      },
+      {
+        type: "p",
+        text: "Best for: couples, honeymooners, privacy-led safari travellers, and travellers who want Botswana at its most emotionally generous.",
+      },
+      {
+        type: "h3",
+        text: "The Romantic",
+      },
+      {
+        type: "p",
+        content: [
+          { type: "link", text: "The Romantic", href: "/journeys/the-romantic" },
+          { type: "text", text: " is for travellers who want beauty, polish, and atmosphere with a more sensual travel rhythm. A South Africa luxury journey that resolves into coastline calm can hold romance without becoming theatrical. It is less about intensity and more about feeling held by the journey." },
+        ],
+      },
+      {
+        type: "p",
+        text: "Best for: couples, celebrations, honeymoon-style travel, and travellers who care as much about mood as movement.",
+      },
+      {
+        type: "image",
+        image: {
+          src: "/journeys/the-romantic-card.png",
+          alt: "Private romantic safari scene with soft water light and intimate atmosphere",
+          caption: "Privacy, softness, and emotional ease",
+          position: "center",
+        },
+        aspect: "16 / 10",
+      },
+      {
+        type: "h2",
+        text: "If you want the wilder, more immersive side of Africa",
+      },
+      {
+        type: "p",
+        text: "Some travellers want a journey that feels less polished in the surface sense and more profound in the actual experience of landscape, guiding, and wilderness.",
+      },
+      {
+        type: "h3",
+        text: "The Untamed",
+      },
+      {
+        type: "p",
+        content: [
+          { type: "link", text: "The Untamed", href: "/journeys/the-untamed" },
+          { type: "text", text: " is for travellers who want Zambia at its most immersive. This is for people who value guiding, atmosphere, and safari that feels close to the land rather than highly staged. It suits those who want depth, wildlife intelligence, and a journey with more edge to it." },
+        ],
+      },
+      {
+        type: "p",
+        text: "Best for: return safari travellers, serious wildlife lovers, travellers who want a more raw and intelligent kind of luxury, and those drawn to Zambia's immersion and guiding strength.",
+      },
+      {
+        type: "h3",
+        text: "The Adventure",
+      },
+      {
+        type: "p",
+        content: [
+          { type: "link", text: "The Adventure", href: "/journeys/the-adventure" },
+          { type: "text", text: " is for travellers who want movement, contrast, and the extraordinary visual language of Namibia. Desert, design, open-road energy, and a sense of space give this journey a different kind of luxury. It is adventurous in spirit, but still highly considered." },
+        ],
+      },
+      {
+        type: "p",
+        text: "Best for: travellers who want landscapes as much as safari, couples or friends who love big scenery, people who want Namibia's drama without sacrificing polish, and those drawn to a more active rhythm.",
+      },
+      {
+        type: "image",
+        image: {
+          src: "/journeys/the-adventure/ZS (5).jpg",
+          alt: "Dramatic Namibian landscape supporting a wilder immersive travel rhythm",
+          caption: "Movement, wilderness, and stronger landscape energy",
+          position: "center",
+        },
+        aspect: "16 / 10",
+      },
+      {
+        type: "h2",
+        text: "If you want a journey that feels iconic, social, or complete",
+      },
+      {
+        type: "p",
+        text: "Some travellers are not looking for the quietest trip. They want a journey with shape, confidence, and a strong sense of place.",
+      },
+      {
+        type: "h3",
+        text: "The Social Shift",
+      },
+      {
+        type: "p",
+        content: [
+          { type: "link", text: "The Social Shift", href: "/the-social" },
+          { type: "text", text: " is for travellers who want South Africa in a more expressive, style-led, socially confident format. This is the journey for people who love city energy, design, dining, public ease, and the kind of travel that still feels luxurious without becoming overly private or secluded." },
+        ],
+      },
+      {
+        type: "p",
+        text: "Best for: LGBTQ+ travellers wanting public confidence and style, friends travelling together, travellers who want Cape Town and South Africa to feel alive and social, and those drawn to culture, people, and atmosphere.",
+      },
+      {
+        type: "h3",
+        text: "The Classic",
+      },
+      {
+        type: "p",
+        content: [
+          { type: "link", text: "The Classic", href: "/journeys/the-classic" },
+          { type: "text", text: " is for travellers who want an excellent first African journey with confidence, clarity, and polish. It is easier to enter, easy to love, and built around destinations that deliver without asking the traveller to decode too much. It is classic not because it is basic, but because it is dependable in the best sense." },
+        ],
+      },
+      {
+        type: "p",
+        text: "Best for: first-time Africa travellers, parents or multi-generational travellers, travellers who want strong value and confidence, and those who want a lower-friction introduction to safari and Southern Africa.",
+      },
+      {
+        type: "h3",
+        text: "The Private Circuit",
+      },
+      {
+        type: "p",
+        content: [
+          { type: "link", text: "The Private Circuit", href: "/journeys/the-private-circuit" },
+          { type: "text", text: " is for travellers drawn to Tanzania's more cinematic side. It offers iconic safari landscapes, clear journey structure, and the possibility of resolving into Zanzibar. This suits travellers who want East Africa with polish, scale, and a strong sense of classic safari theatre." },
+        ],
+      },
+      {
+        type: "p",
+        text: "Best for: travellers drawn to Tanzania and Zanzibar, people who want the recognisable East African safari frame, those who like a journey with strong structure and scenic contrast, and travellers who want safari with a refined coastal finish.",
+      },
+      {
+        type: "image",
+        image: {
+          src: "/journeys/the-classic/mbano-manor-card.jpg",
+          alt: "Refined lodge setting with polished atmosphere and composed travel rhythm",
+          caption: "Polish, style, and composed journey rhythm",
+          position: "center",
+        },
+        aspect: "16 / 10",
+      },
+      {
+        type: "h2",
+        text: "How to choose well",
+      },
+      {
+        type: "p",
+        text: "The fastest way to choose the right archetype is not to ask which destination is best. It is to ask which version of luxury feels most natural to you.",
+      },
+      {
+        type: "p",
+        text: "Do you want privacy or sociability? Immersion or polish? Water or desert? Design or wildlife intensity? A first safari with confidence, or a more specialised journey with stronger personality? The best fit is usually obvious once the question becomes emotional rather than simply geographic.",
+      },
+      {
+        type: "p",
+        text: "That is also why no archetype is rigid. Each one is a starting point, a travel language, a way of understanding what kind of journey you are really asking for. Private tailoring still matters.",
+      },
+      {
+        type: "p",
+        text: "Across Southern and Eastern Africa, from Botswana, Tanzania, Zambia, and Namibia luxury travel routes to South Africa-led finishes, fit is what keeps a journey coherent.",
+      },
+      {
+        type: "h2",
+        text: "Final thought",
+      },
+      {
+        type: "p",
+        text: "A great journey should feel like it recognises you.",
+      },
+      {
+        type: "p",
+        text: "Not only your taste, but your pace. Not only the places you say you want to see, but the way you want to feel while seeing them. That is what the Mason & Wild archetypes are designed to clarify.",
+      },
+      {
+        type: "p",
+        text: "The right archetype is not the most ambitious one. It is the one that makes the whole journey feel coherent.",
+      },
+      {
+        type: "h2",
+        text: "CTA",
+      },
+      {
+        type: "p",
+        content: [
+          { type: "text", text: "If you already know which archetype feels most like you, " },
+          { type: "link", text: "enquire privately", href: "/enquire" },
+          { type: "text", text: " and we will shape it around you properly." },
+        ],
+      },
+      {
+        type: "p",
+        content: [
+          { type: "text", text: "If you are still deciding, start with " },
+          { type: "link", text: "The Intimate", href: "/journeys/the-intimate" },
+          { type: "text", text: ", " },
+          { type: "link", text: "The Romantic", href: "/journeys/the-romantic" },
+          { type: "text", text: ", " },
+          { type: "link", text: "The Untamed", href: "/journeys/the-untamed" },
+          { type: "text", text: ", " },
+          { type: "link", text: "The Adventure", href: "/journeys/the-adventure" },
+          { type: "text", text: ", " },
+          { type: "link", text: "The Social Shift", href: "/the-social" },
+          { type: "text", text: ", " },
+          { type: "link", text: "The Classic", href: "/journeys/the-classic" },
+          { type: "text", text: ", and " },
+          { type: "link", text: "The Private Circuit", href: "/journeys/the-private-circuit" },
+          { type: "text", text: "." },
+        ],
+      },
+    ],
+    relatedJourneys: [
+      {
+        slug:    "the-intimate",
+        name:    "The Intimate",
+        outcome: "Solitude",
+        img: {
+          src: "/journeys/the-intimate/makgadikgadi-dusk.jpg",
+          alt: "The Intimate journey image",
+        },
+      },
+      {
+        slug:    "the-romantic",
+        name:    "The Romantic",
+        outcome: "Wonder",
+        img: {
+          src: "/journeys/the-romantic-card.png",
+          alt: "The Romantic journey image",
+        },
+      },
+      {
+        slug:    "the-untamed",
+        name:    "The Untamed",
+        outcome: "Connection",
+        img: {
+          src: "/journeys/the-untamed-card.png",
+          alt: "The Untamed journey image",
+        },
+      },
+      {
+        slug:    "the-adventure",
+        name:    "The Adventure",
+        outcome: "Adventure",
+        img: {
+          src: "/journeys/the-adventure/ZS (5).jpg",
+          alt: "The Adventure journey image",
+        },
+      },
+      {
+        slug:    "the-social-shift",
+        name:    "The Social Shift",
+        outcome: "Connection",
+        img: {
+          src: "/journeys/the-social.jpg",
+          alt: "The Social Shift journey image",
+        },
+      },
+      {
+        slug:    "the-classic",
+        name:    "The Classic",
+        outcome: "Foundation",
+        img: {
+          src: "/journeys/the-classic/mbano-manor-card.jpg",
+          alt: "The Classic journey image",
+        },
+      },
+      {
+        slug:    "the-private-circuit",
+        name:    "The Private Circuit",
+        outcome: "Sovereignty",
+        img: {
+          src: "/journeys/the-private-circuit-card.png",
+          alt: "The Private Circuit journey image",
+        },
+      },
+    ],
+    relatedArticles: [
+      {
+        slug:        "what-lgbtq-travellers-should-look-for-in-a-luxury-african-journey",
+        title:       "What LGBTQ+ Travellers Should Look For in a Luxury African Journey",
+        category:    "lgbtq-travel-intelligence",
+        excerpt:
+          "A practical, considered guide to what actually makes a luxury African journey feel calm, private, and well handled for LGBTQ+ travellers.",
+        readingTime: 8,
+        publishedAt: "2026-04-12",
+      },
+      {
+        slug:        "tanzania-vs-botswana-luxury-safari",
+        title:       "Tanzania vs Botswana for Luxury Safari: Which One Fits the Way You Travel?",
+        category:    "safari-guides",
+        excerpt:
+          "A considered comparison of Tanzania and Botswana for luxury safari, from privacy and pace to wildlife style and journey fit.",
+        readingTime: 8,
+        publishedAt: "2026-04-08",
+      },
+      {
+        slug:        "choosing-africa-with-intention",
+        title:       "What It Means to Disappear Well: Choosing Africa with Intention",
+        category:    "lgbtq-travel-intelligence",
+        excerpt:
+          "A luxury perspective on privacy, remoteness, and why certain African journeys feel different for LGBTQ+ travellers.",
+        readingTime: 6,
+        publishedAt: "2026-04-12",
+      },
+    ],
+  },
   "what-lgbtq-travellers-should-look-for-in-a-luxury-african-journey": {
     slug:        "what-lgbtq-travellers-should-look-for-in-a-luxury-african-journey",
     title:       "What LGBTQ+ Travellers Should Look For in a Luxury African Journey",

@@ -25,6 +25,45 @@ export const metadata: Metadata = buildPageMetadata({
 // sourcing from contentlayer's allArticles sorted by publishedAt desc.
 const ARTICLES: ArticleSummary[] = [
   {
+    slug:        "how-to-choose-the-right-african-journey-for-your-travel-style",
+    title:       "How to Choose the Right African Journey for Your Travel Style",
+    category:    "journey-intelligence",
+    excerpt:
+      "A considered guide to choosing the right African journey not by destination alone, but by the kind of experience you actually want to feel inside it.",
+    readingTime: 10,
+    publishedAt: "2026-04-15",
+    img: {
+      src: "/journeys/the-untamed/vetted-south-luangwa-optimized.jpg",
+      alt: "Immersive safari landscape or wildlife scene from Zambia",
+    },
+  },
+  {
+    slug:        "how-long-should-an-african-luxury-journey-be",
+    title:       "How Long Should an African Luxury Journey Be?",
+    category:    "journey-intelligence",
+    excerpt:
+      "A considered guide to how long an African luxury journey should really be, why 10 to 14 nights is often the sweet spot, and how to build a trip with rhythm rather than rush.",
+    readingTime: 9,
+    publishedAt: "2026-04-15",
+    img: {
+      src: "/journeys/the-romantic/vetted-monwana-optimized.jpg",
+      alt: "Monwana landscape image representing calm, space, and luxury journey pacing",
+    },
+  },
+  {
+    slug:        "which-mason-and-wild-archetype-is-right-for-you",
+    title:       "Which Mason & Wild Archetype Is Right for You?",
+    category:    "journey-intelligence",
+    excerpt:
+      "A considered guide to choosing the journey style that fits how you travel, from privacy and romance to design, wildlife, celebration, and first-time safari confidence.",
+    readingTime: 11,
+    publishedAt: "2026-04-15",
+    img: {
+      src: "/home/home-hero.jpg",
+      alt: "Polished African landscape with atmosphere and emotional breadth",
+    },
+  },
+  {
     slug:        "choosing-africa-with-intention",
     title:       "What It Means to Disappear Well: Choosing Africa with Intention",
     category:    "lgbtq-travel-intelligence",
@@ -241,6 +280,7 @@ function formatDate(iso: string): string {
 }
 
 const CATEGORY_ORDER: JournalCategory[] = [
+  "journey-intelligence",
   "lgbtq-travel-intelligence",
   "safari-guides",
   "private-travel-philosophy",
