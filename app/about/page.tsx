@@ -366,7 +366,7 @@ export default function AboutPage() {
             How Safety Is Handled
           </h2>
           <p className="text-base font-light text-white leading-relaxed mb-6">
-            We do not use the language of risk management, because that is not the experience we are designing. What we do instead is make decisions — before a journey is proposed — that mean safety is never something you need to think about once you arrive.
+            We do not use the language of risk management, because that is not the experience we are designing. What we do instead is make decisions - before a journey is proposed - that mean safety is never something you need to think about once you arrive.
           </p>
           <p className="text-base font-light text-white leading-relaxed mb-6">
             Those decisions are operational: which territories meet our standard for legal standing and real-world enforcement, which camps have been assessed for staff culture and guide values, how transit between properties is routed to reduce friction, how room configurations are handled by default rather than by request.
