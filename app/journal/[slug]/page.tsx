@@ -1852,6 +1852,12 @@ const ARTICLES: Record<string, FullArticle> = {
       "A considered guide to choosing the right African journey not by destination alone, but by the kind of experience you actually want to feel inside it.",
     readingTime: 10,
     publishedAt: "2026-04-15",
+    img: {
+      src:     "/journeys/the-untamed/Chindeni (5).jpg",
+      alt:     "Walking safari scene in South Luangwa, Zambia",
+      caption: "South Luangwa, Zambia",
+      position: "center",
+    },
     body: [
       {
         type: "p-lead",
@@ -2112,9 +2118,9 @@ const ARTICLES: Record<string, FullArticle> = {
     readingTime: 9,
     publishedAt: "2026-04-15",
     img: {
-      src:     "/journeys/the-romantic/vetted-monwana-optimized.jpg",
-      alt:     "Monwana landscape image representing calm, space, and luxury journey pacing",
-      caption: "Monwana, Greater Kruger",
+      src:     "/journeys/the-romantic/MW  (1).jpg",
+      alt:     "Monwana Lodge suite in Greater Kruger",
+      caption: "Monwana Lodge, Greater Kruger",
       position: "center",
     },
     body: [

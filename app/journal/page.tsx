@@ -25,6 +25,19 @@ export const metadata: Metadata = buildPageMetadata({
 // sourcing from contentlayer's allArticles sorted by publishedAt desc.
 const ARTICLES: ArticleSummary[] = [
   {
+    slug:        "cape-town-gay-capital-of-africa",
+    title:       "Cape Town: Why It Remains the Gay Capital of Africa",
+    category:    "lgbtq-travel-intelligence",
+    excerpt:
+      "A considered look at why Cape Town remains the strongest queer city on the continent, from legal confidence and public ease to nightlife, design, hospitality, and the simple luxury of being out in the world.",
+    readingTime: 7,
+    publishedAt: "2026-04-05",
+    img: {
+      src: "/journal/cape-town-gay-capital-of-africa/hero.jpg",
+      alt: "Stylish Cape Town city scene for LGBTQ plus luxury travel",
+    },
+  },
+  {
     slug:        "how-to-choose-the-right-african-journey-for-your-travel-style",
     title:       "How to Choose the Right African Journey for Your Travel Style",
     category:    "journey-intelligence",
@@ -33,8 +46,8 @@ const ARTICLES: ArticleSummary[] = [
     readingTime: 10,
     publishedAt: "2026-04-15",
     img: {
-      src: "/journeys/the-untamed/vetted-south-luangwa-optimized.jpg",
-      alt: "Immersive safari landscape or wildlife scene from Zambia",
+      src: "/journeys/the-untamed/Chindeni (5).jpg",
+      alt: "Walking safari scene in South Luangwa, Zambia",
     },
   },
   {
@@ -46,8 +59,8 @@ const ARTICLES: ArticleSummary[] = [
     readingTime: 9,
     publishedAt: "2026-04-15",
     img: {
-      src: "/journeys/the-romantic/vetted-monwana-optimized.jpg",
-      alt: "Monwana landscape image representing calm, space, and luxury journey pacing",
+      src: "/journeys/the-romantic/MW  (1).jpg",
+      alt: "Monwana Lodge suite in Greater Kruger",
     },
   },
   {
@@ -113,19 +126,6 @@ const ARTICLES: ArticleSummary[] = [
     img: {
       src: "/journal/the-best-luxury-travel-feels-edited/hero.jpg",
       alt: "Refined luxury travel setting with calm and visual coherence",
-    },
-  },
-  {
-    slug:        "cape-town-gay-capital-of-africa",
-    title:       "Cape Town: Why It Remains the Gay Capital of Africa",
-    category:    "lgbtq-travel-intelligence",
-    excerpt:
-      "A considered look at why Cape Town remains the strongest queer city on the continent, from legal confidence and public ease to nightlife, design, hospitality, and the simple luxury of being out in the world.",
-    readingTime: 7,
-    publishedAt: "2026-04-05",
-    img: {
-      src: "/journal/cape-town-gay-capital-of-africa/hero.jpg",
-      alt: "Stylish Cape Town city scene for LGBTQ plus luxury travel",
     },
   },
   {
@@ -309,9 +309,9 @@ export default function JournalPage() {
     })),
   };
 
-  const [featured, ...rest] = ARTICLES;
+  const featured = ARTICLES[0];
 
-  const byCategory = rest.reduce<Partial<Record<JournalCategory, ArticleSummary[]>>>(
+  const byCategory = ARTICLES.reduce<Partial<Record<JournalCategory, ArticleSummary[]>>>(
     (acc, article) => {
       if (!acc[article.category]) acc[article.category] = [];
       acc[article.category]!.push(article);
@@ -430,7 +430,7 @@ export default function JournalPage() {
       <section className="section" aria-label="Journal articles">
         <div className={JOURNAL_SHELL}>
           {CATEGORY_ORDER.map((cat) => {
-            const articles = byCategory[cat];
+            const articles = byCategory[cat]?.slice(0, 3);
             if (!articles?.length) return null;
             return (
               <div key={cat} id={cat} className="mb-[clamp(72px,9vw,124px)] last:mb-0 scroll-mt-28">
