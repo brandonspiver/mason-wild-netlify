@@ -103,7 +103,7 @@ export default function EnquirePage() {
             <Reveal delay={1}>
               <div className="flex flex-col gap-8">
                 <p className="text-base font-light text-stone-500 leading-relaxed max-w-[680px]">
-                  A $100 private design fee is collected with your brief. It is credited in full if you proceed, and refunded if we are not the right fit. It exists to ensure the conversation starts at the right level.
+                  A $150.00 private design fee is collected with your brief. It is credited in full if you proceed, and refunded if we are not the right fit. It exists to ensure the conversation starts at the right level.
                 </p>
                 <InquiryForm />
               </div>

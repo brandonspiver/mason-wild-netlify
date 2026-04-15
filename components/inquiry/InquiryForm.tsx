@@ -249,9 +249,6 @@ export function InquiryForm() {
           ].join(" ")}
         >
           {submitState === "submitting" ? "Sending..." : "Start Your Private Enquiry"}
-          {submitState !== "submitting" && (
-            <span aria-hidden="true">-&gt;</span>
-          )}
         </button>
 
         <p className="text-sm font-light text-stone-400 leading-relaxed">

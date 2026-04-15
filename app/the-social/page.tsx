@@ -80,8 +80,8 @@ const metadataItems: readonly MetadataItem[] = [
   },
   {
     label: "Starting From",
-    title: "From $7,475 per person",
-    body: "From $7,475 per person, depending on season, room category, group format, and final journey design.",
+    title: "From $7,500 per person",
+    body: "From $7,500 per person, depending on season, room category, group format, and final journey design.",
   },
 ] as const;
 
@@ -373,7 +373,7 @@ export default function SocialShiftPage() {
               <span className="w-px h-3 bg-white/25" aria-hidden="true" />
               <span className="label-tag text-white/35">SOUTH AFRICA</span>
               <span className="w-px h-3 bg-white/25" aria-hidden="true" />
-              <span className="label-tag text-white/35">12 NIGHTS FROM $7,475 PER PERSON</span>
+              <span className="label-tag text-white/35">12 NIGHTS FROM $7,500 PER PERSON</span>
             </div>
           </div>
 

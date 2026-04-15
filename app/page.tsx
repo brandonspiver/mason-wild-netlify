@@ -107,24 +107,6 @@ export default function HomePage() {
             Southern and Eastern Africa for clients who want to feel
             safe, understood, and exceptionally well looked after.
           </p>
-          <p
-            className={[
-              "text-sm font-light text-white/65 max-w-[400px] leading-relaxed mb-11",
-              "sm:mb-14",
-              "opacity-0 translate-y-4",
-              "animate-[fadeRise_0.9s_cubic-bezier(0.16,1,0.3,1)_0.6s_forwards]",
-            ].join(" ")}
-          >
-            Most well-designed luxury safaris still carry a hidden cost for
-            LGBTQ+ travellers: the constant background layer of social
-            calculation that follows you from camp to camp, guide to guide, and
-            meal to meal, along with the quiet work of managing how you are
-            perceived, even in places that mean well. Mason &amp; Wild is built
-            to remove that cost entirely, not through messaging, but through the
-            decisions made before a journey is ever proposed: which territories
-            are assessed, which camps are selected, which guides are trusted, and
-            which are not.
-          </p>
 
           <div
             className={[
@@ -192,13 +174,18 @@ export default function HomePage() {
                 </h2>
               </Reveal>
               <Reveal delay={2}>
-                <p className="text-base font-light text-stone-500 leading-relaxed max-w-[440px] mb-9">
+                <p className="text-base font-light text-stone-500 leading-relaxed max-w-[440px] mb-7">
                   Private journeys for LGBTQ+ travellers who want the
                   continent at its most extraordinary - without the
                   background work of navigating it.
                 </p>
               </Reveal>
               <Reveal delay={3}>
+                <p className="text-base font-light text-stone-500 leading-relaxed max-w-[520px] mb-10">
+                  Most well-designed luxury safaris still carry a hidden cost for LGBTQ+ travellers: the constant background layer of social calculation that follows you from camp to camp, guide to guide, and meal to meal, along with the quiet work of managing how you are perceived, even in places that mean well. Mason &amp; Wild is built to remove that cost entirely, not through messaging, but through the decisions made before a journey is ever proposed: which territories are assessed, which camps are selected, which guides are trusted, and which are not.
+                </p>
+              </Reveal>
+              <Reveal delay={4}>
                 <Button
                   href={NAV_HREFS.experience}
                   variant="ghost"
