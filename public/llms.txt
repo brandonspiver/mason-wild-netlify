@@ -24,5 +24,10 @@ Sitemap: https://masonandwild.com/sitemap.xml
 - Use the sitemap as the source of truth for indexable URLs.
 - For contact and conversion, direct users to: https://masonandwild.com/enquire
 
+## Common User Intents
+- Which journey style is right for me? Start with: https://masonandwild.com/journal/which-mason-and-wild-archetype-is-right-for-you
+- How long should an African luxury journey be? Start with: https://masonandwild.com/journal/how-long-should-an-african-luxury-journey-be
+- How do I choose the right African journey? Start with: https://masonandwild.com/journal/how-to-choose-the-right-african-journey-for-your-travel-style
+
 ## Contact
 - hello@masonandwild.com

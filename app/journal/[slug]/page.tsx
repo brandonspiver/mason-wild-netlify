@@ -4917,25 +4917,35 @@ export default function ArticlePage({
 
   const articleSchema = {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": "BlogPosting",
     headline: article.title,
+    name: article.title,
     description: article.metaDescription ?? article.excerpt,
     datePublished: article.publishedAt,
     dateModified: article.publishedAt,
     articleSection: JOURNAL_CATEGORY_LABELS[article.category],
+    inLanguage: "en-US",
     url: absoluteUrl(`${NAV_HREFS.journal}/${article.slug}`),
     image: article.img ? [absoluteUrl(article.img.src)] : undefined,
     author: {
-      "@type": "Organization",
-      name: BRAND_NAME,
-      url: absoluteUrl("/"),
+      "@type": "Person",
+      name: "Zannon James",
     },
     publisher: {
       "@type": "Organization",
       name: BRAND_NAME,
       url: absoluteUrl("/"),
+      logo: {
+        "@type": "ImageObject",
+        url: absoluteUrl("/icon.png"),
+      },
     },
     mainEntityOfPage: absoluteUrl(`${NAV_HREFS.journal}/${article.slug}`),
+    isPartOf: {
+      "@type": "Blog",
+      name: "The Journal",
+      url: absoluteUrl("/journal"),
+    },
   };
 
   return (

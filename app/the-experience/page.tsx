@@ -18,19 +18,19 @@ const PROCESS_STEPS = [
     n:     "01",
     title: "Private Enquiry",
     body:
-      "You submit a brief through our private onboarding form. We ask about landscape, feeling, and duration  -  not dates and budgets. A member of our team responds within 24-48 hours.",
+      "You submit a brief through our private onboarding form. We ask about landscape, feeling, and duration, not dates and budgets. A member of our team responds within 24-48 hours.",
   },
   {
     n:     "02",
     title: "Specialist Consultation",
     body:
-      "Zannon or a senior specialist reviews your brief personally. We schedule a call to understand what you are looking for at depth  -  and what the journey should feel like from the first morning.",
+      "Zannon or a senior specialist reviews your brief personally. We schedule a call to understand what you are looking for at depth, and what the journey should feel like from the first morning.",
   },
   {
     n:     "03",
     title: "Journey Design",
     body:
-      "We build the itinerary from the ground up. Territory selection, lodge placement, guide assignment, routing, and daily rhythm  -  every element reviewed against our safety and vetting standards before anything is proposed.",
+      "We build the itinerary from the ground up. Territory selection, lodge placement, guide assignment, routing, and daily rhythm, every element reviewed against our safety and vetting standards before anything is proposed.",
   },
   {
     n:     "04",
@@ -69,13 +69,13 @@ const INCLUSIVE_ITEMS = [
     key:   "comfort",
     title: "Adaptive Comfort",
     body:
-      "Arrangements that anticipate your specific needs  -  from room configurations to daily privacy. Your comfort is designed in, not improvised on arrival.",
+      "Arrangements that anticipate your specific needs, from room configurations to daily privacy. Your comfort is designed in, not improvised on arrival.",
   },
   {
     key:   "design",
     title: "Private by Design",
     body:
-      "We do not work from templates. Each journey is a unique response to your brief  -  built from a direct conversation about what you are looking for, and what you would prefer to leave behind.",
+      "We do not work from templates. Each journey is a unique response to your brief, built from a direct conversation about what you are looking for, and what you would prefer to leave behind.",
   },
 ] as const;
 
@@ -294,7 +294,7 @@ export default function TheExperiencePage() {
             What a Mason &amp; Wild Journey Costs
           </h2>
           <p className="text-base font-light text-stone-500 leading-relaxed mb-6">
-            Mason &amp; Wild journeys start from $15,000 per person.
+            Mason &amp; Wild journeys start from $7,500.00 per person.
           </p>
           <p className="text-base font-light text-stone-500 leading-relaxed mb-6">
             That figure covers private guiding throughout, vetted accommodation selected for quality and fit, all internal transfers and logistics, and the design process itself - the research, the relationship, the operational intelligence that determines what is offered and what is not.

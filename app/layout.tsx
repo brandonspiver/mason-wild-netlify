@@ -6,7 +6,7 @@ import { Footer } from "@/components/layout/Footer";
 import { CookieBanner } from "@/components/layout/CookieBanner";
 import { PRIMARY_POSITIONING_LINE, BRAND_NAME } from "@/lib/constants";
 import { JsonLd } from "@/lib/jsonld";
-import { getOrganizationSchema, getSiteUrl, getWebsiteSchema } from "@/lib/seo";
+import { absoluteUrl, getOrganizationSchema, getSiteUrl, getWebsiteSchema, SITE_KEYWORDS } from "@/lib/seo";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -29,10 +29,15 @@ export const metadata: Metadata = {
   metadataBase: new URL(getSiteUrl()),
   applicationName: BRAND_NAME,
   title: {
-    template: `%s  -  ${BRAND_NAME}`,
+    template: `%s | ${BRAND_NAME}`,
     default: `${BRAND_NAME} | Private African Journeys for LGBTQ+ Travellers`,
   },
   description: PRIMARY_POSITIONING_LINE,
+  keywords: [...SITE_KEYWORDS],
+  authors: [{ name: "Zannon James" }],
+  creator: "Zannon James",
+  publisher: BRAND_NAME,
+  category: "Luxury Travel",
   referrer: "origin-when-cross-origin",
   formatDetection: {
     email: false,
@@ -52,6 +57,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     siteName: BRAND_NAME,
+    url: absoluteUrl("/"),
     locale: "en_US",
     type: "website",
     images: [
@@ -72,6 +78,13 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
   },
 };
 
