@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import type { CSSProperties } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { JourneyCarousel } from "@/components/journey/JourneyCarousel";
 import { SocialJourneyPanel } from "@/components/journey/SocialJourneyPanel";
 import { Reveal } from "@/components/ui/Reveal";
 import { Button } from "@/components/ui/Button";
@@ -20,14 +22,18 @@ type MetadataItem = {
   readonly body: string;
 };
 
+type JourneyImage = {
+  readonly src: string;
+  readonly alt: string;
+  readonly position?: string;
+  readonly fit?: "cover" | "contain";
+  readonly maxWidthPx?: number;
+};
+
 type Accommodation = {
   readonly name: string;
   readonly copy: string;
-  readonly images: readonly {
-    src: string;
-    alt: string;
-    position?: string;
-  }[];
+  readonly images: readonly JourneyImage[];
 };
 
 type ShapeCard = {
@@ -35,11 +41,7 @@ type ShapeCard = {
   readonly days: string;
   readonly title: string;
   readonly copy: string;
-  readonly image?: {
-    readonly src: string;
-    readonly alt: string;
-    readonly position?: string;
-  };
+  readonly image?: JourneyImage;
 };
 
 type Inclusion = {
@@ -51,7 +53,7 @@ const metadataItems: readonly MetadataItem[] = [
   {
     label: "Length",
     title: "12 nights",
-    body: "A socially intelligent South Africa progression that moves from city energy into wine-country ease, safari depth, and a softer coastal release.",
+    body: "A socially intelligent South Africa progression that moves from Johannesburg energy into safari depth, Franschhoek ease, and a polished Cape Town finish.",
   },
   {
     label: "Designed For",
@@ -66,12 +68,12 @@ const metadataItems: readonly MetadataItem[] = [
   {
     label: "Where",
     title: "South Africa",
-    body: "Cape Town, the Cape Winelands, safari, and the coast, sequenced to move from high social energy into deeper connection and softer release.",
+    body: "Johannesburg, safari, Franschhoek, and Cape Town, sequenced to move from opening energy into depth, softness, and a stronger final city close.",
   },
   {
     label: "Flow",
-    title: "City, Winelands, safari, coast",
-    body: "The route is intentionally sequenced to gather people, deepen the experience, and then release the journey with the right final atmosphere.",
+    title: "Johannesburg, safari, Franschhoek, Cape Town",
+    body: "The route is intentionally sequenced to gather people in the city, deepen the experience in safari, soften into the Winelands, and then finish with the right Cape Town atmosphere.",
   },
   {
     label: "Flexibility",
@@ -176,13 +178,56 @@ const accommodations: readonly Accommodation[] = [
   },
 ] as const;
 
+const galleryImages: readonly JourneyImage[] = [
+  {
+    src: "/journeys/the-social-shift/SH (5).jpeg",
+    alt: "Satyagraha House courtyard at dusk in Johannesburg",
+    position: "center 50%",
+  },
+  {
+    src: "/journeys/the-social-shift/FF (4).jpg",
+    alt: "Few & Far Luvhondo with mountain outlook in safari country",
+    position: "center 52%",
+  },
+  {
+    src: "/journeys/the-social-shift/SK (6).avif",
+    alt: "Sterrekopje house and garden setting in Franschhoek",
+    position: "center 50%",
+  },
+  {
+    src: "/journeys/the-social-shift/TA (6).png",
+    alt: "The Aven terrace and ocean-facing setting in Cape Town",
+    position: "center 48%",
+  },
+  {
+    src: "/journeys/the-social-shift/SH (2).JPG",
+    alt: "Interior detail at Satyagraha House",
+    position: "center 52%",
+  },
+  {
+    src: "/journeys/the-social-shift/FF (1).jpg",
+    alt: "Cliff suite view at Few & Far Luvhondo",
+    position: "center 50%",
+  },
+  {
+    src: "/journeys/the-social-shift/SK (10).avif",
+    alt: "Interior detail at Sterrekopje",
+    position: "center 50%",
+  },
+  {
+    src: "/journeys/the-social-shift/TA (8).png",
+    alt: "Pool and living space at The Aven",
+    position: "center 52%",
+  },
+] as const;
+
 const shapeCards: readonly ShapeCard[] = [
   {
     number: "01",
     days: "Days 1-4",
     title: "Begin with Energy",
     copy:
-      "Start in Cape Town, where design, dining, and city life create the perfect opening chapter. This is where the group dynamic starts to form naturally and the journey takes on personality from the outset.",
+      "Start in Johannesburg, where design, conversation, and the opening social rhythm create the first chapter. This is where the group dynamic starts to form naturally and the journey takes on personality from the outset.",
     image: {
       src: "/journeys/the-social-shift/SH (4).jpg",
       alt: "Satyagraha House setting in Johannesburg",
@@ -192,9 +237,9 @@ const shapeCards: readonly ShapeCard[] = [
   {
     number: "02",
     days: "Days 5-6",
-    title: "Shift into Ease",
+    title: "Deepen Through Safari",
     copy:
-      "Move into the Winelands, where the social tone softens into something slower, more indulgent, and more connected. This chapter gives the journey space and balance.",
+      "Continue into safari, where the rhythm changes and the group deepens through shared wildlife experience. It creates a different kind of connection, grounding the journey in something quieter, richer, and more memorable.",
     image: {
       src: "/journeys/the-social-shift/FF (5).jpg",
       alt: "Few & Far Luvhondo landscape in South Africa",
@@ -204,9 +249,9 @@ const shapeCards: readonly ShapeCard[] = [
   {
     number: "03",
     days: "Days 7-9",
-    title: "Deepen Through Safari",
+    title: "Shift into Ease",
     copy:
-      "Continue into safari, where the rhythm changes again. Shared wildlife experience creates a different kind of connection, grounding the group in something quieter, richer, and more memorable.",
+      "Move into Franschhoek, where the social tone softens into something slower, more indulgent, and more connected. This chapter gives the journey space, beauty, and balance after safari.",
     image: {
       src: "/journeys/the-social-shift/SK (11).avif",
       alt: "Sterrekopje house and garden setting in Franschhoek",
@@ -216,12 +261,12 @@ const shapeCards: readonly ShapeCard[] = [
   {
     number: "04",
     days: "Days 10-12",
-    title: "Finish by the Coast",
+    title: "Finish in Cape Town",
     copy:
-      "End with the coast, where the journey becomes lighter, freer, and more celebratory. It is the right final release, giving the group a beautiful close without losing the sense of polish that defines the rest of the trip.",
+      "End in Cape Town, where the journey becomes lighter, freer, and more celebratory. It is the right final release, giving the group a stylish close without losing the polish that defines the rest of the trip.",
     image: {
-      src: "/journeys/the-social-shift/TA (10).png",
-      alt: "The Aven in Cape Town",
+      src: "/journeys/the-social-shift/TA (2).png",
+      alt: "Cape Town coastal view from The Aven",
       position: "center 50%",
     },
   },
@@ -232,9 +277,9 @@ const shapeCards: readonly ShapeCard[] = [
     copy:
       "A final morning at your own pace before onward departure. By this stage, the journey should feel connected, complete, and beautifully well held.",
     image: {
-      src: "/journeys/the-social-shift/TA (1).png",
-      alt: "Ocean-facing villa view in Cape Town",
-      position: "center 52%",
+      src: "/journeys/the-social-shift/TA (7).png",
+      alt: "Pool terrace at The Aven in Cape Town",
+      position: "center 54%",
     },
   },
 ] as const;
@@ -248,7 +293,7 @@ const definesItems: readonly Inclusion[] = [
   {
     title: "A Curated Social Rhythm",
     copy:
-      "The route is built as progression rather than pressure, moving from city energy to wine-country softness, safari depth, and a lighter coastal finish.",
+      "The route is built as progression rather than pressure, moving from Johannesburg energy to safari depth, Franschhoek softness, and a more polished Cape Town finish.",
   },
   {
     title: "Connection Without Crowd Fatigue",
@@ -289,19 +334,19 @@ const includesItems: readonly Inclusion[] = [
       "The opening chapter is designed to create chemistry quickly, with strong setting, hosting, and enough freedom for personality to emerge.",
   },
   {
-    title: "Winelands Ease and Reset",
-    copy:
-      "A softer middle chapter introduces indulgence, slower movement, and room for stronger conversation and relaxed connection.",
-  },
-  {
     title: "Safari Depth for the Group",
     copy:
-      "Shared wildlife rhythm creates a different quality of connection and gives the social journey emotional substance.",
+      "Shared wildlife rhythm creates a different quality of connection and gives the social journey emotional substance early in the route.",
   },
   {
-    title: "Coastal Close with Lift",
+    title: "Franschhoek Ease and Reset",
     copy:
-      "The final chapter closes with warmth, movement, and celebratory ease without losing style or control.",
+      "A softer middle chapter introduces indulgence, slower movement, and room for stronger conversation and relaxed connection after safari.",
+  },
+  {
+    title: "Cape Town Close with Lift",
+    copy:
+      "The final chapter closes with warmth, movement, and celebratory ease in Cape Town without losing style or control.",
   },
   {
     title: "Carefully Hosted Flow",
@@ -321,6 +366,28 @@ const includesItems: readonly Inclusion[] = [
 ] as const;
 
 export default function SocialShiftPage() {
+  const getImageClass = (image: JourneyImage): string =>
+    image.fit === "contain" ? "object-contain bg-page-subtle" : "object-cover";
+
+  const getImageStyle = (image: JourneyImage): CSSProperties => ({
+    objectPosition: image.position ?? "center",
+    ...(image.fit === "contain" && image.maxWidthPx
+      ? {
+          maxWidth: `${image.maxWidthPx}px`,
+          marginInline: "auto",
+        }
+      : {}),
+  });
+
+  const collageImages = galleryImages.slice(0, 3);
+  const carouselImages: JourneyImage[] = [
+    ...galleryImages,
+    ...accommodations.flatMap((accommodation) => accommodation.images),
+    ...shapeCards.flatMap((card) => (card.image ? [card.image] : [])),
+  ].filter(
+    (image, index, images) => index === images.findIndex((entry) => entry.src === image.src),
+  );
+
   return (
     <>
       <section
@@ -384,7 +451,7 @@ export default function SocialShiftPage() {
             <em>The Social Shift</em>
           </h1>
 
-          <p className="font-serif font-light italic text-xl text-white/62 max-w-[620px] leading-relaxed opacity-0 translate-y-4 animate-[fadeRise_0.9s_cubic-bezier(0.16,1,0.3,1)_0.64s_forwards]">
+          <p className="font-serif font-light italic text-xl text-[#fff4e2] max-w-[620px] leading-relaxed opacity-0 translate-y-4 animate-[fadeRise_0.9s_cubic-bezier(0.16,1,0.3,1)_0.64s_forwards] [text-shadow:0_2px_12px_rgba(0,0,0,0.35)]">
             A beautifully hosted South Africa journey for travellers who want
             connection, style, and the kind of group energy that still feels
             considered.
@@ -412,8 +479,8 @@ export default function SocialShiftPage() {
             <div className="flex flex-col gap-6">
               <Reveal delay={1}>
                 <p className="font-serif font-light text-display-sm text-stone-800 leading-[1.45] tracking-[-0.01em]">
-                  The journey moves through Cape Town, the Winelands, safari, and
-                  the coast with a rhythm that balances energy, privacy,
+                  The journey moves through Johannesburg, safari, Franschhoek,
+                  and Cape Town with a rhythm that balances energy, privacy,
                   celebration, and ease. No chaotic group travel. No generic
                   departures. Just a more elevated way to experience South Africa
                   together.
@@ -490,6 +557,48 @@ export default function SocialShiftPage() {
         </div>
       </section>
 
+      <section className="bg-page border-b border-stone-200" aria-label="The Social Shift gallery">
+        <div className="px-[24px] py-10 md:px-[48px] md:py-16">
+          <Reveal>
+            <div className="grid min-h-0 grid-cols-1 gap-[10px] md:min-h-[540px] md:grid-cols-[1.15fr_0.85fr]">
+              <div className="overflow-hidden md:h-full">
+                <Image
+                  src={collageImages[0].src}
+                  alt={collageImages[0].alt}
+                  width={1200}
+                  height={1400}
+                  quality={95}
+                  className={`h-[320px] w-full ${getImageClass(collageImages[0])} object-center transition-transform duration-[900ms] ease-out hover:scale-[1.03] md:h-full`}
+                  style={getImageStyle(collageImages[0])}
+                  loading="lazy"
+                />
+              </div>
+
+              <div className="grid h-[200px] grid-cols-2 gap-[10px] md:h-full md:grid-cols-1 md:grid-rows-2">
+                {collageImages.slice(1).map((image) => (
+                  <div key={image.alt} className="overflow-hidden">
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      width={700}
+                      height={520}
+                      quality={95}
+                      className={`h-full w-full ${getImageClass(image)} object-center transition-transform duration-[900ms] ease-out hover:scale-[1.03]`}
+                      style={getImageStyle(image)}
+                      loading="lazy"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </Reveal>
+        </div>
+
+        <Reveal>
+          <JourneyCarousel images={carouselImages} />
+        </Reveal>
+      </section>
+
       {accommodations.map((accommodation, index) => (
         <section
           key={accommodation.name}
@@ -553,7 +662,7 @@ export default function SocialShiftPage() {
 
       <SocialJourneyPanel
         intro="The route and sequencing are intentional. Within that structure, each chapter still has room to breathe, with the pace and emphasis shaped around your group and the social mood of the journey."
-        definesIntro="The Social Shift is defined by social intelligence: city energy, wine-country ease, safari depth, and a coastal finish that keeps the experience stylish, connected, and well held."
+        definesIntro="The Social Shift is defined by social intelligence: Johannesburg energy, safari depth, Franschhoek ease, and a Cape Town finish that keeps the experience stylish, connected, and well held."
         definesItems={definesItems}
         shapeCards={shapeCards}
         includesIntro="What is included here is built around hosting people properly: strong settings, considered pacing, and enough structure to keep the journey easy without making it feel managed."

@@ -1914,9 +1914,9 @@ const ARTICLES: Record<string, FullArticle> = {
       {
         type: "image",
         image: {
-          src: "/journeys/the-untamed/Zungulila (18).jpg",
-          alt: "Immersive safari landscape or wildlife scene from Zambia",
-          caption: "Immersion, wilderness, and safari depth",
+          src: "/journeys/the-untamed/Zungulila (6).jpg",
+          alt: "Bedroom tent interior at Zungulila in South Luangwa, Zambia",
+          caption: "Zungulila bedroom, South Luangwa",
           position: "center",
         },
         aspect: "16 / 10",

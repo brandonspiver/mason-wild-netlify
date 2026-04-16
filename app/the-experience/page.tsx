@@ -40,6 +40,31 @@ const PROCESS_STEPS = [
   },
 ] as const;
 
+type ProcessStep = (typeof PROCESS_STEPS)[number];
+
+const getCompactProcessStepWrapperClass = (index: number): string =>
+  [
+    index < PROCESS_STEPS.length - 1 ? "border-b border-white/[0.14]" : "",
+    index % 2 === 0 ? "sm:border-r sm:border-white/[0.14]" : "",
+    index < PROCESS_STEPS.length - 2 ? "sm:border-b sm:border-white/[0.14]" : "sm:border-b-0",
+  ]
+    .filter(Boolean)
+    .join(" ");
+
+function ProcessStepCard({ step }: { step: ProcessStep }) {
+  return (
+    <div className="bg-stone-900 p-10 h-full">
+      <p className="font-serif font-light text-[2.5rem] text-white/[0.07] leading-none mb-6">
+        {step.n}
+      </p>
+      <p className="label-tag text-white/40 mb-4">{step.title}</p>
+      <p className="text-sm font-light text-white/55 leading-relaxed">
+        {step.body}
+      </p>
+    </div>
+  );
+}
+
 const INCLUSIVE_ITEMS = [
   {
     key:   "safety",
@@ -78,6 +103,19 @@ const INCLUSIVE_ITEMS = [
       "We do not work from templates. Each journey is a unique response to your brief, built from a direct conversation about what you are looking for, and what you would prefer to leave behind.",
   },
 ] as const;
+
+type InclusiveItem = (typeof INCLUSIVE_ITEMS)[number];
+
+function InclusiveItemCard({ item }: { item: InclusiveItem }) {
+  return (
+    <div className="bg-forest hover:bg-[#446f50] transition-colors duration p-10 h-full">
+      <p className="label-tag text-white mb-4">{item.title}</p>
+      <p className="text-base font-light text-white leading-relaxed">
+        {item.body}
+      </p>
+    </div>
+  );
+}
 
 // Seven individual archetypes  -  The Social is referenced separately
 const ARCHETYPES = [
@@ -267,20 +305,40 @@ export default function TheExperiencePage() {
             </h2>
           </Reveal>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-white/[0.07] border border-white/[0.10]">
-            {PROCESS_STEPS.map((step, i) => (
-              <Reveal key={step.n} delay={(i % 4) as 0 | 1 | 2 | 3 | 4}>
-                <div className="bg-stone-900 p-10 h-full">
-                  <p className="font-serif font-light text-[2.5rem] text-white/[0.07] leading-none mb-6">
-                    {step.n}
-                  </p>
-                  <p className="label-tag text-white/40 mb-4">{step.title}</p>
-                  <p className="text-sm font-light text-white/55 leading-relaxed">
-                    {step.body}
-                  </p>
-                </div>
-              </Reveal>
-            ))}
+          <div className="border border-white/[0.14]">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:hidden">
+              {PROCESS_STEPS.map((step, i) => (
+                <Reveal
+                  key={step.n}
+                  delay={(i % 4) as 0 | 1 | 2 | 3 | 4}
+                  className={getCompactProcessStepWrapperClass(i)}
+                >
+                  <ProcessStepCard step={step} />
+                </Reveal>
+              ))}
+            </div>
+
+            <Reveal className="hidden lg:block">
+              <div className="flex items-stretch">
+                {PROCESS_STEPS.flatMap((step, i) => [
+                  <div
+                    key={`${step.n}-card`}
+                    className="h-full flex-1 min-w-0"
+                  >
+                    <ProcessStepCard step={step} />
+                  </div>,
+                  ...(i < PROCESS_STEPS.length - 1
+                    ? [
+                        <div
+                          key={`${step.n}-divider`}
+                          className="w-px shrink-0 self-stretch bg-white/[0.14]"
+                          aria-hidden="true"
+                        />,
+                      ]
+                    : []),
+                ])}
+              </div>
+            </Reveal>
           </div>
         </div>
       </section>
@@ -352,22 +410,35 @@ export default function TheExperiencePage() {
             Each item carries equal weight; the grid reads as a considered list,
             not a designed feature matrix.
           */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 border-t border-l border-white/[0.20]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:hidden border-t border-l border-white/[0.20]">
             {INCLUSIVE_ITEMS.map((item, i) => (
               <Reveal
                 key={item.key}
                 delay={(i % 3) as 0 | 1 | 2 | 3 | 4}
                 className="h-full border-r border-b border-white/[0.20]"
               >
-                <div className="bg-forest hover:bg-[#446f50] transition-colors duration p-10 h-full">
-                  <p className="label-tag text-white mb-4">{item.title}</p>
-                  <p className="text-base font-light text-white leading-relaxed">
-                    {item.body}
-                  </p>
-                </div>
+                <InclusiveItemCard item={item} />
               </Reveal>
             ))}
           </div>
+
+          <Reveal className="hidden lg:block">
+            <div className="grid grid-cols-[minmax(0,1fr)_1px_minmax(0,1fr)_1px_minmax(0,1fr)] border border-white/[0.20]">
+              <InclusiveItemCard item={INCLUSIVE_ITEMS[0]} />
+              <div className="bg-white/[0.20]" aria-hidden="true" />
+              <InclusiveItemCard item={INCLUSIVE_ITEMS[1]} />
+              <div className="bg-white/[0.20]" aria-hidden="true" />
+              <InclusiveItemCard item={INCLUSIVE_ITEMS[2]} />
+
+              <div className="col-span-5 h-px bg-white/[0.20]" aria-hidden="true" />
+
+              <InclusiveItemCard item={INCLUSIVE_ITEMS[3]} />
+              <div className="bg-white/[0.20]" aria-hidden="true" />
+              <InclusiveItemCard item={INCLUSIVE_ITEMS[4]} />
+              <div className="bg-white/[0.20]" aria-hidden="true" />
+              <InclusiveItemCard item={INCLUSIVE_ITEMS[5]} />
+            </div>
+          </Reveal>
         </div>
       </section>
 

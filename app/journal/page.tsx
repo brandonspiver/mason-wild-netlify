@@ -46,8 +46,8 @@ const ARTICLES: ArticleSummary[] = [
     readingTime: 10,
     publishedAt: "2026-04-15",
     img: {
-      src: "/journeys/the-untamed/KuKaya (1).jpg",
-      alt: "South Luangwa lodge room at KuKaya, Zambia",
+      src: "/journeys/the-untamed/Zungulila (6).jpg",
+      alt: "Bedroom tent interior at Zungulila in South Luangwa, Zambia",
     },
   },
   {

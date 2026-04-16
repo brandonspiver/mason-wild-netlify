@@ -367,11 +367,9 @@ const JOURNEYS: Record<string, JourneyData> = {
           "Why it is here: to close the route with polish, comfort, and a gentler social energy. What it adds: a celebratory final chapter that still protects privacy while letting the journey end with ease.",
         images: [
           {
-            src: "/journeys/the-intimate/victoria-falls-forest-path.jpg",
-            alt: "River view at Victoria Falls Island Lodge",
+            src: "/journeys/the-intimate/updates/victoria-falls-pool.jpg",
+            alt: "Pool view at Victoria Falls Island Lodge",
             position: "center 50%",
-            fit: "contain",
-            maxWidthPx: 1000,
           },
           {
             src: "/journeys/the-intimate/victoria-falls-suite.jpg",
