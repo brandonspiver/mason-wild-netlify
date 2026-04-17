@@ -4,6 +4,7 @@ import "../styles/globals.css";
 import { NavBar } from "@/components/layout/NavBar";
 import { Footer } from "@/components/layout/Footer";
 import { CookieBanner } from "@/components/layout/CookieBanner";
+import { WildlifeGhosts } from "@/components/layout/WildlifeGhosts";
 import { PRIMARY_POSITIONING_LINE, BRAND_NAME } from "@/lib/constants";
 import { JsonLd } from "@/lib/jsonld";
 import { absoluteUrl, getOrganizationSchema, getSiteUrl, getWebsiteSchema, SITE_KEYWORDS } from "@/lib/seo";
@@ -110,7 +111,10 @@ export default function RootLayout({
       <body>
         <JsonLd data={[getOrganizationSchema(), getWebsiteSchema()]} />
         <NavBar />
-        <main>{children}</main>
+        <main className="relative">
+          <WildlifeGhosts />
+          <div className="relative z-[1]">{children}</div>
+        </main>
         <CookieBanner />
         <Footer />
       </body>

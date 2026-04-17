@@ -232,6 +232,12 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
+
+  .wildlife-ghost {
+    filter: sepia(22%) saturate(72%) blur(0.18px);
+    mix-blend-mode: multiply;
+    transform: translateZ(0);
+  }
 }
 
 @media (min-width: 1280px) {
@@ -265,5 +271,9 @@
     opacity: 1;
     transform: none;
     filter: none;
+  }
+
+  .wildlife-ghost {
+    filter: sepia(20%) saturate(68%);
   }
 }
