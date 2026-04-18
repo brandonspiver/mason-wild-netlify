@@ -234,8 +234,8 @@
   }
 
   .wildlife-ghost {
-    filter: sepia(22%) saturate(72%) blur(0.18px);
-    mix-blend-mode: multiply;
+    filter: sepia(26%) saturate(88%) blur(0.12px);
+    mix-blend-mode: normal;
     transform: translateZ(0);
   }
 }
@@ -274,6 +274,6 @@
   }
 
   .wildlife-ghost {
-    filter: sepia(20%) saturate(68%);
+    filter: sepia(24%) saturate(80%);
   }
 }

@@ -5,7 +5,6 @@ import { usePathname } from "next/navigation";
 
 type GhostPlacement = {
   readonly src: string;
-  readonly alt: string;
   readonly width: number;
   readonly height: number;
   readonly className: string;
@@ -15,154 +14,217 @@ type GhostPlacement = {
 const PLACEMENTS = {
   home: [
     {
-      src: "/artwork/ghosts/lions.png",
-      alt: "Lions",
+      src: "/artwork/ghosts/wildlife-01.jpeg",
       width: 560,
       height: 840,
-      className:
-        "left-[-9%] top-[9%] w-[clamp(220px,31vw,560px)] hidden lg:block",
-      opacity: 0.11,
+      className: "left-[-8%] top-[6%] w-[clamp(190px,34vw,520px)]",
+      opacity: 0.145,
     },
     {
-      src: "/artwork/ghosts/gemsbok.png",
-      alt: "Gemsbok",
+      src: "/artwork/ghosts/wildlife-11.jpeg",
       width: 512,
       height: 768,
       className:
-        "right-[-6%] top-[34%] w-[clamp(200px,29vw,540px)] hidden md:block",
-      opacity: 0.095,
+        "right-[-8%] top-[28%] w-[clamp(190px,32vw,520px)] hidden md:block",
+      opacity: 0.132,
     },
     {
-      src: "/artwork/ghosts/hippos.png",
-      alt: "Hippos",
+      src: "/artwork/ghosts/wildlife-06.jpeg",
       width: 512,
       height: 768,
-      className: "left-[58%] top-[70%] w-[clamp(220px,34vw,600px)]",
-      opacity: 0.082,
+      className: "left-[58%] top-[57%] w-[clamp(200px,34vw,540px)]",
+      opacity: 0.14,
+    },
+    {
+      src: "/artwork/ghosts/wildlife-07.jpeg",
+      width: 512,
+      height: 768,
+      className: "left-[-9%] top-[84%] w-[clamp(170px,31vw,460px)] hidden lg:block",
+      opacity: 0.122,
     },
   ] satisfies readonly GhostPlacement[],
   capeTown: [
     {
-      src: "/artwork/ghosts/penguins.png",
-      alt: "Penguins",
+      src: "/artwork/ghosts/wildlife-15.jpeg",
+      width: 512,
+      height: 768,
+      className: "right-[-11%] top-[9%] w-[clamp(220px,42vw,500px)]",
+      opacity: 0.15,
+    },
+    {
+      src: "/artwork/ghosts/wildlife-07.jpeg",
       width: 512,
       height: 768,
       className:
-        "right-[-6%] top-[11%] w-[clamp(220px,30vw,560px)] hidden md:block",
-      opacity: 0.11,
+        "left-[-10%] top-[42%] w-[clamp(200px,34vw,500px)] hidden md:block",
+      opacity: 0.13,
     },
     {
-      src: "/artwork/ghosts/flamingos.png",
-      alt: "Flamingos",
+      src: "/artwork/ghosts/wildlife-09.jpeg",
       width: 512,
       height: 768,
-      className: "left-[-9%] top-[56%] w-[clamp(210px,28vw,520px)]",
-      opacity: 0.084,
+      className: "right-[-9%] top-[74%] w-[clamp(160px,28vw,410px)]",
+      opacity: 0.132,
+    },
+    {
+      src: "/artwork/ghosts/wildlife-16.jpeg",
+      width: 512,
+      height: 768,
+      className: "left-[-9%] top-[84%] w-[clamp(185px,33vw,480px)] hidden lg:block",
+      opacity: 0.122,
     },
   ] satisfies readonly GhostPlacement[],
   namibia: [
     {
-      src: "/artwork/ghosts/gemsbok.png",
-      alt: "Gemsbok",
+      src: "/artwork/ghosts/wildlife-21.jpeg",
       width: 512,
       height: 768,
-      className:
-        "left-[-10%] top-[18%] w-[clamp(250px,34vw,620px)] hidden md:block",
-      opacity: 0.115,
+      className: "left-[-11%] top-[12%] w-[clamp(235px,43vw,560px)]",
+      opacity: 0.15,
     },
     {
-      src: "/artwork/ghosts/pangolin.png",
-      alt: "Pangolin",
+      src: "/artwork/ghosts/wildlife-17.jpeg",
       width: 512,
       height: 768,
-      className:
-        "right-[-7%] top-[58%] w-[clamp(220px,31vw,560px)] hidden lg:block",
-      opacity: 0.09,
+      className: "right-[-12%] top-[39%] w-[clamp(190px,44vw,420px)]",
+      opacity: 0.145,
+    },
+    {
+      src: "/artwork/ghosts/wildlife-04.jpeg",
+      width: 512,
+      height: 768,
+      className: "left-[-9%] top-[72%] w-[clamp(200px,36vw,500px)]",
+      opacity: 0.13,
+    },
+    {
+      src: "/artwork/ghosts/wildlife-14.jpeg",
+      width: 512,
+      height: 768,
+      className: "right-[-10%] top-[88%] w-[clamp(180px,32vw,420px)] hidden md:block",
+      opacity: 0.128,
     },
   ] satisfies readonly GhostPlacement[],
   botswana: [
     {
-      src: "/artwork/ghosts/hippos.png",
-      alt: "Hippos",
+      src: "/artwork/ghosts/wildlife-13.jpeg",
+      width: 512,
+      height: 768,
+      className: "right-[-11%] top-[10%] w-[clamp(230px,44vw,560px)]",
+      opacity: 0.15,
+    },
+    {
+      src: "/artwork/ghosts/wildlife-16.jpeg",
+      width: 512,
+      height: 768,
+      className: "left-[-10%] top-[35%] w-[clamp(180px,34vw,460px)]",
+      opacity: 0.126,
+    },
+    {
+      src: "/artwork/ghosts/wildlife-08.jpeg",
       width: 512,
       height: 768,
       className:
-        "right-[-10%] top-[14%] w-[clamp(240px,35vw,640px)] hidden md:block",
-      opacity: 0.112,
+        "right-[-9%] top-[59%] w-[clamp(190px,33vw,470px)] hidden md:block",
+      opacity: 0.134,
     },
     {
-      src: "/artwork/ghosts/flamingos.png",
-      alt: "Flamingos",
+      src: "/artwork/ghosts/wildlife-20.jpeg",
       width: 512,
       height: 768,
-      className: "left-[-8%] top-[63%] w-[clamp(220px,29vw,540px)]",
-      opacity: 0.084,
+      className: "left-[-9%] top-[86%] w-[clamp(175px,30vw,420px)] hidden lg:block",
+      opacity: 0.12,
     },
   ] satisfies readonly GhostPlacement[],
   tanzania: [
     {
-      src: "/artwork/ghosts/leopard.png",
-      alt: "Leopard",
+      src: "/artwork/ghosts/wildlife-06.jpeg",
+      width: 512,
+      height: 768,
+      className: "right-[-9%] top-[12%] w-[clamp(220px,40vw,540px)]",
+      opacity: 0.148,
+    },
+    {
+      src: "/artwork/ghosts/wildlife-03.jpeg",
+      width: 512,
+      height: 768,
+      className: "left-[-10%] top-[39%] w-[clamp(200px,37vw,500px)]",
+      opacity: 0.136,
+    },
+    {
+      src: "/artwork/ghosts/wildlife-11.jpeg",
       width: 512,
       height: 768,
       className:
-        "right-[-7%] top-[21%] w-[clamp(200px,28vw,500px)] hidden md:block",
-      opacity: 0.103,
+        "right-[-10%] top-[66%] w-[clamp(180px,31vw,430px)] hidden md:block",
+      opacity: 0.128,
     },
     {
-      src: "/artwork/ghosts/flamingos.png",
-      alt: "Flamingos",
+      src: "/artwork/ghosts/wildlife-16.jpeg",
       width: 512,
       height: 768,
-      className: "left-[-7%] top-[66%] w-[clamp(220px,31vw,560px)]",
-      opacity: 0.082,
+      className: "left-[-9%] top-[88%] w-[clamp(180px,31vw,430px)]",
+      opacity: 0.118,
     },
   ] satisfies readonly GhostPlacement[],
   zambia: [
     {
-      src: "/artwork/ghosts/lions.png",
-      alt: "Lions",
+      src: "/artwork/ghosts/wildlife-18.jpeg",
       width: 560,
       height: 840,
-      className:
-        "left-[-10%] top-[18%] w-[clamp(240px,34vw,620px)] hidden md:block",
-      opacity: 0.11,
+      className: "left-[-10%] top-[14%] w-[clamp(220px,39vw,560px)]",
+      opacity: 0.148,
     },
     {
-      src: "/artwork/ghosts/leopard.png",
-      alt: "Leopard",
+      src: "/artwork/ghosts/wildlife-19.jpeg",
       width: 512,
       height: 768,
-      className: "right-[-7%] top-[61%] w-[clamp(220px,30vw,540px)]",
-      opacity: 0.09,
+      className: "right-[-11%] top-[42%] w-[clamp(190px,36vw,470px)]",
+      opacity: 0.14,
+    },
+    {
+      src: "/artwork/ghosts/wildlife-01.jpeg",
+      width: 512,
+      height: 768,
+      className:
+        "left-[-8%] top-[66%] w-[clamp(185px,34vw,460px)] hidden md:block",
+      opacity: 0.128,
+    },
+    {
+      src: "/artwork/ghosts/wildlife-08.jpeg",
+      width: 512,
+      height: 768,
+      className: "right-[-9%] top-[88%] w-[clamp(175px,30vw,420px)] hidden lg:block",
+      opacity: 0.122,
     },
   ] satisfies readonly GhostPlacement[],
   mixed: [
     {
-      src: "/artwork/ghosts/pangolin.png",
-      alt: "Pangolin",
+      src: "/artwork/ghosts/wildlife-17.jpeg",
       width: 512,
       height: 768,
-      className:
-        "right-[-7%] top-[16%] w-[clamp(190px,27vw,480px)] hidden md:block",
-      opacity: 0.094,
+      className: "right-[-10%] top-[8%] w-[clamp(170px,30vw,420px)]",
+      opacity: 0.132,
     },
     {
-      src: "/artwork/ghosts/penguins.png",
-      alt: "Penguins",
+      src: "/artwork/ghosts/wildlife-20.jpeg",
       width: 512,
       height: 768,
-      className: "left-[-8%] top-[50%] w-[clamp(180px,26vw,460px)]",
-      opacity: 0.085,
+      className: "left-[-8%] top-[34%] w-[clamp(170px,30vw,430px)]",
+      opacity: 0.122,
     },
     {
-      src: "/artwork/ghosts/gemsbok.png",
-      alt: "Gemsbok",
+      src: "/artwork/ghosts/wildlife-09.jpeg",
       width: 512,
       height: 768,
-      className:
-        "right-[-7%] top-[76%] w-[clamp(220px,31vw,560px)] hidden lg:block",
-      opacity: 0.092,
+      className: "right-[-10%] top-[63%] w-[clamp(160px,27vw,380px)]",
+      opacity: 0.12,
+    },
+    {
+      src: "/artwork/ghosts/wildlife-05.jpeg",
+      width: 512,
+      height: 768,
+      className: "left-[-9%] top-[86%] w-[clamp(190px,33vw,470px)] hidden lg:block",
+      opacity: 0.118,
     },
   ] satisfies readonly GhostPlacement[],
 } as const;
@@ -184,6 +246,8 @@ function getPlacements(pathname: string): readonly GhostPlacement[] {
 
   if (
     route.includes("cape-town") ||
+    route.includes("south-africa") ||
+    route.includes("/the-social") ||
     route.includes("/journeys/the-classic") ||
     route.includes("/journeys/the-romantic")
   ) {
@@ -230,8 +294,8 @@ export function WildlifeGhosts() {
           height={placement.height}
           className={`wildlife-ghost absolute h-auto ${placement.className}`}
           style={{ opacity: placement.opacity ?? 0.09 }}
-          sizes="(max-width: 768px) 38vw, 30vw"
-          quality={95}
+          sizes="(max-width: 768px) 56vw, 32vw"
+          quality={88}
         />
       ))}
     </div>
