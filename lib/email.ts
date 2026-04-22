@@ -1,3 +1,6 @@
+import { appendFile, mkdir } from "fs/promises";
+import path from "path";
+
 type EmailSection = {
   label: string;
   value: string;
@@ -11,6 +14,8 @@ type SendFormEmailInput = {
 
 const RESEND_API_URL = "https://api.resend.com/emails";
 const FORM_DESTINATION = "hello@masonandwild.com";
+const FALLBACK_SUBMISSIONS_DIR = path.join(process.cwd(), ".tmp");
+const FALLBACK_SUBMISSIONS_FILE = path.join(FALLBACK_SUBMISSIONS_DIR, "form-submissions.jsonl");
 
 function escapeHtml(value: string): string {
   return value
@@ -36,17 +41,52 @@ function buildText(sections: EmailSection[]): string {
   return sections.map((section) => `${section.label}: ${section.value}`).join("\n\n");
 }
 
+async function persistFallbackSubmission(payload: Record<string, unknown>): Promise<void> {
+  await mkdir(FALLBACK_SUBMISSIONS_DIR, { recursive: true });
+  await appendFile(FALLBACK_SUBMISSIONS_FILE, `${JSON.stringify(payload)}\n`, "utf8");
+}
+
 export async function sendFormEmail({
   subject,
   replyTo,
   sections,
 }: SendFormEmailInput): Promise<void> {
-  const apiKey = process.env.RESEND_API_KEY;
+  const apiKey = process.env.RESEND_API_KEY?.trim();
   const from = process.env.RESEND_FROM ?? "Mason & Wild <hello@masonandwild.com>";
   const to = process.env.FORM_SUBMISSIONS_TO ?? FORM_DESTINATION;
+  const html = buildHtml(sections);
+  const text = buildText(sections);
 
   if (!apiKey) {
-    throw new Error("RESEND_API_KEY is not configured.");
+    const fallbackEntry = {
+      event: "form.email_fallback",
+      loggedAt: new Date().toISOString(),
+      reason: "RESEND_API_KEY is not configured.",
+      subject,
+      to,
+      replyTo: replyTo ?? null,
+      sections,
+    };
+
+    try {
+      await persistFallbackSubmission(fallbackEntry);
+    } catch (error) {
+      console.warn(
+        JSON.stringify({
+          event: "form.email_fallback_write_error",
+          message: error instanceof Error ? error.message : String(error),
+        })
+      );
+    }
+
+    console.warn(
+      JSON.stringify({
+        event: "form.email_fallback_active",
+        file: FALLBACK_SUBMISSIONS_FILE,
+      })
+    );
+    console.log(JSON.stringify(fallbackEntry));
+    return;
   }
 
   const response = await fetch(RESEND_API_URL, {
@@ -59,8 +99,8 @@ export async function sendFormEmail({
       from,
       to: [to],
       subject,
-      html: buildHtml(sections),
-      text: buildText(sections),
+      html,
+      text,
       reply_to: replyTo,
     }),
   });

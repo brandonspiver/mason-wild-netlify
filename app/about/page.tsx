@@ -286,8 +286,8 @@ export default function AboutPage() {
       <Reveal>
         <div className="relative w-full overflow-hidden border-b border-stone-200">
           <Image
-            src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=2400&q=82&auto=format&fit=crop"
-            alt="Private conservancy at dawn - Botswana"
+            src="/experience/private-conservancy-botswana.jpg"
+            alt="Private conservancy at dawn in Botswana"
             width={2400}
             height={900}
             quality={95}

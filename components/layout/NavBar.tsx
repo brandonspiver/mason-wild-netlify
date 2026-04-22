@@ -1,18 +1,15 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { NAV_LABELS, NAV_HREFS, CTA } from "@/lib/constants";
-
-const NAV_ITEMS = [
-  { label: NAV_LABELS.home,       href: NAV_HREFS.home },
-  { label: NAV_LABELS.experience, href: NAV_HREFS.experience },
-  { label: NAV_LABELS.journeys,   href: NAV_HREFS.journeys },
-  { label: NAV_LABELS.journal,    href: NAV_HREFS.journal },
-  { label: NAV_LABELS.about,      href: NAV_HREFS.about },
-] as const;
+import {
+  CTA,
+  NAV_HREFS,
+  NAV_LABELS,
+  PRIMARY_POSITIONING_LINE,
+} from "@/lib/constants";
 
 const JOURNEY_MENU_ITEMS = [
   { label: "The Intimate", href: `${NAV_HREFS.journeys}/the-intimate` },
@@ -24,279 +21,295 @@ const JOURNEY_MENU_ITEMS = [
   { label: "The Social Shift", href: NAV_HREFS.social },
 ] as const;
 
-const OVERLAY_ITEMS = [
-  { label: NAV_LABELS.home,       href: NAV_HREFS.home },
-  { label: NAV_LABELS.experience, href: NAV_HREFS.experience },
-  { label: NAV_LABELS.journeys,   href: NAV_HREFS.journeys },
-  { label: "The Social",          href: NAV_HREFS.social },
-  { label: NAV_LABELS.journal,    href: NAV_HREFS.journal },
-  { label: NAV_LABELS.about,      href: NAV_HREFS.about },
-  { label: NAV_LABELS.inquire,    href: NAV_HREFS.inquire },
+const MENU_GROUPS = [
+  {
+    eyebrow: "The House",
+    title: "Explore",
+    blurb: "The main chapters of Mason & Wild, shaped as a quieter front door rather than a utility nav.",
+    links: [
+      { label: NAV_LABELS.home, href: NAV_HREFS.home },
+      { label: "The Experience", href: NAV_HREFS.experience },
+      { label: "All Journeys", href: NAV_HREFS.journeys },
+      { label: "The Social Shift", href: NAV_HREFS.social },
+    ],
+  },
+  {
+    eyebrow: "The Collection",
+    title: "Journey Archetypes",
+    blurb: "Seven privately designed routes, each with a different emotional centre and pace.",
+    links: JOURNEY_MENU_ITEMS,
+  },
+  {
+    eyebrow: "The Point of View",
+    title: "Journal & Studio",
+    blurb: "Editorial thinking, the point of view behind the collection, and the way we work.",
+    links: [
+      { label: NAV_LABELS.journal, href: NAV_HREFS.journal },
+      { label: "About Mason & Wild", href: NAV_HREFS.about },
+      { label: CTA.inquirePrivately, href: NAV_HREFS.inquire },
+    ],
+  },
+  {
+    eyebrow: "The Essentials",
+    title: "Information",
+    blurb: "Quiet essentials for planning, contact, and the legal framework behind the site.",
+    links: [
+      { label: "Privacy", href: "/privacy" },
+      { label: "Terms", href: "/terms" },
+      { label: "PAIA", href: "/paia" },
+    ],
+  },
+] as const;
+
+const FOOTER_LINKS = [
+  { label: "Journal", href: NAV_HREFS.journal },
+  { label: "About", href: NAV_HREFS.about },
+  { label: "Enquire", href: NAV_HREFS.inquire },
 ] as const;
 
 export function NavBar() {
-  const [open, setOpen]         = useState(false);
-  const [journeysOpen, setJourneysOpen] = useState(false);
+  const [open, setOpen] = useState(false);
   const pathname = usePathname();
-  const journeysItemRef = useRef<HTMLLIElement | null>(null);
-  const journeysActive =
-    pathname === NAV_HREFS.journeys ||
-    pathname.startsWith(`${NAV_HREFS.journeys}/`) ||
-    pathname === NAV_HREFS.social;
+
   const isNavItemActive = (href: string) => {
     if (href === NAV_HREFS.home) return pathname === NAV_HREFS.home;
-    if (href === NAV_HREFS.journeys) return journeysActive;
+    if (href === NAV_HREFS.journeys) {
+      return pathname === NAV_HREFS.journeys || pathname.startsWith(`${NAV_HREFS.journeys}/`) || pathname === NAV_HREFS.social;
+    }
+
     return pathname === href || pathname.startsWith(`${href}/`);
   };
 
-  // Lock body scroll when overlay is open
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
-    return () => { document.body.style.overflow = ""; };
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [open]);
 
-  // Close journeys menu on outside click
   useEffect(() => {
-    const onPointerDown = (e: PointerEvent) => {
-      if (!journeysItemRef.current) return;
-      if (journeysItemRef.current.contains(e.target as Node)) return;
-      setJourneysOpen(false);
-    };
-
-    document.addEventListener("pointerdown", onPointerDown);
-    return () => document.removeEventListener("pointerdown", onPointerDown);
-  }, []);
-
-  // Close on Escape
-  useEffect(() => {
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
         setOpen(false);
-        setJourneysOpen(false);
       }
     };
+
     document.addEventListener("keydown", onKey);
     return () => document.removeEventListener("keydown", onKey);
   }, []);
 
-  // Close dropdown after route changes
   useEffect(() => {
-    setJourneysOpen(false);
+    setOpen(false);
   }, [pathname]);
 
   return (
     <>
       <header
         className={[
-          "fixed top-0 left-0 right-0 z-[200] h-[74px] flex items-center justify-between md:grid md:h-[82px] md:grid-cols-[auto_1fr_auto] md:items-center",
-          "px-[var(--px)] border-b transition-all duration-slow",
-          "bg-[rgba(253,252,250,0.88)] border-stone-200/85 backdrop-blur-xl",
+          "fixed inset-x-0 top-0 z-[240] border-b border-stone-200/85",
+          "bg-[rgba(253,252,250,0.9)] backdrop-blur-xl",
           "shadow-[0_1px_0_rgba(22,19,16,0.02)]",
         ].join(" ")}
         role="banner"
       >
-        {/* Logo */}
-        <Link
-          href={NAV_HREFS.home}
-          className="inline-flex items-center md:h-full md:justify-self-start"
-          aria-label="Mason & Wild home"
-        >
-          <Image
-            src="/branding/mason-wild-header-wordmark-tight.png"
-            alt="Mason & Wild"
-            width={1075}
-            height={193}
-            priority
-            className="block h-[24px] w-auto md:h-[30px] lg:h-[32px]"
-          />
-        </Link>
-
-        {/* Desktop links */}
-        <nav
-          aria-label="Primary navigation"
-          className="hidden md:flex md:h-full md:items-center md:justify-self-center"
-        >
-          <ul className="hidden md:flex md:items-center md:gap-10" role="list">
-            {NAV_ITEMS.map(({ label, href }) => (
-              <li
-                key={href}
-                ref={href === NAV_HREFS.journeys ? journeysItemRef : undefined}
-                className={href === NAV_HREFS.journeys ? "relative" : undefined}
-                onMouseEnter={
-                  href === NAV_HREFS.journeys ? () => setJourneysOpen(true) : undefined
-                }
-                onMouseLeave={
-                  href === NAV_HREFS.journeys ? () => setJourneysOpen(false) : undefined
-                }
-                onFocusCapture={
-                  href === NAV_HREFS.journeys ? () => setJourneysOpen(true) : undefined
-                }
-                onBlurCapture={
-                  href === NAV_HREFS.journeys
-                    ? (e) => {
-                        if (journeysItemRef.current?.contains(e.relatedTarget as Node)) return;
-                        setJourneysOpen(false);
-                      }
-                    : undefined
-                }
-              >
-                {href === NAV_HREFS.journeys ? (
-                  <div
-                    className={[
-                      "inline-flex items-center gap-2 whitespace-nowrap border-b pb-[3px] text-[12px] leading-none font-normal tracking-[0.12em] uppercase transition-all motion-premium-fast",
-                      journeysOpen || journeysActive
-                        ? "text-stone-900 border-stone-300 hover:text-forest hover:border-forest"
-                        : "text-stone-600 border-transparent hover:text-forest hover:border-forest",
-                    ].join(" ")}
-                  >
-                    <Link href={href}>{label}</Link>
-                    <button
-                      type="button"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        setJourneysOpen((prev) => !prev);
-                      }}
-                      onKeyDown={(e) => {
-                        if (e.key === "ArrowDown" || e.key === "Enter" || e.key === " ") {
-                          e.preventDefault();
-                          setJourneysOpen(true);
-                        }
-                      }}
-                      aria-label="Toggle journeys menu"
-                      aria-haspopup="menu"
-                      aria-expanded={journeysOpen}
-                      aria-controls="journeys-desktop-menu"
-                      className={[
-                        "inline-flex items-center text-[9px] leading-none transition-transform motion-premium-fast",
-                        journeysOpen ? "translate-y-[1px] rotate-180" : "translate-y-0 rotate-0",
-                      ].join(" ")}
-                    >
-                      v
-                    </button>
-                  </div>
-                ) : (
-                  <Link
-                    href={href}
-                    className={[
-                      "whitespace-nowrap border-b pb-[3px] text-[12px] leading-none font-normal tracking-[0.12em] uppercase transition-all motion-premium-fast",
-                      isNavItemActive(href)
-                        ? "text-stone-900 border-stone-300 hover:text-forest hover:border-forest"
-                        : "text-stone-600 border-transparent hover:text-forest hover:border-forest",
-                    ].join(" ")}
-                  >
-                    {label}
-                  </Link>
-                )}
-
-                {href === NAV_HREFS.journeys && (
-                  <div
-                    id="journeys-desktop-menu"
-                    role="menu"
-                    className={[
-                      "absolute left-1/2 top-full z-[220] w-[220px] -translate-x-1/2 pt-1 transition-all duration-[260ms] ease-out",
-                      journeysOpen
-                        ? "pointer-events-auto translate-y-0 opacity-100"
-                        : "pointer-events-none -translate-y-[4px] opacity-0",
-                    ].join(" ")}
-                  >
-                    <div className="border border-stone-200/95 bg-[rgba(253,252,250,0.96)] backdrop-blur-[8px] shadow-[0_26px_60px_rgba(20,16,10,0.12)]">
-                      <div className="flex flex-col items-center p-2.5">
-                        {JOURNEY_MENU_ITEMS.map((item) => (
-                          <Link
-                            key={item.href}
-                            href={item.href}
-                            onClick={() => setJourneysOpen(false)}
-                            role="menuitem"
-                            className="w-full px-4 py-[12px] text-center font-serif text-[1.03rem] font-light leading-none text-stone-800 transition-colors duration-[220ms] hover:bg-forest hover:text-white focus:bg-forest focus:text-white"
-                          >
-                            <em>{item.label}</em>
-                          </Link>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                )}
-              </li>
-            ))}
-          </ul>
-        </nav>
-
-        {/* Desktop CTA */}
-        <Link
-          href={NAV_HREFS.inquire}
-          className="hidden md:inline-flex items-center justify-self-end text-[11px] leading-none font-normal tracking-[0.14em] uppercase text-white bg-forest hover:bg-forest-light px-6 py-[13px] transition-all duration shadow-[0_10px_24px_rgba(40,78,53,0.24)] hover:shadow-[0_14px_30px_rgba(40,78,53,0.30)]"
-        >
-          {CTA.inquirePrivately}
-        </Link>
-
-        {/* Burger */}
-        <button
-          className="md:hidden flex flex-col gap-[5px] p-1"
-          onClick={() => setOpen(true)}
-          aria-label="Open menu"
-          aria-expanded={open}
-          aria-controls="nav-overlay"
-        >
-          {[0, 1, 2].map((i) => (
-            <span
-              key={i}
+        <div className="grid h-[74px] grid-cols-[auto_1fr_auto] items-center gap-4 px-[var(--px)] md:h-[82px] md:gap-8">
+          <div className="flex min-w-0 items-center gap-3 md:gap-5">
+            <button
+              type="button"
+              onClick={() => setOpen((prev) => !prev)}
+              aria-label={open ? "Close menu" : "Open menu"}
+              aria-expanded={open}
+              aria-controls="site-menu-panel"
               className={[
-                "block w-[22px] h-px transition-colors duration-[300ms]",
-                "bg-stone-800",
+                "relative inline-flex h-10 w-10 shrink-0 items-center justify-center border transition-all duration-[260ms]",
+                open
+                  ? "border-forest bg-forest text-white shadow-[0_14px_28px_rgba(75,128,89,0.18)]"
+                  : "border-stone-200/90 bg-white/70 text-stone-900 hover:border-stone-400 hover:bg-page-subtle",
               ].join(" ")}
-            />
-          ))}
-        </button>
+            >
+              <span
+                aria-hidden="true"
+                className={[
+                  "absolute h-px w-[18px] bg-current transition-all duration-[260ms]",
+                  open ? "translate-y-0 rotate-45" : "-translate-y-[6px]",
+                ].join(" ")}
+              />
+              <span
+                aria-hidden="true"
+                className={[
+                  "absolute h-px w-[18px] bg-current transition-all duration-[220ms]",
+                  open ? "scale-x-0 opacity-0" : "scale-x-100 opacity-100",
+                ].join(" ")}
+              />
+              <span
+                aria-hidden="true"
+                className={[
+                  "absolute h-px w-[18px] bg-current transition-all duration-[260ms]",
+                  open ? "translate-y-0 -rotate-45" : "translate-y-[6px]",
+                ].join(" ")}
+              />
+            </button>
+
+            <Link
+              href={NAV_HREFS.home}
+              className="inline-flex min-w-0 items-center"
+              aria-label="Mason & Wild home"
+              onClick={() => setOpen(false)}
+            >
+              <Image
+                src="/branding/mason-wild-header-wordmark-tight.png"
+                alt="Mason & Wild"
+                width={1075}
+                height={193}
+                priority
+                className="block h-[16px] w-auto sm:h-[18px] md:h-[28px] lg:h-[30px]"
+              />
+            </Link>
+          </div>
+
+          <div className="hidden justify-self-center lg:block">
+            <p className="text-[0.6rem] font-normal uppercase tracking-[0.24em] text-stone-300">
+              LGBTQ+ Luxury Africa
+            </p>
+          </div>
+
+          <Link
+            href={NAV_HREFS.inquire}
+            className="inline-flex items-center justify-self-end whitespace-nowrap border border-forest/10 bg-forest px-3 py-[10px] text-[0.58rem] font-normal uppercase tracking-[0.18em] text-white transition-all duration-[260ms] shadow-[0_10px_24px_rgba(40,78,53,0.24)] hover:bg-forest-light hover:shadow-[0_14px_30px_rgba(40,78,53,0.3)] sm:px-4 md:px-6 md:py-[13px] md:text-[0.68rem]"
+            onClick={() => setOpen(false)}
+          >
+            {CTA.inquirePrivately}
+          </Link>
+        </div>
       </header>
 
-      {/* Mobile overlay */}
       <div
-        id="nav-overlay"
+        id="site-menu-panel"
         className={[
-          "fixed inset-0 z-[199] bg-page flex flex-col items-center justify-center gap-10",
-          "transition-all duration-slow",
-          open
-            ? "opacity-100 translate-y-0 scale-100 pointer-events-auto"
-            : "opacity-0 translate-y-2 scale-[0.99] pointer-events-none",
+          "fixed inset-x-0 bottom-0 top-[74px] z-[230] overflow-y-auto border-t border-stone-200/85",
+          "bg-[rgba(253,252,250,0.98)] backdrop-blur-[18px]",
+          "transition-all duration-[460ms] ease-[var(--ease-luxury)] md:top-[82px]",
+          "bg-[radial-gradient(circle_at_top,rgba(75,128,89,0.07),transparent_32%),linear-gradient(180deg,rgba(248,245,240,0.97)_0%,rgba(253,252,250,0.99)_48%,rgba(242,238,232,0.92)_100%)]",
+          open ? "pointer-events-auto translate-y-0 opacity-100" : "pointer-events-none -translate-y-4 opacity-0",
         ].join(" ")}
-        role="dialog"
-        aria-modal="true"
-        aria-label="Navigation"
       >
-        {/* Close */}
-        <button
-          className="absolute top-5 right-[var(--px)] text-2xs tracking-widest uppercase text-stone-400 hover:text-stone-700 transition-colors"
-          onClick={() => setOpen(false)}
-          aria-label="Close menu"
-        >
-          Close
-        </button>
+        <div className="mx-auto flex min-h-full max-w-[1520px] flex-col px-[var(--px)] pb-10 pt-0 md:pb-12">
+          <div className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden border-b border-stone-200/85">
+            <div className="absolute inset-0" aria-hidden="true">
+              <Image
+                src="/home/home-hero.jpg"
+                alt=""
+                fill
+                sizes="100vw"
+                className="object-cover opacity-10"
+                style={{ objectPosition: "center 38%" }}
+              />
+              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(253,252,250,0.34)_0%,rgba(253,252,250,0.12)_50%,rgba(253,252,250,0.3)_100%)]" />
+            </div>
 
-        <nav aria-label="Mobile navigation">
-          <ul className="flex flex-col items-center gap-6" role="list">
-            {OVERLAY_ITEMS.map(({ label, href }) => (
-              <li key={href}>
-                <Link
-                  href={href}
-                  className="font-serif text-display-lg font-light text-stone-900 hover:italic hover:text-forest transition-all duration-slow"
-                  onClick={() => setOpen(false)}
+            <div className="relative z-[1] mx-auto flex min-h-[300px] max-w-[520px] flex-col items-center justify-center gap-5 py-10 text-center md:min-h-[340px] md:gap-6 md:py-12">
+              <Image
+                src="/branding/mason-wild-monogram.png"
+                alt="Mason & Wild monogram"
+                width={240}
+                height={240}
+                className="h-[78px] w-auto opacity-90 md:h-[94px]"
+              />
+
+              <p className="text-[0.72rem] font-normal uppercase tracking-[0.28em] text-stone-900 md:text-[0.8rem]">
+                LGBTQ+ Luxury Africa
+              </p>
+
+              <Link
+                href={NAV_HREFS.inquire}
+                onClick={() => setOpen(false)}
+                className="mt-1 inline-flex items-center whitespace-nowrap border border-forest/10 bg-forest px-5 py-[11px] text-[0.58rem] font-normal uppercase tracking-[0.18em] text-white transition-all duration-[260ms] shadow-[0_10px_24px_rgba(40,78,53,0.22)] hover:bg-forest-light hover:shadow-[0_14px_30px_rgba(40,78,53,0.28)] md:px-6 md:py-[13px] md:text-[0.64rem]"
+              >
+                {CTA.inquirePrivately}
+              </Link>
+            </div>
+          </div>
+
+          <nav aria-label="Primary navigation" className="flex-1 py-8 md:py-10">
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-4 xl:gap-12">
+              {MENU_GROUPS.map((group) => (
+                <section
+                  key={group.title}
+                  className="flex flex-col border-b border-stone-200/85 pb-8 last:border-b-0 md:last:border-b md:pb-0 xl:border-b-0"
                 >
-                  {label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
+                  <div className="min-h-[148px] md:min-h-[164px]">
+                    <p className="text-[0.62rem] font-normal uppercase tracking-[0.22em] text-stone-300">
+                      {group.eyebrow}
+                    </p>
+                    <h3 className="mt-3 font-serif text-[clamp(1.75rem,2.2vw,2.3rem)] font-light leading-none tracking-[-0.018em] text-stone-900">
+                      {group.title}
+                    </h3>
+                    <p className="mt-4 max-w-[18rem] text-[0.94rem] font-light leading-[1.8] text-stone-400">
+                      {group.blurb}
+                    </p>
+                  </div>
 
-        <Link
-          href={NAV_HREFS.inquire}
-          className="text-2xs tracking-wide uppercase text-white bg-forest hover:bg-forest-light px-7 py-3 transition-colors duration mt-4"
-          onClick={() => setOpen(false)}
-        >
-          {CTA.inquirePrivately}
-        </Link>
+                  <ul className="mt-7 space-y-3.5" role="list">
+                    {group.links.map(({ label, href }) => {
+                      const active = isNavItemActive(href);
+
+                      return (
+                        <li key={href}>
+                          <Link
+                            href={href}
+                            onClick={() => setOpen(false)}
+                            className={[
+                              "inline-flex items-center border-b pb-[4px] font-serif text-[1.08rem] font-light leading-none transition-all duration-[220ms] md:text-[1.18rem]",
+                              active
+                                ? "border-forest text-forest"
+                                : "border-transparent text-stone-800 hover:border-stone-300 hover:text-forest",
+                            ].join(" ")}
+                          >
+                            <span>{label}</span>
+                          </Link>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </section>
+              ))}
+            </div>
+          </nav>
+
+          <div className="mt-auto border-t border-stone-200/85 pt-6">
+            <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
+              <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
+                {FOOTER_LINKS.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setOpen(false)}
+                    className={[
+                      "border-b pb-[2px] text-[0.74rem] font-normal uppercase tracking-[0.18em] transition-colors duration-[220ms]",
+                      isNavItemActive(link.href)
+                        ? "border-forest text-forest"
+                        : "border-stone-200 text-stone-400 hover:border-stone-400 hover:text-stone-700",
+                    ].join(" ")}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+
+                <a
+                  href="mailto:hello@masonandwild.com"
+                  className="border-b border-stone-200 pb-[2px] text-[0.78rem] font-light tracking-[0.04em] text-stone-400 transition-colors duration-[220ms] hover:border-stone-400 hover:text-stone-700"
+                >
+                  hello@masonandwild.com
+                </a>
+              </div>
+
+              <p className="max-w-[40rem] text-sm font-light leading-relaxed text-stone-400 md:text-right">
+                {PRIMARY_POSITIONING_LINE}
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );
 }
-
