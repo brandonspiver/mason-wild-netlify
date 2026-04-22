@@ -219,14 +219,6 @@ export function NavBar() {
               <p className="text-[0.72rem] font-normal uppercase tracking-[0.28em] text-stone-900 md:text-[0.8rem]">
                 LGBTQ+ Luxury Africa
               </p>
-
-              <Link
-                href={NAV_HREFS.inquire}
-                onClick={() => setOpen(false)}
-                className="mt-1 inline-flex items-center whitespace-nowrap border border-forest/10 bg-forest px-5 py-[11px] text-[0.58rem] font-normal uppercase tracking-[0.18em] text-white transition-all duration-[260ms] shadow-[0_10px_24px_rgba(40,78,53,0.22)] hover:bg-forest-light hover:shadow-[0_14px_30px_rgba(40,78,53,0.28)] md:px-6 md:py-[13px] md:text-[0.64rem]"
-              >
-                {CTA.inquirePrivately}
-              </Link>
             </div>
           </div>
 
@@ -271,12 +263,24 @@ export function NavBar() {
                       );
                     })}
                   </ul>
+
+                  {group.title === "Information" && (
+                    <div className="mt-auto pt-10">
+                      <Link
+                        href={NAV_HREFS.inquire}
+                        onClick={() => setOpen(false)}
+                        className="inline-flex items-center whitespace-nowrap border border-forest/10 bg-forest px-5 py-[11px] text-[0.58rem] font-normal uppercase tracking-[0.18em] text-white transition-all duration-[260ms] shadow-[0_10px_24px_rgba(40,78,53,0.22)] hover:bg-forest-light hover:shadow-[0_14px_30px_rgba(40,78,53,0.28)] md:px-6 md:py-[13px] md:text-[0.64rem]"
+                      >
+                        {CTA.inquirePrivately}
+                      </Link>
+                    </div>
+                  )}
                 </section>
               ))}
             </div>
           </nav>
 
-          <div className="mt-auto border-t border-stone-200/85 pt-6">
+          <div className="mt-auto pt-6">
             <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
               <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
                 {FOOTER_LINKS.map((link) => (
