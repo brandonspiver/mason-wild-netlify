@@ -241,10 +241,10 @@ export function NavBar() {
                     <p className="text-[0.62rem] font-normal uppercase tracking-[0.22em] text-stone-300">
                       {group.eyebrow}
                     </p>
-                    <h3 className="mt-3 font-serif text-[clamp(1.75rem,2.2vw,2.3rem)] font-light leading-none tracking-[-0.018em] text-stone-900">
+                    <h3 className="mt-3 font-serif text-[clamp(1.62rem,2vw,2.16rem)] font-light leading-none tracking-[-0.018em] text-stone-900">
                       {group.title}
                     </h3>
-                    <p className="mt-4 max-w-[18rem] text-[0.94rem] font-light leading-[1.8] text-stone-400">
+                    <p className="mt-4 max-w-[18rem] text-[0.88rem] font-light leading-[1.8] text-stone-400">
                       {group.blurb}
                     </p>
                   </div>
@@ -259,7 +259,7 @@ export function NavBar() {
                             href={href}
                             onClick={() => setOpen(false)}
                             className={[
-                              "inline-flex items-center border-b pb-[4px] font-serif text-[1.08rem] font-light leading-none transition-all duration-[220ms] md:text-[1.18rem]",
+                              "inline-flex items-center border-b pb-[4px] font-serif text-[1rem] font-light leading-none transition-all duration-[220ms] md:text-[1.1rem]",
                               active
                                 ? "border-forest text-forest"
                                 : "border-transparent text-stone-800 hover:border-stone-300 hover:text-forest",

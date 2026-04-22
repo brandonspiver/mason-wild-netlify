@@ -16,6 +16,14 @@ type FormState = {
 };
 
 type SubmitState = "idle" | "submitting" | "success" | "error";
+type FieldName = "name" | "email" | "duration" | "narrative";
+type FieldErrors = Partial<Record<FieldName, string>>;
+
+type InquiryErrorResponse = {
+  ok: false;
+  error: string;
+  fields?: Array<{ field: string; message: string }>;
+};
 
 // â”€â”€â”€ Shared input className â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
@@ -26,6 +34,10 @@ const inputClass = [
   "focus:outline-none focus:border-stone-500",
   "transition-colors duration",
 ].join(" ");
+
+function isValidEmail(value: string): boolean {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+}
 
 // â”€â”€â”€ Component â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
@@ -40,6 +52,28 @@ export function InquiryForm() {
   });
 
   const [submitState, setSubmitState] = useState<SubmitState>("idle");
+  const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
+  const [serverError, setServerError] = useState<string>("");
+
+  function validateForm(nextForm: FormState): FieldErrors {
+    const errors: FieldErrors = {};
+
+    if (!nextForm.name.trim()) {
+      errors.name = "Please share your name.";
+    }
+
+    if (!nextForm.email.trim()) {
+      errors.email = "Please share your email address.";
+    } else if (!isValidEmail(nextForm.email.trim())) {
+      errors.email = "Please enter a valid email address.";
+    }
+
+    if (!nextForm.narrative.trim()) {
+      errors.narrative = "Please tell us a few details to shape your journey properly.";
+    }
+
+    return errors;
+  }
 
   function handleChange(
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -50,10 +84,16 @@ export function InquiryForm() {
         ? target.checked
         : target.value;
 
+    if (target.name in fieldErrors) {
+      setFieldErrors((prev) => ({ ...prev, [target.name]: undefined }));
+    }
+    setServerError("");
     setForm((prev) => ({ ...prev, [target.name]: value }));
   }
 
   function handleDuration(value: string) {
+    setFieldErrors((prev) => ({ ...prev, duration: undefined }));
+    setServerError("");
     setForm((prev) => ({
       ...prev,
       duration: prev.duration === value ? "" : value,
@@ -62,7 +102,18 @@ export function InquiryForm() {
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
+    const nextErrors = validateForm(form);
+    if (Object.keys(nextErrors).length > 0) {
+      setFieldErrors(nextErrors);
+      setServerError("");
+      setSubmitState("idle");
+      return;
+    }
+
     setSubmitState("submitting");
+    setFieldErrors({});
+    setServerError("");
+
     try {
       const response = await fetch("/api/inquire", {
         method: "POST",
@@ -71,11 +122,37 @@ export function InquiryForm() {
       });
 
       if (!response.ok) {
-        throw new Error("Enquiry submission failed.");
+        const payload = (await response.json().catch(() => null)) as InquiryErrorResponse | null;
+
+        if (payload?.fields?.length) {
+          const nextFieldErrors: FieldErrors = {};
+
+          for (const item of payload.fields) {
+            if (
+              item.field === "name" ||
+              item.field === "email" ||
+              item.field === "duration" ||
+              item.field === "narrative"
+            ) {
+              nextFieldErrors[item.field] = item.message;
+            }
+          }
+
+          setFieldErrors(nextFieldErrors);
+          setSubmitState("idle");
+          return;
+        }
+
+        throw new Error(payload?.error || "Enquiry submission failed.");
       }
 
       setSubmitState("success");
-    } catch {
+    } catch (error) {
+      setServerError(
+        error instanceof Error
+          ? error.message
+          : "We could not submit your enquiry just now. Please try again."
+      );
       setSubmitState("error");
     }
   }
@@ -132,6 +209,11 @@ export function InquiryForm() {
           required
           className={inputClass}
         />
+        {fieldErrors.name && (
+          <p className="text-sm font-light text-stone-500 leading-relaxed">
+            {fieldErrors.name}
+          </p>
+        )}
       </div>
 
       {/* Email */}
@@ -150,6 +232,11 @@ export function InquiryForm() {
           required
           className={inputClass}
         />
+        {fieldErrors.email && (
+          <p className="text-sm font-light text-stone-500 leading-relaxed">
+            {fieldErrors.email}
+          </p>
+        )}
       </div>
 
       <input
@@ -194,6 +281,11 @@ export function InquiryForm() {
             );
           })}
         </div>
+        {fieldErrors.duration && (
+          <p className="text-sm font-light text-stone-500 leading-relaxed">
+            {fieldErrors.duration}
+          </p>
+        )}
       </div>
 
       {/* Narrative */}
@@ -211,6 +303,11 @@ export function InquiryForm() {
           required
           className={[inputClass, "resize-none"].join(" ")}
         />
+        {fieldErrors.narrative && (
+          <p className="text-sm font-light text-stone-500 leading-relaxed">
+            {fieldErrors.narrative}
+          </p>
+        )}
       </div>
 
       <div className="border-t border-stone-200 pt-6">
@@ -272,8 +369,8 @@ export function InquiryForm() {
       {/* Error */}
       {submitState === "error" && (
         <p className="text-sm font-light text-stone-500 leading-relaxed border-l-2 border-stone-300 pl-4">
-          We could not submit your enquiry just now. Please try again, or write
-          to us directly at{" "}
+          {serverError || "We could not submit your enquiry just now. Please try again."}{" "}
+          Please try again, or write to us directly at{" "}
           <a
             href={`mailto:${INQUIRY_COPY.contactLine}`}
             className="text-stone-700 border-b border-stone-300 hover:border-stone-700 pb-px transition-colors duration"
