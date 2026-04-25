@@ -237,7 +237,7 @@ export const INQUIRY_COPY = {
   pageSubhead:
     "Private African travel, designed around who you are and how you want to move through the world. Mason & Wild creates privately designed journeys for travellers who value discretion, strong curation, and the confidence of being understood properly from the start.",
   processBody:
-    "Every Mason & Wild journey begins with a private enquiry. The details below help us understand your rhythm, expectations, travel window, and level of privacy required before anything is proposed. Suitable enquiries are personally reviewed before moving into a private consultation.",
+    "Every Mason & Wild journey begins with a private enquiry. The details below help us understand your rhythm, expectations, preferred season, and level of privacy required before anything is proposed. Suitable enquiries are personally reviewed before moving into a private consultation.",
   fullNameLabel:       "Full Name",
   fullNamePlaceholder: "How you would like us to address you",
   emailLabel:          "Email",

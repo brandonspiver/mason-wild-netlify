@@ -7,7 +7,7 @@ type InquiryPayload = {
   residence: string;
   contactMethod: string;
   travellers: number;
-  travelWindow: string;
+  preferredSeason: string;
   journeyLength: string;
   journeyInterest: string;
   investment: string;
@@ -37,12 +37,11 @@ type ErrorResponse = {
 };
 
 const VALID_CONTACT_METHODS = ["email", "whatsapp", "private-call"] as const;
-const VALID_TRAVEL_WINDOWS = [
-  "within-3-months",
-  "three-to-six-months",
-  "six-to-twelve-months",
-  "twelve-plus-months",
-  "dates-flexible",
+const VALID_PREFERRED_SEASONS = [
+  "jan-mar",
+  "apr-jun",
+  "jul-sep",
+  "oct-dec",
 ] as const;
 const VALID_JOURNEY_LENGTHS = [
   "7-9-nights",
@@ -169,11 +168,11 @@ function validatePayload(body: unknown): { data: InquiryPayload | null; errors: 
     errors.push({ field: "travellers", message: "Travellers must be a whole number between 1 and 20." });
   }
 
-  const travelWindow = toString(raw.travelWindow);
-  if (!travelWindow) {
-    errors.push({ field: "travelWindow", message: "Preferred travel window is required." });
-  } else if (!(VALID_TRAVEL_WINDOWS as readonly string[]).includes(travelWindow)) {
-    errors.push({ field: "travelWindow", message: "Unrecognized travel window." });
+  const preferredSeason = toString(raw.preferredSeason);
+  if (!preferredSeason) {
+    errors.push({ field: "preferredSeason", message: "Preferred season is required." });
+  } else if (!(VALID_PREFERRED_SEASONS as readonly string[]).includes(preferredSeason)) {
+    errors.push({ field: "preferredSeason", message: "Unrecognized preferred season." });
   }
 
   const journeyLength = toString(raw.journeyLength);
@@ -239,7 +238,7 @@ function validatePayload(body: unknown): { data: InquiryPayload | null; errors: 
       residence,
       contactMethod,
       travellers: travellersNum,
-      travelWindow,
+      preferredSeason,
       journeyLength,
       journeyInterest,
       investment,
@@ -264,7 +263,7 @@ async function handleSubmission(inquiry: InquiryPayload): Promise<void> {
       submittedAt,
       contactMethod: inquiry.contactMethod,
       travellers: inquiry.travellers,
-      travelWindow: inquiry.travelWindow,
+      preferredSeason: inquiry.preferredSeason,
       journeyLength: inquiry.journeyLength,
       journeyInterest: inquiry.journeyInterest,
       investment: inquiry.investment,
@@ -282,7 +281,7 @@ async function handleSubmission(inquiry: InquiryPayload): Promise<void> {
       { label: "Country / City of Residence", value: inquiry.residence },
       { label: "Preferred Contact Method", value: inquiry.contactMethod },
       { label: "Number of Travellers", value: String(inquiry.travellers) },
-      { label: "Preferred Travel Window", value: inquiry.travelWindow },
+      { label: "Preferred Season", value: inquiry.preferredSeason },
       { label: "Approximate Journey Length", value: inquiry.journeyLength },
       { label: "Journey of Interest", value: inquiry.journeyInterest },
       { label: "Journey Investment per Person", value: inquiry.investment },

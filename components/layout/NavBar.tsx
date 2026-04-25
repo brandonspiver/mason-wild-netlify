@@ -197,12 +197,12 @@ export function NavBar() {
           <div className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden border-b border-stone-200/85">
             <div className="absolute inset-0" aria-hidden="true">
               <Image
-                src="/home/home-hero.jpg"
+                src="/home/romantic-boat.png"
                 alt=""
                 fill
                 sizes="100vw"
                 className="object-cover opacity-10"
-                style={{ objectPosition: "center 38%" }}
+                style={{ objectPosition: "center 22%" }}
               />
               <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(253,252,250,0.34)_0%,rgba(253,252,250,0.12)_50%,rgba(253,252,250,0.3)_100%)]" />
             </div>

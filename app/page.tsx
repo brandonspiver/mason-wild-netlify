@@ -58,15 +58,15 @@ export default function HomePage() {
         className="relative min-h-svh flex flex-col justify-end pb-[clamp(56px,10vh,112px)] overflow-hidden"
         aria-label="Mason &amp; Wild  -  private African journeys"
       >
-        <div className="absolute inset-0 overflow-hidden" role="img" aria-label="Private African conservancy at golden hour">
+        <div className="absolute inset-0 overflow-hidden" role="img" aria-label="Travellers with a guide moving through dense rainforest foliage">
           <Image
-            src="/home/home-hero.jpg"
+            src="/home/what-restores-people.png"
             alt=""
             fill
             priority
             quality={90}
             sizes="100vw"
-            className="object-cover object-[72%_38%] md:object-[center_38%] animate-[heroZoom_20s_cubic-bezier(0.16,1,0.3,1)_forwards]"
+            className="object-cover object-[74%_44%] md:object-[62%_42%] animate-[heroZoom_20s_cubic-bezier(0.16,1,0.3,1)_forwards]"
           />
           <div
             className="absolute inset-0"

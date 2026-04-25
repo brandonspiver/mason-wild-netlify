@@ -221,6 +221,9 @@ const JOURNAL_CTA_JOURNEY_LINKS: Record<string, readonly JournalCtaLink[]> = {
   "lgbtq-luxury-travel-africa": [
     { label: "The Social Shift", href: getJourneyHref("the-social-shift") },
     { label: "The Intimate", href: getJourneyHref("the-intimate") },
+    { label: "The Romantic", href: getJourneyHref("the-romantic") },
+    { label: "The Private Circuit", href: getJourneyHref("the-private-circuit") },
+    { label: "The Adventure", href: getJourneyHref("the-adventure") },
   ],
   "how-long-should-an-african-luxury-journey-be": [
     { label: "The Classic", href: getJourneyHref("the-classic") },
@@ -1408,14 +1411,14 @@ const ARTICLES: Record<string, FullArticle> = {
     seoTitle:    "LGBTQ+ Luxury Travel in Africa",
     openGraphTitle: "LGBTQ+ Luxury Travel in Africa",
     openGraphDescription:
-      "A refined guide to LGBTQ+ luxury travel in Africa, from Cape Town to safari and island escapes.",
+      "Africa is not one story. A flagship guide to choosing LGBTQ+ luxury travel in Africa with confidence, privacy, ease, and destination-level nuance.",
     metaTitle:   "LGBTQ+ Luxury Travel in Africa | Mason & Wild",
     metaDescription:
-      "Discover the best LGBTQ+ luxury travel destinations in Africa, including Cape Town, Botswana, safari honeymoons, beach escapes, and expert planning advice.",
+      "Africa is not one story. A flagship guide to choosing LGBTQ+ luxury travel in Africa with confidence, privacy, ease, and destination-level nuance.",
     category:    "journey-intelligence",
     excerpt:
-      "Discover the best LGBTQ+ luxury travel destinations in Africa, including Cape Town, Botswana, safari honeymoons, beach escapes, and expert planning advice.",
-    readingTime: 8,
+      "Africa is not one story. A flagship guide to choosing LGBTQ+ luxury travel in Africa with confidence, privacy, ease, and destination-level nuance.",
+    readingTime: 9,
     publishedAt: "2026-04-25",
     img: {
       src:     "/journal/lgbtq-luxury-travel-africa/hero-lgbt-luxury-africa.jpg",
@@ -1426,7 +1429,7 @@ const ARTICLES: Record<string, FullArticle> = {
     body: [
       {
         type: "p-lead",
-        text: "For many LGBTQ+ travellers, planning Africa is not simply about choosing a destination. It is about choosing the right environment.",
+        text: "For many LGBTQ+ travellers, planning Africa is not simply about choosing a destination.",
       },
       {
         type: "p",
@@ -1434,19 +1437,19 @@ const ARTICLES: Record<string, FullArticle> = {
       },
       {
         type: "p",
+        text: "It is about choosing the right environment.",
+      },
+      {
+        type: "p",
         text: "The right environment to relax without second-guessing. The right environment to celebrate openly or privately, depending on preference. The right environment to feel welcomed, looked after, and excited. The right environment to know your money is buying something exceptional.",
       },
       {
         type: "p",
-        text: "That matters because Africa is not one story.",
+        text: "That matters because Africa is not one story. It is a continent of different legal frameworks, cultural norms, hospitality standards, landscapes, travel rhythms, and luxury ecosystems. Some destinations are outstanding for LGBTQ+ luxury travel. Others require nuance. Some are better suited to discreet private journeys than expressive city travel. Some are simply weaker choices relative to stronger alternatives.",
       },
       {
         type: "p",
-        text: "It is a continent of different legal frameworks, cultural norms, hospitality standards, landscapes, travel rhythms, and luxury ecosystems. Some destinations are outstanding for LGBTQ+ luxury travel. Others require nuance. Some are better suited to discreet private journeys than expressive city travel. Some are simply weaker choices relative to stronger alternatives.",
-      },
-      {
-        type: "p",
-        text: "Generic travel advice rarely reflects this reality.",
+        text: "Generic travel advice rarely reflects this reality. Broad headlines can be misleading, and online commentary often lacks the context that matters most once you are actually travelling.",
       },
       {
         type: "p",
@@ -1454,11 +1457,15 @@ const ARTICLES: Record<string, FullArticle> = {
       },
       {
         type: "h2",
-        text: "The Real Question Is Not \"Is Africa Safe?\"",
+        text: "The Real Question Is Not Simply \"Is Africa Safe?\"",
       },
       {
         type: "p",
-        text: "Many travellers begin with safety, and understandably so. But the more useful question is usually broader: where will we feel most at ease, most welcomed, and most ourselves?",
+        text: "Many travellers begin with safety, and understandably so. But the more useful question is usually broader:",
+      },
+      {
+        type: "p",
+        text: "Where will we feel most at ease, most welcomed, and most ourselves?",
       },
       {
         type: "p",
@@ -1466,7 +1473,7 @@ const ARTICLES: Record<string, FullArticle> = {
       },
       {
         type: "p",
-        text: "Two countries with similar laws can feel completely different in practice. Two hotels in the same city can feel worlds apart.",
+        text: "Two countries with similar laws can feel completely different in practice. Two hotels in the same city can feel worlds apart. One may be technically luxurious but emotionally cold. Another may make travellers feel comfortable within minutes of arrival.",
       },
       {
         type: "p",
@@ -1490,11 +1497,19 @@ const ARTICLES: Record<string, FullArticle> = {
       },
       {
         type: "p",
+        text: "It can also mean not wanting the trip to revolve around identity at all. Many travellers simply want world-class travel executed beautifully.",
+      },
+      {
+        type: "p",
         text: "This is why supplier selection matters more than slogans.",
       },
       {
         type: "p",
-        text: "A rainbow logo can be marketing. A well-run property is evidence.",
+        text: "A rainbow logo can be marketing.",
+      },
+      {
+        type: "p",
+        text: "A well-run property is evidence.",
       },
       {
         type: "h2",
@@ -1514,15 +1529,11 @@ const ARTICLES: Record<string, FullArticle> = {
       },
       {
         type: "p",
-        text: "That flexibility is powerful. It allows different couples to want completely different things and both be right.",
+        text: "Spend mornings on the Atlantic coast, afternoons in the Winelands, evenings in some of the best restaurants in the southern hemisphere, then finish with safari. Very few destinations can move between those moods so seamlessly.",
       },
       {
         type: "p",
-        content: [
-          { type: "text", text: "For this travel language, " },
-          { type: "link", text: "The Social Shift", href: "/the-social" },
-          { type: "text", text: " is a strong reference." },
-        ],
+        text: "That flexibility is powerful. It allows different couples to want completely different things and both be right.",
       },
       {
         type: "image",
@@ -1556,11 +1567,7 @@ const ARTICLES: Record<string, FullArticle> = {
       },
       {
         type: "p",
-        content: [
-          { type: "text", text: "For this privacy-first style, " },
-          { type: "link", text: "The Intimate", href: "/journeys/the-intimate" },
-          { type: "text", text: " remains one of the strongest options." },
-        ],
+        text: "It is particularly strong for travellers who do not need nightlife, crowds, or constant activity to feel entertained. The reward here is depth, beauty, and stillness.",
       },
       {
         type: "image",
@@ -1594,11 +1601,7 @@ const ARTICLES: Record<string, FullArticle> = {
       },
       {
         type: "p",
-        content: [
-          { type: "text", text: "For this sequence, " },
-          { type: "link", text: "The Romantic", href: "/journeys/the-romantic" },
-          { type: "text", text: " is a useful model." },
-        ],
+        text: "It feels softer, slower, and less performative than many heavily trafficked beach markets.",
       },
       {
         type: "image",
@@ -1635,14 +1638,6 @@ const ARTICLES: Record<string, FullArticle> = {
         text: "That is not fear-based advice. It is simply intelligent travel awareness.",
       },
       {
-        type: "p",
-        content: [
-          { type: "text", text: "For this route style, " },
-          { type: "link", text: "The Private Circuit", href: "/journeys/the-private-circuit" },
-          { type: "text", text: " is a strong benchmark." },
-        ],
-      },
-      {
         type: "image",
         image: {
           src: "/journal/lgbtq-luxury-travel-africa/tanzania-zanzibar-luxury.jpg",
@@ -1658,11 +1653,7 @@ const ARTICLES: Record<string, FullArticle> = {
       },
       {
         type: "p",
-        text: "Not every couple wants a classic safari-heavy trip.",
-      },
-      {
-        type: "p",
-        text: "Some care more about design, architecture, silence, landscapes, road rhythm, and the emotional effect of space.",
+        text: "Not every couple wants a classic safari-heavy trip. Some care more about design, architecture, silence, landscapes, road rhythm, and the emotional effect of space.",
       },
       {
         type: "p",
@@ -1674,11 +1665,7 @@ const ARTICLES: Record<string, FullArticle> = {
       },
       {
         type: "p",
-        content: [
-          { type: "text", text: "For this travel personality, " },
-          { type: "link", text: "The Adventure", href: "/journeys/the-adventure" },
-          { type: "text", text: " is a natural fit." },
-        ],
+        text: "For travellers who have already done the obvious destinations, Namibia can feel refreshing in the best possible way.",
       },
       {
         type: "image",
@@ -1708,15 +1695,39 @@ const ARTICLES: Record<string, FullArticle> = {
       },
       {
         type: "p",
-        text: "This is why generic booking platforms can only take you so far. They sell rooms. They do not sell atmosphere.",
-      },
-      {
-        type: "h2",
-        text: "Best Journeys by Traveller Type",
+        text: "This is why generic booking platforms can only take you so far.",
       },
       {
         type: "p",
-        text: "A first-time couple often does brilliantly with Cape Town and safari. Honeymooners frequently love Botswana followed by Mozambique. Social, style-led couples tend to thrive in Cape Town with Winelands and a short safari. Privacy-first travellers may prefer Botswana alone, or Botswana paired with a discreet beach stay. Explorer couples often light up in Namibia. Milestone celebrators may love Tanzania and Zanzibar.",
+        text: "They sell rooms. They do not sell atmosphere.",
+      },
+      {
+        type: "h2",
+        text: "The Smartest Journeys Are Designed Around Personality",
+      },
+      {
+        type: "p",
+        text: "A first-time couple often does brilliantly with Cape Town and safari.",
+      },
+      {
+        type: "p",
+        text: "Honeymooners frequently love Botswana followed by Mozambique.",
+      },
+      {
+        type: "p",
+        text: "Social, style-led couples tend to thrive in Cape Town with Winelands and a short safari.",
+      },
+      {
+        type: "p",
+        text: "Privacy-first travellers may prefer Botswana alone, or Botswana paired with a discreet beach stay.",
+      },
+      {
+        type: "p",
+        text: "Explorer couples often light up in Namibia.",
+      },
+      {
+        type: "p",
+        text: "Milestone celebrators may love Tanzania and Zanzibar.",
       },
       {
         type: "p",
@@ -1748,7 +1759,15 @@ const ARTICLES: Record<string, FullArticle> = {
       },
       {
         type: "p",
-        text: "And perhaps the biggest mistake of all is assuming Africa is one story. It is many different realities.",
+        text: "Another is trying to do too much in one journey rather than allowing time to enjoy where they are.",
+      },
+      {
+        type: "p",
+        text: "And perhaps the biggest mistake of all is assuming Africa is one story.",
+      },
+      {
+        type: "p",
+        text: "It is many different realities.",
       },
       {
         type: "h2",
@@ -1764,6 +1783,10 @@ const ARTICLES: Record<string, FullArticle> = {
       },
       {
         type: "p",
+        text: "We also know when to advise against a route, property, or destination if it does not align with the client.",
+      },
+      {
+        type: "p",
         text: "Because trust is part of luxury.",
       },
       {
@@ -1772,43 +1795,59 @@ const ARTICLES: Record<string, FullArticle> = {
       },
       {
         type: "h3",
-        text: "Is Africa safe for LGBTQ+ travellers?",
+        text: "Q: Is Africa safe for LGBTQ+ travellers?",
       },
       {
         type: "p",
-        text: "Some destinations are excellent choices, while others require more nuance. Destination and property selection matter enormously.",
+        text: "A: Some destinations are excellent choices, while others require more nuance. Destination and property selection matter enormously.",
       },
       {
         type: "h3",
-        text: "What is the best LGBTQ+ destination in Africa?",
+        text: "Q: What is the best LGBTQ+ destination in Africa?",
       },
       {
         type: "p",
-        text: "South Africa is often the strongest first recommendation because of infrastructure, hospitality quality, and range.",
+        text: "A: South Africa is often the strongest first recommendation because of infrastructure, hospitality quality, and range.",
       },
       {
         type: "h3",
-        text: "Can same-sex couples go on safari?",
+        text: "Q: Can same-sex couples go on safari?",
       },
       {
         type: "p",
-        text: "Absolutely. Many safari lodges are private, sophisticated, and ideal for couples.",
+        text: "A: Absolutely. Many safari lodges are private, sophisticated, and ideal for couples.",
       },
       {
         type: "h3",
-        text: "Is Africa good for honeymoons?",
+        text: "Q: Is Africa good for honeymoons?",
       },
       {
         type: "p",
-        text: "Exceptionally so, especially safari and beach combinations.",
+        text: "A: Exceptionally so, especially safari and beach combinations.",
       },
       {
         type: "h3",
-        text: "Where should we go for privacy?",
+        text: "Q: Where should we go for privacy?",
       },
       {
         type: "p",
-        text: "Botswana is one of the strongest answers.",
+        text: "A: Botswana is one of the strongest answers.",
+      },
+      {
+        type: "h3",
+        text: "Q: Can we celebrate a honeymoon openly?",
+      },
+      {
+        type: "p",
+        text: "A: In many luxury environments, yes. The key is choosing the right destinations and properties.",
+      },
+      {
+        type: "h2",
+        text: "Start Your Journey",
+      },
+      {
+        type: "p",
+        text: "If Africa is on your list, we will help you choose where it fits beautifully, where it does not, and how to make it unforgettable.",
       },
     ],
     relatedJourneys: [

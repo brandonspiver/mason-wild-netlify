@@ -129,7 +129,7 @@ export default function EnquirePage() {
                   <p className="text-sm md:text-base font-light text-stone-600 leading-[1.9] max-w-[780px]">
                     Every Mason &amp; Wild journey begins with a private
                     enquiry. The details below help us understand your rhythm,
-                    expectations, travel window, and level of privacy required
+                    expectations, preferred season, and level of privacy required
                     before anything is proposed. Suitable enquiries are
                     personally reviewed before moving into a private
                     consultation.

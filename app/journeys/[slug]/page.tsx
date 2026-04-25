@@ -52,13 +52,24 @@ type JourneyNarrativePoint = {
   readonly body: string;
 };
 
+type JourneyAccommodationFeature = {
+  readonly title: string;
+  readonly body: string;
+};
+
 type JourneyAccommodation = {
-  readonly location?: string;
+  readonly location: string;
   readonly name: string;
-  readonly stay?: string;
+  readonly stay: string;
   readonly description: string;
   readonly images: readonly [JourneyImage, JourneyImage, JourneyImage];
-  readonly personallyStayed?: boolean;
+  readonly founderNote?: string;
+  readonly features: readonly [
+    JourneyAccommodationFeature,
+    JourneyAccommodationFeature,
+    JourneyAccommodationFeature,
+    JourneyAccommodationFeature,
+  ];
 };
 
 type JourneyListSection = {
@@ -120,23 +131,7 @@ type JourneyData = {
   readonly nextJourney?: NextJourneyRef;
 };
 
-const PERSONALLY_STAYED_PROPERTY_NAMES = new Set([
-  "Victoria Falls Island Lodge",
-  "KuKaya",
-  "Zungulila & Chindeni",
-  "Mount Nelson Hotel",
-  "Akademie Street",
-  "Monwana",
-  "The Pineapple House",
-  "Simbavati Waterside",
-  "Mbano Manor",
-  "Camissa House, Cape Town",
-  "Little Ongava",
-  "Siringit Villa",
-  "Siringit Tarangire Camp",
-  "Siringit Migration Camp",
-  "Siringit Serengeti Camp",
-]);
+const PERSONAL_STAY_FOUNDER_NOTE = "Personally stayed by Zannon James.";
 
 const JOURNEYS: Record<string, JourneyData> = {
   "the-intimate": {
@@ -337,9 +332,11 @@ const JOURNEYS: Record<string, JourneyData> = {
       "Each property is here for a specific reason. Together they create a clear progression from stillness, to immersion, to a polished finish that feels complete.",
     accommodations: [
       {
+        location: "Makgadikgadi, Botswana",
         name: "Jack's Private Camp",
+        stay: "3 Nights",
         description:
-          "Why it is here: to create immediate distance from ordinary pace through silence, scale, and privacy. What it adds: a true reset that prepares your group to experience the rest of the journey with more presence.",
+          "The journey opens with space, silence, and immediate separation from ordinary pace. Selected through trusted regional relationships, professional checks, and Mason & Wild's suitability standards, it gives the Makgadikgadi chapter the stillness needed before the Delta.",
         images: [
           {
             src: "/journeys/the-intimate/updates/delta-private-suite.jpg",
@@ -357,11 +354,31 @@ const JOURNEYS: Record<string, JourneyData> = {
             position: "center 58%",
           },
         ],
+        features: [
+          {
+            title: "Salt-pan stillness",
+            body: "Wide landscapes and low visual noise create a genuine reset.",
+          },
+          {
+            title: "Private footing",
+            body: "Chosen for how cleanly it protects pace, space, and quiet.",
+          },
+          {
+            title: "Strong opening rhythm",
+            body: "It makes the first chapter feel intentional rather than transitional.",
+          },
+          {
+            title: "Makgadikgadi access",
+            body: "The setting introduces Botswana through scale before density.",
+          },
+        ],
       },
       {
+        location: "Okavango Delta, Botswana",
         name: "Duke's East",
+        stay: "3 Nights",
         description:
-          "Why it is here: to deliver the strongest wildlife chapter in a setting that remains private and controlled. What it adds: depth, immersion, and the most intimate connection to the Delta's rhythm, including quieter, low-volume exploration.",
+          "This is the wildlife heart of the route, used for privacy, depth, and a more controlled relationship with the Delta. Selected through trusted regional relationships, professional checks, and Mason & Wild's suitability standards, it is here to make the safari chapter feel immersive rather than crowded.",
         images: [
           {
             src: "/journeys/the-intimate/updates/delta-treehouse-suite.jpg",
@@ -379,11 +396,32 @@ const JOURNEYS: Record<string, JourneyData> = {
             position: "center 52%",
           },
         ],
+        features: [
+          {
+            title: "Delta immersion",
+            body: "This is where wildlife rhythm and water-based atmosphere deepen properly.",
+          },
+          {
+            title: "Low-volume feel",
+            body: "The chapter is chosen to preserve privacy rather than spectacle.",
+          },
+          {
+            title: "Safari depth",
+            body: "Three nights give the Okavango enough time to feel lived, not sampled.",
+          },
+          {
+            title: "Strong route logic",
+            body: "It follows the pans at exactly the point the journey needs more density.",
+          },
+        ],
       },
       {
+        location: "Victoria Falls, Zimbabwe",
         name: "Victoria Falls Island Lodge",
+        stay: "2 Nights",
         description:
-          "Why it is here: to close the route with polish, comfort, and a gentler social energy. What it adds: a celebratory final chapter that still protects privacy while letting the journey end with ease.",
+          "This closing chapter adds polish, water, and a lighter social register without undoing the privacy of the route. It is included because it lets the journey finish with ease, river atmosphere, and a more expansive sense of arrival.",
+        founderNote: PERSONAL_STAY_FOUNDER_NOTE,
         images: [
           {
             src: "/journeys/the-intimate/updates/victoria-falls-pool.jpg",
@@ -401,6 +439,24 @@ const JOURNEYS: Record<string, JourneyData> = {
             position: "center 52%",
             fit: "contain",
             maxWidthPx: 1000,
+          },
+        ],
+        features: [
+          {
+            title: "Island setting",
+            body: "The position on the Zambezi keeps the finish atmospheric and removed.",
+          },
+          {
+            title: "Polished release",
+            body: "It softens the journey without making the ending feel generic.",
+          },
+          {
+            title: "Strong final mood",
+            body: "River light and easier pacing give the route its celebratory close.",
+          },
+          {
+            title: "Privacy retained",
+            body: "The last chapter still feels composed rather than over-social.",
           },
         ],
       },
@@ -617,9 +673,11 @@ const JOURNEYS: Record<string, JourneyData> = {
       "Where privacy takes form. Each property is chosen not as a standalone luxury moment, but for how it shifts the emotional register of the journey from polished arrival to restorative pause to deep safari immersion.",
     accommodations: [
       {
+        location: "Lusaka, Zambia",
         name: "Latitude 15",
+        stay: "1 Night",
         description:
-          "Latitude 15 gives the journey a composed beginning. It offers design, comfort, and a polished arrival that allows the trip to start with intention rather than fatigue.",
+          "This Lusaka stop is about composure rather than spectacle. Selected through trusted regional relationships, professional checks, and Mason & Wild's suitability standards, it gives the Zambia routing a clean arrival before the journey narrows into the bush.",
         images: [
           {
             src: "/journeys/the-untamed/Latitude 15 (7).png",
@@ -637,11 +695,32 @@ const JOURNEYS: Record<string, JourneyData> = {
             position: "center 50%",
           },
         ],
+        features: [
+          {
+            title: "Polished arrival",
+            body: "It helps the route begin with ease instead of airport fatigue.",
+          },
+          {
+            title: "Design-led start",
+            body: "The property sets a calmer tone before safari movement begins.",
+          },
+          {
+            title: "Lusaka access",
+            body: "Useful positioning keeps the onward bush transition straightforward.",
+          },
+          {
+            title: "Short-stay comfort",
+            body: "Everything is chosen to make one night feel settled and well judged.",
+          },
+        ],
       },
       {
+        location: "South Luangwa, Zambia",
         name: "KuKaya",
+        stay: "2 Nights",
         description:
-          "KuKaya changes the pace completely. It introduces softness, privacy, and restoration before the deeper safari chapters, helping the journey settle into itself before the bush takes over.",
+          "KuKaya softens the pace before the deeper safari chapters begin. It is here to create privacy, recovery, and a gentler entry into South Luangwa so the bush feels absorbed rather than rushed.",
+        founderNote: PERSONAL_STAY_FOUNDER_NOTE,
         images: [
           {
             src: "/journeys/the-untamed/KuKaya (12).jpg",
@@ -659,26 +738,108 @@ const JOURNEYS: Record<string, JourneyData> = {
             position: "center 50%",
           },
         ],
+        features: [
+          {
+            title: "Restorative pacing",
+            body: "This chapter lets ordinary life fall away before safari fully takes over.",
+          },
+          {
+            title: "Quiet privacy",
+            body: "Used for softness, calm handling, and a low-pressure rhythm.",
+          },
+          {
+            title: "Strong sequence",
+            body: "It prepares the deeper bush chapters instead of competing with them.",
+          },
+          {
+            title: "South Luangwa entry",
+            body: "The route starts the region gently, which helps the whole journey land better.",
+          },
+        ],
       },
       {
-        name: "Zungulila & Chindeni",
+        location: "South Luangwa, Zambia",
+        name: "Zungulila",
+        stay: "3 Nights",
         description:
-          "These camps form the emotional centre of the journey. The guiding deepens, the landscape quiets, and the safari experience becomes more tactile, instinctive, and absorbing. This is where The Untamed becomes fully itself.",
+          "Zungulila is where the safari rhythm becomes quieter and more instinctive. It belongs in the route for the way it deepens immersion, guiding focus, and the sense that South Luangwa is being experienced with enough time and seriousness.",
+        founderNote: PERSONAL_STAY_FOUNDER_NOTE,
+        images: [
+          {
+            src: "/journeys/the-untamed/Zungulila (18).jpg",
+            alt: "Bush landscape at Zungulila in South Luangwa",
+            position: "center 50%",
+          },
+          {
+            src: "/journeys/the-untamed/Zungulila (17).jpg",
+            alt: "Tent and camp atmosphere at Zungulila",
+            position: "center 48%",
+          },
+          {
+            src: "/journeys/the-untamed/Zungulila (8).jpg",
+            alt: "Immersive wilderness setting at Zungulila",
+            position: "center 52%",
+          },
+        ],
+        features: [
+          {
+            title: "Safari depth",
+            body: "The camp is used to let South Luangwa feel fully lived rather than skimmed.",
+          },
+          {
+            title: "Quiet bush rhythm",
+            body: "Days settle into a more instinctive pace with less interruption.",
+          },
+          {
+            title: "Guiding focus",
+            body: "This chapter is about wildlife reading and immersion, not lodge theatre.",
+          },
+          {
+            title: "Emotional centre",
+            body: "It gives The Untamed its most elemental and absorbing movement.",
+          },
+        ],
+      },
+      {
+        location: "South Luangwa, Zambia",
+        name: "Chindeni",
+        stay: "3 Nights",
+        description:
+          "Chindeni extends the Luangwa chapter with a calmer, more reflective register. It is included to give the journey texture, water-edge atmosphere, and enough time in the bush for the route to feel complete rather than compressed.",
+        founderNote: PERSONAL_STAY_FOUNDER_NOTE,
         images: [
           {
             src: "/journeys/the-untamed/Chindeni (5).jpg",
-            alt: "Bush landscape at Zungulila and Chindeni",
+            alt: "Bush landscape at Chindeni in South Luangwa",
             position: "center 50%",
           },
           {
             src: "/journeys/the-untamed/Chindeni (6).jpg",
-            alt: "Quiet safari camp atmosphere",
+            alt: "Quiet safari camp atmosphere at Chindeni",
             position: "center 48%",
           },
           {
-            src: "/journeys/the-untamed/Zungulila (18).jpg",
-            alt: "Immersive wilderness setting",
+            src: "/journeys/the-untamed/Chindeni (16).jpg",
+            alt: "Water and camp view at Chindeni",
             position: "center 52%",
+          },
+        ],
+        features: [
+          {
+            title: "Water-edge mood",
+            body: "The setting brings a softer register to the final Luangwa chapter.",
+          },
+          {
+            title: "Longer immersion",
+            body: "It gives Zambia enough time to feel layered, not hurried.",
+          },
+          {
+            title: "Bush stillness",
+            body: "The atmosphere favours observation, patience, and quieter days.",
+          },
+          {
+            title: "Resolved finish",
+            body: "This final camp helps the journey leave the bush on a more settled note.",
           },
         ],
       },
@@ -918,9 +1079,12 @@ const JOURNEYS: Record<string, JourneyData> = {
       "Where intimacy takes shape. Each property is selected not just for luxury, but for the role it plays in the emotional movement of the journey from stylish beginning to softer middle to effortless coastal finish.",
     accommodations: [
       {
+        location: "Cape Town, South Africa",
         name: "Mount Nelson Hotel",
+        stay: "4 Nights",
         description:
-          "This stay gives the journey its polished beginning. It sets the tone with design, privacy, and access to the city's best energy without compromising intimacy.",
+          "This opening stay gives the journey polish, service confidence, and access to Cape Town without making the city chapter feel exposed or overworked. It is here to begin the route with style and ease rather than noise.",
+        founderNote: PERSONAL_STAY_FOUNDER_NOTE,
         images: [
         {
           src: "/journeys/the-romantic/MN 6.jpg",
@@ -940,11 +1104,32 @@ const JOURNEYS: Record<string, JourneyData> = {
           position: "center 50%",
         },
       ],
+      features: [
+        {
+          title: "City elegance",
+          body: "It starts the route with design, composure, and a strong sense of occasion.",
+        },
+        {
+          title: "Cape Town access",
+          body: "The location works for dining, guiding, and city movement without friction.",
+        },
+        {
+          title: "Service confidence",
+          body: "It is chosen for reliable handling as much as atmosphere.",
+        },
+        {
+          title: "Romantic opening",
+          body: "The property gives the journey its polished first note.",
+        },
+      ],
     },
       {
+        location: "Franschhoek, South Africa",
         name: "Akademie Street",
+        stay: "3 Nights",
         description:
-          "This chapter slows everything down. It brings landscape, indulgence, and a more inward pace that allows the journey to deepen before the coast.",
+          "This Winelands chapter slows the route into landscape, privacy, and a more inward romantic pace. It belongs here because it lets the journey deepen before safari without losing refinement or warmth.",
+        founderNote: PERSONAL_STAY_FOUNDER_NOTE,
         images: [
         {
           src: "/journeys/the-romantic/AS 4.png",
@@ -962,11 +1147,32 @@ const JOURNEYS: Record<string, JourneyData> = {
           position: "center 50%",
         },
       ],
+      features: [
+        {
+          title: "Winelands calm",
+          body: "The shift into Franschhoek gives the journey room to breathe.",
+        },
+        {
+          title: "Boutique privacy",
+          body: "Used for discretion, quiet comfort, and a slower shared rhythm.",
+        },
+        {
+          title: "Design-led stay",
+          body: "The property feels personal rather than scaled or overly formal.",
+        },
+        {
+          title: "Middle-chapter softness",
+          body: "It prepares safari by slowing everything down first.",
+        },
+      ],
     },
       {
+        location: "Greater Kruger, South Africa",
         name: "Monwana",
+        stay: "3 Nights",
         description:
-          "This chapter deepens the journey into a more instinctive rhythm, with guiding and atmosphere chosen to keep safari immersive, private, and emotionally grounded.",
+          "Monwana deepens the journey into a more instinctive register, with strong guiding, privacy, and enough atmosphere to make safari feel intimate rather than performative. It is the bush chapter that gives the route real depth.",
+        founderNote: PERSONAL_STAY_FOUNDER_NOTE,
         images: [
         {
           src: "/journeys/the-romantic/MW  (7).jpg",
@@ -984,11 +1190,31 @@ const JOURNEYS: Record<string, JourneyData> = {
           position: "center 50%",
         },
       ],
+      features: [
+        {
+          title: "Safari intimacy",
+          body: "The property keeps the bush chapter private, calm, and absorbing.",
+        },
+        {
+          title: "Guiding quality",
+          body: "Chosen for how well the wildlife experience holds in real time.",
+        },
+        {
+          title: "Emotional depth",
+          body: "This is where the route moves from indulgence into something more elemental.",
+        },
+        {
+          title: "Greater Kruger fit",
+          body: "It gives the romantic arc real substance before the coast.",
+        },
+      ],
     },
       {
+        location: "Benguerra Island, Mozambique",
         name: "Benguerra Island",
+        stay: "2 Nights",
         description:
-          "This is where the journey exhales fully. Space, sea, warmth, and a sense of barefoot ease create the right final chapter for romance that feels natural rather than staged.",
+          "This final Mozambique chapter is selected through trusted regional relationships, professional checks, and Mason & Wild's suitability standards, with attention to privacy, service rhythm, route logic, and guest comfort. It gives the journey space, sea air, and the right final release.",
         images: [
         {
           src: "/journeys/the-romantic/BBL (1).jpg",
@@ -1004,6 +1230,24 @@ const JOURNEYS: Record<string, JourneyData> = {
           src: "/journeys/the-romantic/BBL (7).jpg",
           alt: "Ocean scene on Benguerra Island",
           position: "center 52%",
+        },
+      ],
+      features: [
+        {
+          title: "Coastal release",
+          body: "Sea air and softer pacing let the route exhale properly.",
+        },
+        {
+          title: "Barefoot ease",
+          body: "The mood shifts lighter without losing polish.",
+        },
+        {
+          title: "Romantic finish",
+          body: "It closes the journey with warmth instead of spectacle.",
+        },
+        {
+          title: "Mozambique contrast",
+          body: "The coast gives the overall sequence its final emotional change.",
         },
       ],
       },
@@ -1362,7 +1606,8 @@ const JOURNEYS: Record<string, JourneyData> = {
         name: "The Pineapple House",
         stay: "3 Nights",
         description:
-          "This stay gives the journey a polished beginning, with strong design, a good location, and the right access to the city without losing privacy or ease.",
+          "This opening stay gives the route a polished beginning, with strong design, a calm residential feel, and good access to Cape Town without losing privacy or ease.",
+        founderNote: PERSONAL_STAY_FOUNDER_NOTE,
         images: [
           {
             src: "/journeys/the-classic/PineApple House  (2).png",
@@ -1380,13 +1625,32 @@ const JOURNEYS: Record<string, JourneyData> = {
             position: "center 52%",
           },
         ],
+        features: [
+          {
+            title: "Good first landing",
+            body: "It starts the journey with calm rather than city friction.",
+          },
+          {
+            title: "Residential feel",
+            body: "The setting keeps Cape Town polished without feeling overexposed.",
+          },
+          {
+            title: "Design-led comfort",
+            body: "It works for travellers who want ease and taste from the outset.",
+          },
+          {
+            title: "City access",
+            body: "Restaurants, guiding, and the peninsula chapter remain easy to reach.",
+          },
+        ],
       },
       {
         location: "Greater Kruger",
         name: "Simbavati Waterside",
         stay: "4 Nights",
         description:
-          "This is the safari heart of the trip. It brings immersion, guiding quality, and the feeling of having moved properly into the wild rather than simply visiting it.",
+          "This is the safari heart of the route, included for immersion, guiding quality, and the sense of having moved properly into the bush rather than simply sampling it.",
+        founderNote: PERSONAL_STAY_FOUNDER_NOTE,
         images: [
           {
             src: "/journeys/the-classic/simbavati-waterside-large-suite.jpeg",
@@ -1404,13 +1668,32 @@ const JOURNEYS: Record<string, JourneyData> = {
             position: "center 50%",
           },
         ],
+        features: [
+          {
+            title: "Safari depth",
+            body: "Four nights give Greater Kruger enough time to feel properly absorbed.",
+          },
+          {
+            title: "Guiding quality",
+            body: "Chosen for a wildlife rhythm that holds up in real travel conditions.",
+          },
+          {
+            title: "Waterside setting",
+            body: "The atmosphere adds softness without diluting the safari focus.",
+          },
+          {
+            title: "Classic route core",
+            body: "This is the chapter that gives the journey its real substance.",
+          },
+        ],
       },
       {
         location: "Victoria Falls",
         name: "Mbano Manor",
         stay: "2 Nights",
         description:
-          "This final stay shifts the mood just enough. It adds water, lightness, and a sense of arrival at the end of the journey without breaking the overall refinement.",
+          "This final stay shifts the mood just enough, adding water, lightness, and a broader sense of place without breaking the overall refinement of the route.",
+        founderNote: PERSONAL_STAY_FOUNDER_NOTE,
         images: [
           {
             src: "/journeys/the-classic/mbano-manor-exterior.jpg",
@@ -1426,6 +1709,24 @@ const JOURNEYS: Record<string, JourneyData> = {
             src: "/journeys/the-classic/mbano-manor-bath-detail.jpg",
             alt: "Bathroom detail at Mbano Manor",
             position: "center 50%",
+          },
+        ],
+        features: [
+          {
+            title: "Light final mood",
+            body: "It releases the route after safari without making the finish feel busy.",
+          },
+          {
+            title: "Forest setting",
+            body: "The atmosphere stays calm even with Victoria Falls nearby.",
+          },
+          {
+            title: "Strong closing contrast",
+            body: "Water and greenery give the itinerary its final change of register.",
+          },
+          {
+            title: "Ease at the end",
+            body: "This last chapter keeps the departure side of the route well handled.",
           },
         ],
       },
@@ -1681,9 +1982,12 @@ const JOURNEYS: Record<string, JourneyData> = {
       "Where adventure becomes effortless. Each property is selected for its role in the sequence: energetic opening, elegant Namibia entry, desert spectacle, conservation depth, and refined safari close.",
     accommodations: [
       {
-        name: "Camissa House, Cape Town",
+        location: "Cape Town, South Africa",
+        name: "Camissa House",
+        stay: "3 Nights",
         description:
-          "Camissa House anchors the Cape Town opening, where private-guide adventure and city energy set tone before Namibia begins.",
+          "Camissa House anchors the Cape Town opening with a more intimate base for private guiding, city energy, and a cleaner departure into Namibia.",
+        founderNote: PERSONAL_STAY_FOUNDER_NOTE,
         images: [
           {
             src: "/journeys/the-adventure/Camissa House.jpg",
@@ -1701,11 +2005,31 @@ const JOURNEYS: Record<string, JourneyData> = {
             position: "center 54%",
           },
         ],
+        features: [
+          {
+            title: "Adventure opening",
+            body: "It starts the route with energy while keeping the city base contained.",
+          },
+          {
+            title: "Good Table Mountain position",
+            body: "The location works well for private guiding and active Cape Town days.",
+          },
+          {
+            title: "Boutique feel",
+            body: "The stay remains personal rather than large or over-programmed.",
+          },
+          {
+            title: "Strong departure logic",
+            body: "It sets up the Namibia handover cleanly after the city chapter.",
+          },
+        ],
       },
       {
+        location: "Near Windhoek, Namibia",
         name: "Zannier Omaanda",
+        stay: "1 Night",
         description:
-          "Zannier Omaanda is the elegant entry point into Namibia, designed as a soft landing with reserve-based wildlife and reset before the overland route deepens.",
+          "Zannier Omaanda is used as a soft Namibia landing after the Cape Town connection. Selected through trusted regional relationships, professional checks, and Mason & Wild's suitability standards, it gives the route a calm reset before the overland chapter deepens.",
         images: [
           {
             src: "/journeys/the-adventure/ZO (10).jpg",
@@ -1723,11 +2047,31 @@ const JOURNEYS: Record<string, JourneyData> = {
             position: "center 54%",
           },
         ],
+        features: [
+          {
+            title: "Soft landing",
+            body: "One night here keeps the Namibia entry calm rather than abrupt.",
+          },
+          {
+            title: "Reserve context",
+            body: "It introduces wildlife and space before the longer road sections begin.",
+          },
+          {
+            title: "Elegant transition",
+            body: "The stop helps Cape Town hand cleanly into the expedition.",
+          },
+          {
+            title: "Operational ease",
+            body: "It is used for flow, reset, and guest comfort as much as style.",
+          },
+        ],
       },
       {
-        name: "Sonop, Namib Desert",
+        location: "Namib Desert, Namibia",
+        name: "Zannier Sonop",
+        stay: "3 Nights",
         description:
-          "Zannier Sonop is the cinematic desert core, where guided exploration, ballooning, horse riding or quad options, and premium downtime define the chapter.",
+          "Zannier Sonop is the cinematic desert core of the route. Selected through trusted regional relationships, professional checks, and Mason & Wild's suitability standards, it is here for atmosphere, desert activities, and the sense of scale that defines this chapter.",
         images: [
           {
             src: "/journeys/the-adventure/ZS (10).jpg",
@@ -1745,11 +2089,31 @@ const JOURNEYS: Record<string, JourneyData> = {
             position: "center 52%",
           },
         ],
+        features: [
+          {
+            title: "Desert spectacle",
+            body: "This chapter gives the route its clearest sense of cinematic scale.",
+          },
+          {
+            title: "Activity range",
+            body: "Ballooning, riding, and desert exploration all fit naturally here.",
+          },
+          {
+            title: "Strong downtime",
+            body: "The stay has enough atmosphere to balance the movement around it.",
+          },
+          {
+            title: "Namib core",
+            body: "It is the section that makes the overland journey feel expansive rather than linear.",
+          },
+        ],
       },
       {
+        location: "Damaraland, Namibia",
         name: "Wilderness Desert Rhino Camp",
+        stay: "3 Nights",
         description:
-          "Wilderness Desert Rhino Camp is where the journey turns most elemental and meaningful, centred on black rhino conservation and extraordinary remote landscapes.",
+          "This Damaraland chapter is selected through trusted regional relationships, professional checks, and Mason & Wild's suitability standards, with attention to conservation context, remoteness, and route logic. It gives the journey its most elemental and purposeful stretch.",
         images: [
           {
             src: "/journeys/the-adventure/Wilderness Desert Rhino Camp (10).jpg",
@@ -1767,11 +2131,32 @@ const JOURNEYS: Record<string, JourneyData> = {
             position: "center 52%",
           },
         ],
+        features: [
+          {
+            title: "Conservation context",
+            body: "The camp is used for what it adds beyond scenery alone.",
+          },
+          {
+            title: "Remote landscapes",
+            body: "This is the starkest and most elemental part of the route.",
+          },
+          {
+            title: "Purposeful guiding",
+            body: "The chapter works because it has focus, not just remoteness.",
+          },
+          {
+            title: "Damaraland depth",
+            body: "It gives the expedition real texture before the final safari close.",
+          },
+        ],
       },
       {
+        location: "Etosha, Namibia",
         name: "Little Ongava",
+        stay: "3 Nights",
         description:
-          "Little Ongava closes the expedition with elevated Etosha safari, privacy, exclusivity, and relaxed luxury after the road journey.",
+          "Little Ongava closes the expedition with elevated Etosha safari, privacy, and a more relaxed final register after the road-heavy Namibia chapters.",
+        founderNote: PERSONAL_STAY_FOUNDER_NOTE,
         images: [
           {
             src: "/journeys/the-adventure/Little Ongava (7).jpg",
@@ -1787,6 +2172,24 @@ const JOURNEYS: Record<string, JourneyData> = {
             src: "/journeys/the-adventure/Little Ongava (10).jpg",
             alt: "Final safari atmosphere at Little Ongava",
             position: "center 50%",
+          },
+        ],
+        features: [
+          {
+            title: "Final safari payoff",
+            body: "It gives the expedition a rewarding last chapter instead of a soft fade.",
+          },
+          {
+            title: "Etosha access",
+            body: "The setting works for a more elevated end to the Namibia route.",
+          },
+          {
+            title: "Relaxed exclusivity",
+            body: "The mood shifts softer without losing privacy or substance.",
+          },
+          {
+            title: "Strong close",
+            body: "This is where the journey resolves after the harder-edged desert movement.",
           },
         ],
       },
@@ -2041,9 +2444,12 @@ const JOURNEYS: Record<string, JourneyData> = {
       "Where the circuit becomes coherent. Each property is selected not only for quality, but for the role it plays in building the movement of the journey from private safari depth to a softer, more atmospheric Indian Ocean finish.",
     accommodations: [
       {
+        location: "Arusha, Tanzania",
         name: "Siringit Villa",
+        stay: "3 Nights",
         description:
-          "This first safari property establishes the tone of the journey, setting the standard for privacy, guiding quality, and the level of control that defines the circuit.",
+          "This opening stay establishes the tone of the circuit, setting the standard for privacy, handling, and the calmer pace that the rest of the journey builds on.",
+        founderNote: PERSONAL_STAY_FOUNDER_NOTE,
       images: [
         {
           src: "/journeys/the-private-circuit/SV (14).jpg",
@@ -2061,11 +2467,32 @@ const JOURNEYS: Record<string, JourneyData> = {
           position: "center 54%",
         },
       ],
+      features: [
+        {
+          title: "Private villa feel",
+          body: "The route opens in a setting that feels contained and entirely your own.",
+        },
+        {
+          title: "Arusha landing",
+          body: "It gives the circuit a measured start before safari depth begins.",
+        },
+        {
+          title: "Controlled pacing",
+          body: "The property helps the early days feel calm rather than transitional.",
+        },
+        {
+          title: "Strong opening standard",
+          body: "Service, privacy, and atmosphere are set here from the outset.",
+        },
+      ],
     },
       {
+        location: "Tarangire, Tanzania",
         name: "Siringit Tarangire Camp",
+        stay: "2 Nights",
         description:
-          "This second safari property gives the circuit its depth. Wildlife immersion sharpens, the rhythm settles, and the journey starts to feel fully lived rather than simply arranged.",
+          "This Tarangire chapter sharpens the circuit into fuller safari immersion. It is here to deepen wildlife rhythm and let the route feel properly underway rather than merely staged.",
+        founderNote: PERSONAL_STAY_FOUNDER_NOTE,
       images: [
         {
           src: "/journeys/the-private-circuit/ST (1).png",
@@ -2083,11 +2510,32 @@ const JOURNEYS: Record<string, JourneyData> = {
           position: "center 50%",
         },
       ],
+      features: [
+        {
+          title: "Safari deepening",
+          body: "This is where the circuit starts to feel fully lived.",
+        },
+        {
+          title: "Tarangire context",
+          body: "The landscape adds texture and contrast early in the route.",
+        },
+        {
+          title: "Tented privacy",
+          body: "The camp keeps the safari chapter atmospheric without losing polish.",
+        },
+        {
+          title: "Good sequencing",
+          body: "It builds naturally from Arusha into stronger wildlife focus.",
+        },
+      ],
     },
       {
+        location: "Serengeti, Tanzania",
         name: "Siringit Migration Camp",
+        stay: "2 Nights",
         description:
-          "This chapter carries the circuit into broader Serengeti scale, adding movement and perspective while keeping privacy and service standards tightly controlled.",
+          "This chapter carries the circuit into broader Serengeti scale, adding movement, perspective, and stronger wildlife immersion while keeping privacy and service standards tightly controlled.",
+        founderNote: PERSONAL_STAY_FOUNDER_NOTE,
       images: [
         {
           src: "/journeys/the-private-circuit/SM (19).jpg",
@@ -2105,11 +2553,32 @@ const JOURNEYS: Record<string, JourneyData> = {
           position: "center 52%",
         },
         ],
+      features: [
+        {
+          title: "Serengeti scale",
+          body: "The route opens wider here without becoming less controlled.",
+        },
+        {
+          title: "Migration context",
+          body: "This chapter is about movement, perspective, and safari breadth.",
+        },
+        {
+          title: "Private continuity",
+          body: "The handling remains composed even as the landscape expands.",
+        },
+        {
+          title: "Middle-circuit lift",
+          body: "It gives the journey its broadest wildlife chapter at the right moment.",
+        },
+      ],
       },
       {
+        location: "Serengeti, Tanzania",
         name: "Siringit Serengeti Camp",
+        stay: "1 Night",
         description:
-          "This final safari stay consolidates the wilderness arc, bringing the experience into a steadier rhythm before the journey releases toward the coast.",
+          "This final safari stay settles the wilderness arc before Zanzibar, giving the circuit one last grounded night in the Serengeti before the coast takes over.",
+        founderNote: PERSONAL_STAY_FOUNDER_NOTE,
       images: [
         {
           src: "/journeys/the-private-circuit/SS (9).jpg",
@@ -2127,11 +2596,31 @@ const JOURNEYS: Record<string, JourneyData> = {
           position: "center 50%",
         },
         ],
+      features: [
+        {
+          title: "Safari closure",
+          body: "It resolves the bush chapter cleanly before the coastal shift.",
+        },
+        {
+          title: "Steadier rhythm",
+          body: "The mood is quieter and more settled than the migration chapter.",
+        },
+        {
+          title: "Last Serengeti night",
+          body: "That final pause helps Zanzibar feel earned rather than appended.",
+        },
+        {
+          title: "Circuit discipline",
+          body: "This short stop keeps the sequence coherent instead of rushed.",
+        },
+      ],
       },
       {
+        location: "Zanzibar, Tanzania",
         name: "Xanadu Villas & Retreat",
+        stay: "2 Nights",
         description:
-          "This Zanzibar property releases the experience properly. It shifts the journey into warmth, sea air, and a more relaxed tempo without losing the refinement that defines the rest of the circuit.",
+          "This Zanzibar chapter is selected through trusted regional relationships, professional checks, and Mason & Wild's suitability standards, with attention to privacy, service rhythm, route logic, and guest comfort. It shifts the circuit into warmth and sea air without losing refinement.",
       images: [
         {
           src: "/journeys/the-private-circuit/XI (8).png",
@@ -2147,6 +2636,24 @@ const JOURNEYS: Record<string, JourneyData> = {
           src: "/journeys/the-private-circuit/XI (6).png",
           alt: "Villa terrace at Xanadu Zanzibar",
           position: "center 52%",
+        },
+      ],
+      features: [
+        {
+          title: "Coastal exhale",
+          body: "The final chapter releases the circuit without flattening it.",
+        },
+        {
+          title: "Private villa mood",
+          body: "The stay keeps the finish intimate rather than resort-like.",
+        },
+        {
+          title: "Warm final register",
+          body: "Sea air and slower pacing give the journey its closing softness.",
+        },
+        {
+          title: "Zanzibar fit",
+          body: "It feels integrated into the route instead of attached at the end.",
         },
       ],
       },
@@ -2233,9 +2740,6 @@ export default function JourneyDetailPage({
         }
       : {}),
   });
-
-  const isPersonallyStayedAccommodation = (accommodation: JourneyAccommodation): boolean =>
-    accommodation.personallyStayed === true || PERSONALLY_STAYED_PROPERTY_NAMES.has(accommodation.name);
 
   const collageImages = journey.galleryImgs.slice(0, 3);
   const intimateCarouselExtras: JourneyImage[] =
@@ -2628,74 +3132,86 @@ export default function JourneyDetailPage({
               <div
                 key={accommodation.name}
                 className={[
-                  "grid grid-cols-1 lg:grid-cols-[1.15fr_1.85fr] gap-[clamp(36px,6vw,72px)] py-[clamp(40px,5vw,64px)]",
+                  "py-[clamp(40px,5vw,68px)]",
                   index === 0 ? "" : "border-t border-stone-200",
                 ].join(" ")}
               >
-                <Reveal delay={(index % 3) as 0 | 1 | 2 | 3 | 4}>
-                  <div className="lg:pr-8">
-                    <p className="label-tag mb-4">{accommodation.location ?? "Accommodation"}</p>
-                    <h3 className="font-serif font-light text-display-sm text-stone-900 mb-6 tracking-[-0.012em]">
-                      <em>{accommodation.name}</em>
-                    </h3>
-                    {accommodation.stay && (
-                      <p className="label-tag text-stone-400 mb-5">{accommodation.stay}</p>
-                    )}
-                    <p className="text-sm font-light text-stone-500 leading-relaxed">
-                      {accommodation.description}
-                    </p>
-                  </div>
-                </Reveal>
+                <div className="grid grid-cols-1 xl:grid-cols-[minmax(0,0.96fr)_minmax(0,1.58fr)] gap-[clamp(36px,6vw,78px)] items-start">
+                  <Reveal delay={(index % 3) as 0 | 1 | 2 | 3 | 4}>
+                    <div className="xl:pr-10">
+                      <p className="label-tag mb-4 text-stone-400">{accommodation.location}</p>
+                      <h3 className="font-serif font-light text-[clamp(2.1rem,3vw,3.2rem)] leading-[1.03] tracking-[-0.022em] text-stone-900">
+                        {accommodation.name}
+                      </h3>
+                      <p className="label-tag mt-6 text-stone-400">{accommodation.stay}</p>
 
-                <Reveal delay={((index + 1) % 3) as 0 | 1 | 2 | 3 | 4}>
-                  <div className="grid min-h-0 grid-cols-1 gap-[10px] md:min-h-[520px] md:grid-cols-[minmax(0,1fr)_292px]">
-                    <div className="overflow-hidden md:h-full relative">
-                      {isPersonallyStayedAccommodation(accommodation) && (
-                        <div className="absolute left-3 top-3 md:left-4 md:top-4 z-10 pointer-events-none">
-                          <div className="relative inline-flex items-center gap-2 border border-[rgba(124,109,90,0.45)] bg-[rgba(229,220,207,0.76)] px-2.5 py-1.5 md:px-3 md:py-2 backdrop-blur-[1px]">
-                            <span className="inline-flex h-5 w-5 items-center justify-center rounded-full border border-[rgba(124,109,90,0.5)] text-[9px] tracking-[0.12em] text-[rgba(62,51,39,0.9)]">
-                              MW
-                            </span>
-                            <span className="flex flex-col leading-none">
-                              <span className="text-[10px] md:text-[10.5px] uppercase tracking-[0.1em] text-[rgba(62,51,39,0.94)]">
-                                Personally Stayed
-                              </span>
-                              <span className="text-[9px] md:text-[9.5px] uppercase tracking-[0.12em] text-[rgba(62,51,39,0.82)] mt-1">
-                                By Zannon James
-                              </span>
-                            </span>
-                            <span
-                              className="absolute -right-[9px] top-0 h-full w-[9px] border-r border-y border-[rgba(124,109,90,0.45)] bg-[rgba(229,220,207,0.76)]"
-                              style={{ clipPath: "polygon(0 0,100% 50%,0 100%)" }}
-                              aria-hidden="true"
+                      <div className="mt-6 border-t border-stone-200/90 pt-6">
+                        {accommodation.founderNote && (
+                          <>
+                            <p className="label-tag text-stone-400 mb-3">Founder Note</p>
+                            <p className="font-serif text-[1.02rem] font-light italic leading-relaxed text-stone-700">
+                              {accommodation.founderNote}
+                            </p>
+                            <div className="mt-6 border-t border-stone-200/90" />
+                          </>
+                        )}
+                        <p
+                          className={[
+                            "text-sm font-light leading-[1.9] text-stone-500",
+                            accommodation.founderNote ? "mt-6" : "",
+                          ].join(" ")}
+                        >
+                          {accommodation.description}
+                        </p>
+                      </div>
+                    </div>
+                  </Reveal>
+
+                  <Reveal delay={((index + 1) % 3) as 0 | 1 | 2 | 3 | 4}>
+                    <div className="grid min-h-0 grid-cols-1 gap-3 md:min-h-[560px] md:grid-cols-[minmax(0,1fr)_minmax(220px,0.42fr)]">
+                      <div className="overflow-hidden bg-page-subtle md:h-full">
+                        <Image
+                          src={accommodation.images[0].src}
+                          alt={accommodation.images[0].alt}
+                          width={900}
+                          height={1125}
+                          quality={95}
+                          className={`h-[380px] w-full ${getImageClass(accommodation.images[0])} object-center md:h-full`}
+                          style={getImageStyle(accommodation.images[0])}
+                          loading="lazy"
+                        />
+                      </div>
+                      <div className="grid h-[240px] grid-cols-2 gap-3 md:h-full md:grid-cols-1 md:grid-rows-2">
+                        {accommodation.images.slice(1).map((image) => (
+                          <div key={image.alt} className="overflow-hidden bg-page-subtle">
+                            <Image
+                              src={image.src}
+                              alt={image.alt}
+                              width={600}
+                              height={450}
+                              quality={95}
+                              className={`h-full w-full ${getImageClass(image)} object-center`}
+                              style={getImageStyle(image)}
+                              loading="lazy"
                             />
                           </div>
-                        </div>
-                      )}
-                      <Image
-                        src={accommodation.images[0].src}
-                        alt={accommodation.images[0].alt}
-                        width={900}
-                        height={1125}
-                        quality={95}
-                        className={`h-[360px] w-full ${getImageClass(accommodation.images[0])} object-center transition-transform duration-[900ms] ease-out hover:scale-[1.03] md:h-full`}
-                        style={getImageStyle(accommodation.images[0])}
-                        loading="lazy"
-                      />
+                        ))}
+                      </div>
                     </div>
-                    <div className="grid h-[220px] grid-cols-2 gap-[10px] md:h-full md:grid-cols-1 md:grid-rows-2">
-                      {accommodation.images.slice(1).map((image) => (
-                        <div key={image.alt} className="overflow-hidden">
-                          <Image
-                            src={image.src}
-                            alt={image.alt}
-                            width={600}
-                            height={450}
-                            quality={95}
-                            className={`h-full w-full ${getImageClass(image)} object-center transition-transform duration-[900ms] ease-out hover:scale-[1.03]`}
-                            style={getImageStyle(image)}
-                            loading="lazy"
-                          />
+                  </Reveal>
+                </div>
+
+                <Reveal delay={((index + 2) % 3) as 0 | 1 | 2 | 3 | 4}>
+                  <div className="mt-10 border-t border-stone-200/90 pt-6">
+                    <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2 xl:grid-cols-4">
+                      {accommodation.features.map((feature) => (
+                        <div key={`${accommodation.name}-${feature.title}`} className="min-w-0">
+                          <p className="text-[0.62rem] font-normal uppercase tracking-[0.22em] text-stone-400">
+                            {feature.title}
+                          </p>
+                          <p className="mt-2 text-sm font-light leading-[1.8] text-stone-500">
+                            {feature.body}
+                          </p>
                         </div>
                       ))}
                     </div>

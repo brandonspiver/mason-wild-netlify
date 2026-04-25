@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { CTA, INQUIRY_COPY } from "@/lib/constants";
 
 const CONTACT_METHOD_OPTIONS = [
@@ -10,12 +10,11 @@ const CONTACT_METHOD_OPTIONS = [
   { value: "private-call", label: "Private call" },
 ] as const;
 
-const TRAVEL_WINDOW_OPTIONS = [
-  { value: "within-3-months", label: "Within 3 months" },
-  { value: "three-to-six-months", label: "3 to 6 months" },
-  { value: "six-to-twelve-months", label: "6 to 12 months" },
-  { value: "twelve-plus-months", label: "12+ months" },
-  { value: "dates-flexible", label: "Dates flexible" },
+const PREFERRED_SEASON_OPTIONS = [
+  { value: "jan-mar", label: "Jan-March" },
+  { value: "apr-jun", label: "April-June" },
+  { value: "jul-sep", label: "July-September" },
+  { value: "oct-dec", label: "October-December" },
 ] as const;
 
 const JOURNEY_LENGTH_OPTIONS = [
@@ -72,7 +71,7 @@ type FormState = {
   residence: string;
   contactMethod: string;
   travellers: string;
-  travelWindow: string;
+  preferredSeason: string;
   journeyLength: string;
   journeyInterest: string;
   investment: string;
@@ -92,7 +91,7 @@ type FieldName =
   | "residence"
   | "contactMethod"
   | "travellers"
-  | "travelWindow"
+  | "preferredSeason"
   | "journeyLength"
   | "journeyInterest"
   | "investment"
@@ -105,6 +104,11 @@ type InquiryErrorResponse = {
   fields?: Array<{ field: string; message: string }>;
 };
 
+type SelectOption = {
+  readonly value: string;
+  readonly label: string;
+};
+
 const inputClass = [
   "w-full bg-transparent border-b border-stone-200",
   "py-3 font-sans text-base font-light text-stone-900",
@@ -113,14 +117,115 @@ const inputClass = [
   "transition-colors duration",
 ].join(" ");
 
-const selectClass = [
-  inputClass,
-  "appearance-none bg-[linear-gradient(45deg,transparent_50%,#6f665c_50%),linear-gradient(135deg,#6f665c_50%,transparent_50%)]",
-  "bg-[position:calc(100%-18px)_53%,calc(100%-12px)_53%] bg-[size:6px_6px,6px_6px] bg-no-repeat pr-8",
-].join(" ");
-
 function isValidEmail(value: string): boolean {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+}
+
+type InquirySelectProps = {
+  readonly id: string;
+  readonly name: string;
+  readonly value: string;
+  readonly options: readonly SelectOption[];
+  readonly placeholder: string;
+  readonly onChange: (name: string, value: string) => void;
+};
+
+function InquirySelect({
+  id,
+  name,
+  value,
+  options,
+  placeholder,
+  onChange,
+}: InquirySelectProps) {
+  const [open, setOpen] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const selectedOption = options.find((option) => option.value === value);
+
+  useEffect(() => {
+    function handlePointerDown(event: MouseEvent) {
+      if (!containerRef.current?.contains(event.target as Node)) {
+        setOpen(false);
+      }
+    }
+
+    function handleEscape(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        setOpen(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handlePointerDown);
+    document.addEventListener("keydown", handleEscape);
+    return () => {
+      document.removeEventListener("mousedown", handlePointerDown);
+      document.removeEventListener("keydown", handleEscape);
+    };
+  }, []);
+
+  return (
+    <div ref={containerRef} className="relative">
+      <button
+        id={id}
+        type="button"
+        aria-haspopup="listbox"
+        aria-expanded={open}
+        className={[
+          "group flex w-full items-center justify-between gap-6 border-b border-stone-200 bg-transparent py-3 text-left",
+          "transition-colors duration hover:border-forest/50 focus:outline-none focus:border-forest",
+        ].join(" ")}
+        onClick={() => setOpen((prev) => !prev)}
+      >
+        <span
+          className={[
+            "font-sans text-base font-light leading-relaxed transition-colors duration",
+            selectedOption ? "text-stone-900" : "text-stone-300",
+          ].join(" ")}
+        >
+          {selectedOption?.label ?? placeholder}
+        </span>
+        <span
+          aria-hidden="true"
+          className={[
+            "mt-[2px] h-2.5 w-2.5 rotate-45 border-b border-r border-stone-400 transition-all duration",
+            open ? "-translate-y-[1px] rotate-[225deg] border-forest" : "group-hover:border-forest",
+          ].join(" ")}
+        />
+      </button>
+
+      {open && (
+        <div className="absolute left-0 right-0 top-full z-20 mt-3 overflow-hidden border border-stone-200 bg-page shadow-[0_18px_40px_rgba(22,19,16,0.08)]">
+          <div role="listbox" aria-labelledby={id} className="py-2">
+            {options.map((option) => {
+              const selected = option.value === value;
+              return (
+                <button
+                  key={option.value}
+                  type="button"
+                  role="option"
+                  aria-selected={selected}
+                  className={[
+                    "flex w-full items-center justify-between gap-4 px-5 py-[13px] text-left transition-colors duration",
+                    selected
+                      ? "bg-forest text-white"
+                      : "bg-page text-stone-600 hover:bg-forest hover:text-white",
+                  ].join(" ")}
+                  onClick={() => {
+                    onChange(name, option.value);
+                    setOpen(false);
+                  }}
+                >
+                  <span className="font-sans text-[0.98rem] font-light leading-relaxed">
+                    {option.label}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      )}
+    </div>
+  );
 }
 
 export function InquiryForm() {
@@ -130,7 +235,7 @@ export function InquiryForm() {
     residence: "",
     contactMethod: "",
     travellers: "",
-    travelWindow: "",
+    preferredSeason: "",
     journeyLength: "",
     journeyInterest: "",
     investment: "",
@@ -170,7 +275,7 @@ export function InquiryForm() {
       }
     }
 
-    if (!nextForm.travelWindow) errors.travelWindow = "Please select your preferred travel window.";
+    if (!nextForm.preferredSeason) errors.preferredSeason = "Please select your preferred season.";
     if (!nextForm.journeyLength) errors.journeyLength = "Please select an approximate journey length.";
     if (!nextForm.journeyInterest) errors.journeyInterest = "Please select a journey of interest.";
     if (!nextForm.investment) errors.investment = "Please select anticipated journey investment per person.";
@@ -202,6 +307,15 @@ export function InquiryForm() {
     setFieldErrors((prev) => ({ ...prev, contactMethod: undefined }));
     setServerError("");
     setForm((prev) => ({ ...prev, contactMethod: prev.contactMethod === value ? "" : value }));
+  }
+
+  function handleSelectChange(name: string, value: string) {
+    if (name in fieldErrors) {
+      setFieldErrors((prev) => ({ ...prev, [name]: undefined }));
+    }
+
+    setServerError("");
+    setForm((prev) => ({ ...prev, [name]: value }));
   }
 
   async function handleSubmit(e: React.FormEvent) {
@@ -237,7 +351,7 @@ export function InquiryForm() {
               item.field === "residence" ||
               item.field === "contactMethod" ||
               item.field === "travellers" ||
-              item.field === "travelWindow" ||
+              item.field === "preferredSeason" ||
               item.field === "journeyLength" ||
               item.field === "journeyInterest" ||
               item.field === "investment" ||
@@ -360,8 +474,8 @@ export function InquiryForm() {
                   "min-h-[56px] px-5 py-3 text-left",
                   "transition-colors duration",
                   selected
-                    ? "bg-stone-900 text-white"
-                    : "bg-page text-stone-500 hover:bg-page-subtle hover:text-stone-700",
+                    ? "bg-forest text-white"
+                    : "bg-page text-stone-500 hover:bg-forest/10 hover:text-forest",
                 ].join(" ")}
               >
                 <span className="text-[0.72rem] font-normal uppercase tracking-[0.18em]">{label}</span>
@@ -394,40 +508,30 @@ export function InquiryForm() {
         </div>
 
         <div className="flex flex-col gap-3">
-          <label htmlFor="travelWindow" className="label-tag">Preferred travel window</label>
-          <select
-            id="travelWindow"
-            name="travelWindow"
-            value={form.travelWindow}
-            onChange={handleChange}
-            required
-            className={selectClass}
-          >
-            <option value="">Select a window</option>
-            {TRAVEL_WINDOW_OPTIONS.map((option) => (
-              <option key={option.value} value={option.value}>{option.label}</option>
-            ))}
-          </select>
-          {fieldErrors.travelWindow && (
-            <p className="text-sm font-light text-stone-500 leading-relaxed">{fieldErrors.travelWindow}</p>
+          <label htmlFor="preferredSeason" className="label-tag">Preferred season</label>
+          <InquirySelect
+            id="preferredSeason"
+            name="preferredSeason"
+            value={form.preferredSeason}
+            options={PREFERRED_SEASON_OPTIONS}
+            placeholder="Select a season"
+            onChange={handleSelectChange}
+          />
+          {fieldErrors.preferredSeason && (
+            <p className="text-sm font-light text-stone-500 leading-relaxed">{fieldErrors.preferredSeason}</p>
           )}
         </div>
 
         <div className="flex flex-col gap-3">
           <label htmlFor="journeyLength" className="label-tag">Approximate journey length</label>
-          <select
+          <InquirySelect
             id="journeyLength"
             name="journeyLength"
             value={form.journeyLength}
-            onChange={handleChange}
-            required
-            className={selectClass}
-          >
-            <option value="">Select journey length</option>
-            {JOURNEY_LENGTH_OPTIONS.map((option) => (
-              <option key={option.value} value={option.value}>{option.label}</option>
-            ))}
-          </select>
+            options={JOURNEY_LENGTH_OPTIONS}
+            placeholder="Select journey length"
+            onChange={handleSelectChange}
+          />
           {fieldErrors.journeyLength && (
             <p className="text-sm font-light text-stone-500 leading-relaxed">{fieldErrors.journeyLength}</p>
           )}
@@ -435,19 +539,14 @@ export function InquiryForm() {
 
         <div className="flex flex-col gap-3">
           <label htmlFor="journeyInterest" className="label-tag">Journey of interest</label>
-          <select
+          <InquirySelect
             id="journeyInterest"
             name="journeyInterest"
             value={form.journeyInterest}
-            onChange={handleChange}
-            required
-            className={selectClass}
-          >
-            <option value="">Select journey</option>
-            {JOURNEY_INTEREST_OPTIONS.map((option) => (
-              <option key={option.value} value={option.value}>{option.label}</option>
-            ))}
-          </select>
+            options={JOURNEY_INTEREST_OPTIONS}
+            placeholder="Select journey"
+            onChange={handleSelectChange}
+          />
           {fieldErrors.journeyInterest && (
             <p className="text-sm font-light text-stone-500 leading-relaxed">{fieldErrors.journeyInterest}</p>
           )}
@@ -456,19 +555,14 @@ export function InquiryForm() {
 
       <div className="flex flex-col gap-3">
         <label htmlFor="investment" className="label-tag">Anticipated journey investment per person</label>
-        <select
+        <InquirySelect
           id="investment"
           name="investment"
           value={form.investment}
-          onChange={handleChange}
-          required
-          className={selectClass}
-        >
-          <option value="">Select investment level</option>
-          {INVESTMENT_OPTIONS.map((option) => (
-            <option key={option.value} value={option.value}>{option.label}</option>
-          ))}
-        </select>
+          options={INVESTMENT_OPTIONS}
+          placeholder="Select investment level"
+          onChange={handleSelectChange}
+        />
         {fieldErrors.investment && (
           <p className="text-sm font-light text-stone-500 leading-relaxed">{fieldErrors.investment}</p>
         )}
@@ -494,34 +588,26 @@ export function InquiryForm() {
       <div className="border-t border-stone-200 pt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className="flex flex-col gap-3">
           <label htmlFor="africaBefore" className="label-tag">Have you travelled to Africa before?</label>
-          <select
+          <InquirySelect
             id="africaBefore"
             name="africaBefore"
             value={form.africaBefore}
-            onChange={handleChange}
-            className={selectClass}
-          >
-            <option value="">Optional</option>
-            {AFRICA_BEFORE_OPTIONS.map((option) => (
-              <option key={option.value} value={option.value}>{option.label}</option>
-            ))}
-          </select>
+            options={AFRICA_BEFORE_OPTIONS}
+            placeholder="Optional"
+            onChange={handleSelectChange}
+          />
         </div>
 
         <div className="flex flex-col gap-3">
           <label htmlFor="specialOccasion" className="label-tag">Is this for a special occasion?</label>
-          <select
+          <InquirySelect
             id="specialOccasion"
             name="specialOccasion"
             value={form.specialOccasion}
-            onChange={handleChange}
-            className={selectClass}
-          >
-            <option value="">Optional</option>
-            {OCCASION_OPTIONS.map((option) => (
-              <option key={option.value} value={option.value}>{option.label}</option>
-            ))}
-          </select>
+            options={OCCASION_OPTIONS}
+            placeholder="Optional"
+            onChange={handleSelectChange}
+          />
         </div>
 
         <div className="flex flex-col gap-3 md:col-span-2">
@@ -541,18 +627,14 @@ export function InquiryForm() {
 
         <div className="flex flex-col gap-3 md:col-span-2">
           <label htmlFor="decisionTiming" className="label-tag">How soon are you hoping to make a decision?</label>
-          <select
+          <InquirySelect
             id="decisionTiming"
             name="decisionTiming"
             value={form.decisionTiming}
-            onChange={handleChange}
-            className={selectClass}
-          >
-            <option value="">Optional</option>
-            {DECISION_TIMING_OPTIONS.map((option) => (
-              <option key={option.value} value={option.value}>{option.label}</option>
-            ))}
-          </select>
+            options={DECISION_TIMING_OPTIONS}
+            placeholder="Optional"
+            onChange={handleSelectChange}
+          />
         </div>
       </div>
 
