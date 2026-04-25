@@ -123,8 +123,8 @@ export function NavBar() {
               className={[
                 "relative inline-flex h-10 w-10 shrink-0 items-center justify-center border transition-all duration-[260ms]",
                 open
-                  ? "border-forest bg-forest text-white shadow-[0_14px_28px_rgba(75,128,89,0.18)]"
-                  : "border-stone-200/90 bg-white/70 text-stone-900 hover:border-stone-400 hover:bg-page-subtle",
+                  ? "border-forest/10 bg-forest-light text-white shadow-[0_14px_30px_rgba(40,78,53,0.3)]"
+                  : "border-forest/10 bg-forest text-white shadow-[0_10px_24px_rgba(40,78,53,0.24)] hover:bg-forest-light hover:shadow-[0_14px_30px_rgba(40,78,53,0.3)]",
               ].join(" ")}
             >
               <span

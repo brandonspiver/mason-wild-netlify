@@ -368,16 +368,20 @@ export default function HomePage() {
               className="object-cover object-center"
               loading="lazy"
             />
+            <div
+              className="absolute inset-x-0 bottom-0 z-[1] h-28 bg-gradient-to-t from-[rgba(22,19,16,0.58)] via-[rgba(22,19,16,0.18)] to-transparent"
+              aria-hidden="true"
+            />
             <div className="absolute bottom-6 left-6 right-6 z-10">
               <div className="flex items-center gap-5 flex-wrap">
-                <span className="label-tag text-white/60 [text-shadow:0_2px_14px_rgba(0,0,0,0.45)]">
+                <span className="label-tag text-white/88 [text-shadow:0_2px_16px_rgba(0,0,0,0.42)]">
                   FOUNDER
                 </span>
                 <span
-                  className="w-px h-3 bg-white/25"
+                  className="w-px h-3 bg-white/45"
                   aria-hidden="true"
                 />
-                <span className="label-tag text-white/60 [text-shadow:0_2px_14px_rgba(0,0,0,0.45)]">
+                <span className="label-tag text-white/88 [text-shadow:0_2px_16px_rgba(0,0,0,0.42)]">
                   VICTORIA FALLS RIVER LODGE, ZIMBABWE
                 </span>
               </div>
@@ -423,12 +427,15 @@ export default function HomePage() {
         </Reveal>
       </section>
 
-      <section className="section border-t border-b border-stone-200" aria-labelledby="why-book-with-mw-heading">
+      <section
+        className="section border-t border-b border-white/10 bg-forest text-white"
+        aria-labelledby="why-book-with-mw-heading"
+      >
         <div className="container-site">
           <Reveal>
-            <p className="label-tag mb-4">Why Book With Mason &amp; Wild?</p>
+            <p className="label-tag mb-4 text-white/55">Why Book With Mason &amp; Wild?</p>
             <h2
-              className="font-serif font-light text-display-md text-stone-900 mb-10"
+              className="font-serif font-light text-display-md mb-10 text-white"
               id="why-book-with-mw-heading"
             >
               Private journey architecture,
@@ -437,7 +444,7 @@ export default function HomePage() {
             </h2>
           </Reveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px border border-stone-200 bg-stone-200">
+          <div className="grid grid-cols-1 gap-px border border-white/14 bg-white/14 md:grid-cols-2 lg:grid-cols-4">
             {[
               "Founder-led design with Africa-specific judgment.",
               "LGBTQ+ comfort intelligence built into practical planning decisions.",
@@ -445,8 +452,8 @@ export default function HomePage() {
               "A private advisory model rather than a mass-market booking engine.",
             ].map((item, index) => (
               <Reveal key={item} delay={(index % 3) as 0 | 1 | 2 | 3 | 4}>
-                <div className="bg-page px-7 py-7 h-full">
-                  <p className="text-sm font-light text-stone-500 leading-relaxed">{item}</p>
+                <div className="h-full bg-white/[0.045] px-7 py-7 backdrop-blur-[2px]">
+                  <p className="text-sm font-light leading-relaxed text-white/86">{item}</p>
                 </div>
               </Reveal>
             ))}

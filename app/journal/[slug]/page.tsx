@@ -216,7 +216,9 @@ const JOURNAL_CTA_JOURNEY_LINKS: Record<string, readonly JournalCtaLink[]> = {
   ],
   "luxury-safari-vs-luxury-beach-holiday": [
     { label: "The Romantic", href: getJourneyHref("the-romantic") },
-    { label: "The Private Circuit", href: getJourneyHref("the-private-circuit") },
+    { label: "The Social Shift", href: getJourneyHref("the-social-shift") },
+    { label: "The Intimate", href: getJourneyHref("the-intimate") },
+    { label: "The Adventure", href: getJourneyHref("the-adventure") },
   ],
   "lgbtq-luxury-travel-africa": [
     { label: "The Social Shift", href: getJourneyHref("the-social-shift") },
@@ -841,11 +843,11 @@ const ARTICLES: Record<string, FullArticle> = {
     relatedArticles: [
       {
         slug:        "luxury-safari-vs-luxury-beach-holiday",
-        title:       "Luxury Safari vs Luxury Beach Holiday: What High Performers Actually Need From Time Off",
+        title:       "Luxury Safari vs Luxury Beach Holiday: Choosing the Kind of Escape You Actually Need",
         category:    "journey-intelligence",
         excerpt:
-          "Should you choose safari or beach for your next luxury holiday? Discover what high performers actually need from time off, and why the smartest answer is often both.",
-        readingTime: 8,
+          "A flagship editorial on choosing safari, beach, or both based on the kind of restoration you actually need.",
+        readingTime: 9,
         publishedAt: "2026-04-25",
       },
       {
@@ -861,20 +863,20 @@ const ARTICLES: Record<string, FullArticle> = {
   },
   "luxury-safari-vs-luxury-beach-holiday": {
     slug:        "luxury-safari-vs-luxury-beach-holiday",
-    title:       "Luxury Safari vs Luxury Beach Holiday: What High Performers Actually Need From Time Off",
+    title:       "Luxury Safari vs Luxury Beach Holiday: Choosing the Kind of Escape You Actually Need",
     subtitle:
-      "A refined guide to choosing the right luxury holiday for restoration, connection, and meaningful time away.",
+      "A refined editorial on choosing safari, beach, or both based on the kind of restoration you actually need.",
     seoTitle:    "Luxury Safari vs Luxury Beach Holiday",
     openGraphTitle: "Luxury Safari vs Luxury Beach Holiday",
     openGraphDescription:
-      "A refined guide to choosing the right luxury holiday for restoration, connection, and meaningful time away.",
+      "A flagship editorial on choosing safari, beach, or both based on the kind of restoration you actually need.",
     metaTitle:   "Luxury Safari vs Luxury Beach Holiday | Mason & Wild",
     metaDescription:
-      "Should you choose safari or beach for your next luxury holiday? Discover what high performers actually need from time off, and why the smartest answer is often both.",
+      "A flagship editorial on choosing safari, beach, or both based on the kind of restoration you actually need.",
     category:    "journey-intelligence",
     excerpt:
-      "Should you choose safari or beach for your next luxury holiday? Discover what high performers actually need from time off, and why the smartest answer is often both.",
-    readingTime: 8,
+      "A flagship editorial on choosing safari, beach, or both based on the kind of restoration you actually need.",
+    readingTime: 9,
     publishedAt: "2026-04-25",
     img: {
       src:     "/journal/luxury-safari-vs-luxury-beach-holiday/hero-safari-vs-beach.jpg",
@@ -885,7 +887,7 @@ const ARTICLES: Record<string, FullArticle> = {
     body: [
       {
         type: "p-lead",
-        text: "Many successful people have the same quiet frustration with holidays.",
+        text: "There is a particular kind of disappointment that successful people rarely admit out loud.",
       },
       {
         type: "p",
@@ -893,147 +895,83 @@ const ARTICLES: Record<string, FullArticle> = {
       },
       {
         type: "p",
-        text: "They can afford beautiful places. They can book the suite. They can fly business class. They can choose almost anywhere in the world.",
+        text: "They return from an expensive holiday rested enough to function, but not renewed enough to feel changed.",
       },
       {
         type: "p",
-        text: "And yet, they still return feeling strangely unchanged.",
+        text: "The hotel was beautiful. The food was excellent. The room had every possible comfort. There are photographs worth posting and stories polished enough for dinner conversations. Yet a few days after returning home, the same fatigue creeps back in. The same short temper. The same distance from a partner. The same low-level sense that life has become efficient rather than alive.",
       },
       {
         type: "p",
-        text: "They had a pleasant week. Good weather. Good food. Nice photographs.",
+        text: "This happens because many people choose holidays by category rather than by need.",
       },
       {
         type: "p",
-        text: "But something deeper never shifted.",
+        text: "They ask whether they want beach or safari, city or island, Europe or Africa. They compare destinations before they understand the more important question: what kind of restoration is missing in the first place?",
       },
       {
         type: "p",
-        text: "That is because most affluent travellers do not have a money problem when it comes to travel.",
+        text: "Luxury travel is at its best when it answers that question honestly.",
       },
       {
         type: "p",
-        text: "They have a diagnosis problem.",
+        text: "For some people, the right answer is stillness. For others, it is stimulation. For some couples, it is privacy. For others, it is shared novelty. Sometimes the body needs rest while the mind needs awakening. Sometimes the relationship needs attention more than the traveller needs sunshine.",
       },
       {
         type: "p",
-        text: "They choose destinations before understanding what kind of restoration they actually need.",
-      },
-      {
-        type: "p",
-        text: "Some need softness. Some need stimulation. Some need reconnection with a partner. Some need perspective. Some need to feel awake again.",
-      },
-      {
-        type: "p",
-        text: "This is why the safari versus beach question matters.",
-      },
-      {
-        type: "p",
-        text: "Not because one is universally better. Because each solves a different problem.",
+        text: "This is why the conversation between safari and beach is more interesting than it first appears. Not because one is inherently superior, but because each offers something fundamentally different.",
       },
       {
         type: "h2",
-        text: "The Mistake High Performers Keep Making",
+        text: "What a Beach Holiday Often Gets Right",
       },
       {
         type: "p",
-        text: "Busy people often choose holidays the same way they make many life decisions: quickly, efficiently, and after too many months of depletion.",
+        text: "Beach travel remains popular for good reason. It can be wonderfully effective when life has become physically demanding and mentally noisy.",
       },
       {
         type: "p",
-        text: "They book what feels easiest.",
+        text: "There is something deeply corrective about warm weather, open water, long lunches, and days with no real agenda. The body softens. Sleep improves. The nervous system quiets. People who have been moving too fast often remember what it feels like to slow down.",
       },
       {
         type: "p",
-        text: "A familiar beach resort. A destination their friends mention. Somewhere warm with a direct flight. Somewhere that requires no thinking.",
+        text: "For parents of young children, professionals emerging from punishing schedules, or anyone who feels physically depleted, this kind of trip can be exactly right. Not every solution needs to be dramatic. Sometimes lying under a parasol with no pressing decisions is surprisingly sophisticated medicine.",
       },
       {
         type: "p",
-        text: "There is nothing wrong with that.",
+        text: "Where beach travel can disappoint is when exhaustion is mistaken for emptiness.",
       },
       {
         type: "p",
-        text: "But convenience and recovery are not the same thing.",
-      },
-      {
-        type: "p",
-        text: "Many ambitious people live repetitive lives disguised as varied ones. Different meetings, same pressure. Different inboxes, same urgency. Different cities, same nervous system.",
-      },
-      {
-        type: "p",
-        text: "Then they choose a holiday that repeats the pattern: passive consumption in a prettier setting.",
-      },
-      {
-        type: "p",
-        text: "Comfortable, yes. Transformative, rarely.",
+        text: "Some people are not tired because they need rest. They are tired because they have become under-stimulated by routine, over-managed by calendars, and disconnected from anything that feels vivid. In those cases, another week of comfort may soothe the symptoms without touching the cause.",
       },
       {
         type: "h2",
-        text: "What Luxury Beach Holidays Actually Do Well",
+        text: "What Safari Changes",
       },
       {
         type: "p",
-        text: "Beach holidays are often underrated by people trying to sound sophisticated.",
+        text: "A great safari works on a different level.",
       },
       {
         type: "p",
-        text: "At their best, they are medicine.",
+        text: "It removes many of the small frictions modern people have come to accept as normal. The constant checking of phones. The fractured attention. The low hum of obligation. The sense that every hour must be optimised.",
       },
       {
         type: "p",
-        text: "When the body is tired, beach travel can be ideal.",
+        text: "In their place comes a more elemental rhythm. Early mornings with purpose. Hours spent looking outward rather than downward. The discipline of patience. The reward of surprise. Conversations that happen naturally because there is time and space for them.",
       },
       {
         type: "p",
-        text: "When someone needs sleep, sunshine, warm water, long lunches, massage treatments, and nothing urgent, a beautiful coastal stay can work brilliantly.",
+        text: "Something subtle begins to happen in that environment. Attention returns.",
       },
       {
         type: "p",
-        text: "A beach holiday says: you do not need to perform this week.",
+        text: "Many travellers describe safari as exciting, and it can be. But excitement is not the deepest gift. Presence is. People begin to notice again: weather moving across plains, birdsong before sunrise, the humour of a guide, the way their partner laughs when genuinely relaxed.",
       },
       {
         type: "p",
-        text: "For parents of young children, physically depleted professionals, or anyone emerging from a brutal season, this can be exactly right.",
-      },
-      {
-        type: "p",
-        text: "But there is an important distinction.",
-      },
-      {
-        type: "p",
-        text: "Beach holidays tend to soothe exhaustion. They do not always solve stagnation.",
-      },
-      {
-        type: "h2",
-        text: "What Safari Does Differently",
-      },
-      {
-        type: "p",
-        text: "Safari is often misunderstood as adventure travel with better linens.",
-      },
-      {
-        type: "p",
-        text: "That misses the point entirely.",
-      },
-      {
-        type: "p",
-        text: "A great safari does something many modern lives fail to do. It restores attention.",
-      },
-      {
-        type: "p",
-        text: "You wake early because something matters. You look outward instead of downward. You become patient again. You notice movement, weather, silence, rhythm. You spend hours without notifications and do not miss them.",
-      },
-      {
-        type: "p",
-        text: "Then something unusual happens. You begin to feel like yourself again.",
-      },
-      {
-        type: "p",
-        text: "Safari is not powerful because it is luxurious. It is powerful because it interrupts the noise.",
-      },
-      {
-        type: "p",
-        text: "For mentally fatigued people, this matters more than another infinity pool.",
+        text: "For high performers whose minds are crowded, safari can feel less like escape and more like recovery of self.",
       },
       {
         type: "image",
@@ -1047,35 +985,35 @@ const ARTICLES: Record<string, FullArticle> = {
       },
       {
         type: "h2",
-        text: "The Difference Between Physical Tiredness and Mental Tiredness",
+        text: "Rest and Renewal Are Not the Same Thing",
       },
       {
         type: "p",
-        text: "This is where many travellers choose badly.",
+        text: "This distinction explains why some expensive holidays feel oddly forgettable.",
       },
       {
         type: "p",
-        text: "If you are physically tired, beach often wins.",
+        text: "Rest allows you to stop.",
       },
       {
         type: "p",
-        text: "If you are mentally tired, safari often wins.",
+        text: "Renewal allows you to begin again.",
       },
       {
         type: "p",
-        text: "Physical tiredness wants sleep, warmth, ease, massage, and simplicity.",
+        text: "Beach holidays often excel at rest. Safari often excels at renewal.",
       },
       {
         type: "p",
-        text: "Mental tiredness wants novelty, perspective, nature, presence, and emotional re-engagement.",
+        text: "Neither is automatically better. The mistake is choosing one while needing the other.",
       },
       {
         type: "p",
-        text: "Many executives, founders, lawyers, and high-output professionals think they need rest when what they actually need is renewal.",
+        text: "A founder finishing an intense quarter may think he needs a lounger and cocktails, when what he really needs is perspective and distance from screens. A couple who have barely spoken beyond logistics may think they need romance, when they actually need a shared experience vivid enough to interrupt stale patterns. Someone physically wrung out may book adventure when softness would have served them better.",
       },
       {
         type: "p",
-        text: "Rest helps you stop. Renewal helps you start again.",
+        text: "Luxury becomes intelligent when it matches the treatment to the condition.",
       },
       {
         type: "image",
@@ -1089,42 +1027,34 @@ const ARTICLES: Record<string, FullArticle> = {
       },
       {
         type: "h2",
-        text: "Why Couples Often Need Something Different Than They Think",
+        text: "Why Couples Often Benefit from Sequence",
       },
       {
         type: "p",
-        text: "Many couples book beach holidays because they assume romance means sun loungers and champagne.",
+        text: "Many couples imagine romance as a static concept: a beautiful room, sea views, candles, champagne.",
       },
       {
         type: "p",
-        text: "Sometimes it does.",
+        text: "Those things can be lovely. But couples who are overscheduled and distracted often need movement before they need stillness.",
       },
       {
         type: "p",
-        text: "But couples who are overscheduled, distracted, and living parallel lives often need something else first: shared attention.",
+        text: "Safari creates shared focus quickly. You wake early together, anticipate the day together, experience surprise together, and collect memories in real time. You become a team again in subtle ways.",
       },
       {
         type: "p",
-        text: "Safari is exceptional for this.",
+        text: "Then the beach becomes stronger.",
       },
       {
         type: "p",
-        text: "You wake together. Experience awe together. Talk without interruption. Laugh unexpectedly. Remember things together in real time.",
-      },
-      {
-        type: "p",
-        text: "Then, once connection has returned, the beach becomes more powerful.",
-      },
-      {
-        type: "p",
-        text: "This is one reason safari followed by coast is often stronger than coast followed by coast.",
+        text: "After days in the bush, the softness of the coast lands differently. Conversation is easier. Presence is deeper. Idleness feels earned rather than empty.",
       },
       {
         type: "p",
         content: [
-          { type: "text", text: "For this rhythm, " },
+          { type: "text", text: "This is one reason combinations work so well. A journey such as " },
           { type: "link", text: "The Romantic", href: "/journeys/the-romantic" },
-          { type: "text", text: " is a strong model." },
+          { type: "text", text: ", which pairs safari with Mozambique, is not simply attractive on paper. It follows an emotional logic many travellers recognise only after experiencing it." },
         ],
       },
       {
@@ -1139,53 +1069,51 @@ const ARTICLES: Record<string, FullArticle> = {
       },
       {
         type: "h2",
-        text: "Why Contrast Creates Better Luxury Travel",
+        text: "Why Contrast Creates Memorable Travel",
       },
       {
         type: "p",
-        text: "Single-note trips can be lovely. Contrast trips are memorable.",
+        text: "Some holidays fail not because anything is wrong, but because everything is the same.",
       },
       {
         type: "p",
-        text: "City energy followed by wilderness. Wildness followed by ocean calm. High-touch hospitality followed by elemental nature.",
+        text: "The same pool. The same lunch. The same view. The same rhythm repeated for a week.",
       },
       {
         type: "p",
-        text: "This is why some of Africa's best journeys combine different emotional states.",
+        text: "Pleasant repetition can become invisible repetition.",
       },
       {
         type: "p",
-        text: "Cape Town + Safari + Mozambique. Botswana + Victoria Falls + Island Escape. South Africa + Winelands + Safari. Tanzania + Zanzibar.",
+        text: "The strongest journeys often use contrast instead. City energy followed by wilderness. Wilderness followed by ocean calm. Adventure followed by indulgence. Movement followed by stillness.",
       },
       {
         type: "p",
-        content: [
-          { type: "text", text: "For relevant route expressions, see " },
-          { type: "link", text: "The Romantic", href: "/journeys/the-romantic" },
-          { type: "text", text: " and " },
-          { type: "link", text: "The Social Shift", href: "/the-social" },
-          { type: "text", text: "." },
-        ],
+        text: "Cape Town followed by safari and then the Indian Ocean remains one of Africa's most elegant examples of this principle. Botswana followed by a private island offers another. Tanzania and Zanzibar create a different, equally compelling arc.",
+      },
+      {
+        type: "p",
+        text: "Increasingly, sophisticated travellers are not buying destinations at all. They are buying sequence.",
       },
       {
         type: "h2",
-        text: "KwaZulu-Natal: The Underestimated Intelligent Choice",
+        text: "The Quiet Intelligence of KwaZulu-Natal",
       },
       {
         type: "p",
-        text: "Not every excellent journey needs multiple countries.",
+        text: "Not every great journey needs multiple countries or endless flights.",
       },
       {
         type: "p",
-        text: "KwaZulu-Natal is one of South Africa's most underrated answers for travellers wanting bush and beach without overcomplication.",
+        text: "KwaZulu-Natal is one of South Africa's more understated answers for travellers who want both bush and beach with less logistical friction. Strong safari areas, warm coastline, wetlands, and family practicality can be combined in ways that feel seamless rather than overbuilt.",
       },
       {
         type: "p",
-        text: "You can combine Big Five safari, warm Indian Ocean coastline, wetlands and nature reserves, family-friendly options, strong value, and less flight fatigue.",
+        text: "It lacks the louder branding of some destinations, which is often exactly why it appeals to discerning travellers.",
       },
       {
         type: "p",
-        text: "For travellers who value elegance without unnecessary movement, it is a serious option.",
+        text: "There is a difference between famous and smart.",
       },
       {
         type: "image",
@@ -1199,63 +1127,39 @@ const ARTICLES: Record<string, FullArticle> = {
       },
       {
         type: "h2",
-        text: "The Most Expensive Mistake Is Wasted Time",
+        text: "The Most Expensive Mistake",
       },
       {
         type: "p",
-        text: "Affluent travellers often focus on room category, airline class, and nightly rate.",
+        text: "Affluent travellers often focus on room categories, flight cabins, and nightly rates. Those decisions matter.",
       },
       {
         type: "p",
-        text: "All relevant.",
+        text: "But the costliest travel mistake is usually wasting scarce time on the wrong kind of trip.",
       },
       {
         type: "p",
-        text: "But the most expensive mistake is using precious annual leave on the wrong type of holiday.",
-      },
-      {
-        type: "p",
-        text: "A mediocre week costs more than money. It costs momentum, connection, recovery, and possibility.",
-      },
-      {
-        type: "p",
-        text: "Luxury should create return on time, not just return on spend.",
+        text: "A mediocre week in a beautiful place can cost momentum, intimacy, and the chance to return home restored. Time is often the rarer asset than money. Holidays should be designed with that reality in mind.",
       },
       {
         type: "h2",
-        text: "What You Probably Need Right Now",
+        text: "So Which Should You Choose?",
       },
       {
         type: "p",
-        text: "If you feel flat, uninspired, overworked, and numb from routine: choose safari.",
+        text: "If the body is exhausted, beach may be the wiser answer.",
       },
       {
         type: "p",
-        text: "If you feel physically wrung out, touched out, and need softness: choose beach.",
+        text: "If the mind feels dull, crowded, or numb from routine, safari may be stronger.",
       },
       {
         type: "p",
-        text: "If your relationship needs reconnection and celebration: choose both.",
+        text: "If a relationship needs reconnection, contrast often wins: shared awe first, softness second.",
       },
       {
         type: "p",
-        text: "If you are unsure: that uncertainty is usually why expert planning matters.",
-      },
-      {
-        type: "h2",
-        text: "Why Generic Booking Platforms Cannot Solve This",
-      },
-      {
-        type: "p",
-        text: "Booking sites can show rooms.",
-      },
-      {
-        type: "p",
-        text: "They cannot tell you whether you need stimulation or stillness, whether your relationship needs privacy or novelty, whether ten nights should be one stop or three, whether your exhaustion is physical or mental, or whether you need a holiday or a reset.",
-      },
-      {
-        type: "p",
-        text: "That gap is where travel design becomes valuable.",
+        text: "If you are uncertain, that uncertainty is often where expert planning becomes valuable. Booking platforms can show rooms. They cannot diagnose what your season of life requires.",
       },
       {
         type: "h2",
@@ -1263,75 +1167,27 @@ const ARTICLES: Record<string, FullArticle> = {
       },
       {
         type: "p",
-        text: "We help discerning travellers use limited time intelligently.",
-      },
-      {
-        type: "p",
-        text: "That means designing journeys around energy levels, emotional needs, relationship season, desired pace, privacy preferences, and meaningful return on time invested.",
+        text: "We design African journeys around how clients want to feel when they return, not only where they want to go.",
       },
       {
         type: "p",
         content: [
-          { type: "text", text: "For journey styles aligned with these priorities, explore " },
+          { type: "text", text: "For some, that means the privacy and depth of " },
           { type: "link", text: "The Intimate", href: "/journeys/the-intimate" },
-          { type: "text", text: ", " },
+          { type: "text", text: ". For others, the style and energy of " },
           { type: "link", text: "The Social Shift", href: "/the-social" },
-          { type: "text", text: ", and " },
+          { type: "text", text: ". For travellers drawn to movement, scenery, and cinematic landscapes, " },
           { type: "link", text: "The Adventure", href: "/journeys/the-adventure" },
-          { type: "text", text: "." },
+          { type: "text", text: " offers a different kind of reward." },
         ],
       },
       {
         type: "p",
-        text: "Because luxury is not only how a trip looks.",
+        text: "Because luxury is not only how a holiday looks while you are there.",
       },
       {
         type: "p",
-        text: "It is how you feel when you come home.",
-      },
-      {
-        type: "h2",
-        text: "Frequently Asked Questions",
-      },
-      {
-        type: "h3",
-        text: "Is safari more expensive than a beach holiday?",
-      },
-      {
-        type: "p",
-        text: "Often yes, but not always. More importantly, safari can deliver a higher emotional return for the right traveller.",
-      },
-      {
-        type: "h3",
-        text: "Is safari relaxing?",
-      },
-      {
-        type: "p",
-        text: "Deeply, when paced correctly. Calm mornings, long views, attentive hospitality, and reduced digital noise can be profoundly restorative.",
-      },
-      {
-        type: "h3",
-        text: "Is beach or safari better for honeymooners?",
-      },
-      {
-        type: "p",
-        text: "Usually both. Shared awe first, softness second is a powerful sequence.",
-      },
-      {
-        type: "h3",
-        text: "Can I do safari and beach in one trip?",
-      },
-      {
-        type: "p",
-        text: "Absolutely. It is one of the strongest luxury formats in Africa.",
-      },
-      {
-        type: "h3",
-        text: "What is best for burnt-out professionals?",
-      },
-      {
-        type: "p",
-        text: "Often a journey that restores attention first, then allows decompression.",
+        text: "It is how life feels once you come home.",
       },
       {
         type: "image",
@@ -1342,6 +1198,18 @@ const ARTICLES: Record<string, FullArticle> = {
           position: "center",
         },
         aspect: "16 / 10",
+      },
+      {
+        type: "h2",
+        text: "Start Your Journey",
+      },
+      {
+        type: "p",
+        text: "The best holiday is rarely the easiest one to book.",
+      },
+      {
+        type: "p",
+        text: "It is the one that gives you what you actually need.",
       },
     ],
     relatedJourneys: [
