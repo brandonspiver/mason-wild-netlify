@@ -65,8 +65,7 @@ export default function HomePage() {
             priority
             quality={90}
             sizes="100vw"
-            className="object-cover animate-[heroZoom_20s_cubic-bezier(0.16,1,0.3,1)_forwards]"
-            style={{ objectPosition: "center 38%" }}
+            className="object-cover object-[72%_38%] md:object-[center_38%] animate-[heroZoom_20s_cubic-bezier(0.16,1,0.3,1)_forwards]"
           />
           <div
             className="absolute inset-0"

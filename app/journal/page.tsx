@@ -348,7 +348,9 @@ export default function JournalPage() {
     })),
   };
 
-  const featured = ARTICLES[0];
+  const featured =
+    ARTICLES.find((article) => article.slug === "cape-town-gay-capital-of-africa") ??
+    ARTICLES[0];
 
   const byCategory = ARTICLES.reduce<Partial<Record<JournalCategory, ArticleSummary[]>>>(
     (acc, article) => {
