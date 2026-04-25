@@ -8,6 +8,9 @@
 ] as const;
 
 export const JOURNAL_SLUGS = [
+  "best-time-to-go-on-safari-in-africa",
+  "luxury-safari-vs-luxury-beach-holiday",
+  "lgbtq-luxury-travel-africa",
   "how-to-choose-the-right-african-journey-for-your-travel-style",
   "how-long-should-an-african-luxury-journey-be",
   "which-mason-and-wild-archetype-is-right-for-you",

@@ -128,6 +128,1311 @@ function getJourneyHref(slug: string): string {
 // nothing in the render logic changes when the data source is swapped.
 
 const ARTICLES: Record<string, FullArticle> = {
+  "best-time-to-go-on-safari-in-africa": {
+    slug:        "best-time-to-go-on-safari-in-africa",
+    title:       "Best Time to Go on Safari in Africa (And Why Most People Get It Wrong)",
+    subtitle:
+      "A refined guide to choosing the smartest safari season for your journey.",
+    seoTitle:    "Best Time to Go on Safari in Africa",
+    openGraphTitle: "Best Time to Go on Safari in Africa",
+    openGraphDescription:
+      "A refined guide to choosing the smartest safari season for your journey.",
+    metaTitle:   "Best Time to Go on Safari in Africa | Mason & Wild",
+    metaDescription:
+      "Discover the best time to go on safari in Africa by destination, season, and travel style. Expert guidance for Botswana, Zambia, Tanzania, South Africa, Namibia and beyond.",
+    category:    "journey-intelligence",
+    excerpt:
+      "Discover the best time to go on safari in Africa by destination, season, and travel style. Expert guidance for Botswana, Zambia, Tanzania, South Africa, Namibia and beyond.",
+    readingTime: 8,
+    publishedAt: "2026-04-25",
+    img: {
+      src:     "/journal/best-time-to-go-on-safari-in-africa/hero-best-time-safari-africa.jpg",
+      alt:     "Luxury African safari sunrise game drive in open wilderness",
+      caption: "Seasonality, planned properly",
+      position: "center",
+    },
+    body: [
+      {
+        type: "p-lead",
+        text: "When people search for the best time to go on safari in Africa, they are usually looking for one simple answer. July. August. Dry season. Migration season.",
+      },
+      {
+        type: "p",
+        text: "By Zannon James, Founder of Mason & Wild",
+      },
+      {
+        type: "p",
+        text: "The truth is far more useful.",
+      },
+      {
+        type: "p",
+        text: "There is no single best time to visit Africa. There is only the best time for your priorities, preferred pace, budget, and style of travel.",
+      },
+      {
+        type: "p",
+        text: "Some travellers want dramatic wildlife sightings. Others want privacy, better value, lush landscapes, beach weather, fewer crowds, or a more romantic atmosphere. The right season depends on what matters most to you.",
+      },
+      {
+        type: "p",
+        text: "That is where expert planning matters.",
+      },
+      {
+        type: "p",
+        text: "At Mason & Wild, we design luxury Africa journeys around seasonality, rhythm, and fit, not generic travel calendars.",
+      },
+      {
+        type: "h2",
+        text: "Quick Answer: When Is the Best Time to Go on Safari in Africa?",
+      },
+      {
+        type: "p",
+        text: "For many safari destinations, June to October is considered prime season because wildlife is easier to spot in drier landscapes.",
+      },
+      {
+        type: "p",
+        text: "But that does not automatically make it the best time for everyone.",
+      },
+      {
+        type: "p",
+        text: "If you value fewer people, better rates, greener scenery, strong photography light, a more exclusive atmosphere, or honeymoon privacy, then shoulder or green seasons can often be smarter choices.",
+      },
+      {
+        type: "h2",
+        text: "Why Most People Get Safari Timing Wrong",
+      },
+      {
+        type: "p",
+        text: "Many travellers assume peak season equals best season.",
+      },
+      {
+        type: "p",
+        text: "Peak season often means higher prices, earlier booking pressure, more vehicles at sightings, lower suite availability, and less flexibility on routing.",
+      },
+      {
+        type: "p",
+        text: "Sometimes peak season is absolutely worth it. But often it is simply the most promoted season.",
+      },
+      {
+        type: "p",
+        text: "Sophisticated travel planning means choosing the season that best matches your priorities, not following the crowd.",
+      },
+      {
+        type: "h2",
+        text: "Best Time to Visit Africa by Destination",
+      },
+      {
+        type: "table",
+        columns: ["Destination", "Best Months", "Ideal For"],
+        rows: [
+          {
+            cells: [
+              "Botswana",
+              "Jun to Oct",
+              "Water-based safari, exclusivity, iconic wildlife",
+            ],
+          },
+          {
+            cells: [
+              "Zambia",
+              "Jun to Oct",
+              "Walking safari, raw wilderness, guiding",
+            ],
+          },
+          {
+            cells: [
+              "South Africa",
+              "Year-round",
+              "First safari, Cape Town combinations, variety",
+            ],
+          },
+          {
+            cells: [
+              "Tanzania",
+              "Jun to Oct / Jan to Mar",
+              "Plains safari, migration routes, beach pairings",
+            ],
+          },
+          {
+            cells: [
+              "Namibia",
+              "May to Oct",
+              "Landscapes, luxury adventure, desert weather",
+            ],
+          },
+          {
+            cells: [
+              "Mozambique",
+              "May to Nov",
+              "Beach extension after safari, diving, romance",
+            ],
+          },
+        ],
+      },
+      {
+        type: "h2",
+        text: "Southern Africa: June to October",
+      },
+      {
+        type: "p",
+        text: "For Botswana, Zambia, Zimbabwe, Namibia, and many safari regions in South Africa, the dry season is exceptional.",
+      },
+      {
+        type: "p",
+        text: "Why it works: animals gather near water sources, vegetation is thinner, classic safari conditions are excellent, and travel months are generally comfortable.",
+      },
+      {
+        type: "p",
+        content: [
+          { type: "text", text: "Recommended Mason & Wild journeys include " },
+          { type: "link", text: "The Intimate", href: "/journeys/the-intimate" },
+          { type: "text", text: ", " },
+          { type: "link", text: "The Untamed", href: "/journeys/the-untamed" },
+          { type: "text", text: ", and " },
+          { type: "link", text: "The Adventure", href: "/journeys/the-adventure" },
+          { type: "text", text: "." },
+        ],
+      },
+      {
+        type: "image",
+        image: {
+          src: "/journal/best-time-to-go-on-safari-in-africa/botswana-dry-season-safari.jpg",
+          alt: "Botswana safari in dry season with concentrated wildlife",
+          caption: "Dry season clarity in Southern Africa",
+          position: "center",
+        },
+        aspect: "16 / 10",
+      },
+      {
+        type: "h2",
+        text: "Green Season: November to March",
+      },
+      {
+        type: "p",
+        text: "This is where many travellers overlook value.",
+      },
+      {
+        type: "p",
+        text: "Green season can deliver lush landscapes, dramatic skies, newborn wildlife, fewer guests, better pricing, and beautiful photography.",
+      },
+      {
+        type: "p",
+        text: "For travellers who care about the overall journey experience, this period can be exceptional.",
+      },
+      {
+        type: "image",
+        image: {
+          src: "/journal/best-time-to-go-on-safari-in-africa/green-season-africa.jpg",
+          alt: "Green season safari landscape in Africa with dramatic skies",
+          caption: "Green season atmosphere",
+          position: "center",
+        },
+        aspect: "16 / 10",
+      },
+      {
+        type: "h2",
+        text: "Is the Great Migration the Best Time?",
+      },
+      {
+        type: "p",
+        text: "The Great Migration is spectacular. It is also over-marketed.",
+      },
+      {
+        type: "p",
+        text: "Yes, witnessing herd movement can be extraordinary. But building an entire trip around one narrow timing window can also create crowds, inflated expectations, and premium pricing.",
+      },
+      {
+        type: "p",
+        content: [
+          { type: "text", text: "Tanzania remains remarkable beyond migration headlines through guiding, camps, privacy, and scale. " },
+          { type: "link", text: "The Private Circuit", href: "/journeys/the-private-circuit" },
+          { type: "text", text: " shows how that can be shaped well." },
+        ],
+      },
+      {
+        type: "h2",
+        text: "Cape Town, Winelands + Safari: One of the Smartest Luxury Combinations",
+      },
+      {
+        type: "p",
+        text: "Cape Town is especially strong from November to March with warm weather, long evenings, and world-class dining energy.",
+      },
+      {
+        type: "p",
+        text: "Its position also allows seamless access to the Cape Winelands, where private tastings, vineyard lunches, mountain-backed estates, and elegant countryside stays add a softer layer before or after safari.",
+      },
+      {
+        type: "p",
+        text: "Paired correctly with safari, it creates contrast: design-forward city stay, food wine and Winelands depth, ocean scenery, private tastings and long lunches, then wilderness and wildlife.",
+      },
+      {
+        type: "p",
+        content: [
+          { type: "text", text: "For a South Africa-led rhythm with strong city energy, " },
+          { type: "link", text: "The Social Shift", href: "/the-social" },
+          { type: "text", text: " is a useful reference." },
+        ],
+      },
+      {
+        type: "image",
+        image: {
+          src: "/journal/best-time-to-go-on-safari-in-africa/cape-winelands-safari-combo.jpg",
+          alt: "Cape Winelands and safari luxury combination in South Africa",
+          caption: "Cape Town and Winelands before safari",
+          position: "center",
+        },
+        aspect: "16 / 10",
+      },
+      {
+        type: "h2",
+        text: "Best Time for Honeymoons and Couples",
+      },
+      {
+        type: "p",
+        text: "For couples, the best time is often about mood rather than wildlife statistics.",
+      },
+      {
+        type: "p",
+        text: "That may mean shoulder season privacy, warm beach weather, fewer shared sightings, better suite availability, and a slower pace.",
+      },
+      {
+        type: "p",
+        content: [
+          { type: "text", text: "For romance-first timing and routing, " },
+          { type: "link", text: "The Romantic", href: "/journeys/the-romantic" },
+          { type: "text", text: " is where many couples begin." },
+        ],
+      },
+      {
+        type: "image",
+        image: {
+          src: "/journal/best-time-to-go-on-safari-in-africa/romantic-safari-suite.jpg",
+          alt: "Romantic luxury safari suite for couples",
+          caption: "Timing for mood and privacy",
+          position: "center",
+        },
+        aspect: "16 / 10",
+      },
+      {
+        type: "h2",
+        text: "Example Seasonal Pairings",
+      },
+      {
+        type: "p",
+        text: "February: Cape Town + Safari + Mozambique. July: Botswana + Victoria Falls. September: Zambia + Lower Zambezi. January: Tanzania + Zanzibar. May: Namibia + Cape Town.",
+      },
+      {
+        type: "h2",
+        text: "Frequently Asked Questions",
+      },
+      {
+        type: "h3",
+        text: "What is the best month for safari in Africa?",
+      },
+      {
+        type: "p",
+        text: "July to October is excellent in many destinations, but timing depends on destination and priorities.",
+      },
+      {
+        type: "h3",
+        text: "Is safari better in dry season or green season?",
+      },
+      {
+        type: "p",
+        text: "Dry season is stronger for sightings. Green season can be better for scenery, value, and atmosphere.",
+      },
+      {
+        type: "h3",
+        text: "What is the cheapest time to go on safari?",
+      },
+      {
+        type: "p",
+        text: "Shoulder and green seasons often offer stronger value.",
+      },
+      {
+        type: "h3",
+        text: "How many days do I need for an African safari?",
+      },
+      {
+        type: "p",
+        text: "10 to 14 nights often creates the best pace.",
+      },
+      {
+        type: "h3",
+        text: "Can I combine Cape Town with safari?",
+      },
+      {
+        type: "p",
+        text: "Yes. It is one of the strongest Africa itineraries, especially when paired with the Cape Winelands.",
+      },
+      {
+        type: "h2",
+        text: "Why Work With Mason & Wild",
+      },
+      {
+        type: "p",
+        text: "The same budget can create two completely different journeys depending on timing.",
+      },
+      {
+        type: "p",
+        text: "One may feel crowded and rushed. Another may feel private, balanced, and unforgettable.",
+      },
+      {
+        type: "p",
+        text: "We help clients choose the right season, route, and properties to maximise experience quality, privacy, value, flow, and emotional impact.",
+      },
+      {
+        type: "p",
+        text: "Because luxury is not about going when everyone else goes. It is about going when it suits you best.",
+      },
+      {
+        type: "h2",
+        text: "Start Your Journey",
+      },
+      {
+        type: "p",
+        text: "If you are considering Africa, we will help you identify the smartest time to travel and build a journey around it.",
+      },
+      {
+        type: "p",
+        content: [
+          { type: "link", text: "Start Your Journey", href: "/start-your-journey" },
+        ],
+      },
+    ],
+    relatedJourneys: [
+      {
+        slug:    "the-intimate",
+        name:    "The Intimate",
+        outcome: "Solitude",
+        img: {
+          src: "/journeys/the-intimate/makgadikgadi-dusk.jpg",
+          alt: "The Intimate journey card",
+        },
+      },
+      {
+        slug:    "the-untamed",
+        name:    "The Untamed",
+        outcome: "Connection",
+        img: {
+          src: "/journeys/the-untamed/Zungulila (6).jpg",
+          alt: "The Untamed journey card",
+        },
+      },
+      {
+        slug:    "the-adventure",
+        name:    "The Adventure",
+        outcome: "Adventure",
+        img: {
+          src: "/journeys/the-adventure/ZS (5).jpg",
+          alt: "The Adventure journey card",
+        },
+      },
+      {
+        slug:    "the-romantic",
+        name:    "The Romantic",
+        outcome: "Wonder",
+        img: {
+          src: "/journeys/the-romantic/BBL (12).jpg",
+          alt: "The Romantic journey card",
+        },
+      },
+    ],
+    relatedArticles: [
+      {
+        slug:        "luxury-safari-vs-luxury-beach-holiday",
+        title:       "Luxury Safari vs Luxury Beach Holiday: What High Performers Actually Need From Time Off",
+        category:    "journey-intelligence",
+        excerpt:
+          "Should you choose safari or beach for your next luxury holiday? Discover what high performers actually need from time off, and why the smartest answer is often both.",
+        readingTime: 8,
+        publishedAt: "2026-04-25",
+      },
+      {
+        slug:        "how-to-choose-the-right-african-journey-for-your-travel-style",
+        title:       "How to Choose the Right African Journey for Your Travel Style",
+        category:    "journey-intelligence",
+        excerpt:
+          "A considered guide to choosing the right African journey not by destination alone, but by the kind of experience you actually want to feel inside it.",
+        readingTime: 10,
+        publishedAt: "2026-04-15",
+      },
+    ],
+  },
+  "luxury-safari-vs-luxury-beach-holiday": {
+    slug:        "luxury-safari-vs-luxury-beach-holiday",
+    title:       "Luxury Safari vs Luxury Beach Holiday: What High Performers Actually Need From Time Off",
+    subtitle:
+      "A refined guide to choosing the right luxury holiday for restoration, connection, and meaningful time away.",
+    seoTitle:    "Luxury Safari vs Luxury Beach Holiday",
+    openGraphTitle: "Luxury Safari vs Luxury Beach Holiday",
+    openGraphDescription:
+      "A refined guide to choosing the right luxury holiday for restoration, connection, and meaningful time away.",
+    metaTitle:   "Luxury Safari vs Luxury Beach Holiday | Mason & Wild",
+    metaDescription:
+      "Should you choose safari or beach for your next luxury holiday? Discover what high performers actually need from time off, and why the smartest answer is often both.",
+    category:    "journey-intelligence",
+    excerpt:
+      "Should you choose safari or beach for your next luxury holiday? Discover what high performers actually need from time off, and why the smartest answer is often both.",
+    readingTime: 8,
+    publishedAt: "2026-04-25",
+    img: {
+      src:     "/journal/luxury-safari-vs-luxury-beach-holiday/hero-safari-vs-beach.jpg",
+      alt:     "Luxury safari lodge overlooking African wilderness at sunrise",
+      caption: "Safari at first light",
+      position: "center",
+    },
+    body: [
+      {
+        type: "p-lead",
+        text: "For many successful people, time off is limited, valuable, and increasingly difficult to use well.",
+      },
+      {
+        type: "p",
+        text: "By Zannon James, Founder of Mason & Wild",
+      },
+      {
+        type: "p",
+        text: "The calendar is full. Attention is fragmented. Work rarely switches off completely. Even on holiday, many travellers return feeling entertained rather than restored.",
+      },
+      {
+        type: "p",
+        text: "That is why choosing the right kind of travel matters.",
+      },
+      {
+        type: "p",
+        text: "For affluent professionals, founders, executives, and couples balancing demanding lives, the question is often not where should we go. It is: what kind of break do we actually need right now?",
+      },
+      {
+        type: "p",
+        text: "For some, that is effortless beach luxury. For others, it is the presence, perspective, and rhythm of safari.",
+      },
+      {
+        type: "p",
+        text: "The smartest answer is often knowing the difference.",
+      },
+      {
+        type: "h2",
+        text: "Quick Answer: Safari or Beach?",
+      },
+      {
+        type: "p",
+        text: "Choose a luxury beach holiday when you want simplicity, warm weather, pool and spa rhythm, minimal decision-making, and easy decompression.",
+      },
+      {
+        type: "p",
+        text: "Choose a luxury safari when you want a mental reset, novelty and stimulation, nature and perspective, shared experiences, presence away from screens, and a trip that feels memorable rather than interchangeable.",
+      },
+      {
+        type: "p",
+        text: "Choose both when you want the strongest possible luxury journey.",
+      },
+      {
+        type: "h2",
+        text: "Why High Performers Often Choose the Wrong Holidays",
+      },
+      {
+        type: "p",
+        text: "Many busy people choose holidays the same way they choose restaurants: what feels easiest in the moment.",
+      },
+      {
+        type: "p",
+        text: "That often leads to familiar beach resorts, predictable luxury, passive relaxation, and a week that blends into the last one.",
+      },
+      {
+        type: "p",
+        text: "There is nothing wrong with that.",
+      },
+      {
+        type: "p",
+        text: "But if your life is mentally demanding, repeating the same environments may not create the reset you actually need.",
+      },
+      {
+        type: "p",
+        text: "Sometimes comfort is pleasant. Sometimes contrast is what restores you.",
+      },
+      {
+        type: "h2",
+        text: "What Actually Restores Burnt-Out People",
+      },
+      {
+        type: "p",
+        text: "Real restoration often comes from presence, novel experiences, beauty, deep sleep, natural rhythm, emotional connection, and time without constant input.",
+      },
+      {
+        type: "p",
+        text: "Safari can be remarkably effective because it creates all of the above naturally.",
+      },
+      {
+        type: "p",
+        text: "Early mornings. Big skies. Wildlife movement. No constant notifications. Real conversation. Quiet anticipation. Awe.",
+      },
+      {
+        type: "p",
+        text: "That combination is difficult to replicate in ordinary luxury settings.",
+      },
+      {
+        type: "image",
+        image: {
+          src: "/journal/luxury-safari-vs-luxury-beach-holiday/safari-reset-moment.jpg",
+          alt: "Safari reset moment in African wilderness",
+          caption: "Restoration through contrast and presence",
+          position: "center",
+        },
+        aspect: "16 / 10",
+      },
+      {
+        type: "h2",
+        text: "Why Safari Outperforms Passive Luxury for Many Travellers",
+      },
+      {
+        type: "p",
+        text: "Luxury beach holidays often optimise comfort. Luxury safari journeys often optimise aliveness.",
+      },
+      {
+        type: "p",
+        text: "You notice more. Feel more. Remember more.",
+      },
+      {
+        type: "p",
+        text: "Instead of lying beside a pool checking emails, you may be tracking lions at first light, drinking coffee in the bush, watching elephants cross a river, sharing sundowners at sunset, and sleeping under canvas to distant sounds of nature.",
+      },
+      {
+        type: "p",
+        content: [
+          { type: "text", text: "For privacy-first safari luxury, " },
+          { type: "link", text: "The Intimate", href: "/journeys/the-intimate" },
+          { type: "text", text: " is a strong fit." },
+        ],
+      },
+      {
+        type: "image",
+        image: {
+          src: "/journal/luxury-safari-vs-luxury-beach-holiday/private-safari-luxury.jpg",
+          alt: "Private luxury safari lodge experience",
+          caption: "Private safari done properly",
+          position: "center",
+        },
+        aspect: "16 / 10",
+      },
+      {
+        type: "h2",
+        text: "When Beach Holidays Still Win",
+      },
+      {
+        type: "p",
+        text: "Beach travel remains exceptional when you need total stillness, warm water and sunshine, spa-focused recovery, very young family simplicity, minimal movement, and a slow pace for sleep and reading.",
+      },
+      {
+        type: "p",
+        text: "There are seasons of life where this is exactly right.",
+      },
+      {
+        type: "p",
+        text: "The mistake is assuming it is always right.",
+      },
+      {
+        type: "h2",
+        text: "The Smartest Luxury Answer Is Often Both",
+      },
+      {
+        type: "p",
+        text: "This is where sophisticated travel planning changes everything.",
+      },
+      {
+        type: "p",
+        text: "Combining safari with beach or city creates contrast, which often makes both experiences stronger.",
+      },
+      {
+        type: "p",
+        text: "Cape Town + Safari + Mozambique. Botswana + Victoria Falls + Island Escape. South Africa + Winelands + Safari. Tanzania + Zanzibar.",
+      },
+      {
+        type: "p",
+        content: [
+          { type: "text", text: "For romance-led combinations, " },
+          { type: "link", text: "The Romantic", href: "/journeys/the-romantic" },
+          { type: "text", text: " is a natural direction." },
+        ],
+      },
+      {
+        type: "image",
+        image: {
+          src: "/journal/luxury-safari-vs-luxury-beach-holiday/beach-luxury-africa.jpg",
+          alt: "Beach luxury in Africa with private atmosphere",
+          caption: "Softness after safari",
+          position: "center",
+        },
+        aspect: "16 / 10",
+      },
+      {
+        type: "h2",
+        text: "KwaZulu-Natal: Bush + Beach Without Crossing Borders",
+      },
+      {
+        type: "p",
+        text: "Few destinations combine safari and coastline as effortlessly as KwaZulu-Natal.",
+      },
+      {
+        type: "p",
+        text: "Travellers can pair luxury bush lodges, conservation-led safari, wetlands, and warm Indian Ocean beaches within one seamless South African journey.",
+      },
+      {
+        type: "p",
+        text: "Think: Big Five safari, ocean climate, elegant coastal lodges, easy transfers, and strong value relative to complex multi-country trips.",
+      },
+      {
+        type: "p",
+        text: "For travellers wanting contrast with less logistical complexity, KwaZulu-Natal is one of Africa's smartest under-the-radar options.",
+      },
+      {
+        type: "image",
+        image: {
+          src: "/journal/luxury-safari-vs-luxury-beach-holiday/kzn-bush-beach.jpg",
+          alt: "KwaZulu Natal bush and beach luxury combination",
+          caption: "KwaZulu-Natal contrast",
+          position: "center",
+        },
+        aspect: "16 / 10",
+      },
+      {
+        type: "h2",
+        text: "Why Novelty Matters More Than Most People Realise",
+      },
+      {
+        type: "p",
+        text: "Many high-achieving people do not need more lounging. They need interruption.",
+      },
+      {
+        type: "p",
+        text: "New environments can reset attention, improve presence, and create memory markers that make time feel fuller.",
+      },
+      {
+        type: "p",
+        text: "This is one reason safari often feels longer, richer, and more valuable than a standard resort week.",
+      },
+      {
+        type: "p",
+        text: "You return with stories, not just tan lines.",
+      },
+      {
+        type: "h2",
+        text: "What Type of Traveller Are You Right Now?",
+      },
+      {
+        type: "p",
+        text: "Choose safari if you feel mentally tired, under-stimulated by routine, craving perspective, or wanting memorable shared experiences.",
+      },
+      {
+        type: "p",
+        text: "Choose beach if you feel physically depleted, over-socialised, needing softness and stillness, or wanting absolute ease.",
+      },
+      {
+        type: "p",
+        text: "Choose both if you want a complete luxury journey.",
+      },
+      {
+        type: "h2",
+        text: "Why Generic Booking Sites Miss This Entirely",
+      },
+      {
+        type: "p",
+        text: "Booking platforms can show rooms.",
+      },
+      {
+        type: "p",
+        text: "They cannot tell you what kind of holiday suits your current season of life, whether you need stimulation or stillness, which combinations create emotional flow, which route avoids friction, or which properties match your style.",
+      },
+      {
+        type: "p",
+        text: "That is why travel design matters more than inventory.",
+      },
+      {
+        type: "h2",
+        text: "Why Work With Mason & Wild",
+      },
+      {
+        type: "p",
+        text: "We help busy, discerning travellers use limited time brilliantly.",
+      },
+      {
+        type: "p",
+        text: "That means designing journeys around energy levels, relationship goals, desired pace, privacy preferences, emotional outcome, and seasonal fit.",
+      },
+      {
+        type: "p",
+        content: [
+          { type: "text", text: "Whether you need restoration, reconnection, adventure, or all three, we curate Africa properly. For South Africa-led social rhythm, see " },
+          { type: "link", text: "The Social Shift", href: "/the-social" },
+          { type: "text", text: ". For design-led movement and landscape contrast, explore " },
+          { type: "link", text: "The Adventure", href: "/journeys/the-adventure" },
+          { type: "text", text: "." },
+        ],
+      },
+      {
+        type: "h2",
+        text: "Frequently Asked Questions",
+      },
+      {
+        type: "h3",
+        text: "Is safari more expensive than a beach holiday?",
+      },
+      {
+        type: "p",
+        text: "Often yes, but not always. It depends on destination, season, and level of luxury.",
+      },
+      {
+        type: "h3",
+        text: "Is safari relaxing?",
+      },
+      {
+        type: "p",
+        text: "Yes. Well-paced luxury safari can be calm, spacious, and deeply restorative.",
+      },
+      {
+        type: "h3",
+        text: "Is beach or safari better for honeymooners?",
+      },
+      {
+        type: "p",
+        text: "Usually both. Combining safari with coast often creates the strongest honeymoon rhythm.",
+      },
+      {
+        type: "h3",
+        text: "Can I do safari and beach in one trip?",
+      },
+      {
+        type: "p",
+        text: "Absolutely. It is one of the smartest luxury travel formats in Africa.",
+      },
+      {
+        type: "h3",
+        text: "What is best for burnt-out professionals?",
+      },
+      {
+        type: "p",
+        text: "Often a journey with contrast: stimulation first, softness second.",
+      },
+      {
+        type: "h2",
+        text: "Start Your Journey",
+      },
+      {
+        type: "p",
+        text: "The right holiday is not always the easiest one to book. It is the one that gives you what you actually need.",
+      },
+      {
+        type: "p",
+        text: "We help clients design Africa journeys that restore energy, deepen connection, and make time off count.",
+      },
+      {
+        type: "image",
+        image: {
+          src: "/journal/luxury-safari-vs-luxury-beach-holiday/start-your-journey-reset.jpg",
+          alt: "Start your journey toward a meaningful luxury reset in Africa",
+          caption: "Time off that actually restores",
+          position: "center",
+        },
+        aspect: "16 / 10",
+      },
+      {
+        type: "p",
+        content: [
+          { type: "link", text: "Start Your Journey", href: "/start-your-journey" },
+        ],
+      },
+    ],
+    relatedJourneys: [
+      {
+        slug:    "the-intimate",
+        name:    "The Intimate",
+        outcome: "Solitude",
+        img: {
+          src: "/journeys/the-intimate/makgadikgadi-dusk.jpg",
+          alt: "The Intimate journey card",
+        },
+      },
+      {
+        slug:    "the-romantic",
+        name:    "The Romantic",
+        outcome: "Wonder",
+        img: {
+          src: "/journeys/the-romantic/BBL (12).jpg",
+          alt: "The Romantic journey card",
+        },
+      },
+      {
+        slug:    "the-social-shift",
+        name:    "The Social Shift",
+        outcome: "Connection",
+        img: {
+          src: "/journeys/the-social-shift/SH (1).jpg",
+          alt: "The Social Shift journey card",
+        },
+      },
+      {
+        slug:    "the-adventure",
+        name:    "The Adventure",
+        outcome: "Adventure",
+        img: {
+          src: "/journeys/the-adventure/ZS (5).jpg",
+          alt: "The Adventure journey card",
+        },
+      },
+    ],
+    relatedArticles: [
+      {
+        slug:        "how-to-choose-the-right-african-journey-for-your-travel-style",
+        title:       "How to Choose the Right African Journey for Your Travel Style",
+        category:    "journey-intelligence",
+        excerpt:
+          "A considered guide to choosing the right African journey not by destination alone, but by the kind of experience you actually want to feel inside it.",
+        readingTime: 10,
+        publishedAt: "2026-04-15",
+      },
+      {
+        slug:        "how-long-should-an-african-luxury-journey-be",
+        title:       "How Long Should an African Luxury Journey Be?",
+        category:    "journey-intelligence",
+        excerpt:
+          "A considered guide to how long an African luxury journey should really be, why 10 to 14 nights is often the sweet spot, and how to build a trip with rhythm rather than rush.",
+        readingTime: 9,
+        publishedAt: "2026-04-15",
+      },
+    ],
+  },
+  "lgbtq-luxury-travel-africa": {
+    slug:        "lgbtq-luxury-travel-africa",
+    title:       "LGBTQ+ Luxury Travel in Africa: Where to Go, What to Know, Who to Trust",
+    subtitle:
+      "A refined guide to planning LGBTQ+ luxury travel in Africa with confidence, privacy, and destination-level clarity.",
+    seoTitle:    "LGBTQ+ Luxury Travel in Africa",
+    openGraphTitle: "LGBTQ+ Luxury Travel in Africa",
+    openGraphDescription:
+      "A refined guide to LGBTQ+ luxury travel in Africa, from Cape Town to safari and island escapes.",
+    metaTitle:   "LGBTQ+ Luxury Travel in Africa | Mason & Wild",
+    metaDescription:
+      "Discover the best LGBTQ+ luxury travel destinations in Africa, including Cape Town, Botswana, safari honeymoons, beach escapes, and expert planning advice.",
+    category:    "journey-intelligence",
+    excerpt:
+      "Discover the best LGBTQ+ luxury travel destinations in Africa, including Cape Town, Botswana, safari honeymoons, beach escapes, and expert planning advice.",
+    readingTime: 8,
+    publishedAt: "2026-04-25",
+    img: {
+      src:     "/journal/lgbtq-luxury-travel-africa/hero-lgbt-luxury-africa.jpg",
+      alt:     "Stylish luxury couple enjoying Africa travel experience",
+      caption: "Luxury Africa, curated with discretion and care",
+      position: "center",
+    },
+    body: [
+      {
+        type: "p-lead",
+        text: "For many LGBTQ+ travellers, planning Africa is not only about where to stay or what to see. It is about choosing the right destinations, travelling with confidence, and knowing your journey has been designed with care.",
+      },
+      {
+        type: "p",
+        text: "By Zannon James, Founder of Mason & Wild",
+      },
+      {
+        type: "p",
+        text: "Africa is not one story. It is a continent of different cultures, laws, landscapes, and travel experiences. Some destinations are exceptionally welcoming and sophisticated. Others require nuance, discretion, or are simply not the right fit.",
+      },
+      {
+        type: "p",
+        text: "That is why generic advice rarely works.",
+      },
+      {
+        type: "p",
+        text: "At Mason & Wild, we curate luxury Africa journeys with privacy, style, trust, and emotional intelligence at the centre. Because the best journeys begin long before takeoff.",
+      },
+      {
+        type: "h2",
+        text: "Quick Answer: Is Africa Good for LGBTQ+ Luxury Travel?",
+      },
+      {
+        type: "p",
+        text: "Yes, absolutely, when you choose well.",
+      },
+      {
+        type: "p",
+        text: "Africa offers some of the most rewarding luxury travel experiences anywhere in the world: world-class safari lodges, exceptional food and wine, private villas and design hotels, ocean escapes, meaningful space and nature, and highly personalised service.",
+      },
+      {
+        type: "p",
+        text: "The real question is not whether Africa is right for LGBTQ+ travellers. It is which parts of Africa are right for you.",
+      },
+      {
+        type: "h2",
+        text: "Best LGBTQ+ Friendly Destinations in Africa",
+      },
+      {
+        type: "table",
+        columns: ["Destination", "Why It Works", "Best For"],
+        rows: [
+          {
+            cells: [
+              "South Africa",
+              "Progressive laws, Cape Town lifestyle, strong luxury scene",
+              "First trips, couples, social energy",
+            ],
+          },
+          {
+            cells: [
+              "Botswana",
+              "Premium safari, privacy, low-density tourism",
+              "Honeymoons, safari purists",
+            ],
+          },
+          {
+            cells: [
+              "Namibia",
+              "Stylish adventure, calm rhythm, vast scenery",
+              "Explorers, road journeys",
+            ],
+          },
+          {
+            cells: [
+              "Mozambique",
+              "Beach luxury, barefoot romance, privacy",
+              "Safari + beach",
+            ],
+          },
+          {
+            cells: [
+              "Zambia",
+              "Wild authenticity, guiding depth, space",
+              "Repeat travellers",
+            ],
+          },
+          {
+            cells: [
+              "Tanzania",
+              "Excellent safari product, Zanzibar pairing",
+              "Big milestone trips",
+            ],
+          },
+        ],
+      },
+      {
+        type: "h2",
+        text: "South Africa: The Standout Gateway",
+      },
+      {
+        type: "p",
+        text: "For many LGBTQ+ travellers, South Africa is the strongest first recommendation.",
+      },
+      {
+        type: "p",
+        text: "Cape Town combines mountain and ocean scenery, excellent restaurants, design-led hotels, easy access to the Cape Winelands, cosmopolitan energy, and an established LGBTQ+ nightlife and community.",
+      },
+      {
+        type: "p",
+        content: [
+          { type: "text", text: "It also pairs seamlessly with safari and beach extensions. For travellers drawn to Cape Town's culture, style, and energy, " },
+          { type: "link", text: "The Social Shift", href: "/the-social" },
+          { type: "text", text: " is a natural fit." },
+        ],
+      },
+      {
+        type: "image",
+        image: {
+          src: "/journal/lgbtq-luxury-travel-africa/cape-town-lgbt-luxury.jpg",
+          alt: "Cape Town luxury scene for LGBTQ plus travellers",
+          caption: "Cape Town, South Africa",
+          position: "center",
+        },
+        aspect: "16 / 10",
+      },
+      {
+        type: "h2",
+        text: "Safari Lodges: Privacy Is a Luxury",
+      },
+      {
+        type: "p",
+        text: "One of Africa's greatest strengths for LGBTQ+ luxury travel is privacy.",
+      },
+      {
+        type: "p",
+        text: "Many of the continent's finest safari stays naturally offer standalone suites, private plunge pools, outdoor baths, personal hosting, flexible guiding schedules, and remote beautiful settings. That creates a level of ease many urban hotels cannot match.",
+      },
+      {
+        type: "p",
+        content: [
+          { type: "text", text: "For couples wanting elegant privacy in the bush, " },
+          { type: "link", text: "The Intimate", href: "/journeys/the-intimate" },
+          { type: "text", text: " is often the clearest expression of that style." },
+        ],
+      },
+      {
+        type: "image",
+        image: {
+          src: "/journal/lgbtq-luxury-travel-africa/private-safari-suite-couple.jpg",
+          alt: "Private luxury safari suite designed for couples",
+          caption: "Private safari, naturally discreet",
+          position: "center",
+        },
+        aspect: "16 / 10",
+      },
+      {
+        type: "h2",
+        text: "Honeymoons, Proposals & Celebrations",
+      },
+      {
+        type: "p",
+        text: "Africa is one of the strongest destinations in the world for couples who want something memorable rather than ordinary.",
+      },
+      {
+        type: "p",
+        text: "Popular combinations include Cape Town + Safari + Mozambique, Botswana + Victoria Falls, South Africa + Winelands + Safari, and Tanzania + Zanzibar.",
+      },
+      {
+        type: "p",
+        content: [
+          { type: "text", text: "For romance-led travel, " },
+          { type: "link", text: "The Romantic", href: "/journeys/the-romantic" },
+          { type: "text", text: " is where we begin." },
+        ],
+      },
+      {
+        type: "image",
+        image: {
+          src: "/journal/lgbtq-luxury-travel-africa/africa-luxury-honeymoon.jpg",
+          alt: "Luxury Africa honeymoon setting for couples",
+          caption: "Celebratory travel done properly",
+          position: "center",
+        },
+        aspect: "16 / 10",
+      },
+      {
+        type: "h2",
+        text: "Tanzania, Zanzibar & Elevated East Africa",
+      },
+      {
+        type: "p",
+        text: "For travellers wanting East Africa with polish and privacy, Tanzania remains a superb option.",
+      },
+      {
+        type: "p",
+        text: "Think iconic plains safari, excellent guiding, beautiful camps, a seamless Zanzibar finish, and a strong celebratory travel feel.",
+      },
+      {
+        type: "p",
+        content: [
+          { type: "text", text: "For this format, " },
+          { type: "link", text: "The Private Circuit", href: "/journeys/the-private-circuit" },
+          { type: "text", text: " offers a clear model." },
+        ],
+      },
+      {
+        type: "image",
+        image: {
+          src: "/journal/lgbtq-luxury-travel-africa/tanzania-zanzibar-luxury.jpg",
+          alt: "Luxury Tanzania and Zanzibar pairing with private travel finish",
+          caption: "Tanzania to Zanzibar, with polish",
+          position: "center",
+        },
+        aspect: "16 / 10",
+      },
+      {
+        type: "h2",
+        text: "Namibia: For the Stylish Explorer",
+      },
+      {
+        type: "p",
+        text: "Namibia offers something different: wide-open landscapes, desert architecture, dramatic roads, and a slower sense of space.",
+      },
+      {
+        type: "p",
+        content: [
+          { type: "text", text: "For travellers who prefer design, scenery, and cinematic movement over traditional safari-heavy itineraries, " },
+          { type: "link", text: "The Adventure", href: "/journeys/the-adventure" },
+          { type: "text", text: " is the right direction." },
+        ],
+      },
+      {
+        type: "image",
+        image: {
+          src: "/journal/lgbtq-luxury-travel-africa/namibia-luxury-adventure.jpg",
+          alt: "Namibia luxury adventure with design and dramatic landscape",
+          caption: "Namibia's design-led wilderness rhythm",
+          position: "center",
+        },
+        aspect: "16 / 10",
+      },
+      {
+        type: "h2",
+        text: "What to Be Smart About",
+      },
+      {
+        type: "p",
+        text: "Luxury travel should reduce friction, not create it.",
+      },
+      {
+        type: "p",
+        text: "That means considering destination-specific context, public versus private settings, property selection, logistics and routing, your comfort level as a couple, and whether visibility or discretion matters to you.",
+      },
+      {
+        type: "p",
+        text: "This is not about fear. It is about intelligent planning.",
+      },
+      {
+        type: "h2",
+        text: "Why Generic Booking Sites Fall Short",
+      },
+      {
+        type: "p",
+        text: "Online booking sites can show rooms.",
+      },
+      {
+        type: "p",
+        text: "They cannot tell you which lodge teams host couples beautifully, which journeys feel celebratory versus transactional, which routing feels effortless, which destinations suit your comfort level, or which combinations create the best emotional flow.",
+      },
+      {
+        type: "p",
+        text: "That gap is where specialist planning matters.",
+      },
+      {
+        type: "h2",
+        text: "Why Work With Mason & Wild",
+      },
+      {
+        type: "p",
+        text: "We help clients travel with ease, confidence, and excitement through journeys designed around privacy preferences, relationship milestones, aesthetic taste, travel rhythm, destination fit, and experience quality.",
+      },
+      {
+        type: "p",
+        text: "Whether you want Cape Town energy, a discreet honeymoon, or a multi-country celebration, we curate Africa properly.",
+      },
+      {
+        type: "h2",
+        text: "Frequently Asked Questions",
+      },
+      {
+        type: "h3",
+        text: "Is Africa safe for LGBTQ+ travellers?",
+      },
+      {
+        type: "p",
+        text: "Some destinations are excellent choices, while others require more caution. Intelligent destination selection matters.",
+      },
+      {
+        type: "h3",
+        text: "What is the best LGBTQ+ destination in Africa?",
+      },
+      {
+        type: "p",
+        text: "South Africa is often the strongest first recommendation thanks to progressive legal protections, Cape Town's appeal, and strong tourism infrastructure.",
+      },
+      {
+        type: "h3",
+        text: "Can gay couples go on safari?",
+      },
+      {
+        type: "p",
+        text: "Yes. Many safari lodges are private, luxurious, and highly personalised.",
+      },
+      {
+        type: "h3",
+        text: "Is Africa good for honeymoons?",
+      },
+      {
+        type: "p",
+        text: "Exceptionally so. Safari + beach or city + safari combinations are among the most memorable honeymoon formats available.",
+      },
+      {
+        type: "h3",
+        text: "Which countries are best for luxury LGBTQ+ travel in Africa?",
+      },
+      {
+        type: "p",
+        text: "South Africa, Botswana, Namibia, Mozambique, Zambia, and carefully planned Tanzania journeys are all strong options depending on goals.",
+      },
+      {
+        type: "h2",
+        text: "Start Your Journey",
+      },
+      {
+        type: "p",
+        text: "Africa can be extraordinary for LGBTQ+ travellers when chosen well.",
+      },
+      {
+        type: "p",
+        text: "We help clients decide where to go, where to stay, how to route it, and how to make the journey feel effortless. Because trust is part of luxury.",
+      },
+      {
+        type: "p",
+        content: [
+          { type: "link", text: "Start Your Journey", href: "/start-your-journey" },
+        ],
+      },
+    ],
+    relatedJourneys: [
+      {
+        slug:    "the-social-shift",
+        name:    "The Social Shift",
+        outcome: "Connection",
+        img: {
+          src: "/journeys/the-social-shift/SH (1).jpg",
+          alt: "The Social Shift journey card",
+        },
+      },
+      {
+        slug:    "the-intimate",
+        name:    "The Intimate",
+        outcome: "Solitude",
+        img: {
+          src: "/journeys/the-intimate/makgadikgadi-dusk.jpg",
+          alt: "The Intimate journey card",
+        },
+      },
+      {
+        slug:    "the-private-circuit",
+        name:    "The Private Circuit",
+        outcome: "Sovereignty",
+        img: {
+          src: "/journeys/the-private-circuit/SM (19).jpg",
+          alt: "The Private Circuit journey card",
+        },
+      },
+      {
+        slug:    "the-adventure",
+        name:    "The Adventure",
+        outcome: "Adventure",
+        img: {
+          src: "/journeys/the-adventure/ZS (5).jpg",
+          alt: "The Adventure journey card",
+        },
+      },
+    ],
+    relatedArticles: [
+      {
+        slug:        "lgbtq-travel-southern-africa",
+        title:       "LGBTQ+ Travel in Southern Africa: Where It Works, Where It Doesn't, and Why",
+        category:    "lgbtq-travel-intelligence",
+        excerpt:
+          "A practical luxury guide to LGBTQ+ travel in Southern Africa, covering South Africa, Botswana, Namibia, Mozambique, Zambia, and Zimbabwe through the lens of privacy, hosting culture, and real-world trip design.",
+        readingTime: 9,
+        publishedAt: "2026-03-12",
+      },
+      {
+        slug:        "cape-town-gay-capital-of-africa",
+        title:       "Cape Town: Why It Remains the Gay Capital of Africa",
+        category:    "lgbtq-travel-intelligence",
+        excerpt:
+          "A considered look at why Cape Town remains the strongest queer city on the continent, from legal confidence and public ease to nightlife, design, hospitality, and the simple luxury of being out in the world.",
+        readingTime: 7,
+        publishedAt: "2026-04-05",
+      },
+      {
+        slug:        "what-lgbtq-travellers-should-look-for-in-a-luxury-african-journey",
+        title:       "What LGBTQ+ Travellers Should Look For in a Luxury African Journey",
+        category:    "lgbtq-travel-intelligence",
+        excerpt:
+          "A practical, considered guide to what actually makes a luxury African journey feel calm, private, and well handled for LGBTQ+ travellers, beyond marketing language and surface-level reassurance.",
+        readingTime: 8,
+        publishedAt: "2026-04-12",
+      },
+    ],
+  },
   "choosing-africa-with-intention": {
     slug:        "choosing-africa-with-intention",
     title:       "What It Means to Disappear Well: Choosing Africa with Intention",
@@ -4871,8 +6176,8 @@ export async function generateMetadata({
       canonical: `${NAV_HREFS.journal}/${article.slug}`,
     },
     openGraph: {
-      title:         article.seoTitle ?? article.title,
-      description:   article.metaDescription ?? article.excerpt,
+      title:         article.openGraphTitle ?? article.seoTitle ?? article.title,
+      description:   article.openGraphDescription ?? article.metaDescription ?? article.excerpt,
       url:           absoluteUrl(`${NAV_HREFS.journal}/${article.slug}`),
       type:          "article",
       publishedTime: article.publishedAt,

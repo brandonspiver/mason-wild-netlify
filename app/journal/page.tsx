@@ -25,6 +25,45 @@ export const metadata: Metadata = buildPageMetadata({
 // sourcing from contentlayer's allArticles sorted by publishedAt desc.
 const ARTICLES: ArticleSummary[] = [
   {
+    slug:        "best-time-to-go-on-safari-in-africa",
+    title:       "Best Time to Go on Safari in Africa (And Why Most People Get It Wrong)",
+    category:    "journey-intelligence",
+    excerpt:
+      "Discover the best time to go on safari in Africa by destination, season, and travel style. Expert guidance for Botswana, Zambia, Tanzania, South Africa, Namibia and beyond.",
+    readingTime: 8,
+    publishedAt: "2026-04-25",
+    img: {
+      src: "/journal/best-time-to-go-on-safari-in-africa/hero-best-time-safari-africa.jpg",
+      alt: "Luxury African safari sunrise game drive in open wilderness",
+    },
+  },
+  {
+    slug:        "luxury-safari-vs-luxury-beach-holiday",
+    title:       "Luxury Safari vs Luxury Beach Holiday: What High Performers Actually Need From Time Off",
+    category:    "journey-intelligence",
+    excerpt:
+      "Should you choose safari or beach for your next luxury holiday? Discover what high performers actually need from time off, and why the smartest answer is often both.",
+    readingTime: 8,
+    publishedAt: "2026-04-25",
+    img: {
+      src: "/journal/luxury-safari-vs-luxury-beach-holiday/hero-safari-vs-beach.jpg",
+      alt: "Luxury safari lodge overlooking African wilderness at sunrise",
+    },
+  },
+  {
+    slug:        "lgbtq-luxury-travel-africa",
+    title:       "LGBTQ+ Luxury Travel in Africa: Where to Go, What to Know, Who to Trust",
+    category:    "journey-intelligence",
+    excerpt:
+      "Discover the best LGBTQ+ luxury travel destinations in Africa, including Cape Town, Botswana, safari honeymoons, beach escapes, and expert planning advice.",
+    readingTime: 8,
+    publishedAt: "2026-04-25",
+    img: {
+      src: "/journal/lgbtq-luxury-travel-africa/hero-lgbt-luxury-africa.jpg",
+      alt: "Stylish luxury couple enjoying Africa travel experience",
+    },
+  },
+  {
     slug:        "cape-town-gay-capital-of-africa",
     title:       "Cape Town: Why It Remains the Gay Capital of Africa",
     category:    "lgbtq-travel-intelligence",

@@ -82,6 +82,8 @@ export type RelatedJourneyRef = {
 export type FullArticle = ArticleSummary & {
   readonly subtitle?:        string;
   readonly seoTitle?:        string;
+  readonly openGraphTitle?:  string;
+  readonly openGraphDescription?: string;
   readonly metaTitle?:       string;
   readonly metaDescription?: string;
   readonly body:             readonly ArticleBodyBlock[];
