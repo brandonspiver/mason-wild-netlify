@@ -227,7 +227,7 @@ export function NavBar() {
               {MENU_GROUPS.map((group) => (
                 <section
                   key={group.title}
-                  className="flex flex-col border-b border-stone-200/85 pb-8 last:border-b-0 md:last:border-b md:pb-0 xl:border-b-0"
+                  className="flex flex-col border-b border-stone-200/85 pb-8 last:border-b-0 md:last:border-b md:pb-0 xl:border-b-0 xl:last:border-b-0"
                 >
                   <div className="min-h-[148px] md:min-h-[164px]">
                     <p className="text-[0.62rem] font-normal uppercase tracking-[0.22em] text-stone-300">

@@ -5,6 +5,7 @@ type InquiryPayload = {
   name: string;
   email: string;
   duration?: string;
+  preferredTimeOfYear?: string;
   narrative: string;
   marketingConsent?: boolean;
   website?: string;
@@ -28,6 +29,9 @@ type ErrorResponse = {
 
 const VALID_DURATIONS = ["7-10", "14-21", "sabbatical"] as const;
 type ValidDuration = (typeof VALID_DURATIONS)[number];
+
+const VALID_TIME_OF_YEAR = ["jan-mar", "apr-jun", "jul-sep", "oct-dec"] as const;
+type ValidTimeOfYear = (typeof VALID_TIME_OF_YEAR)[number];
 
 const MAX_NAME_LENGTH = 120;
 const MAX_EMAIL_LENGTH = 254;
@@ -104,6 +108,23 @@ function validatePayload(body: unknown): {
     errors.push({ field: "duration", message: "Unrecognized duration value." });
   }
 
+  const rawPreferredTimeOfYear =
+    typeof raw.preferredTimeOfYear === "string"
+      ? raw.preferredTimeOfYear.trim()
+      : "";
+  const preferredTimeOfYear: ValidTimeOfYear | undefined =
+    rawPreferredTimeOfYear &&
+    (VALID_TIME_OF_YEAR as readonly string[]).includes(rawPreferredTimeOfYear)
+      ? (rawPreferredTimeOfYear as ValidTimeOfYear)
+      : undefined;
+
+  if (rawPreferredTimeOfYear && !preferredTimeOfYear) {
+    errors.push({
+      field: "preferredTimeOfYear",
+      message: "Unrecognized preferred time of year value.",
+    });
+  }
+
   const narrative = typeof raw.narrative === "string" ? raw.narrative.trim() : "";
   if (!narrative) {
     errors.push({ field: "narrative", message: "Please tell us what you are looking for." });
@@ -122,7 +143,15 @@ function validatePayload(body: unknown): {
   }
 
   return {
-    data: { name, email, duration, narrative, marketingConsent, website },
+    data: {
+      name,
+      email,
+      duration,
+      preferredTimeOfYear,
+      narrative,
+      marketingConsent,
+      website,
+    },
     errors: [],
   };
 }
@@ -135,6 +164,7 @@ async function handleSubmission(inquiry: InquiryPayload): Promise<void> {
       event: "inquiry.received",
       submittedAt,
       duration: inquiry.duration ?? null,
+      preferredTimeOfYear: inquiry.preferredTimeOfYear ?? null,
       narrativeLength: inquiry.narrative.length,
     })
   );
@@ -147,6 +177,10 @@ async function handleSubmission(inquiry: InquiryPayload): Promise<void> {
       { label: "Name", value: inquiry.name },
       { label: "Email", value: inquiry.email },
       { label: "Duration", value: inquiry.duration ?? "Not provided" },
+      {
+        label: "Preferred Time of Year",
+        value: inquiry.preferredTimeOfYear ?? "Not provided",
+      },
       { label: "Narrative", value: inquiry.narrative },
       {
         label: "Marketing Consent",

@@ -722,8 +722,8 @@ const JOURNEYS: Record<string, JourneyData> = {
       "Personally selected by Zannon James through firsthand experience and trusted regional knowledge. This journey is built around properties and partners chosen not for trend value, but for how they actually feel in real life. Privacy, atmosphere, service, and emotional fit all need to hold to a consistently high standard. From Cape Town to Mozambique, each chapter has been chosen for how it shifts the tone of the journey. The result is not just a collection of beautiful stays, but a romantic arc that feels composed from beginning to end. For LGBTQ+ travellers, that confidence matters even more. Every recommendation is made with comfort, discretion, and practical ease in mind.",
     vettedLocation: "MONWANA, SOUTH AFRICA",
     vettedImg: {
-      src: "/journeys/the-romantic/vetted-monwana-optimized.jpg",
-      alt: "Monwana safari setting in Greater Kruger",
+      src: "/journeys/the-romantic/vetted-verified-romantic.jpg",
+      alt: "Zannon James on safari at Monwana in South Africa",
       position: "center 50%",
     },
     body: [

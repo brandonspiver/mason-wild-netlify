@@ -366,29 +366,6 @@ export default function TheExperiencePage() {
         </div>
       </section>
 
-      <section className="section border-b border-stone-200" aria-labelledby="design-fee-heading">
-        <div className="container-site max-w-[920px]">
-          <h2
-            className="font-serif font-light text-display-md text-stone-900 mb-8"
-            id="design-fee-heading"
-          >
-            The Design Fee
-          </h2>
-          <p className="text-base font-light text-stone-500 leading-relaxed mb-6">
-            When you submit an enquiry, a $150.00 private design fee is collected with your brief.
-          </p>
-          <p className="text-base font-light text-stone-500 leading-relaxed mb-6">
-            This is not a deposit. It is a signal - to us and to you - that the conversation is serious. It ensures that the time invested in reviewing your brief, consulting on territory fit, and beginning the design process is spent on clients for whom this is a genuine priority.
-          </p>
-          <p className="text-base font-light text-stone-500 leading-relaxed mb-6">
-            The fee is credited in full against your journey if you proceed. If after our initial consultation we are not the right fit for each other, it is refunded without question.
-          </p>
-          <p className="text-base font-light text-stone-500 leading-relaxed">
-            It exists because the quality of our process depends on the quality of the conversation. The $150.00 is what keeps that conversation at the right level from the start.
-          </p>
-        </div>
-      </section>
-
       {/* â”€â”€â”€ Inclusive intelligence â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="section bg-forest" aria-labelledby="inclusive-heading">
         <div className="container-site">

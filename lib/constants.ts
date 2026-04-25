@@ -203,6 +203,15 @@ export const DURATION_OPTIONS = [
 
 export type DurationOption = typeof DURATION_OPTIONS[number]["value"];
 
+export const TIME_OF_YEAR_OPTIONS = [
+  { value: "jan-mar", label: "Jan-Mar" },
+  { value: "apr-jun", label: "Apr-Jun" },
+  { value: "jul-sep", label: "Jul-Sep" },
+  { value: "oct-dec", label: "Oct-Dec" },
+] as const;
+
+export type TimeOfYearOption = typeof TIME_OF_YEAR_OPTIONS[number]["value"];
+
 // â”€â”€â”€ The Social â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 export const SOCIAL_COPY = {
@@ -224,6 +233,9 @@ export const INQUIRY_COPY = {
   emailLabel:          "Email",
   emailPlaceholder:    "For private correspondence only",
   durationLabel:       "Preferred Journey Length",
+  preferredTimeOfYearLabel: "Preferred Time of Year",
+  preferredTimeOfYearHint:
+    "If your dates are flexible, choose the quarter that feels closest to what you have in mind.",
   narrativeLabel:      "A few details to shape your journey properly",
   narrativePlaceholder:"Share who is travelling, when you are considering, and what matters most.",
   availabilityHeading: "Seasonal Availability",

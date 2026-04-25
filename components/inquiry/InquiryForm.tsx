@@ -2,7 +2,12 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { INQUIRY_COPY, DURATION_OPTIONS, CTA } from "@/lib/constants";
+import {
+  INQUIRY_COPY,
+  DURATION_OPTIONS,
+  TIME_OF_YEAR_OPTIONS,
+  CTA,
+} from "@/lib/constants";
 
 // â”€â”€â”€ Types â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
@@ -10,13 +15,19 @@ type FormState = {
   name:      string;
   email:     string;
   duration:  string;
+  preferredTimeOfYear: string;
   narrative: string;
   marketingConsent: boolean;
   website:   string;
 };
 
 type SubmitState = "idle" | "submitting" | "success" | "error";
-type FieldName = "name" | "email" | "duration" | "narrative";
+type FieldName =
+  | "name"
+  | "email"
+  | "duration"
+  | "preferredTimeOfYear"
+  | "narrative";
 type FieldErrors = Partial<Record<FieldName, string>>;
 
 type InquiryErrorResponse = {
@@ -46,6 +57,7 @@ export function InquiryForm() {
     name:      "",
     email:     "",
     duration:  "",
+    preferredTimeOfYear: "",
     narrative: "",
     marketingConsent: false,
     website:   "",
@@ -100,6 +112,16 @@ export function InquiryForm() {
     }));
   }
 
+  function handlePreferredTimeOfYear(value: string) {
+    setFieldErrors((prev) => ({ ...prev, preferredTimeOfYear: undefined }));
+    setServerError("");
+    setForm((prev) => ({
+      ...prev,
+      preferredTimeOfYear:
+        prev.preferredTimeOfYear === value ? "" : value,
+    }));
+  }
+
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     const nextErrors = validateForm(form);
@@ -132,6 +154,7 @@ export function InquiryForm() {
               item.field === "name" ||
               item.field === "email" ||
               item.field === "duration" ||
+              item.field === "preferredTimeOfYear" ||
               item.field === "narrative"
             ) {
               nextFieldErrors[item.field] = item.message;
@@ -284,6 +307,50 @@ export function InquiryForm() {
         {fieldErrors.duration && (
           <p className="text-sm font-light text-stone-500 leading-relaxed">
             {fieldErrors.duration}
+          </p>
+        )}
+      </div>
+
+      <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-2">
+          <p className="label-tag" id="preferred-time-of-year-label">
+            {INQUIRY_COPY.preferredTimeOfYearLabel}
+          </p>
+          <p className="text-sm font-light leading-relaxed text-stone-400">
+            {INQUIRY_COPY.preferredTimeOfYearHint}
+          </p>
+        </div>
+        <div
+          className="grid gap-px border border-stone-200 bg-stone-200 sm:grid-cols-2"
+          role="group"
+          aria-labelledby="preferred-time-of-year-label"
+        >
+          {TIME_OF_YEAR_OPTIONS.map(({ value, label }) => {
+            const selected = form.preferredTimeOfYear === value;
+            return (
+              <button
+                key={value}
+                type="button"
+                onClick={() => handlePreferredTimeOfYear(value)}
+                aria-pressed={selected}
+                className={[
+                  "min-h-[76px] px-5 py-4 text-left",
+                  "transition-colors duration",
+                  selected
+                    ? "bg-stone-900 text-white"
+                    : "bg-page text-stone-500 hover:bg-page-subtle hover:text-stone-700",
+                ].join(" ")}
+              >
+                <span className="text-[0.72rem] font-normal uppercase tracking-[0.18em]">
+                  {label}
+                </span>
+              </button>
+            );
+          })}
+        </div>
+        {fieldErrors.preferredTimeOfYear && (
+          <p className="text-sm font-light text-stone-500 leading-relaxed">
+            {fieldErrors.preferredTimeOfYear}
           </p>
         )}
       </div>
