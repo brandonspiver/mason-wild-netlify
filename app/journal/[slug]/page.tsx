@@ -31,6 +31,20 @@ type JourneyBridgeDetail = {
   readonly ctaLabel?: string;
 };
 
+type JournalCtaLink = {
+  readonly label: string;
+  readonly href: string;
+};
+
+type JournalCtaProfile = {
+  readonly eyebrow: string;
+  readonly heading: string;
+  readonly copy: string;
+  readonly primary: JournalCtaLink;
+  readonly secondary: JournalCtaLink;
+  readonly journeyLinks?: readonly JournalCtaLink[];
+};
+
 const JOURNEY_BRIDGE_DETAILS: Record<string, JourneyBridgeDetail> = {
   "the-intimate": {
     summary:
@@ -121,10 +135,158 @@ function getJourneyHref(slug: string): string {
     : `${NAV_HREFS.journeys}/${slug}`;
 }
 
+const JOURNAL_CTA_DEFAULT: JournalCtaProfile = {
+  eyebrow: "Private Journey Design",
+  heading: "Considering a private African journey?",
+  copy:
+    "Mason & Wild designs discreet, fully considered luxury journeys across Southern and Eastern Africa, with particular care for LGBTQ+ travellers who value privacy, comfort, and cultural intelligence.",
+  primary: {
+    label: "Start Your Private Enquiry",
+    href: NAV_HREFS.inquire,
+  },
+  secondary: {
+    label: "Explore the Journeys",
+    href: NAV_HREFS.journeys,
+  },
+};
+
+const JOURNAL_CTA_VARIATIONS = {
+  lgbtq: {
+    eyebrow: "LGBTQ+ Luxury Africa",
+    heading: "Travel with privacy, context, and ease.",
+    copy:
+      "Mason & Wild designs private African journeys for LGBTQ+ travellers who want more than welcoming properties. We consider routing, rooming, guide briefing, cultural context, discretion, and the emotional ease of the journey from the beginning.",
+    primary: {
+      label: "Start Your Private Enquiry",
+      href: NAV_HREFS.inquire,
+    },
+    secondary: {
+      label: "Explore The Experience",
+      href: NAV_HREFS.experience,
+    },
+  },
+  safari: {
+    eyebrow: "Safari Planning",
+    heading: "Design the journey properly from the start.",
+    copy:
+      "The right safari is not built by choosing lodges in isolation. Mason & Wild considers seasonality, route logic, guiding quality, pace, privacy, and the way each stay connects into the next.",
+    primary: {
+      label: "Start Your Private Enquiry",
+      href: NAV_HREFS.inquire,
+    },
+    secondary: {
+      label: "Explore the Journeys",
+      href: NAV_HREFS.journeys,
+    },
+  },
+  archetype: {
+    eyebrow: "Journey Intelligence",
+    heading: "Begin with the right shape.",
+    copy:
+      "Mason & Wild's journeys are designed as archetypes, each with a different emotional centre, pace, and level of privacy. Begin with the journey that feels closest, then refine it privately around the way you want to travel.",
+    primary: {
+      label: "Explore the Journeys",
+      href: NAV_HREFS.journeys,
+    },
+    secondary: {
+      label: "Start Your Private Enquiry",
+      href: NAV_HREFS.inquire,
+    },
+  },
+  culture: {
+    eyebrow: "Conservation & Culture",
+    heading: "Travel with more context.",
+    copy:
+      "Mason & Wild designs private African journeys with attention to place, people, conservation, seasonality, and the responsibility of moving through wild spaces well.",
+    primary: {
+      label: "Explore the Journeys",
+      href: NAV_HREFS.journeys,
+    },
+    secondary: {
+      label: "Start Your Private Enquiry",
+      href: NAV_HREFS.inquire,
+    },
+  },
+} satisfies Record<string, JournalCtaProfile>;
+
+const JOURNAL_CTA_JOURNEY_LINKS: Record<string, readonly JournalCtaLink[]> = {
+  "best-time-to-go-on-safari-in-africa": [
+    { label: "The Classic", href: getJourneyHref("the-classic") },
+    { label: "The Intimate", href: getJourneyHref("the-intimate") },
+  ],
+  "luxury-safari-vs-luxury-beach-holiday": [
+    { label: "The Romantic", href: getJourneyHref("the-romantic") },
+    { label: "The Private Circuit", href: getJourneyHref("the-private-circuit") },
+  ],
+  "lgbtq-luxury-travel-africa": [
+    { label: "The Social Shift", href: getJourneyHref("the-social-shift") },
+    { label: "The Intimate", href: getJourneyHref("the-intimate") },
+  ],
+  "how-long-should-an-african-luxury-journey-be": [
+    { label: "The Classic", href: getJourneyHref("the-classic") },
+    { label: "The Private Circuit", href: getJourneyHref("the-private-circuit") },
+  ],
+  "destination-notes-tanzania": [
+    { label: "The Private Circuit", href: getJourneyHref("the-private-circuit") },
+  ],
+  "tanzania-vs-botswana-luxury-safari": [
+    { label: "The Private Circuit", href: getJourneyHref("the-private-circuit") },
+    { label: "The Intimate", href: getJourneyHref("the-intimate") },
+  ],
+  "solitude-architecture-of-silence-namibia": [
+    { label: "The Adventure", href: getJourneyHref("the-adventure") },
+  ],
+  "destination-notes-south-africa": [
+    { label: "The Classic", href: getJourneyHref("the-classic") },
+    { label: "The Social Shift", href: getJourneyHref("the-social-shift") },
+  ],
+  "cape-town-gay-capital-of-africa": [
+    { label: "The Social Shift", href: getJourneyHref("the-social-shift") },
+    { label: "The Classic", href: getJourneyHref("the-classic") },
+  ],
+  "lgbtq-travel-southern-africa": [
+    { label: "The Romantic", href: getJourneyHref("the-romantic") },
+    { label: "The Intimate", href: getJourneyHref("the-intimate") },
+  ],
+};
+
+function getJournalCtaProfile(article: FullArticle): JournalCtaProfile {
+  const journeyLinks = JOURNAL_CTA_JOURNEY_LINKS[article.slug];
+  let profile: JournalCtaProfile = JOURNAL_CTA_DEFAULT;
+
+  if (
+    article.category === "lgbtq-travel-intelligence" ||
+    article.slug === "lgbtq-luxury-travel-africa"
+  ) {
+    profile = JOURNAL_CTA_VARIATIONS.lgbtq;
+  } else if (
+    article.category === "safari-guides" ||
+    article.slug === "best-time-to-go-on-safari-in-africa"
+  ) {
+    profile = JOURNAL_CTA_VARIATIONS.safari;
+  } else if (
+    article.slug === "how-to-choose-the-right-african-journey-for-your-travel-style" ||
+    article.slug === "how-long-should-an-african-luxury-journey-be" ||
+    article.slug === "which-mason-and-wild-archetype-is-right-for-you"
+  ) {
+    profile = JOURNAL_CTA_VARIATIONS.archetype;
+  } else if (
+    article.category === "conservation-and-culture" ||
+    article.category === "destination-notes"
+  ) {
+    profile = JOURNAL_CTA_VARIATIONS.culture;
+  }
+
+  return {
+    ...profile,
+    journeyLinks,
+  };
+}
+
 // ─── Article data ─────────────────────────────────────────────────────────────
 // In production: replace with getArticleBySlug(slug) from lib/journal.ts,
 // which reads from contentlayer's allArticles and calls notFound() when
-// no matching slug is found. The FullArticle type is the migration target  - 
+// no matching slug is found. The FullArticle type is the migration target  -
 // nothing in the render logic changes when the data source is swapped.
 
 const ARTICLES: Record<string, FullArticle> = {
@@ -633,20 +795,6 @@ const ARTICLES: Record<string, FullArticle> = {
       {
         type: "p",
         text: "Very often, yes. It can be one of the smartest ways to travel well.",
-      },
-      {
-        type: "h2",
-        text: "Start Your Private Enquiry",
-      },
-      {
-        type: "p",
-        text: "If Africa is on your radar, we will help you choose the right season, the right route, and the right rhythm for the journey you actually want.",
-      },
-      {
-        type: "p",
-        content: [
-          { type: "link", text: "Start Your Private Enquiry", href: "/enquire" },
-        ],
       },
     ],
     relatedJourneys: [
@@ -1183,18 +1331,6 @@ const ARTICLES: Record<string, FullArticle> = {
         text: "Often a journey that restores attention first, then allows decompression.",
       },
       {
-        type: "h2",
-        text: "Start Your Private Enquiry",
-      },
-      {
-        type: "p",
-        text: "The best holiday is rarely the easiest one to book.",
-      },
-      {
-        type: "p",
-        text: "It is the one that gives you what you actually need.",
-      },
-      {
         type: "image",
         image: {
           src: "/journal/luxury-safari-vs-luxury-beach-holiday/start-your-journey-reset.jpg",
@@ -1203,12 +1339,6 @@ const ARTICLES: Record<string, FullArticle> = {
           position: "center",
         },
         aspect: "16 / 10",
-      },
-      {
-        type: "p",
-        content: [
-          { type: "link", text: "Start Your Private Enquiry", href: "/enquire" },
-        ],
       },
     ],
     relatedJourneys: [
@@ -1679,20 +1809,6 @@ const ARTICLES: Record<string, FullArticle> = {
       {
         type: "p",
         text: "Botswana is one of the strongest answers.",
-      },
-      {
-        type: "h2",
-        text: "Start Your Private Enquiry",
-      },
-      {
-        type: "p",
-        text: "If Africa is on your list, we will help you choose where it fits beautifully, where it does not, and how to make it unforgettable.",
-      },
-      {
-        type: "p",
-        content: [
-          { type: "link", text: "Start Your Private Enquiry", href: "/enquire" },
-        ],
       },
     ],
     relatedJourneys: [
@@ -6582,10 +6698,7 @@ export default function ArticlePage({
       url: absoluteUrl("/journal"),
     },
   };
-  const primaryRelatedJourney =
-    article.relatedJourneys && article.relatedJourneys.length > 0
-      ? article.relatedJourneys[0]
-      : null;
+  const ctaProfile = getJournalCtaProfile(article);
 
   return (
     <>
@@ -6786,7 +6899,7 @@ export default function ArticlePage({
                 case "blockquote":
                   /*
                     Restrained blockquote: no left border, no increased size.
-                    Indented with generous vertical space and italic text  - 
+                    Indented with generous vertical space and italic text  -
                     reads as a breath in the prose rather than a pulled
                     highlight. The distinction from body text is tonal,
                     not structural.
@@ -6916,36 +7029,40 @@ export default function ArticlePage({
         <div className={`${JOURNAL_SHELL} py-[clamp(56px,7vw,96px)]`}>
           <Reveal>
             <div className="max-w-[960px]">
-              <p className="label-tag mb-4">Private Planning</p>
+              <p className="label-tag mb-4">{ctaProfile.eyebrow}</p>
               <h2
                 className="font-serif font-light text-display-md text-stone-900 mb-6"
                 id="journal-conversion-bridge-heading"
               >
-                Considering a private
-                <br />
-                <em>African journey?</em>
+                {ctaProfile.heading}
               </h2>
               <p className="text-sm md:text-[0.98rem] font-light text-stone-600 leading-[1.9] max-w-[860px]">
-                Mason &amp; Wild designs discreet, fully considered luxury
-                journeys across Southern and Eastern Africa, with particular
-                care for LGBTQ+ travellers who value privacy, comfort, and
-                cultural intelligence.
+                {ctaProfile.copy}
               </p>
               <div className="mt-8 flex flex-wrap items-center gap-6">
-                <Button href={NAV_HREFS.inquire} variant="primary">
-                  Start Your Private Enquiry
+                <Button href={ctaProfile.primary.href} variant="primary">
+                  {ctaProfile.primary.label}
                 </Button>
-                <Button
-                  href={
-                    primaryRelatedJourney
-                      ? getJourneyHref(primaryRelatedJourney.slug)
-                      : NAV_HREFS.journeys
-                  }
-                  variant="ghost"
-                >
-                  {primaryRelatedJourney ? "Start With This Journey" : "Explore the Journeys"}
+                <Button href={ctaProfile.secondary.href} variant="ghost">
+                  {ctaProfile.secondary.label}
                 </Button>
               </div>
+              {ctaProfile.journeyLinks && ctaProfile.journeyLinks.length > 0 && (
+                <div className="mt-7 flex flex-col gap-3 border-t border-stone-200 pt-5 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-7 sm:gap-y-3">
+                  <p className="label-tag text-stone-300">Natural next shape</p>
+                  <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
+                    {ctaProfile.journeyLinks.map((link) => (
+                      <Link
+                        key={`${article.slug}-${link.href}`}
+                        href={link.href}
+                        className="text-2xs font-normal tracking-wide uppercase text-stone-500 border-b border-stone-200 pb-[2px] transition-colors duration hover:text-forest hover:border-forest"
+                      >
+                        {link.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
           </Reveal>
         </div>
@@ -7050,13 +7167,6 @@ export default function ArticlePage({
                 );
               })}
             </div>
-
-            <Reveal>
-              <div className="mt-10">                <Button href={NAV_HREFS.inquire} variant="ghost">
-                  Start Your Private Enquiry
-                </Button>
-              </div>
-            </Reveal>
           </div>
         </section>
       )}

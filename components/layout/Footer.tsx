@@ -50,7 +50,7 @@ export function Footer() {
         <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
           <div className="flex flex-col gap-2">
             <p className="text-2xs tracking-[0.08em] text-white/[0.16]">
-              © {year} Mason &amp; Wild. <span className="text-white/[0.12]">{BRAND_DESCRIPTOR}.</span>
+              &copy; {year} Mason &amp; Wild. <span className="text-white/[0.12]">{BRAND_DESCRIPTOR}.</span>
             </p>
             <p className="text-2xs text-white/[0.2] leading-relaxed max-w-[900px]">
               {BUSINESS_LEGAL_LINE}
