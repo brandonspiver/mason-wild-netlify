@@ -130,7 +130,7 @@ function getJourneyHref(slug: string): string {
 const ARTICLES: Record<string, FullArticle> = {
   "best-time-to-go-on-safari-in-africa": {
     slug:        "best-time-to-go-on-safari-in-africa",
-    title:       "Best Time to Go on Safari in Africa (And Why Most People Get It Wrong)",
+    title:       "Best Time to Go on Safari in Africa: Why the Right Month Depends on the Kind of Luxury You Actually Want",
     subtitle:
       "A refined guide to choosing the smartest safari season for your journey.",
     seoTitle:    "Best Time to Go on Safari in Africa",
@@ -154,7 +154,7 @@ const ARTICLES: Record<string, FullArticle> = {
     body: [
       {
         type: "p-lead",
-        text: "When people ask for the best time to go on safari in Africa, they are usually asking the wrong question.",
+        text: "When travellers ask for the best time to go on safari in Africa, they are usually hoping for certainty.",
       },
       {
         type: "p",
@@ -162,182 +162,156 @@ const ARTICLES: Record<string, FullArticle> = {
       },
       {
         type: "p",
-        text: "They are hoping for one clear answer. July. August. Dry season. Migration season.",
+        text: "A month. A season. A simple answer that turns a large decision into an easy one.",
       },
       {
         type: "p",
-        text: "That kind of advice is popular because it is simple. It is also often expensive, incomplete, and poorly matched to what travellers actually want.",
+        text: "July, perhaps. August. The dry season. Migration season. The kind of shorthand advice that circulates endlessly online.",
       },
       {
         type: "p",
-        text: "There is no single best time to visit Africa.",
+        text: "It is understandable. It is also where many expensive mistakes begin.",
       },
       {
         type: "p",
-        text: "There is only the best time for your priorities, tolerance for crowds, appetite for weather variation, budget, photography goals, and the type of journey you want to remember years from now.",
+        text: "There is no single best time to visit Africa. There is only the best time for the kind of journey you want, the atmosphere you value, the wildlife experience you imagine, and the way you prefer to travel.",
       },
       {
         type: "p",
-        text: "For some travellers, peak dry season is exactly right. For others, it is the most overpaid and under-considered option on the market.",
+        text: "For one traveller, peak dry season may be exactly right: clear mornings, concentrated wildlife, classic safari drama. For another, the same dates can mean premium pricing, crowded calendars, and a version of luxury that feels more scheduled than spontaneous.",
       },
       {
         type: "p",
-        text: "The difference is not luck. It is planning.",
+        text: "Seasonality is not a footnote in safari planning. It is one of the most important decisions you will make. The same budget, spent in different months, can produce two entirely different journeys.",
       },
       {
         type: "p",
-        text: "At Mason & Wild, seasonality is one of the most important decisions we make for clients because the same budget can create two completely different journeys depending on when you travel.",
+        text: "That is where thoughtful planning matters.",
       },
       {
         type: "h2",
-        text: "The Quick Answer: When Is the Best Time to Go on Safari in Africa?",
+        text: "Why \"Best Time\" Is the Wrong First Question",
       },
       {
         type: "p",
-        text: "If you want the broadest answer: June to October is excellent in many safari destinations, especially in Southern and East Africa.",
+        text: "The better question is this: what kind of safari do you actually want?",
       },
       {
         type: "p",
-        text: "Why: drier landscapes often make wildlife easier to spot, animals gather around water sources, temperatures are cooler in many regions, and classic safari conditions are strong.",
+        text: "Do you want frequent wildlife sightings and classic postcard conditions? Do you want privacy and a sense of space? Do you want lush landscapes and dramatic skies? Do you want the strongest possible value for a high-end trip? Do you want romance, softer pacing, and beach time after the bush? Do you want a first safari that feels easy and rewarding, or a more seasoned journey with depth and fewer crowds?",
       },
       {
         type: "p",
-        text: "But broad answers create broad mistakes.",
+        text: "Until that is clear, month-by-month advice is largely guesswork.",
       },
       {
         type: "p",
-        text: "Because June in Botswana is not the same as June in Tanzania. October in Zambia is not the same as October in Cape Town. November can be brilliant for some travellers and poor for others.",
+        text: "Too many travellers choose dates before they choose outcomes. They start with calendars, school holidays, or whatever Google says is best, then try to force the trip around that decision.",
       },
       {
         type: "p",
-        text: "That is where expertise matters.",
+        text: "It is usually smarter to reverse the process.",
       },
       {
         type: "h2",
-        text: "Why Most People Get Safari Timing Wrong",
+        text: "Why Dry Season Is Popular, and Why It Is Not Always Ideal",
       },
       {
         type: "p",
-        text: "Most travellers accidentally optimise for marketing headlines rather than experience quality.",
+        text: "Across much of Southern and East Africa, the dry months from roughly June to October are popular for good reason.",
       },
       {
         type: "p",
-        text: "They choose peak season, migration season, the best month according to Google, the dates easiest for friends or school calendars, or the month everyone else books.",
+        text: "Vegetation often thins, which can make wildlife easier to spot. Water sources become more important, drawing animals into predictable areas. Days are typically clear, mornings can be crisp, and the rhythm of safari feels clean and reliable.",
       },
       {
         type: "p",
-        text: "That can work.",
+        text: "For first-time travellers who want to maximise sightings and enjoy the classic image of safari, dry season can be an excellent place to start.",
       },
       {
         type: "p",
-        text: "It can also create overpriced camps, lower availability, more vehicles at sightings, rushed routing, weaker value, and journeys built around calendar pressure instead of personal fit.",
+        text: "But popularity has consequences.",
       },
       {
         type: "p",
-        text: "Luxury travel should be designed around you, not around search trends.",
+        text: "The same months that create reliable game viewing also attract the highest demand. Rates rise. The best camps sell out early. In some famous regions, sightings can feel more shared than private. Journeys may require firmer routing because availability disappears months in advance.",
+      },
+      {
+        type: "p",
+        text: "None of this means avoid peak season. It means understand what you are buying.",
+      },
+      {
+        type: "p",
+        text: "You are often paying not just for wildlife conditions, but for certainty.",
       },
       {
         type: "h2",
-        text: "Step One: Decide What You Actually Want",
+        text: "Why Green Season Is So Frequently Undervalued",
       },
       {
         type: "p",
-        text: "Before choosing a month, decide which of these matters most:",
-      },
-      {
-        type: "h3",
-        text: "Wildlife Density",
+        text: "There is a tendency to treat the greener months, often November through March depending on region, as second-best. That is simplistic and often wrong.",
       },
       {
         type: "p",
-        text: "You want the strongest possible sightings and classic safari drama.",
-      },
-      {
-        type: "h3",
-        text: "Privacy",
+        text: "Green season can be deeply rewarding, particularly for travellers who care about mood as much as mechanics.",
       },
       {
         type: "p",
-        text: "You care about space, fewer guests, and calm atmosphere.",
-      },
-      {
-        type: "h3",
-        text: "Value",
+        text: "The landscapes become richer. Storm light can be extraordinary. Birdlife flourishes. Many areas feel quieter. Newborn animals begin to appear. Rates may soften. Camps that felt fully subscribed in peak season can suddenly feel more spacious and personal.",
       },
       {
         type: "p",
-        text: "You want intelligent pricing without sacrificing quality.",
-      },
-      {
-        type: "h3",
-        text: "Romance",
+        text: "For photographers, romantics, repeat travellers, or anyone who values atmosphere over ticking sightings boxes, green season can feel more luxurious than the obvious headline dates.",
       },
       {
         type: "p",
-        text: "You want mood, suites, privacy, beaches, and softer pacing.",
-      },
-      {
-        type: "h3",
-        text: "Photography",
+        text: "There are trade-offs, of course. Weather patterns are less predictable. Some remote camps close seasonally. Wildlife can be more dispersed. But trade-offs exist in every season.",
       },
       {
         type: "p",
-        text: "You care about skies, landscapes, light, and seasonal contrast.",
+        text: "Sophisticated travellers understand that less obvious and less good are not the same thing.",
       },
       {
-        type: "h3",
-        text: "First-Time Confidence",
-      },
-      {
-        type: "p",
-        text: "You want an easy, high-success Africa introduction.",
-      },
-      {
-        type: "h3",
-        text: "Multi-Stop Journey Design",
-      },
-      {
-        type: "p",
-        text: "You want bush + city + beach with smart weather flow.",
-      },
-      {
-        type: "p",
-        text: "Once this is clear, timing becomes easier.",
+        type: "image",
+        image: {
+          src: "/journal/best-time-to-go-on-safari-in-africa/green-season-africa.jpg",
+          alt: "Green season safari landscape in Africa with dramatic skies",
+          caption: "Green season atmosphere",
+          position: "center",
+        },
+        aspect: "16 / 10",
       },
       {
         type: "h2",
-        text: "Southern Africa: June to October",
+        text: "Botswana: Choose Between Precision and Poetry",
       },
       {
         type: "p",
-        text: "Best for Botswana, Zambia, Zimbabwe, Namibia, and many safari regions of South Africa.",
+        text: "Botswana is often spoken about as though there is one correct moment to go. In reality, it offers very different experiences across the year.",
       },
       {
         type: "p",
-        text: "Why it works: dry bush improves visibility, water sources attract wildlife, mornings and evenings are cooler, and safari rhythm is reliable.",
+        text: "In the drier months, the Okavango and surrounding concessions can deliver exactly what many travellers hope for: polished camps, exceptional guiding, and consistent wildlife encounters in landscapes that feel iconic.",
       },
       {
         type: "p",
-        text: "This is often ideal for first-time safari travellers who want strong game viewing and proven conditions.",
+        text: "But Botswana in the greener periods can be unexpectedly seductive. The mood changes. Colours deepen. The pace softens. There can be fewer people, better value, and a stronger sense of intimacy.",
       },
       {
         type: "p",
-        text: "But peak months in famous reserves can also mean higher nightly rates, booking pressure, less spontaneity, and more shared sightings in busier areas.",
+        text: "If it is your first premium safari and you want to feel you nailed it, classic dry season is compelling.",
       },
       {
         type: "p",
-        text: "For clients who value privacy as much as sightings, shoulder periods are often smarter than obvious headline dates.",
+        text: "If you already know that atmosphere matters as much as sightings, shoulder months often deserve serious attention.",
       },
       {
         type: "p",
         content: [
-          { type: "text", text: "Recommended routes include " },
+          { type: "text", text: "For this privacy-first style, " },
           { type: "link", text: "The Intimate", href: "/journeys/the-intimate" },
-          { type: "text", text: ", " },
-          { type: "link", text: "The Untamed", href: "/journeys/the-untamed" },
-          { type: "text", text: ", and " },
-          { type: "link", text: "The Adventure", href: "/journeys/the-adventure" },
-          { type: "text", text: "." },
+          { type: "text", text: " is a strong reference point." },
         ],
       },
       {
@@ -352,234 +326,68 @@ const ARTICLES: Record<string, FullArticle> = {
       },
       {
         type: "h2",
-        text: "Green Season: The Most Misunderstood Opportunity",
+        text: "Zambia: For Travellers Who Want Substance",
       },
       {
         type: "p",
-        text: "Roughly November to March in many regions.",
+        text: "Zambia rarely shouts for attention, which is part of its appeal.",
       },
       {
         type: "p",
-        text: "People hear rainy season and assume avoid. That is simplistic.",
+        text: "It tends to attract travellers who care less about fashionable names and more about quality of guiding, authenticity of experience, and a wilder sense of place.",
       },
       {
         type: "p",
-        text: "Green season can offer lush landscapes, fewer vehicles, better rates, dramatic skies, newborn wildlife, superb photography contrast, and a softer more intimate atmosphere.",
+        text: "The dry season months are especially strong, particularly when camps reopen and walking safaris come into their own.",
       },
       {
         type: "p",
-        text: "For many sophisticated travellers, this can feel more luxurious than peak season.",
-      },
-      {
-        type: "h3",
-        text: "When Green Season Is Wrong",
-      },
-      {
-        type: "p",
-        text: "If wildlife visibility is your only priority, if you dislike weather unpredictability, if specific camps close seasonally, or if you need guaranteed ultra-dry conditions.",
-      },
-      {
-        type: "h3",
-        text: "When Green Season Is Right",
-      },
-      {
-        type: "p",
-        text: "Repeat travellers, honeymooners, photographers, value-conscious luxury buyers, and guests who dislike crowds.",
-      },
-      {
-        type: "image",
-        image: {
-          src: "/journal/best-time-to-go-on-safari-in-africa/green-season-africa.jpg",
-          alt: "Green season safari landscape in Africa with dramatic skies",
-          caption: "Green season atmosphere",
-          position: "center",
-        },
-        aspect: "16 / 10",
-      },
-      {
-        type: "h2",
-        text: "Botswana: Best Time Depends on Water vs Value",
-      },
-      {
-        type: "p",
-        text: "Botswana is not simply go in July. Different travellers want different versions of Botswana.",
-      },
-      {
-        type: "p",
-        text: "June to October is classic premium season with strong game viewing, iconic Okavango conditions, and high demand.",
-      },
-      {
-        type: "p",
-        text: "November to March is greener, moodier, quieter, and often better value.",
-      },
-      {
-        type: "p",
-        text: "If this is your first premium safari and budget is strong, dry season can be worth it. If you care about atmosphere, privacy, and value, shoulder months are often smarter.",
-      },
-      {
-        type: "h2",
-        text: "Zambia: One of Africa's Finest Dry Season Plays",
-      },
-      {
-        type: "p",
-        text: "Why Zambia wins: serious guiding culture, walking safari heritage, lower-density feel, and wild authenticity.",
-      },
-      {
-        type: "p",
-        text: "Especially strong: June to October.",
+        text: "A Zambia journey often suits those who have already done safari once elsewhere and now want something deeper, calmer, and more serious.",
       },
       {
         type: "p",
         content: [
-          { type: "text", text: "It is best for travellers who have already done safari elsewhere and now want substance. " },
+          { type: "text", text: "For this profile, " },
           { type: "link", text: "The Untamed", href: "/journeys/the-untamed" },
-          { type: "text", text: " reflects this style particularly well." },
+          { type: "text", text: " remains one of the clearest route expressions." },
         ],
       },
       {
         type: "h2",
-        text: "South Africa: A Year-Round Strategic Option",
+        text: "South Africa: More About Flow Than One Perfect Month",
       },
       {
         type: "p",
-        text: "South Africa is different because it allows combinations: Cape Town, Winelands, Kruger and private reserves, KwaZulu-Natal bush + beach, and Garden Route extensions.",
+        text: "South Africa is often misunderstood by travellers looking for a single ideal season. In truth, it is one of the continent's most versatile luxury destinations precisely because it offers different strengths at different times.",
       },
       {
         type: "p",
-        text: "Cape Town is generally strongest from November to March. Many safari areas perform well across multiple seasons.",
+        text: "Cape Town thrives in the summer months, when long evenings, beach days, restaurant terraces, and Winelands escapes create a highly social, highly polished atmosphere.",
       },
       {
         type: "p",
-        text: "South Africa is often less about one perfect month and more about building the right multi-stop route.",
+        text: "Safari regions, meanwhile, may perform strongly across multiple windows depending on where you go.",
+      },
+      {
+        type: "p",
+        text: "This is why South Africa is often less about finding one magic month and more about building intelligent combinations.",
+      },
+      {
+        type: "p",
+        text: "A traveller may come for Cape Town energy, then finish in the bush. Another may pair KwaZulu-Natal's coastline with safari. Another may centre the Winelands and use safari as a final punctuation mark.",
+      },
+      {
+        type: "p",
+        text: "That flexibility is why South Africa remains one of the smartest first-time Africa choices.",
       },
       {
         type: "p",
         content: [
-          { type: "text", text: "For relevant route styles, see " },
+          { type: "text", text: "For South Africa-led journey styles, see " },
           { type: "link", text: "The Social Shift", href: "/the-social" },
           { type: "text", text: " and " },
           { type: "link", text: "The Romantic", href: "/journeys/the-romantic" },
           { type: "text", text: "." },
-        ],
-      },
-      {
-        type: "h2",
-        text: "Tanzania: Do Not Reduce It to the Migration",
-      },
-      {
-        type: "p",
-        text: "The Great Migration is extraordinary. It is also overused in marketing.",
-      },
-      {
-        type: "p",
-        text: "Some travellers build an entire expensive trip around one hoped-for crossing moment. That can be magical. It can also be crowded, overhyped, and too narrow a reason to choose East Africa.",
-      },
-      {
-        type: "p",
-        text: "Tanzania offers far more: vast plains, elegant camps, superb guiding, seasonal variety, and Zanzibar pairing.",
-      },
-      {
-        type: "p",
-        content: [
-          { type: "text", text: "Choose Tanzania for the ecosystem of experiences, not just one spectacle. " },
-          { type: "link", text: "The Private Circuit", href: "/journeys/the-private-circuit" },
-          { type: "text", text: " is a strong model for this approach." },
-        ],
-      },
-      {
-        type: "h2",
-        text: "Namibia: Timing Is About Landscapes and Flow",
-      },
-      {
-        type: "p",
-        text: "Namibia is less about chasing predators and more about space, design, geology, movement, and mood.",
-      },
-      {
-        type: "p",
-        text: "Best windows often lean drier and cooler. It is ideal for couples wanting something different, repeat Africa travellers, design-minded clients, and those who love road rhythm and scenery.",
-      },
-      {
-        type: "p",
-        content: [
-          { type: "text", text: "For this style, " },
-          { type: "link", text: "The Adventure", href: "/journeys/the-adventure" },
-          { type: "text", text: " is the natural fit." },
-        ],
-      },
-      {
-        type: "h2",
-        text: "Best Time to Visit Africa by Destination",
-      },
-      {
-        type: "table",
-        columns: ["Destination", "Best Months", "Ideal For"],
-        rows: [
-          {
-            cells: [
-              "Botswana",
-              "Jun to Oct",
-              "Water-based safari, exclusivity, iconic wildlife",
-            ],
-          },
-          {
-            cells: [
-              "Zambia",
-              "Jun to Oct",
-              "Walking safari, raw wilderness, guiding",
-            ],
-          },
-          {
-            cells: [
-              "South Africa",
-              "Year-round",
-              "First safari, Cape Town combinations, variety",
-            ],
-          },
-          {
-            cells: [
-              "Tanzania",
-              "Jun to Oct / Jan to Mar",
-              "Plains safari, migration routes, beach pairings",
-            ],
-          },
-          {
-            cells: [
-              "Namibia",
-              "May to Oct",
-              "Landscapes, luxury adventure, desert weather",
-            ],
-          },
-          {
-            cells: [
-              "Mozambique",
-              "May to Nov",
-              "Beach extension after safari, diving, romance",
-            ],
-          },
-        ],
-      },
-      {
-        type: "h2",
-        text: "Cape Town, Winelands + Safari: One of the Smartest Luxury Combinations",
-      },
-      {
-        type: "p",
-        text: "Cape Town is especially strong from November to March with warm weather, long evenings, and world-class dining energy.",
-      },
-      {
-        type: "p",
-        text: "Its position also allows seamless access to the Cape Winelands, where private tastings, vineyard lunches, mountain-backed estates, and elegant countryside stays add a softer layer before or after safari.",
-      },
-      {
-        type: "p",
-        text: "Paired correctly with safari, it creates contrast: design-forward city stay, food and wine, ocean scenery, private tastings and long lunches, then wilderness and wildlife.",
-      },
-      {
-        type: "p",
-        content: [
-          { type: "text", text: "For a South Africa-led rhythm with strong city energy, " },
-          { type: "link", text: "The Social Shift", href: "/the-social" },
-          { type: "text", text: " is a useful reference." },
         ],
       },
       {
@@ -594,23 +402,99 @@ const ARTICLES: Record<string, FullArticle> = {
       },
       {
         type: "h2",
-        text: "Best Time for Honeymoons and Couples",
+        text: "Tanzania: More Than the Migration",
       },
       {
         type: "p",
-        text: "For couples, the best time is often about mood rather than wildlife statistics.",
+        text: "The Great Migration deserves its reputation. It is one of the natural world's great spectacles.",
       },
       {
         type: "p",
-        text: "That may mean shoulder season privacy, warm beach weather, fewer shared sightings, better suite availability, and a slower pace.",
+        text: "But many travellers make the mistake of reducing Tanzania to a single headline event. They build expensive journeys around one hoped-for crossing, one viral image, one moment that may or may not align with nature's timetable.",
+      },
+      {
+        type: "p",
+        text: "Tanzania deserves better than that.",
+      },
+      {
+        type: "p",
+        text: "It offers extraordinary plains, elegant camps, serious guiding, and the ability to pair safari with Zanzibar in a way few destinations can match.",
+      },
+      {
+        type: "p",
+        text: "For milestone trips, anniversaries, or travellers wanting a first East Africa experience with scale and polish, it remains exceptional.",
+      },
+      {
+        type: "p",
+        text: "Choose Tanzania for the ecosystem, not only the spectacle.",
       },
       {
         type: "p",
         content: [
-          { type: "text", text: "For romance-first timing and routing, " },
-          { type: "link", text: "The Romantic", href: "/journeys/the-romantic" },
-          { type: "text", text: " is where many couples begin." },
+          { type: "text", text: "For this style, " },
+          { type: "link", text: "The Private Circuit", href: "/journeys/the-private-circuit" },
+          { type: "text", text: " is a strong benchmark." },
         ],
+      },
+      {
+        type: "h2",
+        text: "Namibia: When Landscape Is the Main Character",
+      },
+      {
+        type: "p",
+        text: "Namibia asks a different question.",
+      },
+      {
+        type: "p",
+        text: "Rather than maximising sightings, it invites travellers to think about silence, movement, geology, design, and scale.",
+      },
+      {
+        type: "p",
+        text: "It is often less about chasing predators and more about feeling small in the best possible way.",
+      },
+      {
+        type: "p",
+        text: "Cooler, drier periods are often especially comfortable for exploring, but Namibia is less a destination of one perfect month than one of rhythm.",
+      },
+      {
+        type: "p",
+        text: "It suits travellers who love road journeys, architecture, vastness, and the emotional effect of open space.",
+      },
+      {
+        type: "p",
+        content: [
+          { type: "text", text: "For this travel language, " },
+          { type: "link", text: "The Adventure", href: "/journeys/the-adventure" },
+          { type: "text", text: " is a natural fit." },
+        ],
+      },
+      {
+        type: "h2",
+        text: "The Most Intelligent Journeys Think in Sequences",
+      },
+      {
+        type: "p",
+        text: "The best timing decisions are rarely about one destination in isolation. They are about how multiple places work together.",
+      },
+      {
+        type: "p",
+        text: "Cape Town followed by safari and then coast creates a completely different emotional arc than safari alone.",
+      },
+      {
+        type: "p",
+        text: "Botswana with Victoria Falls feels different in July than in November.",
+      },
+      {
+        type: "p",
+        text: "Tanzania followed by Zanzibar can be ideal when you want intensity first and softness second.",
+      },
+      {
+        type: "p",
+        text: "Luxury travel is increasingly about sequence, not simply destination.",
+      },
+      {
+        type: "p",
+        text: "That is one reason bespoke planning matters more than ever.",
       },
       {
         type: "image",
@@ -624,59 +508,87 @@ const ARTICLES: Record<string, FullArticle> = {
       },
       {
         type: "h2",
-        text: "The Smartest Journeys Use Contrast",
+        text: "Common Mistakes Affluent Travellers Make",
       },
       {
         type: "p",
-        text: "Examples: February Cape Town + Safari + Mozambique. July Botswana + Victoria Falls. September Zambia + Lower Zambezi + beach extension. January Tanzania + Zanzibar. May Namibia + Cape Town.",
+        text: "The first is booking too late. The best camps in strong seasons disappear early, especially if you want the right room category or a multi-stop route that flows properly.",
       },
       {
         type: "p",
-        text: "This is how professionals think: seasonality across the whole journey.",
+        text: "The second is overpaying for peak dates that are not actually necessary. In many cases, shoulder season offers most of the experience with meaningfully better value and availability.",
+      },
+      {
+        type: "p",
+        text: "The third is choosing travel dates based on work calendars alone. Practicality matters, but when possible, aligning the trip to seasonality often transforms the result.",
+      },
+      {
+        type: "p",
+        text: "The fourth is focusing only on wildlife. Sightings matter, but so do pace, privacy, aesthetics, weather, and emotional tone.",
+      },
+      {
+        type: "p",
+        text: "Luxury is rarely about one variable.",
       },
       {
         type: "h2",
-        text: "Mistakes Wealthy Travellers Make",
-      },
-      {
-        type: "h3",
-        text: "Booking Too Late",
+        text: "So, When Should You Go?",
       },
       {
         type: "p",
-        text: "Best camps disappear early in peak windows.",
-      },
-      {
-        type: "h3",
-        text: "Overpaying for Headline Dates",
+        text: "If you want classic first-safari confidence, dry season is often strong.",
       },
       {
         type: "p",
-        text: "Sometimes shoulder season gives 90 percent of the experience for meaningfully better value.",
-      },
-      {
-        type: "h3",
-        text: "Chasing One Viral Wildlife Moment",
+        text: "If you want atmosphere, softness, photography, and better value, shoulder or green periods can be superb.",
       },
       {
         type: "p",
-        text: "Trips built around social media expectations often disappoint.",
-      },
-      {
-        type: "h3",
-        text: "Ignoring Pace",
+        text: "If you want city, coast, and safari in one journey, South Africa offers outstanding flexibility.",
       },
       {
         type: "p",
-        text: "Too many flights ruin expensive journeys.",
-      },
-      {
-        type: "h3",
-        text: "Choosing Month Before Destination Strategy",
+        text: "If you want iconic scale, Tanzania remains powerful.",
       },
       {
         type: "p",
-        text: "Reverse the order.",
+        text: "If you want privacy-first safari, Botswana is hard to beat.",
+      },
+      {
+        type: "p",
+        text: "If you want something more seasoned and less obvious, Zambia and Namibia deserve attention.",
+      },
+      {
+        type: "p",
+        text: "The best time is not the month everyone names.",
+      },
+      {
+        type: "p",
+        text: "It is the month that gives you the version of Africa you actually want.",
+      },
+      {
+        type: "h2",
+        text: "Why Work With Mason & Wild",
+      },
+      {
+        type: "p",
+        text: "Timing changes everything.",
+      },
+      {
+        type: "p",
+        text: "It shapes cost, atmosphere, crowd levels, wildlife rhythm, property availability, and how a journey feels from beginning to end.",
+      },
+      {
+        type: "p",
+        text: "We help clients choose not just where to go, but when to go, how to combine it, and how to make the experience feel private, intelligent, and worth the investment.",
+      },
+      {
+        type: "p",
+        text: "Because luxury is not going when everyone else goes.",
+      },
+      {
+        type: "p",
+        text: "It is going when it works best for you.",
       },
       {
         type: "h2",
@@ -688,7 +600,7 @@ const ARTICLES: Record<string, FullArticle> = {
       },
       {
         type: "p",
-        text: "There is no universal answer. July to October is strong in many regions, but the best month depends on destination and priorities.",
+        text: "There is no universal answer. June to October is strong in many regions, but the best month depends on destination and priorities.",
       },
       {
         type: "h3",
@@ -696,23 +608,15 @@ const ARTICLES: Record<string, FullArticle> = {
       },
       {
         type: "p",
-        text: "Dry season is often stronger for sightings. Green season can be stronger for scenery, value, privacy, and atmosphere.",
+        text: "Dry season is often stronger for sightings. Green season can be stronger for scenery, privacy, mood, and value.",
       },
       {
         type: "h3",
-        text: "What is the cheapest time to go on safari?",
+        text: "How many nights should I plan?",
       },
       {
         type: "p",
-        text: "Shoulder and green seasons often offer better pricing than peak dry months.",
-      },
-      {
-        type: "h3",
-        text: "How many days do I need?",
-      },
-      {
-        type: "p",
-        text: "10 to 14 nights usually creates the best balance for a premium multi-stop Africa journey.",
+        text: "For a premium Africa journey, 10 to 14 nights is often the sweet spot.",
       },
       {
         type: "h3",
@@ -720,23 +624,15 @@ const ARTICLES: Record<string, FullArticle> = {
       },
       {
         type: "p",
-        text: "Yes. It remains one of the strongest luxury travel combinations anywhere.",
+        text: "Absolutely. It remains one of the strongest luxury travel combinations anywhere.",
       },
       {
-        type: "h2",
-        text: "Why Work With Mason & Wild",
-      },
-      {
-        type: "p",
-        text: "Travel timing is not a small detail. It changes everything: experience quality, crowd levels, cost efficiency, emotional tone, logistics, and property availability.",
+        type: "h3",
+        text: "Is shoulder season worth considering?",
       },
       {
         type: "p",
-        text: "We help clients choose the right season, route, and rhythm so the journey feels private, intelligent, and worth it.",
-      },
-      {
-        type: "p",
-        text: "Because luxury is not going when everyone else goes. It is going when it works best for you.",
+        text: "Very often, yes. It can be one of the smartest ways to travel well.",
       },
       {
         type: "h2",
@@ -744,7 +640,7 @@ const ARTICLES: Record<string, FullArticle> = {
       },
       {
         type: "p",
-        text: "If Africa is on your radar, we will help you choose the smartest time to travel and build the journey around it.",
+        text: "If Africa is on your radar, we will help you choose the right season, the right route, and the right rhythm for the journey you actually want.",
       },
       {
         type: "p",
@@ -1196,11 +1092,11 @@ const ARTICLES: Record<string, FullArticle> = {
       },
       {
         type: "h2",
-        text: "Why Generic Booking Sites Miss This Entirely",
+        text: "Why Generic Booking Platforms Cannot Solve This",
       },
       {
         type: "p",
-        text: "Booking platforms can show rooms.",
+        text: "Booking sites can show rooms.",
       },
       {
         type: "p",
@@ -1225,13 +1121,13 @@ const ARTICLES: Record<string, FullArticle> = {
       {
         type: "p",
         content: [
-          { type: "text", text: "Use internal journey references like " },
+          { type: "text", text: "For journey styles aligned with these priorities, explore " },
           { type: "link", text: "The Intimate", href: "/journeys/the-intimate" },
           { type: "text", text: ", " },
           { type: "link", text: "The Social Shift", href: "/the-social" },
           { type: "text", text: ", and " },
           { type: "link", text: "The Adventure", href: "/journeys/the-adventure" },
-          { type: "text", text: " where relevant to route and pace." },
+          { type: "text", text: "." },
         ],
       },
       {
@@ -1376,7 +1272,7 @@ const ARTICLES: Record<string, FullArticle> = {
   },
   "lgbtq-luxury-travel-africa": {
     slug:        "lgbtq-luxury-travel-africa",
-    title:       "LGBTQ+ Luxury Travel in Africa: The Definitive Guide to Where to Go, What to Know, and How to Choose Well",
+    title:       "LGBTQ+ Luxury Travel in Africa: Where to Go, What to Know, and How to Choose Well",
     subtitle:
       "A refined guide to planning LGBTQ+ luxury travel in Africa with confidence, privacy, and destination-level clarity.",
     seoTitle:    "LGBTQ+ Luxury Travel in Africa",
@@ -1400,15 +1296,11 @@ const ARTICLES: Record<string, FullArticle> = {
     body: [
       {
         type: "p-lead",
-        text: "For many LGBTQ+ travellers, planning Africa is not only about choosing a destination.",
+        text: "For many LGBTQ+ travellers, planning Africa is not simply about choosing a destination. It is about choosing the right environment.",
       },
       {
         type: "p",
         text: "By Zannon James, Founder of Mason & Wild",
-      },
-      {
-        type: "p",
-        text: "It is about choosing the right environment.",
       },
       {
         type: "p",
@@ -1432,19 +1324,23 @@ const ARTICLES: Record<string, FullArticle> = {
       },
       {
         type: "h2",
-        text: "The Quick Answer: Is Africa Good for LGBTQ+ Luxury Travel?",
+        text: "The Real Question Is Not \"Is Africa Safe?\"",
       },
       {
         type: "p",
-        text: "Yes, absolutely, when chosen intelligently.",
+        text: "Many travellers begin with safety, and understandably so. But the more useful question is usually broader: where will we feel most at ease, most welcomed, and most ourselves?",
       },
       {
         type: "p",
-        text: "Africa offers some of the most rewarding luxury travel experiences anywhere in the world: world-class safari lodges, extraordinary privacy, beautiful coastlines and islands, design-forward hotels, food and wine culture, meaningful nature experiences, highly personalised service, and powerful milestone-travel energy.",
+        text: "Safety is not only legal frameworks. It is also atmosphere, hospitality culture, route design, staff warmth, privacy, and whether a destination feels frictionless or effortful.",
       },
       {
         type: "p",
-        text: "The key is not asking whether Africa works. The key is asking which destinations match your comfort level, travel style, and desired atmosphere.",
+        text: "Two countries with similar laws can feel completely different in practice. Two hotels in the same city can feel worlds apart.",
+      },
+      {
+        type: "p",
+        text: "That is why experienced planning matters.",
       },
       {
         type: "h2",
@@ -1452,106 +1348,50 @@ const ARTICLES: Record<string, FullArticle> = {
       },
       {
         type: "p",
-        text: "Most travellers are not asking for rainbow branding.",
+        text: "Most travellers are not looking for rainbow branding.",
       },
       {
         type: "p",
-        text: "They are asking for ease, natural hospitality, no awkwardness, sophisticated environments, beautiful design, privacy when desired, celebration when desired, staff who understand modern travellers, and journeys that feel smooth not effortful.",
+        text: "They are looking for ease.",
       },
       {
         type: "p",
-        text: "This is why property selection matters more than marketing language.",
+        text: "Ease means arriving at a beautiful place and not having to explain yourselves. It means warm service that feels natural rather than performative. It means being able to celebrate a honeymoon, anniversary, or milestone without awkward pauses or coded discomfort. It means privacy when wanted, energy when wanted, and the confidence that the people around you understand hospitality properly.",
       },
       {
         type: "p",
-        text: "A rainbow logo means little. A well-run property with emotionally intelligent service means everything.",
+        text: "This is why supplier selection matters more than slogans.",
+      },
+      {
+        type: "p",
+        text: "A rainbow logo can be marketing. A well-run property is evidence.",
       },
       {
         type: "h2",
-        text: "The Best LGBTQ+ Luxury Destinations in Africa",
-      },
-      {
-        type: "table",
-        columns: ["Destination", "Best For", "Why It Wins"],
-        rows: [
-          {
-            cells: [
-              "South Africa",
-              "First trips, couples, social energy",
-              "Progressive laws, Cape Town, polished infrastructure",
-            ],
-          },
-          {
-            cells: [
-              "Botswana",
-              "Honeymoons, safari purists",
-              "Low-density tourism, elite camps, discretion",
-            ],
-          },
-          {
-            cells: [
-              "Mozambique",
-              "Romance, coast, post-safari softness",
-              "Barefoot luxury, beach privacy",
-            ],
-          },
-          {
-            cells: [
-              "Namibia",
-              "Stylish explorers, scenic travellers",
-              "Design lodges, dramatic landscapes",
-            ],
-          },
-          {
-            cells: [
-              "Zambia",
-              "Repeat travellers, substance seekers",
-              "Authentic safari depth, guiding",
-            ],
-          },
-          {
-            cells: [
-              "Tanzania",
-              "Milestone trips, iconic first safari",
-              "Scale, camps, Zanzibar pairing",
-            ],
-          },
-        ],
-      },
-      {
-        type: "h2",
-        text: "South Africa: The Strongest First Recommendation",
+        text: "South Africa: The Clear First Recommendation for Many Travellers",
       },
       {
         type: "p",
-        text: "If someone asked for the easiest, smartest, most versatile first LGBTQ+ Africa trip, South Africa would often be the answer.",
+        text: "If someone asked for the smartest first LGBTQ+ luxury Africa trip, South Africa would often be the answer.",
       },
       {
         type: "p",
-        text: "Why: strong constitutional protections, a mature tourism industry, excellent flight access, high-quality hospitality talent, sophisticated dining and wine culture, a strong private villa and hotel scene, and Cape Town as a globally desirable city.",
-      },
-      {
-        type: "h3",
-        text: "Cape Town in Particular",
+        text: "It combines strong constitutional protections with a mature tourism industry, excellent flight access, sophisticated food and wine culture, and a hospitality scene accustomed to international travellers. More importantly, it offers range.",
       },
       {
         type: "p",
-        text: "Cape Town is one of the best cities in the world for couples wanting contrast.",
+        text: "Cape Town can be glamorous, social, romantic, outdoorsy, or quietly elegant depending on how you build it. Few cities in the world combine beaches, mountains, vineyards, design hotels, fine dining, and safari access so effortlessly.",
       },
       {
         type: "p",
-        text: "You can combine beach mornings, mountain scenery, design hotels, fine dining, Winelands tastings, stylish nightlife if wanted, helicopter days, yacht days, private guiding, and seamless safari add-ons.",
-      },
-      {
-        type: "p",
-        text: "Cape Town can be expressive, celebratory, romantic, or quietly elegant depending on how you build it.",
+        text: "That flexibility is powerful. It allows different couples to want completely different things and both be right.",
       },
       {
         type: "p",
         content: [
           { type: "text", text: "For this travel language, " },
           { type: "link", text: "The Social Shift", href: "/the-social" },
-          { type: "text", text: " is the strongest expression." },
+          { type: "text", text: " is a strong reference." },
         ],
       },
       {
@@ -1565,39 +1405,31 @@ const ARTICLES: Record<string, FullArticle> = {
         aspect: "16 / 10",
       },
       {
-        type: "h3",
-        text: "KwaZulu-Natal: Bush + Beach Without Complexity",
-      },
-      {
-        type: "p",
-        text: "For travellers wanting safari and coast without crossing borders, KwaZulu-Natal is underrated.",
-      },
-      {
-        type: "p",
-        text: "Think Big Five safari, warm Indian Ocean coast, wetlands and nature reserves, easy combinations, and strong value relative to multi-country routing. This is a smart second-trip South Africa play.",
-      },
-      {
         type: "h2",
         text: "Botswana: Luxury Without Noise",
       },
       {
         type: "p",
-        text: "Botswana is one of the finest safari destinations in the world for travellers who value privacy over scene.",
+        text: "Botswana is one of the finest safari countries in the world for travellers who value privacy over scene.",
       },
       {
         type: "p",
-        text: "Why it works so well: low-volume high-value tourism, exceptional guiding, high space-to-guest ratios, beautiful camp design, and a quiet luxury atmosphere.",
+        text: "Its low-volume tourism model means space matters. Camps tend to feel calm, intentional, and deeply personal. Service is often warm rather than theatrical. Landscapes create natural romance without trying too hard.",
       },
       {
         type: "p",
-        text: "Botswana feels expensive because it is often intentionally exclusive. For many couples, especially honeymooners, that exclusivity is worth it.",
+        text: "For many couples, especially honeymooners or travellers who live busy public lives, Botswana offers something rare: true quiet.",
+      },
+      {
+        type: "p",
+        text: "This is luxury without noise.",
       },
       {
         type: "p",
         content: [
-          { type: "text", text: "For privacy-first safari design, " },
+          { type: "text", text: "For this privacy-first style, " },
           { type: "link", text: "The Intimate", href: "/journeys/the-intimate" },
-          { type: "text", text: " is the closest fit." },
+          { type: "text", text: " remains one of the strongest options." },
         ],
       },
       {
@@ -1611,43 +1443,31 @@ const ARTICLES: Record<string, FullArticle> = {
         aspect: "16 / 10",
       },
       {
-        type: "h3",
-        text: "Best For",
-      },
-      {
-        type: "p",
-        text: "Honeymoons, privacy-first couples, repeat luxury travellers, and safari lovers who dislike crowds.",
-      },
-      {
-        type: "h3",
-        text: "Less Ideal For",
-      },
-      {
-        type: "p",
-        text: "Travellers wanting nightlife, high-energy city contrast without pairing another stop, or budget-led itineraries.",
-      },
-      {
         type: "h2",
-        text: "Mozambique: Romance and Exhale",
+        text: "Mozambique: Where Safari Becomes Softness",
       },
       {
         type: "p",
-        text: "For many couples, safari should be followed by softness. Mozambique excels here.",
+        text: "Many couples assume beach should come first and safari second. In practice, the reverse is often stronger.",
       },
       {
         type: "p",
-        text: "Why: warm Indian Ocean water, island and coastal lodges, barefoot elegance, a less mainstream feel than some beach markets, and excellent honeymoon mood.",
+        text: "Safari heightens attention. It sharpens presence. It creates shared memories quickly. Then, once that emotional energy is alive again, the coast becomes more powerful.",
       },
       {
         type: "p",
-        text: "Mozambique is less about doing and more about being. That makes it powerful after safari.",
+        text: "Mozambique excels in this second chapter.",
+      },
+      {
+        type: "p",
+        text: "Warm water, barefoot elegance, island rhythm, understated luxury, and a sense of distance from mainstream tourism make it one of the most romantic post-safari options in Africa.",
       },
       {
         type: "p",
         content: [
-          { type: "text", text: "For this rhythm, " },
+          { type: "text", text: "For this sequence, " },
           { type: "link", text: "The Romantic", href: "/journeys/the-romantic" },
-          { type: "text", text: " is the natural route language." },
+          { type: "text", text: " is a useful model." },
         ],
       },
       {
@@ -1661,51 +1481,35 @@ const ARTICLES: Record<string, FullArticle> = {
         aspect: "16 / 10",
       },
       {
-        type: "h3",
-        text: "Best For",
-      },
-      {
-        type: "p",
-        text: "Honeymoons, proposals, anniversary travel, and couples needing decompression.",
-      },
-      {
-        type: "h3",
-        text: "Less Ideal For",
-      },
-      {
-        type: "p",
-        text: "Travellers wanting nightlife or heavy activity.",
-      },
-      {
         type: "h2",
-        text: "Tanzania + Zanzibar: Big Milestone Energy",
+        text: "Tanzania and Zanzibar: Milestone Travel Done Well",
       },
       {
         type: "p",
-        text: "Tanzania suits travellers wanting iconic Africa.",
+        text: "Tanzania often suits travellers who want scale and a sense of occasion.",
       },
       {
         type: "p",
-        text: "Think great plains safari, strong camp circuits, serious wildlife scale, elegant lodges, and a Zanzibar finish.",
+        text: "The safari product can feel cinematic: sweeping plains, serious wildlife, elegant camps, dramatic movement, and then Zanzibar as a softer final note.",
       },
       {
         type: "p",
-        text: "This often appeals to travellers wanting a once-in-a-lifetime first Africa trip.",
-      },
-      {
-        type: "h3",
-        text: "Important Nuance",
+        text: "This combination often works beautifully for anniversaries, landmark birthdays, or a first Africa journey where travellers want iconic moments handled properly.",
       },
       {
         type: "p",
-        text: "Safari environments are often easy and welcoming. In more public settings, travellers may prefer greater discretion depending on context and personal comfort. That is intelligent situational awareness, not fear-based advice.",
+        text: "There is, however, an important nuance. Safari environments may feel wonderfully easy, while some public environments may call for more discretion depending on personal comfort and context.",
+      },
+      {
+        type: "p",
+        text: "That is not fear-based advice. It is simply intelligent travel awareness.",
       },
       {
         type: "p",
         content: [
-          { type: "text", text: "For this milestone structure, " },
+          { type: "text", text: "For this route style, " },
           { type: "link", text: "The Private Circuit", href: "/journeys/the-private-circuit" },
-          { type: "text", text: " is a strong model." },
+          { type: "text", text: " is a strong benchmark." },
         ],
       },
       {
@@ -1720,26 +1524,30 @@ const ARTICLES: Record<string, FullArticle> = {
       },
       {
         type: "h2",
-        text: "Namibia: For the Stylish Explorer",
+        text: "Namibia: For Travellers Who Want Something Different",
       },
       {
         type: "p",
-        text: "Not everyone wants a classic safari-heavy holiday.",
+        text: "Not every couple wants a classic safari-heavy trip.",
       },
       {
         type: "p",
-        text: "Namibia is for travellers drawn to design-led lodges, desert landscapes, scenic drives, architecture, solitude, and something different.",
+        text: "Some care more about design, architecture, silence, landscapes, road rhythm, and the emotional effect of space.",
       },
       {
         type: "p",
-        text: "This is a superb option for couples who value aesthetics as much as wildlife.",
+        text: "That is where Namibia becomes exceptional.",
+      },
+      {
+        type: "p",
+        text: "Namibia suits travellers who would rather wake to desert light than chase a checklist. It appeals to those who value atmosphere as much as sightings, and originality as much as status.",
       },
       {
         type: "p",
         content: [
-          { type: "text", text: "For this style of journey, " },
+          { type: "text", text: "For this travel personality, " },
           { type: "link", text: "The Adventure", href: "/journeys/the-adventure" },
-          { type: "text", text: " is the most aligned route." },
+          { type: "text", text: " is a natural fit." },
         ],
       },
       {
@@ -1754,155 +1562,79 @@ const ARTICLES: Record<string, FullArticle> = {
       },
       {
         type: "h2",
-        text: "Zambia: Substance Over Hype",
+        text: "Why Property Choice Often Matters More Than Country Choice",
       },
       {
         type: "p",
-        text: "Zambia often appeals to experienced travellers who care more about quality than brand-name destinations.",
+        text: "Travellers often focus heavily on country-level headlines. Those matter. But property choice is frequently more decisive.",
       },
       {
         type: "p",
-        text: "Why it wins: exceptional guides, walking safari heritage, wild feel, lower density than some famous circuits, and serious safari credibility.",
+        text: "Two hotels in the same city can feel completely different. One may be polished but cold. Another may understand warmth instinctively. One lodge may feel transactional. Another may feel like it was designed for celebration.",
       },
       {
         type: "p",
-        text: "This is often a second or third Africa trip choice.",
+        text: "What usually matters most is ownership culture, leadership standards, staff confidence, guest mix, privacy design, and emotional intelligence.",
+      },
+      {
+        type: "p",
+        text: "This is why generic booking platforms can only take you so far. They sell rooms. They do not sell atmosphere.",
       },
       {
         type: "h2",
-        text: "How Open Should You Be?",
+        text: "Best Journeys by Traveller Type",
       },
       {
         type: "p",
-        text: "This depends entirely on destination, property, context, and personal preference.",
+        text: "A first-time couple often does brilliantly with Cape Town and safari. Honeymooners frequently love Botswana followed by Mozambique. Social, style-led couples tend to thrive in Cape Town with Winelands and a short safari. Privacy-first travellers may prefer Botswana alone, or Botswana paired with a discreet beach stay. Explorer couples often light up in Namibia. Milestone celebrators may love Tanzania and Zanzibar.",
       },
       {
         type: "p",
-        text: "Some travellers want expressive celebration. Some want understated ease. Some want privacy. Some want a mix. All are valid.",
+        text: "The point is not that one route is best.",
       },
       {
         type: "p",
-        text: "The mistake is assuming one style fits every country. Good planning respects context while protecting joy.",
+        text: "It is that different people need different versions of luxury.",
       },
       {
         type: "h2",
-        text: "Why Property Choice Matters More Than Country Choice",
+        text: "Common Mistakes Travellers Make",
       },
       {
         type: "p",
-        text: "Two hotels in the same city can feel worlds apart. Two lodges in the same reserve can feel completely different.",
+        text: "One is choosing based on what is trending rather than what fits.",
       },
       {
         type: "p",
-        text: "What often matters most: ownership culture, leadership standards, staff warmth, international guest experience, privacy design, emotional intelligence, and attention to detail.",
+        text: "Another is overvaluing legal headlines while undervaluing hospitality culture.",
       },
       {
         type: "p",
-        text: "This is why booking platforms are limited. They sell inventory. They do not understand atmosphere.",
+        text: "Another is booking generic five-star hotels that look luxurious but feel emotionally flat.",
+      },
+      {
+        type: "p",
+        text: "Another is building routes with too many flights, which can quietly drain the joy from an expensive trip.",
+      },
+      {
+        type: "p",
+        text: "And perhaps the biggest mistake of all is assuming Africa is one story. It is many different realities.",
       },
       {
         type: "h2",
-        text: "Best Trip Styles by Traveller Type",
-      },
-      {
-        type: "h3",
-        text: "First-Time Couple",
+        text: "Why Work With Mason & Wild",
       },
       {
         type: "p",
-        text: "Cape Town + Safari",
-      },
-      {
-        type: "h3",
-        text: "Honeymooners",
+        text: "This kind of travel is rarely about labels. It is about wanting the right feeling.",
       },
       {
         type: "p",
-        text: "Botswana + Mozambique",
-      },
-      {
-        type: "h3",
-        text: "Social, Stylish Couple",
+        text: "We help clients choose destinations, properties, pacing, and combinations that feel elegant, comfortable, intelligent, and worth the investment.",
       },
       {
         type: "p",
-        text: "Cape Town + Winelands + Safari",
-      },
-      {
-        type: "h3",
-        text: "Privacy-First Couple",
-      },
-      {
-        type: "p",
-        text: "Botswana only, or Botswana + private beach",
-      },
-      {
-        type: "h3",
-        text: "Explorer Couple",
-      },
-      {
-        type: "p",
-        text: "Namibia + Cape Town",
-      },
-      {
-        type: "h3",
-        text: "Milestone Birthday / Celebration",
-      },
-      {
-        type: "p",
-        text: "Tanzania + Zanzibar",
-      },
-      {
-        type: "h2",
-        text: "Sample Itineraries",
-      },
-      {
-        type: "p",
-        text: "10 Nights: Cape Town + Safari. 12 Nights: Cape Town + Botswana + Mozambique. 14 Nights: South Africa + Zambia + Coast. 9 Nights: Botswana + Victoria Falls. 13 Nights: Tanzania + Zanzibar.",
-      },
-      {
-        type: "h2",
-        text: "Mistakes LGBTQ+ Travellers Make",
-      },
-      {
-        type: "h3",
-        text: "Choosing Based on Trending Destinations",
-      },
-      {
-        type: "p",
-        text: "Popularity does not equal fit.",
-      },
-      {
-        type: "h3",
-        text: "Overvaluing Legal Headlines Alone",
-      },
-      {
-        type: "p",
-        text: "Legal framework matters. So does service culture.",
-      },
-      {
-        type: "h3",
-        text: "Booking Generic Luxury Hotels",
-      },
-      {
-        type: "p",
-        text: "Luxury finishes are not the same as warm hospitality.",
-      },
-      {
-        type: "h3",
-        text: "Ignoring Route Flow",
-      },
-      {
-        type: "p",
-        text: "Too many flights flatten romance and energy.",
-      },
-      {
-        type: "h3",
-        text: "Assuming Africa Is One Story",
-      },
-      {
-        type: "p",
-        text: "It is many different realities.",
+        text: "Because trust is part of luxury.",
       },
       {
         type: "h2",
@@ -1914,7 +1646,7 @@ const ARTICLES: Record<string, FullArticle> = {
       },
       {
         type: "p",
-        text: "Some destinations are excellent choices, others require more caution or may not suit certain travellers. Expert destination selection matters.",
+        text: "Some destinations are excellent choices, while others require more nuance. Destination and property selection matter enormously.",
       },
       {
         type: "h3",
@@ -1922,7 +1654,7 @@ const ARTICLES: Record<string, FullArticle> = {
       },
       {
         type: "p",
-        text: "South Africa is often the strongest first recommendation.",
+        text: "South Africa is often the strongest first recommendation because of infrastructure, hospitality quality, and range.",
       },
       {
         type: "h3",
@@ -1930,7 +1662,7 @@ const ARTICLES: Record<string, FullArticle> = {
       },
       {
         type: "p",
-        text: "Yes. Many safari lodges are private, refined, and ideal for couples.",
+        text: "Absolutely. Many safari lodges are private, sophisticated, and ideal for couples.",
       },
       {
         type: "h3",
@@ -1938,43 +1670,15 @@ const ARTICLES: Record<string, FullArticle> = {
       },
       {
         type: "p",
-        text: "Exceptionally so, especially safari + beach combinations.",
+        text: "Exceptionally so, especially safari and beach combinations.",
       },
       {
         type: "h3",
-        text: "Where should we go if we want privacy?",
+        text: "Where should we go for privacy?",
       },
       {
         type: "p",
         text: "Botswana is one of the strongest answers.",
-      },
-      {
-        type: "h3",
-        text: "Where should we go if we want style and energy?",
-      },
-      {
-        type: "p",
-        text: "Cape Town paired with safari.",
-      },
-      {
-        type: "h2",
-        text: "Why Work With Mason & Wild",
-      },
-      {
-        type: "p",
-        text: "We understand this type of travel is rarely about labels.",
-      },
-      {
-        type: "p",
-        text: "It is about wanting the right feeling.",
-      },
-      {
-        type: "p",
-        text: "We help clients choose destinations, properties, pacing, and combinations that feel elegant, comfortable, intelligent, and worth the investment.",
-      },
-      {
-        type: "p",
-        text: "Because trust is part of luxury.",
       },
       {
         type: "h2",
@@ -6834,13 +6538,6 @@ export default function ArticlePage({
         <span>LGBTQ+ Travel in Southern Africa:</span>{" "}
         <span className="italic text-[0.82em] tracking-[-0.016em]">
           Where It Works, Where It Doesn&apos;t, and Why
-        </span>
-      </>
-    ) : article?.slug === "best-time-to-go-on-safari-in-africa" ? (
-      <>
-        <span>Best Time to Go on Safari in Africa</span>{" "}
-        <span className="italic text-[0.82em] tracking-[-0.016em]">
-          (And Why Most People Get It Wrong)
         </span>
       </>
     ) : (
