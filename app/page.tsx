@@ -368,7 +368,7 @@ export default function HomePage() {
               className="object-cover object-center"
               loading="lazy"
             />
-            <div className="absolute top-6 left-6 right-6 z-10">
+            <div className="absolute bottom-6 left-6 right-6 z-10">
               <div className="flex items-center gap-5 flex-wrap">
                 <span className="label-tag text-white/60 [text-shadow:0_2px_14px_rgba(0,0,0,0.45)]">
                   FOUNDER
