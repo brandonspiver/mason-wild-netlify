@@ -11,7 +11,7 @@ Sitemap: https://masonandwild.com/sitemap.xml
 - Journeys: https://masonandwild.com/journeys
 - Journal: https://masonandwild.com/journal
 - The Experience: https://masonandwild.com/the-experience
-- The Social: https://masonandwild.com/the-social
+- The Social Shift: https://masonandwild.com/the-social
 - Enquire: https://masonandwild.com/enquire
 
 ## Legal & Compliance

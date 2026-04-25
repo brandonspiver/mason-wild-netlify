@@ -10,7 +10,7 @@ import { absoluteUrl, buildPageMetadata } from "@/lib/seo";
 export const metadata: Metadata = buildPageMetadata({
   title: "Journeys",
   description:
-    "Seven ways of experiencing Africa  -  each built around a distinct intention. Private journeys designed for discerning LGBTQ+ travellers.",
+    "Seven ways of experiencing Africa, each built around a distinct intention. Private journeys designed for discerning LGBTQ+ travellers.",
   path: "/journeys",
 });
 
@@ -47,10 +47,10 @@ const ARCHETYPES = [
     slug:      "the-romantic",
     outcome:   "Wonder",
     name:      "The Romantic",
-    territory: "South Africa",
+    territory: "South Africa · Mozambique",
     tagline:   "Cinematic moments designed for two.",
     body:
-      "Star beds under the Namibian sky. Private sundowners at the edge of the Victoria Falls. The luxury of unhurried time in which two people can be entirely absorbed in each other  -  and in the landscape. Every element assumes that you want to be left alone.",
+      "Cape Town energy, Winelands softness, private safari depth, and a Mozambique finish by the sea. The luxury of unhurried time in which two people can be entirely absorbed in each other and in the landscape, with each chapter sequenced for intimacy and ease.",
     img: {
       src: "/journeys/the-romantic-card.png",
       alt: "Twilight dinner by the river",
@@ -156,7 +156,7 @@ export default function JourneysPage() {
       <section className="py-[clamp(40px,5vw,64px)] border-b border-stone-200">
         <div className="container-site max-w-[920px]">
           <p className="text-base font-light text-stone-500 leading-relaxed mb-6">
-            These seven journeys are not a product catalogue. Each one is built around a specific emotional register - a particular way of wanting to move through Africa - and every destination, property, and guide within them has passed Mason &amp; Wild&apos;s own vetting standard before being offered.
+            These seven journeys are not a product catalogue. Each one is built around a specific emotional register - a particular way of wanting to move through Africa - and destinations, properties, and guides are assessed against Mason &amp; Wild&apos;s own vetting standards before being proposed.
           </p>
           <p className="text-base font-light text-stone-500 leading-relaxed">
             You are not browsing options. You are reading the output of a selection process that started long before this page did.
@@ -230,7 +230,7 @@ export default function JourneysPage() {
                 </p>
 
                 <Button href={`${NAV_HREFS.journeys}/${journey.slug}`} variant="ghost">
-                  Explore This Journey
+                  Start With This Journey
                 </Button>
               </Reveal>
             </div>
@@ -306,7 +306,7 @@ export default function JourneysPage() {
                   href={NAV_HREFS.social}
                   className="inline-flex items-center gap-3 text-2xs font-normal tracking-wide uppercase text-white/60 border-b border-white/25 hover:text-white hover:border-white/55 pb-[2px] transition-colors duration"
                 >
-                  Learn about The Social
+                  Learn about The Social Shift
                   <span aria-hidden="true">→</span>
                 </Link>
               </div>
@@ -333,10 +333,10 @@ export default function JourneysPage() {
           */}
           <div className="flex items-center justify-center gap-8 flex-wrap">
             <Button href={NAV_HREFS.inquire} variant="outline-light">
-              {CTA.requestPrivateAccess}
+              Start Your Private Enquiry
             </Button>
             <Button href={NAV_HREFS.inquire} variant="ghost-light" arrow={false}>
-              Ask a Question
+              Enquire Privately
             </Button>
           </div>
         </Reveal>

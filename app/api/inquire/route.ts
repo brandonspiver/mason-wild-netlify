@@ -1,12 +1,21 @@
-﻿import { NextRequest, NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { sendFormEmail } from "@/lib/email";
 
 type InquiryPayload = {
   name: string;
   email: string;
-  duration?: string;
-  preferredTimeOfYear?: string;
+  residence: string;
+  contactMethod: string;
+  travellers: number;
+  travelWindow: string;
+  journeyLength: string;
+  journeyInterest: string;
+  investment: string;
   narrative: string;
+  africaBefore?: string;
+  specialOccasion?: string;
+  considerations?: string;
+  decisionTiming?: string;
   marketingConsent?: boolean;
   website?: string;
 };
@@ -27,15 +36,58 @@ type ErrorResponse = {
   fields?: FieldError[];
 };
 
-const VALID_DURATIONS = ["7-10", "14-21", "sabbatical"] as const;
-type ValidDuration = (typeof VALID_DURATIONS)[number];
-
-const VALID_TIME_OF_YEAR = ["jan-mar", "apr-jun", "jul-sep", "oct-dec"] as const;
-type ValidTimeOfYear = (typeof VALID_TIME_OF_YEAR)[number];
+const VALID_CONTACT_METHODS = ["email", "whatsapp", "private-call"] as const;
+const VALID_TRAVEL_WINDOWS = [
+  "within-3-months",
+  "three-to-six-months",
+  "six-to-twelve-months",
+  "twelve-plus-months",
+  "dates-flexible",
+] as const;
+const VALID_JOURNEY_LENGTHS = [
+  "7-9-nights",
+  "10-14-nights",
+  "15-plus-nights",
+  "not-sure-yet",
+] as const;
+const VALID_JOURNEY_INTEREST = [
+  "the-classic",
+  "the-intimate",
+  "the-romantic",
+  "the-untamed",
+  "the-adventure",
+  "the-private-circuit",
+  "the-social-shift",
+  "bespoke-not-sure",
+] as const;
+const VALID_INVESTMENT_LEVELS = [
+  "usd-7500-10000",
+  "usd-10000-15000",
+  "usd-15000-25000",
+  "usd-25000-plus",
+  "prefer-private-discussion",
+] as const;
+const VALID_AFRICA_BEFORE = ["yes", "no", "not-yet-planning-seriously"] as const;
+const VALID_OCCASIONS = [
+  "honeymoon",
+  "anniversary",
+  "milestone-birthday",
+  "family-celebration",
+  "private-escape",
+  "other",
+] as const;
+const VALID_DECISION_TIMINGS = [
+  "immediately",
+  "within-2-weeks",
+  "within-1-month",
+  "still-exploring",
+] as const;
 
 const MAX_NAME_LENGTH = 120;
 const MAX_EMAIL_LENGTH = 254;
-const MAX_NARRATIVE_LENGTH = 4000;
+const MAX_RESIDENCE_LENGTH = 160;
+const MAX_NARRATIVE_LENGTH = 6000;
+const MAX_CONSIDERATIONS_LENGTH = 3000;
 const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000;
 const RATE_LIMIT_MAX_REQUESTS = 8;
 
@@ -43,9 +95,7 @@ const requestLog = new Map<string, number[]>();
 
 function getClientIp(request: NextRequest): string {
   const forwardedFor = request.headers.get("x-forwarded-for");
-  if (forwardedFor) {
-    return forwardedFor.split(",")[0]?.trim() || "unknown";
-  }
+  if (forwardedFor) return forwardedFor.split(",")[0]?.trim() || "unknown";
   return request.headers.get("x-real-ip") ?? "unknown";
 }
 
@@ -70,10 +120,7 @@ function isValidEmail(value: string): boolean {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 }
 
-function validatePayload(body: unknown): {
-  data: InquiryPayload | null;
-  errors: FieldError[];
-} {
+function validatePayload(body: unknown): { data: InquiryPayload | null; errors: FieldError[] } {
   const errors: FieldError[] = [];
 
   if (typeof body !== "object" || body === null) {
@@ -81,15 +128,17 @@ function validatePayload(body: unknown): {
   }
 
   const raw = body as Record<string, unknown>;
+  const toString = (value: unknown): string =>
+    typeof value === "string" ? value.trim() : "";
 
-  const name = typeof raw.name === "string" ? raw.name.trim() : "";
+  const name = toString(raw.name);
   if (!name) {
     errors.push({ field: "name", message: "Name is required." });
   } else if (name.length > MAX_NAME_LENGTH) {
     errors.push({ field: "name", message: `Name must be ${MAX_NAME_LENGTH} characters or fewer.` });
   }
 
-  const email = typeof raw.email === "string" ? raw.email.trim().toLowerCase() : "";
+  const email = toString(raw.email).toLowerCase();
   if (!email) {
     errors.push({ field: "email", message: "Email address is required." });
   } else if (email.length > MAX_EMAIL_LENGTH) {
@@ -98,57 +147,107 @@ function validatePayload(body: unknown): {
     errors.push({ field: "email", message: "Email address is not valid." });
   }
 
-  const rawDuration = typeof raw.duration === "string" ? raw.duration.trim() : "";
-  const duration: ValidDuration | undefined =
-    rawDuration && (VALID_DURATIONS as readonly string[]).includes(rawDuration)
-      ? (rawDuration as ValidDuration)
-      : undefined;
-
-  if (rawDuration && !duration) {
-    errors.push({ field: "duration", message: "Unrecognized duration value." });
+  const residence = toString(raw.residence);
+  if (!residence) {
+    errors.push({ field: "residence", message: "Country / city of residence is required." });
+  } else if (residence.length > MAX_RESIDENCE_LENGTH) {
+    errors.push({ field: "residence", message: `Residence must be ${MAX_RESIDENCE_LENGTH} characters or fewer.` });
   }
 
-  const rawPreferredTimeOfYear =
-    typeof raw.preferredTimeOfYear === "string"
-      ? raw.preferredTimeOfYear.trim()
-      : "";
-  const preferredTimeOfYear: ValidTimeOfYear | undefined =
-    rawPreferredTimeOfYear &&
-    (VALID_TIME_OF_YEAR as readonly string[]).includes(rawPreferredTimeOfYear)
-      ? (rawPreferredTimeOfYear as ValidTimeOfYear)
-      : undefined;
-
-  if (rawPreferredTimeOfYear && !preferredTimeOfYear) {
-    errors.push({
-      field: "preferredTimeOfYear",
-      message: "Unrecognized preferred time of year value.",
-    });
+  const contactMethod = toString(raw.contactMethod);
+  if (!contactMethod) {
+    errors.push({ field: "contactMethod", message: "Preferred contact method is required." });
+  } else if (!(VALID_CONTACT_METHODS as readonly string[]).includes(contactMethod)) {
+    errors.push({ field: "contactMethod", message: "Unrecognized contact method." });
   }
 
-  const narrative = typeof raw.narrative === "string" ? raw.narrative.trim() : "";
+  const travellersRaw = toString(raw.travellers);
+  const travellersNum = Number(travellersRaw);
+  if (!travellersRaw) {
+    errors.push({ field: "travellers", message: "Number of travellers is required." });
+  } else if (!Number.isInteger(travellersNum) || travellersNum < 1 || travellersNum > 20) {
+    errors.push({ field: "travellers", message: "Travellers must be a whole number between 1 and 20." });
+  }
+
+  const travelWindow = toString(raw.travelWindow);
+  if (!travelWindow) {
+    errors.push({ field: "travelWindow", message: "Preferred travel window is required." });
+  } else if (!(VALID_TRAVEL_WINDOWS as readonly string[]).includes(travelWindow)) {
+    errors.push({ field: "travelWindow", message: "Unrecognized travel window." });
+  }
+
+  const journeyLength = toString(raw.journeyLength);
+  if (!journeyLength) {
+    errors.push({ field: "journeyLength", message: "Journey length is required." });
+  } else if (!(VALID_JOURNEY_LENGTHS as readonly string[]).includes(journeyLength)) {
+    errors.push({ field: "journeyLength", message: "Unrecognized journey length." });
+  }
+
+  const journeyInterest = toString(raw.journeyInterest);
+  if (!journeyInterest) {
+    errors.push({ field: "journeyInterest", message: "Journey of interest is required." });
+  } else if (!(VALID_JOURNEY_INTEREST as readonly string[]).includes(journeyInterest)) {
+    errors.push({ field: "journeyInterest", message: "Unrecognized journey of interest." });
+  }
+
+  const investment = toString(raw.investment);
+  if (!investment) {
+    errors.push({ field: "investment", message: "Journey investment range is required." });
+  } else if (!(VALID_INVESTMENT_LEVELS as readonly string[]).includes(investment)) {
+    errors.push({ field: "investment", message: "Unrecognized investment range." });
+  }
+
+  const narrative = toString(raw.narrative);
   if (!narrative) {
-    errors.push({ field: "narrative", message: "Please tell us what you are looking for." });
+    errors.push({ field: "narrative", message: "Please share what kind of journey you are hoping to create." });
   } else if (narrative.length > MAX_NARRATIVE_LENGTH) {
+    errors.push({ field: "narrative", message: `Narrative must be ${MAX_NARRATIVE_LENGTH} characters or fewer.` });
+  }
+
+  const africaBefore = toString(raw.africaBefore);
+  if (africaBefore && !(VALID_AFRICA_BEFORE as readonly string[]).includes(africaBefore)) {
+    errors.push({ field: "africaBefore", message: "Unrecognized Africa travel history value." });
+  }
+
+  const specialOccasion = toString(raw.specialOccasion);
+  if (specialOccasion && !(VALID_OCCASIONS as readonly string[]).includes(specialOccasion)) {
+    errors.push({ field: "specialOccasion", message: "Unrecognized occasion value." });
+  }
+
+  const decisionTiming = toString(raw.decisionTiming);
+  if (decisionTiming && !(VALID_DECISION_TIMINGS as readonly string[]).includes(decisionTiming)) {
+    errors.push({ field: "decisionTiming", message: "Unrecognized decision timing value." });
+  }
+
+  const considerations = toString(raw.considerations);
+  if (considerations.length > MAX_CONSIDERATIONS_LENGTH) {
     errors.push({
-      field: "narrative",
-      message: `Message must be ${MAX_NARRATIVE_LENGTH} characters or fewer.`,
+      field: "considerations",
+      message: `Considerations must be ${MAX_CONSIDERATIONS_LENGTH} characters or fewer.`,
     });
   }
 
   const website = typeof raw.website === "string" ? raw.website : "";
   const marketingConsent = raw.marketingConsent === true;
 
-  if (errors.length > 0) {
-    return { data: null, errors };
-  }
+  if (errors.length > 0) return { data: null, errors };
 
   return {
     data: {
       name,
       email,
-      duration,
-      preferredTimeOfYear,
+      residence,
+      contactMethod,
+      travellers: travellersNum,
+      travelWindow,
+      journeyLength,
+      journeyInterest,
+      investment,
       narrative,
+      africaBefore: africaBefore || undefined,
+      specialOccasion: specialOccasion || undefined,
+      considerations: considerations || undefined,
+      decisionTiming: decisionTiming || undefined,
       marketingConsent,
       website,
     },
@@ -163,29 +262,39 @@ async function handleSubmission(inquiry: InquiryPayload): Promise<void> {
     JSON.stringify({
       event: "inquiry.received",
       submittedAt,
-      duration: inquiry.duration ?? null,
-      preferredTimeOfYear: inquiry.preferredTimeOfYear ?? null,
+      contactMethod: inquiry.contactMethod,
+      travellers: inquiry.travellers,
+      travelWindow: inquiry.travelWindow,
+      journeyLength: inquiry.journeyLength,
+      journeyInterest: inquiry.journeyInterest,
+      investment: inquiry.investment,
       narrativeLength: inquiry.narrative.length,
     })
   );
 
   await sendFormEmail({
-    subject: "New Enquiry Submission - Mason & Wild",
+    subject: "New Private Enquiry - Mason & Wild",
     replyTo: inquiry.email,
     sections: [
       { label: "Submitted At", value: submittedAt },
-      { label: "Name", value: inquiry.name },
+      { label: "Full Name", value: inquiry.name },
       { label: "Email", value: inquiry.email },
-      { label: "Duration", value: inquiry.duration ?? "Not provided" },
+      { label: "Country / City of Residence", value: inquiry.residence },
+      { label: "Preferred Contact Method", value: inquiry.contactMethod },
+      { label: "Number of Travellers", value: String(inquiry.travellers) },
+      { label: "Preferred Travel Window", value: inquiry.travelWindow },
+      { label: "Approximate Journey Length", value: inquiry.journeyLength },
+      { label: "Journey of Interest", value: inquiry.journeyInterest },
+      { label: "Journey Investment per Person", value: inquiry.investment },
+      { label: "Journey Brief", value: inquiry.narrative },
+      { label: "Travelled to Africa Before", value: inquiry.africaBefore ?? "Not provided" },
+      { label: "Special Occasion", value: inquiry.specialOccasion ?? "Not provided" },
       {
-        label: "Preferred Time of Year",
-        value: inquiry.preferredTimeOfYear ?? "Not provided",
+        label: "Privacy / Accessibility / Dietary / Medical / Safety Considerations",
+        value: inquiry.considerations ?? "Not provided",
       },
-      { label: "Narrative", value: inquiry.narrative },
-      {
-        label: "Marketing Consent",
-        value: inquiry.marketingConsent ? "Yes" : "No",
-      },
+      { label: "Decision Timing", value: inquiry.decisionTiming ?? "Not provided" },
+      { label: "Marketing Consent", value: inquiry.marketingConsent ? "Yes" : "No" },
     ],
   });
 }
@@ -193,10 +302,7 @@ async function handleSubmission(inquiry: InquiryPayload): Promise<void> {
 export async function POST(request: NextRequest): Promise<NextResponse<SuccessResponse | ErrorResponse>> {
   if (isRateLimited(request)) {
     return NextResponse.json<ErrorResponse>(
-      {
-        ok: false,
-        error: "Too many requests. Please wait a few minutes and try again.",
-      },
+      { ok: false, error: "Too many requests. Please wait a few minutes and try again." },
       { status: 429 }
     );
   }
@@ -217,14 +323,10 @@ export async function POST(request: NextRequest): Promise<NextResponse<SuccessRe
       : undefined;
 
   if (typeof honeypot === "string" && honeypot.trim().length > 0) {
-    return NextResponse.json<SuccessResponse>(
-      { ok: true, message: "Enquiry received." },
-      { status: 200 }
-    );
+    return NextResponse.json<SuccessResponse>({ ok: true, message: "Enquiry received." }, { status: 200 });
   }
 
   const { data, errors } = validatePayload(body);
-
   if (errors.length > 0 || data === null) {
     return NextResponse.json<ErrorResponse>(
       {
@@ -245,18 +347,14 @@ export async function POST(request: NextRequest): Promise<NextResponse<SuccessRe
         message: err instanceof Error ? err.message : String(err),
       })
     );
-
     return NextResponse.json<ErrorResponse>(
-      {
-        ok: false,
-        error: "Something went wrong on our end. Please try again or write to us directly.",
-      },
+      { ok: false, error: "Something went wrong on our end. Please try again or write to us directly." },
       { status: 500 }
     );
   }
 
   return NextResponse.json<SuccessResponse>(
-    { ok: true, message: "Enquiry received. We will respond within 24-48 hours." },
+    { ok: true, message: "Enquiry received. We will reply with next steps shortly." },
     { status: 200 }
   );
 }
@@ -267,5 +365,4 @@ export function GET(): NextResponse<ErrorResponse> {
     { status: 405, headers: { Allow: "POST" } }
   );
 }
-
 

@@ -58,6 +58,7 @@ type JourneyAccommodation = {
   readonly stay?: string;
   readonly description: string;
   readonly images: readonly [JourneyImage, JourneyImage, JourneyImage];
+  readonly personallyStayed?: boolean;
 };
 
 type JourneyListSection = {
@@ -119,6 +120,24 @@ type JourneyData = {
   readonly nextJourney?: NextJourneyRef;
 };
 
+const PERSONALLY_STAYED_PROPERTY_NAMES = new Set([
+  "Victoria Falls Island Lodge",
+  "KuKaya",
+  "Zungulila & Chindeni",
+  "Mount Nelson Hotel",
+  "Akademie Street",
+  "Monwana",
+  "The Pineapple House",
+  "Simbavati Waterside",
+  "Mbano Manor",
+  "Camissa House, Cape Town",
+  "Little Ongava",
+  "Siringit Villa",
+  "Siringit Tarangire Camp",
+  "Siringit Migration Camp",
+  "Siringit Serengeti Camp",
+]);
+
 const JOURNEYS: Record<string, JourneyData> = {
   "the-intimate": {
     slug: "the-intimate",
@@ -157,7 +176,7 @@ const JOURNEYS: Record<string, JourneyData> = {
     ],
     lead: "Africa, properly edited.",
     vettedNote:
-      "Personally selected through firsthand experience and trusted relationships across the region. The properties and partners used in this journey are chosen for how they perform in reality, not how they appear online. Service, atmosphere, guiding quality, and privacy all hold to a consistently high standard. For LGBTQ+ travellers, every recommendation is made with comfort, discretion, and ease in mind.",
+      "Selected through firsthand regional knowledge, trusted relationships, and additional checks where needed. The properties and partners used in this journey are chosen for how they perform in reality, not how they appear online. Service, atmosphere, guiding quality, and privacy all hold to a consistently high standard. For LGBTQ+ travellers, Recommendations are made with comfort, discretion, and ease in mind.",
     vettedLocation: "VICTORIA FALLS, ZIMBABWE",
     vettedImg: {
       src: "/journeys/the-romantic/vetted-victoria-falls.png",
@@ -386,14 +405,14 @@ const JOURNEYS: Record<string, JourneyData> = {
         ],
       },
     ],
-    ctaLabel: "Request Private Planning",
+    ctaLabel: "Start With This Journey",
     ctaHeading: "Plan The Intimate with Mason & Wild",
     inquiryHeading: "Plan The Intimate with Mason & Wild",
     inquiryBody:
       "This journey is personally shaped around your group, travel style, and timing. We take on a limited number of private journeys to ensure consistency, detail, and attention from start to finish.",
     proofLabel: "Vetted & Verified",
     proofNote:
-      "Personally selected through firsthand experience and trusted relationships across the region. Properties and partners are chosen for real-world performance, not brochure appeal. For LGBTQ+ travellers, every recommendation is made with comfort, discretion, and practical ease in mind.",
+      "Selected through firsthand regional knowledge, trusted relationships, and additional checks where needed. Properties and partners are chosen for real-world performance, not brochure appeal. For LGBTQ+ travellers, Recommendations are made with comfort, discretion, and practical ease in mind.",
     nextJourney: {
       slug: "the-untamed",
       name: "The Untamed",
@@ -441,7 +460,7 @@ const JOURNEYS: Record<string, JourneyData> = {
     ],
     lead: "Zambia rewards a different kind of traveller.",
     vettedNote:
-      "Personally selected by Zannon James through firsthand experience and deep regional knowledge. The South Luangwa camps in this journey are chosen from real time spent in the bush and a strong understanding of how the landscape shifts, how the pacing should work, and where the real value lies. From waterways and riverbanks to woodland and open plains, this is a safari region that reveals itself gradually rather than all at once. Each property has been selected for how it works in sequence, not in isolation. Service, guiding, atmosphere, and privacy all need to hold their standard in reality, not just in photography. For LGBTQ+ travellers especially, that confidence matters. Every partner included here has been chosen for discretion, operational ease, and the kind of practical reassurance that allows the journey to feel relaxed rather than guarded.",
+      "Built from firsthand time in Zambia, strong regional knowledge, and trusted supplier relationships, with additional checks where appropriate. The South Luangwa camps in this journey are chosen from real time spent in the bush and a strong understanding of how the landscape shifts, how the pacing should work, and where the real value lies. From waterways and riverbanks to woodland and open plains, this is a safari region that reveals itself gradually rather than all at once. Each property has been selected for how it works in sequence, not in isolation. Service, guiding, atmosphere, and privacy all need to hold their standard in reality, not just in photography. For LGBTQ+ travellers especially, that confidence matters. Partners included here are selected for discretion, operational ease, and practical reassurance.",
     vettedLocation: "South Luangwa National Park, Zambia",
     vettedImg: {
       src: "/journeys/the-untamed/vetted-south-luangwa-optimized.jpg",
@@ -664,7 +683,7 @@ const JOURNEYS: Record<string, JourneyData> = {
         ],
       },
     ],
-    ctaLabel: "Request Private Planning",
+    ctaLabel: "Start With This Journey",
     ctaHeading: "Plan The Untamed with Mason & Wild",
     inquiryHeading: "Plan The Untamed with Mason & Wild",
     inquiryBody:
@@ -719,7 +738,7 @@ const JOURNEYS: Record<string, JourneyData> = {
     ],
     lead: "The best romantic journeys do not try too hard.",
     vettedNote:
-      "Personally selected by Zannon James through firsthand experience and trusted regional knowledge. This journey is built around properties and partners chosen not for trend value, but for how they actually feel in real life. Privacy, atmosphere, service, and emotional fit all need to hold to a consistently high standard. From Cape Town to Mozambique, each chapter has been chosen for how it shifts the tone of the journey. The result is not just a collection of beautiful stays, but a romantic arc that feels composed from beginning to end. For LGBTQ+ travellers, that confidence matters even more. Every recommendation is made with comfort, discretion, and practical ease in mind.",
+      "Selected through firsthand regional knowledge, trusted relationships, and additional checks where needed. This journey is built around properties and partners chosen not for trend value, but for how they actually feel in real life. Privacy, atmosphere, service, and emotional fit all need to hold to a consistently high standard. From Cape Town to Mozambique, each chapter has been chosen for how it shifts the tone of the journey. The result is not just a collection of beautiful stays, but a romantic arc that feels composed from beginning to end. For LGBTQ+ travellers, that confidence matters even more. Recommendations are made with comfort, discretion, and practical ease in mind.",
     vettedLocation: "MONWANA, SOUTH AFRICA",
     vettedImg: {
       src: "/journeys/the-romantic/vetted-verified-romantic.jpg",
@@ -989,7 +1008,7 @@ const JOURNEYS: Record<string, JourneyData> = {
       ],
       },
     ],
-    ctaLabel: "Request Private Planning",
+    ctaLabel: "Start With This Journey",
     ctaHeading: "Plan The Romantic with Mason & Wild",
     inquiryHeading: "Plan The Romantic with Mason & Wild",
     inquiryBody:
@@ -1046,7 +1065,7 @@ const JOURNEYS: Record<string, JourneyData> = {
       "The best classic journeys are edited properly.",
     narrativeLabel: "Why This Journey",
     vettedNote:
-      "Personally selected by Zannon James through firsthand experience and trusted regional knowledge. This journey is built around properties and experiences chosen for how well they actually deliver in practice. Service, atmosphere, location, and ease all need to hold their standard in real life, not just in polished photography. Cape Town, Kruger, and Victoria Falls are widely known, but that does not make them simple to get right. The difference lies in pacing, property choice, and the quality of the overall flow. For LGBTQ+ travellers, that confidence matters even more. Every recommendation is made with comfort, discretion, and practical ease in mind.",
+      "Selected through firsthand regional knowledge, trusted relationships, and additional checks where needed. This journey is built around properties and experiences chosen for how well they actually deliver in practice. Service, atmosphere, location, and ease all need to hold their standard in real life, not just in polished photography. Cape Town, Kruger, and Victoria Falls are widely known, but that does not make them simple to get right. The difference lies in pacing, property choice, and the quality of the overall flow. For LGBTQ+ travellers, that confidence matters even more. Recommendations are made with comfort, discretion, and practical ease in mind.",
     vettedLocation: "Victoria Falls, Zimbabwe",
     vettedImg: {
       src: "/journeys/the-classic/vetted-victoria-falls.jpg",
@@ -1422,7 +1441,7 @@ const JOURNEYS: Record<string, JourneyData> = {
         "Extended nights in Cape Town or Victoria Falls",
       ],
     },
-    ctaLabel: "Request Private Planning",
+    ctaLabel: "Start With This Journey",
     ctaHeading: "Plan The Classic with Mason & Wild",
     inquiryHeading: "Plan The Classic with Mason & Wild",
     inquiryBody:
@@ -1478,7 +1497,7 @@ const JOURNEYS: Record<string, JourneyData> = {
     lead:
       "Adventure should still feel composed.",
     vettedNote:
-      "Personally selected by Zannon James through firsthand experience and trusted regional knowledge. The properties and experiences in this journey are chosen for how they hold the balance between adventure and comfort in real life. Route logic, guiding quality, atmosphere, and operational ease all need to work properly, especially in a country where distance and movement define the experience. Namibia can be extraordinary, but only when the pacing is right and the infrastructure around the trip is strong. That is where curation matters most. For LGBTQ+ travellers, practical confidence matters too. Every recommendation is made with comfort, privacy, and ease of movement in mind.",
+      "Selected through firsthand regional knowledge, trusted relationships, and additional checks where needed. The properties and experiences in this journey are chosen for how they hold the balance between adventure and comfort in real life. Route logic, guiding quality, atmosphere, and operational ease all need to work properly, especially in a country where distance and movement define the experience. Namibia can be extraordinary, but only when the pacing is right and the infrastructure around the trip is strong. That is where curation matters most. For LGBTQ+ travellers, practical confidence matters too. Recommendations are made with comfort, privacy, and ease of movement in mind.",
     vettedLocation: "NAMIBIA",
     vettedImg: {
       src: "/journeys/the-adventure/vetted-cape-town.jpg",
@@ -1772,7 +1791,7 @@ const JOURNEYS: Record<string, JourneyData> = {
         ],
       },
     ],
-    ctaLabel: "Request Private Planning",
+    ctaLabel: "Start With This Journey",
     ctaHeading: "Plan The Adventure with Mason & Wild",
     inquiryHeading: "Plan The Adventure with Mason & Wild",
     inquiryBody:
@@ -1827,7 +1846,7 @@ const JOURNEYS: Record<string, JourneyData> = {
     ],
     lead: "East Africa rewards precision.",
     vettedNote:
-      "Personally selected by Zannon James through trusted regional knowledge and a clear understanding of what this kind of journey needs to deliver in reality. The properties and partners in this itinerary are chosen for more than reputation. Guiding quality, privacy, service, atmosphere, and the way each chapter connects to the next all need to hold their standard once you are actually travelling. In Tanzania especially, the difference between a prestigious itinerary and a well-built one is in the sequencing. In Zanzibar, the difference is whether the final chapter feels earned. This journey is designed to do both properly. For LGBTQ+ travellers, practical confidence matters too. Every recommendation is made with comfort, discretion, and ease in mind.",
+      "Selected through trusted regional knowledge, direct market familiarity, and additional checks where needed. The properties and partners in this itinerary are chosen for more than reputation. Guiding quality, privacy, service, atmosphere, and the way each chapter connects to the next all need to hold their standard once you are actually travelling. In Tanzania especially, the difference between a prestigious itinerary and a well-built one is in the sequencing. In Zanzibar, the difference is whether the final chapter feels earned. This journey is designed to do both properly. For LGBTQ+ travellers, practical confidence matters too. Recommendations are made with comfort, discretion, and ease in mind.",
     vettedLocation: "SERENGETI, TANZANIA",
     vettedImg: {
       src: "/journeys/the-private-circuit/vetted-serengeti-optimized.jpg",
@@ -1840,7 +1859,7 @@ const JOURNEYS: Record<string, JourneyData> = {
       "The Private Circuit is built differently. It treats the safari chapters as a private progression rather than a checklist, and Zanzibar as the final emotional movement of the journey rather than an add-on. The result is something calmer, sharper, and much more complete.",
       "This is Tanzania for travellers who want confidence, not noise.",
       "It is less about showing how much you can fit into a trip and more about creating the right sequence of depth, contrast, and release. That is what makes it feel private. That is what makes it feel finished.",
-      "For LGBTQ+ travellers in particular, practical confidence matters. Every recommendation is made with comfort, discretion, and ease in mind.",
+      "For LGBTQ+ travellers in particular, practical confidence matters. Recommendations are made with comfort, discretion, and ease in mind.",
     ],
     heroImg: {
       src: "/journeys/the-private-circuit/SM (19).jpg",
@@ -2132,7 +2151,7 @@ const JOURNEYS: Record<string, JourneyData> = {
       ],
       },
     ],
-    ctaLabel: "Request Private Planning",
+    ctaLabel: "Start With This Journey",
     ctaHeading: "Plan The Private Circuit with Mason & Wild",
     inquiryHeading: "Plan The Private Circuit with Mason & Wild",
     inquiryBody:
@@ -2214,6 +2233,9 @@ export default function JourneyDetailPage({
         }
       : {}),
   });
+
+  const isPersonallyStayedAccommodation = (accommodation: JourneyAccommodation): boolean =>
+    accommodation.personallyStayed === true || PERSONALLY_STAYED_PROPERTY_NAMES.has(accommodation.name);
 
   const collageImages = journey.galleryImgs.slice(0, 3);
   const intimateCarouselExtras: JourneyImage[] =
@@ -2313,12 +2335,6 @@ export default function JourneyDetailPage({
   ].filter(
     (image, index, images) => index === images.findIndex((entry) => entry.src === image.src),
   );
-  let ctaHeading = journey.inquiryHeading.replace(` ${journey.name}.`, "");
-
-  if (journey.ctaHeading) {
-    ctaHeading = journey.ctaHeading;
-  }
-
   const journeySchema = {
     "@context": "https://schema.org",
     "@type": "Trip",
@@ -2633,7 +2649,29 @@ export default function JourneyDetailPage({
 
                 <Reveal delay={((index + 1) % 3) as 0 | 1 | 2 | 3 | 4}>
                   <div className="grid min-h-0 grid-cols-1 gap-[10px] md:min-h-[520px] md:grid-cols-[minmax(0,1fr)_292px]">
-                    <div className="overflow-hidden md:h-full">
+                    <div className="overflow-hidden md:h-full relative">
+                      {isPersonallyStayedAccommodation(accommodation) && (
+                        <div className="absolute left-3 top-3 md:left-4 md:top-4 z-10 pointer-events-none">
+                          <div className="relative inline-flex items-center gap-2 border border-[rgba(124,109,90,0.45)] bg-[rgba(229,220,207,0.76)] px-2.5 py-1.5 md:px-3 md:py-2 backdrop-blur-[1px]">
+                            <span className="inline-flex h-5 w-5 items-center justify-center rounded-full border border-[rgba(124,109,90,0.5)] text-[9px] tracking-[0.12em] text-[rgba(62,51,39,0.9)]">
+                              MW
+                            </span>
+                            <span className="flex flex-col leading-none">
+                              <span className="text-[10px] md:text-[10.5px] uppercase tracking-[0.1em] text-[rgba(62,51,39,0.94)]">
+                                Personally Stayed
+                              </span>
+                              <span className="text-[9px] md:text-[9.5px] uppercase tracking-[0.12em] text-[rgba(62,51,39,0.82)] mt-1">
+                                By Zannon James
+                              </span>
+                            </span>
+                            <span
+                              className="absolute -right-[9px] top-0 h-full w-[9px] border-r border-y border-[rgba(124,109,90,0.45)] bg-[rgba(229,220,207,0.76)]"
+                              style={{ clipPath: "polygon(0 0,100% 50%,0 100%)" }}
+                              aria-hidden="true"
+                            />
+                          </div>
+                        </div>
+                      )}
                       <Image
                         src={accommodation.images[0].src}
                         alt={accommodation.images[0].alt}
@@ -2750,27 +2788,19 @@ export default function JourneyDetailPage({
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-[clamp(48px,7vw,96px)] items-center">
             <Reveal>
               <div>
-                <p className="label-tag mb-6">{journey.ctaLabel ?? "Begin This Journey"}</p>
+                <p className="label-tag mb-6">Start With This Journey</p>
                 <h2
                   className="font-serif font-light text-display-xl text-stone-900 mb-6 tracking-[-0.018em]"
                   id="journey-cta-heading"
                 >
-                  {ctaHeading}
-                  {!journey.ctaHeading && !journey.ctaEmphasis ? (
-                    <>
-                      <br />
-                      <em>{journey.name}.</em>
-                    </>
-                  ) : null}
-                  {journey.ctaEmphasis ? (
-                    <>
-                      <br />
-                      <em>{journey.ctaEmphasis}</em>
-                    </>
-                  ) : null}
+                  Begin with <em>{journey.name}</em>
+                  <br />
+                  as your reference point.
                 </h2>
                 <p className="text-sm font-light text-stone-500 leading-relaxed max-w-[440px]">
-                  {journey.inquiryBody}
+                  From there, Mason &amp; Wild can refine the pace, routing,
+                  properties, and private details around the way you want to
+                  travel.
                 </p>
               </div>
             </Reveal>
@@ -2785,18 +2815,16 @@ export default function JourneyDetailPage({
                 </div>
                 <div className="flex flex-col items-start gap-5">
                   <Button href={NAV_HREFS.inquire} variant="primary">
-                    {journey.slug === "the-intimate" ||
-                    journey.slug === "the-untamed" ||
-                    journey.slug === "the-romantic" ||
-                    journey.slug === "the-classic" ||
-                    journey.slug === "the-adventure" ||
-                    journey.slug === "the-private-circuit"
-                      ? "Request Private Planning"
-                      : CTA.requestPrivateAccess}
+                    Discuss This Journey
                   </Button>
                   <Button href={NAV_HREFS.journeys} variant="ghost" arrow={false}>
                     {CTA.viewAllJourneys}
                   </Button>
+                  <p className="text-2xs tracking-[0.08em] text-stone-400 leading-relaxed max-w-[440px]">
+                    Private enquiries are reviewed personally. Your details are
+                    handled with discretion and used only to understand whether
+                    Mason &amp; Wild is the right fit for your journey.
+                  </p>
                 </div>
               </div>
             </Reveal>
@@ -2833,7 +2861,7 @@ export default function JourneyDetailPage({
                   <em>{journey.nextJourney.name}</em>
                 </p>
                 <span className="inline-flex items-center gap-3 text-2xs font-normal tracking-wide uppercase text-stone-500 border-b border-stone-300 group-hover:text-stone-900 group-hover:border-stone-900 pb-[2px] transition-colors duration self-start">
-                  Explore This Journey
+                  Start With This Journey
                   <span aria-hidden="true">&rarr;</span>
                 </span>
               </div>
@@ -2844,5 +2872,7 @@ export default function JourneyDetailPage({
     </>
   );
 }
+
+
 
 

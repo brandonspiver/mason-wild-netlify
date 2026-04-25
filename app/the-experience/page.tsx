@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Reveal } from "@/components/ui/Reveal";
 import { Button } from "@/components/ui/Button";
-import { CTA, NAV_HREFS } from "@/lib/constants";
+import { CTA, NAV_HREFS, FOUNDER } from "@/lib/constants";
 import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildPageMetadata({
@@ -70,13 +70,13 @@ const INCLUSIVE_ITEMS = [
     key:   "safety",
     title: "LGBTQ+ Safety Intelligence",
     body:
-      "Every destination in our collection is assessed against a specific set of criteria before it is offered: legal standing, local enforcement practice - not just what the law says, but how it operates on the ground - guide values, camp culture, staff orientation, room configuration defaults, and how transit between properties is handled. Legislation alone tells us very little. What matters is the real-world experience of travelling through a place, and whether that experience holds up when it is no longer in a private lodge. This is not a static assessment. Countries change. Regional attitudes shift. Our evaluations are reviewed before each season and updated when the situation on the ground requires it. If a destination no longer meets our standard, it leaves the collection.",
+      "Destinations are assessed against legal standing, local enforcement realities, hosting culture, guide values, and transit handling. The question is practical: how does it actually feel once you are there? Reviews are updated as conditions shift, and recommendations are adjusted when standards no longer hold.",
   },
   {
     key:   "liaison",
     title: "Cultural Liaison",
     body:
-      "Our guides are briefed on the specific sensitivities and expectations of our clients. You are never navigating unfamiliar social terrain without support.",
+      "Guides and hosts are briefed for context and guest fit, so unfamiliar social terrain is handled with greater care and less friction.",
   },
   {
     key:   "routing",
@@ -88,7 +88,7 @@ const INCLUSIVE_ITEMS = [
     key:   "vetted",
     title: "Partner Vetting",
     body:
-      "Every lodge, guide, and operator we work with has been visited and assessed in person. Not reviewed remotely. Not shortlisted from supplier materials. Visited, stayed in, and approved against a standard that includes how staff behave in practice, how the camp responds to LGBTQ+ guests outside of formal policy, and whether the atmosphere holds up in the way it is described. If Zannon has not been there personally, it is not in our collection.",
+      "Properties, guides, and operating partners are selected through firsthand regional knowledge, trusted relationships, and additional operational checks. Selection standards include how teams host in practice, not just what is promised in supplier material.",
   },
   {
     key:   "comfort",
@@ -100,7 +100,7 @@ const INCLUSIVE_ITEMS = [
     key:   "design",
     title: "Private by Design",
     body:
-      "We do not work from templates. Each journey is a unique response to your brief, built from a direct conversation about what you are looking for, and what you would prefer to leave behind.",
+      "We do not work from templates. Each journey is built from a direct brief, with the route shaped around what you want to experience and what you would prefer to avoid.",
   },
 ] as const;
 
@@ -178,9 +178,9 @@ export default function TheExperiencePage() {
                 <div className="pb-7">
                   <p className="label-tag mb-2">Territory</p>
                   <p className="text-base font-light text-stone-600 leading-relaxed">
-                    Every destination in our collection has been assessed in
-                    person. We do not list territories we have not visited
-                    and vetted directly.
+                    Each destination we recommend is assessed through
+                    firsthand regional knowledge, verified partner relationships,
+                    and ongoing operational review before it is proposed.
                   </p>
                 </div>
                 <div className="border-t border-stone-200 py-7">
@@ -271,23 +271,6 @@ export default function TheExperiencePage() {
         </div>
       </section>
 
-      <section className="section" aria-label="Planning realities and specialist design process">
-        <div className="container-site max-w-[920px]">
-          <p className="text-base font-light text-stone-500 leading-relaxed mb-6">
-            You are researching camps across four countries, reading operator websites that all say the same things, trying to determine which LGBTQ+-friendly claims are operational and which are marketing. You are weighing up legal frameworks, social climates, transit routes, and guide cultures - without a reliable way to distinguish between them. You are managing significant spend and a once-in-a-decade trip with incomplete information and no named person accountable for the outcome.
-          </p>
-          <p className="text-base font-light text-stone-500 leading-relaxed mb-6">
-            The journey has not started and it is already work.
-          </p>
-          <p className="text-base font-light text-stone-500 leading-relaxed mb-6">
-            You submit a brief. A specialist who has been to the camps, knows the guides, and understands the specific texture of travelling as an LGBTQ+ couple across this continent reviews it personally. A journey is designed around your pace, your privacy requirements, and the emotional register you want the trip to hold. Every property has been visited and approved. Every guide has been assessed. Every transit point has been considered.
-          </p>
-          <p className="text-base font-light text-stone-500 leading-relaxed">
-            You arrive. Everything is in place. The only work left is being present.
-          </p>
-        </div>
-      </section>
-
       {/* â”€â”€â”€ Process steps â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section
         className="bg-stone-900 px-[var(--px)] py-[var(--section-gap)]"
@@ -363,6 +346,131 @@ export default function TheExperiencePage() {
           <p className="text-base font-light text-stone-500 leading-relaxed">
             This is not a price that needs defending. It reflects what a journey of this quality, designed to this standard, for clients with these specific requirements, actually costs to deliver properly.
           </p>
+        </div>
+      </section>
+
+      <section className="section border-b border-stone-200" aria-labelledby="selection-standards-heading">
+        <div className="container-site">
+          <Reveal>
+            <div className="mb-12">
+              <p className="label-tag mb-4">Selection Standards</p>
+              <h2
+                className="font-serif font-light text-display-md text-stone-900"
+                id="selection-standards-heading"
+              >
+                How we select properties
+                <br />
+                and <em>partners.</em>
+              </h2>
+            </div>
+          </Reveal>
+
+          <div className="grid grid-cols-1 lg:grid-cols-[2fr_3fr] gap-[clamp(44px,6vw,84px)]">
+            <Reveal>
+              <p className="text-base font-light text-stone-500 leading-relaxed">
+                Mason &amp; Wild does not select properties by star rating alone.
+                A lodge may be beautiful and still be wrong for the journey.
+                Properties are considered for setting, service rhythm, guiding
+                quality, privacy, access, route logic, seasonal strength, and
+                the way they make a traveller feel once they arrive.
+              </p>
+            </Reveal>
+
+            <Reveal delay={1}>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-px border border-stone-200 bg-stone-200">
+                {[
+                  "Firsthand stays and site inspections where available",
+                  "Trusted supplier relationships and operational reliability",
+                  "Privacy and discretion in real guest conditions",
+                  "Service quality, setting, and emotional fit",
+                  "LGBTQ+ comfort and briefing where relevant",
+                  "Route compatibility and seasonal appropriateness",
+                ].map((item) => (
+                  <div key={item} className="bg-page px-6 py-6">
+                    <p className="text-sm font-light text-stone-500 leading-relaxed">{item}</p>
+                  </div>
+                ))}
+              </div>
+            </Reveal>
+          </div>
+
+          <Reveal>
+            <p className="mt-8 text-sm font-light text-stone-500 leading-relaxed max-w-[900px]">
+              Where firsthand experience is not available, Mason &amp; Wild relies
+              on trusted professional relationships, additional checks, and
+              conservative judgment before recommending a property.
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="section border-b border-stone-200" aria-labelledby="lgbtq-comfort-heading">
+        <div className="container-site max-w-[980px]">
+          <Reveal>
+            <p className="label-tag mb-4">For LGBTQ+ Travellers</p>
+            <h2
+              className="font-serif font-light text-display-md text-stone-900 mb-8"
+              id="lgbtq-comfort-heading"
+            >
+              Comfort is designed,
+              <br />
+              <em>not assumed.</em>
+            </h2>
+          </Reveal>
+
+          <div className="flex flex-col gap-6">
+            <Reveal>
+              <p className="text-base font-light text-stone-500 leading-relaxed">
+                For LGBTQ+ travellers, luxury is not only about the property. It
+                is about not having to constantly calculate where you are, how
+                you are being perceived, and whether your relationship, identity,
+                or group dynamic will be understood.
+              </p>
+            </Reveal>
+            <Reveal delay={1}>
+              <p className="text-base font-light text-stone-500 leading-relaxed">
+                Mason &amp; Wild treats this as part of the design work, from
+                routing and property selection to rooming assumptions, guide
+                briefing, destination context, and the balance between public and
+                private expression.
+              </p>
+            </Reveal>
+            <Reveal delay={2}>
+              <p className="text-base font-light text-stone-500 leading-relaxed">
+                The goal is emotional ease. Not tokenistic claims, not
+                performative language, and not overexposure. Just thoughtful
+                planning that reduces friction and helps the journey feel natural.
+              </p>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      <section className="section border-b border-stone-200" aria-labelledby="firsthand-knowledge-heading">
+        <div className="container-site max-w-[980px]">
+          <Reveal>
+            <h2
+              className="font-serif font-light text-display-md text-stone-900 mb-8"
+              id="firsthand-knowledge-heading"
+            >
+              Built on firsthand
+              <br />
+              African travel <em>knowledge.</em>
+            </h2>
+          </Reveal>
+          <Reveal delay={1}>
+            <p className="text-base font-light text-stone-500 leading-relaxed">
+              Mason &amp; Wild is built from lived regional knowledge,
+              professional travel experience, and direct relationships across the
+              safari and hospitality world. The result is a more considered way
+              to travel: less catalogue, more context.
+            </p>
+          </Reveal>
+          <Reveal delay={2}>
+            <p className="text-sm font-light text-stone-500 leading-relaxed mt-6">
+              Founder review is led by {FOUNDER.name}, {FOUNDER.title}.
+            </p>
+          </Reveal>
         </div>
       </section>
 
@@ -487,7 +595,7 @@ export default function TheExperiencePage() {
                   Membership is by introduction only.
                 </p>
                 <Button href={NAV_HREFS.social} variant="ghost">
-                  Learn More
+                  Start With The Social Shift
                 </Button>
               </div>
             </div>
@@ -566,7 +674,7 @@ export default function TheExperiencePage() {
           </p>
           <div className="flex items-center justify-center gap-8 flex-wrap">
             <Button href={NAV_HREFS.inquire} variant="outline-light">
-              {CTA.requestPrivateAccess}
+              Start Your Private Enquiry
             </Button>
             <Button
               href={NAV_HREFS.journeys}
@@ -577,6 +685,11 @@ export default function TheExperiencePage() {
               {CTA.viewAllJourneys}
             </Button>
           </div>
+          <p className="text-2xs tracking-[0.08em] text-white/40 mt-8 max-w-[760px] mx-auto leading-relaxed">
+            Private enquiries are reviewed personally. Your details are handled with
+            discretion and used only to understand whether Mason &amp; Wild is the
+            right fit for your journey.
+          </p>
         </Reveal>
       </section>
     </>

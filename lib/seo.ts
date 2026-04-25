@@ -97,7 +97,7 @@ export function getOrganizationSchema() {
     name: BRAND_NAME,
     url: absoluteUrl("/"),
     description: PRIMARY_POSITIONING_LINE,
-    email: "hello@masonandwild.com",
+    email: "zannon@masonandwild.com",
     areaServed: ["Southern Africa", "Eastern Africa", "United States"],
     knowsAbout: [
       "Private luxury travel",

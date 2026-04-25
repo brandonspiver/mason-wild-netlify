@@ -300,10 +300,10 @@ export function NavBar() {
                 ))}
 
                 <a
-                  href="mailto:hello@masonandwild.com"
+                  href="mailto:zannon@masonandwild.com"
                   className="border-b border-stone-200 pb-[2px] text-[0.78rem] font-light tracking-[0.04em] text-stone-400 transition-colors duration-[220ms] hover:border-stone-400 hover:text-stone-700"
                 >
-                  hello@masonandwild.com
+                  zannon@masonandwild.com
                 </a>
               </div>
 

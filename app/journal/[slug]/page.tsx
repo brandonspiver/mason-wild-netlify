@@ -41,7 +41,7 @@ const JOURNEY_BRIDGE_DETAILS: Record<string, JourneyBridgeDetail> = {
       { label: "Best For", value: "Couples and private groups" },
       { label: "Rhythm", value: "Desert to Delta to river finish" },
     ],
-    ctaLabel: "View The Intimate",
+    ctaLabel: "Start With This Journey",
   },
   "the-private-circuit": {
     summary:
@@ -52,7 +52,7 @@ const JOURNEY_BRIDGE_DETAILS: Record<string, JourneyBridgeDetail> = {
       { label: "Best For", value: "Travellers wanting range and polish" },
       { label: "Rhythm", value: "Safari depth with a coastal close" },
     ],
-    ctaLabel: "View The Private Circuit",
+    ctaLabel: "Start With This Journey",
   },
   "the-social-shift": {
     summary:
@@ -63,7 +63,7 @@ const JOURNEY_BRIDGE_DETAILS: Record<string, JourneyBridgeDetail> = {
       { label: "Best For", value: "Connection, style, and culture" },
       { label: "Rhythm", value: "City momentum into softer wild spaces" },
     ],
-    ctaLabel: "Explore The Social Shift",
+    ctaLabel: "Start With This Journey",
   },
   "the-adventure": {
     summary:
@@ -74,7 +74,7 @@ const JOURNEY_BRIDGE_DETAILS: Record<string, JourneyBridgeDetail> = {
       { label: "Best For", value: "Active travellers and explorers" },
       { label: "Rhythm", value: "Urban sophistication to remote terrain" },
     ],
-    ctaLabel: "View The Adventure",
+    ctaLabel: "Start With This Journey",
   },
   "the-classic": {
     summary:
@@ -85,7 +85,7 @@ const JOURNEY_BRIDGE_DETAILS: Record<string, JourneyBridgeDetail> = {
       { label: "Best For", value: "First Southern Africa journeys" },
       { label: "Rhythm", value: "City to bush to river close" },
     ],
-    ctaLabel: "View The Classic",
+    ctaLabel: "Start With This Journey",
   },
   "the-romantic": {
     summary:
@@ -96,7 +96,7 @@ const JOURNEY_BRIDGE_DETAILS: Record<string, JourneyBridgeDetail> = {
       { label: "Best For", value: "Honeymoons and couples" },
       { label: "Rhythm", value: "Intimate chapters with soft transitions" },
     ],
-    ctaLabel: "View The Romantic",
+    ctaLabel: "Start With This Journey",
   },
   "the-untamed": {
     summary:
@@ -107,7 +107,7 @@ const JOURNEY_BRIDGE_DETAILS: Record<string, JourneyBridgeDetail> = {
       { label: "Best For", value: "Purist safari travellers" },
       { label: "Rhythm", value: "Bush depth with clean sequencing" },
     ],
-    ctaLabel: "View The Untamed",
+    ctaLabel: "Start With This Journey",
   },
 };
 
@@ -636,7 +636,7 @@ const ARTICLES: Record<string, FullArticle> = {
       },
       {
         type: "h2",
-        text: "Start Your Journey",
+        text: "Start Your Private Enquiry",
       },
       {
         type: "p",
@@ -645,7 +645,7 @@ const ARTICLES: Record<string, FullArticle> = {
       {
         type: "p",
         content: [
-          { type: "link", text: "Start Your Journey", href: "/start-your-journey" },
+          { type: "link", text: "Start Your Private Enquiry", href: "/enquire" },
         ],
       },
     ],
@@ -1184,7 +1184,7 @@ const ARTICLES: Record<string, FullArticle> = {
       },
       {
         type: "h2",
-        text: "Start Your Journey",
+        text: "Start Your Private Enquiry",
       },
       {
         type: "p",
@@ -1207,7 +1207,7 @@ const ARTICLES: Record<string, FullArticle> = {
       {
         type: "p",
         content: [
-          { type: "link", text: "Start Your Journey", href: "/start-your-journey" },
+          { type: "link", text: "Start Your Private Enquiry", href: "/enquire" },
         ],
       },
     ],
@@ -1682,7 +1682,7 @@ const ARTICLES: Record<string, FullArticle> = {
       },
       {
         type: "h2",
-        text: "Start Your Journey",
+        text: "Start Your Private Enquiry",
       },
       {
         type: "p",
@@ -1691,7 +1691,7 @@ const ARTICLES: Record<string, FullArticle> = {
       {
         type: "p",
         content: [
-          { type: "link", text: "Start Your Journey", href: "/start-your-journey" },
+          { type: "link", text: "Start Your Private Enquiry", href: "/enquire" },
         ],
       },
     ],
@@ -6582,6 +6582,10 @@ export default function ArticlePage({
       url: absoluteUrl("/journal"),
     },
   };
+  const primaryRelatedJourney =
+    article.relatedJourneys && article.relatedJourneys.length > 0
+      ? article.relatedJourneys[0]
+      : null;
 
   return (
     <>
@@ -6908,6 +6912,44 @@ export default function ArticlePage({
           </div>
         </div>
       </article>
+      <section className="border-t border-stone-200" aria-labelledby="journal-conversion-bridge-heading">
+        <div className={`${JOURNAL_SHELL} py-[clamp(56px,7vw,96px)]`}>
+          <Reveal>
+            <div className="max-w-[960px]">
+              <p className="label-tag mb-4">Private Planning</p>
+              <h2
+                className="font-serif font-light text-display-md text-stone-900 mb-6"
+                id="journal-conversion-bridge-heading"
+              >
+                Considering a private
+                <br />
+                <em>African journey?</em>
+              </h2>
+              <p className="text-sm md:text-[0.98rem] font-light text-stone-600 leading-[1.9] max-w-[860px]">
+                Mason &amp; Wild designs discreet, fully considered luxury
+                journeys across Southern and Eastern Africa, with particular
+                care for LGBTQ+ travellers who value privacy, comfort, and
+                cultural intelligence.
+              </p>
+              <div className="mt-8 flex flex-wrap items-center gap-6">
+                <Button href={NAV_HREFS.inquire} variant="primary">
+                  Start Your Private Enquiry
+                </Button>
+                <Button
+                  href={
+                    primaryRelatedJourney
+                      ? getJourneyHref(primaryRelatedJourney.slug)
+                      : NAV_HREFS.journeys
+                  }
+                  variant="ghost"
+                >
+                  {primaryRelatedJourney ? "Start With This Journey" : "Explore the Journeys"}
+                </Button>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
 
       {/* ─── Commercial bridge ────────────────────────────────────────── */}
       {article.relatedJourneys && article.relatedJourneys.length > 0 && (
@@ -7010,9 +7052,8 @@ export default function ArticlePage({
             </div>
 
             <Reveal>
-              <div className="mt-10">
-                <Button href={NAV_HREFS.inquire} variant="ghost">
-                  {CTA.requestPrivateAccess}
+              <div className="mt-10">                <Button href={NAV_HREFS.inquire} variant="ghost">
+                  Start Your Private Enquiry
                 </Button>
               </div>
             </Reveal>
@@ -7082,6 +7123,9 @@ export default function ArticlePage({
     </>
   );
 }
+
+
+
 
 
 

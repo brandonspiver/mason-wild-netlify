@@ -29,7 +29,7 @@ const ARTICLES: ArticleSummary[] = [
     title:       "Best Time to Go on Safari in Africa (And Why Most People Get It Wrong)",
     category:    "journey-intelligence",
     excerpt:
-      "Discover the best time to go on safari in Africa by destination, season, and travel style. Expert guidance for Botswana, Zambia, Tanzania, South Africa, Namibia and beyond.",
+      "Discover the best time to go on safari in Africa by destination, season, and travel style. Expert guidance for Botswana, Zambia, Tanzania, South Africa, Namibia, and beyond.",
     readingTime: 8,
     publishedAt: "2026-04-25",
     img: {
@@ -52,7 +52,7 @@ const ARTICLES: ArticleSummary[] = [
   },
   {
     slug:        "lgbtq-luxury-travel-africa",
-    title:       "LGBTQ+ Luxury Travel in Africa: Where to Go, What to Know, Who to Trust",
+    title:       "LGBTQ+ Luxury Travel in Africa: Where to Go, What to Know, and How to Choose Well",
     category:    "journey-intelligence",
     excerpt:
       "Discover the best LGBTQ+ luxury travel destinations in Africa, including Cape Town, Botswana, safari honeymoons, beach escapes, and expert planning advice.",

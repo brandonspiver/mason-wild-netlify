@@ -688,8 +688,8 @@ export default function SocialShiftPage() {
 
             <Reveal delay={1}>
               <p className="text-base font-light text-stone-500 leading-relaxed max-w-[760px]">
-                Personally selected by Zannon James through firsthand experience
-                and strong regional knowledge. This journey is built around
+                Selected through firsthand regional knowledge, trusted
+                relationships, and additional checks where needed. This journey is built around
                 properties, experiences, and settings chosen for more than visual
                 appeal. Service, flow, atmosphere, privacy, and the ability to host
                 people well all need to hold to a consistently high standard in
@@ -707,7 +707,7 @@ export default function SocialShiftPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-[clamp(48px,7vw,96px)] items-center">
             <Reveal>
               <div>
-                <p className="label-tag mb-6">Begin This Journey</p>
+                <p className="label-tag mb-6">Start With This Journey</p>
                 <h2
                   className="font-serif font-light text-display-xl text-stone-900 mb-6 tracking-[-0.018em]"
                   id="inquiry-heading"
@@ -732,7 +732,7 @@ export default function SocialShiftPage() {
               <div className="lg:pl-16 lg:border-l lg:border-stone-200">
                 <div className="flex flex-col items-start gap-5">
                   <Button href={NAV_HREFS.inquire} variant="primary">
-                    Request Private Planning
+                    Discuss This Journey
                   </Button>
                   <Button href={NAV_HREFS.journeys} variant="ghost" arrow={false}>
                     {CTA.viewAllJourneys}

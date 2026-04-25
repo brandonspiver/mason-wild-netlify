@@ -13,7 +13,7 @@ type SendFormEmailInput = {
 };
 
 const RESEND_API_URL = "https://api.resend.com/emails";
-const FORM_DESTINATION = "hello@masonandwild.com";
+const FORM_DESTINATION = "zannon@masonandwild.com";
 const FALLBACK_SUBMISSIONS_DIR = path.join(process.cwd(), ".tmp");
 const FALLBACK_SUBMISSIONS_FILE = path.join(FALLBACK_SUBMISSIONS_DIR, "form-submissions.jsonl");
 
@@ -52,7 +52,7 @@ export async function sendFormEmail({
   sections,
 }: SendFormEmailInput): Promise<void> {
   const apiKey = process.env.RESEND_API_KEY?.trim();
-  const from = process.env.RESEND_FROM ?? "Mason & Wild <hello@masonandwild.com>";
+  const from = process.env.RESEND_FROM ?? "Mason & Wild <zannon@masonandwild.com>";
   const to = process.env.FORM_SUBMISSIONS_TO ?? FORM_DESTINATION;
   const html = buildHtml(sections);
   const text = buildText(sections);

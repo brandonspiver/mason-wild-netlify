@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { Reveal } from "@/components/ui/Reveal";
 import { Button } from "@/components/ui/Button";
-import { NAV_HREFS, CTA } from "@/lib/constants";
+import { NAV_HREFS, CTA, FOUNDER } from "@/lib/constants";
 import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildPageMetadata({
   title: "About",
   description:
-    "Zannon James - founder and chief specialist at Mason & Wild. Private African journeys personally curated, vetted, and overseen for discerning LGBTQ+ travellers.",
+    "Zannon James - Founder and Luxury Safari Architect at Mason & Wild. Founder-led African luxury travel design shaped by regional knowledge, trusted partners, and discreet private handling.",
   path: "/about",
 });
 
@@ -23,7 +24,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-[clamp(48px,7vw,96px)] items-end">
             <div>
               <Reveal>
-                <p className="label-tag text-white/38 mb-7">Founder &amp; Chief Specialist</p>
+                <p className="label-tag text-white/38 mb-7">{FOUNDER.title}</p>
               </Reveal>
               <Reveal delay={1}>
                 <h1
@@ -36,12 +37,21 @@ export default function AboutPage() {
             </div>
 
             <Reveal delay={2}>
-              <p className="text-base font-light text-white leading-relaxed">
-                Zannon designs and personally oversees every journey Mason &amp; Wild
-                accepts - private African travel built specifically for discerning LGBTQ+
-                travellers, where discretion and genuine welcome are the standard, not
-                the aspiration.
-              </p>
+              <div className="flex flex-col gap-4 max-w-[560px]">
+                <p className="text-base font-light text-white leading-relaxed">
+                  Zannon designs and personally reviews each journey Mason
+                  &amp; Wild accepts - private African luxury travel shaped for
+                  clients who value discretion, judgment, and emotional ease.
+                </p>
+                <Link
+                  href={FOUNDER.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-2xs uppercase tracking-[0.12em] text-white/65 border-b border-white/35 hover:text-white hover:border-white/70 pb-[2px] transition-colors duration self-start"
+                >
+                  View Zannon&apos;s LinkedIn
+                </Link>
+              </div>
             </Reveal>
           </div>
         </div>
@@ -109,34 +119,28 @@ export default function AboutPage() {
             <div className="flex flex-col gap-6">
               <Reveal>
                 <p className="font-serif font-light text-display-sm text-stone-800 leading-[1.45] tracking-[-0.01em]">
-                  Mason &amp; Wild was built on years of regional knowledge,
-                  trusted relationships, and hands-on understanding of what it
-                  takes to deliver exceptional travel across Africa.
+                  Zannon James was born and raised in Cape Town and built his
+                  career inside African travel, luxury hospitality, and high-touch
+                  client service.
                 </p>
               </Reveal>
               <Reveal delay={1}>
                 <p className="text-base font-light text-stone-500 leading-relaxed">
-                  Zannon has worked across the world throughout his career and
-                  continues to travel extensively, particularly across Africa,
-                  spending regular time in the bush to ensure his knowledge
-                  remains current, firsthand, and deeply practical. His approach
-                  has never been volume-driven. It has always been personal,
-                  deliberate, and shaped around the belief that luxury should
-                  feel effortless, well judged, and entirely tailored to the
-                  person travelling.
+                  His work has taken him across Southern and Eastern Africa,
+                  with additional international exposure in Dubai, giving him a
+                  practical understanding of how global luxury travellers think,
+                  decide, and move. That perspective now shapes how Mason &amp;
+                  Wild is designed: privately, selectively, and with direct
+                  founder judgment.
                 </p>
               </Reveal>
               <Reveal delay={2}>
                 <p className="text-base font-light text-stone-500 leading-relaxed">
-                  The decision to focus on LGBTQ+ travellers came from
-                  recognising a gap that the industry still too often treats
-                  lightly. For many travellers, the question is not only where
-                  to go, but how it will feel to be there, how they will be
-                  received, and whether they can move through the experience
-                  with ease and confidence. Mason &amp; Wild exists to remove
-                  that uncertainty through thoughtful planning, trusted partners,
-                  and a standard of care built into every journey from the
-                  outset.
+                  The LGBTQ+ focus is both lived and professional. Mason &amp;
+                  Wild is built for travellers who want more than a polished
+                  itinerary; they want to move through Africa without constant
+                  social calculation. This is client-side curation, not catalogue
+                  selling.
                 </p>
               </Reveal>
             </div>
@@ -156,7 +160,7 @@ export default function AboutPage() {
                 className="font-serif font-light text-display-lg text-white max-w-[560px]"
                 id="oversight-heading"
               >
-                Every journey passes
+                Each accepted journey passes
                 <br />
                 through <em>Zannon directly.</em>
               </h2>
@@ -169,8 +173,8 @@ export default function AboutPage() {
                 <p className="text-base font-light text-white leading-relaxed">
                   There is no operations team between the client and the decision.
                   When a journey is accepted by Mason &amp; Wild, Zannon reviews the
-                  brief, selects the territory, assigns the guide, and approves every
-                  element of the itinerary before it is presented. This is not a
+                  brief, selects the territory, assigns the guide, and approves the core
+                  elements of the itinerary before it is presented. This is not a
                   delegation model. It is a direct accountability model.
                 </p>
               </Reveal>
@@ -188,11 +192,11 @@ export default function AboutPage() {
                 {[
                   {
                     label: "Territory Assessment",
-                    body: "Every destination assessed for LGBTQ+ safety, legal standing, and suitability before it enters the collection.",
+                    body: "Each destination we propose is assessed for LGBTQ+ safety, legal standing, and practical suitability before it enters the collection.",
                   },
                   {
                     label: "Partner Vetting",
-                    body: "Every lodge, guide, and operator vetted personally. Standards reviewed before each season.",
+                    body: "Properties and operating partners are selected through firsthand regional knowledge, trusted relationships, and ongoing seasonal review.",
                   },
                   {
                     label: "Itinerary Sign-Off",
@@ -222,8 +226,66 @@ export default function AboutPage() {
       <section className="section border-b border-stone-200" aria-label="Direct property approval statement">
         <div className="container-site max-w-[920px]">
           <p className="text-base font-light text-stone-500 leading-relaxed">
-            Every property offered by Mason &amp; Wild has been visited and approved by Zannon James directly. Not reviewed, not vetted by proxy, not inherited from a previous operator relationship. If he has not stayed there himself and confirmed the standard holds, it is not offered. That is the constraint that keeps the collection honest, and the reason it remains small.
+            Mason &amp; Wild journeys are built from firsthand regional knowledge, personally vetted properties, and trusted partner relationships. Where a property has not been stayed in directly, it is considered only through verified relationships and additional operational checks. That discipline keeps the collection precise and the standard consistent.
           </p>
+        </div>
+      </section>
+
+      <section className="section border-b border-stone-200" aria-labelledby="what-you-can-expect-heading">
+        <div className="container-site">
+          <Reveal>
+            <div className="mb-12">
+              <p className="label-tag mb-4">What You Can Expect</p>
+              <h2
+                className="font-serif font-light text-display-md text-stone-900"
+                id="what-you-can-expect-heading"
+              >
+                Founder-led standards,
+                <br />
+                <em>quietly applied.</em>
+              </h2>
+            </div>
+          </Reveal>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px border border-stone-200 bg-stone-200">
+            {[
+              {
+                title: "Founder-reviewed design",
+                body: "Every accepted journey is reviewed directly before anything is proposed.",
+              },
+              {
+                title: "Discreet communication",
+                body: "Enquiries are handled with privacy and care from the first message.",
+              },
+              {
+                title: "Client-side curation",
+                body: "Mason & Wild is not selling a single lodge; journeys are shaped around fit, rhythm, and context.",
+              },
+              {
+                title: "Operational intelligence",
+                body: "Routing, pacing, access, guiding, recovery days, and seasonal logic are considered together.",
+              },
+              {
+                title: "LGBTQ+ comfort intelligence",
+                body: "Comfort is treated as practical, cultural, emotional, and logistical, not reduced to a label.",
+              },
+              {
+                title: "Transparent process",
+                body: "No generic package selling, no pressure tactics, and clear handling before proposal development begins.",
+              },
+            ].map((item, index) => (
+              <Reveal key={item.title} delay={(index % 3) as 0 | 1 | 2 | 3 | 4}>
+                <article className="bg-page px-7 py-8 md:px-8 md:py-9 h-full">
+                  <h3 className="font-serif font-light text-display-sm text-stone-900 leading-[1.2] tracking-[-0.01em] mb-4">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm font-light text-stone-500 leading-relaxed">
+                    {item.body}
+                  </p>
+                </article>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -273,8 +335,8 @@ export default function AboutPage() {
               <Reveal delay={3}>
                 <p className="text-base font-light text-stone-500 leading-relaxed">
                   This knowledge is not transferable through certification. It is
-                  built through years of direct relationship with every property in
-                  our network - visiting, staying, and maintaining the kind of
+                  built through years of direct relationship across our property and
+                  partner network - visiting, staying where appropriate, and maintaining the kind of
                   contact that keeps the assessment current.
                 </p>
               </Reveal>
@@ -345,11 +407,11 @@ export default function AboutPage() {
               </Reveal>
               <Reveal delay={3}>
                 <p className="text-base font-light text-white leading-relaxed">
-                  We do not list territories we are not confident in. We do not
-                  work with camps or guides whose alignment we cannot verify. This
-                  is the operational foundation of Mason &amp; Wild - not a brand
-                  position, but the actual work that determines what we offer and
-                  what we do not.
+                  We recommend territories where we are confident in the broader
+                  travel conditions, and we work only with camps and guides that
+                  meet Mason &amp; Wild standards through direct knowledge or
+                  additional checks. That is the operational foundation of the
+                  brand, not just the language.
                 </p>
               </Reveal>
             </div>
@@ -366,7 +428,7 @@ export default function AboutPage() {
             How Safety Is Handled
           </h2>
           <p className="text-base font-light text-white leading-relaxed mb-6">
-            We do not use the language of risk management, because that is not the experience we are designing. What we do instead is make decisions - before a journey is proposed - that mean safety is never something you need to think about once you arrive.
+            We do not use the language of risk management, because that is not the experience we are designing. What we do instead is make decisions - before a journey is proposed - that make safety a built-in part of how the journey is designed.
           </p>
           <p className="text-base font-light text-white leading-relaxed mb-6">
             Those decisions are operational: which territories meet our standard for legal standing and real-world enforcement, which camps have been assessed for staff culture and guide values, how transit between properties is routed to reduce friction, how room configurations are handled by default rather than by request.
@@ -390,12 +452,17 @@ export default function AboutPage() {
           </p>
           <div className="flex items-center justify-center gap-8 flex-wrap">
             <Button href={NAV_HREFS.inquire} variant="outline-light">
-              {CTA.requestPrivateAccess}
+              Start Your Private Enquiry
             </Button>
             <Button href={NAV_HREFS.journeys} variant="ghost-light" arrow={false}>
               {CTA.viewAllJourneys}
             </Button>
           </div>
+          <p className="text-2xs tracking-[0.08em] text-white/40 mt-8 max-w-[720px] mx-auto leading-relaxed">
+            Private enquiries are reviewed personally. Your details are handled with
+            discretion and used only to understand whether Mason &amp; Wild is the
+            right fit for your journey.
+          </p>
         </Reveal>
       </section>
     </>

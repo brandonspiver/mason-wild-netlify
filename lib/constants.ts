@@ -11,6 +11,16 @@ export const PRIMARY_POSITIONING_LINE =
 
 export const BRAND_DESCRIPTOR = "The Silent Observer" as const;
 
+export const FOUNDER = {
+  name: "Zannon James",
+  title: "Founder and Luxury Safari Architect",
+  linkedin: "https://www.linkedin.com/in/zannon-james/",
+  email: "zannon@masonandwild.com",
+} as const;
+
+export const BUSINESS_LEGAL_LINE =
+  "Mason & Wild trades under the Crew Up Pty Ltd umbrella. Crew Up Pty Ltd, registration number K2025281605." as const;
+
 // â”€â”€â”€ Navigation â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 export const NAV_LABELS = {
@@ -39,7 +49,7 @@ export const CTA = {
   inquirePrivately:    "Enquire Privately",
   requestAccess:       "Request Access",
   requestPrivateAccess:"Request Private Access",
-  beginJourney:        "Begin Your Journey",
+  beginJourney:        "Begin a Private Journey",
 
   // Exploratory
   viewCollection:      "View the Collection",
@@ -55,7 +65,7 @@ export const CTA = {
 
   // Form
   formSubmit:          "Request Access",
-  formResponseNote:    "Response time is typically 24-48 hours via our private desk.",
+  formResponseNote:    "Suitable enquiries are personally reviewed, with next steps typically shared within 24 to 48 hours.",
 } as const;
 
 // â”€â”€â”€ Differentiator Pillars â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
@@ -136,7 +146,7 @@ export const FEATURED_JOURNEYS = [
     tagline: "Cinematic travel for two, designed around intimacy rather than volume.",
     img: {
       src: "/home/the-romantic-card.png",
-      alt: "Namibian desert dunes at first light",
+      alt: "Private romantic setting in South Africa and Mozambique",
     },
   },
   {
@@ -212,7 +222,7 @@ export const TIME_OF_YEAR_OPTIONS = [
 
 export type TimeOfYearOption = typeof TIME_OF_YEAR_OPTIONS[number]["value"];
 
-// â”€â”€â”€ The Social â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// â”€â”€â”€ The Social Shift â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 export const SOCIAL_COPY = {
   sectionLabel:      "By Invitation Only",
@@ -227,7 +237,7 @@ export const INQUIRY_COPY = {
   pageSubhead:
     "Private African travel, designed around who you are and how you want to move through the world. Mason & Wild creates privately designed journeys for travellers who value discretion, strong curation, and the confidence of being understood properly from the start.",
   processBody:
-    "This is not a generic enquiry form. It is the start of a private design process. We work with a limited number of clients and assess every brief through pace, privacy, and destination fit before we recommend anything.",
+    "Every Mason & Wild journey begins with a private enquiry. The details below help us understand your rhythm, expectations, travel window, and level of privacy required before anything is proposed. Suitable enquiries are personally reviewed before moving into a private consultation.",
   fullNameLabel:       "Full Name",
   fullNamePlaceholder: "How you would like us to address you",
   emailLabel:          "Email",
@@ -239,7 +249,7 @@ export const INQUIRY_COPY = {
   narrativeLabel:      "A few details to shape your journey properly",
   narrativePlaceholder:"Share who is travelling, when you are considering, and what matters most.",
   availabilityHeading: "Seasonal Availability",
-  contactLine:         "hello@masonandwild.com",
+  contactLine:         FOUNDER.email,
 } as const;
 
 // â”€â”€â”€ Footer â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
