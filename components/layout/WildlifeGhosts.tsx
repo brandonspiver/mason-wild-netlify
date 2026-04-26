@@ -42,6 +42,27 @@ const PLACEMENTS = {
       className: "left-[-9%] top-[84%] w-[clamp(170px,31vw,460px)] hidden lg:block",
       opacity: 0.122,
     },
+    {
+      src: "/artwork/ghosts/lions.png",
+      width: 1024,
+      height: 1536,
+      className: "right-[-7%] top-[42%] w-[clamp(190px,30vw,430px)]",
+      opacity: 0.085,
+    },
+    {
+      src: "/artwork/ghosts/pangolin.png",
+      width: 1024,
+      height: 1536,
+      className: "left-[4%] top-[72%] w-[clamp(150px,23vw,320px)] hidden md:block",
+      opacity: 0.078,
+    },
+    {
+      src: "/artwork/ghosts/flamingos.png",
+      width: 1024,
+      height: 1536,
+      className: "right-[8%] top-[92%] w-[clamp(155px,24vw,330px)] hidden lg:block",
+      opacity: 0.075,
+    },
   ] satisfies readonly GhostPlacement[],
   capeTown: [
     {
@@ -73,6 +94,20 @@ const PLACEMENTS = {
       className: "left-[-9%] top-[84%] w-[clamp(185px,33vw,480px)] hidden lg:block",
       opacity: 0.122,
     },
+    {
+      src: "/artwork/ghosts/penguins.png",
+      width: 1024,
+      height: 1536,
+      className: "left-[6%] top-[24%] w-[clamp(150px,24vw,320px)] hidden md:block",
+      opacity: 0.08,
+    },
+    {
+      src: "/artwork/ghosts/flamingos.png",
+      width: 1024,
+      height: 1536,
+      className: "right-[5%] top-[58%] w-[clamp(155px,25vw,340px)]",
+      opacity: 0.074,
+    },
   ] satisfies readonly GhostPlacement[],
   namibia: [
     {
@@ -102,6 +137,20 @@ const PLACEMENTS = {
       height: 768,
       className: "right-[-10%] top-[88%] w-[clamp(180px,32vw,420px)] hidden md:block",
       opacity: 0.128,
+    },
+    {
+      src: "/artwork/ghosts/gemsbok.png",
+      width: 1024,
+      height: 1536,
+      className: "right-[3%] top-[24%] w-[clamp(170px,27vw,370px)] hidden md:block",
+      opacity: 0.083,
+    },
+    {
+      src: "/artwork/ghosts/pangolin.png",
+      width: 1024,
+      height: 1536,
+      className: "left-[6%] top-[57%] w-[clamp(145px,22vw,310px)]",
+      opacity: 0.076,
     },
   ] satisfies readonly GhostPlacement[],
   botswana: [
@@ -134,6 +183,20 @@ const PLACEMENTS = {
       className: "left-[-9%] top-[86%] w-[clamp(175px,30vw,420px)] hidden lg:block",
       opacity: 0.12,
     },
+    {
+      src: "/artwork/ghosts/hippos.png",
+      width: 1024,
+      height: 1536,
+      className: "left-[5%] top-[23%] w-[clamp(165px,26vw,360px)] hidden md:block",
+      opacity: 0.082,
+    },
+    {
+      src: "/artwork/ghosts/leopard.png",
+      width: 1024,
+      height: 1536,
+      className: "right-[4%] top-[69%] w-[clamp(150px,24vw,330px)]",
+      opacity: 0.076,
+    },
   ] satisfies readonly GhostPlacement[],
   tanzania: [
     {
@@ -164,6 +227,20 @@ const PLACEMENTS = {
       height: 768,
       className: "left-[-9%] top-[88%] w-[clamp(180px,31vw,430px)]",
       opacity: 0.118,
+    },
+    {
+      src: "/artwork/ghosts/lions.png",
+      width: 1024,
+      height: 1536,
+      className: "left-[5%] top-[25%] w-[clamp(170px,27vw,370px)] hidden md:block",
+      opacity: 0.082,
+    },
+    {
+      src: "/artwork/ghosts/flamingos.png",
+      width: 1024,
+      height: 1536,
+      className: "right-[6%] top-[76%] w-[clamp(150px,23vw,320px)]",
+      opacity: 0.075,
     },
   ] satisfies readonly GhostPlacement[],
   zambia: [
@@ -196,6 +273,20 @@ const PLACEMENTS = {
       className: "right-[-9%] top-[88%] w-[clamp(175px,30vw,420px)] hidden lg:block",
       opacity: 0.122,
     },
+    {
+      src: "/artwork/ghosts/leopard.png",
+      width: 1024,
+      height: 1536,
+      className: "right-[5%] top-[25%] w-[clamp(160px,25vw,350px)] hidden md:block",
+      opacity: 0.081,
+    },
+    {
+      src: "/artwork/ghosts/hippos.png",
+      width: 1024,
+      height: 1536,
+      className: "left-[6%] top-[74%] w-[clamp(150px,23vw,320px)]",
+      opacity: 0.075,
+    },
   ] satisfies readonly GhostPlacement[],
   mixed: [
     {
@@ -225,6 +316,20 @@ const PLACEMENTS = {
       height: 768,
       className: "left-[-9%] top-[86%] w-[clamp(190px,33vw,470px)] hidden lg:block",
       opacity: 0.118,
+    },
+    {
+      src: "/artwork/ghosts/pangolin.png",
+      width: 1024,
+      height: 1536,
+      className: "right-[5%] top-[23%] w-[clamp(145px,22vw,310px)]",
+      opacity: 0.076,
+    },
+    {
+      src: "/artwork/ghosts/gemsbok.png",
+      width: 1024,
+      height: 1536,
+      className: "left-[5%] top-[70%] w-[clamp(155px,24vw,335px)] hidden md:block",
+      opacity: 0.077,
     },
   ] satisfies readonly GhostPlacement[],
 } as const;

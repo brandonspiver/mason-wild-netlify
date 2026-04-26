@@ -91,7 +91,7 @@ export default function HomePage() {
           >
             <span className="block">Luxury African journeys</span>
             <span className="block">for LGBTQ+ travellers</span>
-            <span className="block">who want privacy, beauty,</span>
+            <span className="block">who want privacy, beauty</span>
             <em className="block">and nothing performative.</em>
           </h1>
 
@@ -444,7 +444,7 @@ export default function HomePage() {
             </h2>
           </Reveal>
 
-          <div className="grid grid-cols-1 gap-px border border-white/14 bg-white/14 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-1 gap-px border border-white bg-white md:grid-cols-2 lg:grid-cols-4">
             {[
               "Founder-led design with Africa-specific judgment.",
               "LGBTQ+ comfort intelligence built into practical planning decisions.",

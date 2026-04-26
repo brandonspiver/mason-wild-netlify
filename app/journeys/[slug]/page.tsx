@@ -940,6 +940,66 @@ const JOURNEYS: Record<string, JourneyData> = {
         alt: "Beach or villa view on Benguerra Island",
         position: "center 50%",
       },
+      {
+        src: "/journeys/the-romantic/la-cotte-farm-01.avif",
+        alt: "La Cotte Farm in Franschhoek",
+        position: "center 50%",
+      },
+      {
+        src: "/journeys/the-romantic/la-cotte-farm-02.avif",
+        alt: "La Cotte Farm guest cottage in the Winelands",
+        position: "center 50%",
+      },
+      {
+        src: "/journeys/the-romantic/la-cotte-farm-03.avif",
+        alt: "La Cotte Farm suite interior",
+        position: "center 50%",
+      },
+      {
+        src: "/journeys/the-romantic/la-cotte-farm-04.avif",
+        alt: "La Cotte Farm vineyard and mountain setting",
+        position: "center 50%",
+      },
+      {
+        src: "/journeys/the-romantic/la-cotte-farm-05.avif",
+        alt: "La Cotte Farm pool and garden setting",
+        position: "center 50%",
+      },
+      {
+        src: "/journeys/the-romantic/la-cotte-farm-06.avif",
+        alt: "La Cotte Farm terrace in Franschhoek",
+        position: "center 50%",
+      },
+      {
+        src: "/journeys/the-romantic/la-cotte-farm-07.avif",
+        alt: "La Cotte Farm heritage architecture",
+        position: "center 50%",
+      },
+      {
+        src: "/journeys/the-romantic/la-cotte-farm-08.avif",
+        alt: "La Cotte Farm bedroom detail",
+        position: "center 50%",
+      },
+      {
+        src: "/journeys/the-romantic/la-cotte-farm-09.avif",
+        alt: "La Cotte Farm Winelands view",
+        position: "center 50%",
+      },
+      {
+        src: "/journeys/the-romantic/la-cotte-farm-10.avif",
+        alt: "La Cotte Farm quiet garden detail",
+        position: "center 50%",
+      },
+      {
+        src: "/journeys/the-romantic/la-cotte-farm-11.avif",
+        alt: "La Cotte Farm dining and estate atmosphere",
+        position: "center 50%",
+      },
+      {
+        src: "/journeys/the-romantic/la-cotte-farm-12.avif",
+        alt: "La Cotte Farm estate detail",
+        position: "center 50%",
+      },
     ],
     pillarsIntro:
       "The Romantic is built around intimacy, privacy, atmosphere, and emotional pacing. Each chapter shifts the tone of the relationship with place, pace, and one another.",
@@ -1035,8 +1095,8 @@ const JOURNEYS: Record<string, JourneyData> = {
         title: "Slow into Indulgence",
         body: "Move into the Winelands, where the pace softens and the focus shifts to privacy, landscape, and long, unhurried time together. This chapter adds depth, beauty, and a more intimate rhythm.",
         image: {
-          src: "/journeys/the-romantic/AS 10.png",
-          alt: "Franschhoek vineyard atmosphere near Akademie Street",
+          src: "/journeys/the-romantic/la-cotte-farm-01.avif",
+          alt: "La Cotte Farm vineyard atmosphere in Franschhoek",
           position: "center 52%",
         },
       },
@@ -1125,40 +1185,40 @@ const JOURNEYS: Record<string, JourneyData> = {
     },
       {
         location: "Franschhoek, South Africa",
-        name: "Akademie Street",
+        name: "La Cotte Farm",
         stay: "3 Nights",
         description:
-          "This Winelands chapter slows the route into landscape, privacy, and a more inward romantic pace. It belongs here because it lets the journey deepen before safari without losing refinement or warmth.",
+          "This Winelands chapter slows the route into landscape, heritage, privacy, and a more inward romantic pace. La Cotte Farm belongs here because it lets the journey deepen before safari without losing refinement, warmth, or a sense of place.",
         founderNote: PERSONAL_STAY_FOUNDER_NOTE,
         images: [
         {
-          src: "/journeys/the-romantic/AS 4.png",
-          alt: "Akademie Street in Franschhoek",
+          src: "/journeys/the-romantic/la-cotte-farm-02.avif",
+          alt: "La Cotte Farm in Franschhoek",
           position: "center 50%",
         },
         {
-          src: "/journeys/the-romantic/AS 1.png",
-          alt: "Suite interior at Akademie Street",
+          src: "/journeys/the-romantic/la-cotte-farm-03.avif",
+          alt: "Suite interior at La Cotte Farm",
           position: "center 50%",
         },
         {
-          src: "/journeys/the-romantic/AS 10.png",
-          alt: "Vineyard setting in Franschhoek",
+          src: "/journeys/the-romantic/la-cotte-farm-04.avif",
+          alt: "Vineyard and mountain setting at La Cotte Farm",
           position: "center 50%",
         },
       ],
       features: [
         {
           title: "Winelands calm",
-          body: "The shift into Franschhoek gives the journey room to breathe.",
+          body: "The shift into Franschhoek gives the journey room to breathe in a heritage farm setting.",
         },
         {
           title: "Boutique privacy",
-          body: "Used for discretion, quiet comfort, and a slower shared rhythm.",
+          body: "Used for discretion, quiet comfort, and a slower shared rhythm across the estate.",
         },
         {
-          title: "Design-led stay",
-          body: "The property feels personal rather than scaled or overly formal.",
+          title: "Farm estate character",
+          body: "The property feels grounded, romantic, and personal rather than scaled or overly formal.",
         },
         {
           title: "Middle-chapter softness",
