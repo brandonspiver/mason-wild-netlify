@@ -15,7 +15,7 @@ export const FOUNDER = {
   name: "Zannon James",
   title: "Founder and Luxury Safari Architect",
   linkedin: "https://www.linkedin.com/in/zannon-james/",
-  email: "zannon@masonandwild.com",
+  email: "hello@masonandwild.com",
 } as const;
 
 export const BUSINESS_LEGAL_LINE =

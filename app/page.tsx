@@ -428,7 +428,7 @@ export default function HomePage() {
       </section>
 
       <section
-        className="section border-t border-b border-white/10 bg-forest text-white"
+        className="section border-t border-b border-white bg-forest text-white"
         aria-labelledby="why-book-with-mw-heading"
       >
         <div className="container-site">
@@ -452,7 +452,7 @@ export default function HomePage() {
               "A private advisory model rather than a mass-market booking engine.",
             ].map((item, index) => (
               <Reveal key={item} delay={(index % 3) as 0 | 1 | 2 | 3 | 4}>
-                <div className="h-full bg-white/[0.045] px-7 py-7 backdrop-blur-[2px]">
+                <div className="h-full bg-forest px-7 py-7 backdrop-blur-[2px]">
                   <p className="text-sm font-light leading-relaxed text-white/86">{item}</p>
                 </div>
               </Reveal>
